@@ -18,11 +18,11 @@ return new class extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 50)->nullable(false);
-            $table->string('overview', 200)->nullable(false);
+            $table->string('overview', 200);
             $table->integer('level')->nullable(false)->default(1);
             $table->integer('spot_id')->nullable(false)->default(0);
             $table->integer('fish_id')->nullable(false)->default(0);
-            $table->text('flow')->nullable(false);
+            $table->text('flow');
             $table->string('eye_catch', 200);
             $table->string('thumbnail', 200);
             $table->boolean('is_show')->nullable(false)->default(true);
