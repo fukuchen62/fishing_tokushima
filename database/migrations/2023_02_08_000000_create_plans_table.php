@@ -19,18 +19,15 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title', 50)->nullable(false);
             $table->string('overview', 200)->nullable(false);
-            $table->integer('level')->default(1);
-            $table->integer('spot_id')->nullable(false);
-            $table->integer('fish_id')->nullable(false);
+            $table->integer('level')->nullable(false)->default(1);
+            $table->integer('spot_id')->nullable(false)->default(0);
+            $table->integer('fish_id')->nullable(false)->default(0);
             $table->text('flow')->nullable(false);
             $table->string('eye_catch', 200);
             $table->string('thumbnail', 200);
-            $table->string('connection1', 200);
-            $table->string('connection2', 200);
-            $table->string('connection3', 200);
-            $table->boolean('is_show')->default(true);
+            $table->boolean('is_show')->nullable(false)->default(true);
             $table->timestamps();
-            $table->timestamp('deleted_at')->default(null);
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
