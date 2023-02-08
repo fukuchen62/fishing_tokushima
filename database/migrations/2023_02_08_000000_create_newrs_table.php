@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('overview',150)->nullable(false);
             $table->text('content')->nullable(false);
             $table->string('eyecatch',200);
-            $table->boolean('is_show')->default(true);
+            $table->boolean('is_show')->nullable(false)->default(true);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable()->default(null);
         });
