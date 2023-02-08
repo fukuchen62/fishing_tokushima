@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
         $param=[
             'id' => 1,
             'name'=> '山田　太郎',
+            'nickname'=> 'やまちゃん',
             'email'=> 'tamada_t@gmail.com',
             'email_verified_at'=> 'tamada_t@gmail.com',
             'password'=> 12345678,
@@ -30,6 +31,7 @@ class UsersTableSeeder extends Seeder
         $param=[
             'id' => 2,
             'name'=> '徳島　太郎',
+            'nickname'=> 'やまちゃん',
             'email'=> 'kokushima_t@gmail.com',
             'email_verified_at'=> 'tokushima_t@gmail.com',
             'password'=> 12345678,
@@ -41,6 +43,7 @@ class UsersTableSeeder extends Seeder
         $param=[
             'id' => 3,
             'name'=> '徳島　次郎',
+            'nickname'=> '次郎',
             'email'=> 'kokushima_j@gmail.com',
             'email_verified_at'=> 'tokushima_j@gmail.com',
             'password'=> 12345678,
