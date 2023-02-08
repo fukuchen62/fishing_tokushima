@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50)->nullable(false);
-            $table->integer('type');
-            $table->char('postal_code', 8);
+            $table->integer('type')->nullable();
+            $table->char('postal_code', 8)->nullable();
             $table->string('address', 200)->nullable(false);
-            $table->string('tel', 20);
-            $table->string('longitude', 20);
-            $table->string('latitude', 20);
+            $table->string('tel', 20)->nullable();
+            $table->string('longitude', 20)->nullable();
+            $table->string('latitude', 20)->nullable();
             $table->string('memo', 200)->nullable(false);
             $table->boolean('is_show')->nullable(false)->default(true);
         });

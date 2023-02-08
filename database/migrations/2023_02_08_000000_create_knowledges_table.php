@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('category_id')->nullable(false)->default(0);
             $table->string('title', 50)->nullable(false);
-            $table->string('overview', 200);
-            $table->text('content');
+            $table->string('overview', 200)->nullable();
+            $table->text('content')->nullable();
             $table->string('thumbnail', 200)->nullable(false);
             $table->boolean('is_show')->default(true)->nullable(false);
             $table->timestamps();

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',10)->nullable(false);
-            $table->string('title',50)->nullable(false);
-            $table->string('overview',150)->nullable(false);
+            $table->string('name', 10)->nullable(false);
+            $table->string('title', 50)->nullable(false);
+            $table->string('overview', 150)->nullable(false);
             $table->text('content')->nullable(false);
-            $table->string('eyecatch',200);
+            $table->string('eyecatch', 200)->nullable();
             $table->boolean('is_show')->nullable(false)->default(true);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable()->default(null);
