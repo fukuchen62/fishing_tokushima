@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('longitude', 20);
             $table->string('latitude', 20);
             $table->string('memo', 200)->nullable(false);
-            $table->boolean('is_show')->default(true);
+            $table->boolean('is_show')->nullable(false)->default(true);
         });
     }
 
