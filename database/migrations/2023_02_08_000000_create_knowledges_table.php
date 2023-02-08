@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('knowledges', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->nullable(false);
+            $table->integer('category_id')->nullable(false)->default(0);
             $table->string('title', 50)->nullable(false);
             $table->string('overview', 200);
-            $table->text('content')->nullable(false);
+            $table->text('content');
             $table->string('thumbnail', 200)->nullable(false);
             $table->boolean('is_show')->default(true)->nullable(false);
             $table->timestamps();
-            $table->timestamp('deleted_at')->default(null);
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

@@ -27,16 +27,16 @@ return new class extends Migration
             $table->string('cooking_img3', 200);
             $table->string('method', 100)->nullable(false);
             $table->string('month', 50);
-            $table->integer('level')->default(1);
-            $table->string('spot_id', 100);
+            $table->integer('level')->nullable(false)->default(1);
+            $table->string('spot_id', 100)->nullable(false)->default(0);
             $table->string('fish_img1', 200)->nullable(false);
             $table->string('fish_img2', 200);
             $table->string('fish_img3', 200);
             $table->string('plan_id', 20);
             $table->string('memo', 200);
-            $table->boolean('is_show')->default(true)->nullable(false);
+            $table->boolean('is_show')->nullable(false)->default(true);
             $table->timestamps();
-            $table->timestamp('deleted_at')->default(null);
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
