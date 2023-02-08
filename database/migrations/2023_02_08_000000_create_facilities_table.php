@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('facilities', function (Blueprint $table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->string('name', 50)->nullable(false);
-            $table->integer('type', 20);
+            $table->integer('type');
             $table->char('postal_code', 8);
             $table->string('address', 200)->nullable(false);
             $table->string('tel', 20);

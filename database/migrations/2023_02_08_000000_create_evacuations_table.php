@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('evacuations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50)->nullable(false);
-            $table->string('city_id', 20)->nullable(false)->default(0);
+            $table->integer('city_id')->nullable(false)->default(0);
             $table->string('address', 200)->nullable(false);
             $table->string('longitude', 20);
             $table->string('latitude', 20);
@@ -44,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uevacuations');
+        Schema::dropIfExists('evacuations');
     }
 };

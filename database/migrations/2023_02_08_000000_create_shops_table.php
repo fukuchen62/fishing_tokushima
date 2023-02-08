@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 60)->nullable(false);
-            $table->integer('city_id', 20)->nullable(false)->default(0);
+            $table->integer('city_id')->nullable(false)->default(0);
             $table->char('postal_code', 8);
             $table->string('address', 200)->nullable(false);
             $table->string('iframe', 200);
