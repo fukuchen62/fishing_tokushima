@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('title', 50)->nullable(false);
             $table->string('overview', 200)->nullable(false);
             $table->integer('level')->nullable(false)->default(1);
+            $table->integer('city_id')->nullable(false)->default(0);
             $table->integer('spot_id')->nullable(false)->default(0);
             $table->integer('fish_id')->nullable(false)->default(0);
 
