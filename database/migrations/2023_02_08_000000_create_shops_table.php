@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('img', 200)->nullable();
             $table->string('memo', 200)->nullable();
             $table->timestamps();
-            $table->timestamp('deleted_at')->default(null);
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
