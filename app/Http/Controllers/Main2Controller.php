@@ -14,7 +14,7 @@ use App\Models\Fish;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class Main2Controller extends Controller
 {
-    public function serchPlan()
+    public function searchPlan()
     {
         $items = Plan::all();
 
@@ -23,5 +23,16 @@ class Main2Controller extends Controller
         ];
 
         return view('main2.search_plan', $data);
+    }
+
+    public function searchFish()
+    {
+        $items = Fish::all();
+
+        $data = [
+            'fishes' => $items,
+        ];
+
+        return view('main2.search_fish', $data);
     }
 }
