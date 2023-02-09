@@ -43,7 +43,9 @@ return new class extends Migration
             $table->integer('restaurant_id')->nullable(false)->default(0);
             $table->integer('other_id')->nullable(false)->default(0);
             $table->boolean('is_show')->nullable(false)->default(true);
-            $table->timestamps();
+            // $table->timestamps();
+            $table->timestamp('created_at')->nullable(false);
+            $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable()->default(null);
         });
     }

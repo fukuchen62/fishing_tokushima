@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('knowledge_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20)->nullable(false);
-            $table->timestamps();
-
+            $table->string('name', 20)->nullable(false);
+            // $table->timestamps();
+            $table->timestamp('created_at')->nullable(false);
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

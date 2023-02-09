@@ -21,7 +21,9 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->string('thumbnail', 200)->nullable(false);
             $table->boolean('is_show')->default(true)->nullable(false);
-            $table->timestamps();
+            // $table->timestamps();
+            $table->timestamp('created_at')->nullable(false);
+            $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
         });
     }

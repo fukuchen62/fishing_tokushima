@@ -34,7 +34,9 @@ return new class extends Migration
             $table->boolean('is_show')->nullable(false)->default(true);
             $table->string('img', 200)->nullable();
             $table->string('memo', 200)->nullable();
-            $table->timestamps();
+            // $table->timestamps();
+            $table->timestamp('created_at')->nullable(false);
+            $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
         });
     }

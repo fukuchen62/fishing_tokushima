@@ -47,7 +47,7 @@ class PlansTableSeeder extends Seeder
             また、１匹かかってからしばらく待つと
             網かごが大きく揺れて一度に２～３匹釣れることもあります。',
             'is_show' => true,
-            'created_at' => date('Y-m-d H:i:s'),
+
         ];
         DB::table('plans')->insert($param);
 
@@ -72,7 +72,7 @@ class PlansTableSeeder extends Seeder
             ④アタリが来たら
             そのまますぐに引き上げましょう。',
             'is_show' => true,
-            'created_at' => date('Y-m-d H:i:s'),
+
         ];
         DB::table('plans')->insert($param);
     }
