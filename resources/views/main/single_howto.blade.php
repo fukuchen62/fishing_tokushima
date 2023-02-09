@@ -7,6 +7,6 @@
     <title>test</title>
 </head>
 <body>
-    <h1>aaaaaaaaaa</h1>
+    <h1>singleHowto</h1>
 </body>
 </html>
