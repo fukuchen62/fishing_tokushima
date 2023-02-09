@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class NewsTableSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
