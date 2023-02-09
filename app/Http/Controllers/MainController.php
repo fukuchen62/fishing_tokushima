@@ -74,7 +74,7 @@ class MainController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('singleHowto', $data);
+        return view('main.singleHowto', $data);
     }
 
     public function archiveSpot(Request $request)
@@ -91,7 +91,7 @@ class MainController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('archiveSpot', $data);
+        return view('main.archiveSpot', $data);
     }
 
     public function archiveArea(Request $request)
@@ -108,7 +108,7 @@ class MainController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('archiveArea', $data);
+        return view('main.archiveArea', $data);
     }
 
     public function singleArea(Request $request)
@@ -125,7 +125,7 @@ class MainController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('singleArea', $data);
+        return view('main.singleArea', $data);
     }
 
     public function pageShop(Request $request)
@@ -142,6 +142,6 @@ class MainController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('pageShop', $data);
+        return view('main.pageShop', $data);
     }
 }
