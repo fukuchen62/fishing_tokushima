@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
-class HelloController extends Controller
+class Main2Controller extends Controller
 {
 
     public function index(Request $request)
