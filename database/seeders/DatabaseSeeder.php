@@ -1,7 +1,9 @@
 <?php
+
 namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,5 +18,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call(CitiesTableSeeder::class);
+        $this->call(FacilitiesTableSeeder::class);
+        $this->call(FishesTableSeeder::class);
+        $this->call(KnowledgesTableSeeder::class);
+        $this->call(KnowledgeTypesTableSeeder::class);
+        $this->call(NewsTableSeeder::class);
+        $this->call(PlansTableSeeder::class);
+        $this->call(ShopsTableSeeder::class);
+        $this->call(SpotsTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }
