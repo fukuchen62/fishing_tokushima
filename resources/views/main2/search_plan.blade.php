@@ -9,6 +9,18 @@
 </head>
 
 <body>
+    <h1>体験プランの一覧</h1>
+
+    <table>
+        <tr>
+            <th>id</th>
+        </tr>
+        @foreach ($items as $item )
+        <tr>
+            <td>{{ $item ->getData() }}</td>
+        </tr>
+        @endforeach
+    </table>
 
 </body>
 
