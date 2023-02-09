@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password', 40);
             $table->integer('authority')->nullable(false);
             $table->rememberToken();
-            $table->boolean('is_show')->nullable(false)->default(true);
+            $table->boolean('is_show')->default(1);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });

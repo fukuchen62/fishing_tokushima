@@ -35,8 +35,9 @@ return new class extends Migration
             $table->string('plan_id', 20)->nullable();
             $table->string('memo', 200)->nullable();
             $table->boolean('is_show')->nullable(false)->default(true);
+
             $table->timestamps();
-            $table->timestamp('deleted_at')->nullable();
+            $table->timestamp('deleted_at')->default(null);
         });
     }
 
