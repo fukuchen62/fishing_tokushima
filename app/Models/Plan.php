@@ -9,6 +9,12 @@ class Plan extends Model
 {
     use HasFactory;
 
+    public function getData()
+    {
+        $ret = $this->id . ':' . $this->title;
+        return $ret;
+    }
+
 
     // スコープ
     //地域、難易度、魚
