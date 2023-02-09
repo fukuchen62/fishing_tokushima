@@ -16,37 +16,40 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $param=[
+        $param = [
+            'name' => '山田　太郎',
+            'nickname' => 'やまちゃん',
+            'email' => 'tamada_t@gmail.com',
+            'password' => 12345678,
+            'authority' => 3,
+            'is_show' => true,
+            'created_at' => date('Y-m-d H:i:s'),
 
-            'name'=> '山田　太郎',
-            'nickname'=> 'やまちゃん',
-            'email'=> 'tamada_t@gmail.com',
-            'password'=> 12345678,
-            'authority'=> 3,
-            'is_show'=> true,
         ];
-        DB::table('users') -> insert($param);
+        DB::table('users')->insert($param);
 
-        $param=[
+        $param = [
 
-            'name'=> '徳島　太郎',
-            'nickname'=> 'やまちゃん',
-            'email'=> 'kokushima_t@gmail.com',
-            'password'=> 12345678,
-            'authority'=> 2,
-            'is_show'=>  true,
+            'name' => '徳島　太郎',
+            'nickname' => 'やまちゃん',
+            'email' => 'kokushima_t@gmail.com',
+            'password' => 12345678,
+            'authority' => 2,
+            'is_show' =>  true,
+            'created_at' => date('Y-m-d H:i:s'),
         ];
-        DB::table('users') -> insert($param);
+        DB::table('users')->insert($param);
 
-        $param=[
+        $param = [
 
-            'name'=> '徳島　次郎',
-            'nickname'=> '次郎',
-            'email'=> 'kokushima_j@gmail.com',
-            'password'=> 12345678,
-            'authority'=> 1,
-            'is_show'=>  true,
+            'name' => '徳島　次郎',
+            'nickname' => '次郎',
+            'email' => 'kokushima_j@gmail.com',
+            'password' => 12345678,
+            'authority' => 1,
+            'is_show' =>  true,
+            'created_at' => date('Y-m-d H:i:s'),
         ];
-        DB::table('users') -> insert($param);
+        DB::table('users')->insert($param);
     }
 }
