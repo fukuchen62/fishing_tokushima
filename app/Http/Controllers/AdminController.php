@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\DB;
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
-class HelloController extends Controller
+class AdminController extends Controller
 {
 
-    public function index(Request $request)
+    public function newsSearch(Request $request)
     {
         // クライアントから検索条件(s)を取得する
         $s = "";
@@ -78,7 +78,10 @@ class HelloController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('hello.index', $data);
+        // return view('hello.index', $data);
+
+        // リダイレクトでルート名を呼び出し
+        return redirect()->route('back_news');
     }
 
     /**
