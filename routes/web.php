@@ -31,9 +31,9 @@ Route::get('main/page_shop', [App\Http\Controllers\MainController::class, 'pageS
 
 
 // Main2関連
-Route::get('main2/search_fish', 'App\Http\Controllers\Main2Controller@searchFish');
+Route::get('search_fish', 'App\Http\Controllers\Main2Controller@searchFish');
 
-Route::get('main2/search_plan', 'App\Http\Controllers\Main2Controller@searchPlan');
+Route::get('search_plan', 'App\Http\Controllers\Main2Controller@searchPlan');
 
 //Admin関連（news分)
 

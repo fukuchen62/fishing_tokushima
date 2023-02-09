@@ -13,9 +13,9 @@
 
     <table>
         <tr>
-            <th>id</th>
+            <th>体験プラン</th>
         </tr>
-        @foreach ($items as $item )
+        @foreach ($plans as $item )
         <tr>
             <td>{{ $item ->getData() }}</td>
         </tr>
