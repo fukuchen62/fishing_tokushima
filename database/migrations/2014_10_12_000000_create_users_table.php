@@ -24,7 +24,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->boolean('is_show')->default(1);
             $table->timestamps();
-            $table->timestamp('deleted_at')->useCurrent();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

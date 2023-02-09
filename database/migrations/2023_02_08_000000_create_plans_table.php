@@ -22,9 +22,11 @@ return new class extends Migration
             $table->integer('level')->nullable(false)->default(1);
             $table->integer('spot_id')->nullable(false)->default(0);
             $table->integer('fish_id')->nullable(false)->default(0);
-            $table->text('flow')->nullable(false);
-            $table->string('eye_catch', 200);
-            $table->string('thumbnail', 200);
+
+            $table->text('flow')->nullable();
+            $table->string('eye_catch', 200)->nullable();
+            $table->string('thumbnail', 200)->nullable();
+
             $table->boolean('is_show')->nullable(false)->default(true);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();

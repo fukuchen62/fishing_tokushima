@@ -15,25 +15,25 @@ return new class extends Migration
     {
         Schema::create('evacuations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50)->nullable(false);
-            $table->string('city_id',20)->nullable(false);
-            $table->string('address',200)->nullable(false);
-            $table->string('longitude',20);
-            $table->string('latitude',20);
-            $table->string('img1',200);
-            $table->string('img2',200);
-            $table->string('img3',200);
-            $table->string('img4',200);
-            $table->string('img5',200);
-            $table->string('img6',200);
-            $table->string('img7',200);
-            $table->string('img8',200);
-            $table->string('img9',200);
-            $table->string('img9',200);
-            $table->string('tel',20);
-            $table->string('classification',20);
-            $table->string('disaster',200);
-            $table->string('memo',200);
+            $table->string('name', 50)->nullable(false);
+            $table->integer('city_id')->nullable(false)->default(0);
+            $table->string('address', 200)->nullable(false);
+            $table->string('longitude', 20)->nullable();
+            $table->string('latitude', 20)->nullable();
+            $table->string('img1', 200)->nullable();
+            $table->string('img2', 200)->nullable();
+            $table->string('img3', 200)->nullable();
+            $table->string('img4', 200)->nullable();
+            $table->string('img5', 200)->nullable();
+            $table->string('img6', 200)->nullable();
+            $table->string('img7', 200)->nullable();
+            $table->string('img8', 200)->nullable();
+            $table->string('img9', 200)->nullable();
+            $table->string('img10', 200)->nullable();
+            $table->string('tel', 20)->nullable();
+            $table->string('classification', 20)->nullable();
+            $table->string('disaster', 200)->nullable();
+            $table->string('memo', 200)->nullable();
         });
     }
 
@@ -44,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uevacuations');
+        Schema::dropIfExists('evacuations');
     }
 };
