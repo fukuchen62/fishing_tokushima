@@ -23,9 +23,9 @@ return new class extends Migration
             $table->integer('authority')->nullable(false);
             $table->rememberToken();
             $table->boolean('is_show')->default(1);
-            // $table->timestamps();
-            $table->timestamp('created_at')->nullable(false);
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
+            // $table->timestamp('created_at')->nullable(false);
+            // $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
         });
     }
