@@ -25,6 +25,7 @@ class PlansTableSeeder extends Seeder
             同じ釣り方でイワシも釣れるので是非挑戦してみては
             いかがでしょうか',
             'level' => '1',
+            'city_id' => '1',
             'fish_id' => '1',
             'flow' => '①準備物
             釣り竿は２～３ｍ程のサビキ用ロッドで
@@ -57,6 +58,7 @@ class PlansTableSeeder extends Seeder
             ウキの動きで分かりやすいため、非常に効率がいい釣り方です。
             こちらでは初心者向けのアジをターゲットに紹介していきましょう。',
             'level' => '1',
+            'city_id' => '2',
             'fish_id' => '1',
             'flow' => '①準備物
             釣り竿は4ｍ～5ｍの磯竿に小型のスピニングリールを使用します。
