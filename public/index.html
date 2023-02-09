@@ -1,13 +1,293 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>釣っとく</title>
+    <meta name="format-detection" content="telephone=no">
+    <!-- faviconタグ -->
+    <link rel="icon" href="" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+
+    <title></title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.3.min.js"></script>
+    <meta name="" content="">
+
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xan8yzi',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+
 </head>
+
 <body>
-    <h1>釣っとく</h1>
-    <p>建設中・・・</p>
+    <header id="header" class="flex">
+        <div class="header__box--group"><img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="logo__img">
+            <!-- nav -->
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger flex">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header__box">
+            <div class="sidemenu">
+                <img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="logo__img">
+                <div class="sidemenu__box flex">
+                    <div class="sidemenu__box--group flex">
+                        <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                        <a href="" class="sidemenu__box--discription">入門知識</a>
+                    </div>
+                    <div class="sidemenu__box--group flex">
+                        <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                        <a href="" class="sidemenu__box--discription">徳島の魚</a>
+                    </div>
+                    <div class="sidemenu__box--group flex">
+                        <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                        <a href="" class="sidemenu__box--discription">釣りスポット</a>
+                    </div>
+                </div>
+                <div class="sidemenu__box flex">
+                    <div class="sidemenu__box--group flex">
+                        <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                        <a href="" class="sidemenu__box--discription">体験プラン</a>
+                    </div>
+                    <div class="sidemenu__box--group flex">
+                        <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                        <a href="" class="sidemenu__box--discription">釣具店</a>
+                    </div>
+                    <div class="sidemenu__box--group flex">
+                        <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                        <a href="" class="sidemenu__box--discription">マイページ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div>
+            キービジュアル
+        </div>
+        <section>
+            <h2>釣っとく！とは</h2>
+            <div>休日や週末に---</div>
+        </section>
+
+
+        <section>
+            <h2>入門知識</h2>
+            <div>
+                <div>syasin</div>
+                <div>text</div>
+            </div>
+            <div>
+                <div>syasin</div>
+                <div>text</div>
+            </div>
+            <div>
+                <div>syasin</div>
+                <div>text</div>
+            </div>
+            <div>
+                <div>syasin</div>
+                <div>text</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>釣りスポット</h2>
+            <div>東部</div><!--botan -->
+            <div>南部</div><!--botan -->
+        </section>
+
+        <section>
+            <h2>体験プラン</h2>
+            <div>
+                <div>プラン名</div>
+                <div>概要</div>
+                <div>画像</div>
+            </div>
+
+            <div>
+                <div>プラン名</div>
+                <div>概要</div>
+                <div>画像</div>
+            </div>
+
+            <div>
+                <div>プラン名</div>
+                <div>概要</div>
+                <div>画像</div>
+            </div>
+            <a href=""> もっと見る</a>
+        </section>
+
+        <section>
+            <h2>徳島で釣れる魚</h2>
+            <div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+                <div>
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>infomation</h2>
+            <div>
+                <div>
+                    <div>
+                        日付
+                    </div>
+                    <div><a href="">タイトル</a></div>
+                </div>
+                <div>
+                    <div>
+                        日付
+                    </div>
+                    <div><a href="">タイトル</a></div>
+                </div>
+                <div>
+                    <div>
+                        日付
+                    </div>
+                    <div><a href="">タイトル</a></div>
+                </div>
+                <div>
+                    <div>
+                        日付
+                    </div>
+                    <div><a href="">タイトル</a></div>
+                </div>
+            </div>
+            <a href=""> もっと見る</a>
+        </section>
+        <div><span>トップに戻る</span></div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__box  flex">
+            <ul>
+                <li>入門知識</li>
+                <li>徳島の魚</li>
+                <li>体験プラン</li>
+                <li>釣具店</li>
+                <li>避難場所</li>
+            </ul>
+            <ul>
+                <li>釣りスポット</li>
+                <li>東部</li>
+                <li>南部</li>
+            </ul>
+            <ul>
+                <li>マイページ</li>
+                <li>プライバシーポリシー</li>
+            </ul>
+        </div>
+        <ul class="sns flex">
+            <li>twitter</li>
+            <li>fasebook</li>
+            <li>instaglam</li>
+        </ul>
+        <p>copylight@turitoku.com</p>
+    </footer>
+
+
+
 </body>
+
+<script src="assets/js/main.js"></script>
 </html>
+
+
+<!-- カードの構造 -->
+<div>
+    <img src="" alt="">
+    <div>
+        <h3></h3>
+        <p>text</p>
+    </div>
+</div>
+<!-- /カードの構造 -->
