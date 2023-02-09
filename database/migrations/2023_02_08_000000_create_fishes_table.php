@@ -37,7 +37,7 @@ return new class extends Migration
             $table->boolean('is_show')->nullable(false)->default(true);
 
             $table->timestamps();
-            $table->timestamp('deleted_at')->default(null);
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
