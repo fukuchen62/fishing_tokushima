@@ -13,7 +13,7 @@
     <table>
         <tr>
             <th>魚一覧</th>
-            @foreach($items as $item)
+            @foreach($fishes as $item)
         </tr>
         <tr>
             <td>{{$item->getData()}}</td>
