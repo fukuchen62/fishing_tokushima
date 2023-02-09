@@ -30,7 +30,10 @@ Route::get('main/single_area', [App\Http\Controllers\MainController::class, 'sin
 Route::get('main/page_shop', [App\Http\Controllers\MainController::class, 'pageShop'])->name('page_shop');
 
 
+// Main2関連
+Route::get('main2/search_fish', 'App\Http\Controllers\Main2Controller@searchFish');
 
+Route::get('main2/search_plan', 'App\Http\Controllers\Main2Controller@searchPlan');
 
 //Admin関連（news分)
 
@@ -51,5 +54,3 @@ Route::get('back/delete', 'App\Http\Controllers\AdminController@delete');
 Route::get('back/delete', 'App\Http\Controllers\AdminController@remove');
 
 Route::post('back/delete', 'App\Http\Controllers\AdminController@remove');
-
-
