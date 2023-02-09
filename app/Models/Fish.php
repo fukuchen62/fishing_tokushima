@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Fish extends Model
 {
     use HasFactory;
+
+
+    // スコープ
+    // 季節、難易度
+
+
 }

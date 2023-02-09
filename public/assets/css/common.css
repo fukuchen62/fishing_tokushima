@@ -1,7 +1,8 @@
 body{
-    width: 1200px;
+    text-align: center;
+    width: 599px;
     height: auto;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     font-family: "fot-tsukuardgothic-std", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -9,14 +10,30 @@ body{
     color: #000000;
 }
 
-section{
+.section{
+    padding: 0px;
+    margin: 0px;
 
 }
 
+/* h1 */
 .pagetitle{
     font-size: 2.5rem;
     font-weight: 600;
+    margin-top: 60px;
 }
+@media screen and (min-width: 600px ) and (max-width: 768px) {
+    .pagetitle{
+        margin-top: 80px;
+    }
+}
+
+/* h2 */
+.section__title{
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
 
 
 .card{
@@ -36,8 +53,152 @@ section{
     color: #51656F;
 }
 
+/* ヘッダー */
+#header{
+justify-content: end;
+}
+
+.sidemenu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100vw);
+    transition: all .3s linear;
+}
+.logo__img{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    width: 250px;
+    height: 60px;
+}
+header__box
+.header__box--group{
+    width: 100vw;
+    height: 100px;
+    background: #fff;
+}
+
+.sidemenu__slide{
+background: rgba(48, 173, 209, 0.91);
+    transform: translateX(0);
+}
+.sidemenu__box{
+    margin: 20px;
+    background-color: #fff;
+}
+.sidemenu__box--group{
+flex-flow: column;
+margin-left: 20px;
+}
+.sidemenu__box--discription{
+    display:inline-block;
+    margin-top: 20px;
+}
+.sidemenu__box--img{
+    width: 136px;
+    height: 136px;
+}
+
+
+/* フッター */
+.footer__box{
+    padding: 45px 0 0 0;
+    margin-bottom: 70px;
+    justify-content: space-around;
+}
+.footer__box>ul>li{
+    margin: 10px 0;
+}
+.sns{
+justify-content: center;
+}
+.sns li{
+    margin: 30px;
+}
+/* ul>li::before{
+
+} */
+
+/* ハンバーガーメニュー */
+.hamburger{
+    position: fixed;
+    background: #D54884;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+.hamburger span{
+display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 5px;
+    background: #fff;
+    width: 45%;
+}
+.hamburger span:nth-of-type(1) {
+    top: 13px;
+}
+.hamburger span:nth-of-type(2) {
+    top: 19px;
+}
+.hamburger span:nth-of-type(3) {
+    top: 25px;
+}
+.hamburger span:nth-of-type(3)::after {
+    content: "Menu";
+    /*3つ目の要素のafterにMenu表示を指定*/
+    position: absolute;
+    top: 5px;
+    left: -2px;
+    color: #fff;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+.hamburger.active span:nth-of-type(1) {
+    top: 14px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+.hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-of-type(3) {
+    top: 26px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+.hamburger.active span:nth-of-type(3)::after {
+    content: "Close";
+    /*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+    top: 5px;
+    left: 4px;
+}
+
 .flex {
     display: flex;
 }
 
+.none{
+    display:none;
+}
 .btn {}
