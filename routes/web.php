@@ -28,3 +28,28 @@ Route::get('main/archive_area', [App\Http\Controllers\MainController::class, 'ar
 Route::get('main/single_area', [App\Http\Controllers\MainController::class, 'singleArea'])->name('single_area');
 
 Route::get('main/page_shop', [App\Http\Controllers\MainController::class, 'pageShop'])->name('page_shop');
+
+
+
+
+//Admin関連（news分)
+
+Route::get('back', 'App\Http\Controllers\AdminController@newsShow');
+
+Route::get('back/newsEntry', 'App\Http\Controllers\AdminController@newsEntry');
+
+Route::post('back/newsEntry', 'App\Http\Controllers\AdminController@create');
+
+
+Route::get('back/newsEdit', 'App\Http\Controllers\AdminController@newsEdit');
+
+Route::post('back/newsEdit', 'App\Http\Controllers\AdminController@update');
+
+
+Route::get('back/delete', 'App\Http\Controllers\AdminController@delete');
+
+Route::get('back/delete', 'App\Http\Controllers\AdminController@remove');
+
+Route::post('back/delete', 'App\Http\Controllers\AdminController@remove');
+
+
