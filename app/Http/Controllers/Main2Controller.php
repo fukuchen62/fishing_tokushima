@@ -2,22 +2,19 @@
 // 名前空間
 namespace App\Http\Controllers;
 
-// クラスをインポートする
-//クライアントからのリクエストを受信するためのクラス
-use Illuminate\Http\Request;
-
-//クライアントへレスポンスするためのクラス
-use Illuminate\Http\Reponse;
-
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
+
+// モデルを引用する
+use App\Models\Plan;
+use App\Models\Fish;
+
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
 class Main2Controller extends Controller
 {
-
-    public function serchPlan(Request $request)
+    public function serchPlan()
     {
         $items = Plan::all();
 
