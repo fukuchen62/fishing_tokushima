@@ -10,7 +10,7 @@
 
 <body>
     <h1>徳島で釣れる魚一覧</h1>
-    <table>
+    {{-- <table>
         <tr>
             <th>魚一覧</th>
             @foreach($fishes as $item)
@@ -19,7 +19,7 @@
             <td>{{$item->getData()}}</td>
         </tr>
         @endforeach
-    </table>
+    </table> --}}
 </body>
 
 </html>
