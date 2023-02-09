@@ -13,5 +13,9 @@ class Fish extends Model
     // スコープ
     // 季節、難易度
 
-
+    public function getData()
+    {
+        $ret = $this->id . ':' . $this->name;
+        return $ret;
+    }
 }
