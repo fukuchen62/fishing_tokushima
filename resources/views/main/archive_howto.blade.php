@@ -7,6 +7,15 @@
     <title>test</title>
 </head>
 <body>
-    <h1>aaaaaaaaaa</h1>
+    <h1>入門知識一覧</h1>
+    <table>
+        <tr>
+            @foreach($knowledges as $item)
+        </tr>
+        <tr>
+            <td>{{$item->getData()}}</td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 </html>
