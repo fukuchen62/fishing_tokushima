@@ -63,4 +63,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  * テスト用
  * 福島
  */
-Route::get('test/newslist', [App\Http\Controllers\TestController::class, ''])->name('newslist');
+Route::get(
+    'test/newslist',
+    [App\Http\Controllers\TestController::class, 'newsList']
+)->name('newslist');
+
+/**
+ * ログアウト
+ * 福島
+ */
+Route::get(
+    'test/logout',
+    [App\Http\Controllers\TestController::class, 'logout']
+)->name('logout');
