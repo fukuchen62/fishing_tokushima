@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
 
 Route::get('main/archive_howto', [App\Http\Controllers\MainController::class, 'archiveHowto'])->name('archive_howto');
 
@@ -55,6 +57,10 @@ Route::get('back/delete', 'App\Http\Controllers\AdminController@remove');
 
 Route::post('back/delete', 'App\Http\Controllers\AdminController@remove');
 
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/**
+ * テスト用
+ * 福島
+ */
+Route::get('test/newslist', [App\Http\Controllers\TestController::class, ''])->name('newslist');
