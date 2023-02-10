@@ -54,3 +54,7 @@ Route::get('back/delete', 'App\Http\Controllers\AdminController@delete');
 Route::get('back/delete', 'App\Http\Controllers\AdminController@remove');
 
 Route::post('back/delete', 'App\Http\Controllers\AdminController@remove');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
