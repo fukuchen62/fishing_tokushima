@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CitiesTableSeeder::class);
         $this->call(FacilitiesTableSeeder::class);
         $this->call(fishTableSeeder::class);
-        $this->call(FishesTableSeeder::class);
         $this->call(KnowledgeTableSeeder::class);
         $this->call(KnowledgesTableSeeder::class);
         $this->call(KnowledgeTypesTableSeeder::class);
