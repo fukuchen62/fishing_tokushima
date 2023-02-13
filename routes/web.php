@@ -35,14 +35,14 @@ Route::get('shops_list', [App\Http\Controllers\ShopController::class, 'shopList'
 
 
 // Fish関連
-Route::get('search_fish', 'App\Http\Controllers\FishController@searchFish');
+Route::get('fish_list', [App\Http\Controllers\FishController::class, 'searchFish'])->name('fish_list');
 
 // Plan関連
-Route::get('search_plan', 'App\Http\Controllers\PlanController@searchPlan');
+Route::get('plans_list', [App\Http\Controllers\PlanController::class, 'searchPlan'])->name('plans_list');
 
 // Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
 
-Route::get('single_plan', 'App\Http\Controllers\PlanController@singlePlan');
+Route::get('plans_info', [App\Http\Controllers\PlanController::class, 'singlePlan'])->name('plans_info');
 
 //Admin関連（spot分)
 
