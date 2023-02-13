@@ -11,6 +11,22 @@ class Knowledge extends Model
 
     protected $guarded = array('id');
 
+    public static $rules = array(
+        'category_id' => 'required',
+        'title' => 'required',
+        'thumbnail' => 'required',
+        'is_show' => 'required'
+    );
+
+// 日本語エラーメッセージ
+public static $messages = [
+    'category_id.required' => 'カテゴリーIDは必ず入力してください。',
+    'title.required' => 'タイトルは必ず入力してください。',
+    'thumbnail.required' => 'サムネ画像は必ず入力してください。',
+    'is_show.required' => '表示フラグは必ず入力してください。'
+
+];
+
     /**
      * getData
      *
@@ -30,7 +46,7 @@ class Knowledge extends Model
     /**
      * knowlegeType
      *指定メンバーに属する1つの記事を取得する
-     
+
      * @return void
      */
     public function knowledgeType()
@@ -40,7 +56,7 @@ class Knowledge extends Model
     /**
      * KnowlegeTypes
      *指定メンバーに属するすべて（複数）の記事を取得する
-     
+
      * @return void
      */
     public function knowledgeTypes()
