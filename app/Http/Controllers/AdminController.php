@@ -100,6 +100,12 @@ class AdminController extends Controller
         return view('cms.back_news_edit', ['form' => $news]);
     }
 
+    public function newsRemove(Request $request)
+    {
+        News::find($request->id)->delete();
+        return redirect('news_show');
+    }
+
 
 
  // Knowledgeテーブル関連
