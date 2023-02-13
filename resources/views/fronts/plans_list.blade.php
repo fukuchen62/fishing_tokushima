@@ -18,13 +18,13 @@
             <th>概要</th>
             <th>リンク</th>
         </tr>
-        @foreach ($plans as $item )
-        <tr>
-            <td>{{ $item -> eye_catch }}</td>
-            <td>{{ $item -> title }}</td>
-            <td>{{ $item -> overview }}</td>
-            <td><a href="./single_plan?id={{ $item -> id }}">リンク</a></td>
-        </tr>
+        @foreach ($plans as $item)
+            <tr>
+                <td>{{ $item->eye_catch }}</td>
+                <td>{{ $item->title }}</td>
+                <td>{{ $item->overview }}</td>
+                <td><a href="./plans_info?id={{ $item->id }}">リンク</a></td>
+            </tr>
         @endforeach
     </table>
 
