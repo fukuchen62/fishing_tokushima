@@ -32,10 +32,16 @@ Route::get('main/single_area', [App\Http\Controllers\SpotController::class, 'sin
 Route::get('main/page_shop', [App\Http\Controllers\ShopController::class, 'pageShop'])->name('page_shop');
 
 
-// Main2関連
-Route::get('search_fish', 'App\Http\Controllers\Main2Controller@searchFish');
+// Fish関連
+Route::get('search_fish', 'App\Http\Controllers\FishController@searchFish');
 
-Route::get('search_plan', 'App\Http\Controllers\Main2Controller@searchPlan');
+// Plan関連
+Route::get('search_plan', 'App\Http\Controllers\PlanController@searchPlan');
+
+Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
+
+Route::post('single_plan', 'App\Http\Controllers\PlanController@singlePlan');
+
 
 //Admin関連（news分)
 
