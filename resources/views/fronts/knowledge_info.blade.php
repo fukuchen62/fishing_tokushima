@@ -7,14 +7,24 @@
     <title>test</title>
 </head>
 <body>
-    <h1>singleHowto</h1>
-    <table>
+    <h1>記事詳細</h1>
+    <table border="1">
         <tr>
-            @foreach($knowledges as $item)
+            <th>タイトル&nbsp;</th>
+            <th>内容&nbsp;</th>
+            {{-- <th>釣り方&nbsp;</th>
+            <th>周辺施設&nbsp;</th>
+            <th>近くの病院&nbsp;</th>
+            <th>避難場所&nbsp;</th> --}}
         </tr>
-        <tr>
-            <td>{{$item->getData()}}</td>
-        </tr>
+        @foreach ($knowledges as $item)
+            <tr>
+                <td>{{ $item->title }}</td>
+                <td>{{ $item->content }}</td>
+                
+
+                {{-- <td><a href="board/edit?id={{ $item->id }}">編集</a></td> --}}
+            </tr>
         @endforeach
     </table>
 </body>
