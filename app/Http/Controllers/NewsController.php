@@ -13,7 +13,7 @@ use App\Models\Evacuation;
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
-class InfoController extends Controller
+class NewsController extends Controller
 {
 
     // newsテーブル関連
@@ -39,7 +39,7 @@ class InfoController extends Controller
         return view('info/single_info', $data);
     }
 
-       // evacuationテーブル関連
+    // evacuationテーブル関連
     public function pageEscape()
     {
         $items = Evacuation::all();
