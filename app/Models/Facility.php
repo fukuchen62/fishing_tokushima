@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Facility extends Model
 {
     use HasFactory;
+
+    /**
+     * getData
+     *
+     * @return void
+     */
+    public function getData()
+    {
+        $ret = $this->id . ':' . $this->name;
+        return $ret;
+    }
 }
