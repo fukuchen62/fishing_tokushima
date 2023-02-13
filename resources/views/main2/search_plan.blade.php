@@ -14,10 +14,12 @@
     <table>
         <tr>
             <th>体験プラン</th>
+            <th>リンク</th>
         </tr>
         @foreach ($plans as $item )
         <tr>
             <td>{{ $item ->getData() }}</td>
+            <td><a href="./single_plan?id={{ $item -> id }}">リンク</a></td>
         </tr>
         @endforeach
     </table>
