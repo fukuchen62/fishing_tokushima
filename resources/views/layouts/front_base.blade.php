@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="description"
-        content="徳島県民vs他県民対抗！様々なソフトのショートカットコマンドを楽しく練習できるアプリです。徳島出身のかわいいキャラクター・阿波ショー子とすだちのおっちゃん(妖精)が、業務効率改善のためアプリで特訓を行います。徳島県を中心としたIT関連情報も発信しています。">
-    <meta name="keywords"
-        content="徳島,阿波,ショートカット,ショートカットキー,クイズ,ゲーム,キーボード,コマンド,記事,業務効率化,業務改善,Office,Excel,word,PowerPoint,Outlook,VSC,Illustrator,Photoshop,IT,デジタル,生産性向上、阿波踊り,演舞場,学習,記憶,コピー,切り取り,貼り付け,Ctrl,Alt,Shift,Space,ショー子,すだちのおっちゃん,tokushima,game,shortcut">
+    <meta name="description" content="ディスクリプションを記入してください">
+    <meta name="keywords" content="徳島,阿波">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,39 +16,39 @@
 
     <title>@yield('title')</title>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
     @yield('css')
 
     <!-- jquery -->
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
     <div class="wrapper">
-        <div id="drawerBtn" class="drawer_btn">
+        {{-- <div id="drawerBtn" class="drawer_btn">
             <div id="hamburger" class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        </div>
+        </div> --}}
         <!-- .drawer_btn -->
-        <div id="drawer" class="drawer">
+        {{-- <div id="drawer" class="drawer">
             <nav class="main_nav_wrapper">
                 <ul class="main_nav">
                     <li>
-                        <a href="{{ route('front.landing') }}">あわ☆しょーと！について</a>
+                        <a href="{{ route('newslist') }}">あわ☆しょーと！について</a>
                     </li>
                     <li>
-                        <a href="{{ route('front.article') }}">とくしまIT情報</a>
+                        <a href="{{ route('newslist') }}">とくしまIT情報</a>
                     </li>
                     <li>
-                        <a href="{{ route('front.shortcut_list') }}">ショートカット一覧</a>
+                        <a href="{{ route('newslist') }}">ショートカット一覧</a>
                     </li>
                     <li>
-                        <a href="{{ route('front.about_us') }}">私たちについて</a>
+                        <a href="{{ route('newslist') }}">私たちについて</a>
                     </li>
                 </ul>
                 <div class="main_nav_button_layout">
@@ -60,7 +58,7 @@
                     </a>
                 </div>
             </nav>
-        </div>
+        </div> --}}
         <!-- #drawer -->
         <div class="wrapper">
             @include('includes.front_header')
@@ -82,8 +80,8 @@
         </div> <!-- .pagetop -->
 
 
-        <script src="{{ asset('js/common.js') }}"></script>
-        <script src="{{ asset('js/audio.js') }}"></script>
+        <script src="{{ asset('assets/js/common.js') }}"></script>
+        <script src="{{ asset('assets/js/audio.js') }}"></script>
 
         @yield('js')
 </body>

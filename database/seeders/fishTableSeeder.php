@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-class FishesTableSeeder extends Seeder
+class FishTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -39,7 +39,7 @@ class FishesTableSeeder extends Seeder
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
-        DB::table('fishes')->insert($param);
+        DB::table('fish')->insert($param);
 
         $param = [
             'name' => 'イワシ（：鰯）',
@@ -64,6 +64,6 @@ class FishesTableSeeder extends Seeder
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
-        DB::table('fishes')->insert($param);
+        DB::table('fish')->insert($param);
     }
 }

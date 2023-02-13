@@ -20,13 +20,14 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(CitiesTableSeeder::class);
         $this->call(FacilitiesTableSeeder::class);
-        $this->call(FishesTableSeeder::class);
+        $this->call(FishTableSeeder::class);
+        $this->call(KnowledgeTableSeeder::class);
         $this->call(KnowledgesTableSeeder::class);
         $this->call(KnowledgeTypesTableSeeder::class);
         $this->call(NewsTableSeeder::class);
         $this->call(PlansTableSeeder::class);
         $this->call(ShopsTableSeeder::class);
         $this->call(SpotsTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
+        // $this->call(UsersTableSeeder::class);
     }
 }
