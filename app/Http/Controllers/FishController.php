@@ -21,6 +21,6 @@ class FishController extends Controller
             'fishes' => $items,
         ];
 
-        return view('main2.search_fish', $data);
+        return view('fronts.fish_list', $data);
     }
 }
