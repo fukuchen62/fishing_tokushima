@@ -19,17 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('main/archive_howto', [App\Http\Controllers\MainController::class, 'archiveHowto'])->name('archive_howto');
+Route::get('main/archive_howto', [App\Http\Controllers\KnowledgeController::class, 'archiveHowto'])->name('archive_howto');
 
-Route::get('main/single_howto', [App\Http\Controllers\MainController::class, 'singleHowto'])->name('single_howto');
+Route::get('main/single_howto', [App\Http\Controllers\KnowledgeController::class, 'singleHowto'])->name('single_howto');
 
-Route::get('main/archive_spot', [App\Http\Controllers\MainController::class, 'archiveSpot'])->name('archive_spot');
+Route::get('main/archive_spot', [App\Http\Controllers\SpotController::class, 'archiveSpot'])->name('archive_spot');
 
-Route::get('main/archive_area', [App\Http\Controllers\MainController::class, 'archiveArea'])->name('archive_area');
+Route::get('main/archive_area', [App\Http\Controllers\SpotController::class, 'archiveArea'])->name('archive_area');
 
-Route::get('main/single_area', [App\Http\Controllers\MainController::class, 'singleArea'])->name('single_area');
+Route::get('main/single_area', [App\Http\Controllers\SpotController::class, 'singleArea'])->name('single_area');
 
-Route::get('main/page_shop', [App\Http\Controllers\MainController::class, 'pageShop'])->name('page_shop');
+Route::get('main/page_shop', [App\Http\Controllers\ShopController::class, 'pageShop'])->name('page_shop');
 
 
 // Main2関連
@@ -76,3 +76,6 @@ Route::get(
     'test/logout',
     [App\Http\Controllers\TestController::class, 'logout']
 )->name('logout');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
