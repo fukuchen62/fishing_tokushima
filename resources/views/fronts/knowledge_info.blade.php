@@ -8,5 +8,14 @@
 </head>
 <body>
     <h1>singleHowto</h1>
+    <table>
+        <tr>
+            @foreach($knowledges as $item)
+        </tr>
+        <tr>
+            <td>{{$item->getData()}}</td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 </html>

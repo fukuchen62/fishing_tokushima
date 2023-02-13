@@ -32,4 +32,19 @@ class KnowledgeController extends Controller
         // クライアントに戻す
         return view('fronts.knowledge_list', $data);
     }
+
+    public function knowledgeInfo(Request $request)
+    {
+        $items = Knowledge::all();
+
+        // テンプレートファイルに渡すデータ（連想配列）
+        $data = [
+            'knowledges' => $items,
+        ];
+
+        // viewでhelloフォルダにあるindex.phpを呼び出し、
+        // $dataを渡して、関連Webページを作成して、
+        // クライアントに戻す
+        return view('fronts.knowledge_info', $data);
+    }
 }

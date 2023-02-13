@@ -8,7 +8,7 @@
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
         <li><a href= "http://localhost/fishing_tokushima/public/cms" >HOME</a></li>
-        <li><a href= "http://localhost/fishing_tokushima/public/cms/newsEntry">新規登録</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/cms/news_entry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
@@ -18,7 +18,7 @@
     <tr><th>修正</th><th>ID</th><th>タイプ</th><th>タイトル</th></tr>
     @foreach ($items as $item)
         <tr>
-            <td><a href="cms/newsEdit?id={{ $item->id }}">編集</a></td>
+            <td><a href="cms/news_edit?id={{ $item->id }}">編集</a></td>
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->title}}</td>

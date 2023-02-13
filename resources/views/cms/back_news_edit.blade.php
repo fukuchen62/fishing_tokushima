@@ -8,7 +8,7 @@
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
         <li><a href= "http://localhost/fishing_tokushima/public/cms" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/cms/newsEntry">新規登録</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/cms/news_entry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
@@ -24,7 +24,7 @@
     </div>
     @endif
 
-<form action="newsEdit" method="post">
+<form action="news_edit" method="post">
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
