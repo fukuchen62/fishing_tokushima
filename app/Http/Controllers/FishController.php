@@ -11,7 +11,7 @@ use App\Models\Fish;
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
-class PlanController extends Controller
+class FishController extends Controller
 {
     public function searchFish()
     {
