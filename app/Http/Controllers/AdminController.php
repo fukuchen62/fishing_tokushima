@@ -68,7 +68,7 @@ class AdminController extends Controller
         return view('cms.back_news_new');
     }
 
-    public function create(Request $request)
+    public function newsCreate(Request $request)
     {
         $this->validate($request, news::$rules);
         $news = new news();
@@ -84,7 +84,7 @@ class AdminController extends Controller
         return view('cms.back_news_edit', ['form' => $news]);
     }
 
-    public function update(Request $request)
+    public function newsUpdate(Request $request)
     {
         $this->validate($request, News::$rules);
         $news = News::find($request->id);
@@ -94,7 +94,7 @@ class AdminController extends Controller
         return redirect('/cms');
     }
 
-    public function delete(Request $request)
+    public function newsDelete(Request $request)
     {
         $news = News::find($request->id);
         return view('cms.back_news_edit', ['form' => $news]);
