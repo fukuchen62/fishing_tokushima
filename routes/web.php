@@ -67,6 +67,15 @@ Route::post('back/delete', 'App\Http\Controllers\AdminController@remove');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Info関連(news)
+Route::get('archive_info', 'App\Http\Controllers\InfoController@archiveInfo');
+
+Route::get('single_info', 'App\Http\Controllers\InfoController@singleInfo');
+
+// Info関連(evacuation)
+Route::get('page_escape', 'App\Http\Controllers\InfoController@pageEscape');
+
+
 /**
  * テスト用
  * 福島
