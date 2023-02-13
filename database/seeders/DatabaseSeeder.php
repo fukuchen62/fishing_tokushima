@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FacilitiesTableSeeder::class);
         $this->call(FishTableSeeder::class);
         $this->call(KnowledgeTableSeeder::class);
-        $this->call(KnowledgesTableSeeder::class);
         $this->call(KnowledgeTypesTableSeeder::class);
         $this->call(NewsTableSeeder::class);
         $this->call(PlansTableSeeder::class);
