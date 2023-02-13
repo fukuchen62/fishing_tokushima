@@ -35,17 +35,16 @@ class PlanController extends Controller
 
     public function singlePlan(Request $request)
     {
-        $input = '';
+        $id = '';
 
         // inputが入力されていたら、、、
-        if (isset($request->input)) {
-            $input = $request->input;
+        if (isset($request->id)) {
+            $id = $request->id;
         }
 
-        $item = Plan::find($input);
+        $item = Plan::find($id);
 
         $data = [
-            'input' => $input,
             'item' => $item,
         ];
 
