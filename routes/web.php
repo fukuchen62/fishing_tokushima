@@ -19,19 +19,19 @@ Route::get('/', function () {
 
 Auth::routes();
 // 入門知識関連
-Route::get('main/archive_howto', [App\Http\Controllers\KnowledgeController::class, 'archiveHowto'])->name('archive_howto');
+Route::get('knowledge_list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledge_list');
 
-Route::get('main/single_howto', [App\Http\Controllers\KnowledgeController::class, 'singleHowto'])->name('single_howto');
+Route::get('knowledge_info', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledge_info');
 
 // 釣りスポット関連
-Route::get('main/archive_spot', [App\Http\Controllers\SpotController::class, 'archiveSpot'])->name('archive_spot');
+Route::get('spots_list', [App\Http\Controllers\SpotController::class, 'spotList'])->name('spots_list');
 
-Route::get('main/archive_area', [App\Http\Controllers\SpotController::class, 'archiveArea'])->name('archive_area');
+// Route::get('main/archive_area', [App\Http\Controllers\SpotController::class, 'archiveArea'])->name('archive_area');
 
-Route::get('main/single_area', [App\Http\Controllers\SpotController::class, 'singleArea'])->name('single_area');
+Route::get('spots_info', [App\Http\Controllers\SpotController::class, 'spotInfo'])->name('spots_info');
 
 // 釣具屋関連
-Route::get('main/page_shop', [App\Http\Controllers\ShopController::class, 'pageShop'])->name('page_shop');
+Route::get('shops_list', [App\Http\Controllers\ShopController::class, 'shopList'])->name('shops_list');
 
 
 // Fish関連

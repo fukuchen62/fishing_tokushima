@@ -29,10 +29,25 @@ class SpotController extends Controller
             'spots' => $items,
         ];
 
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
+        // viewでfrontsフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
         return view('fronts.spots_list', $data);
+    }
+
+    public function spotInfo(Request $request)
+    {
+        $items = Spot::all();
+
+        // テンプレートファイルに渡すデータ（連想配列）
+        $data = [
+            'spots' => $items,
+        ];
+
+        // viewでfrontsフォルダにあるindex.phpを呼び出し、
+        // $dataを渡して、関連Webページを作成して、
+        // クライアントに戻す
+        return view('fronts.spots_info', $data);
     }
 
     public function facilityList(Request $request)
@@ -44,7 +59,7 @@ class SpotController extends Controller
             'facilities' => $items,
         ];
 
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
+        // viewでfrontsフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
         return view('fronts.facilities_list', $data);
@@ -59,7 +74,7 @@ class SpotController extends Controller
             'cities' => $items,
         ];
 
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
+        // viewでfrontsフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
         return view('fronts.cities_list', $data);
