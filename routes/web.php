@@ -40,9 +40,9 @@ Route::get('search_fish', 'App\Http\Controllers\FishController@searchFish');
 // Plan関連
 Route::get('search_plan', 'App\Http\Controllers\PlanController@searchPlan');
 
-Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
+// Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
 
-Route::post('single_plan', 'App\Http\Controllers\PlanController@singlePlan');
+Route::get('single_plan', 'App\Http\Controllers\PlanController@singlePlan');
 
 
 //Admin関連（news分)
