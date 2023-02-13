@@ -58,7 +58,7 @@ body{
 justify-content: end;
 }
 
-.header__box{
+.sidemenu{
     position: fixed;
     top: 0;
     right: 0;
@@ -72,7 +72,7 @@ justify-content: end;
     transform: translateX(100vw);
     transition: all .3s linear;
 }
-.logo__img{
+.logo__img,.header__logo{
     position: fixed;
     top: 20px;
     left: 20px;
@@ -81,21 +81,28 @@ justify-content: end;
     height: 60px;
 }
 header__box
-.header__box--group{
+.header__box{
     width: 100vw;
     height: 100px;
     background: #fff;
+    overflow: scroll;
 }
 
 .sidemenu__slide{
-background: rgba(48, 173, 209, 0.91);
+background: #30ADD1;
     transform: translateX(0);
 }
+
 .sidemenu__box{
-    margin: 20px;
     background-color: #fff;
+
+}
+.sidemenu__box--section{
+    margin: 20px;
+    /* background-color: #fff; */
 }
 .sidemenu__box--group{
+    display: inline-block;
 flex-flow: column;
 margin-left: 20px;
 }
@@ -104,9 +111,12 @@ margin-left: 20px;
     margin-top: 20px;
 }
 .sidemenu__box--img{
+    border-radius: 50%;
     width: 136px;
     height: 136px;
 }
+
+
 
 
 /* フッター */
