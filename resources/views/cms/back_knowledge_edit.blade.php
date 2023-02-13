@@ -7,8 +7,8 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/knowledge_Show" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/cms/knowledge_Entry">新規登録</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/knowledge_show" >HOME</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/cms/knowledge_entry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
@@ -24,7 +24,7 @@
     </div>
     @endif
 
-<form action="knowledge_Edit" method="post">
+<form action="knowledge_edit" method="post">
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
