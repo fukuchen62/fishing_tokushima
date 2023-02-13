@@ -54,6 +54,28 @@ Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
 
 Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
+//Admin関連（knowledge分)
+
+Route::get('knowledge_Show', 'App\Http\Controllers\AdminController@knowledgeShow');
+
+Route::get('cms/knowledge_Entry', 'App\Http\Controllers\AdminController@knowledgeEntry');
+
+Route::post('cms/knowledge_Entry', 'App\Http\Controllers\AdminController@knowledgecreate');
+
+
+
+Route::get('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
+
+Route::post('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
+
+
+Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeDelete');
+
+Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeRemove');
+
+Route::post('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeRemove');
+
+
 //Admin関連（news分)
 
 Route::get('cms', 'App\Http\Controllers\AdminController@newsShow');
