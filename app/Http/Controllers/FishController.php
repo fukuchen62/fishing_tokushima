@@ -2,6 +2,10 @@
 // 名前空間
 namespace App\Http\Controllers;
 
+// クラスをインポートする
+//クライアントからのリクエストを受信するためのクラス
+use Illuminate\Http\Request;
+
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
 
