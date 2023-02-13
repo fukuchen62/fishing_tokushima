@@ -58,7 +58,7 @@ body{
 justify-content: end;
 }
 
-.sidemenu{
+.header__box{
     position: fixed;
     top: 0;
     right: 0;
