@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 // 入門知識関連
-Route::get('main/archive_howto', [App\Http\Controllers\KnowledgeController::class, 'archiveHowto'])->name('archive_howto');
+Route::get('knowledge_list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledge_list');
 
-Route::get('main/single_howto', [App\Http\Controllers\KnowledgeController::class, 'singleHowto'])->name('single_howto');
+Route::get('knowledge_info', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledge_info');
 
 // 釣りスポット関連
 Route::get('main/archive_spot', [App\Http\Controllers\SpotController::class, 'archiveSpot'])->name('archive_spot');

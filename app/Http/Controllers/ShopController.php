@@ -30,6 +30,6 @@ class ShopController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.shops_list', $data);
+        return view('fronts.shops_list', $data);
     }
 }

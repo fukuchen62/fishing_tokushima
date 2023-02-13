@@ -32,7 +32,7 @@ class SpotController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.spots_list', $data);
+        return view('fronts.spots_list', $data);
     }
 
     public function facilityList(Request $request)
@@ -47,7 +47,7 @@ class SpotController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.facilities_list', $data);
+        return view('fronts.facilities_list', $data);
     }
 
     public function cityList(Request $request)
@@ -62,6 +62,6 @@ class SpotController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.cities_list', $data);
+        return view('fronts.cities_list', $data);
     }
 }

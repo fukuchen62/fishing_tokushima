@@ -30,6 +30,6 @@ class KnowledgeController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.knowledge_list', $data);
+        return view('fronts.knowledge_list', $data);
     }
 }
