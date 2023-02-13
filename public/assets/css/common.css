@@ -1,6 +1,5 @@
 body{
     text-align: center;
-    width: 599px;
     height: auto;
     /* padding: 0 20px; */
     font-family: "fot-tsukuardgothic-std", sans-serif;
@@ -54,24 +53,124 @@ body{
 }
 
 /* ヘッダー */
-#header{
-justify-content: end;
+
+.header{
+    background-color: #fff;
+    justify-content: end;
+    width: 100vw;
+    height: 100px;
+    position: fixed;
+    z-index: 20;
+}
+.header__box--group{
+    content: "";
+    display: inline-block;
+    width: 100vw;
+    height: 100px;
+    /* background-color: #ffffff; */
+    position: fixed;
+    z-index: 5;
+}
+.header__box--border {
+    height: 30px;
+    width: 100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff),color-stop(0.52, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
+    -webkit-background-size: 49px 100%;
+    position: fixed;
+    top: 100px;
+    z-index: 10;
+}
+/* ハンバーガーメニュー */
+.hamburger {
+    position: fixed;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+.hamburger span {
+    display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 0x;
+    height: 2px;
+    border-radius: 5px;
+    background: #51656F;
+    width: 60px;
+    height: 8px;
+}
+.hamburger span:nth-of-type(1) {
+    top: 0px;
+}
+.hamburger span:nth-of-type(2) {
+    top: 15px;
+}
+.hamburger span:nth-of-type(3) {
+    top: 30px;
+}
+.hamburger span:nth-of-type(3)::after {
+    content: "Menu";
+    /*3つ目の要素のafterにMenu表示を指定*/
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    color: #51656F;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+.hamburger.active span:nth-of-type(1) {
+    top: 0px;
+    left: 0px;
+    transform-origin: right;
+    transform: rotate(-45deg);
+    width: 50px;
+}
+.hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-of-type(3) {
+    top: 35px;
+    left: 0px;
+    transform: rotate(45deg);
+    transform-origin: right;
+    width: 50px;
+}
+.hamburger.active span:nth-of-type(3)::after {
+    content: "Close";
+    /*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+    top: 20px;
+    left: 25px;
+    letter-spacing: 0.5px;
+}
+@media screen and (min-width: 1080px)  {
+    .hamburger,.hamburger span {
+    display: none;
+    z-index: -1;
+    }
 }
 
-.sidemenu{
+
+.g-nav{
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 10;
     width: 100vw;
     height: 100vh;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transform: translateX(100vw);
     transition: all .3s linear;
+    padding-top: 150px;
+    overflow: scroll;
 }
+
 .logo__img,.header__logo{
     position: fixed;
     top: 20px;
@@ -80,46 +179,177 @@ justify-content: end;
     width: 250px;
     height: 60px;
 }
-header__box
-.header__box{
-    width: 100vw;
-    height: 100px;
-    background: #fff;
-    overflow: scroll;
-}
 
-.sidemenu__slide{
-background: #30ADD1;
+.g-nav__slide{
+    background: #30ADD1;
     transform: translateX(0);
 }
 
-.sidemenu__box{
+.g-nav__box{
     background-color: #fff;
-
+    margin-top: 60px;
 }
-.sidemenu__box--section{
+.g-nav__box--section{
     margin: 20px;
-    /* background-color: #fff; */
 }
-.sidemenu__box--group{
+.g-nav__box--group{
     display: inline-block;
-flex-flow: column;
 margin-left: 20px;
 }
-.sidemenu__box--discription{
+.g-nav__box--discription{
     display:inline-block;
     margin-top: 20px;
 }
-.sidemenu__box--img{
+.g-nav__box--img{
     border-radius: 50%;
     width: 136px;
     height: 136px;
 }
+@media screen and (min-width: 1080px) {
+.g-nav {
+        width: 90vw;
+        transform: translateX(0);
+        height: 100px;
+        top: 30px;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    .header__box {
+        width: 100vw;
+    }
+    .g-nav__box {
+        margin-top:0 ;
+        display: flex;
+        text-align: end;
+        background-color: rgba(0,0,0,0);
+    }
+    .g-nav__box--section {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+    .g-nav__box--group {
+        display: inline-block;
+        margin-left: 20px;
+        width:100px;
+        height: 100px;
+    }
+    .g-nav__box--discription {
+        display: inline-block;
+        margin-top: 20px;
+    }
+    .g-nav__box--img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .g-nav__box--text{
+        font: size 1px;;
+    }
+
+
+}
+
+.g-nav__link{
+flex-flow: column;
+justify-content: start;
+}
+.g-nav__link--text{
+    display: inline-block;
+    text-align: start;
+    color: #fff;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.g-nav__link--text::before {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 0;
+    border-bottom: 1px solid #fff;
+    position: absolute;
+    bottom:-5px;
+    left: 0px;
+}
+@media screen and (min-width: 600px){
+
+    .g-nav__link {
+    display: none;
+    }
+    .g-nav__link--text {
+    display: none;
+    position: static;
+    }
+
+    .g-nav__link--text::before {
+    position: static;
+    display: none;
+}
+}
+
+/* メイン */
+/* キービジュアル */
+.keyvisual{
+    height: 300px;
+    background-color: #888;
+}
+
+.titlesection{
+    height: 140px;
+    background-color: #FFEA20;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.background__img{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+}
+.shellfish1{
+    top: 10%;
+    left:10%;
+}
+.shellfish2{
+    top: 80%;
+    left:15%;
+}
+.shellfish3{
+    top: 50%;
+    right: 10%;
+}
 
 
 
+/* 波の境界線 */
+.custom-shape-divider-top-1676265750 {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.custom-shape-divider-top-1676265750 svg {
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+.custom-shape-divider-top-1676265750 .shape-fill {
+    fill: #FFEA20;
+}
 
 /* フッター */
+.footer{
+    background-color: #30ADD1;
+}
 .footer__box{
     padding: 45px 0 0 0;
     margin-bottom: 70px;
@@ -138,70 +368,9 @@ justify-content: center;
 
 } */
 
-/* ハンバーガーメニュー */
-.hamburger{
-    position: fixed;
-    background: #D54884;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-}
-.hamburger span{
-display: inline-block;
-    transition: all .4s;
-    /*アニメーションの設定*/
-    position: absolute;
-    left: 14px;
-    height: 2px;
-    border-radius: 5px;
-    background: #fff;
-    width: 45%;
-}
-.hamburger span:nth-of-type(1) {
-    top: 13px;
-}
-.hamburger span:nth-of-type(2) {
-    top: 19px;
-}
-.hamburger span:nth-of-type(3) {
-    top: 25px;
-}
-.hamburger span:nth-of-type(3)::after {
-    content: "Menu";
-    /*3つ目の要素のafterにMenu表示を指定*/
-    position: absolute;
-    top: 5px;
-    left: -2px;
-    color: #fff;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-}
-/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
-.hamburger.active span:nth-of-type(1) {
-    top: 14px;
-    left: 18px;
-    transform: translateY(6px) rotate(-45deg);
-    width: 30%;
-}
-.hamburger.active span:nth-of-type(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-of-type(3) {
-    top: 26px;
-    left: 18px;
-    transform: translateY(-6px) rotate(45deg);
-    width: 30%;
-}
-.hamburger.active span:nth-of-type(3)::after {
-    content: "Close";
-    /*3つ目の要素のafterにClose表示を指定*/
-    transform: translateY(0) rotate(-45deg);
-    top: 5px;
-    left: 4px;
+
+.copylight{
+    padding-bottom: 20px;
 }
 
 .flex {
