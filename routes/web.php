@@ -18,17 +18,19 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+// 入門知識関連
 Route::get('main/archive_howto', [App\Http\Controllers\KnowledgeController::class, 'archiveHowto'])->name('archive_howto');
 
 Route::get('main/single_howto', [App\Http\Controllers\KnowledgeController::class, 'singleHowto'])->name('single_howto');
 
+// 釣りスポット関連
 Route::get('main/archive_spot', [App\Http\Controllers\SpotController::class, 'archiveSpot'])->name('archive_spot');
 
 Route::get('main/archive_area', [App\Http\Controllers\SpotController::class, 'archiveArea'])->name('archive_area');
 
 Route::get('main/single_area', [App\Http\Controllers\SpotController::class, 'singleArea'])->name('single_area');
 
+// 釣具屋関連
 Route::get('main/page_shop', [App\Http\Controllers\ShopController::class, 'pageShop'])->name('page_shop');
 
 
