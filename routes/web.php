@@ -44,6 +44,15 @@ Route::get('search_plan', 'App\Http\Controllers\PlanController@searchPlan');
 
 Route::get('single_plan', 'App\Http\Controllers\PlanController@singlePlan');
 
+//Admin関連（spot分)
+
+Route::get('', 'App\Http\Controllers\AdminController@spotSearch');
+
+Route::get('', 'App\Http\Controllers\AdminController@spotShow');
+
+Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
+
+Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
 //Admin関連（news分)
 
