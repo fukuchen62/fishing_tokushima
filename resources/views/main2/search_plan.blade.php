@@ -13,12 +13,16 @@
 
     <table>
         <tr>
+            <th>アイキャッチ</th>
             <th>体験プラン</th>
+            <th>概要</th>
             <th>リンク</th>
         </tr>
         @foreach ($plans as $item )
         <tr>
-            <td>{{ $item ->getData() }}</td>
+            <td>{{ $item -> eye_catch }}</td>
+            <td>{{ $item -> title }}</td>
+            <td>{{ $item -> overview }}</td>
             <td><a href="./single_plan?id={{ $item -> id }}">リンク</a></td>
         </tr>
         @endforeach

@@ -7,20 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="./single_plan" method="post">
+    {{-- <form action="./single_plan" method="post">
         @csrf
         <input type="text" name="input" value="{{ $input }}">
         <input type="submit" value="find">
-    </form>
+    </form> --}}
 
     @if (isset($item))
         <table>
             <tr>
                 <th>title</th>
+                <th>thumbnail</th>
                 <th>overview</th>
                 <th>level</th>
                 <th>flow</th>
-                <th>thumbnail</th>
             </tr>
             <tr>
                 <td>{{ $item -> title }}</td>
