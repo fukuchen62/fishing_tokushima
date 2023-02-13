@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <!-- faviconタグ -->
+    <link rel="icon" href="" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+
+    <title></title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+
+    @yield('css')
+
+    <!-- jquery -->
+    <script src="./assets/js/jquery-3.6.3.min.js"></script>
+    <meta name="" content="">
+    <!-- フォントの設定adobefontをつかって -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xan8yzi',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+
+</head>
+
+<body>
+    <header id="header" class="flex">
+        <div class="header__box--group"><img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo">
+            <!-- nav -->
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger flex">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="header__box">
+            <div class="sidemenu">
+                <img src="./assets/images/fishing_boat_man.png" alt="ネコの画像" class="logo__img">
+                <div class="sidemenu__box">
+                    <div class="sidemenu__box--section flex">
+                        <div class="sidemenu__box--group">
+                            <a href="" class="sidemenu__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                                <span>入門知識</span>
+                            </a>
+                        </div>
+                        <div class="sidemenu__box--group flex">
+                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                            <a href="" class="sidemenu__box--discription">徳島の魚</a>
+                        </div>
+                        <div class="sidemenu__box--group flex">
+                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                            <a href="" class="sidemenu__box--discription">釣りスポット</a>
+                        </div>
+                    </div>
+                    <div class="sidemenu__box--section flex">
+                        <div class="sidemenu__box--group flex">
+                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                            <a href="" class="sidemenu__box--discription">体験プラン</a>
+                        </div>
+                        <div class="sidemenu__box--group flex">
+                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                            <a href="" class="sidemenu__box--discription">釣具店</a>
+                        </div>
+                        <div class="sidemenu__box--group flex">
+                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
+                            <a href="" class="sidemenu__box--discription">マイページ</a>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#30ADD1" fill-opacity="1"
+                            d="M0,64L30,85.3C60,107,120,149,180,144C240,139,300,85,360,80C420,75,480,117,540,149.3C600,181,660,203,720,213.3C780,224,840,224,900,202.7C960,181,1020,139,1080,106.7C1140,75,1200,53,1260,69.3C1320,85,1380,139,1410,165.3L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                        </path>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div>
+            キービジュアル
+        </div>
+
+        <section>
+            <h2 class="section__title">釣具店</h2>
+
+            <div class="flex">
+                <div>
+                    <div>東部</div>
+                </div>
+
+                <div>
+                    <div>西部</div>
+                </div>
+
+                <div>
+                    <div>南部</div>
+                </div>
+            </div>
+
+            <div>
+                <h3>検索結果</h3>
+
+                <div>お店の名前</div>
+                <div><img src="#" alt="お店の外観"></div>
+
+                <!-- 疑似要素でアイコンを追加する -->
+                <div>住所</div>
+                <div></div>
+                <div>営業時間・定休日</div>
+                <div></div>
+                <div>電話番号</div>
+                <div></div>
+                <div>お店のホームページ</div>
+                <div><a href="http://">ホームページはこちらから</a></div>
+                <div>お店からのメッセージ</div>
+                <div></div>
+
+                <!-- 疑似要素でアイコンを追加する -->
+                <div>お店の周辺情報</div>
+
+                <!-- Googleマップで周辺情報を表す -->
+                <div><iframe src="" frameborder="0"></iframe></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__box  flex">
+            <ul>
+                <li>入門知識</li>
+                <li>徳島の魚</li>
+                <li>体験プラン</li>
+                <li>釣具店</li>
+                <li>避難場所</li>
+            </ul>
+            <ul>
+                <li>釣りスポット</li>
+                <li>東部</li>
+                <li>南部</li>
+            </ul>
+            <ul>
+                <li>マイページ</li>
+                <li>プライバシーポリシー</li>
+            </ul>
+        </div>
+        <ul class="sns flex">
+            <li>twitter</li>
+            <li>facebook</li>
+            <li>instagram</li>
+        </ul>
+        <p>copylight@turitoku.com</p>
+    </footer>
+
+
+
+</body>
+
+<script src="./assets/js/main.js"></script>
+
+</html>
