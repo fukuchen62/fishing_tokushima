@@ -1,5 +1,5 @@
 $(".hamburger").click(function () {
     $(this).toggleClass('active');
-    $(".sidemenu").toggleClass('sidemenu__slide');
+    $(".g-nav").toggleClass('g-nav__slide');
     $(".header__logo").toggleClass('none');
 });
