@@ -13,12 +13,14 @@ use Illuminate\Http\Reponse;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Spot;
+use App\Models\Facility;
+use App\Models\City;
 
 // スーパークラスControllerを継承して独自のクラスを作成する
 class SpotController extends Controller
 {
 
-    public function archiveSpot(Request $request)
+    public function spotList(Request $request)
     {
         $items = Spot::all();
 
@@ -30,91 +32,36 @@ class SpotController extends Controller
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.archive_spot', $data);
+        return view('fronts.spots_list', $data);
     }
 
-    public function singleHowto(Request $request)
+    public function facilityList(Request $request)
     {
-        $items = [];
+        $items = Facility::all();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員記事一覧です。',
-            // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
-            // 'members' => $items,
+            'facilities' => $items,
         ];
 
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.single_howto', $data);
+        return view('fronts.facilities_list', $data);
     }
 
-    // public function archiveSpot(Request $request)
-    // {
-    //     $items = [];
-
-    //     // テンプレートファイルに渡すデータ（連想配列）
-    //     $data = [
-    //         'msg' => '登録されている会員記事一覧です。',
-    //         // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
-    //         // 'members' => $items,
-    //     ];
-
-    //     // viewでhelloフォルダにあるindex.phpを呼び出し、
-    //     // $dataを渡して、関連Webページを作成して、
-    //     // クライアントに戻す
-    //     return view('main.archive_spot', $data);
-    // }
-
-    public function archiveArea(Request $request)
+    public function cityList(Request $request)
     {
-        $items = [];
+        $items = City::all();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員記事一覧です。',
-            // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
-            // 'members' => $items,
+            'cities' => $items,
         ];
 
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.archive_area', $data);
-    }
-
-    public function singleArea(Request $request)
-    {
-        $items = [];
-
-        // テンプレートファイルに渡すデータ（連想配列）
-        $data = [
-            'msg' => '登録されている会員記事一覧です。',
-            // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
-            // 'members' => $items,
-        ];
-
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
-        return view('main.single_area', $data);
-    }
-
-    public function pageShop(Request $request)
-    {
-        $items = [];
-
-        // テンプレートファイルに渡すデータ（連想配列）
-        $data = [
-            'msg' => '登録されている会員記事一覧です。',
-            // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
-            // 'members' => $items,
-        ];
-
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
-        return view('main.page_shop', $data);
+        return view('fronts.cities_list', $data);
     }
 }

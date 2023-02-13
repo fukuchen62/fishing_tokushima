@@ -25,7 +25,7 @@ class PlanController extends Controller
             'plans' => $items,
         ];
 
-        return view('main2.search_plan', $data);
+        return view('fronts.plans_list', $data);
     }
 
     // public function findPlan(Request $request)
@@ -48,6 +48,6 @@ class PlanController extends Controller
             'item' => $item,
         ];
 
-        return view('main2.single_plan', $data);
+        return view('fronts.plans_info', $data);
     }
 }
