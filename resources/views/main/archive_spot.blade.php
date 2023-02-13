@@ -8,5 +8,14 @@
 </head>
 <body>
     <h1>archiveSpot</h1>
+    <table>
+        <tr>
+            @foreach($spots as $item)
+        </tr>
+        <tr>
+            <td>{{$item->getData()}}</td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 </html>

@@ -8,5 +8,14 @@
 </head>
 <body>
     <h1>pageShop</h1>
+    <table>
+        <tr>
+            @foreach($shops as $item)
+        </tr>
+        <tr>
+            <td>{{$item->getData()}}</td>
+        </tr>
+        @endforeach
+    </table>
 </body>
 </html>

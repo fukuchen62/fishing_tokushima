@@ -18,19 +18,19 @@ use App\Models\Shop;
 class ShopController extends Controller
 {
 
-    public function archiveHowto(Request $request)
+    public function pageShop(Request $request)
     {
-        $items = Knowledge::all();
+        $items = Shop::all();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'knowledges' => $items,
+            'shops' => $items,
         ];
 
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
         // クライアントに戻す
-        return view('main.archive_howto', $data);
+        return view('main.page_shop', $data);
     }
 
     public function singleHowto(Request $request)
@@ -101,20 +101,20 @@ class ShopController extends Controller
         return view('main.single_area', $data);
     }
 
-    public function pageShop(Request $request)
-    {
-        $items = [];
+    // public function pageShop(Request $request)
+    // {
+    //     $items = [];
 
-        // テンプレートファイルに渡すデータ（連想配列）
-        $data = [
-            'msg' => '登録されている会員記事一覧です。',
-            // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
-            // 'members' => $items,
-        ];
+    //     // テンプレートファイルに渡すデータ（連想配列）
+    //     $data = [
+    //         'msg' => '登録されている会員記事一覧です。',
+    //         // facilitiesから読み込んだレコードをmembersの連想配列の中身とする
+    //         // 'members' => $items,
+    //     ];
 
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
-        return view('main.page_shop', $data);
-    }
+    //     // viewでhelloフォルダにあるindex.phpを呼び出し、
+    //     // $dataを渡して、関連Webページを作成して、
+    //     // クライアントに戻す
+    //     return view('main.page_shop', $data);
+    // }
 }
