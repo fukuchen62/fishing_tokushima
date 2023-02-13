@@ -12,20 +12,11 @@
         <tr>
             <th>タイトル&nbsp;</th>
             <th>内容&nbsp;</th>
-            {{-- <th>釣り方&nbsp;</th>
-            <th>周辺施設&nbsp;</th>
-            <th>近くの病院&nbsp;</th>
-            <th>避難場所&nbsp;</th> --}}
         </tr>
-        @foreach ($knowledges as $item)
             <tr>
-                <td>{{ $item->title }}</td>
-                <td>{{ $item->content }}</td>
-                
-
-                {{-- <td><a href="board/edit?id={{ $item->id }}">編集</a></td> --}}
+                <td>{{ $knowledges->title }}</td>
+                <td>{{ $knowledges->content }}</td>
             </tr>
-        @endforeach
     </table>
 </body>
 </html>

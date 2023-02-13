@@ -35,6 +35,7 @@
                 <td>{{ $item->content }}</td>
                 <td>{{ $item->created_at }}</td>
                 <td>{{ $item->updated_at }}</td>
+                <td><a href="./knowledge_info?id={{ $item->id }}" >詳細</a></td>
             </tr>
         @endforeach
     </table>

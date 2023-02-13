@@ -35,7 +35,7 @@ class KnowledgeController extends Controller
 
     public function knowledgeInfo(Request $request)
     {
-        $items = Knowledge::all();
+        $items = Knowledge::find($request->id);
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
