@@ -58,21 +58,21 @@ Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
 Route::get('cms', 'App\Http\Controllers\AdminController@newsShow');
 
-Route::get('cms/newsEntry', 'App\Http\Controllers\AdminController@newsEntry');
+Route::get('cms/news_entry', 'App\Http\Controllers\AdminController@newsEntry');
 
-Route::post('cms/newsEntry', 'App\Http\Controllers\AdminController@create');
-
-
-Route::get('cms/newsEdit', 'App\Http\Controllers\AdminController@newsEdit');
-
-Route::post('cms/newsEdit', 'App\Http\Controllers\AdminController@update');
+Route::post('cms/news_entry', 'App\Http\Controllers\AdminController@create');
 
 
-Route::get('cms/delete', 'App\Http\Controllers\AdminController@delete');
+Route::get('cms/news_edit', 'App\Http\Controllers\AdminController@newsEdit');
 
-Route::get('cms/delete', 'App\Http\Controllers\AdminController@remove');
+Route::post('cms/news_edit', 'App\Http\Controllers\AdminController@update');
 
-Route::post('cms/delete', 'App\Http\Controllers\AdminController@remove');
+
+Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@delete');
+
+Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@remove');
+
+Route::post('cms/news_delete', 'App\Http\Controllers\AdminController@remove');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
