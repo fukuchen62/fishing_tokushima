@@ -54,25 +54,47 @@ Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
 
 Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
+//Admin関連（knowledge分)
+
+Route::get('knowledge_Show', 'App\Http\Controllers\AdminController@knowledgeShow');
+
+Route::get('cms/knowledge_Entry', 'App\Http\Controllers\AdminController@knowledgeEntry');
+
+Route::post('cms/knowledge_Entry', 'App\Http\Controllers\AdminController@knowledgecreate');
+
+
+
+Route::get('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
+
+Route::post('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
+
+
+Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeDelete');
+
+Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeRemove');
+
+Route::post('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeRemove');
+
+
 //Admin関連（news分)
 
-Route::get('cms', 'App\Http\Controllers\AdminController@newsShow');
+Route::get('news_Show', 'App\Http\Controllers\AdminController@newsShow');
 
 Route::get('cms/news_entry', 'App\Http\Controllers\AdminController@newsEntry');
 
-Route::post('cms/news_entry', 'App\Http\Controllers\AdminController@create');
+Route::post('cms/news_entry', 'App\Http\Controllers\AdminController@newsCreate');
 
 
 Route::get('cms/news_edit', 'App\Http\Controllers\AdminController@newsEdit');
 
-Route::post('cms/news_edit', 'App\Http\Controllers\AdminController@update');
+Route::post('cms/news_edit', 'App\Http\Controllers\AdminController@newsUpdate');
 
 
-Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@delete');
+Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@newsDelete');
 
-Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@remove');
+Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@newsRemove');
 
-Route::post('cms/news_delete', 'App\Http\Controllers\AdminController@remove');
+Route::post('cms/news_delete', 'App\Http\Controllers\AdminController@newsRemove');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
