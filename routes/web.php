@@ -46,13 +46,13 @@ Route::get('plans_info', [App\Http\Controllers\PlanController::class, 'singlePla
 
 //Admin関連（spot分)
 
-Route::get('', 'App\Http\Controllers\AdminController@spotSearch');
+// Route::get('', 'App\Http\Controllers\AdminController@spotSearch');
 
-Route::get('', 'App\Http\Controllers\AdminController@spotShow');
+// Route::get('', 'App\Http\Controllers\AdminController@spotShow');
 
-Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
+// Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
 
-Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
+// Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
 //Admin関連（knowledge分)
 
@@ -78,7 +78,7 @@ Route::post('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowle
 
 //Admin関連（news分)
 
-Route::get('news_Show', 'App\Http\Controllers\AdminController@newsShow');
+Route::get('news_show', 'App\Http\Controllers\AdminController@newsShow');
 
 Route::get('cms/news_entry', 'App\Http\Controllers\AdminController@newsEntry');
 

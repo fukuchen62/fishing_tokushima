@@ -75,7 +75,7 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('/cms');
+        return redirect('news_show');
     }
 
     public function newsEdit(Request $request)
@@ -91,7 +91,7 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('/cms');
+        return redirect('news_show');
     }
 
     public function newsDelete(Request $request)
