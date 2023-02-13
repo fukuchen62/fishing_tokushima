@@ -6,21 +6,21 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 // モデルを引用する
-use App\Models\Plan;
+use App\Models\Fish;
 
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
-class Main2Controller extends Controller
+class PlanController extends Controller
 {
-    public function searchPlan()
+    public function searchFish()
     {
-        $items = Plan::all();
+        $items = Fish::all();
 
         $data = [
-            'plans' => $items,
+            'fishes' => $items,
         ];
 
-        return view('main2.search_plan', $data);
+        return view('main2.search_fish', $data);
     }
 }
