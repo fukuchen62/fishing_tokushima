@@ -7,7 +7,7 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/cms" >HOME</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/news_show" >HOME</a></li>
         <li><a href="http://localhost/fishing_tokushima/public/cms/news_entry">新規登録</a></li>
         <li>その他</li>
     </ul>
@@ -41,7 +41,7 @@
                 </td>
             </tr>
         <tr><th></th><td><input type="submit"value="修正">
-            <a href="delete?id={{ $form->id }}">削除</a></td></tr>
+            <a href="news_delete?id={{ $form->id }}">削除</a></td></tr>
     </table>
     </form>
 @endsection
