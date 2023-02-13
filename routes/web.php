@@ -78,7 +78,7 @@ Route::post('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowle
 
 //Admin関連（news分)
 
-Route::get('cms', 'App\Http\Controllers\AdminController@newsShow');
+Route::get('news_Show', 'App\Http\Controllers\AdminController@newsShow');
 
 Route::get('cms/news_entry', 'App\Http\Controllers\AdminController@newsEntry');
 
