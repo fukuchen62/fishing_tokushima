@@ -23,4 +23,22 @@ class FishController extends Controller
 
         return view('fronts.fish_list', $data);
     }
+
+    public function singleFish(Request $request)
+    {
+        $id = '';
+
+        // inputが入力されていたら、、、
+        if (isset($request->id)) {
+            $id = $request->id;
+        }
+
+        $item = Fish::find($id);
+
+        $data = [
+            'item' => $item,
+        ];
+
+        return view('fronts.fish_info', $data);
+    }
 }

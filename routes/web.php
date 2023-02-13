@@ -37,6 +37,8 @@ Route::get('shops_list', [App\Http\Controllers\ShopController::class, 'shopList'
 // Fish関連
 Route::get('fish_list', [App\Http\Controllers\FishController::class, 'searchFish'])->name('fish_list');
 
+Route::get('fish_info', [App\Http\Controllers\FishController::class, 'singleFish'])->name('fish_info');
+
 // Plan関連
 Route::get('plans_list', [App\Http\Controllers\PlanController::class, 'searchPlan'])->name('plans_list');
 
