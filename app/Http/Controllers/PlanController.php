@@ -2,6 +2,10 @@
 // 名前空間
 namespace App\Http\Controllers;
 
+// クラスをインポートする
+//クライアントからのリクエストを受信するためのクラス
+use Illuminate\Http\Request;
+
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
 
@@ -22,5 +26,29 @@ class PlanController extends Controller
         ];
 
         return view('main2.search_plan', $data);
+    }
+
+    // public function findPlan(Request $request)
+    // {
+    //     return view('main2.single_plan', ['input' => '']);
+    // }
+
+    public function singlePlan(Request $request)
+    {
+        $input = '';
+
+        // inputが入力されていたら、、、
+        if (isset($request->input)) {
+            $input = $request->input;
+        }
+
+        $item = Plan::find($input);
+
+        $data = [
+            'input' => $input,
+            'item' => $item,
+        ];
+
+        return view('main2.single_plan', $data);
     }
 }
