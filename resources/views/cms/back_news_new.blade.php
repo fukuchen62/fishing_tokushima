@@ -1,6 +1,8 @@
 {{-- レイアウトテンプレートクラスを継承する --}}
 @extends('layouts.news_ly')
 
+@section('title', 'ニュース新規登録')
+
 @section('menubar')
     @parent
     {{-- 以下はshowのところにはめ込む --}}
