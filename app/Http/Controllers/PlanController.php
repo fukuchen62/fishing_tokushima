@@ -11,7 +11,7 @@ use App\Models\Plan;
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
-class Main2Controller extends Controller
+class PlanController extends Controller
 {
     public function searchPlan()
     {
