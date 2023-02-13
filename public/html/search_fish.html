@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <title>徳島の魚</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./css/css/reset.css">
+    <link rel="stylesheet" href="./css/css/common.css">
+    <link rel="stylesheet" href="./css/css/search_fish.css">
+
+
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="wrap">
+            <h1 class="pagetitle">魚一覧</h1>
+
+            <!-- 月ごとに検索 -->
+            <section id="calendar__section" class="calendar__section">
+                <div class="calendar__box">
+                    <div>
+                        <ul class="calendar__box--search">
+                            <li>
+                                <iconify-icon icon="game-icons:circling-fish"></iconify-icon>
+                            </li>
+                            <li>
+                                <p class="calendar__box--text">徳島県で釣れる魚だよ！
+                                                    月ごとにクリックして、
+                                                    生息する魚をチェック！</p>
+                            </li>
+                        </ul>
+                        <!-- <img src="" alt="魚">
+                        <iconify-icon icon="game-icons:circling-fish"></iconify-icon>
+                        <p class="calendar__box--text">徳島県で釣れる魚だよ！
+                        月ごとにクリックして、
+                        生息する魚をチェック！</p> -->
+                    </div>
+                    <table class="calendar-tb">
+                        <tr>
+                            <td>
+                                <div class='button'>
+                                    <button id="1" class='secList' onclick="">１月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="2" class='secList' onclick="">２月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="3" class='secList' onclick="">３月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="4" class='secList' onclick="">４月</button>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class='button'>
+                                    <button id="5" class='secList' onclick="">５月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="6" class='secList' onclick="">６月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="7" class='secList' onclick="">７月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="8" class='secList' onclick="">８月</button>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class='button'>
+                                    <button id="9" class='secList' onclick="">９月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="10" class='secList' onclick="">１０月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="11" class='secList' onclick="">１１月</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class='button'>
+                                    <button id="12" class='secList' onclick="">１２月</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 検索結果 -->
+            <section id="results__section" class="results__section">
+                <div class="results__box">
+                    <h2 class="results__box--title">初心者におすすめ！釣れる魚</h2>
+                    <ul class="results__box--info">
+                        <li><a href="">
+                                <div class="tokushimafish__box--group">
+                                    <img src="" alt="アジの画像">
+                                    <p>アジ</p>
+                                </div>
+                            </a></li>
+                        <li><a href="">
+                                <div class="tokushimafish__box--group">
+                                    <img src="" alt="アジの画像">
+                                    <p>アジ</p>
+                                </div>
+                            </a></li>
+                        <li><a href="">
+                                <div class="tokushimafish__box--group">
+                                    <img src="" alt="アジの画像">
+                                    <p>アジ</p>
+                                </div>
+                            </a></li>
+                        <li><a href="">
+                                <div class="tokushimafish__box--group">
+                                    <img src="" alt="アジの画像">
+                                    <p>アジ</p>
+                                </div>
+                            </a></li>
+                        <li><a href="">
+                                <div class="tokushimafish__box--group">
+                                    <img src="" alt="アジの画像">
+                                    <p>アジ</p>
+                                </div>
+                            </a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 玄人向けの魚 -->
+            <section class="others__section">
+                <div class="others__box">
+                    <p class="others__box--subtitle">＼　釣り初心者を卒業したら、釣ってみたい！　／</p>
+                    <h2 class="others__box--title">徳島の海産物</h2>
+                    <ul class="others__box--info">
+                        <li><img src="" alt="魚の画像">
+                            <h3>マダイ（Pagrus major）</h3>
+                            <p>姿、色、味すべてにすぐれ、古くから「魚の王」として珍重されてきました。 体型は楕円形で左右に扁平し（側扁といいます）、体高が高く、典型的なタイ形をしています。 体は淡紅色で腹部にかけて淡色となり、体の側面上半部には鮮やかなコバルト色の小班が散在しています。また、尾びれの後縁が黒く縁取られることも大きな特徴です。</p>
+                            <div class="feed">
+                                <img src="" alt="エビの画像">
+                                <p>美味しい食べ方：鯛めし、アラ汁、刺身</p>
+                            </div>
+                        </li>
+                        <li><img src="" alt="魚の画像">
+                            <h3>マダイ（Pagrus major）</h3>
+                            <p>姿、色、味すべてにすぐれ、古くから「魚の王」として珍重されてきました。 体型は楕円形で左右に扁平し（側扁といいます）、体高が高く、典型的なタイ形をしています。 体は淡紅色で腹部にかけて淡色となり、体の側面上半部には鮮やかなコバルト色の小班が散在しています。また、尾びれの後縁が黒く縁取られることも大きな特徴です。</p>
+                            <div class="feed">
+                                <img src="" alt="エビの画像">
+                                <p>美味しい食べ方：鯛めし、アラ汁、刺身</p>
+                            </div>
+                        </li>
+                        <li><img src="" alt="魚の画像">
+                            <h3>マダイ（Pagrus major）</h3>
+                            <p>姿、色、味すべてにすぐれ、古くから「魚の王」として珍重されてきました。 体型は楕円形で左右に扁平し（側扁といいます）、体高が高く、典型的なタイ形をしています。 体は淡紅色で腹部にかけて淡色となり、体の側面上半部には鮮やかなコバルト色の小班が散在しています。また、尾びれの後縁が黒く縁取られることも大きな特徴です。</p>
+                            <div class="feed">
+                                <img src="" alt="エビの画像">
+                                <p>美味しい食べ方：鯛めし、アラ汁、刺身</p>
+                            </div>
+                        </li>
+                        <li><img src="" alt="魚の画像">
+                            <h3>マダイ（Pagrus major）</h3>
+                            <p>姿、色、味すべてにすぐれ、古くから「魚の王」として珍重されてきました。 体型は楕円形で左右に扁平し（側扁といいます）、体高が高く、典型的なタイ形をしています。 体は淡紅色で腹部にかけて淡色となり、体の側面上半部には鮮やかなコバルト色の小班が散在しています。また、尾びれの後縁が黒く縁取られることも大きな特徴です。</p>
+                            <div class="feed">
+                                <img src="" alt="エビの画像">
+                                <p>美味しい食べ方：鯛めし、アラ汁、刺身</p>
+                            </div>
+                        </li>
+                        <li><img src="" alt="魚の画像">
+                            <h3>マダイ（Pagrus major）</h3>
+                            <p>姿、色、味すべてにすぐれ、古くから「魚の王」として珍重されてきました。 体型は楕円形で左右に扁平し（側扁といいます）、体高が高く、典型的なタイ形をしています。 体は淡紅色で腹部にかけて淡色となり、体の側面上半部には鮮やかなコバルト色の小班が散在しています。また、尾びれの後縁が黒く縁取られることも大きな特徴です。</p>
+                            <div class="feed">
+                                <img src="" alt="エビの画像">
+                                <p>美味しい食べ方：鯛めし、アラ汁、刺身</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <footer></footer>
+        </div>
+    </main>
+</body>
+
+</html>

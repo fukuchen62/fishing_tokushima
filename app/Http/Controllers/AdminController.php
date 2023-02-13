@@ -75,7 +75,7 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('/cms');
+        return redirect('news_show');
     }
 
     public function newsEdit(Request $request)
@@ -91,7 +91,7 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('/cms');
+        return redirect('news_show');
     }
 
     public function newsDelete(Request $request)
@@ -133,7 +133,7 @@ public function knowledgeSearch(Request $request)
      // return view('hello.index', $data);
 
      // リダイレクトでルート名を呼び出し
-        return redirect()->route('knowledge_Show');
+        return redirect()->route('knowledge_show');
     }
 
     public function knowledgeShow(Request $request)
@@ -147,7 +147,7 @@ public function knowledgeSearch(Request $request)
         return view('cms.back_knowledge_new');
     }
 
-    public function knowledgecreate(Request $request)
+    public function knowledgeCreate(Request $request)
     {
         $this->validate($request, knowledge::$rules);
         $knowledge = new knowledge();
@@ -155,7 +155,7 @@ public function knowledgeSearch(Request $request)
         unset($form['_token']);
 
         $knowledge->fill($form)->save();
-        return redirect('knowledge_Show');
+        return redirect('knowledge_show');
     }
 
     public function knowledgeEdit(Request $request)
@@ -164,17 +164,17 @@ public function knowledgeSearch(Request $request)
         return view('cms.back_knowledge_edit', ['form' => $knowledge]);
     }
 
-    public function knowledgeupdate(Request $request)
+    public function knowledgeUpdate(Request $request)
     {
         $this->validate($request, knowledge::$rules);
         $knowledge = knowledge::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
-        return redirect('knowledge_Show');
+        return redirect('knowledge_show');
     }
 
-    public function knowledgedelete(Request $request)
+    public function knowledgeDelete(Request $request)
     {
         $knowledge = knowledge::find($request->id);
         return view('cms.back_knowledge_edit', ['form' => $knowledge]);
@@ -183,6 +183,6 @@ public function knowledgeSearch(Request $request)
     public function knowledgeremove(Request $request)
     {
         knowledge::find($request->id)->delete();
-        return redirect('knowledge_Show');
+        return redirect('knowledge_show');
     }
 }

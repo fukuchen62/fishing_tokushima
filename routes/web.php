@@ -46,27 +46,27 @@ Route::get('plans_info', [App\Http\Controllers\PlanController::class, 'singlePla
 
 //Admin関連（spot分)
 
-Route::get('', 'App\Http\Controllers\AdminController@spotSearch');
+// Route::get('', 'App\Http\Controllers\AdminController@spotSearch');
 
-Route::get('', 'App\Http\Controllers\AdminController@spotShow');
+// Route::get('', 'App\Http\Controllers\AdminController@spotShow');
 
-Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
+// Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
 
-Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
+// Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
 //Admin関連（knowledge分)
 
-Route::get('knowledge_Show', 'App\Http\Controllers\AdminController@knowledgeShow');
+Route::get('knowledge_show', 'App\Http\Controllers\AdminController@knowledgeShow');
 
-Route::get('cms/knowledge_Entry', 'App\Http\Controllers\AdminController@knowledgeEntry');
+Route::get('cms/knowledge_entry', 'App\Http\Controllers\AdminController@knowledgeEntry');
 
-Route::post('cms/knowledge_Entry', 'App\Http\Controllers\AdminController@knowledgecreate');
+Route::post('cms/knowledge_entry', 'App\Http\Controllers\AdminController@knowledgeCreate');
 
 
 
-Route::get('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
+Route::get('cms/knowledge_edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
 
-Route::post('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
+Route::post('cms/knowledge_edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
 
 
 Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeDelete');
@@ -78,7 +78,7 @@ Route::post('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowle
 
 //Admin関連（news分)
 
-Route::get('news_Show', 'App\Http\Controllers\AdminController@newsShow');
+Route::get('news_show', 'App\Http\Controllers\AdminController@newsShow');
 
 Route::get('cms/news_entry', 'App\Http\Controllers\AdminController@newsEntry');
 

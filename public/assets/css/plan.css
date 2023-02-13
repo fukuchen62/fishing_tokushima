@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+/* 共通部分 */
+.container {
+    margin: 0 auto;
+    padding: 0px 20px 0px 20px;
+}
+
+/* 検索画面 */
+.plan__form,.plan__table {
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.plan__form--title {
+    background-color: #30add1;
+    border-radius: 20px 20px 0px 0px;
+    color: #fff;
+}
+
+.plan__form--title h2 {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.search_title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.choice_wrap ul {
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.choice_wrap ul li {
+    margin: 0 auto;
+    max-width: 150px;
+    margin-bottom: 24px;
+    padding: 10px;
+    background-color: #eaf2fa;
+    border-radius: 20px;
+}
+
+.search_resetbtn_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+#reset_btn {
+    background-color: #30add1;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#search_btn {
+    background-color: #ffea20;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.search_content{
+    padding: 10px;
+}
+
+/* セクションタイトル */
+.section__title {
+    background-color: #30add1;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px;
+    color: #fff;
+}
+
+/* カード */
+
+.card {
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
