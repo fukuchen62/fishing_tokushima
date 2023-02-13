@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 // 入門知識関連
-Route::get('knowledge_list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledge_list');
+Route::get('main/archive_howto', [App\Http\Controllers\KnowledgeController::class, 'archiveHowto'])->name('archive_howto');
 
-Route::get('knowledge_info', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledge_info');
+Route::get('main/single_howto', [App\Http\Controllers\KnowledgeController::class, 'singleHowto'])->name('single_howto');
 
 // 釣りスポット関連
 Route::get('main/archive_spot', [App\Http\Controllers\SpotController::class, 'archiveSpot'])->name('archive_spot');
@@ -56,23 +56,23 @@ Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
 
 //Admin関連（news分)
 
-Route::get('back', 'App\Http\Controllers\AdminController@newsShow');
+Route::get('cms', 'App\Http\Controllers\AdminController@newsShow');
 
-Route::get('back/newsEntry', 'App\Http\Controllers\AdminController@newsEntry');
+Route::get('cms/newsEntry', 'App\Http\Controllers\AdminController@newsEntry');
 
-Route::post('back/newsEntry', 'App\Http\Controllers\AdminController@create');
-
-
-Route::get('back/newsEdit', 'App\Http\Controllers\AdminController@newsEdit');
-
-Route::post('back/newsEdit', 'App\Http\Controllers\AdminController@update');
+Route::post('cms/newsEntry', 'App\Http\Controllers\AdminController@create');
 
 
-Route::get('back/delete', 'App\Http\Controllers\AdminController@delete');
+Route::get('cms/newsEdit', 'App\Http\Controllers\AdminController@newsEdit');
 
-Route::get('back/delete', 'App\Http\Controllers\AdminController@remove');
+Route::post('cms/newsEdit', 'App\Http\Controllers\AdminController@update');
 
-Route::post('back/delete', 'App\Http\Controllers\AdminController@remove');
+
+Route::get('cms/delete', 'App\Http\Controllers\AdminController@delete');
+
+Route::get('cms/delete', 'App\Http\Controllers\AdminController@remove');
+
+Route::post('cms/delete', 'App\Http\Controllers\AdminController@remove');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

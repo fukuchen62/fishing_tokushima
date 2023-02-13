@@ -51,16 +51,19 @@ class AdminController extends Controller
         return redirect()->route('back_news');
     }
 
+
+//news分
+
     public function newsShow(Request $request)
     {
         $items = News::all();
-        return view('back.back_news', ['items' => $items]);
+        return view('cms.back_news', ['items' => $items]);
     }
 
     public function newsEntry(Request $request)
     {
 
-        return view('back.back_news_new');
+        return view('cms.back_news_new');
     }
 
     public function create(Request $request)
@@ -70,13 +73,13 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('/back');
+        return redirect('/cms');
     }
 
     public function newsEdit(Request $request)
 {
     $news = News::find($request->id);
-    return view('back.back_news_edit', ['form' => $news]);
+    return view('cms.back_news_edit', ['form' => $news]);
 }
 
     public function update(Request $request)
@@ -86,13 +89,13 @@ class AdminController extends Controller
     $form = $request->all();
     unset($form['_token']);
     $news->fill($form)->save();
-    return redirect('/back');
+    return redirect('/cms');
 }
 
     public function delete(Request $request)
 {
     $news = News::find($request->id);
-    return view('back.back_news_edit', ['form' => $news]);
+    return view('cms.back_news_edit', ['form' => $news]);
 }
 
 }
