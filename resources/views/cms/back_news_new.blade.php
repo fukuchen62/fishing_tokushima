@@ -33,7 +33,7 @@
             <tr><th>アイキャッチ画像: </th><td><input type="text"
                 name="eyecatch" ></td></tr>
             <tr><th>表示フラグ: </th><td><input type="boolean"
-                name="is_show" ></td></tr>
+                name="is_show" value="true"></td></tr>
 
         <tr><th></th><td><input type="submit"
             value="送信"></td></tr>
