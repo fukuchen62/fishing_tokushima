@@ -15,7 +15,7 @@ use App\Models\Fish;
 
 use App\Models\Spot;
 
-use App\Models\plan;
+use App\Models\Plan;
 
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
