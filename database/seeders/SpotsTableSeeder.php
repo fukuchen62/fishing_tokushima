@@ -41,5 +41,29 @@ class SpotsTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
         ];
         DB::table('spots')->insert($param);
+
+        $param = [
+            'name' => '岡崎海岸',
+            'overview' => 'テスト3です',
+            'city_id' => 3,
+            'postal_code' => '772-0013',
+            'spot_address' => '徳島県鳴門市撫養町岡崎二等道路東-88',
+            'iframe_url' => 'test',
+            'toilet' => '有',
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+        DB::table('spots')->insert($param);
+
+        $param = [
+            'name' => '亀浦観光港',
+            'overview' => 'テスト4です',
+            'city_id' => 4,
+            'postal_code' => '772-0053',
+            'spot_address' => '徳島県鳴門市鳴門町土佐泊浦大毛　亀浦漁港',
+            'iframe_url' => 'test',
+            'toilet' => '有',
+            'created_at' => date('Y-m-d H:i:s'),
+        ];
+        DB::table('spots')->insert($param);
     }
 }
