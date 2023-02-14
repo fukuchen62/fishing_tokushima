@@ -20,8 +20,8 @@ class Shop extends Model
         return $ret;
     }
 
-    public function scopeCity($query, $CityId)
+    public function scopeCity($query, $cityId)
     {
-        return $query->where('City_id', $CityId);
+        return $query->where('city_id', $cityId);
     }
 }
