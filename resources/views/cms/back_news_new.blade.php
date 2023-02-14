@@ -6,13 +6,13 @@
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
         <li><a href= "http://localhost/fishing_tokushima/public/news_show" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/cms/news_entry">新規登録</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/cms/admin/newsentry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
 
 @section('content')
-    <form action="news_entry" method="post">
+    <form action="admin/newsentry" method="post">
     <table>
         @csrf
         <tr><th>タイプ: </th><td><input type="text"
