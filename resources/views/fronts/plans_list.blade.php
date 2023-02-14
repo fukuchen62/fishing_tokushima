@@ -11,13 +11,13 @@
 <body>
     <h1>体験プランの一覧</h1>
 
-    {{-- <form action="./list" method="post">
+    <form action="./list" method="post">
         @csrf
         <input type="number" name="area" value="{{ $area }}">
         <input type="text" name="level" value="{{ $level }}">
         <input type="text" name="fish" value="{{ $fish }}">
         <input type="submit" value="find">
-    </form> --}}
+    </form>
 
     <form action="{{ route('planlist')}}" method="post">
         @csrf
