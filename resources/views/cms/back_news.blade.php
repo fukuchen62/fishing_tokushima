@@ -15,7 +15,7 @@
 
 @section('content')
     <table border="1">
-    <tr><th>修正</th><th>ID</th><th>タイプ</th><th>タイトル</th></tr>
+    <tr><th>修正</th><th>ID</th><th>カテゴリー名前</th><th>タイトル</th></tr>
     @foreach ($items as $item)
         <tr>
             <!-- <td><a href="admin/newsedit?id={{ $item->id }}">編集</a></td> -->
