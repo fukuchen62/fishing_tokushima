@@ -1,6 +1,6 @@
 @extends('layouts.news_ly')
 
-@section('title', 'メンバーの編集画面')
+@section('title', 'ニュースの編集画面')
 
 @section('menubar')
 

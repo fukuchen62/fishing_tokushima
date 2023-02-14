@@ -1,6 +1,6 @@
 @extends('layouts.news_ly')
 
-@section('title', 'データ一覧')
+@section('title', 'ニュース一覧')
 
 
 @section('menubar')

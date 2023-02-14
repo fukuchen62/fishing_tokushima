@@ -45,11 +45,11 @@ Route::get('fish/fishinfo', [App\Http\Controllers\FishController::class, 'fishIn
 
 
 // Plan関連
-Route::get('plan/planlist', [App\Http\Controllers\PlanController::class, 'searchPlan'])->name('planlist');
+Route::get('plan/planlist', [App\Http\Controllers\PlanController::class, 'plansList'])->name('planlist');
 
 // Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
 
-Route::get('plan/planinfo', [App\Http\Controllers\PlanController::class, 'singlePlan'])->name('planinfo');
+Route::get('plan/planinfo', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planinfo');
 
 //Admin関連（spot分)
 
