@@ -17,11 +17,32 @@ use App\Models\Plan;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class PlanController extends Controller
 {
-    public function searchPlan()
+    public function plansList()
     {
         $items = Plan::all();
 
         $data = [
+            'plans' => $items,
+        ];
+
+        return view('fronts.plans_list', $data);
+    }
+
+    public function plansSearch(Request $request)
+    {
+        // $items = Plan::areaEqual($request->area)->get();
+        // $items = Plan::levelEqual($request->level)->get;
+        // $items = Plan::fishEqual($request->fish)->get;
+
+        $items = Plan::areaEqual($request->area)
+            ->levelEqual($request->level)
+            ->fishEqual($request->fish)
+            ->get();
+
+        $data = [
+            // 'area' => $request->area,
+            // 'level' => $request->level,
+            // 'fish' => $request->fish,
             'plans' => $items,
         ];
 
@@ -33,7 +54,7 @@ class PlanController extends Controller
     //     return view('main2.single_plan', ['input' => '']);
     // }
 
-    public function singlePlan(Request $request)
+    public function plansInfo(Request $request)
     {
         $id = '';
 
