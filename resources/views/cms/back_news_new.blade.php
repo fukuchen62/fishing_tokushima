@@ -19,17 +19,22 @@
     <table>
         @csrf
         <tr><th>タイプ: </th><td><input type="text"
-            name="name"></td></tr>
+            name="name" required></td></tr>
         <tr><th>タイトル: </th><td><input type="text"
-            name="title"></td></tr>
+            name="title" required></td></tr>
         <tr><th>概要: </th><td><input type="text"
-            name="overview"></td></tr>
+            name="overview" required></td></tr>
             <tr>
                 <th>記事内容：</th>
                 <td>
                     <textarea name="content" id="content" cols="50" rows="5" required></textarea>
                 </td>
             </tr>
+            <tr><th>アイキャッチ画像: </th><td><input type="text"
+                name="eyecatch" ></td></tr>
+            <tr><th>表示フラグ: </th><td><input type="boolean"
+                name="is_show" ></td></tr>
+
         <tr><th></th><td><input type="submit"
             value="送信"></td></tr>
     </table>
