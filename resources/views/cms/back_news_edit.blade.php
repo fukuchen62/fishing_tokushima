@@ -1,14 +1,14 @@
 @extends('layouts.news_ly')
 
-@section('title', 'メンバーの編集画面')
+@section('title', 'ニュースの編集画面')
 
 @section('menubar')
 
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/news_show" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/cms/news_entry">新規登録</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
@@ -24,7 +24,7 @@
     </div>
     @endif
 
-<form action="news_edit" method="post">
+<form action="admin/newsedit" method="post">
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
@@ -41,10 +41,11 @@
                 </td>
             </tr>
         <tr><th></th><td><input type="submit"value="修正">
-            <a href="news_delete?id={{ $form->id }}">削除</a></td></tr>
+            <a href="admin/newsdelete?id={{ $form->id }}">削除</a></td></tr>
     </table>
     </form>
 @endsection
+
 
 @section('footer')
 copyright 2020 tuyano.

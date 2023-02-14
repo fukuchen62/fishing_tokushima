@@ -1,18 +1,20 @@
 {{-- レイアウトテンプレートクラスを継承する --}}
 @extends('layouts.news_ly')
 
+@section('title', 'ニュース新規登録')
+
 @section('menubar')
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/news_show" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/cms/news_entry">新規登録</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
 
 @section('content')
-    <form action="news_entry" method="post">
+    <form action="admin/newsentry" method="post">
     <table>
         @csrf
         <tr><th>タイプ: </th><td><input type="text"
@@ -32,6 +34,7 @@
     </table>
     </form>
 @endsection
+
 
 @section('footer')
 copyright 2020 tuyano.

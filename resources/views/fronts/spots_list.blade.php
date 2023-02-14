@@ -11,9 +11,9 @@
 <body>
 
     <ul>
-        <li><a href="http://localhost/fishing_tokushima/public/knowledge_list">入門知識一覧</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/spots_list">釣り場一覧</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/shops_list">釣具屋一覧</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/knowledge/knowledgelist">入門知識一覧</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/spot/spotlist">釣り場一覧</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/shop/shoplist">釣具屋一覧</a></li>
     </ul>
 
     <h1>archiveSpot</h1>
@@ -95,7 +95,7 @@
                 <td>{{ $item->is_show }}</td>
                 <td>{{ $item->created_at }}</td>
                 <td>{{ $item->updated_at }}</td>
-                <td><a href="./spots_info?id={{ $item->id }}">詳細</a></td>
+                <td><a href="./spotinfo?id={{ $item->id }}">詳細</a></td>
             </tr>
         @endforeach
     </table>
