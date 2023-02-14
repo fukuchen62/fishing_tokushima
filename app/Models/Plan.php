@@ -15,26 +15,50 @@ class Plan extends Model
         return $ret;
     }
 
-
     // スコープ
-
-    // 地域
-    public function scopeAreaEqual($query, $area)
+    public function scopeSearch($query, $area, $level, $fish)
     {
         // $queryに自動的に中身が入る
-        return $query->where('city_id', $area);
-        // areaが$areaという値のデータが渡される（インスタンス）
+        $where = '';
+        if ($area != null) {
+            $where .= ' ( city_id IN ' . $area . ')';
+        }
+        if ($level != null) {
+            if ($where != '') {
+                $where .= ' AND ';
+            }
+            $where .= ' (level IN ' . $level . ')';
+        }
+        if ($fish != null) {
+            if ($where != '') {
+                $where .= ' AND ';
+            }
+            $where .= ' ( fish_id IN ' . $fish . ')';
+        }
+
+        $ret = $query->where($where);
+
+        return $ret;
     }
 
-    // 難易度
-    public function scopeLevelEqual($query, $level)
-    {
-        return $query->where('level', $level);
-    }
 
-    // 魚
-    public function scopeFishEqual($query, $fish)
-    {
-        return $query->where('fish_id', $fish);
-    }
+    // // 地域
+    // public function scopeAreaEqual($query, $area)
+    // {
+    //     // $queryに自動的に中身が入る
+    //     return $query->where('city_id', $area);
+    //     // areaが$areaという値のデータが渡される（インスタンス）
+    // }
+
+    // // 難易度
+    // public function scopeLevelEqual($query, $level)
+    // {
+    //     return $query->where('level', $level);
+    // }
+
+    // // 魚
+    // public function scopeFishEqual($query, $fish)
+    // {
+    //     return $query->where('fish_id', $fish);
+    // }
 }
