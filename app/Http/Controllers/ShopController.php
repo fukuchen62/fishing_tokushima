@@ -20,7 +20,11 @@ class ShopController extends Controller
 
     public function shopList(Request $request)
     {
-        $items = Shop::all();
+        // $items = Shop::all();
+
+        $city_id = $request->city_id;
+
+        $items = ShopController::getRecentCity($city_id);
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
@@ -33,7 +37,7 @@ class ShopController extends Controller
         return view('fronts.shops_list', $data);
     }
 
-    public function getRecentCity($cityId)
+    public static function getRecentCity($cityId)
     {
         $shops = Shop::city($cityId)->get();
         return $shops;
