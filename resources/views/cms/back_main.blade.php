@@ -9,7 +9,7 @@
     <div>
         <h2> Fish テーブル</h2>
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >一覧（修正・削除）</a></li>
         <li><a href= "http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
     </ul>
     </div>
@@ -17,7 +17,7 @@
     <div>
         <h2> Shots テーブル</h2>
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >一覧（修正・削除）</a></li>
         <li><a href= "http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
     </ul>
 </div>
@@ -25,7 +25,7 @@
 <div>
     <h2> Spots テーブル</h2>
 <ul>
-    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >一覧（修正・削除）</a></li>
     <li><a href= "http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
 </ul>
 </div>
@@ -33,7 +33,7 @@
 <div>
     <h2> Plans テーブル</h2>
 <ul>
-    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >一覧（修正・削除）</a></li>
     <li><a href= "http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
 </ul>
 </div>
@@ -41,7 +41,7 @@
 <div>
     <h2> News テーブル</h2>
 <ul>
-    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
+    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >一覧（修正・削除）</a></li>
     <li><a href= "http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
 </ul>
 </div>
@@ -49,8 +49,9 @@
 <div>
     <h2> Knowledge テーブル</h2>
 <ul>
-    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
-    <li><a href= "http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
+    <li><a href= "http://localhost/fishing_tokushima/public/admin/knowledgeshow" >一覧（修正・削除）</a></li>
+    <li><a href= "http://localhost/fishing_tokushima/public/admin/knowledgeentry">新規登録</a></li>
+
 </ul>
 </div>
 
