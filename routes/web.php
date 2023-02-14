@@ -60,13 +60,10 @@ Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'
 
 //Admin関連（spot分)
 
-// Route::get('', 'App\Http\Controllers\AdminController@spotSearch');
-
-// Route::get('', 'App\Http\Controllers\AdminController@spotShow');
-
-// Route::get('', 'App\Http\Controllers\AdminController@spotEdit');
-
-// Route::get('', 'App\Http\Controllers\AdminController@spotUpdate');
+Route::get('admin/spotsearch', [App\Http\Controllers\AdminController::class, 'spotSearch'])->name('spotsearch');
+Route::get('admin/spotsshow', [App\Http\Controllers\AdminController::class, 'spotsShow'])->name('spotsshow');
+Route::get('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsEdit'])->name('spotsedit');
+Route::post('admin/newsedit', [App\Http\Controllers\AdminController::class, 'spotsUpdate'])->name('spotsupdate');
 
 //Admin関連（knowledge分)
 
@@ -77,7 +74,6 @@ Route::post('admin/knowledgeentry', [App\Http\Controllers\AdminController::class
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeDelete'])->name('knowledgedelete');
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
 Route::post('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
-
 
 //Admin関連（news分)
 
@@ -95,6 +91,8 @@ Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'ne
 Route::post('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsRemove'])->name('newsremove');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//
 
 // Info関連(news)
 Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newslist');
