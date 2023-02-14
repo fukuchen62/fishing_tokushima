@@ -115,13 +115,13 @@
 }
 
 /* セクションタイトル */
-.section__title {
+/* .section__title {
     background-color: #30add1;
     border-radius: 20px;
     font-size: 20px;
     padding: 10px;
     color: #fff;
-}
+} */
 
 /* 概要の丸 */
 .overview {
