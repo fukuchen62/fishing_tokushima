@@ -21,6 +21,11 @@ use Illuminate\Support\Facades\DB;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class AdminController extends Controller
 {
+
+    public function adminTop(Request $request)
+    {
+    return view('cms.back_main');
+}
     public function newsSearch(Request $request)
     {
         // クライアントから検索条件(s)を取得する
