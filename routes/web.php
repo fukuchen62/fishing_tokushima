@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * トップページへのルート情報
+ */
+Route::get('main/', [App\Http\Controllers\MainController::class, 'index'])->name('toppage');
+
 Auth::routes();
 // 入門知識関連
 Route::get('knowledge/knowledgelist', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
