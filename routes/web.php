@@ -97,11 +97,11 @@ Route::post('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'n
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Info関連(news)
-Route::get('news/list', [App\Http\Controllers\NewsController::class, 'archiveInfo'])->name('newslist');
-Route::get('news/info', [App\Http\Controllers\NewsController::class, 'singleInfo'])->name('newsinfo');
+Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newslist');
+Route::get('news/info', [App\Http\Controllers\NewsController::class, 'newsInfo'])->name('newsinfo');
 
 // Info関連(evacuation)
-Route::get('news/escapelist', [App\Http\Controllers\NewsController::class, 'pageEscape'])->name('escapelist');
+Route::get('news/escapelist', [App\Http\Controllers\NewsController::class, 'escapeList'])->name('escapelist');
 
 
 /**
