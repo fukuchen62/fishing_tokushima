@@ -24,7 +24,8 @@
     </div>
     @endif
 
-<form action="admin/newsedit" method="post">
+<!-- <form action="admin/newsedit" method="post"> -->
+<form method="post" action="{{ route('newsedit') }}">
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
@@ -45,7 +46,6 @@
     </table>
     </form>
 @endsection
-
 
 @section('footer')
 copyright 2020 tuyano.
