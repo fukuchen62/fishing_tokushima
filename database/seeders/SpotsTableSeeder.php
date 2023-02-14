@@ -21,7 +21,7 @@ class SpotsTableSeeder extends Seeder
         $param = [
             'name' => '岡崎海岸',
             'overview' => 'テストです',
-            'city_id' => 3,
+            'city_id' => 1,
             'postal_code' => '772-0013',
             'spot_address' => '徳島県鳴門市撫養町岡崎二等道路東-88',
             'iframe_url' => 'test',
@@ -33,7 +33,7 @@ class SpotsTableSeeder extends Seeder
         $param = [
             'name' => '亀浦観光港',
             'overview' => 'テスト2です',
-            'city_id' => 3,
+            'city_id' => 2,
             'postal_code' => '772-0053',
             'spot_address' => '徳島県鳴門市鳴門町土佐泊浦大毛　亀浦漁港',
             'iframe_url' => 'test',
