@@ -26,17 +26,17 @@
             <th>近くの病院&nbsp;</th>
             <th>避難場所&nbsp;</th>
         </tr>
-        @foreach ($spots as $item)
-            <tr>
-                <td>{{ $item->spot_address }}</td>
+        <tr>
+            <td>{{ $spots->spot_address }}</td>
 
-                <td>ミニッツパーク</td>
-                <td>サビキ釣り</td>
-                <td>ファミマ</td>
-                <td>どっかの病院</td>
-                <td>高台</td>
-            </tr>
-        @endforeach
+            <td>ミニッツパーク</td>
+            <td>サビキ釣り</td>
+            <td>ファミマ</td>
+            <td>どっかの病院</td>
+            <td>高台</td>
+        </tr>
+
+
     </table>
 </body>
 

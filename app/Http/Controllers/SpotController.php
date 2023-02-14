@@ -41,7 +41,7 @@ class SpotController extends Controller
 
     public function spotInfo(Request $request)
     {
-        $items = Spot::all();
+        $items = Spot::find($request->id);
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
