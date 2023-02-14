@@ -17,6 +17,10 @@
     </ul>
 
     <h1>archiveSpot</h1>
+
+    <a href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
+    <a href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
+
     <table>
         <tr>
             @foreach ($spots as $item)

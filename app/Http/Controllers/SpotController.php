@@ -22,7 +22,11 @@ class SpotController extends Controller
 
     public function spotList(Request $request)
     {
-        $items = Spot::all();
+        // $items = Spot::all();
+
+        $city_id = $request->city_id;
+
+        $items = Spot::city($city_id)->get();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [

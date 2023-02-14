@@ -19,4 +19,9 @@ class Spot extends Model
         $ret = $this->id . ':' . $this->name;
         return $ret;
     }
+
+    public function scopeCity($query, $cityId)
+    {
+        return $query->where('city_id', $cityId);
+    }
 }
