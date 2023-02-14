@@ -13,6 +13,8 @@ use App\Models\Knowledge;
 
 use App\Models\Fish;
 
+use App\Models\Spot;
+
 
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
@@ -55,7 +57,7 @@ class AdminController extends Controller
     }
 
 
-//news分
+    //news分
 
     public function newsShow(Request $request)
     {
@@ -109,43 +111,43 @@ class AdminController extends Controller
 
 
 
- // Knowledgeテーブル関連
-public function knowledgeSearch(Request $request)
-{
-     // クライアントから検索条件(s)を取得する
-    $s = "";
-    if (isset($request->s)) {
+    // Knowledgeテーブル関連
+    public function knowledgeSearch(Request $request)
+    {
+        // クライアントから検索条件(s)を取得する
+        $s = "";
+        if (isset($request->s)) {
             $s = $request->s;
         }
 
-    if ($s !== '') {
-         // あいまい検索
-        $items = DB::table('knowledge')
-            ->where('id', 'like', '%' . $s . "%")
-            ->orwhere('name', 'like', '%' . $s . "%")
-            ->orWhere('sex', 'like', '%' . $s . "%")
-            ->orWhere('mail', 'like', '%' . $s . "%")
-            ->get();
-    } else {
-         // 無条件
-        $items = DB::table('knowledge')->get();
+        if ($s !== '') {
+            // あいまい検索
+            $items = DB::table('knowledge')
+                ->where('id', 'like', '%' . $s . "%")
+                ->orwhere('name', 'like', '%' . $s . "%")
+                ->orWhere('sex', 'like', '%' . $s . "%")
+                ->orWhere('mail', 'like', '%' . $s . "%")
+                ->get();
+        } else {
+            // 無条件
+            $items = DB::table('knowledge')->get();
         }
 
-     // テンプレートファイルに渡すデータ（連想配列）
+        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'msg' => '登録されている会員一覧です。',
-      // peopleから読み込んだレコードをmembersの連想配列の中身とする
-        'members' => $items,
+            // peopleから読み込んだレコードをmembersの連想配列の中身とする
+            'members' => $items,
         ];
-     // return view('hello.index', $data);
+        // return view('hello.index', $data);
 
-     // リダイレクトでルート名を呼び出し
+        // リダイレクトでルート名を呼び出し
         return redirect()->route('knowledge_show');
     }
 
     public function knowledgeShow(Request $request)
     {
-    $items = knowledge::all();
+        $items = knowledge::all();
         return view('cms.back_knowledge', ['items' => $items]);
     }
 
@@ -191,5 +193,64 @@ public function knowledgeSearch(Request $request)
     {
         knowledge::find($request->id)->delete();
         return redirect('knowledge_show');
+    }
+
+    //spots分
+
+    public function spotsSearch(Request $request)
+    {
+        // クライアントから検索条件(s)を取得する
+        $s = "";
+        if (isset($request->s)) {
+            $s = $request->s;
+        }
+
+        if ($s !== '') {
+            // あいまい検索
+            $items = DB::table('spots')
+                ->where('id', 'like', '%' . $s . "%")
+                ->orwhere('name', 'like', '%' . $s . "%")
+                ->orWhere('sex', 'like', '%' . $s . "%")
+                ->orWhere('mail', 'like', '%' . $s . "%")
+                ->get();
+        } else {
+            // 無条件
+            $items = DB::table('spots')->get();
+        }
+
+        // テンプレートファイルに渡すデータ（連想配列）
+        $data = [
+            'msg' => '登録されているショップ一覧です。',
+            // spotsから読み込んだレコードをmembersの連想配列の中身とする
+            'members' => $items,
+        ];
+
+        // リダイレクトでルート名を呼び出し
+        return redirect()->route('back_spots');
+    }
+
+
+    //news分
+
+    public function spotsShow(Request $request)
+    {
+        $items = News::all();
+        return view('cms.back_spots', ['items' => $items]);
+    }
+
+    public function spotsEdit(Request $request)
+    {
+        $spots = News::find($request->id);
+        return view('cms.back_spots_edit', ['form' => $spots]);
+    }
+
+    public function spotsUpdate(Request $request)
+    {
+        $this->validate($request, Spot::$rules);
+        $spots = Spot::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $spots->fill($form)->save();
+        return redirect()->route('spotsshow');
     }
 }

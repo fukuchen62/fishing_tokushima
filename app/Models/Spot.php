@@ -9,6 +9,13 @@ class Spot extends Model
 {
     use HasFactory;
 
+    public static $rules = array(
+        'name' => 'required',
+        'title' => 'required',
+        'overview' => 'required',
+        'content' => 'required'
+    );
+
     /**
      * getData
      *
