@@ -31,5 +31,9 @@ class CitiesTableSeeder extends Seeder
             'area' => '西部',
         ];
         DB::table('cities')->insert($param);
+        $param = [
+            'area' => '北部',
+        ];
+        DB::table('cities')->insert($param);
     }
 }
