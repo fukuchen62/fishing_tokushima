@@ -4,6 +4,11 @@ body {
     color: #51656F;
 }
 
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .wrap {
     margin: 0 20px;
 }
@@ -14,23 +19,37 @@ body {
 
 .calendar__section {
     width: 100%;
-    background-color: EAF2FA;
+    background-color: #EAF2FA;
     background-size: 20px 20px;
     position: relative;
-    margin-bottom: 80px;
+    padding: 80px;
 }
 
 /* calendar__box--search横並び */
-.calendar__box--search {
+.calendar__box--text {
     display: flex;
     text-align: center;
     background-color: #fff;
     line-height: 35px;
     border-radius: 31% 69% 57% 43% / 49% 52% 48% 51%;
-    /* width: 70vw; */
-    /* height: fit-content; */
+    width: 70vw;
+    height: fit-content;
     margin: 0 auto 20px;
-    padding: 30px;
+    padding: 50px;
+}
+
+@media screen and (min-width: 1080px) {
+    .calendar__box--text {
+        display: grid;
+        gap: 3%;
+        grid-template-columns: 1fr 1.5fr;
+        justify-content: center;
+        padding: 20px 20px;
+        position: static;
+        margin: 0 auto;
+    }
+
+
 }
 
 /* table */
@@ -52,7 +71,7 @@ tr {
     background-color: #FFEA20;
     border-style: outset;
     border-radius: 20px;
-    margin: 20px;
+    margin: 10px 10px;
 }
 
 /* 月ボタンホバー */
@@ -63,22 +82,14 @@ tr {
 
 
 /* セクションタイトル */
-.results__box--title {
-    background-color: #30ADD1;
-    border-radius: 30px;
-    color: #fff;
-    padding: 8px;
-    font-size: 24px;
-    margin: 100px 0 50px 0;
-}
-
+.results__box--title,
 .others__box--title {
     background-color: #30ADD1;
     border-radius: 30px;
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    margin: 20px 0 50px 0;
+    margin: 100px 0 50px 0;
 }
 
 /* 検索結果セクション */
@@ -90,6 +101,14 @@ tr {
     gap: 5%;
 }
 
+/* h3 */
+
+h3 {
+    font-size: 24px;
+    padding: 20px;
+}
+
+
 /* 釣れる魚の画像 */
 .fish__img {
     border-radius: 50%;
@@ -97,8 +116,17 @@ tr {
 
 /*その他海産物 */
 
+.others__box--info li {
+    margin: 25px;
+}
+
 .feed {
-    padding: 17px;
+    display: flex;
+    padding: 0 80px;
     border: 2px dotted #30ADD1;
     border-radius: 30px;
+    justify-content: center;
 }
+
+
+@media screen and (min-width: 1080px) {}
