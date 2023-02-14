@@ -46,7 +46,7 @@
                 <td>{{ $item->cooking1 }}</td>
                 <td>{{ $item->cooking2 }}</td>
                 <td>{{ $item->cooking3 }}</td>
-                <td><a href="./fishinfo?id={{ $item->id }}">詳細ページへ</a></td>
+                <td><a href="./info?id={{ $item->id }}">詳細ページへ</a></td>
             </tr>
         @endforeach
     </table>
