@@ -4,30 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="format-detection" content="telephone=no">
+    <!-- faviconタグ -->
+    <link rel="icon" href="" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <title>徳島の魚</title>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/plan.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/plan.css">
 
     <!-- jquery -->
     <script src=""></script>
+    <meta name="" content="">
+    <!-- フォントの設定adobefontをつかって -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xan8yzi',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
+
 <body>
-    <main>
+    <main class="main">
         <div class="container">
-            <h1 class="pagetitle">チョイと投げてハゼを釣ろう</h1>
+            <h1 class="pagetitle">イワシをサビキ釣り</h1>
             <section class="asase">
-                <div class="plan_img">
-                    <img src="" alt="ハゼ釣りプランの写真">
-                </div>
+                <img class="plan__img" src="https://placehold.jp/559x314.png" alt="イワシをサビキ釣りの写真">
                 <div class="overview">
                     <h3>概要</h3>
-                    <p>テキストテキストテキスト</p>
+                    <p>こちらでは初心者におすすめなサビキ釣りでイワシを釣る方法を紹介します。
+                    同じ釣り方でアジも釣れるので是非挑戦してみてはいかがでしょうか。</p>
                     <h3>難易度</h3>
-                    <img src="" alt="☆">
-                    <img src="" alt="☆">
-                    <img src="" alt="☆">
+                    <img src="https://placehold.jp/50x50.png" alt="☆">
                 </div>
             </section>
             <!-- 体験プラン詳細 -->
@@ -62,18 +77,6 @@
                                     テキストテキストテキスト
                                 </td>
                             </tr>
-                            <tr>
-                                <th>魚の種別</th>
-                                <td>
-                                    テキストテキストテキスト
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>他に釣れる魚</th>
-                                <td>
-                                    テキストテキストテキスト
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -81,35 +84,40 @@
             <section class="flow">
                 <h2 class="section__title">釣り方のフロー</h2>
                 <div class="flow_cont">
-                    <img src="" alt="フローの写真">
+                    <img class="plan__img" src="https://placehold.jp/559x314.png" alt="フローの写真">
                     <div class="flow_txt">
-                        <p>-1-</p>
-                        <p>テキストテキストテキスト</p>
+                        <h3>①準備物</h3>
+                        <p>釣り竿は２～３ｍ程のサビキ用ロッドで小型のスピニングリールを使用します。
+                        サビキ釣りに必要な撒き餌入れる編みかご、２～４号のナス型オモリを仕掛けに使用します。
+                        餌はオキアミなどの撒き餌に使われる物を使用します。</p>
                     </div>
+                    <div class="triangle"></div>
                 </div>
                 <div class="flow_cont">
-                    <img src="" alt="フローの写真">
+                    <img class="plan__img" src="https://placehold.jp/559x314.png" alt="フローの写真">
                     <div class="flow_txt">
-                        <p>-2-</p>
+                        <h3>②</h3>
                         <p>テキストテキストテキスト</p>
                     </div>
+                    <div class="triangle"></div>
                 </div>
                 <div class="flow_cont">
-                    <img src="" alt="フローの写真">
+                    <img class="plan__img" src="https://placehold.jp/559x314.png" alt="フローの写真">
                     <div class="flow_txt">
-                        <p>-3-</p>
+                        <h3>③</h3>
                         <p>テキストテキストテキスト</p>
                     </div>
+                    <!-- <div class="triangle"></div> -->
                 </div>
             </section>
             <section class="card_section">
                 <h2 class="section__title">
-                    <span class="btn_area_ttl">検索結果</span>
+                    <span class="btn_area_ttl">関連プラン</span>
                 </h2>
                 <div class="card_container">
                     <div class="card">
                         <a href="">
-                            <img src="" alt="">
+                            <img class="card__img" src="" alt="">
                             <h3 class="card__title">あじ釣り</h3>
                             <p class="card__discription">テキストテキスト</p>
                             <p class="card__discription">テキストテキスト</p>
@@ -118,7 +126,7 @@
                     </div>
                     <div class="card">
                         <a href="">
-                            <img src="" alt="">
+                            <img class="card__img" src="" alt="">
                             <h3 class="card__title">あじ釣り</h3>
                             <p class="card__discription">テキストテキスト</p>
                             <p class="card__discription">テキストテキスト</p>
@@ -127,7 +135,7 @@
                     </div>
                     <div class="card">
                         <a href="">
-                            <img src="" alt="">
+                            <img class="card__img" src="" alt="">
                             <h3 class="card__title">あじ釣り</h3>
                             <p class="card__discription">テキストテキスト</p>
                             <p class="card__discription">テキストテキスト</p>
@@ -138,5 +146,32 @@
             </section>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer__box  flex">
+            <ul>
+                <li>入門知識</li>
+                <li>徳島の魚</li>
+                <li>体験プラン</li>
+                <li>釣具店</li>
+                <li>避難場所</li>
+            </ul>
+            <ul>
+                <li>釣りスポット</li>
+                <li>東部</li>
+                <li>南部</li>
+            </ul>
+            <ul>
+                <li>マイページ</li>
+                <li>プライバシーポリシー</li>
+            </ul>
+        </div>
+        <ul class="sns flex">
+            <li>twitter</li>
+            <li>fasebook</li>
+            <li>instaglam</li>
+        </ul>
+        <p>copylight@turitoku.com</p>
+    </footer>
 </body>
 </html>
