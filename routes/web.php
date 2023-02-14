@@ -20,7 +20,7 @@ Route::get('/', function () {
 /**
  * トップページへのルート情報
  */
-Route::get('main/', [App\Http\Controllers\MainController::class, 'index'])->name('toppage');
+Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 
 Auth::routes();
 // 入門知識関連
@@ -51,6 +51,8 @@ Route::get('fish/fishinfo', [App\Http\Controllers\FishController::class, 'fishIn
 
 // Plan関連
 Route::get('plan/planlist', [App\Http\Controllers\PlanController::class, 'plansList'])->name('planlist');
+
+Route::post('plan/planlist', [App\Http\Controllers\PlanController::class, 'plansSearch'])->name('planlist');
 
 // Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
 
