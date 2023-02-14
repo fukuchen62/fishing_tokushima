@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 /**
  * トップページへのルート情報
+ *
+ * URL部分'/'に直す
  */
-Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
+Route::get('/toppage', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 /**
  * マイページへのルート情報
  */
