@@ -67,6 +67,8 @@ main {
     margin: 0 auto;
 }
 
+.button :not(tr) {}
+
 /* 月ボタンgrid */
 tr {
     display: grid;
