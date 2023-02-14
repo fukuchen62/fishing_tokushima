@@ -20,11 +20,12 @@ body{
 /* h1 */
 .pagetitle{
     font-size: 2.5rem;
-    position: relative;
     font-weight: 900;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
     margin-top: 60px;
+    position: relative;
+    bottom: 20px;
 }
 @media screen and (min-width: 600px ) and (max-width: 768px) {
     .pagetitle{
@@ -388,32 +389,28 @@ justify-content: start;
 
 
 /* 波の境界線 */
-.custom-shape-divider-top-1676265750 {
+.custom-shape-divider-top-1676265750,.custom-shape-divider-top-p{
     position: absolute;
     top: 140px;
     left: 0;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     line-height: 0;
     z-index: 2;
 }
-.custom-shape-divider-top-1676265750 svg {
+.wave {
     display: block;
     width: calc(100% + 1.3px);
     height: 100px;
 }
-.custom-shape-divider-top-1676265750 .shape-fill {
-    fill: #FFEA20;
-}
-
-.backp{
+.custom-shape-divider-top-p{
     top: 150px;
     z-index: 1;
 }
-.shape-p {
-    fill: #FFDCA5;
-        z-index: 1;
-}
+
+
+
+
 
 /* フッター */
 .footer{
