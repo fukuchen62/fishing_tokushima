@@ -21,11 +21,10 @@
     <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/common.css">
-
-    @yield('css')
+    <link rel="stylesheet" href="./assets/css/store.css">
 
     <!-- jquery -->
-    <script src="./assets/js/jquery-3.6.3.min.js"></script>
+    <script src="./assets/js/ventor/jquery-3.6.3.min.js"></script>
     <meta name="" content="">
     <!-- フォントの設定adobefontをつかって -->
     <script>
@@ -43,48 +42,59 @@
 </head>
 
 <body>
-    <header id="header" class="flex">
-        <div class="header__box--group"><img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo">
-            <!-- nav -->
-            <!-- ハンバーガーメニュー -->
-            <div class="hamburger flex">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <header id="header" class="header flex">
+        <div class="header__box--group">
+        </div>
+        <div class="header__box--border"></div>
+        <img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo">
+        <!-- ハンバーガーメニュー -->
+        <div class="hamburger flex">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <div class="header__box">
-            <div class="sidemenu">
-                <img src="./assets/images/fishing_boat_man.png" alt="ネコの画像" class="logo__img">
-                <div class="sidemenu__box">
-                    <div class="sidemenu__box--section flex">
-                        <div class="sidemenu__box--group">
-                            <a href="" class="sidemenu__box--discription">
-                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
-                                <span>入門知識</span>
+            <div class="g-nav flex">
+                <img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="logo__img">
+                <div class="g-nav__box">
+                    <div class="g-nav__box--section flex">
+                        <div class="g-nav__box--group">
+                            <a href="" class="g-nav__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
+                                <div class="g-nav__box--text">入門知識</div>
                             </a>
                         </div>
-                        <div class="sidemenu__box--group flex">
-                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
-                            <a href="" class="sidemenu__box--discription">徳島の魚</a>
+                        <div class="g-nav__box--group">
+                            <a href="" class="g-nav__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
+                                <div>徳島の魚</div>
+                            </a>
                         </div>
-                        <div class="sidemenu__box--group flex">
-                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
-                            <a href="" class="sidemenu__box--discription">釣りスポット</a>
+                        <div class="g-nav__box--group">
+                            <a href="" class="g-nav__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
+                                <div>釣りスポット</div>
+                            </a>
                         </div>
                     </div>
-                    <div class="sidemenu__box--section flex">
-                        <div class="sidemenu__box--group flex">
-                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
-                            <a href="" class="sidemenu__box--discription">体験プラン</a>
+                    <div class="g-nav__box--section flex">
+                        <div class="g-nav__box--group">
+                            <a href="" class="g-nav__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
+                                <div>体験プラン</div>
+                            </a>
                         </div>
-                        <div class="sidemenu__box--group flex">
-                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
-                            <a href="" class="sidemenu__box--discription">釣具店</a>
+                        <div class="g-nav__box--group">
+                            <a href="" class="g-nav__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
+                                <div>釣具店</div>
+                            </a>
                         </div>
-                        <div class="sidemenu__box--group flex">
-                            <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="sidemenu__box--img">
-                            <a href="" class="sidemenu__box--discription">マイページ</a>
+                        <div class="g-nav__box--group">
+                            <a href="" class="g-nav__box--discription">
+                                <img src="./assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
+                                <div>マイページ</div>
+                            </a>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -93,57 +103,127 @@
                         </path>
                     </svg>
                 </div>
-
+                <div class="g-nav__link flex">
+                    <a href="" class="g-nav__link--text">避難場所</a>
+                    <a href="" class="g-nav__link--text">プライバシーポリシー</a>
+                </div>
             </div>
         </div>
 
     </header>
 
     <main>
-        <div>
+        <div class="keyvisual">
             キービジュアル
+        </div>
+
+        <section class="titlesection flex">
+            <h1 class="pagetitle">入門知識</h1>
+            <img src="assets/images/kai_baigai.png" alt="貝" class="background__img shellfish1">
+            <img src="assets/images/kai_baigai.png" alt="貝" class="background__img shellfish2">
+            <img src="assets/images/kai_baigai.png" alt="貝" class="background__img shellfish3">
+        </section>
+        <div class="custom-shape-divider-top-1676265750">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
         </div>
 
         <section>
             <h2 class="section__title">釣具店</h2>
 
             <div class="flex">
-                <div>
-                    <div>東部</div>
-                </div>
+                <button>
+                    <div class="btn">東部</div>
+                </button>
 
-                <div>
-                    <div>西部</div>
-                </div>
+                <button>
+                    <div class="btn">西部</div>
+                </button>
 
-                <div>
-                    <div>南部</div>
-                </div>
+                <button>
+                    <div class="btn">南部</div>
+                </button>
             </div>
 
             <div>
                 <h3>検索結果</h3>
 
-                <div>お店の名前</div>
-                <div><img src="#" alt="お店の外観"></div>
+                <div class="section__content--left">
+                    <div>いはら釣具 本店</div>
+
+                    <div><img src="#" alt="お店の外観"></div>
+
+                    <!-- 疑似要素でアイコンを追加する -->
+                    <div class="section__image--location">徳島県板野郡松茂町笹木野灘25-16</div>
+
+                    <div class="section__image--open">営業時間</div>
+                    <div class="section__content--left">
+                        月曜日 4時00分～22時00分<br />
+                        火曜日 4時00分～22時00分<br />
+                        水曜日 4時00分～22時00分<br />
+                        木曜日 4時00分～22時00分<br />
+                        金曜日 4時00分～22時00分<br />
+                        土曜日 4時00分～22時00分<br />
+                        日曜日 4時00分～22時00分<br />
+                    </div>
+
+                    <div class="section__image--number">080-0000-0000</div>
+                    <div class="section__image--address">abc@gmail.com</div>
+
+                    <div class="section__image-homepage section__content--left">
+                        <a href="http://www.iharatsurigu.co.jp/wp/">ホームページはこちらから</a>
+                    </div>
+
+                </div>
+
+                <div class="section__image--service section__content--left">サービス内容</div>
+
+                <div class="section__content--margin">
+                    <div class="store__description">
+                        <p>
+                            釣りエサ・釣具・アウトドア用品・レジャー用品・漁具の販売 <br />
+                            冷凍エサの解凍予約サービス（無料）<br />
+                            クラッシャーでの冷凍エサ粉砕（無料）<br />
+                            メールマガジン・オリジナルアプリ（無料）<br />
+                            釣具全般の修理 <br />
+                            リール糸巻きサービス（スピニング/電動リール（無料）<br />
+                            ラッピングサービス（プレゼント/贈答/大会景品etc）（無料）<br />
+                            オリジナル商品券販売（全店共通・無期限）<br />
+                            魚拓（有料）<br />
+                            クレジット払い・分割払い <br />
+                            商品発送（代金引換）<br />
+                            商品お取り寄せ <br />
+                        </p>
+                    </div>
+                </div>
+
+                <div class="section__image--message section__content--left">お店からのメッセージ</div>
+
+                <div class="section__content--margin">
+                    <div class="store__description">
+                        <p>
+                            鳴門近郊の釣りを全面的にサポート！波止・船・筏等の釣りを網羅しています。
+                            活きエサ・冷凍エサ各種取扱いしております。お気軽にお問い合わせ下さい。
+                            フライ用品の品揃えは県下NO1！様々なマテリアルから用品まであります。（公式サイトより引用）
+                        </p>
+                    </div>
+                </div>
 
                 <!-- 疑似要素でアイコンを追加する -->
-                <div>住所</div>
-                <div></div>
-                <div>営業時間・定休日</div>
-                <div></div>
-                <div>電話番号</div>
-                <div></div>
-                <div>お店のホームページ</div>
-                <div><a href="http://">ホームページはこちらから</a></div>
-                <div>お店からのメッセージ</div>
-                <div></div>
-
-                <!-- 疑似要素でアイコンを追加する -->
-                <div>お店の周辺情報</div>
+                <div class="section__image--information section__content--left">お店の周辺情報</div>
 
                 <!-- Googleマップで周辺情報を表す -->
-                <div><iframe src="" frameborder="0"></iframe></div>
+                <div class="section__wrap--infomation">
+                    <iframe class="section__map--information"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105749.94989893542!2d134.50598449901784!3d34.07756439038653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e59cfa2e1a5%3A0xfc218cb261e84ce7!2z44GE44Gv44KJ6Yej5YW3!5e0!3m2!1sja!2sjp!4v1676339393022!5m2!1sja!2sjp"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
 
         </section>
