@@ -67,7 +67,6 @@ main {
     margin: 0 auto;
 }
 
-.button :not(tr) {}
 
 /* 月ボタンgrid */
 tr {
@@ -83,7 +82,7 @@ tr {
     background-color: #FFEA20;
     border-style: outset;
     border-radius: 20px;
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
 }
 
 /* 月ボタンホバー */
