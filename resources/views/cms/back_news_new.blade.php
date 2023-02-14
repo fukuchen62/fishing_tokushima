@@ -14,7 +14,8 @@
 @endsection
 
 @section('content')
-    <form action="admin/newsentry" method="post">
+    <!-- <form action="admin/newsentry" method="post"> -->
+        <form method="post" action="{{ route('newsentry') }}">
     <table>
         @csrf
         <tr><th>タイプ: </th><td><input type="text"
