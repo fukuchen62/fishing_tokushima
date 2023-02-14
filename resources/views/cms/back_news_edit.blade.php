@@ -42,7 +42,8 @@
                 </td>
             </tr>
         <tr><th></th><td><input type="submit"value="修正">
-            <a href="newsdelete?id={{ $form->id }}">削除</a></td></tr>
+            <!-- <a href="newsremove?id={{ $form->id }}">削除</a></td></tr> -->
+                        <a href="{{route('newsremove',['id'=>$form->id])}}">削除</a></td></tr>
     </table>
     </form>
 @endsection
