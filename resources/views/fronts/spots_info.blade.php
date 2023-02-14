@@ -11,9 +11,9 @@
 <body>
 
     <ul>
-        <li><a href="http://localhost/fishing_tokushima/public/knowledge/knowledgelist">入門知識一覧</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/spot/spotlist">釣り場一覧</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/shop/shoplist">釣具屋一覧</a></li>
+        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
+        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
+        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
     </ul>
 
     <h1>singleArea</h1>
@@ -35,8 +35,6 @@
                 <td>ファミマ</td>
                 <td>どっかの病院</td>
                 <td>高台</td>
-
-                {{-- <td><a href="board/edit?id={{ $item->id }}">編集</a></td> --}}
             </tr>
         @endforeach
     </table>
