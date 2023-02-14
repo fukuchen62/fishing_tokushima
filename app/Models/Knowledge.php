@@ -18,14 +18,14 @@ class Knowledge extends Model
         'is_show' => 'required'
     );
 
-// 日本語エラーメッセージ
-public static $messages = [
-    'category_id.required' => 'カテゴリーIDは必ず入力してください。',
-    'title.required' => 'タイトルは必ず入力してください。',
-    'thumbnail.required' => 'サムネ画像は必ず入力してください。',
-    'is_show.required' => '表示フラグは必ず入力してください。'
+    // 日本語エラーメッセージ
+    public static $messages = [
+        'category_id.required' => 'カテゴリーIDは必ず入力してください。',
+        'title.required' => 'タイトルは必ず入力してください。',
+        'thumbnail.required' => 'サムネ画像は必ず入力してください。',
+        'is_show.required' => '表示フラグは必ず入力してください。'
 
-];
+    ];
 
     /**
      * getData
@@ -39,8 +39,11 @@ public static $messages = [
     }
 
     // スコープ
-    // カテゴリーID
-
+    // 入門知識カテゴリーID
+    public function scopeCategory($query, $cateId)
+    {
+        return $query->where('category_id', $cateId);
+    }
 
 
     /**
