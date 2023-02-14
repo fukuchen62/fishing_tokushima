@@ -51,6 +51,29 @@
         @endforeach
     </table>
 
+    <table>
+        <tr>
+            <th>魚の名前(普通の呼び方)</th>
+            <th>魚の名前(正式名称)</th>
+            <th>魚の画像1</th>
+            <th>詳細説明</th>
+            <th>食べ方1</th>
+            <th>食べ方2</th>
+            <th>食べ方3</th>
+        </tr>
+        @foreach ($fishes2 as $item)
+            <tr>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->formal_name }}</td>
+                <td>{{ $item->fish_img1 }}</td>
+                <td>{{ $item->detail }}</td>
+                <td>{{ $item->cooking1 }}</td>
+                <td>{{ $item->cooking2 }}</td>
+                <td>{{ $item->cooking3 }}</td>
+            </tr>
+        @endforeach
+    </table>
+
 </body>
 
 </html>

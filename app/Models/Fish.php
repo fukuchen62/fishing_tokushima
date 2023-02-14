@@ -23,4 +23,9 @@ class Fish extends Model
     {
         return $query->where('month', 'LIKE', "%$month%");
     }
+
+    public function scopeFish2($query, $level)
+    {
+        return $query->where('level', 4);
+    }
 }
