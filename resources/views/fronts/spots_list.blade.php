@@ -99,7 +99,7 @@
                 <td>{{ $item->is_show }}</td>
                 <td>{{ $item->created_at }}</td>
                 <td>{{ $item->updated_at }}</td>
-                <td><a href="{{ route('spotsinfo', ['id' => $item->id]) }}">詳細</a></td>
+                <td><a href="{{ route('spotsinfo', ['id' => $item->id, $item->fish_id]) }}">詳細</a></td>
             </tr>
         @endforeach
     </table>
