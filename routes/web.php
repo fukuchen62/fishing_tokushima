@@ -34,9 +34,15 @@ Route::get('shop/shoplist', [App\Http\Controllers\ShopController::class, 'shopLi
 
 
 // Fish関連
-Route::get('fish/fishlist', [App\Http\Controllers\FishController::class, 'searchFish'])->name('fishlist');
+Route::get('fish/fishlist', [App\Http\Controllers\FishController::class, 'fishList'])->name('fishlist');
 
-Route::get('fish/fishinfo', [App\Http\Controllers\FishController::class, 'singleFish'])->name('fishinfo');
+Route::get('fish/fishlist', [App\Http\Controllers\FishController::class, 'fishFind'])->name('fishlist');
+
+Route::post('fish/fishlist', [App\Http\Controllers\FishController::class, 'fishSearch'])->name('fishlist');
+
+Route::get('fish/fishinfo', [App\Http\Controllers\FishController::class, 'fishInfo'])->name('fishinfo');
+
+
 
 // Plan関連
 Route::get('plan/planlist', [App\Http\Controllers\PlanController::class, 'searchPlan'])->name('planlist');
