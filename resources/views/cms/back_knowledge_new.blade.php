@@ -7,14 +7,15 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/knowledge_show" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/cms/knowledge_entry">新規登録</a></li>
-        <li>その他</li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/knowledgeshow" >HOME</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/admin/knowledgeentry>新規登録</a></li>
+
     </ul>
 @endsection
 
 @section('content')
-    <form action="knowledge_entry" method="post">
+    {{-- <form action="knowledge_entry" method="post"> --}}
+        <form method="post" action="{{ route('knowledgeentry') }}">
     <table>
         @csrf
         <tr><th>カテゴリーID: </th><td><input type="number"

@@ -30,7 +30,6 @@ class AdminController extends Controller
     {
     return view('cms.back_main');
 }
-
         //news分
 
 
@@ -150,7 +149,7 @@ class AdminController extends Controller
         // return view('hello.index', $data);
 
         // リダイレクトでルート名を呼び出し
-        return redirect()->route('knowledge_show');
+        return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeShow(Request $request)
@@ -172,7 +171,8 @@ class AdminController extends Controller
         unset($form['_token']);
 
         $knowledge->fill($form)->save();
-        return redirect('knowledge_show');
+        // return redirect('knowledge_show');
+        return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeEdit(Request $request)
@@ -188,7 +188,8 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
-        return redirect('knowledge_show');
+        // return redirect('knowledge_show');
+        return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeDelete(Request $request)
@@ -200,7 +201,8 @@ class AdminController extends Controller
     public function knowledgeremove(Request $request)
     {
         knowledge::find($request->id)->delete();
-        return redirect('knowledge_show');
+        // return redirect('knowledge_show');
+        return redirect()->route('knowledgeshow');
     }
 
     //spots分
