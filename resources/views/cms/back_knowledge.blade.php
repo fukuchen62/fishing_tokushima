@@ -15,15 +15,15 @@
 
 @section('content')
     <table border="1">
-    <tr><th>修正</th><th>ID</th><th>カテゴリーID</th><th>タイトル</th><th>概要</th></tr>
+    <tr><th>ID</th><th>カテゴリーID</th><th>タイトル</th><th>概要</th><th>修正</th></tr>
     @foreach ($items as $item)
         <tr>
-            <td><a href="{{route('knowledgeedit',['id'=>$item->id])}}">編集</a></td>
-            {{-- <td><a href="cms/knowledge_edit?id={{ $item->id }}">編集</a></td> --}}
             <td>{{$item->id}}</td>
             <td>{{$item->category_id}}</td>
             <td>{{$item->title}}</td>
             <td>{{$item->overview}}</td>
+            <td><a href="{{route('knowledgeedit',['id'=>$item->id])}}">編集</a></td>
+            {{-- <td><a href="cms/knowledge_edit?id={{ $item->id }}">編集</a></td> --}}
         </tr>
     @endforeach
     </table>
