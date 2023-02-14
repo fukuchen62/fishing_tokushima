@@ -20,16 +20,15 @@ class KnowledgeController extends Controller
 
     public function knowledgeList(Request $request)
     {
-        $items = Knowledge::all();
+        // $items = Knowledge::all();
+        $category_id = $request->category_id;
 
-        // テンプレートファイルに渡すデータ（連想配列）
+        $items = KnowledgeController::getCategory($category_id);
+
         $data = [
             'knowledges' => $items,
         ];
 
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
         return view('fronts.knowledge_list', $data);
     }
 
@@ -37,14 +36,16 @@ class KnowledgeController extends Controller
     {
         $items = Knowledge::find($request->id);
 
-        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'knowledges' => $items,
         ];
 
-        // viewでhelloフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
         return view('fronts.knowledge_info', $data);
+    }
+
+    public function getCategory($cateId)
+    {
+        $knowledges = knowledge::category($cateId)->get();
+        return $knowledges;
     }
 }

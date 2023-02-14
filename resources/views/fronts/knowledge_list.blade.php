@@ -16,6 +16,10 @@
     </ul>
 
     <h1>入門知識一覧</h1>
+    <a href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+    <a href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+    <a href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+    <a href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
 
     <table border="1">
         <tr>

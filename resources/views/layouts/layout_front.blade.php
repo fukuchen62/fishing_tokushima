@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
 
@@ -29,7 +30,7 @@
     @yield('pageCss')
 
     <!-- jqueryライブラリ -->
-    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/js/ventor/jquery-3.6.3.min.js') }}"></script>
 
     {{-- トークンを読み込む --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
