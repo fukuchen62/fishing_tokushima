@@ -45,10 +45,6 @@ Route::get('shop/list', [App\Http\Controllers\ShopController::class, 'shopList']
 // Fish関連
 Route::get('fish/list', [App\Http\Controllers\FishController::class, 'fishList'])->name('fishlist');
 
-Route::get('fish/list', [App\Http\Controllers\FishController::class, 'fishFind'])->name('fishlist');
-
-Route::post('fish/list', [App\Http\Controllers\FishController::class, 'fishSearch'])->name('fishlist');
-
 Route::get('fish/info', [App\Http\Controllers\FishController::class, 'fishInfo'])->name('fishinfo');
 
 

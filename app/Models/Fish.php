@@ -15,7 +15,12 @@ class Fish extends Model
 
     public function getData()
     {
-        $ret = $this->id . ':' . $this->name;
-        return $ret;
+        // $ret = $this->id . ':' . $this->name;
+        // return $ret;
+    }
+
+    public function scopeFish($query, $month)
+    {
+        return $query->where('month', 'LIKE', "%$month%");
     }
 }
