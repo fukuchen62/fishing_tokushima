@@ -26,18 +26,18 @@
             <li><a href="./fishlist?month={{ $item->month }}">12月</a></li>
         </ul> --}}
     {{-- @endforeach --}}
-    <a href="{{ route('fishlist', ['month' => 1]) }}">1月</a>
-    <a href="{{ route('fishlist', ['month' => 2]) }}">2月</a>
-    <a href="{{ route('fishlist', ['month' => 3]) }}">3月</a>
-    <a href="{{ route('fishlist', ['month' => 4]) }}">4月</a>
-    <a href="{{ route('fishlist', ['month' => 5]) }}">5月</a>
-    <a href="{{ route('fishlist', ['month' => 6]) }}">6月</a>
-    <a href="{{ route('fishlist', ['month' => 7]) }}">7月</a>
-    <a href="{{ route('fishlist', ['month' => 8]) }}">8月</a>
-    <a href="{{ route('fishlist', ['month' => 9]) }}">9月</a>
-    <a href="{{ route('fishlist', ['month' => a]) }}">10月</a>
-    <a href="{{ route('fishlist', ['month' => b]) }}">11月</a>
-    <a href="{{ route('fishlist', ['month' => c]) }}">12月</a>
+    <a href="{{ route('fishlist', ['month' => '1']) }}">1月</a>
+    <a href="{{ route('fishlist', ['month' => '2']) }}">2月</a>
+    <a href="{{ route('fishlist', ['month' => '3']) }}">3月</a>
+    <a href="{{ route('fishlist', ['month' => '4']) }}">4月</a>
+    <a href="{{ route('fishlist', ['month' => '5']) }}">5月</a>
+    <a href="{{ route('fishlist', ['month' => '6']) }}">6月</a>
+    <a href="{{ route('fishlist', ['month' => '7']) }}">7月</a>
+    <a href="{{ route('fishlist', ['month' => '8']) }}">8月</a>
+    <a href="{{ route('fishlist', ['month' => '9']) }}">9月</a>
+    <a href="{{ route('fishlist', ['month' => 'a']) }}">10月</a>
+    <a href="{{ route('fishlist', ['month' => 'b']) }}">11月</a>
+    <a href="{{ route('fishlist', ['month' => 'c']) }}">12月</a>
 
     {{-- <ul>
         <li><a href="./fishlist?month=1">1月</a></li>
