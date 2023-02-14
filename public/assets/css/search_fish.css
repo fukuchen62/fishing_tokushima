@@ -39,10 +39,20 @@ main {
 }
 
 @media screen and (min-width: 1080px) {
+    .calendar__box {
+        display: flex;
+        justify-content: center;
+    }
+
     .calendar__box--text {
-        display: grid;
+        width: 40vw;
+    }
+
+    .calendar__box--text {
+        width: 500px;
+        /* display: grid;
         gap: 3%;
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1.5fr; */
         justify-content: center;
         padding: 20px 20px;
         position: static;
@@ -56,6 +66,7 @@ main {
 .calendar-tb {
     margin: 0 auto;
 }
+
 
 /* 月ボタンgrid */
 tr {
@@ -71,13 +82,24 @@ tr {
     background-color: #FFEA20;
     border-style: outset;
     border-radius: 20px;
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
 }
 
 /* 月ボタンホバー */
 .secList:hover {
     background-color: #247F99;
     color: #fff;
+}
+
+@media(min-width:1080px) {
+    .calendar-tb {
+        margin: auto 0;
+    }
+
+    tr {
+        grid-template-columns: repeat(6, minmax(76px, 1fr));
+    }
+
 }
 
 
@@ -92,7 +114,7 @@ tr {
     margin: 100px 0 50px 0;
 }
 
-/* 検索結果セクション */
+/* 検索結果 */
 
 .results__box--info {
     display: flex;
@@ -100,6 +122,23 @@ tr {
     justify-content: center;
     gap: 5%;
 }
+
+@media(min-width:1080px) {
+    .results__box--info {
+        width: 850px;
+        margin: 0 auto;
+        gap: 14%;
+    }
+
+
+    .tokushimafish__box--group img {
+        width: 200px;
+        height: 200px;
+        gap: 14%;
+    }
+}
+
+
 
 /* h3 */
 
@@ -122,11 +161,31 @@ h3 {
 
 .feed {
     display: flex;
-    padding: 0 80px;
+    padding: 0 50px;
+    margin: 20px;
     border: 2px dotted #30ADD1;
     border-radius: 30px;
     justify-content: center;
 }
 
 
-@media screen and (min-width: 1080px) {}
+@media screen and (min-width: 1080px) {
+
+    .others__box--info li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .feed {
+        width: 500px;
+        border: 2px dotted #30ADD1;
+        border-radius: 30px;
+        justify-content: center;
+    }
+
+    .description__box {
+        width: 500px;
+        height: auto;
+        margin: 0 0 0 40px;
+    }
+}
