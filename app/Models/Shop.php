@@ -19,4 +19,9 @@ class Shop extends Model
         $ret = $this->id . ':' . $this->name;
         return $ret;
     }
+
+    public function scopeCity($query, $CityId)
+    {
+        return $query->where('City_id', $CityId);
+    }
 }
