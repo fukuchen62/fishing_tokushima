@@ -10,12 +10,17 @@
 
 <body>
     <ul>
-        <li><a href="http://localhost/fishing_tokushima/public/knowledge/knowledgelist">入門知識一覧</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/spot/spotlist">釣り場一覧</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/shop/shoplist">釣具屋一覧</a></li>
+        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
+        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
+        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
     </ul>
 
     <h1>pageShop</h1>
+
+    <a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
+    <a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
+    <a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
+    <a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
 
     <table border="1">
         <tr>

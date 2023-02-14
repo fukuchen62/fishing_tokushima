@@ -32,4 +32,10 @@ class ShopController extends Controller
         // クライアントに戻す
         return view('fronts.shops_list', $data);
     }
+
+    public function getRecentCity($cityId)
+    {
+        $shops = Shop::city($cityId)->get();
+        return $shops;
+    }
 }

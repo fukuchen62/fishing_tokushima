@@ -17,12 +17,24 @@ class Plan extends Model
 
 
     // スコープ
-    //地域、難易度、魚
-    // public function scopeAreaEqual($query, $area)
-    // {
-    //     // 名前で検索という意味のメソッド名
-    //     // $queryに自動的に中身が入る
-    //     return $query->where('fish_id'->'city_id', $area);
-    //     // nameが$strという値のデータが渡される（インスタンス）
-    // }
+
+    // 地域
+    public function scopeAreaEqual($query, $area)
+    {
+        // $queryに自動的に中身が入る
+        return $query->where('city_id', $area);
+        // areaが$areaという値のデータが渡される（インスタンス）
+    }
+
+    // 難易度
+    public function scopeLevelEqual($query, $level)
+    {
+        return $query->where('level', $level);
+    }
+
+    // 魚
+    public function scopeFishEqual($query, $fish)
+    {
+        return $query->where('fish_id', $fish);
+    }
 }
