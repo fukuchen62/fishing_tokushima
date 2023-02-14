@@ -24,39 +24,39 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('to
 
 Auth::routes();
 // 入門知識関連
-Route::get('knowledge/knowledgelist', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
+Route::get('knowledge/list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
 
-Route::get('knowledge/knowledgeinfo', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledgeinfo');
+Route::get('knowledge/info', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledgeinfo');
 
 // 釣りスポット関連
-Route::get('spot/spotlist', [App\Http\Controllers\SpotController::class, 'spotList'])->name('spotslist');
+Route::get('spot/list', [App\Http\Controllers\SpotController::class, 'spotList'])->name('spotslist');
 
 
-Route::get('spot/spotinfo', [App\Http\Controllers\SpotController::class, 'spotInfo'])->name('spotsinfo');
+Route::get('spot/info', [App\Http\Controllers\SpotController::class, 'spotInfo'])->name('spotsinfo');
 
 // 釣具屋関連
-Route::get('shop/shoplist', [App\Http\Controllers\ShopController::class, 'shopList'])->name('shopslist');
+Route::get('shop/list', [App\Http\Controllers\ShopController::class, 'shopList'])->name('shopslist');
 
 
 // Fish関連
-Route::get('fish/fishlist', [App\Http\Controllers\FishController::class, 'fishList'])->name('fishlist');
+Route::get('fish/list', [App\Http\Controllers\FishController::class, 'fishList'])->name('fishlist');
 
-Route::get('fish/fishlist', [App\Http\Controllers\FishController::class, 'fishFind'])->name('fishlist');
+Route::get('fish/list', [App\Http\Controllers\FishController::class, 'fishFind'])->name('fishlist');
 
-Route::post('fish/fishlist', [App\Http\Controllers\FishController::class, 'fishSearch'])->name('fishlist');
+Route::post('fish/list', [App\Http\Controllers\FishController::class, 'fishSearch'])->name('fishlist');
 
-Route::get('fish/fishinfo', [App\Http\Controllers\FishController::class, 'fishInfo'])->name('fishinfo');
+Route::get('fish/info', [App\Http\Controllers\FishController::class, 'fishInfo'])->name('fishinfo');
 
 
 
 // Plan関連
-Route::get('plan/planlist', [App\Http\Controllers\PlanController::class, 'plansList'])->name('planlist');
+Route::get('plan/list', [App\Http\Controllers\PlanController::class, 'plansList'])->name('planlist');
 
-Route::post('plan/planlist', [App\Http\Controllers\PlanController::class, 'plansSearch'])->name('planlist');
+Route::post('plan/list', [App\Http\Controllers\PlanController::class, 'plansSearch'])->name('planlist');
 
 // Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
 
-Route::get('plan/planinfo', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planinfo');
+Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planinfo');
 
 //Admin関連（spot分)
 
@@ -97,11 +97,11 @@ Route::post('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'n
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Info関連(news)
-Route::get('admin/newslist', [App\Http\Controllers\NewsController::class, 'archiveInfo'])->name('newslist');
-Route::get('admin/newsinfo', [App\Http\Controllers\NewsController::class, 'singleInfo'])->name('newsinfo');
+Route::get('news/list', [App\Http\Controllers\NewsController::class, 'archiveInfo'])->name('newslist');
+Route::get('news/info', [App\Http\Controllers\NewsController::class, 'singleInfo'])->name('newsinfo');
 
 // Info関連(evacuation)
-Route::get('admin/escapelist', [App\Http\Controllers\NewsController::class, 'pageEscape'])->name('escapelist');
+Route::get('news/escapelist', [App\Http\Controllers\NewsController::class, 'pageEscape'])->name('escapelist');
 
 
 /**
