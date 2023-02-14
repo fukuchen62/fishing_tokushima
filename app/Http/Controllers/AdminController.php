@@ -63,7 +63,7 @@ class AdminController extends Controller
         // return view('hello.index', $data);
 
         // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_news');
+        return redirect()->route('newsshow');
     }
 
     public function newsShow(Request $request)
