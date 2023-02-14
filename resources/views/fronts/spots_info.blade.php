@@ -25,6 +25,7 @@
             <th>周辺施設&nbsp;</th>
             <th>近くの病院&nbsp;</th>
             <th>避難場所&nbsp;</th>
+            <th>釣れる魚&nbsp;</th>
         </tr>
         <tr>
             <td>{{ $spots->spot_address }}</td>
@@ -34,6 +35,7 @@
             <td>ファミマ</td>
             <td>どっかの病院</td>
             <td>高台</td>
+            <td>アジ、イワシ</td>
         </tr>
 
 

@@ -107,7 +107,7 @@ class FishTableSeeder extends Seeder
             'cooking2' => 'アンチョビ',
             'cooking3' => 'カルパッチョ',
             'method' => 'サビキ釣り',
-            'month' => '10,11,12,a',
+            'month' => 'a,b,c,',
             'level' => 1,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
