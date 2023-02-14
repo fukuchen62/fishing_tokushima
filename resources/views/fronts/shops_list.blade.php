@@ -17,6 +17,11 @@
 
     <h1>pageShop</h1>
 
+    <a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
+    <a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
+    <a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
+    <a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
+
     <table border="1">
         <tr>
             <th>ID&nbsp;</th>
