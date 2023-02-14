@@ -21,6 +21,10 @@ Route::get('/', function () {
  * トップページへのルート情報
  */
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
+/**
+ * マイページへのルート情報
+ */
+Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
 
 Auth::routes();
 // 入門知識関連
