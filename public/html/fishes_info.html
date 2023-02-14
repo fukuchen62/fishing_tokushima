@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>魚　詳細ページ</title>
-    <link rel="stylesheet" href="./css/css/reset.css">
-    <link rel="stylesheet" href="./css/css/common.css">
+    <!-- faviconタグ -->
+    <link rel="icon" href="" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <title>魚　詳細</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/fishes_info.css">
+
+    <!-- jquery -->
+    <script src=""></script>
+    <meta name="" content="">
+    <!-- フォントの設定adobefontをつかって -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xan8yzi',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 <body>
     <header>
@@ -32,8 +53,7 @@
                     <div class="description__box">
                         <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
                         <div class="description__box--feed">
-                            <img src="" alt="エビの画像">
-                            <p>餌の種類：アカアミ</p>
+                            <p><img style="vertical-align: middle" src="../storage/images/fish_ebi.png" alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
                             <h3 class="card__title">難易度</h3>
                             <img src="" alt="難易度画像">
                         </div>
