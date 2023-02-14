@@ -16,7 +16,7 @@ use App\Models\Evacuation;
 class NewsController extends Controller
 {
 
-    // newsテーブル関連
+   // newsテーブル関連
     public function newsList()
     {
         $items = News::all();
@@ -39,7 +39,7 @@ class NewsController extends Controller
         return view('fronts/news_info', $data);
     }
 
-       // evacuationテーブル関連
+      // evacuationテーブル関連
     public function escapeList()
     {
         $items = Evacuation::all();

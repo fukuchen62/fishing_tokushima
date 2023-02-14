@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
 
     {{-- ディスカッション --}}
-    <meta name="description" content="ディスクリプションを記入してください">
+    <meta name="description" content="@yield('description')">
     {{-- キーワード --}}
-    <meta name="keywords" content="徳島,阿波">
+    <meta name="keywords" content="@yield('keywords')">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,48 +26,32 @@
     <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
     {{-- 独自のCSSファイルを読み込む --}}
-    @yield('css')
+    @yield('pageCss')
 
     <!-- jqueryライブラリ -->
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 
     {{-- トークンを読み込む --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-
 </head>
 
 <body>
-    <header>
-        {{-- コンポーネント：ヘッダーを読み込む --}}
-        @component('components.back_header')
-        {{-- 管理者の名前を埋め込む --}}
-        @slot('admin_name')
-        {{-- {{ $admin_name }} --}}
-        @endslot
+    <div class="wrapper">
+        @include('includes.front_header')
 
-        {{-- サブタイトルを埋め込む --}}
-        @slot('subtitle')
-        {{-- {{ $subtitle }} --}}
-        @endslot
-        @endcomponent
-    </header>
-
-    <main class="main">
-        <div class="sidebar">
-            {{-- サブビュー: サイドメニューを読み込む --}}
-            @include('includes.back_sidemenu')
-
-            {{-- 内容の表示 --}}
+        <main class="main">
             @yield('content')
+        </main>
+        <!-- サイドバー -->
+        <div class="sidebar">
+            @yield('sidebar')
         </div>
-    </main>
 
-    @yield('footer')
-
-    <script src="{{ asset('assets/js/common.js') }}"></script>
-    <script src="{{ asset('assets/js/audio.js') }}"></script>
+        @include('includes.front_footer')
+    </div>
 
     {{-- 独自のJSファイルを読み込む --}}
-    @yield('js')
+    @yield('pageJs')
 </body>
+
+</html>

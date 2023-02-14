@@ -4,86 +4,59 @@
 <head>
     <meta charset="UTF-8">
 
+    {{-- ディスカッション --}}
     <meta name="description" content="ディスクリプションを記入してください">
+    {{-- キーワード --}}
     <meta name="keywords" content="徳島,阿波">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <!-- faviconタグ -->
-    <link rel="icon" href="{{ asset('img/icon/favicon.ico') }}" id="favicon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/icon/apple_touch_icon_180x180.png') }}">
 
+    <!-- faviconを読み込む -->
+    <link rel="icon" href="{{ asset('assets/images/icon/favicon.ico') }}" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/icon/apple_touch_icon_180x180.png') }}">
+
+    {{-- ページタイトル --}}
     <title>@yield('title')</title>
-    <!-- stylesheets -->
+
+    <!-- reset.cssファイルを読み込む -->
+    <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
+
+    <!-- 共通のCSSファイル -->
     <link rel="stylesheet" href="{{ asset('assets/css/common.css') }}">
 
+    {{-- 独自のCSSファイルを読み込む --}}
     @yield('css')
 
-    <!-- jquery -->
+    <!-- jqueryライブラリ -->
     <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+
+    {{-- トークンを読み込む --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
     <div class="wrapper">
-        {{-- <div id="drawerBtn" class="drawer_btn">
-            <div id="hamburger" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div> --}}
-        <!-- .drawer_btn -->
-        {{-- <div id="drawer" class="drawer">
-            <nav class="main_nav_wrapper">
-                <ul class="main_nav">
-                    <li>
-                        <a href="{{ route('newslist') }}">あわ☆しょーと！について</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('newslist') }}">とくしまIT情報</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('newslist') }}">ショートカット一覧</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('newslist') }}">私たちについて</a>
-                    </li>
-                </ul>
-                <div class="main_nav_button_layout">
-                    <a href="shortcut_select" class="main_nav_button">
-                        <span>ゲームする</span>
-                        <span>Play Games</span>
-                    </a>
-                </div>
-            </nav>
-        </div> --}}
-        <!-- #drawer -->
-        <div class="wrapper">
-            @include('includes.front_header')
+        @include('includes.front_header')
 
-            @yield('main')
+        @yield('main')
 
-            <span class="spacer_sm"></span>
-            @include('includes.front_footer')
-        </div>
+        @include('includes.front_footer')
+    </div>
 
-        <!-- .wrapper -->
+    <!-- .wrapper -->
+    <div id="pagetop" class="pagetop">
+        <a href="#">
+            <span>Top</span>
+        </a>
+    </div> <!-- .pagetop -->
 
-        @yield('audio')
+    <script src="{{ asset('assets/js/common.js') }}"></script>
+    <script src="{{ asset('assets/js/audio.js') }}"></script>
 
-        <div id="pagetop" class="pagetop">
-            <a href="#">
-                <span>Top</span>
-            </a>
-        </div> <!-- .pagetop -->
-
-
-        <script src="{{ asset('assets/js/common.js') }}"></script>
-        <script src="{{ asset('assets/js/audio.js') }}"></script>
-
-        @yield('js')
+    {{-- 独自のJSファイルを読み込む --}}
+    @yield('js')
 </body>
 
 </html>
