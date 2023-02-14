@@ -34,10 +34,34 @@ class PlanController extends Controller
         // $items = Plan::levelEqual($request->level)->get;
         // $items = Plan::fishEqual($request->fish)->get;
 
-        $items = Plan::areaEqual($request->area)
-            ->levelEqual($request->level)
-            ->fishEqual($request->fish)
-            ->get();
+        $city_id = $request->area;
+        $level_id = $request->level;
+        $fish_id = $request->fish;
+
+        // $queryに自動的に中身が入る
+        $where = '';
+        if ($city_id != null) {
+            $where .= ' (city_id in( ' . implode(',', $city_id) . '))';
+        }
+        if ($level_id != null) {
+            if ($where != '') {
+                $where .= ' AND ';
+            }
+            $where .= ' (level in( ' . implode(',', $level_id) . '))';
+        }
+        if ($fish_id != null) {
+            if ($where != '') {
+                $where .= ' AND ';
+            }
+            $where .= ' ( fish_id in( ' . implode(',', $fish_id) . '))';
+        }
+
+        $items = DB::table('plans')->whereRaw($where)->get();
+        // if ($city_id != null) {
+        //     # code...
+        // }
+        // $items = Plan::scopeSearch($city_id, $level_id, $fish_id)
+        //     ->get();
 
         $data = [
             // 'area' => $request->area,
