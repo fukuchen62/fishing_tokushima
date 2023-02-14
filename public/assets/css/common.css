@@ -109,6 +109,11 @@ body{
     position: fixed;
     z-index: 5;
 }
+@media screen and (min-width: 1080px){
+    .header__box--group {
+        display: none;
+    }
+}
 .header__box--border {
     height: 30px;
     width: 100%;
@@ -343,7 +348,7 @@ justify-content: start;
 .titlesection{
     width: 100vw;
         height: 140px;
-        background-image: url(../images/wave.png);
+        background-image: url(../images/svg/wave-section1\ .svg);
         background-repeat: repeat-x;
         justify-content: center;
         align-items: center;
@@ -391,14 +396,7 @@ justify-content: start;
 
 
 
-/* 波の境界線 */
-.titlesection__bottom{
-    width: 100vw;
-    height: 140px;
-    position: absolute;
-    top: 0px;
-    z-index: 1;
-}
+
 
 
 
