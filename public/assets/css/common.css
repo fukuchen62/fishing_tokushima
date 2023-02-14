@@ -73,7 +73,7 @@ body{
 
 
 
-
+/* カード */
 .card{
     width: 320px;
     height: 426px;
@@ -92,7 +92,6 @@ body{
 }
 
 /* ヘッダー */
-
 .header{
     background-color: #fff;
     justify-content: end;
@@ -119,6 +118,7 @@ body{
     top: 100px;
     z-index: 10;
 }
+
 /* ハンバーガーメニュー */
 .hamburger {
     position: fixed;
@@ -160,6 +160,7 @@ body{
     font-size: 0.8rem;
     text-transform: uppercase;
 }
+
 /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
 .hamburger.active span:nth-of-type(1) {
     top: 0px;
@@ -451,4 +452,58 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     box-shadow: #000000;
+}
+
+/* 詳細情報table */
+.spotinfo__table,tr,th,td{
+    padding: 10px;
+}
+
+.spotinfo__table{
+    width: 100%;
+    background-color: #EAF2FA;
+    margin: 0 auto;
+}
+
+.spotinfo__table--title{
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    background-color: #30ADD1;
+    column-span: all;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 0;
+}
+
+tr:not(:last-child){
+    border-bottom:solid 2px #30ADD1;
+}
+
+.spotinfo__table--subtitle{
+    border-right: solid 2px #30ADD1;
+}
+
+tr:nth-child(odd) {
+    background-color:  #fff;
+}
+
+.radius-table{
+    border-radius: 20px;
+}
+
+.radius-table tr:last-child>*:first-child{
+    border-radius: 0 0 0 20px;
+}
+.radius-table tr:last-child>*:last-child{
+    border-radius: 0 0 20px 0;
+}
+
+@media screen and (min-width: 600px){
+    .spotinfo__table{
+        width: 559px;
+    }
+    .spotinfo__table--title{
+        width: 559px;
+    }
 }
