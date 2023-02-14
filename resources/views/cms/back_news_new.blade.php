@@ -18,7 +18,7 @@
         <form method="post" action="{{ route('newsentry') }}">
     <table>
         @csrf
-        <tr><th>カテゴリー名前: </th><td><input type="text"
+        <tr><th>カテゴリー名: </th><td><input type="text"
             name="name" required></td></tr>
         <tr><th>タイトル: </th><td><input type="text"
             name="title" required></td></tr>

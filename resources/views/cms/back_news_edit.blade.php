@@ -29,7 +29,7 @@
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
-        <tr><th>カテゴリー名前: </th><td><input type="text" name="name"
+        <tr><th>カテゴリー名: </th><td><input type="text" name="name"
             value="{{$form->name}}" required></td></tr>
         <tr><th>タイトル: </th><td><input type="text" name="title"
             value="{{$form->title}}" required></td></tr>
