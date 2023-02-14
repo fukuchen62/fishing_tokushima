@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 /**
  * トップページへのルート情報
+ *
+ * URL部分'/'に直す
  */
-Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
+Route::get('/toppage', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 /**
  * マイページへのルート情報
  */
@@ -54,8 +56,6 @@ Route::get('plan/list', [App\Http\Controllers\PlanController::class, 'plansList'
 
 Route::post('plan/list', [App\Http\Controllers\PlanController::class, 'plansSearch'])->name('planlist');
 
-// Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
-
 Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planinfo');
 
 //Admin関連（spot分)
@@ -64,6 +64,15 @@ Route::get('admin/spotsearch', [App\Http\Controllers\AdminController::class, 'sp
 Route::get('admin/spotsshow', [App\Http\Controllers\AdminController::class, 'spotsShow'])->name('spotsshow');
 Route::get('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsEdit'])->name('spotsedit');
 Route::post('admin/newsedit', [App\Http\Controllers\AdminController::class, 'spotsUpdate'])->name('spotsupdate');
+
+//Admin関連（plan分)
+
+Route::get('admin/plansearch', [App\Http\Controllers\AdminController::class, 'planSearch'])->name('plansearch');
+Route::get('admin/planshow', [App\Http\Controllers\AdminController::class, 'planShow'])->name('planshow');
+Route::get('admin/planedit', [App\Http\Controllers\AdminController::class, 'planEdit'])->name('planedit');
+Route::post('admin/planupdate', [App\Http\Controllers\AdminController::class, 'planUpdate'])->name('planupdate');
+Route::get('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
+Route::post('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
 
 //Admin関連（knowledge分)
 

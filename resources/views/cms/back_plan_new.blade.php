@@ -18,21 +18,25 @@
         <form method="post" action="{{ route('newsentry') }}">
     <table>
         @csrf
-        <tr><th>カテゴリー名: </th><td><input type="text"
+        <tr><th>プラン名: </th><td><input type="text"
             name="name" required></td></tr>
         <tr><th>タイトル: </th><td><input type="text"
             name="title" required></td></tr>
         <tr><th>概要: </th><td><input type="text"
             name="overview" required></td></tr>
             <tr>
-                <th>詳細内容：</th>
+                <th>難易度：</th>
                 <td>
                     <textarea name="content" id="content" cols="50" rows="5" required></textarea>
                 </td>
             </tr>
-            <tr><th>アイキャッチ画像: </th><td><input type="text"
+            <tr><th>地域・市町村: </th><td><input type="text"
                 name="eyecatch" ></td></tr>
-            <tr><th>表示フラグ: </th><td><input type="boolean"
+            <tr><th>釣りスポット: </th><td><input type="boolean"
+                name="is_show" value="1"></td></tr>
+            <tr><th>魚: </th><td><input type="boolean"
+                name="is_show" value="1"></td></tr>
+                <tr><th>釣り方のフロー: </th><td><input type="boolean"
                 name="is_show" value="1"></td></tr>
 
         <tr><th></th><td><input type="submit"
