@@ -28,4 +28,15 @@ class MainController extends Controller
     {
         return view('fronts.index');
     }
+
+    /**
+     * myPage
+     * マイページ
+     *
+     * @return void
+     */
+    public function myPage()
+    {
+        return view('fronts.mypage');
+    }
 }
