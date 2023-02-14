@@ -12,7 +12,8 @@ use Illuminate\Http\Reponse;
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Knowledge;
+// モデルを引用する
+use App\Models\News;
 
 // スーパークラスControllerを継承して独自のクラスを作成する
 class MainController extends Controller
@@ -24,9 +25,15 @@ class MainController extends Controller
      *
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('fronts.index');
+        // $created_at = $request->created_at;
+        // $title = $request->title;
+        $items = News::where('created_at', $request->created_at)->get();
+        $data = [
+            'news' => $items,
+        ];
+        return view('fronts.index', $data);
     }
 
     /**
