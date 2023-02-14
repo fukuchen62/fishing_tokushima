@@ -57,7 +57,8 @@
 
         <tr><th></th><td><input type="submit"value="修正">
             {{-- <a href="knowledge_delete?id={{ $form->id }}">削除</a></td></tr> --}}
-            <a href="{{route('knowledgeremove',['id'=>$form->id])}}">削除</a></td></tr>       </table>
+            <a href="{{route('knowledgeremove',['id'=>$form->id])}}">削除</a></td></tr>
+            </table>
     </form>
 @endsection
 
