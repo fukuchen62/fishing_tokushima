@@ -75,7 +75,7 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('news_show');
+        return redirect()->route('newsshow');
     }
 
     public function newsEdit(Request $request)
@@ -91,7 +91,7 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect('news_show');
+        return redirect()->route('newsshow');
     }
 
     public function newsDelete(Request $request)
@@ -103,7 +103,8 @@ class AdminController extends Controller
     public function newsRemove(Request $request)
     {
         News::find($request->id)->delete();
-        return redirect('news_show');
+        // return redirect('news_show');
+        return redirect()->route('newsshow');
     }
 
 
