@@ -31,23 +31,7 @@ class FishController extends Controller
         ];
         return view('fronts.fish_list', $data);
     }
-    // public function fishList(Request $request)
-    // {
-    //     $month = '';
 
-    //     // inputが入力されていたら、、、
-    //     if (isset($request->month)) {
-    //         $month = $request->month;
-    //     }
-
-    //     $item = Fish::find($month);
-
-    //     $data = [
-    //         'item' => $item,
-    //     ];
-
-    //     return view('fronts.fish_list', $data);
-    // }
 
     public function fishInfo(Request $request)
     {
@@ -66,23 +50,4 @@ class FishController extends Controller
 
         return view('fronts.fish_info', $data);
     }
-
-    // public function fishFind()
-    // {
-    //     $items = Fish::all();
-
-    //     $data = [
-    //         'fishes' => $items,
-    //     ];
-
-    //     return view('fronts.fish_list', $data);
-    // }
-
-    // public function fishSearch(Request $request)
-    // {
-    //     $item = Fish::where("month", "LIKE", "%$request->month%")->get();
-    //     $param = ['month' => $request->month, 'fishes' => $item];
-    //     return view('fronts.fish_list', $param);
-    //     // return redirect()->route('fishlist', $param);
-    // }
 }

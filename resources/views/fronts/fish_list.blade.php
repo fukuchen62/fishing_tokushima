@@ -35,9 +35,9 @@
     <a href="{{ route('fishlist', ['month' => 7]) }}">7月</a>
     <a href="{{ route('fishlist', ['month' => 8]) }}">8月</a>
     <a href="{{ route('fishlist', ['month' => 9]) }}">9月</a>
-    <a href="{{ route('fishlist', ['month' => 10]) }}">10月</a>
-    <a href="{{ route('fishlist', ['month' => 11]) }}">11月</a>
-    <a href="{{ route('fishlist', ['month' => 12]) }}">12月</a>
+    <a href="{{ route('fishlist', ['month' => a]) }}">10月</a>
+    <a href="{{ route('fishlist', ['month' => b]) }}">11月</a>
+    <a href="{{ route('fishlist', ['month' => c]) }}">12月</a>
 
     {{-- <ul>
         <li><a href="./fishlist?month=1">1月</a></li>
