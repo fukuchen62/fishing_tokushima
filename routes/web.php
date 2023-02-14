@@ -19,32 +19,31 @@ Route::get('/', function () {
 
 Auth::routes();
 // 入門知識関連
-Route::get('knowledge_list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledge_list');
+Route::get('knowledge/knowledgelist', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
 
-Route::get('knowledge_info', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledge_info');
+Route::get('knowledge/knowledgeinfo', [App\Http\Controllers\KnowledgeController::class, 'knowledgeInfo'])->name('knowledgeinfo');
 
 // 釣りスポット関連
-Route::get('spots_list', [App\Http\Controllers\SpotController::class, 'spotList'])->name('spots_list');
+Route::get('spot/spotlist', [App\Http\Controllers\SpotController::class, 'spotList'])->name('spotslist');
 
-// Route::get('main/archive_area', [App\Http\Controllers\SpotController::class, 'archiveArea'])->name('archive_area');
 
-Route::get('spots_info', [App\Http\Controllers\SpotController::class, 'spotInfo'])->name('spots_info');
+Route::get('spot/spotinfo', [App\Http\Controllers\SpotController::class, 'spotInfo'])->name('spotsinfo');
 
 // 釣具屋関連
-Route::get('shops_list', [App\Http\Controllers\ShopController::class, 'shopList'])->name('shops_list');
+Route::get('shop/shoplist', [App\Http\Controllers\ShopController::class, 'shopList'])->name('shopslist');
 
 
 // Fish関連
-Route::get('fish_list', [App\Http\Controllers\FishController::class, 'searchFish'])->name('fish_list');
+Route::get('fish/fishlist', [App\Http\Controllers\FishController::class, 'searchFish'])->name('fishlist');
 
-Route::get('fish_info', [App\Http\Controllers\FishController::class, 'singleFish'])->name('fish_info');
+Route::get('fish/fishinfo', [App\Http\Controllers\FishController::class, 'singleFish'])->name('fishinfo');
 
 // Plan関連
-Route::get('plans_list', [App\Http\Controllers\PlanController::class, 'searchPlan'])->name('plans_list');
+Route::get('plan/planlist', [App\Http\Controllers\PlanController::class, 'searchPlan'])->name('planlist');
 
 // Route::get('single_plan', 'App\Http\Controllers\PlanController@findPlan');
 
-Route::get('plans_info', [App\Http\Controllers\PlanController::class, 'singlePlan'])->name('plans_info');
+Route::get('plan/planinfo', [App\Http\Controllers\PlanController::class, 'singlePlan'])->name('planinfo');
 
 //Admin関連（spot分)
 
@@ -58,55 +57,38 @@ Route::get('plans_info', [App\Http\Controllers\PlanController::class, 'singlePla
 
 //Admin関連（knowledge分)
 
-Route::get('knowledge_show', 'App\Http\Controllers\AdminController@knowledgeShow');
+Route::get('admin/knowledgeshow', [App\Http\Controllers\AdminController::class, 'knowledgeShow'])->name('knowledgeshow');
+Route::get('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeEntry'])->name('knowledgeentry');
+Route::post('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeCreate'])->name('knowledgecreate');
 
-Route::get('cms/knowledge_entry', 'App\Http\Controllers\AdminController@knowledgeEntry');
-
-Route::post('cms/knowledge_entry', 'App\Http\Controllers\AdminController@knowledgeCreate');
-
-
-
-Route::get('cms/knowledge_edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
-
-Route::post('cms/knowledge_edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
-
-
-Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeDelete');
-
-Route::get('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeRemove');
-
-Route::post('cms/knowledge_delete', 'App\Http\Controllers\AdminController@knowledgeRemove');
+Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeDelete'])->name('knowledgedelete');
+Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
+Route::post('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
 
 
 //Admin関連（news分)
 
-Route::get('news_show', 'App\Http\Controllers\AdminController@newsShow');
-
-Route::get('cms/news_entry', 'App\Http\Controllers\AdminController@newsEntry');
-
-Route::post('cms/news_entry', 'App\Http\Controllers\AdminController@newsCreate');
+Route::get('admin/newsshow', [App\Http\Controllers\AdminController::class, 'newsShow'])->name('newsshow');
+Route::get('admin/newsentry', [App\Http\Controllers\AdminController::class, 'newsEntry'])->name('newsentry');
+Route::post('admin/newsentry', [App\Http\Controllers\AdminController::class, 'newsCreate'])->name('newscreate');
 
 
-Route::get('cms/news_edit', 'App\Http\Controllers\AdminController@newsEdit');
+Route::get('admin/newsedit', [App\Http\Controllers\AdminController::class, 'newsEdit'])->name('newsedit');
+Route::post('admin/newsedit', [App\Http\Controllers\AdminController::class, 'newsUpdate'])->name('newsupdate');
 
-Route::post('cms/news_edit', 'App\Http\Controllers\AdminController@newsUpdate');
 
-
-Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@newsDelete');
-
-Route::get('cms/news_delete', 'App\Http\Controllers\AdminController@newsRemove');
-
-Route::post('cms/news_delete', 'App\Http\Controllers\AdminController@newsRemove');
+Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsDelete'])->name('newsdelete');
+Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsRemove'])->name('newsremove');
+Route::post('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsRemove'])->name('newsremove');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Info関連(news)
-Route::get('archive_info', 'App\Http\Controllers\InfoController@archiveInfo');
-
-Route::get('single_info', 'App\Http\Controllers\InfoController@singleInfo');
+Route::get('admin/newslist', [App\Http\Controllers\NewsController::class, 'archiveInfo'])->name('newslist');
+Route::get('admin/newsinfo', [App\Http\Controllers\NewsController::class, 'singleInfo'])->name('newsinfo');
 
 // Info関連(evacuation)
-Route::get('page_escape', 'App\Http\Controllers\InfoController@pageEscape');
+Route::get('admin/escapelist', [App\Http\Controllers\NewsController::class, 'pageEscape'])->name('escapelist');
 
 
 /**
