@@ -30,17 +30,23 @@
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
         <tr><th>タイプ: </th><td><input type="text" name="name"
-            value="{{$form->name}}"></td></tr>
+            value="{{$form->name}}" required></td></tr>
         <tr><th>タイトル: </th><td><input type="text" name="title"
-            value="{{$form->title}}"></td></tr>
+            value="{{$form->title}}" required></td></tr>
         <tr><th>概要: </th><td><input type="text" name="overview"
-            value="{{$form->overview}}"></td></tr>
+            value="{{$form->overview}}" required></td></tr>
             <tr>
-                <th>記事内容：</th>
+                <th>記事内容:</th>
                 <td>
                     <textarea name="content" id="content" cols="50" rows="5" required> {{$form->content}} </textarea>
                 </td>
             </tr>
+            <tr><th>アイキャッチ画像:</th><td>
+                <input type="text" name="eyecatch" value="{{$form->eyecatch}}">
+            </td></tr>
+            <tr><th>表示フラグ:</th><td>
+                <input type="boolean" name="is_show" value="{{$form->is_show}}">
+            </td></tr>
         <tr><th></th><td><input type="submit"value="修正">
             <!-- <a href="newsremove?id={{ $form->id }}">削除</a></td></tr> -->
                         <a href="{{route('newsremove',['id'=>$form->id])}}">削除</a></td></tr>
