@@ -26,7 +26,7 @@ class SpotsTableSeeder extends Seeder
             'spot_address' => '徳島県鳴門市撫養町岡崎二等道路東-88',
             'iframe_url' => 'test',
             'toilet' => '有',
-            'fish_id' => '1,3,5,7',
+            // 'fish_id' => '1,3,5,7',
             'created_at' => date('Y-m-d H:i:s'),
         ];
         DB::table('spots')->insert($param);
@@ -39,7 +39,7 @@ class SpotsTableSeeder extends Seeder
             'spot_address' => '徳島県鳴門市鳴門町土佐泊浦大毛　亀浦漁港',
             'iframe_url' => 'test',
             'toilet' => '有',
-            'fish_id' => '2,4,6,8',
+            // 'fish_id' => '2,4,6,8',
             'created_at' => date('Y-m-d H:i:s'),
         ];
         DB::table('spots')->insert($param);
@@ -52,7 +52,7 @@ class SpotsTableSeeder extends Seeder
             'spot_address' => '徳島県鳴門市撫養町岡崎二等道路東-88',
             'iframe_url' => 'test',
             'toilet' => '有',
-            'fish_id' => '1,4,7',
+            // 'fish_id' => '1,4,7',
             'created_at' => date('Y-m-d H:i:s'),
         ];
         DB::table('spots')->insert($param);
@@ -65,7 +65,7 @@ class SpotsTableSeeder extends Seeder
             'spot_address' => '徳島県鳴門市鳴門町土佐泊浦大毛　亀浦漁港',
             'iframe_url' => 'test',
             'toilet' => '有',
-            'fish_id' => '2,5,9',
+            // 'fish_id' => '2,5,9',
             'created_at' => date('Y-m-d H:i:s'),
         ];
         DB::table('spots')->insert($param);
