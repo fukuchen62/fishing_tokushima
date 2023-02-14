@@ -22,12 +22,15 @@ class FishController extends Controller
         // $items = Fish::all();
 
         $month = $request->month;
+        $level = $request->level;
 
         $items = Fish::fish($month)->get();
+        $items2 = Fish::fish2($level)->get();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'fishes' => $items,
+            'fishes2' => $items2,
         ];
         return view('fronts.fish_list', $data);
     }

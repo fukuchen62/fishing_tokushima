@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="format-detection" content="telephone=no">
+    <!-- faviconタグ -->
+    <link rel="icon" href="" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="">
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <title>徳島の魚</title>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/plan.css">
-
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/plan.css">
 
     <!-- jquery -->
     <script src=""></script>
+    <meta name="" content="">
+    <!-- フォントの設定adobefontをつかって -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'xan8yzi',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
+
 <body>
-    <main>
+    <main class="main">
         <div class="container">
             <h1 class="pagetitle">条件検索</h1>
             <section class="plan__form">
@@ -105,7 +122,7 @@
                 <div class="card_container">
                     <div class="card">
                         <a href="">
-                            <img src="" alt="">
+                            <img class="card__img" src="" alt="">
                             <h3 class="card__title">あじ釣り</h3>
                             <p class="card__discription">テキストテキスト</p>
                             <p class="card__discription">テキストテキスト</p>
@@ -114,7 +131,7 @@
                     </div>
                     <div class="card">
                         <a href="">
-                            <img src="" alt="">
+                            <img class="card__img" src="" alt="">
                             <h3 class="card__title">あじ釣り</h3>
                             <p class="card__discription">テキストテキスト</p>
                             <p class="card__discription">テキストテキスト</p>
@@ -123,7 +140,34 @@
                     </div>
                     <div class="card">
                         <a href="">
-                            <img src="" alt="">
+                            <img class="card__img" src="" alt="">
+                            <h3 class="card__title">あじ釣り</h3>
+                            <p class="card__discription">テキストテキスト</p>
+                            <p class="card__discription">テキストテキスト</p>
+                            <p class="card__discription">テキストテキスト</p>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="">
+                            <img class="card__img" src="" alt="">
+                            <h3 class="card__title">あじ釣り</h3>
+                            <p class="card__discription">テキストテキスト</p>
+                            <p class="card__discription">テキストテキスト</p>
+                            <p class="card__discription">テキストテキスト</p>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="">
+                            <img class="card__img" src="" alt="">
+                            <h3 class="card__title">あじ釣り</h3>
+                            <p class="card__discription">テキストテキスト</p>
+                            <p class="card__discription">テキストテキスト</p>
+                            <p class="card__discription">テキストテキスト</p>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="">
+                            <img class="card__img" src="" alt="">
                             <h3 class="card__title">あじ釣り</h3>
                             <p class="card__discription">テキストテキスト</p>
                             <p class="card__discription">テキストテキスト</p>
@@ -134,5 +178,32 @@
             </section>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer__box  flex">
+            <ul>
+                <li>入門知識</li>
+                <li>徳島の魚</li>
+                <li>体験プラン</li>
+                <li>釣具店</li>
+                <li>避難場所</li>
+            </ul>
+            <ul>
+                <li>釣りスポット</li>
+                <li>東部</li>
+                <li>南部</li>
+            </ul>
+            <ul>
+                <li>マイページ</li>
+                <li>プライバシーポリシー</li>
+            </ul>
+        </div>
+        <ul class="sns flex">
+            <li>twitter</li>
+            <li>fasebook</li>
+            <li>instaglam</li>
+        </ul>
+        <p>copylight@turitoku.com</p>
+    </footer>
 </body>
 </html>

@@ -25,7 +25,7 @@ body{
     -webkit-text-stroke: 2px #30ADD1;
     margin-top: 60px;
     position: relative;
-    bottom: 20px;
+    z-index: 3;
 }
 @media screen and (min-width: 600px ) and (max-width: 768px) {
     .pagetitle{
@@ -44,12 +44,12 @@ body{
 .pagetitle::after {
     border-bottom: 10px dashed #30ADD1;
     content: '';
-    width: 80vw;
+    width: 50vw;
     height: 4px;
     display: inline-block;
     position: absolute;
     bottom: -15px;
-    left: -20vw;
+    left: -50%;
 }
 
 .section__title{
@@ -340,18 +340,20 @@ justify-content: start;
     background-color: #888;
 }
 .titlesection{
-    position: relative;
+    width: 100vw;
+        height: 140px;
+        background-image: url(../images/wave.png);
+        background-repeat: repeat-x;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 100px;
 }
 
 .titlesection__block{
-    width: 100vw;
-    height: 140px;
-    background-color: #FFEA20;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    padding-bottom: 100px;
+        align-items: flex-end;
 }
 .background__img{
     width: 50px;
@@ -389,24 +391,16 @@ justify-content: start;
 
 
 /* 波の境界線 */
-.custom-shape-divider-top-1676265750,.custom-shape-divider-top-p{
-    position: absolute;
-    top: 140px;
-    left: 0;
+.titlesection__bottom{
     width: 100vw;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 2;
-}
-.wave {
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 100px;
-}
-.custom-shape-divider-top-p{
-    top: 150px;
+    height: 140px;
+    position: absolute;
+    top: 0px;
     z-index: 1;
 }
+
+
+
 
 
 
