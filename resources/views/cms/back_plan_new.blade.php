@@ -1,7 +1,7 @@
 {{-- レイアウトテンプレートクラスを継承する --}}
 @extends('layouts.news_ly')
 
-@section('title', 'ニュース新規登録')
+@section('title', 'プラン新規登録')
 
 @section('menubar')
     @parent
@@ -15,7 +15,7 @@
 
 @section('content')
     <!-- <form action="admin/newsentry" method="post"> -->
-        <form method="post" action="{{ route('plansentry') }}">
+        <form method="post" action="{{ route('planentry') }}">
     <table>
         @csrf
         <tr><th>プラン名: </th><td><input type="text"

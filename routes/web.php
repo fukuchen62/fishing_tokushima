@@ -81,8 +81,8 @@ Route::get('admin/knowledgeshow', [App\Http\Controllers\AdminController::class, 
 Route::get('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeEntry'])->name('knowledgeentry');
 Route::post('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeCreate'])->name('knowledgecreate');
 
-Route::get('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
-Route::post('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
+Route::get('admin/knowledgeedit', [App\Http\Controllers\AdminController::class, 'knowledgeEdit'])->name('knowledgeedit');
+Route::post('admin/knowledgeedit', [App\Http\Controllers\AdminController::class, 'knowledgeUpdate'])->name('knowledgeupdate');
 
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeDelete'])->name('knowledgedelete');
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');

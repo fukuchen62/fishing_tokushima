@@ -15,8 +15,8 @@ class Fish extends Model
 
     public function getData()
     {
-        // $ret = $this->id . ':' . $this->name;
-        // return $ret;
+        $ret = $this->spots->name;
+        return $ret;
     }
 
     public function scopeFish($query, $month)
@@ -27,5 +27,25 @@ class Fish extends Model
     public function scopeFish2($query, $level)
     {
         return $query->where('level', 4);
+    }
+
+    public function spot()
+    {
+        return $this->belongsTo('App\Models\Spot');
+    }
+
+    public function getMonth()
+    {
+        $ret = $this->month;
+        if (strstr($ret, 'a')) {
+            $ret = str_replace('a', '10', $ret);
+        }
+        if (strstr($ret, 'b')) {
+            $ret = str_replace('b', '11', $ret);
+        }
+        if (strstr($ret, 'c')) {
+            $ret = str_replace('c', '12', $ret);
+        }
+        return $ret;
     }
 }
