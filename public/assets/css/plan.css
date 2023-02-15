@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 共通部分 */
-.container {
+/* .container {
     margin: 0 auto;
     padding: 0px 20px 0px 20px;
 }
@@ -9,7 +9,7 @@
 .main {
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 /* 画像 */
 .plan__img {
@@ -19,22 +19,31 @@
 
 /* 検索画面 */
 
-.form__section,.table__section {
-    border: 1px solid #000;
-    border-radius: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+.form__section
+/* .table__section */
+{
+    background-color: #EAF2FA;
 }
 
-.form__section--title {
+.form__box--title {
     background-color: #30add1;
     border-radius: 20px 20px 0px 0px;
     color: #fff;
+    padding: 8px;
+    font-size: 24px;
+    margin: 0px 0 20px 0;
 }
 
-.form__section--title h2 {
+/* .form__section--title h2 {
     font-size: 20px;
     padding: 10px;
+} */
+
+.form__box {
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
 }
 
 .search__box--title {
@@ -109,10 +118,68 @@
         padding-left: 50px;
     }
 
-    .form__section {
+    /* .form__section {
         max-width: 1160px;
+    } */
+}
+
+/* 詳細情報table */
+.spotinfo__table, tr, th, td {
+    padding: 10px;
+}
+
+.spotinfo__table {
+    width: 100%;
+    background-color: #EAF2FA;
+    margin: 0 auto;
+}
+
+.spotinfo__table--title {
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    background-color: #30ADD1;
+    column-span: all;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 0;
+}
+
+tr:not(:last-child) {
+    border-bottom: solid 2px #30ADD1;
+}
+
+.spotinfo__table--subtitle {
+    border-right: solid 2px #30ADD1;
+}
+
+/* 仮 */
+.spotinfo__table--tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.radius-table {
+    border-radius: 20px;
+}
+
+.radius-table tr:last-child>*:first-child {
+    border-radius: 0 0 0 20px;
+}
+
+.radius-table tr:last-child>*:last-child {
+    border-radius: 0 0 20px 0;
+}
+
+@media screen and (min-width: 600px) {
+    .spotinfo__table {
+        width: 559px;
+    }
+
+    .spotinfo__table--title {
+        width: 559px;
     }
 }
+
 
 /* セクションタイトル */
 /* .section__title {
@@ -169,6 +236,11 @@
 
 /* フロー */
 
+.flow__box {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .flow__box--text {
     width: 559px;
     margin: 50px auto;
@@ -211,4 +283,18 @@
     .triangle {
         display: none;
     }
+}
+
+.form__section {
+    /* パディングで指定すると表の上のほうが伸びる */
+    padding-top: 100px;
+}
+
+.overview__section {
+    padding-top: 100px;
+}
+
+/* 背景色の指定 */
+.overview__section {
+    background-color: #EAF2FA;
 }

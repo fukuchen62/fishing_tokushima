@@ -9,17 +9,20 @@ class Plan extends Model
 {
     use HasFactory;
 
+    protected $guarded = array('id');
+
     public static $rules = array(
-
+        'title' => 'string|max:50',
+        'overview' => 'string|max:200',
+        'level' => 'integer',
+        'city_id' => 'integer',
+        'spot_id' => 'integer',
+        'fish_id' => 'integer',
+        'flow' => 'string|max:20',
+        'eye_catch' => 'string|max:200',
+        'thumbnail' => 'string|max:200',
+        'is_show' => 'string|max:20',
     );
-
-    // テストのために使用
-    // public function getData()
-    // {
-    //     $ret = $this->id . ':' . $this->title;
-    //     return $ret;
-    // }
-
     // スコープ
     public function scopeSearch($query, $area, $level, $fish)
     {

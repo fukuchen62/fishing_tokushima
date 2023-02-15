@@ -18,16 +18,21 @@ class News extends Model
         'eyecatch' => 'string|max:200'
     );
 
-// 日本語エラーメッセージ
+    // 日本語エラーメッセージ
     public static $messages = [
-    'name.required'     => 'カテゴリー名は必ず入力してください。',
-    'title.required'    => 'タイトルは必ず入力してください。',
-    'overview.required' => '概要は必ず入力してください。',
-    'content.required'  => '詳細内容は必ず入力してください。',
+        'name.required'     => 'カテゴリー名は必ず入力してください。',
+        'title.required'    => 'タイトルは必ず入力してください。',
+        'overview.required' => '概要は必ず入力してください。',
+        'content.required'  => '詳細内容は必ず入力してください。',
     ];
 
     public function getData()
     {
         return $this->id . ': ' . $this->name . ': ' . $this->title . ': ' . $this->overview . ': ' . $this->content;
+    }
+
+    public function scopeCategory($query, $cateId)
+    {
+        return $query->where('category_id', $cateId);
     }
 }
