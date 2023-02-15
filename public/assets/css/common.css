@@ -4,7 +4,7 @@ padding-top:100px;
 margin-top だと背景色が崩れます。
 */
 
-body{
+body {
     text-align: center;
     height: auto;
     /* padding: 0 20px; */
@@ -18,7 +18,7 @@ body{
 
 
 /* h1 */
-.pagetitle{
+.pagetitle {
     font-size: 2.5rem;
     font-weight: 900;
     color: #fff;
@@ -27,12 +27,14 @@ body{
     position: relative;
     z-index: 3;
 }
-@media screen and (min-width: 600px ) and (max-width: 768px) {
-    .pagetitle{
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    .pagetitle {
         margin-top: 80px;
     }
 }
-.pagetitle::before{
+
+.pagetitle::before {
     content: url(../images/svg/fishing_fish_icon_194904.svg);
     width: 50px;
     height: 50px;
@@ -41,6 +43,7 @@ body{
     right: 105%;
     color: #30ADD1;
 }
+
 .pagetitle::after {
     border-bottom: 10px dashed #30ADD1;
     content: '';
@@ -52,14 +55,15 @@ body{
     left: -50%;
 }
 
-.section__title{
+.section__title {
     font-size: 2rem;
     position: relative;
     font-weight: 700;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
 }
-.section__title::after{
+
+.section__title::after {
     border-bottom: 10px dashed #000000;
     content: '';
     width: 60vw;
@@ -74,25 +78,28 @@ body{
 
 
 /* カード */
-.card{
+.card {
     width: 320px;
     height: 426px;
     background-color: #EAF2FA;
 }
-.card__img{
+
+.card__img {
     width: 320px;
     height: 240px;
 }
-.card__title{
+
+.card__title {
     font-size: 1.5rem;
     font-weight: 400;
 }
-.card__discription{
+
+.card__discription {
     color: #51656F;
 }
 
 /* ヘッダー */
-.header{
+.header {
     background-color: #fff;
     justify-content: end;
     width: 100vw;
@@ -100,7 +107,8 @@ body{
     position: fixed;
     z-index: 20;
 }
-.header__box--group{
+
+.header__box--group {
     content: "";
     display: inline-block;
     width: 100vw;
@@ -109,15 +117,10 @@ body{
     position: fixed;
     z-index: 5;
 }
-@media screen and (min-width: 1080px){
-    .header__box--group {
-        display: none;
-    }
-}
 .header__box--border {
     height: 30px;
     width: 100%;
-    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff),color-stop(0.52, rgba(0,0,0,0)), to(rgba(0,0,0,0)));
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff), color-stop(0.52, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
     -webkit-background-size: 49px 100%;
     position: fixed;
     top: 100px;
@@ -134,6 +137,7 @@ body{
     right: 20px;
     z-index: 20;
 }
+
 .hamburger span {
     display: inline-block;
     transition: all .4s;
@@ -146,15 +150,19 @@ body{
     width: 60px;
     height: 8px;
 }
+
 .hamburger span:nth-of-type(1) {
     top: 0px;
 }
+
 .hamburger span:nth-of-type(2) {
     top: 15px;
 }
+
 .hamburger span:nth-of-type(3) {
     top: 30px;
 }
+
 .hamburger span:nth-of-type(3)::after {
     content: "Menu";
     /*3つ目の要素のafterにMenu表示を指定*/
@@ -174,9 +182,11 @@ body{
     transform: rotate(-45deg);
     width: 50px;
 }
+
 .hamburger.active span:nth-of-type(2) {
     opacity: 0;
 }
+
 .hamburger.active span:nth-of-type(3) {
     top: 35px;
     left: 0px;
@@ -184,6 +194,7 @@ body{
     transform-origin: right;
     width: 50px;
 }
+
 .hamburger.active span:nth-of-type(3)::after {
     content: "Close";
     /*3つ目の要素のafterにClose表示を指定*/
@@ -192,15 +203,16 @@ body{
     left: 25px;
     letter-spacing: 0.5px;
 }
-@media screen and (min-width: 1080px)  {
-    .hamburger,.hamburger span {
-    display: none;
-    z-index: -1;
+
+@media screen and (min-width: 1080px) {
+    .hamburger, .hamburger span {
+        display: none;
+        z-index: -1;
     }
 }
 
 
-.g-nav{
+.g-nav {
     position: fixed;
     top: 0;
     right: 0;
@@ -216,7 +228,7 @@ body{
     overflow: scroll;
 }
 
-.logo__img,.header__logo{
+.logo__img, .header__logo {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -225,33 +237,38 @@ body{
     height: 60px;
 }
 
-.g-nav__slide{
+.g-nav__slide {
     background: #30ADD1;
     transform: translateX(0);
 }
 
-.g-nav__box{
+.g-nav__box {
     background-color: #fff;
     margin-top: 60px;
 }
-.g-nav__box--section{
+
+.g-nav__box--section {
     margin: 20px;
 }
-.g-nav__box--group{
+
+.g-nav__box--group {
     display: inline-block;
-margin-left: 20px;
+    margin-left: 20px;
 }
-.g-nav__box--discription{
-    display:inline-block;
+
+.g-nav__box--discription {
+    display: inline-block;
     margin-top: 20px;
 }
-.g-nav__box--img{
+
+.g-nav__box--img {
     border-radius: 50%;
     width: 136px;
     height: 136px;
 }
+
 @media screen and (min-width: 1080px) {
-.g-nav {
+    .g-nav {
         width: 90vw;
         transform: translateX(0);
         height: 100px;
@@ -263,47 +280,56 @@ margin-left: 20px;
         flex-direction: row;
         justify-content: flex-end;
     }
+
     .header__box {
         width: 100vw;
     }
+
     .g-nav__box {
-        margin-top:0 ;
+        margin-top: 0;
         display: flex;
         text-align: end;
-        background-color: rgba(0,0,0,0);
+        background-color: rgba(0, 0, 0, 0);
     }
+
     .g-nav__box--section {
         display: flex;
         flex-direction: row;
         margin: 0;
     }
+
     .g-nav__box--group {
         display: inline-block;
         margin-left: 20px;
-        width:100px;
+        width: 100px;
         height: 100px;
     }
+
     .g-nav__box--discription {
         display: inline-block;
         margin-top: 20px;
     }
+
     .g-nav__box--img {
         border-radius: 50%;
         width: 50px;
         height: 50px;
     }
-    .g-nav__box--text{
-        font: size 1px;;
+
+    .g-nav__box--text {
+        font: size 1px;
+        ;
     }
 
 
 }
 
-.g-nav__link{
-flex-flow: column;
-justify-content: start;
+.g-nav__link {
+    flex-flow: column;
+    justify-content: start;
 }
-.g-nav__link--text{
+
+.g-nav__link--text {
     display: inline-block;
     text-align: start;
     color: #fff;
@@ -318,34 +344,37 @@ justify-content: start;
     height: 0;
     border-bottom: 1px solid #fff;
     position: absolute;
-    bottom:-5px;
+    bottom: -5px;
     left: 0px;
 }
-@media screen and (min-width: 600px){
+
+@media screen and (min-width: 600px) {
 
     .g-nav__link {
-    display: none;
+        display: none;
     }
+
     .g-nav__link--text {
-    display: none;
-    position: static;
+        display: none;
+        position: static;
     }
 
     .g-nav__link--text::before {
-    position: static;
-    display: none;
-}
+        position: static;
+        display: none;
+    }
 }
 
 /* メイン */
 /* キービジュアル */
-.keyvisual{
+.keyvisual {
     width: 100vw;
     height: 300px;
     object-fit: cover;
     background-color: #888;
 }
-.titlesection{
+
+.titlesection {
     width: 100vw;
         height: 140px;
         background-image: url(../images/svg/wave-section1\ .svg);
@@ -355,35 +384,47 @@ justify-content: start;
         position: relative;
         z-index: 2;
         padding-bottom: 100px;
+    height: 140px;
+    background-image: url(../images/wave.png);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 100px;
 }
 
-.titlesection__block{
+.titlesection__block {
     justify-content: center;
-        align-items: flex-end;
+    align-items: flex-end;
 }
-.background__img{
+
+.background__img {
     width: 50px;
     height: 50px;
     position: absolute;
     z-index: 1;
 }
-.shellfish1{
+
+.shellfish1 {
     top: 10%;
-    left:10%;
+    left: 10%;
     z-index: 3;
 }
-.shellfish2{
+
+.shellfish2 {
     top: 15%;
     right: 35%;
 }
-.shellfish3{
+
+.shellfish3 {
     top: 50%;
     right: 10%;
     z-index: 3;
 }
 
 
-.firstsection{
+.firstsection {
     background-color: #EAF2FA;
     padding-top: 100px;
 }
@@ -397,6 +438,14 @@ justify-content: start;
 
 
 
+/* 波の境界線 */
+.titlesection__bottom {
+    width: 100vw;
+    height: 140px;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
 
 
 
@@ -406,29 +455,34 @@ justify-content: start;
 
 
 /* フッター */
-.footer{
+.footer {
     background-color: #30ADD1;
 }
-.footer__box{
+
+.footer__box {
     padding: 45px 0 0 0;
     margin-bottom: 70px;
     justify-content: space-around;
 }
-.footer__box>ul>li{
+
+.footer__box>ul>li {
     margin: 10px 0;
 }
-.sns{
-justify-content: center;
+
+.sns {
+    justify-content: center;
 }
-.sns li{
+
+.sns li {
     margin: 30px;
 }
+
 /* ul>li::before{
 
 } */
 
 
-.copylight{
+.copylight {
     padding-bottom: 20px;
 }
 
@@ -436,9 +490,10 @@ justify-content: center;
     display: flex;
 }
 
-.none{
-    display:none;
+.none {
+    display: none;
 }
+
 /* ボタンレイアウト基礎 */
 .btn {
     display: flex;
@@ -453,17 +508,17 @@ justify-content: center;
 }
 
 /* 詳細情報table */
-.spotinfo__table,tr,th,td{
+.spotinfo__table, tr, th, td {
     padding: 10px;
 }
 
-.spotinfo__table{
+.spotinfo__table {
     width: 100%;
     background-color: #EAF2FA;
     margin: 0 auto;
 }
 
-.spotinfo__table--title{
+.spotinfo__table--title {
     width: 100%;
     font-size: 24px;
     color: #fff;
@@ -474,34 +529,37 @@ justify-content: center;
     padding: 10px 0;
 }
 
-tr:not(:last-child){
-    border-bottom:solid 2px #30ADD1;
+tr:not(:last-child) {
+    border-bottom: solid 2px #30ADD1;
 }
 
-.spotinfo__table--subtitle{
+.spotinfo__table--subtitle {
     border-right: solid 2px #30ADD1;
 }
 
-tr:nth-child(odd) {
-    background-color:  #fff;
+/* 仮 */
+.spotinfo__table--tr:nth-child(odd) {
+    background-color: #fff;
 }
 
-.radius-table{
+.radius-table {
     border-radius: 20px;
 }
 
-.radius-table tr:last-child>*:first-child{
+.radius-table tr:last-child>*:first-child {
     border-radius: 0 0 0 20px;
 }
-.radius-table tr:last-child>*:last-child{
+
+.radius-table tr:last-child>*:last-child {
     border-radius: 0 0 20px 0;
 }
 
-@media screen and (min-width: 600px){
-    .spotinfo__table{
+@media screen and (min-width: 600px) {
+    .spotinfo__table {
         width: 559px;
     }
-    .spotinfo__table--title{
+
+    .spotinfo__table--title {
         width: 559px;
     }
 }
