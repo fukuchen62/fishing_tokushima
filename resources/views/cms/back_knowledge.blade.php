@@ -7,8 +7,8 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima_bkp0210/public/admin/knowledgeshow" >HOME</a></li>
-        <li><a href= "http://localhost/fishing_tokushima_bkp0210/public/admin/knowledgeentry">新規登録</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/knowledgeshow" >HOME</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/knowledgeentry">新規登録</a></li>
 
     </ul>
 @endsection
@@ -23,7 +23,7 @@
             <td>{{$item->title}}</td>
             <td>{{$item->overview}}</td>
             {{-- <td><a href="cms/knowledge_Edit?id={{ $item->id }}">編集</a></td> --}}
-            <td><a href="{{route('knowledgesedit',['id'=>$item->id])}}">編集</a></td>
+            <td><a href="{{route('knowledgeedit',['id'=>$item->id])}}">編集</a></td>
         </tr>
     @endforeach
     </table>
