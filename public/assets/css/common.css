@@ -82,7 +82,7 @@ body {
 
 
 /* カード */
-.card {
+/* .card {
     width: 320px;
     height: 426px;
     background-color: #EAF2FA;
@@ -100,6 +100,41 @@ body {
 
 .card__discription {
     color: #51656F;
+} */
+
+/* card */
+.card__p {
+    padding: 50px;
+  }
+
+.card{
+    width: 320px;
+    height: 426px;
+    background-color: #EAF2FA;
+    margin: 0 auto;
+    transition: 0.5s;
+    display: block;
+}
+
+.card:hover{
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+.card__skin{
+    border-radius: 30px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.card__img{
+    border-radius: 30px 30px 0 0;
+}
+
+.card__textbox {
+    width: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    text-align: start;
 }
 
 /* ヘッダー */
@@ -130,7 +165,7 @@ body {
 
 .header__box--border {
     height: 30px;
-    width: 120%;
+    width: 100%;
     background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff), color-stop(0.52, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
     -webkit-background-size: 49px 100%;
     position: fixed;
@@ -216,7 +251,9 @@ body {
 }
 
 @media screen and (min-width: 1080px) {
-    .hamburger, .hamburger span {
+
+    .hamburger,
+    .hamburger span {
         display: none;
         z-index: -1;
     }
@@ -234,23 +271,72 @@ body {
     align-items: center;
     justify-content: center;
     transform: translateX(100vw);
-    transition: all .3s linear;
+    /* transition: all .3s linear; */
     padding-top: 150px;
     overflow: scroll;
 }
 
-.logo__img, .header__logo {
+.slide-in {
+    background: #30ADD1;
+    animation-name: slide-in;
+    animation-fill-mode: forwards;
+    /* アニメーションの通常状態 */
+    animation-duration: 0.3s;
+    /* 1 回のアニメーションサイクルに要する時間の長さ */
+    animation-iteration-count: 1;
+    /* アニメーションの再生回数 */
+    animation-timing-function: ease;
+    /* アニメーションの種類 */
+    animation-delay: 0s;
+    /* アニメーションの遅延 */
+    animation-direction: normal;
+    /* アニメーション再生の向き */
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slide-out {
+    animation-name: slide-out;
+    animation-fill-mode: forwards;
+    /* アニメーションの通常状態 */
+    animation-duration: 0.3s;
+    /* 1 回のアニメーションサイクルに要する時間の長さ */
+    animation-iteration-count: 1;
+    /* アニメーションの再生回数 */
+    animation-timing-function: ease;
+    /* アニメーションの種類 */
+    animation-delay: 0s;
+    /* アニメーションの遅延 */
+    animation-direction: normal;
+    /* アニメーション再生の向き */
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.logo__img,
+.header__logo {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 5;
     width: 250px;
     height: 60px;
-}
-
-.g-nav__slide {
-    background: #30ADD1;
-    transform: translateX(0);
 }
 
 .g-nav__box {
@@ -378,7 +464,7 @@ body {
 
 /* メイン */
 /* キービジュアル */
-.subvisual {
+.keyvisual {
     width: 100vw;
     height: 300px;
     object-fit: cover;
@@ -478,17 +564,20 @@ body {
 }
 
 /* 詳細情報table */
-.spotinfo__table, tr, th, td {
+.table,
+.table__tr,
+th,
+td {
     padding: 10px;
 }
 
-.spotinfo__table {
+.table {
     width: 100%;
     background-color: #EAF2FA;
     margin: 0 auto;
 }
 
-.spotinfo__table--title {
+.table__title {
     width: 100%;
     font-size: 24px;
     color: #fff;
@@ -499,16 +588,16 @@ body {
     padding: 10px 0;
 }
 
-tr:not(:last-child) {
+.table__tr:not(:last-child) {
     border-bottom: solid 2px #30ADD1;
 }
 
-.spotinfo__table--subtitle {
+.table__subtitle {
     border-right: solid 2px #30ADD1;
 }
 
 /* 仮 */
-.spotinfo__table--tr:nth-child(odd) {
+.table__tr:nth-child(odd) {
     background-color: #fff;
 }
 
@@ -525,11 +614,11 @@ tr:not(:last-child) {
 }
 
 @media screen and (min-width: 600px) {
-    .spotinfo__table {
+    .table {
         width: 559px;
     }
 
-    .spotinfo__table--title {
+    .table__title {
         width: 559px;
     }
 }
