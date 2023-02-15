@@ -19,7 +19,7 @@
     @foreach ($items as $item)
         <tr>
             <!-- <td><a href="admin/newsedit?id={{ $item->id }}">編集</a></td> -->
-            <td><a href="{{route('newsedit',['id'=>$item->id])}}">編集</a></td>
+            <td><a href="{{route('planedit',['id'=>$item->id])}}">編集</a></td>
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>{{$item->title}}</td>
