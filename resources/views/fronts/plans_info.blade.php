@@ -20,6 +20,9 @@
                 <th>thumbnail</th>
                 <th>overview</th>
                 <th>level</th>
+                <th>スポット名</th>
+                <th>釣り方</th>
+                <th>釣れる月</th>
                 <th>flow</th>
             </tr>
             <tr>
@@ -27,6 +30,9 @@
                 <td>{{ $item -> thumbnail }}</td>
                 <td>{{ $item -> overview }}</td>
                 <td>{{ $item -> level }}</td>
+                <td>{{ $item -> spot -> name }}</td>
+                <td>{{ $item -> fish -> method }}</td>
+                <td>{{ $item -> fish -> getMonth() }}</td>
                 <td>{{ $item -> flow }}</td>
             </tr>
         </table>

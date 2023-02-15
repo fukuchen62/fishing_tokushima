@@ -9,11 +9,12 @@ class Plan extends Model
 {
     use HasFactory;
 
-    public function getData()
-    {
-        $ret = $this->id . ':' . $this->title;
-        return $ret;
-    }
+    // テストのために使用
+    // public function getData()
+    // {
+    //     $ret = $this->id . ':' . $this->title;
+    //     return $ret;
+    // }
 
     // スコープ
     public function scopeSearch($query, $area, $level, $fish)
@@ -61,4 +62,14 @@ class Plan extends Model
     // {
     //     return $query->where('fish_id', $fish);
     // }
+
+    public function spot()
+    {
+        return $this->belongsTo('App\Models\Spot');
+    }
+
+    public function fish()
+    {
+        return $this->belongsTo('App\Models\Fish');
+    }
 }
