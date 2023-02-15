@@ -2,24 +2,24 @@
 
 body {
     color: #51656F;
+    background-color: #EAF2FA;
 }
 
-main {
+/* main {
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .wrap {
     margin: 0 20px;
-}
+} */
 
-.calendar__section {
-    background-color: #EAF2FA;
+.calendar__box {
+    padding-top: 100px;
 }
 
 .calendar__section {
     width: 100%;
-    background-color: #EAF2FA;
     background-size: 20px 20px;
     position: relative;
     padding: 80px;
@@ -38,6 +38,7 @@ main {
     padding: 50px;
 }
 
+/* PC */
 @media screen and (min-width: 1080px) {
     .calendar__box {
         display: flex;
@@ -91,6 +92,7 @@ tr {
     color: #fff;
 }
 
+/* PC */
 @media(min-width:1080px) {
     .calendar-tb {
         margin: auto 0;
@@ -114,6 +116,7 @@ tr {
     margin: 100px 0 50px 0;
 }
 
+
 /* 検索結果 */
 
 .results__box--info {
@@ -123,6 +126,7 @@ tr {
     gap: 5%;
 }
 
+/* PC */
 @media(min-width:1080px) {
     .results__box--info {
         width: 850px;
@@ -148,6 +152,8 @@ h3 {
 }
 
 
+
+
 /* 釣れる魚の画像 */
 .fish__img {
     border-radius: 50%;
@@ -169,7 +175,7 @@ h3 {
     justify-content: center;
 }
 
-
+/* PC */
 @media screen and (min-width: 1080px) {
 
     .others__box--info li {
