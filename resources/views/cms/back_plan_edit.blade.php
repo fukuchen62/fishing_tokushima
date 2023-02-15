@@ -7,8 +7,8 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href= "http://localhost/fishing_tokushima/public/admin/newsshow" >HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
+        <li><a href= "http://localhost/fishing_tokushima/public/admin/planshow" >HOME</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/admin/planentry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
@@ -25,7 +25,7 @@
     @endif
 
 <!-- <form action="admin/newsedit" method="post"> -->
-<form method="post" action="{{ route('newsedit') }}">
+<form method="post" action="{{ route('planedit') }}">
     <table>
         @csrf
         <input type="hidden" name="id" value="{{$form->id}}">
@@ -54,8 +54,8 @@
                 <input type="boolean" name="is_show" value="{{$form->is_show}}">
             </td></tr>
         <tr><th></th><td><input type="submit"value="修正">
-            <!-- <a href="newsremove?id={{ $form->id }}">削除</a></td></tr> -->
-                        <a href="{{route('newsremove',['id'=>$form->id])}}">削除</a></td></tr>
+            <!-- <a href="planremove?id={{ $form->id }}">削除</a></td></tr> -->
+                        <a href="{{route('planremove',['id'=>$form->id])}}">削除</a></td></tr>
     </table>
     </form>
 @endsection
