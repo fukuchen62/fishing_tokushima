@@ -140,4 +140,19 @@ class MainController extends Controller
 
         return view('fronts/escape_list', $data);
     }
+    /**
+     * praivacyPage
+     * プライバシーポリシーページ
+     *
+     * @return void
+     */
+    public function praivacyPage()
+    {
+        return view('fronts/page_praivacy');
+    }
+
+    public function usPage()
+    {
+        return view('fronts/page_us');
+    }
 }

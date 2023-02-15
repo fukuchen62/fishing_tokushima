@@ -32,6 +32,14 @@ Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->
  */
 Route::get('/escapelist', [App\Http\Controllers\MainController::class, 'escapeList'])->name('escapelist');
 /**
+ * プライバシーポリシーへのルート情報
+ */
+Route::get('/praivacy', [App\Http\Controllers\MainController::class, 'praivacyPage'])->name('praivacypage');
+/**
+ * 私たちについてへのルート情報
+ */
+Route::get('/us', [App\Http\Controllers\MainController::class, 'usPage'])->name('uspage');
+/**
  * 管理画面TOPへのルート情報
  */
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
