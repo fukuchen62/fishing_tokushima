@@ -378,7 +378,7 @@ body {
 
 /* メイン */
 /* キービジュアル */
-.keyvisual {
+.subvisual {
     width: 100vw;
     height: 300px;
     object-fit: cover;
