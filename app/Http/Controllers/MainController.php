@@ -12,7 +12,7 @@ use Illuminate\Http\Reponse;
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Knowledge;
+use App\Models\Evacuation;
 
 
 // cookieを使う
@@ -90,5 +90,22 @@ class MainController extends Controller
         //     $msg,
         //     100,
         // );
+    }
+
+    /**
+     * secapeList
+     * 避難場所ページ
+     *
+     * @return void
+     */
+    public function escapeList()
+    {
+        $items = Evacuation::all();
+
+        $data = [
+            'evacuations' => $items,
+        ];
+
+        return view('fronts/escape_list', $data);
     }
 }

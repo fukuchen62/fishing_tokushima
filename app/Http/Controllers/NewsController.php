@@ -49,16 +49,4 @@ class NewsController extends Controller
         $knowledges = News::category($cateId)->get();
         return $knowledges;
     }
-
-    // evacuationテーブル関連
-    public function escapeList()
-    {
-        $items = Evacuation::all();
-
-        $data = [
-            'evacuations' => $items,
-        ];
-
-        return view('fronts/escape_list', $data);
-    }
 }
