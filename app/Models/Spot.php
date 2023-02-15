@@ -12,22 +12,22 @@ class Spot extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'overview' => 'required',
-        'img1' => 'required',
-        'img2' => 'required',
-        'img3' => 'required',
-        'img4' => 'required',
-        'img5' => 'required',
-        'fish_id' => 'required',
-        'mony' => 'required',
-        'shop_id' => 'required',
-        'plan_id' => 'required',
-        'evacuation_id' => 'required',
-        'parking_id' => 'required',
-        'hospital_id' => 'required',
-        'supermarket_id' => 'required',
-        'restaurant_id' => 'required',
-        'other_id' => 'required',
+        'overview' => 'required|string|max:200',
+        'img1' => 'required|string|max:200',
+        'img2' => 'string|max:200',
+        'img3' => 'string|max:200',
+        'img4' => 'string|max:200',
+        'img5' => 'string|max:200',
+        'fish_id' => 'string|max:20',
+        'mony' => 'string|max:20',
+        'shop_id' => 'string|max:20',
+        'plan_id' => 'string|max:20',
+        'evacuation_id' => 'string|max:20',
+        'parking_id' => 'integer',
+        'hospital_id' => 'integer',
+        'supermarket_id' => 'integer',
+        'restaurant_id' => 'integer',
+        'other_id' => 'integer',
     );
 
     /**
