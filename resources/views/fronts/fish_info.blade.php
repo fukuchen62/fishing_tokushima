@@ -47,15 +47,15 @@
         </tr>
     </table>
 
-    <a href="./info?id={{ $item->id }}">
-        <ul>
-            @foreach ($spots as $spot)
-                <li>{{ $spot->img1 }}</li>
-                <li>{{ $spot->name }}</li>
-                <li>{{ $spot->overview }}</li>
-            @endforeach
-        </ul>
-    </a>
+    <div>
+        @foreach ($spots as $key => $spot)
+            <a href="{{ route('spotsinfo', ['id' => $spots[$key]]) }}">
+                <p>{{ $spot->img1 }}</p>
+                <p>{{ $spot->name }}</p>
+                <p>{{ $spot->overview }}</p>
+            </a>
+        @endforeach
+    </div>
 
     <ul>
         @foreach ($fishlist as $fish)
