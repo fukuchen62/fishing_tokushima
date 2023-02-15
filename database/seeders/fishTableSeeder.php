@@ -36,6 +36,7 @@ class FishTableSeeder extends Seeder
             'method' => 'サビキ釣り',
             'month' => '1,2,3,4,a',
             'level' => 1,
+            'spot_id' => 1,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
@@ -61,6 +62,7 @@ class FishTableSeeder extends Seeder
             'method' => 'サビキ釣り',
             'month' => '4,5,6,a',
             'level' => 1,
+            'spot_id' => 2,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
@@ -84,6 +86,7 @@ class FishTableSeeder extends Seeder
             'method' => 'サビキ釣り',
             'month' => '6,7,8,9,a',
             'level' => 1,
+            'spot_id' => 3,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
@@ -109,6 +112,7 @@ class FishTableSeeder extends Seeder
             'method' => 'サビキ釣り',
             'month' => 'a,b,c,',
             'level' => 1,
+            'spot_id' => 4,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
@@ -132,6 +136,7 @@ class FishTableSeeder extends Seeder
             'method' => 'サビキ釣り',
             'month' => '6,7,8,9,a',
             'level' => 4,
+            'spot_id' => 1,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
@@ -157,6 +162,7 @@ class FishTableSeeder extends Seeder
             'method' => 'サビキ釣り',
             'month' => '4,5,9,a',
             'level' => 4,
+            'spot_id' => 2,
             'fish_img1' => 'test.png',
             'created_at' => date('Y-m-d H:i:s'),
         ];
