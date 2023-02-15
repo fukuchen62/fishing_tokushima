@@ -1,10 +1,7 @@
 body{
     /* padding: 0 20px; */
     color: #51656F;
-}
-
-.wrap{
-    margin: 0 20px;
+    background-color: red;
 }
 
 .spot__btn{
@@ -22,6 +19,13 @@ body{
 
 .spot__shell{
     padding: 20px 0;
+    margin-bottom: 50px;
+}
+
+.shell{
+    width: 100px;
+    height: 100px;
+    background-color: #dedede;
 }
 
 /* マップ */
@@ -50,5 +54,15 @@ body{
 }
 
 .shallow{
+    padding-top: 200px;
     background-color:#EAF2FA;
+}
+
+
+
+/* ページ全体共通のpadding left,rightです。
+各ページのセクションやブロックごとにクラスの指定をしてください。 */
+.p__lr{
+    padding-left: 20px;
+    padding-right: 20px;
 }
