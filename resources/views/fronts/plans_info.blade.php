@@ -47,11 +47,15 @@
             <tr>
                 <th>eye_catch</th>
                 <th>title</th>
+                <th>地域</th>
+                <th>レベル</th>
                 <th>overview</th>
             </tr>
             <tr>
                 <td>{{ $connection1 -> eye_catch }}</td>
                 <td>{{ $connection1 -> title }}</td>
+                <td>{{ $connection1 -> city -> area }}</td>
+                <td><?php echo $connection1 -> getLevel() ?></td>
                 <td>{{ $connection1 -> overview }}</td>
             </tr>
         </table>
@@ -63,11 +67,15 @@
             <tr>
                 <th>eye_catch</th>
                 <th>title</th>
+                <th>地域</th>
+                <th>レベル</th>
                 <th>overview</th>
             </tr>
             <tr>
                 <td>{{ $connection2 -> eye_catch }}</td>
                 <td>{{ $connection2 -> title }}</td>
+                <td>{{ $connection2 -> city -> area }}</td>
+                <td><?php echo $connection2 -> getLevel() ?></td>
                 <td>{{ $connection2 -> overview }}</td>
             </tr>
         </table>
@@ -79,11 +87,15 @@
             <tr>
                 <th>eye_catch</th>
                 <th>title</th>
+                <th>地域</th>
+                <th>レベル</th>
                 <th>overview</th>
             </tr>
             <tr>
                 <td>{{ $connection3 -> eye_catch }}</td>
                 <td>{{ $connection3 -> title }}</td>
+                <td>{{ $connection3 -> city -> area }}</td>
+                <td><?php echo $connection3 -> getLevel() ?></td>
                 <td>{{ $connection3 -> overview }}</td>
             </tr>
         </table>

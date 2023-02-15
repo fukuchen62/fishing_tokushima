@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 // モデルを引用する
 use App\Models\Fish;
+use App\Models\Spot;
 
 
 
@@ -45,10 +46,33 @@ class FishController extends Controller
             $id = $request->id;
         }
 
+        // idで該当魚の情報を取得
         $item = Fish::find($id);
+
+        // 関連スポットIDを取得
+        $spot_id = $item->spot_id;
+        if ($spot_id != '') {
+            $spotid_list = explode(",", $spot_id);
+        }
+
+        // かんれんスポットの情報を取得
+        foreach ($spotid_list as $key => $id) {
+            // spot情報を読み込む
+            $spotinfo = Spot::find($id);
+            // Spot情報を配列に加える
+            $spot_list[] = $spotinfo;
+        }
+
+        // 類似魚を取得する
+        $fish_list = Fish::where('level', '<>', 4)
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
 
         $data = [
             'item' => $item,
+            'spots' => $spot_list,
+            'fishlist' => $fish_list,
         ];
 
         return view('fronts.fish_info', $data);
