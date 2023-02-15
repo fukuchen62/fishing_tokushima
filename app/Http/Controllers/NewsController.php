@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Http\Request;
+
 // モデルを引用する
 use App\Models\News;
 
@@ -16,7 +18,7 @@ use App\Models\Evacuation;
 class NewsController extends Controller
 {
 
-   // newsテーブル関連
+    // newsテーブル関連
     public function newsList()
     {
         $items = News::all();
@@ -28,18 +30,18 @@ class NewsController extends Controller
         return view('fronts/news_list', $data);
     }
 
-    public function newsInfo()
+    public function newsInfo(Request $request)
     {
-        $items = News::all();
+        $items = News::find($request->id);
 
         $data = [
             'news' => $items,
         ];
 
-        return view('fronts/news_info', $data);
+        return view('fronts.news_info', $data);
     }
 
-      // evacuationテーブル関連
+    // evacuationテーブル関連
     public function escapeList()
     {
         $items = Evacuation::all();
