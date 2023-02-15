@@ -69,6 +69,13 @@ Route::get('admin/spotsshow', [App\Http\Controllers\AdminController::class, 'spo
 Route::get('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsEdit'])->name('spotsedit');
 Route::post('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsUpdate'])->name('spotsupdate');
 
+//Admin関連（shop分)
+
+Route::get('admin/shopsearch', [App\Http\Controllers\AdminController::class, 'shopSearch'])->name('shopsearch');
+Route::get('admin/shopsshow', [App\Http\Controllers\AdminController::class, 'shopsShow'])->name('shopsshow');
+Route::get('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'shopsEdit'])->name('shopsedit');
+Route::post('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'shopsUpdate'])->name('shopsupdate');
+
 //Admin関連（plan分)
 
 Route::get('admin/plansearch', [App\Http\Controllers\AdminController::class, 'planSearch'])->name('plansearch');
