@@ -103,7 +103,7 @@ tr {
 }
 
 
-/* セクションタイトル */
+/* セクションタイトル (h2)*/
 .results__box--title,
 .others__box--title {
     background-color: #30ADD1;
