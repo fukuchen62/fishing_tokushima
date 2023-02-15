@@ -3,10 +3,11 @@ padding-top:100px;
 を追加で当ててください（波線部分が100pxなので）
 margin-top だと背景色が崩れます。
 */
-
 body {
     text-align: center;
     height: auto;
+    width: 100%;
+    margin: 0 auto;
     /* padding: 0 20px; */
     font-family: "fot-tsukuardgothic-std", sans-serif;
     font-size: 16px;
@@ -15,66 +16,67 @@ body {
     color: #000000;
 }
 
+.flex {
+    display: flex;
+}
+
+.none {
+    display: none;
+}
+
+/* ページ全体共通のpadding left rightです */
+/* 各ページのセクションやブロックごとにクラスの指定をしてください */
+.p__lr{
+    padding:0,20,0,20 ;
+}
 
 
-/* h1 */
+/* h1 ページタイトル*/
 .pagetitle {
+    text-align: center;
     font-size: 2.5rem;
+    width: 300px;
     font-weight: 900;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
-    margin-top: 60px;
+    padding-top: 45px;
     position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
     z-index: 3;
+    overflow: visible;
 }
-
-@media screen and (min-width: 600px) and (max-width: 768px) {
-    .pagetitle {
-        margin-top: 80px;
-    }
-}
-
 .pagetitle::before {
-    content: url(../images/svg/fishing_fish_icon_194904.svg);
+    content: url(../images/fish__icon.png);
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 0;
-    right: 105%;
-    color: #30ADD1;
+    top: 45px;
+    right: 320px;
 }
 
-.pagetitle::after {
-    border-bottom: 10px dashed #30ADD1;
-    content: '';
-    width: 50vw;
-    height: 4px;
-    display: inline-block;
-    position: absolute;
-    bottom: -15px;
-    left: -50%;
-}
 
-.section__title {
-    font-size: 2rem;
+.pagetitle__border{
+    text-align: center;
+    width: 80%;
+    margin-top: 10px;
+    border: dashed 3px #30ADD1;
     position: relative;
-    font-weight: 700;
-    color: #fff;
-    -webkit-text-stroke: 2px #30ADD1;
-}
-
-.section__title::after {
-    border-bottom: 10px dashed #000000;
-    content: '';
-    width: 60vw;
-    height: 4px;
-    display: inline-block;
-    position: absolute;
-    bottom: -15px;
-    left: -160%
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 
+/* h2 セクションタイトル */
+
+    .section__box--title {
+        background-color: #30ADD1;
+        border-radius: 30px;
+        color: #fff;
+        padding: 8px;
+        font-size: 24px;
+        margin: 100px 0 50px 0;
+    }
 
 
 /* カード */
@@ -376,82 +378,58 @@ body {
 
 .titlesection {
     width: 100vw;
-        height: 140px;
-        background-image: url(../images/svg/wave-section1\ .svg);
-        background-repeat: repeat-x;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-        padding-bottom: 100px;
     height: 140px;
-    background-image: url(../images/wave.png);
+    background-image: url(../images/svg/wave-section1\ .svg);
     background-repeat: repeat-x;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2;
-    padding-bottom: 100px;
+}
+.titlesection__box{
+    position: relative;
 }
 
-.titlesection__block {
-    justify-content: center;
-    align-items: flex-end;
-}
 
-.background__img {
-    width: 50px;
-    height: 50px;
+.titlesection__img {
+    width: 40px;
+    height: 40px;
     position: absolute;
     z-index: 1;
 }
 
+/* 貝の画像 */
 .shellfish1 {
     top: 10%;
-    left: 10%;
-    z-index: 3;
-}
+    left: 20%;
 
+}
 .shellfish2 {
-    top: 15%;
-    right: 35%;
+    /* display: none; */
+    bottom: 0%;
+    left: 0%;
 }
-
 .shellfish3 {
-    top: 50%;
-    right: 10%;
-    z-index: 3;
+    top: 20px;
+    right: 30px;
+
 }
 
+/* 第一セクション背景 */
 
 .firstsection {
     background-color: #EAF2FA;
     padding-top: 100px;
 }
 
-.titlesection__block--group {
+
+.firstsection__bottom{
+    width: 100%;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom.svg);
+    background-repeat: repeat-x;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
-
-
-
-
-
-/* 波の境界線 */
-.titlesection__bottom {
-    width: 100vw;
-    height: 140px;
-    position: absolute;
-    top: 0px;
-    z-index: 1;
-}
-
-
-
-
-
-
 
 
 /* フッター */
@@ -469,30 +447,10 @@ body {
     margin: 10px 0;
 }
 
-.sns {
-    justify-content: center;
-}
-
-.sns li {
-    margin: 30px;
-}
-
-/* ul>li::before{
-
-} */
-
-
 .copylight {
     padding-bottom: 20px;
 }
 
-.flex {
-    display: flex;
-}
-
-.none {
-    display: none;
-}
 
 /* ボタンレイアウト基礎 */
 .btn {
