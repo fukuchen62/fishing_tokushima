@@ -126,19 +126,25 @@ class AdminController extends Controller
     // Knowledgeテーブル関連
     public function knowledgeSearch(Request $request)
     {
+    }
+
+    public function knowledgeShow(Request $request)
+    {
         // クライアントから検索条件(s)を取得する
         $s = "";
+
         if (isset($request->s)) {
             $s = $request->s;
         }
 
-        if ($s !== '') {
+        if ($s != '') {
             // あいまい検索
             $items = DB::table('knowledge')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
+                ->where('category_id', 'like', '%' . $s . "%")
+                ->orwhere('title', 'like', '%' . $s . "%")
+                ->orWhere('overview', 'like', '%' . $s . "%")
+                ->orWhere('content', 'like', '%' . $s . "%")
+                ->orWhere('is_show', 'like', '%' . $s . "%")
                 ->get();
         } else {
             // 無条件
@@ -149,18 +155,15 @@ class AdminController extends Controller
         $data = [
             'msg' => '登録されている会員一覧です。',
             // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+            'items' => $items,
         ];
-        // return view('hello.index', $data);
+        return view('cms.back_knowledge', $data);
 
         // リダイレクトでルート名を呼び出し
-        return redirect()->route('knowledge_show');
-    }
+        // return redirect()->route('knowledgeshow', $data);
 
-    public function knowledgeShow(Request $request)
-    {
-        $items = knowledge::all();
-        return view('cms.back_knowledge', ['items' => $items]);
+        // $items = knowledge::all();
+        // return view('cms.back_knowledge', ['items' => $items]);
     }
 
     public function knowledgeEntry(Request $request)
