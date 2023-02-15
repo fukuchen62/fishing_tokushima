@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\Knowledge;
 
+
+// cookieを使う
+use Illuminate, Support, Facades, Cookie;
+
+
 // スーパークラスControllerを継承して独自のクラスを作成する
 class MainController extends Controller
 {
@@ -41,7 +46,7 @@ class MainController extends Controller
         $msg = 'cookieはありません';
 
         if ($request->hasCookie('msg')) {
-            $msg = 'cookie:' . $request->cookie('msg');
+            $msg = 'cookie:' . $request->cookie('fish_id');
         } else {
             $msg = 'cookieはありません';
         }
@@ -62,18 +67,28 @@ class MainController extends Controller
      */
     public function myPage(Request $request)
     {
-        $validate_rule = [
-            'msg' => 'required',
+        // $validate_rule = [
+        //     'msg' => 'required',
+        // ];
+
+        // $this->validate($request, $validate_rule);
+
+        $id = $request->id;
+
+        $data = [
+            'msg' => '「' . $id . '」をcookieに保存しました。'
         ];
 
-        $this->validate($request, $validate_rule);
+        $response = response()->view('fronts.mypage', $data);
 
-        $msg = $request->msg;
-
-        $response = response()->view('fronts.mypage', ['msg' => '「' . $msg . '」をcookieに保存しました。']);
-
-        $response->cookie('msg', $msg, 100);
+        $response->withCookie('fish_id', $id, 100);
 
         return $response;
+
+        // return response('fronts.mypage')->cookie(
+        //     'msg',
+        //     $msg,
+        //     100,
+        // );
     }
 }
