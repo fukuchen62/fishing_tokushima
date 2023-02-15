@@ -11,20 +11,20 @@ class News extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'name' => 'required',
-        'title' => 'required',
-        'overview' => 'required',
-        'content' => 'required'
+        'name'     => 'required|string|max:10',
+        'title'    => 'required|string|max:50',
+        'overview' => 'required|string|max:150',
+        'content'  => 'required|string',
+        'eyecatch' => 'string|max:200'
     );
 
 // 日本語エラーメッセージ
     public static $messages = [
-        'name.required' => 'タイプは必ず入力してください。',
-        'title.required' => 'タイトルは必ず入力してください。',
-        'overview.required' => '概要は必ず入力してください。',
-        'content.required' => '記事内容は必ず入力してください。',
-
-];
+    'name.required'     => 'カテゴリー名は必ず入力してください。',
+    'title.required'    => 'タイトルは必ず入力してください。',
+    'overview.required' => '概要は必ず入力してください。',
+    'content.required'  => '詳細内容は必ず入力してください。',
+    ];
 
     public function getData()
     {

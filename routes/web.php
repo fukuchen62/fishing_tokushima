@@ -27,10 +27,6 @@ Route::get('/toppage', [App\Http\Controllers\MainController::class, 'index'])->n
  * マイページへのルート情報
  */
 Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
-/**
- * 管理ページへのルート情報
- */
-Route::get('admin/admintop', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
 
 Auth::routes();
 // 入門知識関連
@@ -84,9 +80,6 @@ Route::get('admin/planentry', [App\Http\Controllers\AdminController::class, 'pla
 Route::get('admin/knowledgeshow', [App\Http\Controllers\AdminController::class, 'knowledgeShow'])->name('knowledgeshow');
 Route::get('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeEntry'])->name('knowledgeentry');
 Route::post('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeCreate'])->name('knowledgecreate');
-
-Route::get('admin/knowledgeedit', [App\Http\Controllers\AdminController::class, 'knowledgeEdit'])->name('knowledgeedit');
-Route::post('admin/knowledgeedit', [App\Http\Controllers\AdminController::class, 'knowledgeUpdate'])->name('knowledgeupdate');
 
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeDelete'])->name('knowledgedelete');
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
