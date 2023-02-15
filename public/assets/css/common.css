@@ -26,9 +26,9 @@ body {
 
 /* ページ全体共通のpadding left rightです */
 /* 各ページのセクションやブロックごとにクラスの指定をしてください */
-.p__lr{
-    padding-left:20px;
-    padding-right:20px;
+.p__lr {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 
@@ -47,6 +47,7 @@ body {
     z-index: 3;
     overflow: visible;
 }
+
 .pagetitle::before {
     content: url(../images/fish__icon.png);
     width: 50px;
@@ -57,7 +58,7 @@ body {
 }
 
 
-.pagetitle__border{
+.pagetitle__border {
     text-align: center;
     width: 80%;
     margin-top: 10px;
@@ -70,14 +71,14 @@ body {
 
 /* h2 セクションタイトル */
 
-    .section__box--title {
-        background-color: #30ADD1;
-        border-radius: 30px;
-        color: #fff;
-        padding: 8px;
-        font-size: 24px;
-        margin: 100px 0 50px 0;
-    }
+.section__box--title {
+    background-color: #30ADD1;
+    border-radius: 30px;
+    color: #fff;
+    padding: 8px;
+    font-size: 24px;
+    margin: 100px 0 50px 0;
+}
 
 
 /* カード */
@@ -120,11 +121,13 @@ body {
     position: fixed;
     z-index: 5;
 }
+
 @media screen and (min-width: 1080px) {
     .header__box--group {
         display: none;
     }
 }
+
 .header__box--border {
     height: 30px;
     width: 120%;
@@ -375,7 +378,7 @@ body {
 
 /* メイン */
 /* キービジュアル */
-.keyvisual {
+.subvisual {
     width: 100vw;
     height: 300px;
     object-fit: cover;
@@ -391,7 +394,8 @@ body {
     align-items: center;
     position: relative;
 }
-.titlesection__box{
+
+.titlesection__box {
     position: relative;
 }
 
@@ -409,11 +413,13 @@ body {
     left: 20%;
 
 }
+
 .shellfish2 {
     /* display: none; */
     bottom: 0%;
     left: 0%;
 }
+
 .shellfish3 {
     top: 20px;
     right: 30px;
@@ -428,7 +434,7 @@ body {
 }
 
 
-.firstsection__bottom{
+.firstsection__bottom {
     width: 100%;
     height: 160px;
     background-image: url(../images/svg/wave__sectionbottom.svg);
@@ -536,10 +542,12 @@ tr:not(:last-child) {
     bottom: 30px;
     right: 50px;
 }
+
 .topbutton__hook {
     width: 30px;
     height: 50px;
 }
+
 #page_top a {
     color: #000000;
     text-align: center;

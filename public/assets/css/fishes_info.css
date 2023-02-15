@@ -19,7 +19,7 @@ body {
 }
 
 
-/* 概要・丸い囲い */
+/* 魚の写真・概要・丸い囲い */
 
 .description__box {
     width: 400px;
@@ -37,6 +37,12 @@ body {
 .description__box p {
     margin: 0px 30px;
     text-align: left;
+}
+
+@media screen and (min-width: 1080px) {
+    .fishinfo__box {
+        display: flex;
+    }
 }
 
 /* 詳細テーブル */
