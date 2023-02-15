@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+@charset "utf-8";
+
+body {
+    color: #51656F;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #EAF2FA;
+}
+
+.wrap {
+    margin: 0 20px;
+}
+
+/* 概要・丸い囲い */
+
+.description__box {
+    width: 400px;
+    height: 400px;
+    border: 10px dashed #30ADD1;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 50px auto;
+}
+
+.description__box h3 {
+    margin: 40px;
+}
+
+.description__box p {
+    margin: 0px 30px;
+    text-align: left;
+}
+
+/* 詳細テーブル */
+
+.fishes__table {
+    margin: 40px 0 40px 0;
+}
+
+/* おいしい食べ方 */
+
+.fishinfo__box--food img {
+    border: 10px solid #fff;
+    border-radius: 30px;
+    margin: 40px 0 25px 0;
+}
+
+.traiangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 27.5px 55px 27.5px;
+    border-color: transparent transparent #fff transparent;
+    margin: 0 auto;
+}
+
+.fishinfo__box--text {
+    width: 430px;
+    height: 280px;
+    border-radius: 30px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.fishinfo__box--text h3 {
+    font-size: 24px;
+    color: #FFFFFF;
+    padding: 30px;
+    font-style: normal;
+    font-weight: 600;
+    -webkit-text-stroke: 1px #FF0000;
+}
+
+.fishinfo__box--text p {
+    text-align: center;
+    padding: 50px;
+}
+
+/* 装飾（貝）の画像 */
+
+.fishesinfo__img {
+    display: flex;
+    justify-content: center;
+    margin: 70px;
+}
+
+
+/* 保存方法 */
+
+
+.preservation__box {
+    width: 540px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 0 auto 35px;
+}
+
+.preservation__box h3 {
+    font-size: 24px;
+    padding: 35px;
+}
+
+.preservation__box p {
+    width: 450px;
+    height: 100px;
+    margin: 0 auto;
+}
