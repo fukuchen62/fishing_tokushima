@@ -9,16 +9,29 @@
 </head>
 
 <body>
+
+    <ul>
+        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
+        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
+        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
+    </ul>
+
     <h1>ニュース詳細</h1>
 
     <table border="1">
         <tr>
-            <th>ニュースID&nbsp;</th>
+            <th>記事タイトル&nbsp;</th>
             <th>カテゴリー名&nbsp;</th>
+            <th>内容&nbsp;</th>
+            <th>アイキャッチ画像&nbsp;</th>
+            <th>更新日時&nbsp;</th>
         </tr>
         <tr>
-            <td>{{ $news->id }}</td>
+            <td>{{ $news->title }}</td>
             <td>{{ $news->name }}</td>
+            <td>{{ $news->content }}</td>
+            <td>{{ $news->eyecatch }}</td>
+            <td>{{ $news->updated_at }}</td>
         </tr>
     </table>
 

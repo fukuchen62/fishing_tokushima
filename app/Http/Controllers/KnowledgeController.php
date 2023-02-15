@@ -17,7 +17,13 @@ use App\Models\Knowledge;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class KnowledgeController extends Controller
 {
-
+    /**
+     * knowledgeList
+     * 入門知識の一覧
+     *
+     * @param Request $request
+     * @return void
+     */
     public function knowledgeList(Request $request)
     {
         // $items = Knowledge::all();
@@ -31,7 +37,13 @@ class KnowledgeController extends Controller
 
         return view('fronts.knowledge_list', $data);
     }
-
+    /**
+     * knowledgeInfo
+     * 入門知識の詳細
+     *
+     * @param Request $request
+     * @return void
+     */
     public function knowledgeInfo(Request $request)
     {
         $items = Knowledge::find($request->id);
@@ -42,7 +54,13 @@ class KnowledgeController extends Controller
 
         return view('fronts.knowledge_info', $data);
     }
-
+    /**
+     * getCategory
+     * カテゴリーIDごとに絞り込む関数
+     *
+     * @param [type] $cateId
+     * @return void
+     */
     public function getCategory($cateId)
     {
         $knowledges = knowledge::category($cateId)->get();
