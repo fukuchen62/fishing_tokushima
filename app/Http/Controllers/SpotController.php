@@ -13,6 +13,8 @@ use Illuminate\Http\Reponse;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Spot;
+use App\Models\Fish;
+use App\Models\Shop;
 use App\Models\Facility;
 use App\Models\City;
 
@@ -22,65 +24,87 @@ class SpotController extends Controller
 
     public function spotList(Request $request)
     {
-        // $items = Spot::all();
+        // $spots = Spot::all();
 
         $city_id = $request->city_id;
 
+        // Spotモデルのcityスコープを使って絞り込む
         $items = Spot::city($city_id)->get();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'spots' => $items,
+            // 'spots2' => $spots,
         ];
 
-        // viewでfrontsフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
         return view('fronts.spots_list', $data);
     }
 
     public function spotInfo(Request $request)
     {
-        $items = Spot::find($request->id);
+        $id = '';
 
-        // テンプレートファイルに渡すデータ（連想配列）
+        // idがあれば$idに代入
+        if (isset($request->id)) {
+            $id = $request->id;
+        }
+        // idで該当のスポット情報を取得
+        $items = Spot::find($id);
+
+        // 関連フィッシュIDを取得
+        $fish_id = $items->fish_id;
+        if ($fish_id != '') {
+            $fishid_list = explode(",", $fish_id);
+        }
+        // 関連フィッシュ情報を取得
+        foreach ($fishid_list as $id) {
+            // fish情報を読み込む
+            $fishinfo = Fish::find($id);
+            // fish情報を配列に加える
+            $fish_list[] = $fishinfo;
+        }
+
+        // 関連ショップIDを取得
+        $shop_id = $items->shop_id;
+        if ($shop_id != '') {
+            $shopid_list = explode(",", $shop_id);
+        }
+        // 関連ショップ情報を取得
+        foreach ($shopid_list as $id) {
+            // shop情報を読み込む
+            $shopinfo = Shop::find($id);
+            // shop情報を配列に加える
+            $shop_list[] = $shopinfo;
+        }
+
         $data = [
             'spots' => $items,
+            'fishlist' => $fish_list,
+            'shoplist' => $shop_list,
         ];
 
-        // viewでfrontsフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
         return view('fronts.spots_info', $data);
     }
 
-    public function facilityList(Request $request)
+    public function facilityList()
     {
         $items = Facility::all();
 
-        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'facilities' => $items,
         ];
 
-        // viewでfrontsフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
         return view('fronts.facilities_list', $data);
     }
 
-    public function cityList(Request $request)
+    public function cityList()
     {
         $items = City::all();
 
-        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'cities' => $items,
         ];
 
-        // viewでfrontsフォルダにあるindex.phpを呼び出し、
-        // $dataを渡して、関連Webページを作成して、
-        // クライアントに戻す
         return view('fronts.cities_list', $data);
     }
 }
