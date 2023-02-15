@@ -45,4 +45,13 @@ class Spot extends Model
     {
         return $query->where('city_id', $cityId);
     }
+
+    public function fish()
+    {
+        return $this->belongsTo('App\Models\Fish');
+    }
+    public function hospital()
+    {
+        return $this->belongsTo('App\Models\Facility');
+    }
 }

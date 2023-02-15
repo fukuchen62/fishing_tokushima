@@ -31,12 +31,12 @@ return new class extends Migration
             $table->string('img3', 200)->nullable();
             $table->string('img4', 200)->nullable();
             $table->string('img5', 200)->nullable();
-            $table->integer('fish_id')->nullable(false)->default(0);
+            $table->string('fish_id', 20)->nullable(false)->default(0);
             $table->string('mony', 20)->nullable();
             $table->string('bbq', 10)->nullable();
-            $table->integer('shop_id')->nullable(false)->default(0);
-            $table->integer('plan_id')->nullable(false)->default(0);
-            $table->integer('evacuation_id')->nullable(false)->default(0);
+            $table->string('shop_id', 20)->nullable(false)->default(0);
+            $table->string('plan_id', 20)->nullable(false)->default(0);
+            $table->string('evacuation_id', 20)->nullable(false)->default(0);
             $table->integer('parking_id')->nullable(false)->default(0);
             $table->integer('hospital_id')->nullable(false)->default(0);
             $table->integer('supermarket_id')->nullable(false)->default(0);
