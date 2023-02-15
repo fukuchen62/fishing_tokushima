@@ -27,12 +27,11 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('to
  * マイページへのルート情報
  */
 Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPageShow'])->name('mypage');
+Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
 /**
  * 避難場所リストへのルート情報
  */
 Route::get('/escapelist', [App\Http\Controllers\MainController::class, 'escapeList'])->name('escapelist');
-
-Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
 /**
  * 管理画面TOPへのルート情報
  */
