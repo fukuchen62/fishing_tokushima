@@ -38,21 +38,30 @@ class AdminController extends Controller
     {
         // クライアントから検索条件(s)を取得する
         $s = "";
-        if (isset($request->s)) {
-            $s = $request->s;
-        }
-
-        if ($s !== '') {
+        if ($s !== "") {
             // あいまい検索
-            $items = DB::table('people')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
+            $items = DB::table('news')
+                ->where('name', 'like', '%' . $s . '%')
+                ->orwhere('title', 'like', '%' . $s . '%')
+                ->get();
+            // if (is_null($item)) {
+            //     // 読み込んできたレコードを$items配列に追加
+            //     $items[] = $item;
+            // } else {
+            //     $items = DB::table('news')->get();
+            // }
+        } else if (isset($request->page)) {
+            // 改ページ処理
+            $offset = $request->page * 3;       // スタート位置
+            $limit = 3;
+            $items = DB::table('news')
+                ->offset($offset)
+                ->limit($limit)
                 ->get();
         } else {
-            // 無条件
-            $items = DB::table('people')->get();
+            $items = DB::table('news')
+                ->orderBy('id', 'DESC')
+                ->get();
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
