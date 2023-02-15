@@ -63,6 +63,24 @@ class Plan extends Model
     //     return $query->where('fish_id', $fish);
     // }
 
+
+    public function getLevel()
+    {
+        $ret = $this->level;
+        if (strstr($ret, '1')) {
+            $ret = str_replace('1', '<div><p>img1</p></div>', $ret);
+        }
+        if (strstr($ret, '2')) {
+            $ret = str_replace('2', '<div><p>img2</p></div>', $ret);
+        }
+        if (strstr($ret, '3')) {
+            $ret = str_replace('3', '<div><p>img3</p></div>', $ret);
+        }
+        return $ret;
+    }
+
+
+    // リレーション
     public function spot()
     {
         return $this->belongsTo('App\Models\Spot');
