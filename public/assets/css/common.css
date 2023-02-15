@@ -27,7 +27,8 @@ body {
 /* ページ全体共通のpadding left rightです */
 /* 各ページのセクションやブロックごとにクラスの指定をしてください */
 .p__lr{
-    padding:0,20,0,20 ;
+    padding-left:20px;
+    padding-right:20px;
 }
 
 
@@ -525,4 +526,26 @@ tr:not(:last-child) {
     .spotinfo__table--title {
         width: 559px;
     }
+}
+
+/* TOPに戻るボタン */
+#page_top {
+    width: 50px;
+    height: 100px;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+}
+.topbutton__hook {
+    width: 30px;
+    height: 50px;
+}
+#page_top a {
+    color: #000000;
+    text-align: center;
+    padding: 40px 10px 10px 10px;
+}
+
+#page_top a:hover {
+    background-color: #666;
 }
