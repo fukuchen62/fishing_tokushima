@@ -25,8 +25,10 @@ class FishController extends Controller
         $month = $request->month;
         $level = $request->level;
 
-        $items = Fish::fish($month)->get();
-        $items2 = Fish::fish2($level)->get();
+        // fishモデルクラスのスコープを使って、検索データを取得
+        $items = Fish::fish($month)->fish2($level)->get();
+        // levelが4のデータを検索して取得
+        $items2 = Fish::where('level', 4)->get();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
@@ -41,7 +43,7 @@ class FishController extends Controller
     {
         $id = '';
 
-        // inputが入力されていたら、、、
+        // idがあれば$idに代入
         if (isset($request->id)) {
             $id = $request->id;
         }
@@ -49,26 +51,29 @@ class FishController extends Controller
         // idで該当魚の情報を取得
         $item = Fish::find($id);
 
+
         // 関連スポットIDを取得
         $spot_id = $item->spot_id;
         if ($spot_id != '') {
             $spotid_list = explode(",", $spot_id);
         }
 
-        // かんれんスポットの情報を取得
-        foreach ($spotid_list as $key => $id) {
+        // 関連スポットの情報を取得
+        foreach ($spotid_list as $id) {
             // spot情報を読み込む
             $spotinfo = Spot::find($id);
-            // Spot情報を配列に加える
+            // spot情報を配列に加える
             $spot_list[] = $spotinfo;
         }
 
-        // 類似魚を取得する
+
+        // 類似魚を取得する、ランダムに3つ取得
         $fish_list = Fish::where('level', '<>', 4)
             ->inRandomOrder()
             ->limit(3)
             ->get();
 
+        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'item' => $item,
             'spots' => $spot_list,

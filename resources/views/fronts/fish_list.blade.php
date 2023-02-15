@@ -38,7 +38,7 @@
         </tr>
         @foreach ($fishes as $item)
             <tr>
-                <td>{{ $item->month }}</td>
+                <td>{{ $item->getMonth() }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->formal_name }}</td>
                 <td>{{ $item->fish_img1 }}</td>
