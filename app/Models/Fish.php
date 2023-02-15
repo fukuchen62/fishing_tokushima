@@ -19,6 +19,7 @@ class Fish extends Model
         // return $ret;
     }
 
+
     // 選択した月が含まれているデータを検索
     public function scopeFish($query, $month)
     {
@@ -30,7 +31,8 @@ class Fish extends Model
         return $query->where('level', '<>', 4);
     }
 
-    // a,b,cを10,11,12に変更
+
+    // monthのa,b,cを10,11,12に変更
     public function getMonth()
     {
         $ret = $this->month;
@@ -42,6 +44,23 @@ class Fish extends Model
         }
         if (strstr($ret, 'c')) {
             $ret = str_replace('c', '12', $ret);
+        }
+        return $ret;
+    }
+
+
+    // levelの1,2,3を画像に変更
+    public function getLevel()
+    {
+        $ret = $this->level;
+        if (strstr($ret, '1')) {
+            $ret = str_replace('1', '<div><p>img1</p></div>', $ret);
+        }
+        if (strstr($ret, '2')) {
+            $ret = str_replace('2', '<div><p>img2</p></div>', $ret);
+        }
+        if (strstr($ret, '3')) {
+            $ret = str_replace('3', '<div><p>img3</p></div>', $ret);
         }
         return $ret;
     }

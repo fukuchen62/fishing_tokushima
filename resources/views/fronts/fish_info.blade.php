@@ -31,7 +31,7 @@
             <td>{{ $item->formal_name }}</td>
             <td>{{ $item->fish_img1 }}</td>
             <td>{{ $item->detail }}</td>
-            <td>{{ $item->level }}</td>
+            <td><?php echo $item->getLevel(); ?></td>
             <td>{{ $item->getMonth() }}</td>
             <td>
                 @foreach ($spots as $spot)
