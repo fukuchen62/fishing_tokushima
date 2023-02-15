@@ -253,4 +253,59 @@ class AdminController extends Controller
         $spots->fill($form)->save();
         return redirect()->route('spotsshow');
     }
+
+       // fishテーブル関連
+    public function fishShow(Request $request)
+    {
+        $items = Fish::all();
+    return view('cms.back_fish', ['items' => $items]);
+    }
+
+    public function fishEntry(Request $request)
+    {
+
+        return view('cms.back_fish_new');
+    }
+
+    public function fishcreate(Request $request)
+    {
+        $this->validate($request, Fish::$rules);
+        $fish = new fish;
+        $form = $request->all();
+        unset($form['_token']);
+        $fish->fill($form)->save();
+        return redirect()->route('fishshow');
+    }
+
+
+    public function fishEdit(Request $request)
+    {
+    $fish = Fish::find($request->id);
+    return view('cms.back_fish_edit', ['form' => $fish]);
+    }
+
+    public function fishUpdate(Request $request)
+    {
+    $this->validate($request, Fish::$rules);
+    $fish = Fish::find($request->id);
+    $form = $request->all();
+    unset($form['_token']);
+    $fish->fill($form)->save();
+       // return redirect('fish_Show');
+    return redirect()->route('fishshow');
+    }
+
+    public function fishDelete(Request $request)
+    {
+    $fish = Fish::find($request->id);
+    return view('cms.back_fish_edit', ['form' => $fish]);
+    }
+
+    public function fishRemove(Request $request)
+    {
+    Fish::find($request->id)->delete();
+    return redirect()->route('fishshow');
+    }
 }
+
+
