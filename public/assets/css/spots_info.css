@@ -11,10 +11,14 @@
 
 /* 背景の白の丸は魚一覧ページと合わせる */
 .spotinfo__discription{
-    width: 550px;
-    height: 280px;
-    background-color: #fff;
+
+}
+
+.spotinfo__dis--textbox{
     margin: 0 auto;
+    max-width: 559px;
+    max-height: 280px;
+    background-color: #fff;
     padding: 70px;
 }
 

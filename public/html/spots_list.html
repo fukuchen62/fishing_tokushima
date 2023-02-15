@@ -26,6 +26,7 @@
     <script src="../assets/js/ventor/jquery-3.6.3.min.js"></script>
     <meta name="" content="">
 
+    <!-- adobeフォント -->
     <script>
         (function (d) {
             var config = {
@@ -109,27 +110,19 @@
 
     </header>
     <main>
+        <!-- キービジュアル -->
+        <div class="keyvisual">
+            キービジュアル
+        </div>
         <!-- ページタイトル -->
-        <section class="titlesection flex">
-            <div class="titlesection__block ">
-                <div class="titlesection__block--group flex">
-                    <h1 class="pagetitle">ページタイトル</h1>
-                </div>
-                <img src="assets/images/kai_baigai.png" alt="貝" class="background__img shellfish1">
-                <img src="assets/images/kai_baigai.png" alt="貝" class="background__img shellfish2">
-                <img src="assets/images/kai_baigai.png" alt="貝" class="background__img shellfish3">
-
+        <section class="titlesection">
+            <div class="titlesection__box">
+                <h1 class="pagetitle">釣りスポット</h1>
+                <div class="pagetitle__border"></div>
             </div>
-            <div class="custom-shape-divider-top-1676265750">
-                <svg viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0,400 C 0,400 0,200 0,200 C 60.53846153846155,177.72564102564104 121.0769230769231,155.45128205128205 201,147 C 281,138.54871794871795 380.23076923076917,143.92051282051284 463,167 C 545.7692307692308,190.07948717948716 612,231 702,245 C 792,260 905.7692307692307,246.61282051282052 987,224 C 1068.2307692307693,201.38717948717948 1116.923076923077,168.68205128205128 1187,163 C 1257.076923076923,157.31794871794872 1348.5384615384614,178.65897435897438 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#ffea20" fill-opacity="1" transform="rotate(-180 720 200)" class="wave"></path>
-                </svg>
-            </div>
-            <div class="custom-shape-divider-top-p">
-                <svg viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0,400 C 0,400 0,200 0,200 C 60.53846153846155,177.72564102564104 121.0769230769231,155.45128205128205 201,147 C 281,138.54871794871795 380.23076923076917,143.92051282051284 463,167 C 545.7692307692308,190.07948717948716 612,231 702,245 C 792,260 905.7692307692307,246.61282051282052 987,224 C 1068.2307692307693,201.38717948717948 1116.923076923077,168.68205128205128 1187,163 C 1257.076923076923,157.31794871794872 1348.5384615384614,178.65897435897438 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#FFDCA5" fill-opacity="1" transform="rotate(-180 720 200)" class="wave"></path>
-                </svg>
-            </div>
+            <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
+            <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
+            <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
 
         </section>
         <!-- 浅瀬背景 -->
@@ -142,7 +135,11 @@
             </div>
             <!-- スポットマップ -->
             <div class="spot__map p__lr">
-                <div class="spot__map--img">
+                <img class="spot__map--east" src="../assets/images/tokushima_east.svg" alt="">
+                <a class="spot__map--point" href=""></a>
+                <a class="spot__map--point" href=""></a>
+                <a class="spot__map--point" href=""></a>
+                <div class="spot__map--south">
                     <a class="spot__map--point" href=""></a>
                     <a class="spot__map--point" href=""></a>
                     <a class="spot__map--point" href=""></a>
@@ -156,29 +153,36 @@
             </div>
         </div>
         <!-- スポットcard -->
-        <div class="spot__card--aria p__lr">
-            <a href="" class="card">
-                <img class="card__img" src="" alt="">
-                <div>
-                    <h3 class="card__title">タイトルタイトル</h3>
-                    <p class="card__discription">texttexttexttexttext</p>
-                </div>
-            </a>
-            <a href="" class="card">
-                <img class="card__img" src="" alt="">
-                <div>
-                    <h3 class="card__title">タイトルタイトル</h3>
-                    <p class="card__discription">texttexttexttexttext</p>
-                </div>
-            </a>
-            <a href="" class="card">
-                <img class="card__img" src="" alt="">
-                <div>
-                    <h3 class="card__title">タイトルタイトル</h3>
-                    <p class="card__discription">texttexttexttexttext</p>
-                </div>
-            </a>
-        </div>
+        <ul class="card__area">
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
         <!-- 貝殻イラスト -->
         <div class="spot__shell">
             <img class="shell" src="" alt="貝殻イラスト">
@@ -190,28 +194,23 @@
     <footer class="footer">
         <div class="footer__box  flex">
             <ul>
-                <li>入門知識</li>
-                <li>徳島の魚</li>
-                <li>体験プラン</li>
-                <li>釣具店</li>
-                <li>避難場所</li>
+                <li><a href="">入門知識</a></li>
+                <li><a href="">徳島の魚</a></li>
+                <li><a href="">体験プラン</a></li>
+                <li><a href="">釣具店</a></li>
+                <li><a href="">避難場所</a></li>
             </ul>
             <ul>
                 <li>釣りスポット</li>
-                <li>東部</li>
-                <li>南部</li>
+                <li><a href="">東部</a></li>
+                <li><a href="">南部</a></li>
             </ul>
             <ul>
-                <li>マイページ</li>
-                <li>プライバシーポリシー</li>
+                <li><a href="">マイページ</a></li>
+                <li><a href="">プライバシーポリシー</a></li>
             </ul>
         </div>
-        <ul class="sns flex">
-            <li>twitter</li>
-            <li>fasebook</li>
-            <li>instaglam</li>
-        </ul>
-        <p>copylight@turitoku.com</p>
+        <p class="copylight">copylight@turitoku.com</p>
     </footer>
 
 </body>
