@@ -9,6 +9,10 @@ class Plan extends Model
 {
     use HasFactory;
 
+    public static $rules = array(
+
+    );
+
     // テストのために使用
     // public function getData()
     // {
