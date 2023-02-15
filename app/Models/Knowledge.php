@@ -12,19 +12,19 @@ class Knowledge extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'category_id' => 'required',
-        'title' => 'required',
-        'thumbnail' => 'required',
-        'is_show' => 'required'
+        'category_id' => 'required|integer',
+        'title'       => 'string|max:50',
+        'overview'    => 'required|string|max:200',
+        'thumbnail'   => 'required|string|max:200',
+        'is_show'     => 'required'
     );
 
-    // 日本語エラーメッセージ
+// 日本語エラーメッセージ
     public static $messages = [
-        'category_id.required' => 'カテゴリーIDは必ず入力してください。',
-        'title.required' => 'タイトルは必ず入力してください。',
-        'thumbnail.required' => 'サムネ画像は必ず入力してください。',
-        'is_show.required' => '表示フラグは必ず入力してください。'
-
+    'category_id.required' => 'カテゴリーIDは必ず入力してください。',
+    'title.required'       => 'タイトルは必ず入力してください。',
+    'thumbnail.required'   => 'サムネ画像は必ず入力してください。',
+    'is_show.required'     => '表示フラグは必ず入力してください。'
     ];
 
     /**
