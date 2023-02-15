@@ -16,7 +16,7 @@
 @section('search')
 
     {{-- 検索条件入力フォーム --}}
-    <form action="search" method="get">
+    <form action="{{ route('') }}" method="get">
         検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
         <input type="submit" value="検索">
     </form>
@@ -26,7 +26,7 @@
 @section('content')
     <table border="1">
     <tr><th>ID</th><th>カテゴリー名前</th><th>タイトル</th><th>修正</th></tr>
-    @foreach ($items as $item)
+    @foreach ($newslist as $item)
         <tr>
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
