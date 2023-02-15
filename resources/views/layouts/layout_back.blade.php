@@ -36,19 +36,61 @@
     {{-- トークンを読み込む --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <script>
+        (function(d) {
+            var config = {
+                    kitId: 'xan8yzi',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h = d.documentElement,
+                t = setTimeout(function() {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function() {
+                a = this.readyState;
+                if (f || a && a != "complete" && a != "loaded") return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config)
+                } catch (e) {}
+            };
+            s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
 </head>
 
 <body>
+    {{-- ヘッダー --}}
+    @include('includes.back_header')
+
     <div class="wrapper">
-        @include('includes.back_header')
+        <!-- メニューバー -->
+        <div class="gmenu">
+            @yield('gmenu')
+        </div>
+
+        {{-- メインコンテンツ --}}
         <main class="main">
             @yield('content')
         </main>
-        @include('includes.front_footer')
     </div>
+
+    {{-- フッター --}}
+    @include('includes.front_footer')
 
     {{-- 共通JS --}}
     <script src="{{ asset('assets/js/common.js') }}"></script>
+
     {{-- 独自のJSファイルを読み込む --}}
     @yield('pageJs')
 </body>
