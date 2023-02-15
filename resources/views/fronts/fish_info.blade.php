@@ -47,6 +47,16 @@
         </tr>
     </table>
 
+    <a href="./info?id={{ $item->id }}">
+        <ul>
+            @foreach ($spots as $spot)
+                <li>{{ $spot->img1 }}</li>
+                <li>{{ $spot->name }}</li>
+                <li>{{ $spot->overview }}</li>
+            @endforeach
+        </ul>
+    </a>
+
     <ul>
         @foreach ($fishlist as $fish)
             <li>{{ $fish->name }}</li>

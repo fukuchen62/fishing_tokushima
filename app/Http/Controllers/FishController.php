@@ -52,13 +52,13 @@ class FishController extends Controller
         $item = Fish::find($id);
 
 
-        // 関連スポットIDを取得
+        // 釣れるスポットIDを取得
         $spot_id = $item->spot_id;
         if ($spot_id != '') {
             $spotid_list = explode(",", $spot_id);
         }
 
-        // 関連スポットの情報を取得
+        // 釣れるスポットの情報を取得
         foreach ($spotid_list as $id) {
             // spot情報を読み込む
             $spotinfo = Spot::find($id);
