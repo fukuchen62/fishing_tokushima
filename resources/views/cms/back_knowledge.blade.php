@@ -13,6 +13,16 @@
     </ul>
 @endsection
 
+@section('search')
+
+    {{-- 検索条件入力フォーム --}}
+    <form action="search" method="get">
+        検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
+        <input type="submit" value="検索">
+    </form>
+
+@endsection
+
 @section('content')
     <table border="1">
     <tr><th>ID</th><th>カテゴリーID</th><th>タイトル</th><th>概要</th><th>修正</th></tr>

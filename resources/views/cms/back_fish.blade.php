@@ -13,6 +13,16 @@
     </ul>
 @endsection
 
+@section('search')
+
+    {{-- 検索条件入力フォーム --}}
+    <form action="search" method="get">
+        検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
+        <input type="submit" value="検索">
+    </form>
+
+@endsection
+
 @section('content')
     <table border="1">
     <tr><th>ID</th><th>釣れる魚一覧</th><th>魚の名前(正式名称)</th><th>修正</th></tr>
