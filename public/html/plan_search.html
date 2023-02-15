@@ -35,91 +35,93 @@
     <main class="main">
         <div class="container">
             <h1 class="pagetitle">条件検索</h1>
-            <section class="plan__form">
-                <div class="plan__form--title">
-                    <h2>チェックしてみよう</h2>
-                </div>
-                <form action="">
-                    <div class="search_content">
-                        <div class="choice_wrap">
-                            <h3 class="search_title">地域</h3>
-                            <ul id="area" class="radio_box">
-                                <li class="choice_item">
-                                    <input type="checkbox" name="area[]" id="east" value="east" class="" checkbox_list>
-                                    <label for="east" class="s_search_btn">県東部</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="area[]" id="west" value="west" class="" checkbox_list>
-                                    <label for="west" class="s_search_btn">県西部</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="area[]" id="south" value="south" class="" checkbox_list>
-                                    <label for="south" class="s_search_btn">県南部</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="choice_wrap">
-                            <h3 class="search_title">難易度</h3>
-                            <ul id="level" class="radio_box">
-                                <li class="choice_item">
-                                    <input type="checkbox" name="level[]" id="one" value="one" class="" checkbox_list>
-                                    <label for="one" class="s_search_btn">☆</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="level[]" id="two" value="two" class="" checkbox_list>
-                                    <label for="two" class="s_search_btn">☆☆</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="level[]" id="three" value="three" class="" checkbox_list>
-                                    <label for="three" class="s_search_btn">☆☆☆</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="choice_wrap">
-                            <h3 class="search_title">魚</h3>
-                            <ul id="fish" class="radio_box">
-                                <li class="choice_item">
-                                    <input type="checkbox" name="fish[]" id="aji" value="aji" class="" checkbox_list>
-                                    <label for="aji" class="s_search_btn">アジ</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="fish[]" id="iwashi" value="iwashi" class="" checkbox_list>
-                                    <label for="iwashi" class="s_search_btn">イワシ</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="fish[]" id="mebaru" value="mebaru" class="" checkbox_list>
-                                    <label for="mebaru" class="s_search_btn">メバル</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="fish[]" id="kurodai" value="kurodai" class="" checkbox_list>
-                                    <label for="kurodai" class="s_search_btn">クロダイ</label>
-                                </li>
-                                <li class="choice_item">
-                                    <input type="checkbox" name="fish[]" id="suzuki" value="suzuki" class="" checkbox_list>
-                                    <label for="suzuki" class="s_search_btn">スズキ</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- ボタン -->
-                        <div class="search_resetbtn_wrap">
-                            <!-- リセットボタン -->
-                            <div class="reset_btn_inner">
-                                <input type="reset" value="リセット" id="reset_btn">
-                            </div>
-                            <!-- 検索ボタン -->
-                            <div class="search_btn_inner">
-                                <input type="submit" value="これでさがす" id="search_btn">
-                            </div>
-                        </div>
+            <section class="form__section">
+                <div class="form__box">
+                    <div class="form__box--title">
+                        <h2>チェックしてみよう</h2>
                     </div>
-                </form>
+                    <form action="">
+                        <div class="search__box">
+                            <div class="choice__box">
+                                <h3 class="search__box--title">地域</h3>
+                                <ul id="area" class="radio_box">
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="area[]" id="east" value="east" class="" checkbox_list>
+                                        <label for="east" class="s_search_btn">県東部</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="area[]" id="west" value="west" class="" checkbox_list>
+                                        <label for="west" class="s_search_btn">県西部</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="area[]" id="south" value="south" class="" checkbox_list>
+                                        <label for="south" class="s_search_btn">県南部</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="choice__box">
+                                <h3 class="search__box--title">難易度</h3>
+                                <ul id="level" class="radio_box">
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="level[]" id="one" value="one" class="" checkbox_list>
+                                        <label for="one" class="s_search_btn">☆</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="level[]" id="two" value="two" class="" checkbox_list>
+                                        <label for="two" class="s_search_btn">☆☆</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="level[]" id="three" value="three" class="" checkbox_list>
+                                        <label for="three" class="s_search_btn">☆☆☆</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="choice__box">
+                                <h3 class="search__box--title">魚</h3>
+                                <ul id="fish" class="radio_box">
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="fish[]" id="aji" value="aji" class="" checkbox_list>
+                                        <label for="aji" class="s_search_btn">アジ</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="fish[]" id="iwashi" value="iwashi" class="" checkbox_list>
+                                        <label for="iwashi" class="s_search_btn">イワシ</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="fish[]" id="mebaru" value="mebaru" class="" checkbox_list>
+                                        <label for="mebaru" class="s_search_btn">メバル</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="fish[]" id="kurodai" value="kurodai" class="" checkbox_list>
+                                        <label for="kurodai" class="s_search_btn">クロダイ</label>
+                                    </li>
+                                    <li class="choice__box--item">
+                                        <input type="checkbox" name="fish[]" id="suzuki" value="suzuki" class="" checkbox_list>
+                                        <label for="suzuki" class="s_search_btn">スズキ</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ボタン -->
+                            <div class="result_btn__box">
+                                <!-- リセットボタン -->
+                                <div class="result_btn__box--resetbtn">
+                                    <input type="reset" value="リセット" id="reset_btn">
+                                </div>
+                                <!-- 検索ボタン -->
+                                <div class="result_btn__box--searchbtn">
+                                    <input type="submit" value="これでさがす" id="search_btn">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </section>
-            <section class="plan__result">
+            <section class="result__section">
                 <h2 class="section__title">
                     <span class="btn_area_ttl">検索結果</span>
                     <span class="event_num">(5件)</span>
                 </h2>
-                <div class="card_container">
+                <div class="result__box">
                     <div class="card">
                         <a href="">
                             <img class="card__img" src="" alt="">
