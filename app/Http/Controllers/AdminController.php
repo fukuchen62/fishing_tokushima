@@ -141,7 +141,7 @@ class AdminController extends Controller
             // あいまい検索
             $items = DB::table('knowledge')
                 ->where('category_id', 'like', '%' . $s . "%")
-                ->orwhere('title', 'like', '%' . $s . "%")
+                ->orWhere('title', 'like', '%' . $s . "%")
                 ->orWhere('overview', 'like', '%' . $s . "%")
                 ->orWhere('content', 'like', '%' . $s . "%")
                 ->orWhere('is_show', 'like', '%' . $s . "%")
