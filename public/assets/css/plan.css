@@ -19,35 +19,35 @@
 
 /* 検索画面 */
 
-.plan__form,.plan__table {
+.form__section,.table__section {
     border: 1px solid #000;
     border-radius: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.plan__form--title {
+.form__section--title {
     background-color: #30add1;
     border-radius: 20px 20px 0px 0px;
     color: #fff;
 }
 
-.plan__form--title h2 {
+.form__section--title h2 {
     font-size: 20px;
     padding: 10px;
 }
 
-.search_title {
+.search__box--title {
     padding-top: 30px;
     padding-bottom: 10px;
 }
 
-.choice_wrap ul {
+.choice__box ul {
     margin: 0 auto;
     padding-bottom: 20px;
 }
 
-.choice_wrap ul li {
+.choice__box ul li {
     margin: 0 auto;
     max-width: 150px;
     margin-bottom: 24px;
@@ -56,7 +56,7 @@
     border-radius: 20px;
 }
 
-.search_resetbtn_wrap {
+.result_btn__box {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -81,35 +81,35 @@
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-.search_content{
+.search__box{
     padding: 10px;
 }
 
 /* PC時 */
 @media screen and (min-width:1025px) {
     /* 検索画面 */
-    .choice_wrap {
+    .choice__box {
         display: flex;
     }
     .radio_box {
         display: flex;
     }
 
-    .choice_wrap ul {
+    .choice__box ul {
         padding-bottom: 0px
     }
 
-    .choice_wrap ul li {
+    .choice__box ul li {
         margin-top: 20px;
         margin: 20px 10px 10px 20px;
         padding: 10px 20px 10px 20px;
     }
 
-    .choice_wrap h3 {
+    .choice__box h3 {
         padding-left: 50px;
     }
 
-    .plan__form {
+    .form__section {
         max-width: 1160px;
     }
 }
@@ -124,7 +124,7 @@
 } */
 
 /* 概要の丸 */
-.overview {
+.overview__box--group {
     width: 400px;
     height: 400px;
     border: 10px dashed #30ADD1;
@@ -132,11 +132,11 @@
     margin: 50px auto;
 }
 
-.overview h3 {
+.overview__box--group h3 {
     margin: 40px;
 }
 
-.overview p {
+.overview__box--group p {
     margin: 0px 30px;
     text-align: left;
 }
@@ -152,7 +152,7 @@
 
 /* PC時 */
 @media screen and (min-width:1025px) {
-    .card_container {
+    .card__box {
         /* フレックスレイアウト */
         /* display: flex;
         justify-content: center;
@@ -169,7 +169,7 @@
 
 /* フロー */
 
-.flow_txt {
+.flow__box--text {
     width: 559px;
     margin: 50px auto;
     background: #eaf2fa;
@@ -177,17 +177,17 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.flow_txt h3 {
+.flow__box--text h3 {
     padding-top: 20px;
 }
-.flow_txt p {
+.flow__box--text p {
     text-align: left;
     padding: 20px;
 }
 
 /* PC時 */
 @media screen and (min-width:1025px) {
-    .flow_cont {
+    .flow__box {
         display: flex;
         margin-bottom: 50px;
     }
