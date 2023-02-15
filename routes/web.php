@@ -27,6 +27,10 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('to
  * マイページへのルート情報
  */
 Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPageShow'])->name('mypage');
+/**
+ * 避難場所リストへのルート情報
+ */
+Route::get('/escapelist', [App\Http\Controllers\MainController::class, 'escapeList'])->name('escapelist');
 
 Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
 /**
@@ -141,8 +145,6 @@ Route::post('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'f
 Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newslist');
 Route::get('news/info', [App\Http\Controllers\NewsController::class, 'newsInfo'])->name('newsinfo');
 
-// Info関連(evacuation)
-Route::get('news/escapelist', [App\Http\Controllers\NewsController::class, 'escapeList'])->name('escapelist');
 
 
 /**
