@@ -29,14 +29,51 @@ class MainController extends Controller
         return view('fronts.index');
     }
 
+
+    /**
+     * myPage
+     * マイページテストget
+     *
+     * @return void
+     */
+    public function myPageShow(Request $request)
+    {
+        $msg = 'cookieはありません';
+
+        if ($request->hasCookie('msg')) {
+            $msg = 'cookie:' . $request->cookie('msg');
+        } else {
+            $msg = 'cookieはありません';
+        }
+
+        $data = [
+            'msg' => $msg,
+        ];
+
+        return view('fronts.mypage', $data);
+    }
+
+
     /**
      * myPage
      * マイページ
      *
      * @return void
      */
-    public function myPage()
+    public function myPage(Request $request)
     {
-        return view('fronts.mypage');
+        $validate_rule = [
+            'msg' => 'required',
+        ];
+
+        $this->validate($request, $validate_rule);
+
+        $msg = $request->msg;
+
+        $response = response()->view('fronts.mypage', ['msg' => '「' . $msg . '」をcookieに保存しました。']);
+
+        $response->cookie('msg', $msg, 100);
+
+        return $response;
     }
 }
