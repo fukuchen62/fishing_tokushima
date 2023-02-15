@@ -33,8 +33,8 @@
                 <td>{{ $item->fish_img1 }}</td>
                 <td>{{ $item->detail }}</td>
                 <td>{{ $item->level }}</td>
-                <td>{{ $item->month }}</td>
-                <td>{{ $item->spot_id }}</td>
+                <td>{{ $item->getMonth() }}</td>
+                <td>{{ $item->spot->name }}</td>
                 <td>{{ $item->method }}</td>
                 <td>{{ $item->cooking1 }}</td>
                 <td>{{ $item->cooking2 }}</td>
