@@ -29,11 +29,6 @@ class Fish extends Model
         return $query->where('level', 4);
     }
 
-    public function spot()
-    {
-        return $this->belongsTo('App\Models\Spot');
-    }
-
     public function getMonth()
     {
         $ret = $this->month;
