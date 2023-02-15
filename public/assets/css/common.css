@@ -536,18 +536,16 @@ tr:not(:last-child) {
     bottom: 30px;
     right: 50px;
 }
-.topbutton {
-    width: 70px;
-    height: 100px;
+.topbutton__hook {
+    width: 30px;
+    height: 50px;
 }
 #page_top a {
     color: #000000;
     text-align: center;
-
-    padding: 20px 20px;
+    padding: 40px 10px 10px 10px;
 }
 
 #page_top a:hover {
     background-color: #666;
-
 }
