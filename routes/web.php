@@ -78,6 +78,8 @@ Route::get('admin/planedit', [App\Http\Controllers\AdminController::class, 'plan
 Route::post('admin/planupdate', [App\Http\Controllers\AdminController::class, 'planUpdate'])->name('planupdate');
 Route::get('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
 
+Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
+
 
 //Admin関連（knowledge分)
 

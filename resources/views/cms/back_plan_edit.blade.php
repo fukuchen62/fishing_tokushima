@@ -42,20 +42,31 @@
                 </td>
             </tr>
             <tr><th>地域・市町村:</th><td>
-                <input type="text" name="eyecatch" value="{{$form->eyecatch}}">
+                <input type="number" name="eyecatch" value="{{$form->eyecatch}}">
             </td></tr>
             <tr><th>釣りスポットID:</th><td>
-                <input type="boolean" name="is_show" value="{{$form->is_show}}">
+                <input type="number" name="is_show" value="{{$form->is_show}}">
             </td></tr>
             <tr><th>魚ID:</th><td>
-                <input type="boolean" name="is_show" value="{{$form->is_show}}">
+                <input type="number" name="is_show" value="{{$form->is_show}}">
             </td></tr>
-            <tr><th>釣り方のフロー:</th><td>
+            <tr>
+                <th>釣り方のフロー:</th>
+                <td>
+                    <textarea name="content" id="content" cols="50" rows="5" required> {{$form->content}} </textarea>
+                </td>
+            </tr>
+            <tr><th>アイキャッチ:</th><td>
+                <input type="text" name="eyecatch" value="{{$form->eyecatch}}">
+            </td></tr>
+            <tr><th>サムネイル:</th><td>
+                <input type="text" name="is_show" value="{{$form->is_show}}">
+            </td></tr>
+            <tr><th>表示フラグ:</th><td>
                 <input type="boolean" name="is_show" value="{{$form->is_show}}">
             </td></tr>
         <tr><th></th><td><input type="submit"value="修正">
-            <!-- <a href="planremove?id={{ $form->id }}">削除</a></td></tr> -->
-                        <a href="{{route('planremove',['id'=>$form->id])}}">削除</a></td></tr>
+
     </table>
     </form>
 @endsection
