@@ -9,6 +9,8 @@ class Spot extends Model
 {
     use HasFactory;
 
+    protected $guarded = array('id');
+
     public static $rules = array(
         'overview' => 'required',
         'img1' => 'required',
@@ -25,7 +27,7 @@ class Spot extends Model
         'hospital_id' => 'required',
         'supermarket_id' => 'required',
         'restaurant_id' => 'required',
-        'other_id' => 'required'
+        'other_id' => 'required',
     );
 
     /**
