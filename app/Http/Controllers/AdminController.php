@@ -237,13 +237,13 @@ class AdminController extends Controller
 
     public function spotsShow(Request $request)
     {
-        $items = News::all();
+        $items = Spot::all();
         return view('cms.back_spots', ['items' => $items]);
     }
 
     public function spotsEdit(Request $request)
     {
-        $spots = News::find($request->id);
+        $spots = Spot::find($request->id);
         return view('cms.back_spots_edit', ['form' => $spots]);
     }
 
@@ -257,11 +257,11 @@ class AdminController extends Controller
         return redirect()->route('spotsshow');
     }
 
-       // fishテーブル関連
+    // fishテーブル関連
     public function fishShow(Request $request)
     {
         $items = Fish::all();
-    return view('cms.back_fish', ['items' => $items]);
+        return view('cms.back_fish', ['items' => $items]);
     }
 
     public function fishEntry(Request $request)
@@ -283,32 +283,30 @@ class AdminController extends Controller
 
     public function fishEdit(Request $request)
     {
-    $fish = Fish::find($request->id);
-    return view('cms.back_fish_edit', ['form' => $fish]);
+        $fish = Fish::find($request->id);
+        return view('cms.back_fish_edit', ['form' => $fish]);
     }
 
     public function fishUpdate(Request $request)
     {
-    $this->validate($request, Fish::$rules);
-    $fish = Fish::find($request->id);
-    $form = $request->all();
-    unset($form['_token']);
-    $fish->fill($form)->save();
-       // return redirect('fish_Show');
-    return redirect()->route('fishshow');
+        $this->validate($request, Fish::$rules);
+        $fish = Fish::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $fish->fill($form)->save();
+        // return redirect('fish_Show');
+        return redirect()->route('fishshow');
     }
 
     public function fishDelete(Request $request)
     {
-    $fish = Fish::find($request->id);
-    return view('cms.back_fish_edit', ['form' => $fish]);
+        $fish = Fish::find($request->id);
+        return view('cms.back_fish_edit', ['form' => $fish]);
     }
 
     public function fishRemove(Request $request)
     {
-    Fish::find($request->id)->delete();
-    return redirect()->route('fishshow');
+        Fish::find($request->id)->delete();
+        return redirect()->route('fishshow');
     }
 }
-
-
