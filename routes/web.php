@@ -22,11 +22,15 @@ Route::get('/', function () {
  *
  * URL部分'/'に直す
  */
-Route::get('/toppage', [App\Http\Controllers\MainController::class, 'index'])->name('top');
+Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 /**
  * マイページへのルート情報
  */
 Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
+/**
+ * 管理画面TOPへのルート情報
+ */
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
 
 Auth::routes();
 // 入門知識関連
@@ -73,6 +77,8 @@ Route::post('admin/planentry', [App\Http\Controllers\AdminController::class, 'pl
 Route::get('admin/planedit', [App\Http\Controllers\AdminController::class, 'planEdit'])->name('planedit');
 Route::post('admin/planupdate', [App\Http\Controllers\AdminController::class, 'planUpdate'])->name('planupdate');
 Route::get('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
+
+Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
 
 
 //Admin関連（knowledge分)

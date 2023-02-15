@@ -25,6 +25,12 @@ use Illuminate\Support\Facades\DB;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class AdminController extends Controller
 {
+
+    public function adminTop()
+    {
+        return view('cms.back_main');
+    }
+
     public function newsSearch(Request $request)
     {
         // クライアントから検索条件(s)を取得する
@@ -397,7 +403,4 @@ class AdminController extends Controller
         // return redirect('plan_show');
         return redirect()->route('planshow');
     }
-
 }
-
-
