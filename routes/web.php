@@ -73,12 +73,12 @@ Route::post('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'sp
 
 Route::get('admin/plansearch', [App\Http\Controllers\AdminController::class, 'planSearch'])->name('plansearch');
 Route::get('admin/planshow', [App\Http\Controllers\AdminController::class, 'planShow'])->name('planshow');
-Route::post('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
+Route::post('admin/planentry', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
 Route::get('admin/planedit', [App\Http\Controllers\AdminController::class, 'planEdit'])->name('planedit');
 Route::post('admin/planupdate', [App\Http\Controllers\AdminController::class, 'planUpdate'])->name('planupdate');
 Route::get('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
 
-Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
+// Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
 
 
 //Admin関連（knowledge分)
