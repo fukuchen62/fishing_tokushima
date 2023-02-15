@@ -12,16 +12,16 @@ class Plan extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'title' => 'string|max:50',
-        'overview' => 'string|max:200',
-        'level' => 'integer',
-        'city_id' => 'integer',
-        'spot_id' => 'integer',
-        'fish_id' => 'integer',
+        'title' => 'required|string|max:50',
+        'overview' => 'required|string|max:200',
+        'level' => 'required|integer',
+        'city_id' => 'required|integer',
+        'spot_id' => 'required|integer',
+        'fish_id' => 'required|integer',
         'flow' => 'string|max:20',
         'eye_catch' => 'string|max:200',
         'thumbnail' => 'string|max:200',
-        'is_show' => 'string|max:20',
+        'is_show' => 'required|string|max:20',
     );
     // スコープ
     public function scopeSearch($query, $area, $level, $fish)
