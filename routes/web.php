@@ -26,7 +26,9 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('to
 /**
  * マイページへのルート情報
  */
-Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
+Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPageShow'])->name('mypage');
+
+Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
 /**
  * 管理画面TOPへのルート情報
  */
@@ -68,6 +70,13 @@ Route::get('admin/spotsearch', [App\Http\Controllers\AdminController::class, 'sp
 Route::get('admin/spotsshow', [App\Http\Controllers\AdminController::class, 'spotsShow'])->name('spotsshow');
 Route::get('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsEdit'])->name('spotsedit');
 Route::post('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsUpdate'])->name('spotsupdate');
+
+//Admin関連（shop分)
+
+Route::get('admin/shopsearch', [App\Http\Controllers\AdminController::class, 'shopSearch'])->name('shopsearch');
+Route::get('admin/shopsshow', [App\Http\Controllers\AdminController::class, 'shopsShow'])->name('shopsshow');
+Route::get('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'shopsEdit'])->name('shopsedit');
+Route::post('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'shopsUpdate'])->name('shopsupdate');
 
 //Admin関連（plan分)
 

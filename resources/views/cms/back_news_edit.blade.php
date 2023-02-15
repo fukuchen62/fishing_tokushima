@@ -48,7 +48,6 @@
                 <input type="boolean" name="is_show" value="{{$form->is_show}}">
             </td></tr>
         <tr><th></th><td><input type="submit"value="修正">
-            <!-- <a href="newsremove?id={{ $form->id }}">削除</a></td></tr> -->
                         <a href="{{route('newsremove',['id'=>$form->id])}}">削除</a></td></tr>
     </table>
     </form>

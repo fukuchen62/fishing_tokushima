@@ -22,7 +22,7 @@
         <ul>
             <li>マイページ</li>
             <li>プライバシーポリシー</li>
-            <li><a href="{{ route('top') }}">ログイン</a></li>
+            <li><a href="{{ route('/') }}"></a></li>
         </ul>
     </div>
     {{-- <ul class="sns flex">

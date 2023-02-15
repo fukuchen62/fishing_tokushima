@@ -9,7 +9,9 @@ class Fish extends Model
 {
     use HasFactory;
 
+    public static $rules = array(
 
+    );
     // スコープ
     // 季節、難易度
 
