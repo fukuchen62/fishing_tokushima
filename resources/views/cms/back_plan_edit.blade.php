@@ -34,37 +34,39 @@
                 <td><input type="text" name="title" value="{{ $form->title }}" required></td>
             </tr>
             <tr>
-                <th>難易度:</th>
+                <th>概要:</th>
                 <td>
-                    <textarea name="number" id="number" cols="50" rows="5" required> {{ $form->number }} </textarea>
+                    <input type="text" name="overview" value="{{ $form->overview }}" required>
                 </td>
             </tr>
             <tr>
-                <th>概要: </th>
-                <td><input type="overview" name="overview" value="{{ $form->overview }}" required></td>
+                <th>難易度: </th>
+                <td>
+                    <input type="number" name="level" value="{{ $form->level }}" required>
+                </td>
             </tr>
             <tr>
                 <th>地域・市町村:</th>
                 <td>
-                    <input type="number" name="city_id" value="{{ $form->city_id }}">
+                    <input type="number" name="city_id" value="{{ $form->city_id }}" required>
                 </td>
             </tr>
             <tr>
                 <th>釣りスポットID:</th>
                 <td>
-                    <input type="number" name="spot_id" value="{{ $form->spot_id }}">
+                    <input type="number" name="spot_id" value="{{ $form->spot_id }}" required>
                 </td>
             </tr>
             <tr>
                 <th>魚ID:</th>
                 <td>
-                    <input type="number" name="fish_id" value="{{ $form->fish_id }}">
+                    <input type="number" name="fish_id" value="{{ $form->fish_id }}" required>
                 </td>
             </tr>
             <tr>
                 <th>釣り方のフロー:</th>
                 <td>
-                    <textarea name="flow" id="flow" cols="50" rows="5" required> {{ $form->flow }} </textarea>
+                    <textarea name="flow" id="flow" cols="50" rows="5"> {{ $form->flow }} </textarea>
                 </td>
             </tr>
             <tr>
@@ -82,7 +84,7 @@
             <tr>
                 <th>表示フラグ:</th>
                 <td>
-                    <input type="boolean" name="is_show" value="{{ $form->is_show }}">
+                    <input type="boolean" name="is_show" value="{{ $form->is_show }}" required>
                 </td>
             </tr>
             <tr>
