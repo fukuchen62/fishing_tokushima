@@ -9,28 +9,28 @@ class Fish extends Model
 {
     use HasFactory;
     protected $guarded = array('id');
-    public static $rules = array(
-
-    );
+    public static $rules = array();
     // スコープ
     // 季節、難易度
 
     public function getData()
     {
-        $ret = $this->spots->name;
-        return $ret;
+        // $ret = $this->spots->name;
+        // return $ret;
     }
 
+    // 選択した月が含まれているデータを検索
     public function scopeFish($query, $month)
     {
         return $query->where('month', 'LIKE', "%$month%");
     }
-
+    // levelが4以外のデータを検索
     public function scopeFish2($query, $level)
     {
-        return $query->where('level', 4);
+        return $query->where('level', '<>', 4);
     }
 
+    // a,b,cを10,11,12に変更
     public function getMonth()
     {
         $ret = $this->month;
