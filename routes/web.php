@@ -81,6 +81,9 @@ Route::get('admin/knowledgeshow', [App\Http\Controllers\AdminController::class, 
 Route::get('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeEntry'])->name('knowledgeentry');
 Route::post('admin/knowledgeentry', [App\Http\Controllers\AdminController::class, 'knowledgeCreate'])->name('knowledgecreate');
 
+Route::get('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeEdit');
+Route::post('cms/knowledge_Edit', 'App\Http\Controllers\AdminController@knowledgeUpdate');
+
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeDelete'])->name('knowledgedelete');
 Route::get('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
 Route::post('admin/knowledgedelete', [App\Http\Controllers\AdminController::class, 'knowledgeRemove'])->name('knowledgeremove');
@@ -102,7 +105,22 @@ Route::post('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'n
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//
+//Admin関連（fish分)
+
+Route::get('admin/fishshow', [App\Http\Controllers\AdminController::class, 'fishShow'])->name('fishshow');
+Route::get('admin/fishentry', [App\Http\Controllers\AdminController::class, 'fishEntry'])->name('fishentry');
+Route::post('admin/fishentry', [App\Http\Controllers\AdminController::class, 'fishCreate'])->name('fishcreate');
+
+
+Route::get('admin/fishedit', [App\Http\Controllers\AdminController::class, 'fishEdit'])->name('fishedit');
+Route::post('admin/fishedit', [App\Http\Controllers\AdminController::class, 'fishUpdate'])->name('fishupdate');
+
+
+Route::get('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishDelete'])->name('fishdelete');
+Route::get('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishRemove'])->name('fishremove');
+Route::post('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishRemove'])->name('fishremove');
+
+
 
 // Info関連(news)
 Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newslist');
