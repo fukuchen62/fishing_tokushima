@@ -11,15 +11,15 @@
 <body>
     <h1>ニュース詳細</h1>
 
-    <table>
+    <table border="1">
         <tr>
-            <th>ニュース詳細</th>
+            <th>ニュースID&nbsp;</th>
+            <th>カテゴリー名&nbsp;</th>
         </tr>
-        @foreach ($news as $item )
         <tr>
-            <td>{{ $item ->getData() }}</td>
+            <td>{{ $news->id }}</td>
+            <td>{{ $news->name }}</td>
         </tr>
-        @endforeach
     </table>
 
 </body>

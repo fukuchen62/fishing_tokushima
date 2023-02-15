@@ -24,8 +24,8 @@
 
             <tr>
                 <th>MESSAGE:</th>
-                <td><input type="text" name="msg" id=""></td>
-                <td><input type="submit" value="送信"></td>
+                <td><input type="submit" name="id" value="1" id=""></td>
+                {{-- <td><input type="submit" value="送信"></td> --}}
             </tr>
         </table>
 
