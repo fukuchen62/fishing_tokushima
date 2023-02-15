@@ -20,7 +20,6 @@ Route::get('/', function () {
 /**
  * トップページへのルート情報
  *
- * URL部分'/'に直す
  */
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 /**
@@ -33,11 +32,20 @@ Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->
  */
 Route::get('/escapelist', [App\Http\Controllers\MainController::class, 'escapeList'])->name('escapelist');
 /**
+ * プライバシーポリシーへのルート情報
+ */
+Route::get('/praivacy', [App\Http\Controllers\MainController::class, 'praivacyPage'])->name('praivacypage');
+/**
+ * 私たちについてへのルート情報
+ */
+Route::get('/us', [App\Http\Controllers\MainController::class, 'usPage'])->name('uspage');
+/**
  * 管理画面TOPへのルート情報
  */
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
 
 Auth::routes();
+
 // 入門知識関連
 Route::get('knowledge/list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
 
@@ -46,19 +54,15 @@ Route::get('knowledge/info', [App\Http\Controllers\KnowledgeController::class, '
 // 釣りスポット関連
 Route::get('spot/list', [App\Http\Controllers\SpotController::class, 'spotList'])->name('spotslist');
 
-
 Route::get('spot/info', [App\Http\Controllers\SpotController::class, 'spotInfo'])->name('spotsinfo');
 
 // 釣具屋関連
 Route::get('shop/list', [App\Http\Controllers\ShopController::class, 'shopList'])->name('shopslist');
 
-
 // Fish関連
 Route::get('fish/list', [App\Http\Controllers\FishController::class, 'fishList'])->name('fishlist');
 
 Route::get('fish/info', [App\Http\Controllers\FishController::class, 'fishInfo'])->name('fishinfo');
-
-
 
 // Plan関連
 Route::get('plan/list', [App\Http\Controllers\PlanController::class, 'plansList'])->name('planlist');
@@ -66,6 +70,10 @@ Route::get('plan/list', [App\Http\Controllers\PlanController::class, 'plansList'
 Route::post('plan/list', [App\Http\Controllers\PlanController::class, 'plansSearch'])->name('planlist');
 
 Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planinfo');
+
+// News関連
+Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newsshow');
+Route::get('news/info', [App\Http\Controllers\NewsController::class, 'newsInfo'])->name('newsinfo');
 
 //Admin関連（spot分)
 
@@ -114,10 +122,8 @@ Route::get('admin/newsshow', [App\Http\Controllers\AdminController::class, 'news
 Route::get('admin/newsentry', [App\Http\Controllers\AdminController::class, 'newsEntry'])->name('newsentry');
 Route::post('admin/newsentry', [App\Http\Controllers\AdminController::class, 'newsCreate'])->name('newscreate');
 
-
 Route::get('admin/newsedit', [App\Http\Controllers\AdminController::class, 'newsEdit'])->name('newsedit');
 Route::post('admin/newsedit', [App\Http\Controllers\AdminController::class, 'newsUpdate'])->name('newsupdate');
-
 
 Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsDelete'])->name('newsdelete');
 Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsRemove'])->name('newsremove');
@@ -131,21 +137,12 @@ Route::get('admin/fishshow', [App\Http\Controllers\AdminController::class, 'fish
 Route::get('admin/fishentry', [App\Http\Controllers\AdminController::class, 'fishEntry'])->name('fishentry');
 Route::post('admin/fishentry', [App\Http\Controllers\AdminController::class, 'fishCreate'])->name('fishcreate');
 
-
 Route::get('admin/fishedit', [App\Http\Controllers\AdminController::class, 'fishEdit'])->name('fishedit');
 Route::post('admin/fishedit', [App\Http\Controllers\AdminController::class, 'fishUpdate'])->name('fishupdate');
-
 
 Route::get('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishDelete'])->name('fishdelete');
 Route::get('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishRemove'])->name('fishremove');
 Route::post('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishRemove'])->name('fishremove');
-
-
-
-// Info関連(news)
-Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newslist');
-Route::get('news/info', [App\Http\Controllers\NewsController::class, 'newsInfo'])->name('newsinfo');
-
 
 
 /**

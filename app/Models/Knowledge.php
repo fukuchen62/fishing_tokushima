@@ -40,33 +40,8 @@ class Knowledge extends Model
 
     // スコープ
     // 入門知識カテゴリーID
-    // public function scopeCategory($query, $input)
-    // {
-    //     $ret = $query->where('title', $input)
-    //         ->where('overview', $input)
-    //         ->where('content', $input);
-    //     return $ret;
-    // }
-
-
-    /**
-     * knowlegeType
-     *指定メンバーに属する1つの記事を取得する
-
-     * @return void
-     */
-    public function knowledgeType()
+    public function scopeCategory($query, $cateId)
     {
-        return $this->hasOne('App\Models\KnowledgeTypes');
-    }
-    /**
-     * KnowlegeTypes
-     *指定メンバーに属するすべて（複数）の記事を取得する
-
-     * @return void
-     */
-    public function knowledgeTypes()
-    {
-        return $this->hasMany('App\Models\KnowledgeTypes');
+        return $query->where('category_id', $cateId);
     }
 }

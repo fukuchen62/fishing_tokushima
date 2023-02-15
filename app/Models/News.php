@@ -31,8 +31,16 @@ class News extends Model
         return $this->id . ': ' . $this->name . ': ' . $this->title . ': ' . $this->overview . ': ' . $this->content;
     }
 
-    public function scopeCategory($query, $cateId)
+    public function scopeNewsName($query, $newsName)
     {
-        return $query->where('category_id', $cateId);
+        return $query->where('name', $newsName);
     }
+
+    // public function scopeNews($query, $input)
+    // {
+    //     $ret = $query->where('title', $input)
+    //         ->where('overview', $input)
+    //         ->where('content', $input);
+    //     return $ret;
+    // }
 }

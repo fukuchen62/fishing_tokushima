@@ -10,21 +10,22 @@ use Illuminate\Http\Request;
 // モデルを引用する
 use App\Models\News;
 
-use App\Models\Evacuation;
-
-
 
 // スーパークラスControllerを継承して独自のクラスを作成する
 class NewsController extends Controller
 {
 
     // newsテーブル関連
-    public function newsList()
+    public function newsList(Request $request)
     {
-        $items = News::all();
+        $newss = News::all();
+        $news_name = $request->name;
+
+        $items = NewsController::getNews($news_name);
 
         $data = [
             'news' => $items,
+            'allnews' => $newss,
         ];
 
         return view('fronts/news_list', $data);
@@ -41,15 +42,9 @@ class NewsController extends Controller
         return view('fronts.news_info', $data);
     }
 
-    // evacuationテーブル関連
-    public function escapeList()
+    public function getNews($newsName)
     {
-        $items = Evacuation::all();
-
-        $data = [
-            'evacuations' => $items,
-        ];
-
-        return view('fronts/escape_list', $data);
+        $news = News::NewsName($newsName)->get();
+        return $news;
     }
 }
