@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="598"
+   height="140"
+   viewBox="0 0 598 140"
+   fill="none"
+   version="1.1"
+   id="svg1587"
+   sodipodi:docname="wave-section1 .svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1591" />
+  <sodipodi:namedview
+     id="namedview1589"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.7866862"
+     inkscape:cx="339.1754"
+     inkscape:cy="-13.992384"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer4" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 1">
+    <rect
+       style="fill:#eaf2fa"
+       id="rect1598"
+       width="603.91132"
+       height="144.40141"
+       x="-1.6790861"
+       y="-1.1193907" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 2">
+    <path
+       d="M77.5 100.993C26 82.488 22 81 0 95.6819V0.000137329H310.481H598V95.6819C577.701 108.44 525.517 139.999 476 139.999C414.104 139.999 382.361 92.7379 322.461 95.6819C262.561 98.626 236.5 129.523 192 127.999C147.5 126.475 129 119.499 77.5 100.993Z"
+       fill="#FFEA20"
+       id="path1585" />
+  </g>
+</svg>

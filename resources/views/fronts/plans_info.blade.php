@@ -27,14 +27,11 @@
                 <td>{{ $item -> thumbnail }}</td>
                 <td>{{ $item -> overview }}</td>
                 <td>{{ $item -> level }}</td>
-                {{-- スポットIDからスポット名 --}}
-                {{-- fish_idから魚の釣り方、釣れる月を表示 --}}
                 <td>{{ $item -> flow }}</td>
             </tr>
         </table>
     @endif
 
-    {{-- 同じ魚、同じ地域？の関連プランのサムネイルと、タイトルと、概要を表示 --}}
 
 </body>
 </html>
