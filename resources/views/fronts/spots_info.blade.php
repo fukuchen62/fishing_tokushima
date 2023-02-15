@@ -19,23 +19,38 @@
     <h1>singleArea</h1>
     <table border="1">
         <tr>
+            <th>スポット名&nbsp;</th>
             <th>住所&nbsp;</th>
             <th>駐車場&nbsp;</th>
+            <th>トイレ&nbsp;</th>
             <th>釣り方&nbsp;</th>
             <th>周辺施設&nbsp;</th>
             <th>近くの病院&nbsp;</th>
+            <th>近くの病院&nbsp;</th>
             <th>避難場所&nbsp;</th>
             <th>釣れる魚&nbsp;</th>
+            <th>釣れる魚&nbsp;</th>
+            <th>金額&nbsp;</th>
+            <th>BBQ&nbsp;</th>
         </tr>
         <tr>
+            <td>{{ $spots->name }}</td>
             <td>{{ $spots->spot_address }}</td>
-
-            <td>ミニッツパーク</td>
+            <td>{{ $spots->parking_id }}</td>
+            <td>{{ $spots->toilet }}</td>
             <td>サビキ釣り</td>
-            <td>ファミマ</td>
-            <td>どっかの病院</td>
+            <td>{{ $spots->supermarket_id }}</td>
+            <td>{{ $spots->hospital_id }}</td>
+            <td>{{ $spots->hospital->name }}</td>
             <td>高台</td>
-            <td>アジ、イワシ</td>
+            <td>
+                @foreach ($fishlist as $fish)
+                    {{ $fish->name }}
+                @endforeach
+            </td>
+            <td>{{ $spots->fish_id }}</td>
+            <td>{{ $spots->mony }}</td>
+            <td>{{ $spots->bbq }}</td>
         </tr>
 
 

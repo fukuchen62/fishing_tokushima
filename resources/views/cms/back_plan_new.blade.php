@@ -19,7 +19,7 @@
         <table>
             @csrf
             <!-- <tr><th>プラン名: </th><td><input type="text"
-                            name="name" required></td></tr> -->
+                                name="name" required></td></tr> -->
             <tr>
                 <th>タイトル: </th>
                 <td><input type="text" name="title" required></td>

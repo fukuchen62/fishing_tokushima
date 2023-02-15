@@ -44,20 +44,6 @@ class AdminController extends Controller
                 ->where('name', 'like', '%' . $s . '%')
                 ->orwhere('title', 'like', '%' . $s . '%')
                 ->get();
-            // if (is_null($item)) {
-            //     // 読み込んできたレコードを$items配列に追加
-            //     $items[] = $item;
-            // } else {
-            //     $items = DB::table('news')->get();
-            // }
-        } else if (isset($request->page)) {
-            // 改ページ処理
-            $offset = $request->page * 3;       // スタート位置
-            $limit = 3;
-            $items = DB::table('news')
-                ->offset($offset)
-                ->limit($limit)
-                ->get();
         } else {
             $items = DB::table('news')
                 ->orderBy('id', 'DESC')
@@ -66,20 +52,22 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+
+            'newslist' => $items,
         ];
-        // return view('hello.index', $data);
+        return view('cms.back_news', $data);
 
         // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_news');
+        // return redirect()->route('back_news');
     }
 
     public function newsShow(Request $request)
     {
         $items = News::all();
-        return view('cms.back_news', ['items' => $items]);
+        $data = [
+            'newslist' => $items,
+        ];
+        return view('cms.back_news', $data);
     }
 
     public function newsEntry(Request $request)
@@ -99,8 +87,12 @@ class AdminController extends Controller
 
     public function newsEdit(Request $request)
     {
-        $news = News::find($request->id);
-        return view('cms.back_news_edit', ['form' => $news]);
+        $item = News::find($request->id);
+        $data = [
+            'news' => $item,
+        ];
+
+        return view('cms.back_news_edit', $data);
     }
 
     public function newsUpdate(Request $request)
@@ -115,8 +107,11 @@ class AdminController extends Controller
 
     public function newsDelete(Request $request)
     {
-        $news = News::find($request->id);
-        return view('cms.back_news_edit', ['form' => $news]);
+        $item = News::find($request->id);
+        $data = [
+            'news' => $item,
+        ];
+        return view('cms.back_news_edit', $data);
     }
 
     public function newsRemove(Request $request)
