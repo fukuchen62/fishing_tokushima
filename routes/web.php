@@ -22,11 +22,15 @@ Route::get('/', function () {
  *
  * URL部分'/'に直す
  */
-Route::get('/toppage', [App\Http\Controllers\MainController::class, 'index'])->name('top');
+Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 /**
  * マイページへのルート情報
  */
 Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
+/**
+ * 管理画面TOPへのルート情報
+ */
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
 
 Auth::routes();
 // 入門知識関連
