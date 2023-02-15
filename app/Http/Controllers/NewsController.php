@@ -2,6 +2,8 @@
 // 名前空間
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
 
@@ -16,30 +18,39 @@ use App\Models\Evacuation;
 class NewsController extends Controller
 {
 
-   // newsテーブル関連
-    public function newsList()
+    // newsテーブル関連
+    public function newsList(Request $request)
     {
-        $items = News::all();
+        // $items = news::all();
+        $category_id = $request->category_id;
+
+        $items = NewsController::getCategory($category_id);
 
         $data = [
             'news' => $items,
         ];
 
-        return view('fronts/news_list', $data);
+        return view('fronts.news_list', $data);
     }
 
-    public function newsInfo()
+    public function newsInfo(Request $request)
     {
-        $items = News::all();
+        $items = News::find($request->id);
 
         $data = [
             'news' => $items,
         ];
 
-        return view('fronts/news_info', $data);
+        return view('fronts.news_info', $data);
     }
 
-      // evacuationテーブル関連
+    public function getCategory($cateId)
+    {
+        $knowledges = News::category($cateId)->get();
+        return $knowledges;
+    }
+
+    // evacuationテーブル関連
     public function escapeList()
     {
         $items = Evacuation::all();
