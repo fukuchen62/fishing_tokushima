@@ -89,8 +89,15 @@ class PlanController extends Controller
 
         $item = Plan::find($id);
 
+        $connection1 = Plan::find(1);
+        $connection2 = Plan::find(2);
+        $connection3 = Plan::find(3);
+
         $data = [
             'item' => $item,
+            'connection1' => $connection1,
+            'connection2' => $connection2,
+            'connection3' => $connection3,
         ];
 
         return view('fronts.plans_info', $data);

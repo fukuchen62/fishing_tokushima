@@ -1,27 +1,27 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.news_ly')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-</head>
+@section('title', 'ショップ一覧')
 
-<body>
+
+@section('menubar')
+    @parent
+    {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
-        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
-        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
+        <li><a href="http://localhost/fishing_tokushima/public/admin/shopsshow">HOME</a></li>
+        <li>その他</li>
     </ul>
+@endsection
 
-    <h1>pageShop</h1>
+@section('search')
 
-    <a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
-    <a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
-    <a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
-    <a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
+    {{-- 検索条件入力フォーム --}}
+    <form action="search" method="get">
+        検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
+        <input type="submit" value="検索">
+    </form>
 
+@endsection
+@section('content')
     <table border="1">
         <tr>
             <th>ID&nbsp;</th>
@@ -42,10 +42,9 @@
             <th>画像&nbsp;</th>
             <th>備考&nbsp;</th>
             <th>表示フラグ&nbsp;</th>
-            <th>投稿日時&nbsp;</th>
-            <th>編集日時&nbsp;</th>
+            <th>修正&nbsp;</th>
         </tr>
-        @foreach ($shops as $item)
+        @foreach ($items as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
@@ -65,11 +64,13 @@
                 <td>{{ $item->img }}</td>
                 <td>{{ $item->memo }}</td>
                 <td>{{ $item->is_show }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td>{{ $item->updated_at }}</td>
+                <td><a href="{{ route('shopsedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach
     </table>
-</body>
+@endsection
 
-</html>
+
+@section('footer')
+    copyright 2020 tuyano.
+@endsection

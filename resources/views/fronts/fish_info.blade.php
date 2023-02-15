@@ -34,7 +34,12 @@
                 <td>{{ $item->detail }}</td>
                 <td>{{ $item->level }}</td>
                 <td>{{ $item->getMonth() }}</td>
-                <td>{{ $item->spot->name }}</td>
+                <td>
+                    @foreach ($spots as $spot)
+                        {{ $spot->name }},
+                    @endforeach
+
+                </td>
                 <td>{{ $item->method }}</td>
                 <td>{{ $item->cooking1 }}</td>
                 <td>{{ $item->cooking2 }}</td>
@@ -44,6 +49,13 @@
             </tr>
         </table>
     @endif
+
+    <ul>
+        @foreach ($fishlist as $fish)
+            <li>{{ $fish->name }}</li>
+        @endforeach
+    </ul>
+
 
 </body>
 

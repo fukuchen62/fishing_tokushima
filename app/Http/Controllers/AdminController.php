@@ -15,6 +15,8 @@ use App\Models\Fish;
 
 use App\Models\Spot;
 
+use App\Models\Shop;
+
 use App\Models\Plan;
 
 
@@ -25,6 +27,12 @@ use Illuminate\Support\Facades\DB;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class AdminController extends Controller
 {
+
+    public function adminTop()
+    {
+        return view('cms.back_main');
+    }
+
     public function newsSearch(Request $request)
     {
         // クライアントから検索条件(s)を取得する
@@ -234,9 +242,6 @@ class AdminController extends Controller
         return redirect()->route('back_spots');
     }
 
-
-    //news分
-
     public function spotsShow(Request $request)
     {
         $items = Spot::all();
@@ -257,6 +262,62 @@ class AdminController extends Controller
         unset($form['_token']);
         $spots->fill($form)->save();
         return redirect()->route('spotsshow');
+    }
+
+    // shops分
+
+    public function shopsSearch(Request $request)
+    {
+        // クライアントから検索条件(s)を取得する
+        $s = "";
+        if (isset($request->s)) {
+            $s = $request->s;
+        }
+
+        if ($s !== '') {
+            // あいまい検索
+            $items = DB::table('shops')
+                ->where('id', 'like', '%' . $s . "%")
+                ->orwhere('name', 'like', '%' . $s . "%")
+                ->orWhere('sex', 'like', '%' . $s . "%")
+                ->orWhere('mail', 'like', '%' . $s . "%")
+                ->get();
+        } else {
+            // 無条件
+            $items = DB::table('shops')->get();
+        }
+
+        // テンプレートファイルに渡すデータ（連想配列）
+        $data = [
+            'msg' => '登録されているショップ一覧です。',
+            // shopsから読み込んだレコードをmembersの連想配列の中身とする
+            'members' => $items,
+        ];
+
+        // リダイレクトでルート名を呼び出し
+        return redirect()->route('back_shops');
+    }
+
+    public function shopsShow(Request $request)
+    {
+        $items = Shop::all();
+        return view('cms.back_shops', ['items' => $items]);
+    }
+
+    public function shopsEdit(Request $request)
+    {
+        $shops = Shop::find($request->id);
+        return view('cms.back_shops_edit', ['form' => $shops]);
+    }
+
+    public function shopsUpdate(Request $request)
+    {
+        $this->validate($request, Shop::$rules);
+        $shops = Shop::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $shops->fill($form)->save();
+        return redirect()->route('shopsshow');
     }
 
     // fishテーブル関連
@@ -397,7 +458,4 @@ class AdminController extends Controller
         // return redirect('plan_show');
         return redirect()->route('planshow');
     }
-
 }
-
-
