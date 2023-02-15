@@ -30,15 +30,15 @@
             <input type="hidden" name="id" value="{{ $form->id }}">
             <tr>
                 <th>概要: </th>
-                <td><input type="text" name="overview" value="{{ $form->overview }}" required></td>
+                <td><input type="text" name="overview" value="{{ $form->overview }}"></td>
             </tr>
             <tr>
                 <th>画像1: </th>
-                <td><input type="text" name="img1" value="{{ $form->img1 }}" required></td>
+                <td><input type="text" name="img1" value="{{ $form->img1 }}"></td>
             </tr>
             <tr>
                 <th>画像2: </th>
-                <td><input type="text" name="img2" value="{{ $form->img2 }}" required></td>
+                <td><input type="text" name="img2" value="{{ $form->img2 }}"></td>
             </tr>
             <tr>
                 <th>画像3:</th>
@@ -54,15 +54,15 @@
             </tr>
             <tr>
                 <th>画像5: </th>
-                <td><input type="text" name="img5" value="{{ $form->img5 }}" required></td>
+                <td><input type="text" name="img5" value="{{ $form->img5 }}"></td>
             </tr>
             <tr>
                 <th>魚ID: </th>
-                <td><input type="text" name="fish_id" value="{{ $form->fish_id }}" required></td>
+                <td><input type="text" name="fish_id" value="{{ $form->fish_id }}"></td>
             </tr>
             <tr>
                 <th>金額: </th>
-                <td><input type="text" name="mony" value="{{ $form->mony }}" required></td>
+                <td><input type="text" name="mony" value="{{ $form->mony }}"></td>
             </tr>
             <tr>
                 <th>ショップID:</th>
@@ -72,15 +72,15 @@
             </tr>
             <tr>
                 <th>体験プランID: </th>
-                <td><input type="text" name="plan_id" value="{{ $form->plan_id }}" required></td>
+                <td><input type="text" name="plan_id" value="{{ $form->plan_id }}"></td>
             </tr>
             <tr>
                 <th>避難場所ID: </th>
-                <td><input type="text" name="evacuation_id" value="{{ $form->evacuation_id }}" required></td>
+                <td><input type="text" name="evacuation_id" value="{{ $form->evacuation_id }}"></td>
             </tr>
             <tr>
                 <th>駐車場ID: </th>
-                <td><input type="text" name="parking_id" value="{{ $form->parking_id }}" required></td>
+                <td><input type="text" name="parking_id" value="{{ $form->parking_id }}"></td>
             </tr>
             <tr>
                 <th>病院ID:</th>
@@ -96,11 +96,11 @@
             </tr>
             <tr>
                 <th>飲食店ID: </th>
-                <td><input type="text" name="restaurant_id" value="{{ $form->restaurant_id }}" required></td>
+                <td><input type="text" name="restaurant_id" value="{{ $form->restaurant_id }}"></td>
             </tr>
             <tr>
                 <th>その他ID: </th>
-                <td><input type="text" name="other_id" value="{{ $form->other_id }}" required></td>
+                <td><input type="text" name="other_id" value="{{ $form->other_id }}"></td>
             </tr>
             <tr>
                 <th>表示フラグ:</th>
@@ -111,8 +111,6 @@
             <tr>
                 <th></th>
                 <td><input type="submit"value="修正">
-                    <!-- <a href="newsremove?id={{ $form->id }}">削除</a></td></tr> -->
-                    <a href="{{ route('newsremove', ['id' => $form->id]) }}">削除</a>
                 </td>
             </tr>
         </table>
