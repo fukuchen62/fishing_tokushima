@@ -24,7 +24,7 @@
     @endif
 
     <!-- <form action="admin/newsedit" method="post"> -->
-    <form method="post" action="{{ route('spotsedit') }}">
+    <form method="post" action="{{ route('shopsedit') }}">
         <table>
             @csrf
             <input type="hidden" name="id" value="{{ $form->id }}">
@@ -95,18 +95,18 @@
                 </td>
             </tr>
             <tr>
-                <th>表示フラグ:</th>
-                <td>
-                    <input type="boolean" name="is_show" value="{{ $form->is_show }}">
-                </td>
-            </tr>
-            <tr>
                 <th>画像: </th>
                 <td><input type="text" name="img" value="{{ $form->img }}"></td>
             </tr>
             <tr>
                 <th>備考: </th>
                 <td><input type="text" name="memo" value="{{ $form->memo }}"></td>
+            </tr>
+            <tr>
+                <th>表示フラグ:</th>
+                <td>
+                    <input type="boolean" name="is_show" value="{{ $form->is_show }}">
+                </td>
             </tr>
             <tr>
                 <th></th>

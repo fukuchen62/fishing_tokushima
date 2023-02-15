@@ -39,9 +39,9 @@
             <th>営業日&nbsp;</th>
             <th>営業内容&nbsp;</th>
             <th>PR&nbsp;</th>
-            <th>表示フラグ&nbsp;</th>
             <th>画像&nbsp;</th>
             <th>備考&nbsp;</th>
+            <th>表示フラグ&nbsp;</th>
             <th>投稿日時&nbsp;</th>
             <th>編集日時&nbsp;</th>
         </tr>
@@ -62,9 +62,9 @@
                 <td>{{ $item->service_day }}</td>
                 <td>{{ $item->service }}</td>
                 <td>{{ $item->pr }}</td>
-                <td>{{ $item->is_show }}</td>
                 <td>{{ $item->img }}</td>
                 <td>{{ $item->memo }}</td>
+                <td>{{ $item->is_show }}</td>
                 <td>{{ $item->created_at }}</td>
                 <td>{{ $item->updated_at }}</td>
             </tr>
