@@ -1,6 +1,6 @@
 <div class="g-nav flex">
     <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}"" alt="LOGO" class="logo__img">
-    <h1 class="back_page_title"></h1>
+    <h1 class="back_page_title">釣りっとくコンテンツ管理画面</h1>
 </div>
 <div class="g-nav flex">
 

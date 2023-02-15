@@ -15,8 +15,8 @@
         <ul>
             <li><a href="{{ route('mypage') }}">マイページ</a></li>
             <li><a href="{{ route('top') }}">プライバシーポリシー</a></li>
-            <li><a href="{{ route('admintop') }}">ログイン</a></li>
+            <li><a href="{{ route('admintop') }}" target="_blank">ログイン</a></li>
         </ul>
     </div>
-    <p class="copylight">copylight@turitoku.com</p>
+    <p class="copylight">Copyright@turitoku.com</p>
 </footer>

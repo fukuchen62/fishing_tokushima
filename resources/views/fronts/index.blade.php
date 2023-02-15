@@ -11,22 +11,14 @@
 
 @endsection
 
-{{-- メイン --}}
-@section('content')
+@section('key_visual')
     <div class="keyvisual">
         キービジュアル
     </div>
+@endsection
 
-    <section class="titlesection">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">ページタイトル</h1>
-            <div class="pagetitle__border"></div>
-        </div>
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
-
-    </section>
+{{-- メイン --}}
+@section('content')
 
     <section class="firstsection">
 

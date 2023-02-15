@@ -1,0 +1,216 @@
+@charset "utf8";
+
+body {
+    font-family: "fot-tsukuardgothic-std", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+}
+
+#wrap {
+    width: 100%;
+    padding: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* border: 1px gainsboro solid; */
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.none {
+    display: none;
+}
+
+/* ページ全体共通のpadding left rightです */
+/* 各ページのセクションやブロックごとにクラスの指定をしてください */
+.p__lr {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* ヘッダー */
+#header {
+    width: 100%;
+    /* height: 100px; */
+    background-color: #30ADD1;
+    padding: 20px;
+}
+
+/* h1 ページタイトル*/
+.page_title {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+}
+
+.subtitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.subtitle h2 {
+    font-size: 2.2em;
+    color: lightcyan;
+    font-weight: bold;
+    border: 5px lightcyan double;
+    border-radius: 10px;
+    /* background-color: lightpink; */
+    padding: 10px 40px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.login span {
+    color: yellow;
+}
+
+.logout {
+    border: 1px lightgray solid;
+    padding: 10px;
+    background-color: beige;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* h2 セクションタイトル */
+.h2 {
+    /* background-color: #30ADD1; */
+    border-radius: 30px;
+    color: #fff;
+    padding: 8px;
+    font-size: 24px;
+    margin: 100px 0 50px 0;
+}
+
+.g-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100vw);
+    /* transition: all .3s linear; */
+    padding-top: 150px;
+    overflow: scroll;
+}
+
+
+.logo__img,
+.header__logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    width: 250px;
+    height: 60px;
+}
+
+.g-nav__box {
+    background-color: #fff;
+    margin-top: 60px;
+}
+
+.g-nav__box--section {
+    margin: 20px;
+}
+
+.g-nav__box--group {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.g-nav__box--discription {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.g-nav__box--img {
+    border-radius: 50%;
+    width: 136px;
+    height: 136px;
+}
+
+
+/* フッター */
+
+#footer {
+    width: 100%;
+    background-color: #30ADD1;
+}
+
+.copyright {
+    padding: 20px;
+    color: #fff;
+}
+
+.tc {
+    text-align: center;
+}
+
+.tl {
+    text-align: left;
+}
+
+.tr {
+    text-align: right;
+}
+
+.mb80 {
+    margin-bottom: 80px;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mt80 {
+    margin-top: 80px;
+}
+
+.mt60 {
+    margin-top: 60px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}

@@ -1,14 +1,14 @@
-<header>
-    {{-- コンポーネント：ヘッダーを読み込む --}}
-    @component('components.back_header')
-        {{-- ログインの名前を埋め込む --}}
-        @slot('login_name')
-            {{-- {{ $login_name }} --}}
-        @endslot
+<header id="header">
+    <div class="header container mb20">
+        {{-- <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="LOGO" class=""> --}}
+        <h1 class="page_title">@yield('title')</h1>
+    </div>
 
-        {{-- サブタイトルを埋め込む --}}
-        @slot('subtitle')
-            {{-- {{ $subtitle }} --}}
-        @endslot
-    @endcomponent
+    <div class="subtitle container">
+        <h2>@yield('subtitle')</h2>
+        <div class="login">
+            <span>@yield('login_name') 様ログイン中　</span>
+            <a class="logout" href="{{ route('logout') }}">ログアウト</a>
+        </div>
+    </div>
 </header>
