@@ -8,57 +8,17 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
+
 @endsection
 
-{{-- メイン --}}
+{{-- ワークスペース
+    一覧画面、新規入力・編集画面など --}}
 @section('content')
-    <div>
-        <h2> Fish テーブル</h2>
-        <ul>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
-        </ul>
-    </div>
+    <section>
+        <h3>コンテンツ情報</h3>
 
-    <div>
-        <h2> Shots テーブル</h2>
-        <ul>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
-        </ul>
-    </div>
-
-    <div>
-        <h2> Spots テーブル</h2>
-        <ul>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
-        </ul>
-    </div>
-
-    <div>
-        <h2> Plans テーブル</h2>
-        <ul>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
-        </ul>
-    </div>
-
-    <div>
-        <h2> News テーブル</h2>
-        <ul>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
-        </ul>
-    </div>
-
-    <div>
-        <h2> Knowledge テーブル</h2>
-        <ul>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-            <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
-        </ul>
-    </div>
+        <p>text text text</p>
+    </section>
 @endsection
 
 {{-- 該当ページ専用JS --}}
