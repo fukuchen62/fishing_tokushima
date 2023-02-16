@@ -1,75 +1,93 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.layout_front')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-</head>
+@section('description', 'ページのデスクリプション')
 
-<body>
-    <ul>
-        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
-        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
-        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
-    </ul>
+@section('keywords', 'キーワード1,キーワード2・・・')
 
-    <h1>pageShop</h1>
+@section('title', '釣具店一覧')
 
-    <a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
-    <a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
-    <a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
-    <a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
+{{-- 該当ページのCSS --}}
+@section('pageCss')
 
-    <table border="1">
-        <tr>
-            <th>ID&nbsp;</th>
-            <th>店名&nbsp;</th>
-            <th>地域ID&nbsp;</th>
-            <th>郵便番号&nbsp;</th>
-            <th>住所&nbsp;</th>
-            <th>iframe&nbsp;</th>
-            <th>経度&nbsp;</th>
-            <th>緯度&nbsp;</th>
-            <th>電話番号&nbsp;</th>
-            <th>fax&nbsp;</th>
-            <th>email&nbsp;</th>
-            <th>url&nbsp;</th>
-            <th>営業日&nbsp;</th>
-            <th>営業内容&nbsp;</th>
-            <th>PR&nbsp;</th>
-            <th>画像&nbsp;</th>
-            <th>備考&nbsp;</th>
-            <th>表示フラグ&nbsp;</th>
-            <th>投稿日時&nbsp;</th>
-            <th>編集日時&nbsp;</th>
-        </tr>
-        @foreach ($shops as $item)
-            <tr>
-                <td>{{ $item->id }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->city_id }}</td>
-                <td>{{ $item->postal_code }}</td>
-                <td>{{ $item->address }}</td>
-                <td>{{ $item->iframe }}</td>
-                <td>{{ $item->longitude }}</td>
-                <td>{{ $item->latitude }}</td>
-                <td>{{ $item->tel }}</td>
-                <td>{{ $item->fax }}</td>
-                <td>{{ $item->email }}</td>
-                <td>{{ $item->url }}</td>
-                <td>{{ $item->service_day }}</td>
-                <td>{{ $item->service }}</td>
-                <td>{{ $item->pr }}</td>
-                <td>{{ $item->img }}</td>
-                <td>{{ $item->memo }}</td>
-                <td>{{ $item->is_show }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td>{{ $item->updated_at }}</td>
-            </tr>
-        @endforeach
-    </table>
-</body>
+@endsection
 
-</html>
+{{-- メイン --}}
+@section('content')
+
+    <section class="titlesection">
+        <div class="titlesection__box">
+            <h1 class="pagetitle">釣具店一覧</h1>
+        </div>
+    </section>
+
+    <section>
+            <!-- <h2 class="section__title">釣具店</h2> -->
+
+            <div class="flex">
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></div>
+                </button>
+
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></div>
+                </button>
+
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></div>
+                </button>
+
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></div>
+                </button>
+            </div>
+
+            <div>
+                <h3>検索結果</h3>
+                @foreach ($shops as $item)
+
+                @component('components.front_shops_card')
+                @slot('shop_name')
+                {{ $item->name }}
+                @endslot
+
+                @slot('shop_address')
+                    {{ $item->address }}
+                @endslot
+
+                @slot('shop_service_day')
+                    {{ $item->service_day }}
+                @endslot
+
+                @slot('shop_tel')
+                    {{ $item->tel }}
+                @endslot
+
+                @slot('shop_email')
+                {{ $item->email }}
+                @endslot
+
+                @slot('shop_service')
+                    {{ $item->service }}
+                @endslot
+
+                @slot('shop_pr')
+                    {{ $item->pr }}
+                @endslot
+
+                @slot('shop_iframe')
+                    {{ $item->iframe }}
+                @endslot
+                @endcomponent
+
+                @endforeach
+        </section>
+
+    <div id="page_top" class="flex">
+        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針" class="topbutton__hook"></a>
+    </div>
+@endsection
+
+{{-- 該当ページ専用JS --}}
+@section('pageJs')
+
+@endsection

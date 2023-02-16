@@ -20,16 +20,18 @@ class ShopController extends Controller
 
     public function shopList(Request $request)
     {
-        // $items = Shop::all();
-
         $city_id = $request->city_id;
 
-        $items = ShopController::getRecentCity($city_id);
+        if ($city_id != null) {
+            $items = ShopController::getRecentCity($city_id);
+        } else {
+            $items = Shop::all();
+        }
 
-        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'shops' => $items,
         ];
+
 
         // viewでhelloフォルダにあるindex.phpを呼び出し、
         // $dataを渡して、関連Webページを作成して、
