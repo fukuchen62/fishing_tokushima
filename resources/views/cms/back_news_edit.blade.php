@@ -28,27 +28,27 @@
 <form method="post" action="{{ route('newsedit') }}">
     <table>
         @csrf
-        <input type="hidden" name="id" value="{{$form->id}}">
+        <input type="hidden" name="id" value="{{$news->id}}">
         <tr><th>カテゴリー名: </th><td><input type="text" name="name"
-            value="{{$form->name}}" required></td></tr>
+            value="{{$news->name}}" required></td></tr>
         <tr><th>タイトル: </th><td><input type="text" name="title"
-            value="{{$form->title}}" required></td></tr>
+            value="{{$news->title}}" required></td></tr>
         <tr><th>概要: </th><td><input type="text" name="overview"
-            value="{{$form->overview}}" required></td></tr>
+            value="{{$news->overview}}" required></td></tr>
             <tr>
                 <th>詳細内容:</th>
                 <td>
-                    <textarea name="content" id="content" cols="50" rows="5" required> {{$form->content}} </textarea>
+                    <textarea name="content" id="content" cols="50" rows="5" required> {{$news->content}} </textarea>
                 </td>
             </tr>
             <tr><th>アイキャッチ画像:</th><td>
-                <input type="text" name="eyecatch" value="{{$form->eyecatch}}">
+                <input type="text" name="eyecatch" value="{{$news->eyecatch}}">
             </td></tr>
             <tr><th>表示フラグ:</th><td>
-                <input type="boolean" name="is_show" value="{{$form->is_show}}">
+                <input type="boolean" name="is_show" value="{{$news->is_show}}">
             </td></tr>
         <tr><th></th><td><input type="submit"value="修正">
-                        <a href="{{route('newsremove',['id'=>$form->id])}}">削除</a></td></tr>
+                        <a href="{{route('newsremove',['id'=>$news->id])}}">削除</a></td></tr>
     </table>
     </form>
 @endsection
