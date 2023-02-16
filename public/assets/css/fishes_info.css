@@ -16,6 +16,7 @@ body {
 
 .fishinfo__section {
     padding-top: 100px;
+    background-color: #EAF2FA;
 }
 
 
@@ -28,6 +29,7 @@ body {
     background-color: #fff;
     border-radius: 50%;
     margin: 50px auto;
+    align-items: flex-start;
 }
 
 .fishinfo__box--description h3 {
@@ -125,7 +127,8 @@ body {
 .fishesinfo__img--shell {
     display: flex;
     justify-content: center;
-    margin: 70px;
+    padding: 70px;
+    background-color: #EAF2FA;
 }
 
 .fishesinfo__img--turtle li {
