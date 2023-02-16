@@ -49,12 +49,7 @@
 
                     <!-- Googleマップで周辺情報を表す -->
                     <div class="section__wrap--infomation">
-                        {{ $shop_iframe }}
-                        {{-- <iframe class="section__map--information"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105749.94989893542!2d134.50598449901784!3d34.07756439038653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e59cfa2e1a5%3A0xfc218cb261e84ce7!2z44GE44Gv44KJ6Yej5YW3!5e0!3m2!1sja!2sjp!4v1676339393022!5m2!1sja!2sjp"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe> --}}
+                        <iframe>{{ $shop_iframe }}</iframe>
                     </div>
                 </div>
 <!-- /カードの構造 -->
