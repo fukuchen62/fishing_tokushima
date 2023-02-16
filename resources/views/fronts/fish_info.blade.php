@@ -148,19 +148,19 @@
             <ul class="spot__box--list">
                 @foreach ($spots as $key => $spot)
                     @component('components.front_fish_info_card')
-                        @slot('spot_link')
+                        @slot('card_link')
                             {{ route('spotsinfo', ['id' => $spots[$key]]) }}
                         @endslot
-                        @slot('spot_alt')
+                        @slot('card_alt')
                             {{ $spot->name }}
                         @endslot
-                        @slot('spot_src')
+                        @slot('card_src')
                             {{ $spot->img1 }}
                         @endslot
-                        @slot('spot_name')
+                        @slot('card_name')
                             {{ $spot->name }}
                         @endslot
-                        @slot('spot_overview')
+                        @slot('card_overview')
                             {{ $spot->overview }}
                         @endslot
                     @endcomponent
@@ -176,19 +176,19 @@
             <ul class="recommend__box--list">
                 @foreach ($fishlist as $key => $fish)
                     @component('components.front_fish_info_card')
-                        @slot('spot_link')
+                        @slot('card_link')
                             {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
-                        @slot('spot_alt')
+                        @slot('card_alt')
                             {{ $fish->name }}
                         @endslot
-                        @slot('spot_src')
+                        @slot('card_src')
                             {{ $fish->fish_img1 }}
                         @endslot
-                        @slot('spot_name')
+                        @slot('card_name')
                             {{ $fish->name }}
                         @endslot
-                        @slot('spot_overview')
+                        @slot('card_overview')
                             {{ $fish->detail }}
                         @endslot
                     @endcomponent
