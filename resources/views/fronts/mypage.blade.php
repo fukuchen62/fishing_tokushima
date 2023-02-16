@@ -20,17 +20,21 @@
             @endif --}}
 
             <tr>
-                <th>MESSAGE:</th>
-
-                <td><input type="text" name="spot_id" value="" id=""></td>
-                <td><input type="text" name="plan_id" value="" id=""></td>
-
-
-                {{-- <td><input type="submit" name="spot_id" value="2" id=""></td>
-                <td><input type="submit" name="plan_id" value="3" id=""></td> --}}
-
-                <td><input type="submit" value="送信"></td>
+                <th>釣りスポット</th>
+                {{-- <td><input type="text" name="spot_id" value="" id=""></td>
+                <td><input type="text" name="plan_id" value="" id=""></td> --}}
+                <td><input type="submit" name="spot_id" value="1" id=""></td>
+                <td><input type="submit" name="spot_id" value="2" id=""></td>
             </tr>
+
+
+            <tr>
+                <th>おすすめプラン</th>
+                <td><input type="submit" name="plan_id" value="2" id=""></td>
+                <td><input type="submit" name="plan_id" value="3" id=""></td>
+            </tr>
+
+                {{-- <td><input type="submit" value="送信"></td> --}}
         </table>
     </form>
 
@@ -47,7 +51,8 @@
 
 <h2>釣りスポット</h2>
 
-@if ($spots != "")
+@if ($spots != null)
+    {{ count($spots) }};
     @foreach ($spots as $key => $spot)
     <h3>{{ $key }}</h3>
                 <p>{{ $spot->img1 }}</p>
@@ -57,9 +62,13 @@
     @endforeach
 @endif
 
+{{-- @php
+    $plans ="";
+@endphp --}}
+
 <h2>おすすめプラン</h2>
 
-@if ($plans != "")
+@if ($plans !=null)
     @foreach ($plans as $key => $plan)
     <h3>{{ $key }}</h3>
                 <p>{{ $plan->eye_catch }}</p>
