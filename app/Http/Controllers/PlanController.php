@@ -62,12 +62,17 @@ class PlanController extends Controller
         // }
         // $items = Plan::scopeSearch($city_id, $level_id, $fish_id)
         //     ->get();
+        $plans = "";
+
+        $plans = Plan::selectRaw('COUNT(plan_id) as count_plan')
+            ->get();
 
         $data = [
             // 'area' => $request->area,
             // 'level' => $request->level,
             // 'fish' => $request->fish,
             'plans' => $items,
+            'count_plan' => $plans,
         ];
 
         return view('fronts.plans_list', $data);
