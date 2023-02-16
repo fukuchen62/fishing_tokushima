@@ -2,7 +2,6 @@
 
 body {
     color: #51656F;
-    /* background-color: #EAF2FA; */
 }
 
 /* main {
@@ -13,6 +12,11 @@ body {
 /* .wrap {
     margin: 0 20px;
 } */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 .fishinfo__section {
     padding-top: 100px;
