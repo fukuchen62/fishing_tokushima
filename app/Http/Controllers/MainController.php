@@ -41,7 +41,7 @@ class MainController extends Controller
             'items' => $item,
         ];
 
-        return view('fronts.index1', $data);
+        return view('fronts.index', $data);
     }
 
 
