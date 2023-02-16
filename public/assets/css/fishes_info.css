@@ -103,8 +103,6 @@ img {
 }
 
 @media screen and (min-width: 1080px) {
-    /* .fishes__box--description {
-    } */
 
     .fishinfo__box--food {
         display: flex;
@@ -119,8 +117,6 @@ img {
         border-style: solid;
         border-width: 27.5px 0 27.5px 55px;
         border-color: transparent transparent transparent #000000;
-        /* position: absolute;
-        top: 80px; */
     }
 }
 
@@ -271,13 +267,13 @@ img {
 
 /* slick */
 .slider6-wrap {
-    width: 460px;
+    width: 559px;
     margin: 0 auto;
     position: relative;
 }
 
 .slider-6 .slick-slide {
-    height: 345px;
+    height: 419px;
     overflow: hidden;
 }
 
@@ -294,7 +290,7 @@ img {
 
 .thumbs_list li {
     display: inline-block;
-    width: 80px;
+    width: 100px;
     height: 80px;
     opacity: 0.4;
     cursor: pointer;

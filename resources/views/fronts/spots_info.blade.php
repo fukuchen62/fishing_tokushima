@@ -16,7 +16,7 @@
 
     <section class="titlesection">
         <div class="titlesection__box">
-            <h1 class="pagetitle">釣りスポット詳細</h1>
+            <h1 class="pagetitle">{{ $spots->name }}</h1>
         </div>
     </section>
 
@@ -93,30 +93,30 @@
     <section class="p__lr">
         <h3>近くのスポット</h3>
         <!-- <div class="spotinfo__card--aria">
-                                                            <div class="card card__skin">
-                                                                <a href="">
-                                                                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                                                                    <div>
-                                                                        <h3 class="card__title">タイトルタイトル</h3>
-                                                                        <p class="card__discription">texttexttexttexttext</p>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                            <a href="" class="card">
-                                                                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                                                                <div>
-                                                                    <h3 class="card__title">タイトルタイトル</h3>
-                                                                    <p class="card__discription">texttexttexttexttext</p>
-                                                                </div>
-                                                            </a>
-                                                            <a href="" class="card">
-                                                                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                                                                <div>
-                                                                    <h3 class="card__title">タイトルタイトル</h3>
-                                                                    <p class="card__discription">texttexttexttexttext</p>
-                                                                </div>
-                                                            </a>
-                                                        </div> -->
+                            <div class="card card__skin">
+                                <a href="">
+                                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                                    <div>
+                                        <h3 class="card__title">タイトルタイトル</h3>
+                                        <p class="card__discription">texttexttexttexttext</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <a href="" class="card">
+                                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                                <div>
+                                    <h3 class="card__title">タイトルタイトル</h3>
+                                    <p class="card__discription">texttexttexttexttext</p>
+                                </div>
+                            </a>
+                            <a href="" class="card">
+                                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                                <div>
+                                    <h3 class="card__title">タイトルタイトル</h3>
+                                    <p class="card__discription">texttexttexttexttext</p>
+                                </div>
+                            </a>
+                            v> -->
 
         <a class="btn" href="">スポット一覧</a>
     </section>
@@ -135,49 +135,3 @@
 @section('pageJs')
 
 @endsection
-
-{{-- 
-<body>
-
-    <ul>
-        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
-        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
-        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
-    </ul>
-
-    <h1>singleArea</h1>
-    <table border="1">
-        <tr>
-            <th>スポット名&nbsp;</th>
-            <th>住所&nbsp;</th>
-            <th>駐車場&nbsp;</th>
-            <th>トイレ&nbsp;</th>
-            <th>釣り方&nbsp;</th>
-            <th>周辺施設&nbsp;</th>
-            <th>近くの病院&nbsp;</th>
-            <th>避難場所&nbsp;</th>
-            <th>釣れる魚&nbsp;</th>
-            <th>BBQ&nbsp;</th>
-        </tr>
-        <tr>
-            <td>{{ $spots->name }}</td>
-            <td>{{ $spots->spot_address }}</td>
-            <td>{{ $spots->parking_id }}</td>
-            <td>{{ $spots->toilet }}</td>
-            <td>サビキ釣り</td>
-            <td>{{ $spots->supermarket_id }}</td>
-            <td>{{ $spots->hospital->name }}</td>
-            <td>高台</td>
-            <td>
-                @foreach ($fishlist as $fish)
-                    {{ $fish->name }}
-                @endforeach
-            </td>
-            <td>{{ $spots->bbq }}</td>
-        </tr>
-    </table>
-    <iframe src="{{ $spots->iframe_url }}" width="600" height="450" frameborder="0" style="border:0;"
-        allowfullscreen=""></iframe>
-</body>
-
-</html> --}}
