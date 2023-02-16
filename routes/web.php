@@ -21,8 +21,6 @@ Route::get('/', function () {
  * トップページへのルート情報
  */
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
-// 後で消すやつ
-Route::get('/toppage', [App\Http\Controllers\MainController::class, 'index'])->name('top');
 
 /**
  * マイページへのルート情報
