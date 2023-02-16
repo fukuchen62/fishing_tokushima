@@ -8,14 +8,14 @@
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
         <li><a href="http://localhost/fishing_tokushima/public/admin/shopsshow">HOME</a></li>
-        <li>その他</li>
+
     </ul>
 @endsection
 
 @section('search')
 
     {{-- 検索条件入力フォーム --}}
-    <form action="search" method="get">
+    <form action="{{ route('shopsshow') }}" method="get">
         検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
         <input type="submit" value="検索">
     </form>
