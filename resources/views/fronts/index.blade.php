@@ -22,24 +22,9 @@
 
     <section class="firstsection">
 
-        <h2 class="section__box--title ">第一セクション</h2>
+        <h2 class="section__box--title ">あああああ</h2>
 
-        <div>
-            <div class="btn">基礎ボタン</div>
-            <div>text</div>
-        </div>
-        <div>
-            <div>syasin</div>
-            <div>text</div>
-        </div>
-        <div>
-            <div>syasin</div>
-            <div>text</div>
-        </div>
-        <div>
-            <div>syasin</div>
-            <div>text</div>
-        </div>
+
 
     </section>
     <div class="firstsection__bottom"></div>
