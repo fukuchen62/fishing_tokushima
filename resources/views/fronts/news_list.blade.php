@@ -15,9 +15,9 @@
         <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
     </ul>
     <h1>ニュース一覧</h1>
-    <a href="{{ route('newsshow', ['name' => '更新']) }}">更新</a>
-    <a href="{{ route('newsshow', ['name' => '体験']) }}">体験</a>
-    <a href="{{ route('newsshow', ['name' => 'イベント']) }}">イベント</a>
+    <a href="{{ route('news', ['name' => '更新']) }}">更新</a>
+    <a href="{{ route('news', ['name' => '体験']) }}">体験</a>
+    <a href="{{ route('news', ['name' => 'イベント']) }}">イベント</a>
 
 
     <table border="1">
