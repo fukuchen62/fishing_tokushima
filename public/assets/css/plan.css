@@ -185,15 +185,6 @@ tr:not(:last-child) {
     background-color: #EAF2FA;
 }
 
-/* セクションタイトル */
-/* .section__title {
-    background-color: #30add1;
-    border-radius: 20px;
-    font-size: 20px;
-    padding: 10px;
-    color: #fff;
-} */
-
 /* 概要の丸 */
 
 
@@ -226,13 +217,9 @@ tr:not(:last-child) {
 }
 
 /* PC時 */
+/* 体験プラン検索画面は、他ページと違い3枚より多いカードが表示される */
 @media screen and (min-width:1025px) {
-    .result__box, .card__box {
-        /* フレックスレイアウト */
-        /* display: flex;
-        justify-content: center;
-        flex-wrap: wrap; */
-
+    .card__area {
         /* グリッドレイアウト */
         display: grid;
         gap: 40px;
