@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 // クラスをインポートする
 //クライアントからのリクエストを受信するためのクラス
+
+use App\Models\Facility;
+
 use Illuminate\Http\Request;
 
 //クライアントへレスポンスするためのクラス
@@ -19,6 +22,8 @@ use App\Models\Shop;
 
 use App\Models\Plan;
 
+use App\Models\Evacuation;
+
 
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
@@ -30,7 +35,45 @@ class AdminController extends Controller
 
     public function adminTop()
     {
-        return view('cms.back_main');
+        // 新着ニュースを読み込む
+        $items = News::orderBy('id', 'desc')
+            ->limit(4)
+            ->get();
+
+        // ニュース件数
+        $news_count = News::whereNull('deleted_at')->count();
+        // 魚件数
+        $fish_count = Fish::whereNull('deleted_at')->count();
+        // スッポト件数
+        $spot_count = Spot::whereNull('deleted_at')->count();
+        // 釣具屋件数
+        $shop_count = Shop::whereNull('deleted_at')->count();
+        // 体験プラン件数
+        $plan_count = Plan::whereNull('deleted_at')->count();
+        // 周辺施設件数
+        $facility_count = Facility::all()->count();
+        // 避難場所件数
+        $excape_count = Evacuation::all()->count();
+        // 入門知識件数
+        $knowledge_count = Knowledge::whereNull('deleted_at')->count();
+
+        $counts = [
+            'news_count' => $news_count,
+            'fish_count' => $fish_count,
+            'spot_count' => $spot_count,
+            'shop_count' => $shop_count,
+            'plan_count' => $plan_count,
+            'facility_count' => $facility_count,
+            'excape_count' => $excape_count,
+            'knowledge_count' => $knowledge_count,
+        ];
+
+        // テンプレートファイルに渡すデータ（連想配列）
+        $data = [
+            'news_list' => $items,
+            'counts' => $counts,
+        ];
+        return view('cms.back_main', $data);
     }
 
     // news分
@@ -279,7 +322,6 @@ class AdminController extends Controller
 
         $items = Spot::all();
         return view('cms.back_spots', $data);
-
     }
 
     public function spotsEdit(Request $request)
@@ -342,14 +384,14 @@ class AdminController extends Controller
         if ($s != '') {
             // あいまい検索
             $items = DB::table('shops')
-            ->where('name', 'like', '%' . $s . "%")
-            ->orWhere('postal_code', 'like', '%' . $s . "%")
-            ->orWhere('address', 'like', '%' . $s . "%")
-            ->orWhere('tel', 'like', '%' . $s . "%")
-            ->orWhere('service_day', 'like', '%' . $s . "%")
-            ->orWhere('service', 'like', '%' . $s . "%")
-            ->orWhere('is_show', 'like', '%' . $s . "%")
-            ->get();
+                ->where('name', 'like', '%' . $s . "%")
+                ->orWhere('postal_code', 'like', '%' . $s . "%")
+                ->orWhere('address', 'like', '%' . $s . "%")
+                ->orWhere('tel', 'like', '%' . $s . "%")
+                ->orWhere('service_day', 'like', '%' . $s . "%")
+                ->orWhere('service', 'like', '%' . $s . "%")
+                ->orWhere('is_show', 'like', '%' . $s . "%")
+                ->get();
         } else {
             // 無条件
             $items = DB::table('shops')->get();
@@ -364,7 +406,6 @@ class AdminController extends Controller
 
         $items = Shop::all();
         return view('cms.back_shops', $data);
-
     }
 
     public function shopsEdit(Request $request)
@@ -426,14 +467,14 @@ class AdminController extends Controller
         if ($s != '') {
             // あいまい検索
             $items = DB::table('fish')
-            ->where('name', 'like', '%' . $s . "%")
-            ->orWhere('formal_name', 'like', '%' . $s . "%")
-            ->orWhere('method', 'like', '%' . $s . "%")
-            ->orWhere('month', 'like', '%' . $s . "%")
-            ->orWhere('level', 'like', '%' . $s . "%")
+                ->where('name', 'like', '%' . $s . "%")
+                ->orWhere('formal_name', 'like', '%' . $s . "%")
+                ->orWhere('method', 'like', '%' . $s . "%")
+                ->orWhere('month', 'like', '%' . $s . "%")
+                ->orWhere('level', 'like', '%' . $s . "%")
 
-            ->orWhere('is_show', 'like', '%' . $s . "%")
-            ->get();
+                ->orWhere('is_show', 'like', '%' . $s . "%")
+                ->get();
         } else {
             // 無条件
             $items = DB::table('fish')->get();
@@ -448,7 +489,6 @@ class AdminController extends Controller
 
         $items = Fish::all();
         return view('cms.back_fish', $data);
-
     }
 
     public function fishEntry(Request $request)
