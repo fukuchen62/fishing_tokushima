@@ -32,13 +32,13 @@ class MainController extends Controller
         // ニュースの情報を取得
         // $item = News::all();
 
-        $item = News::orderBy('id', 'desc')
+        $items = News::orderBy('id', 'desc')
             ->limit(4)
             ->get();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'items' => $item,
+            'items' => $items,
         ];
 
         return view('fronts.index', $data);
