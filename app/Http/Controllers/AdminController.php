@@ -132,7 +132,6 @@ class AdminController extends Controller
     {
         // クライアントから検索条件(s)を取得する
         $s = "";
-
         if (isset($request->s)) {
             $s = $request->s;
         }
@@ -143,7 +142,7 @@ class AdminController extends Controller
                 ->where('category_id', 'like', '%' . $s . "%")
                 ->orWhere('title', 'like', '%' . $s . "%")
                 ->orWhere('overview', 'like', '%' . $s . "%")
-                ->orWhere('content', 'like', '%' . $s . "%")
+                // ->orWhere('content', 'like', '%' . $s . "%")
                 ->orWhere('is_show', 'like', '%' . $s . "%")
                 ->get();
         } else {
@@ -217,19 +216,54 @@ class AdminController extends Controller
 
     public function spotsSearch(Request $request)
     {
-        // クライアントから検索条件(s)を取得する
+        // // クライアントから検索条件(s)を取得する
+        // $s = "";
+        // if (isset($request->s)) {
+        //     $s = $request->s;
+        // }
+
+        // if ($s !== '') {
+        //     // あいまい検索
+        //     $items = DB::table('spots')
+        //         ->where('id', 'like', '%' . $s . "%")
+        //         ->orwhere('name', 'like', '%' . $s . "%")
+        //         ->orWhere('sex', 'like', '%' . $s . "%")
+        //         ->orWhere('mail', 'like', '%' . $s . "%")
+        //         ->get();
+        // } else {
+        //     // 無条件
+        //     $items = DB::table('spots')->get();
+        // }
+
+        // // テンプレートファイルに渡すデータ（連想配列）
+        // $data = [
+        //     'msg' => '登録されているショップ一覧です。',
+        //     // spotsから読み込んだレコードをmembersの連想配列の中身とする
+        //     'members' => $items,
+        // ];
+
+        // // リダイレクトでルート名を呼び出し
+        // return redirect()->route('back_spots');
+    }
+
+    public function spotsShow(Request $request)
+    {
+
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
         }
 
-        if ($s !== '') {
+        if ($s != '') {
             // あいまい検索
             $items = DB::table('spots')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
+                ->where('name', 'like', '%' . $s . "%")
+                ->orWhere('overview', 'like', '%' . $s . "%")
+                ->orWhere('city_id', 'like', '%' . $s . "%")
+                ->orWhere('postal_code', 'like', '%' . $s . "%")
+                ->orWhere('spot_address', 'like', '%' . $s . "%")
+                ->orWhere('toilet', 'like', '%' . $s . "%")
+                ->orWhere('is_show', 'like', '%' . $s . "%")
                 ->get();
         } else {
             // 無条件
@@ -238,19 +272,14 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されているショップ一覧です。',
-            // spotsから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+            'msg' => '登録されている会員一覧です。',
+            // peopleから読み込んだレコードをmembersの連想配列の中身とする
+            'items' => $items,
         ];
 
-        // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_spots');
-    }
-
-    public function spotsShow(Request $request)
-    {
         $items = Spot::all();
-        return view('cms.back_spots', ['items' => $items]);
+        return view('cms.back_spots', $data);
+
     }
 
     public function spotsEdit(Request $request)
@@ -273,20 +302,54 @@ class AdminController extends Controller
 
     public function shopsSearch(Request $request)
     {
-        // クライアントから検索条件(s)を取得する
+        // // クライアントから検索条件(s)を取得する
+        // $s = "";
+        // if (isset($request->s)) {
+        //     $s = $request->s;
+        // }
+
+        // if ($s !== '') {
+        //     // あいまい検索
+        //     $items = DB::table('shops')
+        //         ->where('id', 'like', '%' . $s . "%")
+        //         ->orwhere('name', 'like', '%' . $s . "%")
+        //         ->orWhere('sex', 'like', '%' . $s . "%")
+        //         ->orWhere('mail', 'like', '%' . $s . "%")
+        //         ->get();
+        // } else {
+        //     // 無条件
+        //     $items = DB::table('shops')->get();
+        // }
+
+        // // テンプレートファイルに渡すデータ（連想配列）
+        // $data = [
+        //     'msg' => '登録されているショップ一覧です。',
+        //     // shopsから読み込んだレコードをmembersの連想配列の中身とする
+        //     'members' => $items,
+        // ];
+
+        // // リダイレクトでルート名を呼び出し
+        // return redirect()->route('back_shops');
+    }
+
+    public function shopsShow(Request $request)
+    {
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
         }
 
-        if ($s !== '') {
+        if ($s != '') {
             // あいまい検索
             $items = DB::table('shops')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
-                ->get();
+            ->where('name', 'like', '%' . $s . "%")
+            ->orWhere('postal_code', 'like', '%' . $s . "%")
+            ->orWhere('address', 'like', '%' . $s . "%")
+            ->orWhere('tel', 'like', '%' . $s . "%")
+            ->orWhere('service_day', 'like', '%' . $s . "%")
+            ->orWhere('service', 'like', '%' . $s . "%")
+            ->orWhere('is_show', 'like', '%' . $s . "%")
+            ->get();
         } else {
             // 無条件
             $items = DB::table('shops')->get();
@@ -294,19 +357,14 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されているショップ一覧です。',
-            // shopsから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+            'msg' => '登録されている会員一覧です。',
+            // peopleから読み込んだレコードをmembersの連想配列の中身とする
+            'items' => $items,
         ];
 
-        // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_shops');
-    }
-
-    public function shopsShow(Request $request)
-    {
         $items = Shop::all();
-        return view('cms.back_shops', ['items' => $items]);
+        return view('cms.back_shops', $data);
+
     }
 
     public function shopsEdit(Request $request)
@@ -328,20 +386,54 @@ class AdminController extends Controller
     // fishテーブル関連
     public function fishSearch(Request $request)
     {
-        // クライアントから検索条件(s)を取得する
+        // // クライアントから検索条件(s)を取得する
+        // $s = "";
+        // if (isset($request->s)) {
+        //     $s = $request->s;
+        // }
+
+        // if ($s !== '') {
+        //     // あいまい検索
+        //     $items = DB::table('fish')
+        //         ->where('id', 'like', '%' . $s . "%")
+        //         ->orwhere('name', 'like', '%' . $s . "%")
+        //         ->orWhere('sex', 'like', '%' . $s . "%")
+        //         ->orWhere('mail', 'like', '%' . $s . "%")
+        //         ->get();
+        // } else {
+        //     // 無条件
+        //     $items = DB::table('fish')->get();
+        // }
+
+        // // テンプレートファイルに渡すデータ（連想配列）
+        // $data = [
+        //     'msg' => '登録されているショップ一覧です。',
+        //     // fishから読み込んだレコードをmembersの連想配列の中身とする
+        //     'members' => $items,
+        // ];
+
+        // // リダイレクトでルート名を呼び出し
+        // return redirect()->route('back_fish');
+    }
+
+    public function fishShow(Request $request)
+    {
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
         }
 
-        if ($s !== '') {
+        if ($s != '') {
             // あいまい検索
             $items = DB::table('fish')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
-                ->get();
+            ->where('name', 'like', '%' . $s . "%")
+            ->orWhere('formal_name', 'like', '%' . $s . "%")
+            ->orWhere('method', 'like', '%' . $s . "%")
+            ->orWhere('month', 'like', '%' . $s . "%")
+            ->orWhere('level', 'like', '%' . $s . "%")
+
+            ->orWhere('is_show', 'like', '%' . $s . "%")
+            ->get();
         } else {
             // 無条件
             $items = DB::table('fish')->get();
@@ -349,18 +441,14 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されているショップ一覧です。',
-            // fishから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+            'msg' => '登録されている会員一覧です。',
+            // peopleから読み込んだレコードをmembersの連想配列の中身とする
+            'items' => $items,
         ];
 
-        // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_fish');
-    }
-    public function fishShow(Request $request)
-    {
         $items = Fish::all();
-        return view('cms.back_fish', ['items' => $items]);
+        return view('cms.back_fish', $data);
+
     }
 
     public function fishEntry(Request $request)

@@ -45,7 +45,20 @@
 
         {{-- メインコンテンツ --}}
         <main class="main container">
-            @yield('content')
+            {{-- メニュー --}}
+            @include('includes.back_menu')
+
+            <section class="workspace container">
+                {{-- サブタイトル --}}
+                <div class="subtitle mb10">
+                    <h2>@yield('subtitle')</h2>
+                </div>
+
+                {{-- ワークスペース --}}
+                <div class="content mb10">
+                    @yield('content')
+                </div>
+            </section>
         </main>
 
         {{-- フッター --}}

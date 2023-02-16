@@ -16,7 +16,7 @@
 @section('search')
 
     {{-- 検索条件入力フォーム --}}
-    <form action="search" method="get">
+    <form action="{{ route('fishshow') }}" method="get">
         検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
         <input type="submit" value="検索">
     </form>

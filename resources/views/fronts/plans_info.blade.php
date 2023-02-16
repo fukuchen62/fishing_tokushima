@@ -15,6 +15,15 @@
 
     <h2>内容</h2>
     @if (isset($item))
+    {{-- お気に入り保存 --}}
+    <form action="{{ route('mypage')}}" method="post">
+        <table>
+        @csrf
+        <tr>
+        <td><input type="submit" name="plan_id" value="{{ $item->id }}" id=""></td>
+        </tr>
+        </table>
+    </form>
         <table>
             <tr>
                 <th>title</th>

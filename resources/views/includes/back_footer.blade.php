@@ -1,4 +1,4 @@
-<footer id="footer" class="mt40">
+<footer id="footer" class="">
     <div class="footer container">
         <p class="copyright tc">Copyright@turitoku.com</p>
     </div>

@@ -27,24 +27,25 @@
                     <h2>チェックしてみよう</h2>
                 </div>
                 <form action="{{ route('planlist') }}" method="post">
+                    @csrf
                     <div class="search__box">
                         <div class="choice__box">
                             <h3 class="search__box--title">地域</h3>
                             <ul id="area" class="radio_box">
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="area[]" id="east" value="east" class=""
-                                        checkbox_list>
+                                    <input type="checkbox" name="area[]" id="east" value="1" class="checkbox_list"
+                                        >
                                     <label for="east" class="s_search_btn">県東部</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="area[]" id="west" value="west" class=""
-                                        checkbox_list>
-                                    <label for="west" class="s_search_btn">県西部</label>
+                                    <input type="checkbox" name="area[]" id="south" value="2" class="checkbox_list"
+                                        >
+                                    <label for="south" class="s_search_btn">県南部</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="area[]" id="south" value="south" class=""
-                                        checkbox_list>
-                                    <label for="south" class="s_search_btn">県南部</label>
+                                    <input type="checkbox" name="area[]" id="west" value="3" class="checkbox_list" disabled
+                                        >
+                                    <label for="west" class="s_search_btn">県西部</label>
                                 </li>
                             </ul>
                         </div>
@@ -52,17 +53,17 @@
                             <h3 class="search__box--title">難易度</h3>
                             <ul id="level" class="radio_box">
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="level[]" id="one" value="one" class=""
+                                    <input type="checkbox" name="level[]" id="one" value="1" class=""
                                         checkbox_list>
                                     <label for="one" class="s_search_btn">☆</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="level[]" id="two" value="two" class=""
+                                    <input type="checkbox" name="level[]" id="two" value="2" class=""
                                         checkbox_list>
                                     <label for="two" class="s_search_btn">☆☆</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="level[]" id="three" value="three" class=""
+                                    <input type="checkbox" name="level[]" id="three" value="3" class=""
                                         checkbox_list>
                                     <label for="three" class="s_search_btn">☆☆☆</label>
                                 </li>
@@ -72,27 +73,27 @@
                             <h3 class="search__box--title">魚</h3>
                             <ul id="fish" class="radio_box">
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="fish[]" id="aji" value="aji" class=""
+                                    <input type="checkbox" name="fish[]" id="aji" value="1" class=""
                                         checkbox_list>
                                     <label for="aji" class="s_search_btn">アジ</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="fish[]" id="iwashi" value="iwashi" class=""
+                                    <input type="checkbox" name="fish[]" id="iwashi" value="2" class=""
                                         checkbox_list>
                                     <label for="iwashi" class="s_search_btn">イワシ</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="fish[]" id="mebaru" value="mebaru" class=""
+                                    <input type="checkbox" name="fish[]" id="mebaru" value="3" class=""
                                         checkbox_list>
                                     <label for="mebaru" class="s_search_btn">メバル</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="fish[]" id="kurodai" value="kurodai" class=""
+                                    <input type="checkbox" name="fish[]" id="kurodai" value="4" class=""
                                         checkbox_list>
                                     <label for="kurodai" class="s_search_btn">クロダイ</label>
                                 </li>
                                 <li class="choice__box--item">
-                                    <input type="checkbox" name="fish[]" id="suzuki" value="suzuki" class=""
+                                    <input type="checkbox" name="fish[]" id="suzuki" value="5" class=""
                                         checkbox_list>
                                     <label for="suzuki" class="s_search_btn">スズキ</label>
                                 </li>
@@ -119,7 +120,8 @@
             <h2 class="section__box--title">
                 <span class="btn_area_ttl">検索結果</span>
                 <span class="event_num">(@foreach ($plans as $plan)
-                        {{ $plan->count_plan }}
+                        {{-- {{ $plan->count_plan }} --}}
+                        {{-- 検索のエラー修正のため一度コメントアウトさせてもらいました --}}
                     @endforeach)</span>
             </h2>
             <ul class="card__area">
