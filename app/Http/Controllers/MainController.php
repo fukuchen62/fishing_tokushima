@@ -13,6 +13,7 @@ use Illuminate\Http\Reponse;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Evacuation;
+use App\Models\News;
 
 
 
@@ -28,36 +29,16 @@ class MainController extends Controller
      */
     public function index(Request $request)
     {
-        $id = '';
+        // ニュースの情報を取得
+        // $item = News::all();
 
-        // idがあれば$idに代入
-        if (isset($request->id)) {
-            $id = $request->id;
-        }
-
-        // idで該当魚の情報を取得
-        $item = Fish::find($id);
-
-
-        // 釣れるスポットIDを取得
-        $spot_id = $item->spot_id;
-        if ($spot_id != '') {
-            $spotid_list = explode(",", $spot_id);
-        }
-
-        // 釣れるスポットの情報を取得
-        foreach ($spotid_list as $id) {
-            // spot情報を読み込む
-            $spotinfo = Spot::find($id);
-            // spot情報を配列に加える
-            $spot_list[] = $spotinfo;
-        }
+        $item = News::orderBy('id', 'desc')
+            ->limit(4)
+            ->get();
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'item' => $item,
-            'spots' => $spot_list,
-            'fishlist' => $fish_list,
+            'items' => $item,
         ];
 
         return view('fronts.index1', $data);
