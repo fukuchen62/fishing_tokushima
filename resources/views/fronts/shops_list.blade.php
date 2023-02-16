@@ -1,75 +1,118 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.layout_front')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-</head>
+@section('description', 'ページのデスクリプション')
 
-<body>
-    <ul>
-        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
-        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
-        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
-    </ul>
+@section('keywords', 'キーワード1,キーワード2・・・')
 
-    <h1>pageShop</h1>
+@section('title', '釣具店一覧')
 
-    <a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
-    <a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
-    <a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
-    <a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
+{{-- 該当ページのCSS --}}
+@section('pageCss')
 
-    <table border="1">
-        <tr>
-            <th>ID&nbsp;</th>
-            <th>店名&nbsp;</th>
-            <th>地域ID&nbsp;</th>
-            <th>郵便番号&nbsp;</th>
-            <th>住所&nbsp;</th>
-            <th>iframe&nbsp;</th>
-            <th>経度&nbsp;</th>
-            <th>緯度&nbsp;</th>
-            <th>電話番号&nbsp;</th>
-            <th>fax&nbsp;</th>
-            <th>email&nbsp;</th>
-            <th>url&nbsp;</th>
-            <th>営業日&nbsp;</th>
-            <th>営業内容&nbsp;</th>
-            <th>PR&nbsp;</th>
-            <th>画像&nbsp;</th>
-            <th>備考&nbsp;</th>
-            <th>表示フラグ&nbsp;</th>
-            <th>投稿日時&nbsp;</th>
-            <th>編集日時&nbsp;</th>
-        </tr>
-        @foreach ($shops as $item)
-            <tr>
-                <td>{{ $item->id }}</td>
-                <td>{{ $item->name }}</td>
-                <td>{{ $item->city_id }}</td>
-                <td>{{ $item->postal_code }}</td>
-                <td>{{ $item->address }}</td>
-                <td>{{ $item->iframe }}</td>
-                <td>{{ $item->longitude }}</td>
-                <td>{{ $item->latitude }}</td>
-                <td>{{ $item->tel }}</td>
-                <td>{{ $item->fax }}</td>
-                <td>{{ $item->email }}</td>
-                <td>{{ $item->url }}</td>
-                <td>{{ $item->service_day }}</td>
-                <td>{{ $item->service }}</td>
-                <td>{{ $item->pr }}</td>
-                <td>{{ $item->img }}</td>
-                <td>{{ $item->memo }}</td>
-                <td>{{ $item->is_show }}</td>
-                <td>{{ $item->created_at }}</td>
-                <td>{{ $item->updated_at }}</td>
-            </tr>
-        @endforeach
-    </table>
-</body>
+@endsection
 
-</html>
+{{-- メイン --}}
+@section('content')
+
+    <section class="titlesection">
+        <div class="titlesection__box">
+            <h1 class="pagetitle">釣具店一覧</h1>
+        </div>
+    </section>
+
+    <section>
+            <!-- <h2 class="section__title">釣具店</h2> -->
+
+            <div class="flex">
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></div>
+                </button>
+
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></div>
+                </button>
+
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></div>
+                </button>
+
+                <button>
+                    <div class="btn"><a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></div>
+                </button>
+            </div>
+
+            <div>
+                <h3>検索結果</h3>
+                @foreach ($shops as $item)
+
+                <div class="section__content">
+                    <div class="section__content--left">
+
+                        <div>{{ $item->name }}</div>
+
+                        <div><img src="../assets/images/img_neko_700_3.jpg" alt="お店の外観"></div>
+
+                        <!-- 疑似要素でアイコンを追加する -->
+                        <div class="section__image--location">{{ $item->address }}</div>
+
+                        <div class="section__image--open">営業時間</div>
+                        <div class="section__content--day">
+                            <p class="section__content--dayleft">{{ $item->service_day }}</p>
+                        </div>
+
+                        <div class="section__image--number">電話番号 {{ $item->tel }}</div>
+                        <div class="section__image--address">メールアドレス {{ $item->email }}</div>
+
+                        <div class="section__image--homepage">
+                            ホームページ <a href="http://www.iharatsurigu.co.jp/wp/"><span>こちらから</span></a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="section__image--service section__content--left">サービス内容</div>
+
+                    <div class="section__content--margin">
+                        <div class="store__description">
+                            <p class="store__description--margin">
+                                {{ $item->service }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="section__image--message section__content--left">お店からのメッセージ</div>
+
+                    <div class="section__content--margin">
+                        <div class="store__description">
+                            <p class="store__description--margin">
+                                {{ $item->pr }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 疑似要素でアイコンを追加する -->
+                    <div class="section__image--information section__content--left">お店の周辺情報</div>
+
+                    <!-- Googleマップで周辺情報を表す -->
+                    <div class="section__wrap--infomation">
+                        {{ $item->iframe }}
+                        {{-- <iframe class="section__map--information"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105749.94989893542!2d134.50598449901784!3d34.07756439038653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e59cfa2e1a5%3A0xfc218cb261e84ce7!2z44GE44Gv44KJ6Yej5YW3!5e0!3m2!1sja!2sjp!4v1676339393022!5m2!1sja!2sjp"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe> --}}
+                    </div>
+                </div>
+
+                @endforeach
+        </section>
+
+    <div id="page_top" class="flex">
+        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針" class="topbutton__hook"></a>
+    </div>
+@endsection
+
+{{-- 該当ページ専用JS --}}
+@section('pageJs')
+
+@endsection
