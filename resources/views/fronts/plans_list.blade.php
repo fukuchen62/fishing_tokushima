@@ -107,7 +107,9 @@
             <section class="result__section">
                 <h2 class="section__box--title">
                     <span class="btn_area_ttl">検索結果</span>
-                    <span class="event_num">(5件)</span>
+                    <span class="event_num">(@foreach ($plans as $plan)
+                            {{ $plan->count_plan }}
+                            @endforeach)</span>
                 </h2>
                 <ul class="card__area">
                     @foreach ($plans as $item)

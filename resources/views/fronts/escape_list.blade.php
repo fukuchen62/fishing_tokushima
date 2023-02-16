@@ -14,12 +14,36 @@
         <tr>
             <th>避難場所一覧</th>
         </tr>
-        @foreach($evacuations as $item)
-        <tr>
-            <td>{{$item->getData()}}</td>
-        </tr>
-        @endforeach
-    </table>
+
+        <table border="1">
+            <tr>
+
+                <th>市町村ID</th>
+                <th>地域</th>
+                <th>避難場所名</th>
+                <th>住所</th>
+                <th>経度</th>
+                <th>緯度</th>
+
+            </tr>
+            @foreach($evacuations as $item)
+                <tr>
+
+                    <td>{{ $item->city_id }}</td>
+                    <td>
+                        @if ($item-> city != null)
+                        {{ $item->city->getData() }}
+                        @endif
+                    </td>
+                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->address }}</td>
+                    <td>{{ $item->longitude }}</td>
+                    <td>{{ $item->latitude }}</td>
+
+                </tr>
+            @endforeach
+        </table>
+
 </body>
 
 </html>
