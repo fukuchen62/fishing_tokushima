@@ -3,6 +3,19 @@ padding-top:100px;
 を追加で当ててください（波線部分が100pxなので）
 margin-top だと背景色が崩れます。
 */
+
+/* 現在抱えている問題 */
+/* ・コンテンツ幅を1200pxに固定したい */
+/* ・bodyやheader,main,footerにmaxwidthを当てるとレイアウトが崩れる → width:100％;のせい？ */
+/* 何故か100vwでもうまくいかなかったので別の原因がありそう？ */
+
+/* 今実装しようとしてできていないこと */
+/* コンテンツ幅の固定 */
+/* 幅を固定したうえで画面いっぱいに背景を配置する */
+/* 固定したときに崩れるレイアウトの調整→特にheader部分 */
+/* それらをレスポンシブ対応にする→モバイルファーストでメディアクエリ？ */
+
+/* bodyにmax1200pxをあてる？ */
 body {
     text-align: center;
     height: auto;
@@ -15,6 +28,13 @@ body {
     font-style: normal;
     color: #000000;
 }
+
+/* コンテンツのheader,main,footerにmax1200をあてる？ */
+/* header,main,footer{
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
 
 .flex {
     display: flex;
@@ -521,7 +541,7 @@ body {
 
 
 .firstsection__bottom {
-    width: 100%;
+    /* width: 100%; */
     height: 160px;
     background-image: url(../images/svg/wave__sectionbottom.svg);
     background-repeat: repeat-x;
