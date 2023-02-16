@@ -1,15 +1,6 @@
 @charset "utf-8";
 
 /* 共通部分 */
-/* .container {
-    margin: 0 auto;
-    padding: 0px 20px 0px 20px;
-}
-
-.main {
-    max-width: 1200px;
-    margin: 0 auto;
-} */
 
 /* 画像 */
 .plan__img {
@@ -17,13 +8,12 @@
     height: 314px;
 }
 
-/* 検索画面 */
-
-.form__section
-/* .table__section */
-{
-    background-color: #EAF2FA;
+.star__box img {
+    width: 50px;
+    height: 50px;
 }
+
+/* 検索画面 */
 
 .form__box--title {
     background-color: #30add1;
@@ -90,9 +80,14 @@
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-.search__box{
-    padding: 10px;
+/* ホバーしたらへこむ */
+#reset_btn:hover, #search_btn:hover {
+    transform: translate(0px,-1px);
+    box-shadow: none;
 }
+/* .search__box{
+    padding: 10px;
+} */
 
 /* PC時 */
 @media screen and (min-width:1025px) {
@@ -123,72 +118,9 @@
     } */
 }
 
-/* 詳細情報table */
-.spotinfo__table, tr, th, td {
-    padding: 10px;
-}
-
-.spotinfo__table {
-    width: 100%;
-    background-color: #EAF2FA;
-    margin: 0 auto;
-}
-
-.spotinfo__table--title {
-    width: 100%;
-    font-size: 24px;
-    color: #fff;
-    background-color: #30ADD1;
-    column-span: all;
-    margin: 0 auto;
-    border-radius: 20px 20px 0 0;
-    padding: 10px 0;
-}
-
-tr:not(:last-child) {
-    border-bottom: solid 2px #30ADD1;
-}
-
-.spotinfo__table--subtitle {
-    border-right: solid 2px #30ADD1;
-}
-
-/* 仮 */
-.spotinfo__table--tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.radius-table {
-    border-radius: 20px;
-}
-
-.radius-table tr:last-child>*:first-child {
-    border-radius: 0 0 0 20px;
-}
-
-.radius-table tr:last-child>*:last-child {
-    border-radius: 0 0 20px 0;
-}
-
-@media screen and (min-width: 600px) {
-    .spotinfo__table {
-        width: 559px;
-    }
-
-    .spotinfo__table--title {
-        width: 559px;
-    }
-}
-
-/* テーブル */
-.table__box {
-    background-color: #EAF2FA;
-}
+/* 概要 */
 
 /* 概要の丸 */
-
-
-
 .overview__box--group {
     width: 400px;
     height: 400px;
@@ -207,18 +139,50 @@ tr:not(:last-child) {
     text-align: left;
 }
 
+@media screen and (min-width:1025px) {
+    .overview__box {
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    }
+
+    .overview__box--group {
+        margin: 0px;
+    }
+
+}
+
+.to-details {
+    color: #000;
+    background-color: #EAF2FA;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
 /* カード */
 
-.card {
+/* .card {
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: block;
     margin: 0 auto 50px;
+} */
+
+.card__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 40px;
 }
 
 /* PC時 */
 /* 体験プラン検索画面は、他ページと違い3枚より多いカードが表示される */
-@media screen and (min-width:1025px) {
+@media screen and (min-width:770px) {
     .card__area {
         /* グリッドレイアウト */
         display: grid;
@@ -227,13 +191,13 @@ tr:not(:last-child) {
         max-width: 1200px;
         margin: 0 auto;
     }
+    .card__p {
+    padding: 0px;
 }
+}
+
 
 /* フロー */
-
-.flow__section {
-    background-color: #30ADD1;
-}
 
 .flow__section h2 {
     border: 1px solid #fff;
@@ -247,7 +211,7 @@ tr:not(:last-child) {
 .flow__box--text {
     width: 559px;
     margin: 50px auto;
-    background: #eaf2fa;
+    background-color: #eaf2fa;
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -265,6 +229,7 @@ tr:not(:last-child) {
     .flow__box {
         display: flex;
         margin-bottom: 50px;
+        gap: 40px;
     }
 }
 
@@ -299,10 +264,10 @@ tr:not(:last-child) {
 }
 
 /* 背景色の指定 */
-.overview__section {
+.shallow {
     background-color: #EAF2FA;
 }
 
-.table__box {
-    padding-bottom: 100px;
+.sea {
+    background-color: #30ADD1;
 }
