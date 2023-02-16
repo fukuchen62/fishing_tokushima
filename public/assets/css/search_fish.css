@@ -2,7 +2,12 @@
 
 body {
     color: #51656F;
-    background-color: #EAF2FA;
+    /* background-color: #EAF2FA; */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* main {
@@ -13,6 +18,10 @@ body {
 .wrap {
     margin: 0 20px;
 } */
+
+.calendar__section {
+    background-color: #EAF2FA;
+}
 
 .calendar__box {
     padding-top: 100px;
@@ -126,6 +135,10 @@ tr {
     gap: 5%;
 }
 
+.results__box--info li {
+    margin-top: 30px;
+}
+
 /* PC */
 @media(min-width:1080px) {
     .results__box--info {
@@ -158,12 +171,18 @@ h3 {
 .fish__img {
     border-radius: 50%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
 }
 
 /*その他海産物 */
 
 .others__box--info li {
     margin: 25px;
+}
+
+.others__box--info img {
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 .feed {

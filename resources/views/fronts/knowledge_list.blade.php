@@ -8,7 +8,7 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/knowledge.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/knowledge.css') }}">
 @endsection
 
 {{-- メイン --}}
@@ -24,25 +24,25 @@
 
         <div class="tab-wrap">
             <input id="tab01" type="radio" name="tab" class="tab-switch" checked="checked"><label class="tab-label"
-                for="tab01">基礎知識</label>
+                for="tab01"><a href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a></label>
             <div class="tab-content">
                 カード
             </div>
 
             <input id="tab02" type="radio" name="tab" class="tab-switch"><label class="tab-label"
-                for="tab02">釣り道具・餌</label>
+                for="tab02"><a href="{{ route('knowledgelist', ['category_id' => 2]) }}">釣り道具・餌</a></label>
             <div class="tab-content">
                 カード
             </div>
 
             <input id="tab03" type="radio" name="tab" class="tab-switch"><label class="tab-label"
-                for="tab03">注意点</label>
+                for="tab03"><a href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a></label>
             <div class="tab-content">
                 カード
             </div>
 
             <input id="tab04" type="radio" name="tab" class="tab-switch"><label class="tab-label"
-                for="tab04">その他</label>
+                for="tab04"><a href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a></label>
             <div class="tab-content">
                 カード
             </div>
@@ -51,6 +51,9 @@
 
         @foreach ($knowledges as $item)
             @component('components.front_card')
+                @slot('card_link')
+                    {{ route('knowledgeinfo', ['id' => $item->id]) }}
+                @endslot
                 @slot('card_src')
                 @endslot
 
@@ -109,7 +112,7 @@
     </section> --}}
 
     <div id="page_top" class="flex">
-        <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
+        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針" class="topbutton__hook"></a>
     </div>
 @endsection
 
