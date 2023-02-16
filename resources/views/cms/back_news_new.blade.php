@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-    <!-- <form action="admin/newsentry" method="post"> -->
         <form method="post" action="{{ route('newsentry') }}">
     <table>
         @csrf
@@ -45,4 +44,3 @@
 @section('footer')
 copyright 2020 tuyano.
 @endsection
-

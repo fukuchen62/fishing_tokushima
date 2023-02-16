@@ -19,14 +19,14 @@ Route::get('/', function () {
 
 /**
  * トップページへのルート情報
- *
  */
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('top');
+
 /**
  * マイページへのルート情報
  */
-Route::get('/mypage', [App\Http\Controllers\MainController::class, 'myPageShow'])->name('mypage');
-Route::post('/mypage', [App\Http\Controllers\MainController::class, 'myPage'])->name('mypage');
+Route::get('/mypage', [App\Http\Controllers\MypageController::class, 'myPageShow'])->name('mypage');
+Route::post('/mypage', [App\Http\Controllers\MypageController::class, 'myPage'])->name('mypage');
 /**
  * 避難場所リストへのルート情報
  */
@@ -72,7 +72,7 @@ Route::post('plan/list', [App\Http\Controllers\PlanController::class, 'plansSear
 Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planinfo');
 
 // News関連
-Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('newsshow');
+Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('news');
 Route::get('news/info', [App\Http\Controllers\NewsController::class, 'newsInfo'])->name('newsinfo');
 
 //Admin関連（spot分)
