@@ -92,33 +92,33 @@
     <!-- 近くのスポットcard表示3つ -->
     <section class="p__lr">
         <h3>近くのスポット</h3>
-        <!-- <div class="spotinfo__card--aria">
-                            <div class="card card__skin">
-                                <a href="">
-                                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                                    <div>
-                                        <h3 class="card__title">タイトルタイトル</h3>
-                                        <p class="card__discription">texttexttexttexttext</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <a href="" class="card">
-                                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                                <div>
-                                    <h3 class="card__title">タイトルタイトル</h3>
-                                    <p class="card__discription">texttexttexttexttext</p>
-                                </div>
-                            </a>
-                            <a href="" class="card">
-                                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                                <div>
-                                    <h3 class="card__title">タイトルタイトル</h3>
-                                    <p class="card__discription">texttexttexttexttext</p>
-                                </div>
-                            </a>
-                            v> -->
+        {{-- <div class="spotinfo__card--aria">
+            <div class="card card__skin">
+                <a href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div>
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__discription">texttexttexttexttext</p>
+                    </div>
+                </a>
+            </div>
+            <a href="" class="card">
+                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                <div>
+                    <h3 class="card__title">タイトルタイトル</h3>
+                    <p class="card__discription">texttexttexttexttext</p>
+                </div>
+            </a>
+            <a href="" class="card">
+                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                <div>
+                    <h3 class="card__title">タイトルタイトル</h3>
+                    <p class="card__discription">texttexttexttexttext</p>
+                </div>
+            </a>
+        </div> --}}
 
-        <a class="btn" href="">スポット一覧</a>
+        <a class="btn" href="{{ route('spotslist') }}">スポット一覧</a>
     </section>
     <!-- 貝殻イラスト -->
     <div>
