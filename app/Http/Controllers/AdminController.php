@@ -324,34 +324,6 @@ class AdminController extends Controller
 
     public function shopsSearch(Request $request)
     {
-        // // クライアントから検索条件(s)を取得する
-        // $s = "";
-        // if (isset($request->s)) {
-        //     $s = $request->s;
-        // }
-
-        // if ($s !== '') {
-        //     // あいまい検索
-        //     $items = DB::table('shops')
-        //         ->where('id', 'like', '%' . $s . "%")
-        //         ->orwhere('name', 'like', '%' . $s . "%")
-        //         ->orWhere('sex', 'like', '%' . $s . "%")
-        //         ->orWhere('mail', 'like', '%' . $s . "%")
-        //         ->get();
-        // } else {
-        //     // 無条件
-        //     $items = DB::table('shops')->get();
-        // }
-
-        // // テンプレートファイルに渡すデータ（連想配列）
-        // $data = [
-        //     'msg' => '登録されているショップ一覧です。',
-        //     // shopsから読み込んだレコードをmembersの連想配列の中身とする
-        //     'members' => $items,
-        // ];
-
-        // // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_shops');
     }
 
     public function shopsShow(Request $request)
@@ -379,19 +351,24 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'shopslist' => $items,
         ];
+        return view('cms.back_shops', $data);
 
         $items = Shop::all();
+        $data = [
+            'shopslist' => $items,
+        ];
         return view('cms.back_shops', $data);
     }
 
     public function shopsEdit(Request $request)
     {
-        $shops = Shop::find($request->id);
-        return view('cms.back_shops_edit', ['form' => $shops]);
+        $item = Shop::find($request->id);
+        $data = [
+            'shop' => $item,
+        ];
+        return view('cms.back_shops_edit', $data);
     }
 
     public function shopsUpdate(Request $request)
