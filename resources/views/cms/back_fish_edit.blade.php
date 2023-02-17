@@ -24,7 +24,6 @@
         </div>
     @endif
 
-    {{-- <form action="fish_Edit" method="post"> --}}
     <form method="post" action="{{ route('fishedit') }}">
         <table>
             @csrf
@@ -114,7 +113,6 @@
             <tr>
                 <th></th>
                 <td><input type="submit"value="修正">
-                    {{-- <a href="fish_delete?id={{ $form->id }}">削除</a></td></tr> --}}
                     <a href="{{ route('fishremove', ['id' => $form->id]) }}">削除</a>
                 </td>
             </tr>

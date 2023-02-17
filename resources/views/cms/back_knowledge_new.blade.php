@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-    {{-- <form action="knowledge_Entry" method="post"> --}}
         <form method="post" action="{{ route('knowledgeentry') }}">
     <table>
         @csrf
@@ -54,4 +53,3 @@
 @section('footer')
 copyright 2023 tuttoku.
 @endsection
-

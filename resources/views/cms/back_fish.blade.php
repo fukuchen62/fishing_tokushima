@@ -36,7 +36,6 @@
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->formal_name }}</td>
-                {{-- <td><a href="cms/fish_Edit?id={{ $item->id }}">編集</a></td> --}}
                 <td><a href="{{ route('fishedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach

@@ -103,14 +103,12 @@ class AdminController extends Controller
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
-        $data = [
 
+        $data = [
             'newslist' => $items,
         ];
         return view('cms.back_news', $data);
 
-        // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_news');
         $items = News::all();
         $data = [
             'newslist' => $items,
@@ -125,8 +123,8 @@ class AdminController extends Controller
 
     public function newsCreate(Request $request)
     {
-        $this->validate($request, news::$rules);
-        $news = new news();
+        $this->validate($request, News::$rules);
+        $news = new News();
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
@@ -165,7 +163,6 @@ class AdminController extends Controller
     public function newsRemove(Request $request)
     {
         News::find($request->id)->delete();
-        // return redirect('news_show');
         return redirect()->route('newsshow');
     }
 
@@ -199,18 +196,17 @@ class AdminController extends Controller
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
+
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'knowledgelist' => $items,
         ];
         return view('cms.back_knowledge', $data);
 
-        // リダイレクトでルート名を呼び出し
-        // return redirect()->route('knowledgeshow', $data);
-
-        // $items = knowledge::all();
-        // return view('cms.back_knowledge', ['items' => $items]);
+        $items = Knowledge::all();
+        $data = [
+            'knowledgelist' => $items,
+        ];
+        return view('cms.back_knowledge', $data);
     }
 
     public function knowledgeEntry(Request $request)
@@ -220,43 +216,45 @@ class AdminController extends Controller
 
     public function knowledgeCreate(Request $request)
     {
-        $this->validate($request, knowledge::$rules);
-        $knowledge = new knowledge();
+        $this->validate($request, Knowledge::$rules);
+        $knowledge = new Knowledge();
         $form = $request->all();
         unset($form['_token']);
-
         $knowledge->fill($form)->save();
-        // return redirect('knowledge_show');
         return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeEdit(Request $request)
     {
-        $knowledge = knowledge::find($request->id);
-        return view('cms.back_knowledge_edit', ['form' => $knowledge]);
+        $item = Knowledge::find($request->id);
+        $data = [
+            'knowledge' => $item,
+        ];
+        return view('cms.back_knowledge_edit', $data);
     }
 
     public function knowledgeUpdate(Request $request)
     {
-        $this->validate($request, knowledge::$rules);
-        $knowledge = knowledge::find($request->id);
+        $this->validate($request, Knowledge::$rules);
+        $knowledge = Knowledge::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
-        // return redirect('knowledge_show');
         return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeDelete(Request $request)
     {
-        $knowledge = knowledge::find($request->id);
-        return view('cms.back_knowledge_edit', ['form' => $knowledge]);
+        $item = Knowledge::find($request->id);
+        $data = [
+            'knowledge' => $item,
+        ];
+        return view('cms.back_knowledge_edit', $data);
     }
 
     public function knowledgeremove(Request $request)
     {
-        knowledge::find($request->id)->delete();
-        // return redirect('knowledge_show');
+        Knowledge::find($request->id)->delete();
         return redirect()->route('knowledgeshow');
     }
 

@@ -14,7 +14,6 @@
 @endsection
 
 @section('content')
-    {{-- <form action="fish_Entry" method="post"> --}}
     <form method="post" action="{{ route('fishentry') }}">
         <table>
             @csrf

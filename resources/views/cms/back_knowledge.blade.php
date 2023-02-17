@@ -26,13 +26,12 @@
 @section('content')
     <table border="1">
     <tr><th>ID</th><th>カテゴリーID</th><th>タイトル</th><th>概要</th><th>修正</th></tr>
-    @foreach ($items as $item)
+    @foreach ($knowledgelist as $item)
         <tr>
             <td>{{$item->id}}</td>
             <td>{{$item->category_id}}</td>
             <td>{{$item->title}}</td>
             <td>{{$item->overview}}</td>
-            {{-- <td><a href="cms/knowledge_Edit?id={{ $item->id }}">編集</a></td> --}}
             <td><a href="{{route('knowledgeedit',['id'=>$item->id])}}">編集</a></td>
         </tr>
     @endforeach
