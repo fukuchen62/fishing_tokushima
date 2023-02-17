@@ -57,24 +57,9 @@ class PlanController extends Controller
         }
 
         $items = DB::table('plans')->whereRaw($where)->get();
-        // if ($city_id != null) {
-        //     # code...
-        // }
-        // $items = Plan::scopeSearch($city_id, $level_id, $fish_id)
-        //     ->get();
-        $plans = "";
-
-        // $plans = Plan::selectRaw('COUNT(plan_id) as count_plan')
-        //     ->get();
-        // {{-- 検索のエラー修正のため一度コメントアウトさせてもらいました --}}
-
 
         $data = [
-            // 'area' => $request->area,
-            // 'level' => $request->level,
-            // 'fish' => $request->fish,
             'plans' => $items,
-            'count_plan' => $plans,
         ];
 
         return view('fronts.plans_list', $data);

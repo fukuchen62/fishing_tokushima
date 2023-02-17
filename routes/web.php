@@ -77,21 +77,18 @@ Route::get('news/info', [App\Http\Controllers\NewsController::class, 'newsInfo']
 
 //Admin関連（spot分)
 
-Route::get('admin/spotsearch', [App\Http\Controllers\AdminController::class, 'spotSearch'])->name('spotsearch');
 Route::get('admin/spotsshow', [App\Http\Controllers\AdminController::class, 'spotsShow'])->name('spotsshow');
 Route::get('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsEdit'])->name('spotsedit');
 Route::post('admin/spotsedit', [App\Http\Controllers\AdminController::class, 'spotsUpdate'])->name('spotsupdate');
 
 //Admin関連（shop分)
 
-Route::get('admin/shopsearch', [App\Http\Controllers\AdminController::class, 'shopSearch'])->name('shopsearch');
 Route::get('admin/shopsshow', [App\Http\Controllers\AdminController::class, 'shopsShow'])->name('shopsshow');
 Route::get('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'shopsEdit'])->name('shopsedit');
 Route::post('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'shopsUpdate'])->name('shopsupdate');
 
 //Admin関連（plan分)
 
-Route::get('admin/planssearch', [App\Http\Controllers\AdminController::class, 'plansSearch'])->name('planssearch');
 Route::get('admin/plansshow', [App\Http\Controllers\AdminController::class, 'plansShow'])->name('plansshow');
 Route::post('admin/plansentry', [App\Http\Controllers\AdminController::class, 'plansCreate'])->name('planscreate');
 Route::get('admin/plansedit', [App\Http\Controllers\AdminController::class, 'plansEdit'])->name('plansedit');
@@ -99,9 +96,6 @@ Route::post('admin/plansupdate', [App\Http\Controllers\AdminController::class, '
 Route::get('admin/plansentry', [App\Http\Controllers\AdminController::class, 'plansEntry'])->name('plansentry');
 
 Route::post('admin/plansedit', [App\Http\Controllers\AdminController::class, 'plansUpdate'])->name('plansedit');
-
-// Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
-
 
 //Admin関連（knowledge分)
 
