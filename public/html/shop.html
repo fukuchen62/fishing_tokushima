@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="">
     <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
 
-    <title></title>
+    <title>釣具店一覧</title>
     <!-- stylesheets -->
     <link rel="stylesheet" href="../assets/css/reset.css">
     <link rel="stylesheet" href="../assets/css/common.css">
@@ -45,24 +45,24 @@
 <body>
     <header id="header">
 
-        <div class="header flex">
-            <div class="header__box--group">
+        <div class="header expand flex">
+            <div class="header__box--group expand">
             </div>
-            <div class="header__box--border"></div>
-            <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo">
+            <div class="header__box--border expand"></div>
+            <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo expand">
             <!-- ハンバーガーメニュー -->
-            <div class="hamburger flex">
+            <div class="hamburger flex expand">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="header__box">
-                <div class="g-nav flex slide-out">
+            <div class="header__box expand">
+                <div class="g-nav flex  expand">
                     <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="logo__img">
-                    <div class="g-nav__box">
+                    <div class="g-nav__box ">
                         <div class="g-nav__box--section flex">
                             <div class="g-nav__box--group">
-                                <a href="" class="g-nav__box--discription">
+                                <a href="" class="g-nav__box--discription ">
                                     <img src="../assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
                                     <div class="g-nav__box--text">入門知識</div>
                                 </a>
@@ -114,13 +114,13 @@
             </div>
         </div>
 
-        <div class="keyvisual">
+        <div class="keyvisual expand">
             キービジュアル
         </div>
 
-        <section class="titlesection">
+        <section class="titlesection expand">
             <div class="titlesection__box">
-                <h1 class="pagetitle">釣具店一覧</h1>
+                <h1 class="pagetitle">ページタイトル</h1>
                 <div class="pagetitle__border"></div>
             </div>
             <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
@@ -150,7 +150,7 @@
             </div>
 
 
-            <h3>検索結果</h3>
+            <h3 class="section__content--titlereserch">検索結果</h3>
 
             <div class="section__content">
 
@@ -160,7 +160,7 @@
                         <img src="../assets/images/img_neko_700_3.jpg" alt="お店の外観">
                     </div>
                     <div class="section__content--full">
-                        <div>いはら釣具 本店</div>
+                        <div class="section__content--title">いはら釣具 本店</div>
                         <div class="section__content--displayblock">
                             <!-- 疑似要素でアイコンを追加する -->
                             <div class="section__image--location">徳島県板野郡松茂町笹木野灘25-16</div>
@@ -198,22 +198,16 @@
                                 <br class="shop__description--breakpoint" />漁具の販売
                                 冷凍エサの解凍予約サービス（無料）<br />漁具の販売クラッシャーでの冷凍エサ粉砕（無料）メールマガジン・オリジナルアプリ（無料）<br />
                             </p>
-                            <!-- <p class="shop__description--margin">クラッシャーでの冷凍エサ粉砕（無料）メールマガジン・オリジナルアプリ（無料）<br /></p> -->
                             <p class="shop__description--marginservice">釣具全般の修理
                                 リール糸巻きサービス（スピニング/電動リール（無料）ラッピングサービス（プレゼント/贈答/大会景品etc）（無料）<br
                                     class="shop__description--breakpoint" />オリジナル商品券販売（全店共通・無期限）<br /></p>
-                            <!-- <p class="shop__description--margin"> ラッピングサービス（プレゼント/贈答/大会景品etc）（無料）<br
-                                    class="shop__description--breakpoint" />オリジナル商品券販売（全店共通・無期限）<br />
-                            </p> -->
                             <p class="shop__description--marginservice">魚拓（有料）クレジット払い・分割払い 商品発送（代金引換）商品お取り寄せ<br /></p>
-                            <!-- <p class="shop__description--margin">商品発送（代金引換）商品お取り寄せ<br /></p> -->
-
                         </div>
 
                     </div>
                 </div>
 
-                <div class="section__content--displayblock">
+                <div class="section__content--displayblock section__content--topmessage">
                     <div class="section__image--message section__content--left">お店からのメッセージ</div>
 
                     <div class="section__content--margin">
@@ -234,7 +228,7 @@
             </div>
 
             <!-- 疑似要素でアイコンを追加する -->
-            <div class="section__image--information section__content--left">お店の周辺情報</div>
+            <div class="section__image--information section__content--information">お店の周辺情報</div>
 
             <!-- Googleマップで周辺情報を表す -->
             <div class="section__wrap--infomation">
@@ -250,31 +244,28 @@
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer expand">
+
+
         <div class="footer__box  flex">
             <ul>
-                <li>入門知識</li>
-                <li>徳島の魚</li>
-                <li>体験プラン</li>
-                <li>釣具店</li>
-                <li>避難場所</li>
+                <li><a href="">入門知識</a>
+                <li><a href="">体験プラン</a></li>
+                <li><a href="">釣具店</a></li>
+                <li><a href="">避難場所</a></li>
+                <li><a href="">徳島の魚</a></li>
             </ul>
             <ul>
                 <li>釣りスポット</li>
-                <li>東部</li>
-                <li>南部</li>
+                <li><a href="">東部</a></li>
+                <li><a href="">南部</a></li>
             </ul>
             <ul>
-                <li>マイページ</li>
-                <li>プライバシーポリシー</li>
+                <li><a href="">マイページ</a></li>
+                <li><a href="">プライバシーポリシー</a></li>
             </ul>
         </div>
-        <ul class="sns flex">
-            <li>twitter</li>
-            <li>facebook</li>
-            <li>instagram</li>
-        </ul>
-        <p>copylight@turitoku.com</p>
+        <p class="copylight">copylight@turitoku.com</p>
     </footer>
 
 
