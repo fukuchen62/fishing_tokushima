@@ -19,7 +19,6 @@
     display: flex;
     margin: 0px auto;
     justify-content: center;
-    max-width: 1200px;
     gap: 50px;
     align-items: center;
     margin-bottom: 50px;
@@ -34,13 +33,6 @@
 
 /* フロー */
 
-/* フローのコンテンツ幅 */
-
-.flow__box {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 /* PC時 */
 
 @media screen and (min-width:1025px) {
@@ -52,6 +44,17 @@
 }
 
 /* モジュールパーツルール */
+
+/* 画像 */
+
+/* 貝（装飾） */
+
+.fishesinfo__img--shell {
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    background-color: #EAF2FA;
+}
 
 /* 概要 */
 
@@ -74,6 +77,8 @@
     margin: 0px 30px;
     text-align: left;
 }
+
+/* テーブルの大きさ */
 
 /* フロー */
 

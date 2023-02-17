@@ -1,7 +1,10 @@
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', '釣れる魚一覧')
+@section('title', '釣徳コンテンツ管理システム')
 
+@section('subtitle', '徳島で釣れる魚一覧')
+
+@section('login_name', 'QLIP')
 
 @section('menubar')
     @parent
