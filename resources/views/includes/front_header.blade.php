@@ -40,7 +40,7 @@
                     </div>
                     <div class="g-nav__box--section flex">
                         <div class="g-nav__box--group">
-                            <a href="{{ route('planlist') }}" class="g-nav__box--discription">
+                            <a href="{{ route('planslist') }}" class="g-nav__box--discription">
                                 <img src="{{ asset('assets/images/fishing_boat_man.png') }}" alt="魚釣り男"
                                     class="g-nav__box--img">
                                 <div>体験プラン</div>
