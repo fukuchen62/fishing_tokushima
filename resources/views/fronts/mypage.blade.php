@@ -69,13 +69,19 @@
 <h2>おすすめプラン</h2>
 
 @if ($plans !=null)
+{{-- @if (Cookie::get('plan_id')!="") --}}
     @foreach ($plans as $key => $plan)
     <h3>{{ $key }}</h3>
+                <p>{{ $plan->id }}</p>
                 <p>{{ $plan->eye_catch }}</p>
                 <p>{{ $plan->title }}</p>
                 <p>{{ $plan->overview }}</p>
             <a href="{{ route('plansinfo', ['id' => $plans[$key]]) }}">リンク</a>
     @endforeach
+{{-- @endif --}}
+@else
+<p>お気に入りがありません。</p>
+
 @endif
 
 </body>

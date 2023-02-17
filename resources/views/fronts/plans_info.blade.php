@@ -19,20 +19,35 @@
     {{-- お気に入り保存 --}}
     {{-- <a href="{{ route('cookie', ['plan_id' =>  $item->id ]) }}"><p>リンク1</p></a> --}}
 
-    {{ Cookie::get('plan_id'); }}
 
+{{ Cookie::get('plan_id') }}
+    @php
+        // Cookie::get('plan_id');
+        $val="";
+        if (isset($_COOKIE["plan_id"])) {
+            $val = $_COOKIE["plan_id"];
+            // $val = "1";
+        }
+
+
+    @endphp
+
+    <p>cookie: {{ $val }}</p>
 
     {{-- @if (hasCookie('plan_id')) --}}
 
-        @if (Cookie::get('plan_id')!=$item->id)
-        <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
-        @endif
+        {{-- @if (Cookie::get('plan_id')!=$item->id)
+        <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク1</p></a> --}}
+
 
         @if (Cookie::get('plan_id')==$item->id)
         <div>
         <p>お気に入り登録済</p>
         <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
         </div>
+
+        @else
+            <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
         @endif
 
     {{-- @else --}}
@@ -40,14 +55,14 @@
 
     {{-- @endif --}}
 
-    {{-- <form action="{{ route('cookie')}}" method="post">
+    <form action="{{ route('mypage')}}" method="post">
         <table>
         @csrf
         <tr>
         <td><input type="submit" name="plan_id" value="{{ $item->id }}" id=""></td>
         </tr>
         </table>
-    </form> --}}
+    </form>
 
 
         <table>

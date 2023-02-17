@@ -83,10 +83,11 @@ class PlanController extends Controller
 
         $item = Plan::find($id);
 
+
+        // whereで魚かスポットが一緒のやつを抜き出してくる
         $connection1 = Plan::find(1);
         $connection2 = Plan::find(2);
         $connection3 = Plan::find(3);
-
 
 
         // cookieお気に入り保存
