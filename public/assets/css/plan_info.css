@@ -13,13 +13,13 @@
 
 /* ＰＣ時 */
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width:1200px) {
     /* 概要の画像とテキストボックスのレイアウト */
     .overview__box {
     display: flex;
     margin: 0px auto;
     justify-content: center;
-    gap: 50px;
+    gap: 70px;
     align-items: center;
     margin-bottom: 50px;
     }
