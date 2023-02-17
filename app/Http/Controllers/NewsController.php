@@ -18,14 +18,21 @@ class NewsController extends Controller
     // newsテーブル関連
     public function newsList(Request $request)
     {
-        $item = News::all();
-// スコープ
+        // $item = News::all();
+        // スコープ
         $name = $request->name;
-        $items = News::category($name)->get();
+        // $items = News::category($name)->get();
+
+        if ($name != null) {
+            $items = NewsController::getNews($name);
+        } else {
+            $items =
+                News::all();
+        }
 
         $data = [
-            'news' => $item,
-            'news2' => $items,
+            // 'news' => $item,
+            'news' => $items,
         ];
 
         return view('fronts/news_list', $data);
@@ -51,6 +58,4 @@ class NewsController extends Controller
         $news = News::NewsName($newsName)->get();
         return $news;
     }
-
-
 }

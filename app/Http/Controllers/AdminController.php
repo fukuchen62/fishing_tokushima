@@ -79,18 +79,27 @@ class AdminController extends Controller
     // news分
     public function newsSearch(Request $request)
     {
+    }
+    public function newsShow(Request $request)
+    {
         // クライアントから検索条件(s)を取得する
         $s = "";
-        if ($s !== "") {
+        if (isset($request->s)) {
+            $s = $request->s;
+        }
+
+        if ($s != '') {
             // あいまい検索
             $items = DB::table('news')
-                ->where('name', 'like', '%' . $s . '%')
-                ->orwhere('title', 'like', '%' . $s . '%')
+                ->where('name', 'like', '%' . $s . "%")
+                ->orWhere('title', 'like', '%' . $s . "%")
+                ->orWhere('overview', 'like', '%' . $s . "%")
+                ->orWhere('content', 'like', '%' . $s . "%")
+                ->orWhere('eyecatch', 'like', '%' . $s . "%")
                 ->get();
         } else {
-            $items = DB::table('news')
-                ->orderBy('id', 'DESC')
-                ->get();
+            // 無条件
+            $items = DB::table('news')->get();
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
@@ -102,10 +111,6 @@ class AdminController extends Controller
 
         // リダイレクトでルート名を呼び出し
         // return redirect()->route('back_news');
-    }
-
-    public function newsShow(Request $request)
-    {
         $items = News::all();
         $data = [
             'newslist' => $items,

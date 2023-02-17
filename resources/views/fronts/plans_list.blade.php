@@ -119,10 +119,12 @@
         <section class="result__section">
             <h2 class="section__box--title">
                 <span class="btn_area_ttl">検索結果</span>
-                <span class="event_num">(@foreach ($plans as $plan)
-                        {{-- {{ $plan->count_plan }} --}}
-                        {{-- 検索のエラー修正のため一度コメントアウトさせてもらいました --}}
-                    @endforeach)</span>
+                <span class="event_num">
+                    @php
+                    $n=count($plans);
+                    @endphp
+                    ({{ $n }}件)
+                    </span>
             </h2>
             <ul class="card__area">
                 @foreach ($plans as $item)
