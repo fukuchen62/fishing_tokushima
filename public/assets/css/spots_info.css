@@ -1,10 +1,12 @@
+@charset "utf-8";
+
 .sea{
     background-color: #30ADD1;
 }
 
 .spotinfo__img{
-    width: 559px;
-    height: 414px;
+    max-width: 559px;
+    height:auto;
     background-color: #dedede;
     margin: 20px 0;
 }
@@ -45,7 +47,7 @@
 }
 
 .spotinfo__table{
-    width: 100%;
+    max-width: 559px;
     background-color: #EAF2FA;
     margin: 0 auto;
 }
@@ -103,4 +105,18 @@ tr:nth-child(odd) {
     font-size: 16px;
     height: 50px;
     margin: 0 auto;
+}
+
+/* お気に入りボタン */
+.favorite{
+    display: inline-block;;
+    background-color: #fff;
+    padding: 10px;
+    border:solid 1px #EF5DE9;
+    border-radius: 30px;
+}
+
+.favorite__in{
+    background-color: #EF5DE9;
+    color: #fff;
 }
