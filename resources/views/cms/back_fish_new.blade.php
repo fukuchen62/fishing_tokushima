@@ -1,24 +1,31 @@
-{{-- レイアウトテンプレートクラスを継承する --}}
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', '釣れる魚の新規登録')
+@section('title', '釣徳コンテンツ管理システム')
 
-@section('menubar')
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./fishshow">HOME</a></li>
-        <li><a href="./fishentry">新規登録</a></li>
-        <li>その他</li>
-    </ul>
+@section('subtitle', '')
+
+@section('login_name', 'QLIP')
+
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
+
 @section('content')
+    <h3>徳島で釣れる魚の新規登録画面</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./fishshow">HOME</a></li>
+        <li><a href="./fishentry">新規登録</a></li>
+    </ul>
+
     <form method="post" action="{{ route('fishentry') }}">
-        <table>
+        <table class="info">
             @csrf
             <tr>
-                <th>魚の名前(普通の呼び方): </th>
+                <th width="20%">魚の名前(普通の呼び方): </th>
                 <td><input type="text" name="name" required></td>
             </tr>
             <tr>
@@ -97,12 +104,8 @@
                 <th>表示フラグ: </th>
                 <td><input type="boolean" name="is_show" required></td>
             </tr>
-
-            <tr>
-                <th></th>
-                <td><input type="submit" value="送信"></td>
-            </tr>
         </table>
+        <input type="submit" value="送信" class="submit_btn">
     </form>
 @endsection
 

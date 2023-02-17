@@ -11,14 +11,6 @@
 
 @endsection
 
-@section('menubar')
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./knowledgeshow">HOME</a></li>
-        <li><a href="./knowledgeentry">新規登録</a></li>
-    </ul>
-@endsection
 
 @section('content')
     <h3>基礎知識の新規登録画面</h3>

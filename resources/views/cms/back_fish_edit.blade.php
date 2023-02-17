@@ -1,19 +1,25 @@
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', '釣れる魚の編集画面')
+@section('title', '釣徳コンテンツ管理システム')
 
-@section('menubar')
+@section('subtitle', '')
 
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./fishshow">HOME</a></li>
-        <li><a href="./fishentry">新規登録</a></li>
-        <li>その他</li>
-    </ul>
+@section('login_name', 'QLIP')
+
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
+
 @section('content')
+    <h3>徳島で釣れる魚の編集画面</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./fishshow">HOME</a></li>
+        <li><a href="./fishentry">新規登録</a></li>
+    </ul>
     @if (count($errors) > 0)
         <div>
             <ul>
@@ -25,11 +31,11 @@
     @endif
 
     <form method="post" action="{{ route('fishedit') }}">
-        <table>
+        <table class="info">
             @csrf
             <input type="hidden" name="id" value="{{ $fish->id }}">
             <tr>
-                <th>魚の名前(普通の呼び方): </th>
+                <th width="20%">魚の名前(普通の呼び方): </th>
                 <td><input type="text" name="name" value="{{ $fish->name }}"required></td>
             </tr>
             <tr>
@@ -110,13 +116,11 @@
                     <input type="boolean" name="is_show" value="{{ $fish->is_show }}"required>
                 </td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit"value="修正">
-                    <a href="{{ route('fishremove', ['id' => $fish->id]) }}">削除</a>
-                </td>
-            </tr>
         </table>
+        <div class="change_btn">
+            <input type="submit" value="修正" class="submit_btn">
+            <a href="{{ route('fishremove', ['id' => $fish->id]) }}" class="delete_btn">削除</a>
+        </div>
     </form>
 @endsection
 
