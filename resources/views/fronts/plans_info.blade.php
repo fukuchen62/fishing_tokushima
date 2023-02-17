@@ -79,7 +79,7 @@
     <h2>関連プラン１</h2>
 
     @if (isset($connection1))
-    <a href="{{ route('planinfo', ['id' =>  $connection1->id ]) }}">リンク</a>
+    <a href="{{ route('plansinfo', ['id' =>  $connection1->id ]) }}">リンク</a>
             <table>
             <tr>
                 <th>eye_catch</th>
@@ -100,7 +100,7 @@
 
     <h2>関連プラン２</h2>
     @if (isset($connection2))
-    <a href="{{ route('planinfo', ['id' =>  $connection2->id ]) }}">リンク</a>
+    <a href="{{ route('plansinfo', ['id' =>  $connection2->id ]) }}">リンク</a>
             <table>
             <tr>
                 <th>eye_catch</th>
