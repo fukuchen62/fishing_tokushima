@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* レイアウトルール */
+
+/* 砂浜避けるレイアウト */
+
+.form__section {
+    padding-top: 100px;
+}
+
+
+/* モジュールパーツルール */
+
+/* 画像 */
+
+/* 貝（装飾） */
+
+.fishesinfo__img--shell {
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    background-color: #EAF2FA;
+}
+
+/* 検索画面 */
+
+/* 検索画面タイトル */
+
+.form__box--title {
+    background-color: #30add1;
+    border-radius: 20px 20px 0px 0px;
+    color: #fff;
+    padding: 8px;
+    font-size: 24px;
+    margin: 0px 0 20px 0;
+}
+
+/* 検索画面全体 */
+.form__box {
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+/* 検索項目 */
+
+/* 検索項目レイアウト */
+.search__box--title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+/* チェックボックス */
+
+/* チェックボックスレイアウト */
+.choice__box ul {
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/* チェックボックス間レイアウト */
+.choice__box ul li {
+    margin: 0 auto;
+    max-width: 150px;
+    margin-bottom: 24px;
+    padding: 10px;
+    background-color: #eaf2fa;
+    border-radius: 20px;
+}
+
+/* ボタン */
+
+/* ボタン、ボタン間レイアウト */
+.result_btn__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* リセットボタン */
+#reset_btn {
+    background-color: #30add1;
+    border-radius: 20px;
+    color: #fff;
+    padding: 10px;
+    margin-right: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* 検索ボタン */
+#search_btn {
+    background-color: #ffea20;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* ホバーしたらへこむ */
+#reset_btn:hover, #search_btn:hover {
+    transform: translate(0px,-1px);
+    box-shadow: none;
+}
+
+
+/* PC時 */
+@media screen and (min-width:1025px) {
+    /* 検索画面 */
+
+    /* 検索項目レイアウト */
+    .choice__box h3 {
+        padding-left: 50px;
+    }
+
+    /* 検索項目横並び */
+    .choice__box {
+        display: flex;
+    }
+    /* チェックボックス横並び */
+    .radio_box {
+        display: flex;
+    }
+    /* チェックボックス全体レイアウト */
+    .choice__box ul {
+        padding-bottom: 0px
+    }
+    /* チェックボックス内レイアウト */
+    .choice__box ul li {
+        margin-top: 20px;
+        margin: 20px 10px 10px 20px;
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+
+/* プラン検索専用地域、難易度カード内レイアウト */
+.card__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 40px;
+}

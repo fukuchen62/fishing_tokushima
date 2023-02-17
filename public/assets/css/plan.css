@@ -1,273 +1,57 @@
 @charset "utf-8";
 
-/* 共通部分 */
+/* search,info共通ルール */
+
+
+/* ベースルール */
+
+/* 背景色の指定 */
+
+/* 浅瀬背景色 */
+.shallow {
+    background-color: #EAF2FA;
+}
+
+/* 海背景色 */
+.sea {
+    background-color: #30ADD1;
+}
+
+
+
+/* モジュールパーツルール */
 
 /* 画像 */
+
+/* プラン画像統一サイズ */
 .plan__img {
     width: 559px;
     height: 314px;
 }
 
+/* 難易度の☆ */
 .star__box img {
     width: 50px;
     height: 50px;
 }
 
-/* 検索画面 */
-
-.form__box--title {
-    background-color: #30add1;
-    border-radius: 20px 20px 0px 0px;
-    color: #fff;
-    padding: 8px;
-    font-size: 24px;
-    margin: 0px 0 20px 0;
-}
-
-/* .form__section--title h2 {
-    font-size: 20px;
-    padding: 10px;
-} */
-
-.form__box {
-    background-color: #fff;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 20px;
-}
-
-.search__box--title {
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
-
-.choice__box ul {
-    margin: 0 auto;
-    padding-bottom: 20px;
-}
-
-.choice__box ul li {
-    margin: 0 auto;
-    max-width: 150px;
-    margin-bottom: 24px;
-    padding: 10px;
-    background-color: #eaf2fa;
-    border-radius: 20px;
-}
-
-.result_btn__box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-    padding-bottom: 20px;
-}
-
-#reset_btn {
-    background-color: #30add1;
-    border-radius: 20px;
-    color: #fff;
-    padding: 10px;
-    margin-right: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#search_btn {
-    background-color: #ffea20;
-    border-radius: 20px;
-    padding: 10px;
-    margin-left: 10px;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
-}
-
-/* ホバーしたらへこむ */
-#reset_btn:hover, #search_btn:hover {
-    transform: translate(0px,-1px);
-    box-shadow: none;
-}
-/* .search__box{
-    padding: 10px;
-} */
-
-/* PC時 */
-@media screen and (min-width:1025px) {
-    /* 検索画面 */
-    .choice__box {
-        display: flex;
-    }
-    .radio_box {
-        display: flex;
-    }
-
-    .choice__box ul {
-        padding-bottom: 0px
-    }
-
-    .choice__box ul li {
-        margin-top: 20px;
-        margin: 20px 10px 10px 20px;
-        padding: 10px 20px 10px 20px;
-    }
-
-    .choice__box h3 {
-        padding-left: 50px;
-    }
-
-    /* .form__section {
-        max-width: 1160px;
-    } */
-}
-
-/* 概要 */
-
-/* 概要の丸 */
-.overview__box--group {
-    width: 400px;
-    height: 400px;
-    border: 10px dashed #30ADD1;
-    border-radius: 50%;
-    margin: 50px auto;
-    background-color: #fff;
-}
-
-.overview__box--group h3 {
-    margin: 40px;
-}
-
-.overview__box--group p {
-    margin: 0px 30px;
-    text-align: left;
-}
-
-@media screen and (min-width:1025px) {
-    .overview__box {
-    display: flex;
-    margin: 0px auto;
-    justify-content: center;
-    max-width: 1200px;
-    gap: 50px;
-    align-items: center;
-    margin-bottom: 50px;
-    }
-
-    .overview__box--group {
-        margin: 0px;
-    }
-
-}
-
-.to-details {
-    color: #000;
-    background-color: #EAF2FA;
-    margin-top: 70px;
-    margin-bottom: 30px;
-}
 
 /* カード */
 
-/* .card {
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display: block;
-    margin: 0 auto 50px;
-} */
-
-.card__flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding-top: 40px;
-}
-
 /* PC時 */
-/* 体験プラン検索画面は、他ページと違い3枚より多いカードが表示される */
+/* 体験プランは、他ページと違い3枚より多いカードが表示されるためグリッドレイアウト */
 @media screen and (min-width:770px) {
+    /* カードグリッドレイアウト */
     .card__area {
-        /* グリッドレイアウト */
         display: grid;
         gap: 40px;
         grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
         max-width: 1200px;
         margin: 0 auto;
     }
+
+    /* commonで指定されているpadding:50pxだとリサイズ時レイアウトが崩れる */
     .card__p {
     padding: 0px;
 }
-}
-
-
-/* フロー */
-
-.flow__section h2 {
-    border: 1px solid #fff;
-}
-
-.flow__box {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.flow__box--text {
-    width: 559px;
-    margin: 50px auto;
-    background-color: #eaf2fa;
-    border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.flow__box--text h3 {
-    padding-top: 20px;
-}
-.flow__box--text p {
-    text-align: left;
-    padding: 20px;
-}
-
-/* PC時 */
-@media screen and (min-width:1025px) {
-    .flow__box {
-        display: flex;
-        margin-bottom: 50px;
-        gap: 40px;
-    }
-}
-
-/* フローの三角 */
-.triangle {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-right: 25px solid transparent;
-    border-left: 25px solid transparent;
-    border-top: 43px solid #eaf2fa;
-    border-bottom: 0;
-    margin: 40px auto;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-/* PC時 */
-@media screen and (min-width:1025px) {
-    .triangle {
-        display: none;
-    }
-}
-
-.form__section {
-    /* パディングで指定すると表の上のほうが伸びる */
-    padding-top: 100px;
-}
-
-.overview__section {
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
-
-/* 背景色の指定 */
-.shallow {
-    background-color: #EAF2FA;
-}
-
-.sea {
-    background-color: #30ADD1;
 }
