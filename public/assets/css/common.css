@@ -362,6 +362,7 @@ body {
         top: 0px;
         flex-direction: row;
         justify-content: flex-end;
+        background-color: #FFF;
     }
 
     .header__box {
