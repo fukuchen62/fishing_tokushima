@@ -35,13 +35,8 @@ class MypageController extends Controller
      */
     public function myPageShow(Request $request)
     {
-        // $msg1 = 'cookieはありません';
         $msg2 = 'cookieはありません';
         $msg3 = 'cookieはありません';
-
-        // if ($request->hasCookie('fish_id')) {
-        //     $msg1 = 'cookie:' . $request->cookie('fish_id');
-        // }
 
 
         $spot_list = null;
@@ -76,11 +71,6 @@ class MypageController extends Controller
         }
 
 
-        // $cdata = [];
-        // if ($request->hasCookie('fishing')) {
-        //     $cdata = 'cookie:' . $request->cookie('fishing');
-        // }
-
         $data = [
             'msg2' => $msg2,
             'msg3' => $msg3,
@@ -88,7 +78,6 @@ class MypageController extends Controller
             'spots' => $spot_list,
             'plans' => $plan_list,
 
-            // 'data' => $cdata,
         ];
 
         return view('fronts.mypage', $data);
@@ -159,31 +148,33 @@ class MypageController extends Controller
 
         $data = [
             // 'msg1' => 'fish_id:「' . $fish_id . '」をcookieに保存しました。',
-            // 'msg2' => 'spot_id:「' . $request->spot_id . '」をcookieに保存しました。' . $spot_id,
-            // 'msg3' => 'plan_id:「' . $request->plan_id . '」をcookieに保存しました。' . $plan_id,
+            'msg2' => 'spot_id:「' . $request->spot_id . '」をcookieに保存しました。' . $spot_id,
+            'msg3' => 'plan_id:「' . $request->plan_id . '」をcookieに保存しました。' . $plan_id,
 
-            // 'spots' => null,
-            // 'plans' => null,
+            'spots' => null,
+            'plans' => null,
 
             'id' => $id,
             // 'response' => $response,
         ];
 
 
+        $response = response()->view('fronts.mypage', $data);
 
-        if ($request->spot_id != "") {
-            $response = response()->view('fronts.spots_info', $data);
-            $response->cookie('spot_id', $spot_id, 100);
-            // return view('fronts.spots_info', $data);
-            return $response;
-            return redirect()->route('spotsinfo', $data);
-        } elseif ($request->plan_id != "") {
-            $response = response()->view('fronts.plans_info', $data);
-            $response->cookie('plan_id', $plan_id, 100);
-            // return view('fronts.plans_info', $data);
-            return $response;
-            return redirect()->route('planinfo', $data);
-        }
+
+        // if ($request->spot_id != "") {
+        //     $response = response()->view('fronts.mypage', $data);
+        //     $response->cookie('spot_id', $spot_id, 100);
+        //     // return view('fronts.spots_info', $data);
+        //     // return $response;
+        //     // return redirect()->route('spotsinfo', $data);
+        // } elseif ($request->plan_id != "") {
+        //     $response = response()->view('fronts.mypage', $data);
+        //     $response->cookie('plan_id', $plan_id, 100);
+        //     // return view('fronts.plans_info', $data);
+        //     // return $response;
+        //     // return redirect()->route('planinfo', $data);
+        // }
 
 
         // setcookie("fish_id", $fish_id);
@@ -198,13 +189,13 @@ class MypageController extends Controller
 
         // $response->withCookie('fishing', $values, 60);
 
-        // if ($request->spot_id != "") {
-        //     $response->cookie('spot_id', $spot_id, 100);
-        // }
+        if ($request->spot_id != "") {
+            $response->cookie('spot_id', $spot_id, 100);
+        }
 
-        // if ($request->plan_id != "") {
-        //     $response->cookie('plan_id', $plan_id, 100);
-        // }
+        if ($request->plan_id != "") {
+            $response->cookie('plan_id', $plan_id, 100);
+        }
+        return $response;
     }
-    // return $response;
 }

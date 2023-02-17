@@ -25,13 +25,13 @@
     {{-- @if (hasCookie('plan_id')) --}}
 
         @if (Cookie::get('plan_id')!=$item->id)
-        <a href="{{ route('plansinfo', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
+        <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
         @endif
 
         @if (Cookie::get('plan_id')==$item->id)
         <div>
         <p>お気に入り登録済</p>
-        <a href="{{ route('plansinfo', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
+        <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
         </div>
         @endif
 

@@ -38,8 +38,8 @@
         </table>
     </form>
 
-    {{-- <p>{{ $msg2 }}</p>
-    <p>{{ $msg3 }}</p> --}}
+    <p>{{ $msg2 }}</p>
+    <p>{{ $msg3 }}</p>
 
 {{-- @php
     print_r($data);
@@ -74,7 +74,7 @@
                 <p>{{ $plan->eye_catch }}</p>
                 <p>{{ $plan->title }}</p>
                 <p>{{ $plan->overview }}</p>
-            <a href="{{ route('planinfo', ['id' => $plans[$key]]) }}">リンク</a>
+            <a href="{{ route('plansinfo', ['id' => $plans[$key]]) }}">リンク</a>
     @endforeach
 @endif
 
