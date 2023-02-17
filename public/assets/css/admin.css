@@ -177,7 +177,8 @@ h3 {
 /* ボタン共通 */
 .menubar > li,
 .search_btn,
-.submit_btn {
+.submit_btn,
+.delete_btn {
     border: 1px lightgray solid;
     padding: 5px 10px;
     background-color: rgb(227, 157, 66);
@@ -222,6 +223,28 @@ h3 {
     margin-top: 30px;
 }
 
+.submit_btn {
+    padding: 3px 10px;
+    transition: 0.1s;
+}
+
+.submit_btn:hover {
+    color: blueviolet;
+}
+
+/* 修正・削除ボタン */
+.change_btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete_btn {
+    margin-top: 30px;
+    margin-right: 60px;
+    background-color: #8c8c8c;
+}
+
+/* テーブル */
 table.info,
 table.tbl-count {
     width: 95%;
@@ -263,6 +286,12 @@ td.edit {
 td.dt {
     width: 200px;
     text-align: center;
+}
+
+table.info input,
+table.info textarea {
+    /* border: 1px black solid; */
+    width: 100%;
 }
 
 /* フッター */

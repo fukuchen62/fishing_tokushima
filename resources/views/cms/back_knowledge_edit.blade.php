@@ -65,8 +65,10 @@
                 </td>
             </tr>
         </table>
-        <input type="submit"value="修正">
-        <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}">削除</a>
+        <div class="change_btn">
+            <input type="submit" value="修正" class="submit_btn">
+            <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}" class="delete_btn">削除</a>
+        </div>
     </form>
 @endsection
 
