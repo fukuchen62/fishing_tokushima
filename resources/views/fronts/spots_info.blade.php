@@ -21,14 +21,23 @@
     </section>
 
     {{-- お気に入り保存 --}}
-    <form action="{{ route('mypage')}}" method="post">
+
+    {{-- @if ($request->cookie('plan_id')!==$item->id)
+    <a href="{{ route('cookie', ['spot_id' =>  $spots->id ]) }}"><p>リンク1</p></a>
+    @endif
+
+    @if ($request->cookie('plan_id')===$item->id)
+    <a href="{{ route('cookie', ['spot_id' =>  $spots->id ]) }}"><p>リンク2</p></a>
+    @endif --}}
+
+    {{-- <form action="{{ route('mypage')}}" method="post">
         <table>
         @csrf
         <tr>
         <td><input type="submit" name="spot_id" value="{{ $spots->id }}" id=""></td>
         </tr>
         </table>
-    </form>
+    </form> --}}
 
     <!-- 浅瀬背景 -->
     <div class="shallow">
