@@ -7,7 +7,7 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href="http://localhost/fishing_tokushima/public/admin/shopsshow">HOME</a></li>
+        <li><a href="./shopsshow">HOME</a></li>
 
     </ul>
 @endsection

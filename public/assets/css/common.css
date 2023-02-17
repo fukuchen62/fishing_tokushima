@@ -4,22 +4,10 @@ padding-top:100px;
 margin-top だと背景色が崩れます。
 */
 
-/* 現在抱えている問題 */
-/* ・コンテンツ幅を1200pxに固定したい */
-/* ・bodyやheader,main,footerにmaxwidthを当てるとレイアウトが崩れる → width:100％;のせい？ */
-/* 何故か100vwでもうまくいかなかったので別の原因がありそう？ */
-
-/* 今実装しようとしてできていないこと */
-/* コンテンツ幅の固定 */
-/* 幅を固定したうえで画面いっぱいに背景を配置する */
-/* 固定したときに崩れるレイアウトの調整→特にheader部分 */
-/* それらをレスポンシブ対応にする→モバイルファーストでメディアクエリ？ */
-
-/* bodyにmax1200pxをあてる？ */
 body {
     text-align: center;
     height: auto;
-    width: 100%;
+    max-width:1200px;
     margin: 0 auto;
     /* padding: 0 20px; */
     font-family: "fot-tsukuardgothic-std", sans-serif;
@@ -29,12 +17,12 @@ body {
     color: #000000;
 }
 
-/* コンテンツのheader,main,footerにmax1200をあてる？ */
-/* header,main,footer{
-    max-width: 1200px;
-    margin: 0 auto;
-} */
-
+.expand{
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+}
 
 .flex {
     display: flex;
@@ -101,28 +89,6 @@ body {
 }
 
 
-/* カード */
-/* .card {
-    width: 320px;
-    height: 426px;
-    background-color: #EAF2FA;
-}
-
-.card__img {
-    width: 320px;
-    height: 240px;
-}
-
-.card__title {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.card__discription {
-    color: #51656F;
-} */
-
-/* card */
 .card__p {
     padding: 50px;
   }
@@ -185,7 +151,7 @@ body {
 
 .header__box--border {
     height: 30px;
-    width: 110%;
+    width: 110vw;
     background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff), color-stop(0.52, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
     -webkit-background-size: 49px 100%;
     position: fixed;
@@ -291,7 +257,6 @@ body {
     align-items: center;
     justify-content: center;
     transform: translateX(100vw);
-    /* transition: all .3s linear; */
     padding-top: 150px;
     overflow: scroll;
 }
@@ -386,24 +351,26 @@ body {
 
 @media screen and (min-width: 1080px) {
     .g-nav {
-        width: 90vw;
         transform: translateX(0);
+        width: 100vw;
         height: 100px;
-        top: 30px;
         padding: 0;
         margin: 0;
         overflow: visible;
-        position: static;
+        position: fixed;
+        right: 0vw;
+        top: 0px;
         flex-direction: row;
         justify-content: flex-end;
     }
 
     .header__box {
-        width: 100vw;
+        max-width: 100%;
     }
 
     .g-nav__box {
         margin-top: 0;
+        margin-right: 30px;
         display: flex;
         text-align: end;
         background-color: rgba(0, 0, 0, 0);
@@ -425,6 +392,7 @@ body {
     .g-nav__box--discription {
         display: inline-block;
         margin-top: 20px;
+
     }
 
     .g-nav__box--img {
@@ -435,11 +403,17 @@ body {
 
     .g-nav__box--text {
         font: size 1px;
-        ;
     }
-
-
 }
+@media screen and (min-width: 1200px) {
+    .g-nav__box{
+        margin-right: calc(50vw - 600px);
+    }
+    .logo__img{
+        margin-left:calc(50vw - 600px) ;
+    }
+}
+
 
 .g-nav__link {
     flex-flow: column;
@@ -541,7 +515,7 @@ body {
 
 
 .firstsection__bottom {
-    /* width: 100%; */
+    width: 100vw;
     height: 160px;
     background-image: url(../images/svg/wave__sectionbottom.svg);
     background-repeat: repeat-x;
@@ -553,6 +527,7 @@ body {
 /* フッター */
 .footer {
     background-color: #30ADD1;
+    color: #fff;
 }
 
 .footer__box {
