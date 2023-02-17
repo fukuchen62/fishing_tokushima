@@ -4,14 +4,6 @@ body {
     color: #51656F;
 }
 
-/* main {
-    max-width: 1200px;
-    margin: 0 auto;
-} */
-
-/* .wrap {
-    margin: 0 20px;
-} */
 
 img {
     max-width: 100%;
@@ -36,7 +28,7 @@ img {
     align-items: flex-start;
 }
 
-.fishinfo__box--description h3 {
+.fishinfo__box--title {
     margin: 40px;
 }
 
@@ -45,7 +37,13 @@ img {
     text-align: left;
 }
 
+.card__title {
+    margin: 20px;
+}
+
+
 .fishinfo__box--feed p, img {
+
     text-align: center;
 }
 
@@ -73,11 +71,8 @@ img {
 }
 
 /* おいしい食べ方 */
-
-.fishinfo__box--food img {
-    /* border: 10px solid #fff;
-    border-radius: 30px; */
-    margin: 40px 0 25px 0;
+.fishinfo__box--img {
+    padding: 50px;
 }
 
 .traiangle {
@@ -109,7 +104,7 @@ img {
 
 .fishinfo__box--text p {
     text-align: center;
-    padding: 50px;
+    padding-bottom: 50px;
 }
 
 @media screen and (min-width: 1080px) {
