@@ -384,34 +384,6 @@ class AdminController extends Controller
     // fishテーブル関連
     public function fishSearch(Request $request)
     {
-        // // クライアントから検索条件(s)を取得する
-        // $s = "";
-        // if (isset($request->s)) {
-        //     $s = $request->s;
-        // }
-
-        // if ($s !== '') {
-        //     // あいまい検索
-        //     $items = DB::table('fish')
-        //         ->where('id', 'like', '%' . $s . "%")
-        //         ->orwhere('name', 'like', '%' . $s . "%")
-        //         ->orWhere('sex', 'like', '%' . $s . "%")
-        //         ->orWhere('mail', 'like', '%' . $s . "%")
-        //         ->get();
-        // } else {
-        //     // 無条件
-        //     $items = DB::table('fish')->get();
-        // }
-
-        // // テンプレートファイルに渡すデータ（連想配列）
-        // $data = [
-        //     'msg' => '登録されているショップ一覧です。',
-        //     // fishから読み込んだレコードをmembersの連想配列の中身とする
-        //     'members' => $items,
-        // ];
-
-        // // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_fish');
     }
 
     public function fishShow(Request $request)
@@ -439,25 +411,26 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'fishlist' => $items,
         ];
+        return view('cms.back_fish', $data);
 
         $items = Fish::all();
+        $data = [
+            'fishlist' => $items,
+        ];
         return view('cms.back_fish', $data);
     }
 
     public function fishEntry(Request $request)
     {
-
         return view('cms.back_fish_new');
     }
 
     public function fishcreate(Request $request)
     {
         $this->validate($request, Fish::$rules);
-        $fish = new fish;
+        $fish = new Fish;
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
@@ -467,8 +440,11 @@ class AdminController extends Controller
 
     public function fishEdit(Request $request)
     {
-        $fish = Fish::find($request->id);
-        return view('cms.back_fish_edit', ['form' => $fish]);
+        $item = Fish::find($request->id);
+        $data = [
+            'fish' => $item,
+        ];
+        return view('cms.back_fish_edit', $data);
     }
 
     public function fishUpdate(Request $request)
@@ -478,14 +454,16 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
-        // return redirect('fish_Show');
         return redirect()->route('fishshow');
     }
 
     public function fishDelete(Request $request)
     {
-        $fish = Fish::find($request->id);
-        return view('cms.back_fish_edit', ['form' => $fish]);
+        $item = Fish::find($request->id);
+        $data = [
+            'fish' => $item,
+        ];
+        return view('cms.back_fish_edit', $data);
     }
 
     public function fishRemove(Request $request)

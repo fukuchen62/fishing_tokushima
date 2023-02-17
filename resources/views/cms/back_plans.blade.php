@@ -34,7 +34,6 @@
         @foreach ($planslist as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td>{{ $item->name }}</td>
                 <td>{{ $item->title }}</td>
                 <td><a href="{{ route('plansedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>

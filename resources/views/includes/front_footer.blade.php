@@ -3,7 +3,7 @@
         <ul>
             <li><a href="{{ route('knowledgelist') }}">入門知識</a></li>
             <li><a href="{{ route('fishlist') }}">徳島の魚</a></li>
-            <li><a href="{{ route('planlist') }}">体験プラン</a></li>
+            <li><a href="{{ route('planslist') }}">体験プラン</a></li>
             <li><a href="{{ route('shopslist') }}">釣具店</a></li>
             <li><a href="{{ route('escapelist') }}">避難場所</a></li>
         </ul>

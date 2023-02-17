@@ -34,7 +34,7 @@
             <th>魚の名前(正式名称)</th>
             <th>修正</th>
         </tr>
-        @foreach ($items as $item)
+        @foreach ($fishlist as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
