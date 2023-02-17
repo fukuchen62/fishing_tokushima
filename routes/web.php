@@ -69,7 +69,7 @@ Route::get('plan/list', [App\Http\Controllers\PlanController::class, 'plansList'
 
 Route::post('plan/list', [App\Http\Controllers\PlanController::class, 'plansSearch'])->name('planslist');
 
-Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('planisnfo');
+Route::get('plan/info', [App\Http\Controllers\PlanController::class, 'plansInfo'])->name('plansinfo');
 
 // News関連
 Route::get('news/list', [App\Http\Controllers\NewsController::class, 'newsList'])->name('news');
