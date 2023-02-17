@@ -138,7 +138,7 @@ class PlanController extends Controller
             $response->cookie('plan_id', $plan_id, 100);
             // return view('fronts.plans_info', $data);
             return $response;
-            // return redirect()->route('planinfo', $data);
+            // return redirect()->route('plansinfo', $data);
         }
     }
 }
