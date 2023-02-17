@@ -56,8 +56,8 @@
             </tr>
         @endforeach --}}
 
-    </table>
-    {{-- <table border="1">
+        {{-- </table>
+    <table border="1">
         <tr>
             <th>カテゴリー名&nbsp;</th>
             <th>タイトル&nbsp;</th>
