@@ -91,14 +91,14 @@ Route::post('admin/shopsedit', [App\Http\Controllers\AdminController::class, 'sh
 
 //Admin関連（plan分)
 
-Route::get('admin/plansearch', [App\Http\Controllers\AdminController::class, 'planSearch'])->name('plansearch');
-Route::get('admin/planshow', [App\Http\Controllers\AdminController::class, 'planShow'])->name('planshow');
-Route::post('admin/planentry', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
-Route::get('admin/planedit', [App\Http\Controllers\AdminController::class, 'planEdit'])->name('planedit');
-Route::post('admin/planupdate', [App\Http\Controllers\AdminController::class, 'planUpdate'])->name('planupdate');
-Route::get('admin/planentry', [App\Http\Controllers\AdminController::class, 'planEntry'])->name('planentry');
+Route::get('admin/planssearch', [App\Http\Controllers\AdminController::class, 'plansSearch'])->name('planssearch');
+Route::get('admin/plansshow', [App\Http\Controllers\AdminController::class, 'plansShow'])->name('plansshow');
+Route::post('admin/plansentry', [App\Http\Controllers\AdminController::class, 'plansCreate'])->name('planscreate');
+Route::get('admin/plansedit', [App\Http\Controllers\AdminController::class, 'plansEdit'])->name('plansedit');
+Route::post('admin/plansupdate', [App\Http\Controllers\AdminController::class, 'plansUpdate'])->name('plansupdate');
+Route::get('admin/plansentry', [App\Http\Controllers\AdminController::class, 'plansEntry'])->name('plansentry');
 
-Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planUpdate'])->name('planedit');
+Route::post('admin/plansedit', [App\Http\Controllers\AdminController::class, 'plansUpdate'])->name('plansedit');
 
 // Route::post('admin/planedit', [App\Http\Controllers\AdminController::class, 'planCreate'])->name('plancreate');
 

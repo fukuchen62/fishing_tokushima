@@ -28,63 +28,63 @@
     <form method="post" action="{{ route('planedit') }}">
         <table>
             @csrf
-            <input type="hidden" name="id" value="{{ $form->id }}">
+            <input type="hidden" name="id" value="{{ $plas->id }}">
             <tr>
                 <th>タイトル: </th>
-                <td><input type="text" name="title" value="{{ $form->title }}" required></td>
+                <td><input type="text" name="title" value="{{ $plas->title }}" required></td>
             </tr>
             <tr>
                 <th>概要:</th>
                 <td>
-                    <input type="text" name="overview" value="{{ $form->overview }}" required>
+                    <input type="text" name="overview" value="{{ $plas->overview }}" required>
                 </td>
             </tr>
             <tr>
                 <th>難易度: </th>
                 <td>
-                    <input type="number" name="level" value="{{ $form->level }}" required>
+                    <input type="number" name="level" value="{{ $plas->level }}" required>
                 </td>
             </tr>
             <tr>
                 <th>地域・市町村:</th>
                 <td>
-                    <input type="number" name="city_id" value="{{ $form->city_id }}" required>
+                    <input type="number" name="city_id" value="{{ $plas->city_id }}" required>
                 </td>
             </tr>
             <tr>
                 <th>釣りスポットID:</th>
                 <td>
-                    <input type="number" name="spot_id" value="{{ $form->spot_id }}" required>
+                    <input type="number" name="spot_id" value="{{ $plas->spot_id }}" required>
                 </td>
             </tr>
             <tr>
                 <th>魚ID:</th>
                 <td>
-                    <input type="number" name="fish_id" value="{{ $form->fish_id }}" required>
+                    <input type="number" name="fish_id" value="{{ $plas->fish_id }}" required>
                 </td>
             </tr>
             <tr>
                 <th>釣り方のフロー:</th>
                 <td>
-                    <textarea name="flow" id="flow" cols="50" rows="5"> {{ $form->flow }} </textarea>
+                    <textarea name="flow" id="flow" cols="50" rows="5"> {{ $plas->flow }} </textarea>
                 </td>
             </tr>
             <tr>
                 <th>アイキャッチ:</th>
                 <td>
-                    <input type="text" name="eye_catch" value="{{ $form->eye_catch }}">
+                    <input type="text" name="eye_catch" value="{{ $plas->eye_catch }}">
                 </td>
             </tr>
             <tr>
                 <th>サムネイル:</th>
                 <td>
-                    <input type="text" name="thumbnail" value="{{ $form->thumbnail }}">
+                    <input type="text" name="thumbnail" value="{{ $plas->thumbnail }}">
                 </td>
             </tr>
             <tr>
                 <th>表示フラグ:</th>
                 <td>
-                    <input type="boolean" name="is_show" value="{{ $form->is_show }}" required>
+                    <input type="boolean" name="is_show" value="{{ $plas->is_show }}" required>
                 </td>
             </tr>
             <tr>
