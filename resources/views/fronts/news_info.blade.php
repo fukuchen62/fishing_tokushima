@@ -28,11 +28,11 @@
         </tr>
         <tr>
             <td>{{ $news->title }}</td>
+            <td>{{ $news->created_at }}</td>
             <td>{{ $news->name }}</td>
             <td>{{ $news->content }}</td>
-            <td>{{ $news->overview }}</td>
             <td>{{ $news->eyecatch }}</td>
-            <td>{{ $news->updated_at }}</td>
+            <td>{{ $news->content }}</td>
         </tr>
     </table>
 
