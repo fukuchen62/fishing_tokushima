@@ -33,15 +33,15 @@
                 <td><input type="number" name="level" required></td>
             </tr>
             <tr>
-                <th>地域・市町村: </th>
+                <th>地域ID: </th>
                 <td><input type="number" name="city_id" required></td>
             </tr>
             <tr>
-                <th>釣りスポット: </th>
+                <th>釣りスポットID: </th>
                 <td><input type="number" name="spot_id" required></td>
             </tr>
             <tr>
-                <th>魚: </th>
+                <th>魚ID: </th>
                 <td><input type="number" name="fish_id" required></td>
             </tr>
             <tr>

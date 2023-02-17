@@ -18,7 +18,7 @@ class Plan extends Model
         'city_id' => 'required|integer',
         'spot_id' => 'required|integer',
         'fish_id' => 'required|integer',
-        'flow' => 'string|max:20',
+        'flow' => 'required|string',
         'eye_catch' => 'string|max:200',
         'thumbnail' => 'string|max:200',
         'is_show' => 'required|string|max:20',
