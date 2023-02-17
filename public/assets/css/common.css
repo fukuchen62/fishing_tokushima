@@ -151,7 +151,7 @@ body {
 
 .header__box--border {
     height: 30px;
-    width: 100vw;
+    width: 100%;
     background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff), color-stop(0.52, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
     -webkit-background-size: 49px 100%;
     position: fixed;
