@@ -23,14 +23,14 @@
                 <td><input type="text" name="title" required></td>
             </tr>
             <tr>
-                <th>難易度: </th>
-                <td><input type="number" name="level" required></td>
-            </tr>
-            <tr>
                 <th>概要：</th>
                 <td>
                     <textarea name="overview" id="overview" cols="50" rows="5" required></textarea>
                 </td>
+            </tr>
+            <tr>
+                <th>難易度: </th>
+                <td><input type="number" name="level" required></td>
             </tr>
             <tr>
                 <th>地域・市町村: </th>
