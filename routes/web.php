@@ -29,6 +29,7 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('to
  */
 Route::get('/mypage', [App\Http\Controllers\MypageController::class, 'myPageShow'])->name('mypage');
 Route::get('/cookie', [App\Http\Controllers\MypageController::class, 'myPage'])->name('cookie');
+
 /**
  * 避難場所リストへのルート情報
  */
