@@ -1,28 +1,64 @@
 @charset "utf-8";
 
+.btn:hover {
+    background-color: #30ADD1;
+}
+
 .section__btn {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 20px auto;
+    margin: 50px auto;
 }
 
-/* .section__btn--margin {
-    margin: 0 40px;
-} */
+.section__content--titlereserch {
+    background-color: #30ADD1;
+    border-radius: 30px;
+    color: #fff;
+    padding: 8px;
+    font-size: 24px;
+    margin: 50px 0 50px 0;
+}
 
-.section__content--photo {
-    max-width: 559px;
-    max-height: 419px;
+.section__content {
+    line-height: 2.5;
 }
 
 .section__content--full {
     margin-top: 60px;
 }
 
-.section__content {
-    line-height: 2.5;
+.section__content--title {
+    font-size: 24px;
+    font-weight: bold;
 }
+
+.section__content--top {
+    margin-top: 20px;
+}
+
+.section__content--topmessage {
+    /* margin-top: 20px; */
+}
+
+.section__content--left {
+    text-align: justify;
+    margin-left: 20px;
+}
+
+/* .section__btn--margin {
+    margin: 0 40px;
+} */
+
+.section__content--photomaxwidth {
+    max-width:559px;
+}
+
+/* .section__content--photo {
+    width: 559px;
+    max-width: 559px;
+    height: auto;
+} */
 
 .section__content--day {
     line-height: 1.5;
@@ -41,9 +77,9 @@
     margin: 0 20px;
 }
 
-.section__content--left {
-    text-align: justify;
-    margin-left: 20px;
+.section__content--displayflex{
+    align-items: start;
+
 }
 
 /* @media screen and (min-width: 600px) {
@@ -158,51 +194,9 @@
     
 }
 
-@media screen and (min-width: 1080px) {
-
-    .section__content {
-        margin-top: 20px;
-        line-height: 2.5;
-    }
-
-    .section__content--photo {
-        width: 559px;
-        height: 419px;
-    }
-
-    .section__content--displayflex {
-        display: flex;
-    }
-
-    .section__content--top {
-        margin-top: 60px;
-    }
-
-    .section__content--full {
-        margin-top: -15px;
-        margin-left: 200px;
-    }
-
-    .section__content--displayblock {
-        display: block;
-    }
-
-    .shop__description--marginservice,
-    .shop__description--marginmessage {
-        margin: 0; 
-        padding: 15.5px;
-    }
-}
-
-@media screen and (min-width: 600px) {
-
-    .shop__description br {
-        display: none;
-}
-
-    .shop__description--breakpoint {
-        display: none;
-    }
+.section__content--information {
+    text-align: justify;
+    margin: 20px 0 0 20px;
 }
 
 .section__wrap--infomation {
@@ -219,3 +213,99 @@
     width: 100%;
     height: 100%;
 }
+
+@media screen and (min-width: 600px) {
+
+    .shop__description br {
+        display: none;
+}
+
+    .shop__description--breakpoint {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1080px) and (min-width: 900px) {
+    .section__content--displayflex {
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .section__content--photo {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+
+    .section__content {
+        margin-top: 20px;
+        line-height: 2.5;
+    }
+
+    .section__content--photo {
+        width: 559px;
+        max-width: 559px;
+        height: auto;
+    }
+
+    .section__content--displayflex {
+        display: flex;
+    }
+
+    .section__content--top {
+        margin-top: 60px;
+    }
+
+    .section__content--topmessage {
+        margin-top: 0;
+    }
+
+    .section__content--full {
+        margin-top: -25px;
+        margin-left: 195px;
+    }
+
+    .section__content--displayblock {
+        display: block;
+    }
+
+    .shop__description--marginservice { 
+        padding: 15.5px;
+    }
+
+    .shop__description--marginmessage { 
+        padding: 21.5px;
+    }
+
+}
+
+
+@media screen and (min-width: 1147px) and (max-width: 1198px) {
+    .shop__description--marginmessage { 
+        padding: 18.5px;
+    }
+}
+
+@media screen and (min-width: 1199px) and (max-width: 1200px) {
+    .shop__description--marginmessage { 
+        padding: 18.675px;
+    }
+}
+
+@media screen and (min-width: 1200px)  {
+    .shop__description--marginmessage { 
+        padding: 18.905px;
+    }
+
+    .shop__description--marginmessage:nth-last-of-type(1) { 
+        padding-top: 16.975px;
+    }
+}
+
+@media screen and (max-width: 1080px){
+    .flex{
+        display: block;
+    }
+}
+

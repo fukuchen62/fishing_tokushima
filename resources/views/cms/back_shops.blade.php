@@ -1,70 +1,48 @@
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', 'ショップ一覧')
+@section('title', '釣徳コンテンツ管理システム')
 
+@section('subtitle', '釣具屋')
 
-@section('menubar')
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./shopsshow">HOME</a></li>
+@section('login_name', 'QLIP')
 
-    </ul>
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
-@section('search')
+
+@section('content')
+    <h3>ショップ一覧</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./shopsshow">HOME</a></li>
+    </ul>
 
     {{-- 検索条件入力フォーム --}}
-    <form action="{{ route('shopsshow') }}" method="get">
+    <form action="{{ route('shopsshow') }}" method="get" class="search">
         検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
-        <input type="submit" value="検索">
+        <input type="submit" value="検索" class="search_btn">
     </form>
 
-@endsection
-@section('content')
-    <table border="1">
+    <table class="info">
         <tr>
-            <th>ID&nbsp;</th>
-            <th>店名&nbsp;</th>
-            <th>地域ID&nbsp;</th>
-            <th>郵便番号&nbsp;</th>
-            <th>住所&nbsp;</th>
-            <th>iframe&nbsp;</th>
-            <th>経度&nbsp;</th>
-            <th>緯度&nbsp;</th>
-            <th>電話番号&nbsp;</th>
-            <th>fax&nbsp;</th>
-            <th>email&nbsp;</th>
-            <th>url&nbsp;</th>
-            <th>営業日&nbsp;</th>
-            <th>営業内容&nbsp;</th>
-            <th>PR&nbsp;</th>
-            <th>画像&nbsp;</th>
-            <th>備考&nbsp;</th>
-            <th>表示フラグ&nbsp;</th>
-            <th>修正&nbsp;</th>
+            <th width="5%">ID</th>
+            <th width="15%">店名</th>
+            <th>住所</th>
+            <th width="15%">電話番号</th>
+            <th width="10%">営業内容</th>
+            <th width="100px">修正</th>
         </tr>
         @foreach ($shopslist as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
-                <td>{{ $item->city_id }}</td>
-                <td>{{ $item->postal_code }}</td>
                 <td>{{ $item->address }}</td>
-                <td>{{ $item->iframe }}</td>
-                <td>{{ $item->longitude }}</td>
-                <td>{{ $item->latitude }}</td>
                 <td>{{ $item->tel }}</td>
-                <td>{{ $item->fax }}</td>
-                <td>{{ $item->email }}</td>
-                <td>{{ $item->url }}</td>
-                <td>{{ $item->service_day }}</td>
                 <td>{{ $item->service }}</td>
-                <td>{{ $item->pr }}</td>
-                <td>{{ $item->img }}</td>
-                <td>{{ $item->memo }}</td>
-                <td>{{ $item->is_show }}</td>
-                <td><a href="{{ route('shopsedit', ['id' => $item->id]) }}">編集</a></td>
+                <td class="edit"><a href="{{ route('shopsedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach
     </table>

@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 body{
     /* padding: 0 20px; */
     color: #51656F;
@@ -28,16 +30,23 @@ body{
 }
 
 /* マップ */
-.spot__map--east{
-    max-width: 600px;
-    max-height: 330px;
+.spot__map{
+    max-width: 559px;
+    height: 0;
+    background-size: contain;
+    margin: 0 auto;
     border: solid 3px #30ADD1;
+    padding-top: calc(330 / 559 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
     border-radius: 10px;
     position: relative;
 }
 
-.spot__map--south{
+.spot__map--east{
+    background: url(../images/tokushima_east.svg) center center / cover no-repeat;
+    background-color: #fff;
+}
 
+.spot__map--south{
     background-color: #fff;
     border: solid 3px #30ADD1;
     border-radius: 10px;
@@ -52,6 +61,15 @@ body{
     position: absolute;
     top: 80%;
     right: 60%;
+}
+
+@media screen and(max-width:600px) {
+    .spot__map{
+        width: 559px;
+        height: 330px;
+        background-size: contain;
+        padding: 0
+    }
 }
 
 /* card */

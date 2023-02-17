@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* ベースルール */
+
+/* 背景色の指定 */
+
+/* 浅瀬背景色 */
+.shallow {
+    background-color: #EAF2FA;
+}
+
+
+/* レイアウトルール */
+
+/* 背景を付けるために、h1からh2までのmarginをなくし、セクションにpaddingをつける */
+.section__box--title {
+    margin: 0px
+}
+
+.evacuation__section {
+    padding-top: 100px;
+}
+
+/* フッターまでの余白 */
+.firstsection__bottom {
+    margin-bottom: 120px;
+}
+
+
+/* モジュールパーツルール */
+
+/* 地図 */

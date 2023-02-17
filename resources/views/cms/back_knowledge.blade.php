@@ -2,7 +2,7 @@
 
 @section('title', '釣徳コンテンツ管理システム')
 
-@section('subtitle', '')
+@section('subtitle', '入門知識')
 
 @section('login_name', 'QLIP')
 
@@ -31,9 +31,9 @@
         <tr>
             <th width="5%">ID</th>
             <th width="8%">カテゴリーID</th>
-            <th width="8%">タイトル</th>
+            <th width="15%">タイトル</th>
             <th>概要</th>
-            <th width="5%">修正</th>
+            <th width="100px">修正</th>
         </tr>
         @foreach ($knowledgelist as $item)
             <tr>
@@ -41,7 +41,7 @@
                 <td>{{ $item->category_id }}</td>
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->overview }}</td>
-                <td><a href="{{ route('knowledgeedit', ['id' => $item->id]) }}">編集</a></td>
+                <td class="edit"><a href="{{ route('knowledgeedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach
     </table>

@@ -2,7 +2,7 @@
 
 @section('title', '釣徳コンテンツ管理システム')
 
-@section('subtitle', '')
+@section('subtitle', '入門知識')
 
 @section('login_name', 'QLIP')
 
@@ -20,6 +20,7 @@
         <li><a href="./knowledgeshow">HOME</a></li>
         <li><a href="./knowledgeentry">新規登録</a></li>
     </ul>
+
     @if (count($errors) > 0)
         <div>
             <ul>
@@ -65,8 +66,10 @@
                 </td>
             </tr>
         </table>
-        <input type="submit"value="修正">
-        <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}">削除</a>
+        <div class="change_btn">
+            <input type="submit" value="修正" class="submit_btn">
+            <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}" class="delete_btn">削除</a>
+        </div>
     </form>
 @endsection
 
