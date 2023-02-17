@@ -4,14 +4,6 @@ body {
     color: #51656F;
 }
 
-/* main {
-    max-width: 1200px;
-    margin: 0 auto;
-} */
-
-/* .wrap {
-    margin: 0 20px;
-} */
 
 img {
     max-width: 100%;
@@ -36,7 +28,7 @@ img {
     align-items: flex-start;
 }
 
-.fishinfo__box--description h3 {
+.fishinfo__box--title {
     margin: 40px;
 }
 
@@ -45,7 +37,13 @@ img {
     text-align: left;
 }
 
+.card__title {
+    margin: 20px;
+}
+
+
 .fishinfo__box--feed p, img {
+
     text-align: center;
 }
 
@@ -62,12 +60,19 @@ img {
     margin: 40px 0 40px 0;
 }
 
-/* おいしい食べ方 */
+.table__title,
+.table {
+    width: 100%;
+}
 
-.fishinfo__box--food img {
-    /* border: 10px solid #fff;
-    border-radius: 30px; */
-    margin: 40px 0 25px 0;
+.table td {
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* おいしい食べ方 */
+.fishinfo__box--img {
+    padding: 50px;
 }
 
 .traiangle {
@@ -77,6 +82,7 @@ img {
     border-width: 0 27.5px 55px 27.5px;
     border-color: transparent transparent #fff transparent;
     margin: 0 auto;
+    padding: 0 30px 0 0;
 }
 
 .fishinfo__box--text {
@@ -98,7 +104,7 @@ img {
 
 .fishinfo__box--text p {
     text-align: center;
-    padding: 50px;
+    padding-bottom: 50px;
 }
 
 @media screen and (min-width: 1080px) {
@@ -297,37 +303,40 @@ img {
 }
 
 /* スライド２ */
-/* .slider2-wrap {
-    width: 559px;
-    margin: 0 auto;
-    position: relative;
+
+/* レイアウトのためのスタイル */
+.container {
+    margin: 50px auto 0;
+    max-width: 500px;
 }
 
-.slider-2 .slick-slide2 {
-    height: 419px;
-    overflow: hidden;
+.main-img {
+    width: 400px;
+    height: 300px;
 }
 
-.slider-2 .slick-slide2 img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.main-img img {
+    width: 400px;
+    height: 300px;
+    border-radius: 30px;
+    border: 8px solid #fff;
 }
 
-.thumbs_dots2 {
-    margin: 10px 0 0;
+.sub-img {
+    display: flex;
+    margin-top: 10px;
 }
 
-.thumbs_list2 li {
-    display: inline-block;
+.sub-img li {
+    margin-right: 2%;
+    width: calc(96% / 3);
+}
+
+
+.sub-img img {
+    cursor: pointer;
     width: 100px;
     height: 80px;
-    opacity: 0.4;
-    cursor: pointer;
-    transition: opacity 0.3s;
+    border-radius: 10px;
+    object-fit: cover;
 }
-
-.thumbs_list2 li.slick-active {
-    opacity: 1;
-} */

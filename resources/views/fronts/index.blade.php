@@ -49,16 +49,16 @@
     <section>
         <h2>体験プラン</h2>
         <div>
-            <a href="{{ route('planinfo', ['id' => 1]) }}">アジをサビキ釣り</a>
+            <a href="{{ route('plansinfo', ['id' => 1]) }}">アジをサビキ釣り</a>
         </div>
         <div>
-            <a href="{{ route('planinfo', ['id' => 2]) }}">ウキ釣りでアジを釣る</a>
+            <a href="{{ route('plansinfo', ['id' => 2]) }}">ウキ釣りでアジを釣る</a>
         </div>
         <div>
-            <a href="{{ route('planinfo', ['id' => 1]) }}">アジをサビキ釣り</a>
+            <a href="{{ route('plansinfo', ['id' => 1]) }}">アジをサビキ釣り</a>
         </div>
         <div>
-            <a href="{{ route('planlist') }}">もっとみる</a>
+            <a href="{{ route('planslist') }}">もっとみる</a>
         </div>
     </section>
 

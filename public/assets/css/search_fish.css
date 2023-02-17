@@ -10,10 +10,10 @@ img {
     height: auto;
 }
 
-main {
+/* main {
     max-width: 1200px;
     margin: 0 auto;
-}
+} */
 
 /* .wrap {
     margin: 0 20px;
@@ -21,16 +21,19 @@ main {
 
 
 
-.calendar__box {
-    padding-top: 100px;
-}
+
 
 .calendar__section {
     width: 100%;
     /* background-size: 20px 20px; */
     background-color: #EAF2FA;
     /* position: relative; */
+    padding: 100px;
     margin: 0 auto;
+}
+
+.calendar__box {
+    padding-top: 100px;
 }
 
 /* calendar__box--search横並び */
