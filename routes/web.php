@@ -94,8 +94,10 @@ Route::post('admin/plansentry', [App\Http\Controllers\AdminController::class, 'p
 Route::get('admin/plansedit', [App\Http\Controllers\AdminController::class, 'plansEdit'])->name('plansedit');
 Route::post('admin/plansupdate', [App\Http\Controllers\AdminController::class, 'plansUpdate'])->name('plansupdate');
 Route::get('admin/plansentry', [App\Http\Controllers\AdminController::class, 'plansEntry'])->name('plansentry');
-
 Route::post('admin/plansedit', [App\Http\Controllers\AdminController::class, 'plansUpdate'])->name('plansedit');
+Route::get('admin/plansdelete', [App\Http\Controllers\AdminController::class, 'plansDelete'])->name('plansdelete');
+Route::get('admin/plansdelete', [App\Http\Controllers\AdminController::class, 'plansRemove'])->name('plansremove');
+Route::post('admin/plansdelete', [App\Http\Controllers\AdminController::class, 'plansRemove'])->name('plansremove');
 
 //Admin関連（knowledge分)
 
