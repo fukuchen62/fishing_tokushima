@@ -15,15 +15,41 @@
 
     <h2>内容</h2>
     @if (isset($item))
+
     {{-- お気に入り保存 --}}
-    <form action="{{ route('mypage')}}" method="post">
+    {{-- <a href="{{ route('cookie', ['plan_id' =>  $item->id ]) }}"><p>リンク1</p></a> --}}
+
+    {{ Cookie::get('plan_id'); }}
+
+
+    {{-- @if (hasCookie('plan_id')) --}}
+
+        @if (Cookie::get('plan_id')!=$item->id)
+        <a href="{{ route('planinfo', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
+        @endif
+
+        @if (Cookie::get('plan_id')==$item->id)
+        <div>
+        <p>お気に入り登録済</p>
+        <a href="{{ route('planinfo', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
+        </div>
+        @endif
+
+    {{-- @else --}}
+    {{-- <a href="{{ route('cookie', ['plan_id' =>  $item->id ]) }}"><p>リンク1</p></a> --}}
+
+    {{-- @endif --}}
+
+    {{-- <form action="{{ route('cookie')}}" method="post">
         <table>
         @csrf
         <tr>
         <td><input type="submit" name="plan_id" value="{{ $item->id }}" id=""></td>
         </tr>
         </table>
-    </form>
+    </form> --}}
+
+
         <table>
             <tr>
                 <th>title</th>
