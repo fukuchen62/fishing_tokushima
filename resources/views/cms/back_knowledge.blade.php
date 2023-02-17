@@ -15,6 +15,7 @@
 @section('content')
     <h3>入門知識一覧</h3>
 
+    {{-- 以下はshowのところにはめ込む --}}
     <ul class="menubar">
         <li><a href="./knowledgeshow">HOME</a></li>
         <li><a href="./knowledgeentry">新規登録</a></li>
@@ -23,7 +24,7 @@
     {{-- 検索条件入力フォーム --}}
     <form action="{{ route('knowledgeshow') }}" method="get" class="search">
         検索条件 :&nbsp;<input type="text" name="s" id="s"><br>
-        <input type="submit" value="検索">
+        <input type="submit" value="検索" class="search_btn">
     </form>
 
     <table class="info">
@@ -40,7 +41,7 @@
                 <td>{{ $item->category_id }}</td>
                 <td>{{ $item->title }}</td>
                 <td>{{ $item->overview }}</td>
-                <td class="edit_btn"><a href="{{ route('knowledgeedit', ['id' => $item->id]) }}">編集</a></td>
+                <td><a href="{{ route('knowledgeedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach
     </table>
