@@ -19,6 +19,7 @@ class NewsController extends Controller
     public function newsList(Request $request)
     {
         // $item = News::all();
+
         // スコープ
         $name = $request->name;
         // $items = News::category($name)->get();
