@@ -185,7 +185,8 @@ table.tbl-count td {
 }
 
 table.info th {
-    background-color: lightcyan;
+    background-color: steelblue;
+    color: #fff;
     text-align: center;
     height: 50px;
 }
@@ -197,7 +198,7 @@ table.info th, table.info td {
 }
 
 table.info tr:nth-child(even) {
-    background-color: lightyellow;
+    background-color: #f9f9f9;
 }
 
 td.edit {
