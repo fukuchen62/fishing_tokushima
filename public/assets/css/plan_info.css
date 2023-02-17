@@ -1,7 +1,18 @@
 @charset "utf-8";
 
 
-/* レイアウトルール */
+/* モジュールパーツルール */
+
+/* 画像 */
+
+/* 貝（装飾） */
+
+.detail__img--shell {
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    background-color: #EAF2FA;
+}
 
 /* 概要 */
 
@@ -10,53 +21,6 @@
     padding-top: 100px;
     padding-bottom: 50px;
 }
-
-/* ＰＣ時 */
-
-@media screen and (min-width:1200px) {
-    /* 概要の画像とテキストボックスのレイアウト */
-    .overview__box {
-    display: flex;
-    margin: 0px auto;
-    justify-content: center;
-    gap: 70px;
-    align-items: center;
-    margin-bottom: 50px;
-    }
-
-    /* 概要横並び時のテキストボックス外の余白 */
-    .overview__box--group {
-        margin: 0px;
-    }
-
-}
-
-/* フロー */
-
-/* PC時 */
-
-@media screen and (min-width:1025px) {
-    .flow__box {
-        display: flex;
-        margin-bottom: 50px;
-        gap: 40px;
-    }
-}
-
-/* モジュールパーツルール */
-
-/* 画像 */
-
-/* 貝（装飾） */
-
-.fishesinfo__img--shell {
-    display: flex;
-    justify-content: center;
-    padding: 70px;
-    background-color: #EAF2FA;
-}
-
-/* 概要 */
 
 /* 概要のテキストボックス */
 .overview__box--group {
@@ -78,13 +42,51 @@
     text-align: left;
 }
 
+/* 丸が細くなるのでブレイクポイント1200px */
+@media screen and (min-width:1200px) {
+    /* 概要の画像とテキストボックスのレイアウト */
+    .overview__box {
+    display: flex;
+    margin: 0px auto;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+    }
+
+    /* 概要横並び時のテキストボックス外の余白 */
+    .overview__box--group {
+        margin: 0px;
+    }
+
+}
+
 /* テーブルの大きさ */
+.table__title, .table {
+    width: 100%;
+}
+
+.table td {
+    text-align: left;
+    padding-left: 30px;
+}
 
 /* フロー */
 
 /* フローのタイトル枠 */
 .flow__section h2 {
     border: 1px solid #fff;
+}
+
+/* フローの画像とテキストボックス間レイアウト */
+/* PC時 */
+
+@media screen and (min-width:1025px) {
+    .flow__box {
+        display: flex;
+        margin-bottom: 50px;
+        gap: 40px;
+    }
 }
 
 /* フローのテキストボックス */
