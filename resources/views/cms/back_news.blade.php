@@ -7,8 +7,8 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href="http://localhost/fishing_tokushima/public/admin/newsshow">HOME</a></li>
-        <li><a href="http://localhost/fishing_tokushima/public/admin/newsentry">新規登録</a></li>
+        <li><a href="./newsshow">HOME</a></li>
+        <li><a href="./newsentry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
