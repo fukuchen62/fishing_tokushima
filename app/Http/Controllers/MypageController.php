@@ -19,7 +19,7 @@ use App\Models\Evacuation;
 use Illuminate, Support, Facades, Cookie;
 
 // モデル引用
-use App\Models\Fish;
+// use App\Models\Fish;
 use App\Models\Spot;
 use App\Models\Plan;
 
@@ -27,7 +27,6 @@ use App\Models\Plan;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class MypageController extends Controller
 {
-
     /**
      * myPage
      * マイページテストget
@@ -45,7 +44,7 @@ class MypageController extends Controller
         // }
 
 
-        $spot_list = [];
+        $spot_list = null;
 
         if ($request->hasCookie('spot_id')) {
             $msg2 = 'cookie:' . $request->cookie('spot_id');
@@ -61,7 +60,7 @@ class MypageController extends Controller
         }
 
 
-        $plan_list = [];
+        $plan_list = null;
 
         if ($request->hasCookie('plan_id')) {
             $msg3 = 'cookie:' . $request->cookie('plan_id');
@@ -108,15 +107,39 @@ class MypageController extends Controller
         $plan_id = "";
 
         if ($request->hasCookie('spot_id')) {
+
+            $input = $request->spot_id;
+
             $spot_id = $request->cookie('spot_id');
-            $spot_id .= ',' . $request->spot_id;
+
+            if (strpos($spot_id, $input) !== false) {
+                $spot_id = str_replace($input, '0', $spot_id);
+            } else {
+                $spot_id .= ',' . $input;
+            }
+
+            if (strpos($spot_id, 0) !== false) {
+                $spot_id = str_replace('0,', '', $spot_id);
+            }
         } else {
             $spot_id .= $request->spot_id;
         }
 
         if ($request->hasCookie('plan_id')) {
+
+            $input = $request->plan_id;
+
             $plan_id = $request->cookie('plan_id');
-            $plan_id .= ',' . $request->plan_id;
+
+            if (strpos($plan_id, $input) !== false) {
+                $plan_id = str_replace($input, '0', $plan_id);
+            } else {
+                $plan_id .= ',' . $input;
+            }
+
+            if (strpos($plan_id, 0) !== false) {
+                $plan_id = str_replace('0,', '', $plan_id);
+            }
         } else {
             $plan_id .= $request->plan_id;
         }
@@ -124,12 +147,11 @@ class MypageController extends Controller
 
         $data = [
             // 'msg1' => 'fish_id:「' . $fish_id . '」をcookieに保存しました。',
-            'msg2' => 'spot_id:「' . $request->spot_id . '」をcookieに保存しました。',
-            'msg3' => 'plan_id:「' . $request->plan_id . '」をcookieに保存しました。',
+            'msg2' => 'spot_id:「' . $request->spot_id . '」をcookieに保存しました。' . $spot_id,
+            'msg3' => 'plan_id:「' . $request->plan_id . '」をcookieに保存しました。' . $plan_id,
 
-            'spots' => "",
-            'plans' => "",
-
+            'spots' => null,
+            'plans' => null,
         ];
 
         $response = response()->view('fronts.mypage', $data);
@@ -147,8 +169,13 @@ class MypageController extends Controller
 
         // $response->withCookie('fishing', $values, 60);
 
-        $response->cookie('spot_id', $spot_id, 100);
-        $response->cookie('plan_id', $plan_id, 100);
+        if ($request->spot_id != "") {
+            $response->cookie('spot_id', $spot_id, 100);
+        }
+
+        if ($request->plan_id != "") {
+            $response->cookie('plan_id', $plan_id, 100);
+        }
 
         return $response;
     }

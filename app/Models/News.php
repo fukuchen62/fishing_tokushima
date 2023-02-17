@@ -43,4 +43,14 @@ class News extends Model
     //         ->where('content', $input);
     //     return $ret;
     // }
+
+    // スコープ
+
+    // カテゴリ
+    public function scopeCategory($query, $name)
+    {
+        return $query->where('name',$name);
+    }
+
+
 }

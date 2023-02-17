@@ -128,10 +128,10 @@
     <div class="shallow">
         <!-- スポット写真 -->
         <div class="p__lr">
-            <img class="spotinfo__img" src="" alt="">
+            <img class="spotinfo__img" src="https://placehold.jp/559x419.png" alt="">
         </div>
         <!-- スポット概要 -->
-        <div class="spotinfo__discription p__lr">
+        <div class="spotinfo__discription p__lr p__b">
             <div class="spotinfo__dis--textbox">
                 <p class="spotinfo__dis--text">紀伊水道と小鳴門海峡の交わる位置で、潮流も激しく、いろいろな魚が年間を通して狙える知る人ぞ知る人気の釣り場です。</p>
                 <!-- 貝殻イラスト -->
@@ -145,43 +145,45 @@
     <div class="sea">
         <!-- 狙える魚 -->
         <section class="p__lr">
-            <h3 class="spotinfo__fish--title">狙える魚</h3>
-            <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
-            <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
-            <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
+            <h3 class="section__box--title spotinfo__sectiontitle">狙える魚</h3>
+            <div class="m__b">
+                <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
+                <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
+                <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
+            </div>
         </section>
         <!-- 詳細情報table -->
         <section class="p__lr">
-            <h3 class="table__title">詳細情報</h3>
-            <table class="table radius-table">
+            <h3 class="table__title spotinfo__table--title">詳細情報</h3>
+            <table class="table radius-table m__b">
                 <tr class="table__tr">
                     <td class="table__subtitle">住所</td>
                     <td>テキストテキストテキストテキストテキストテキスト</td>
                 </tr>
-                <tr>
+                <tr class="table__tr">
                     <td class="table__subtitle">駐車場</td>
                     <td>テキストテキストテキストテキストテキストテキスト</td>
                 </tr>
-                <tr>
+                <tr class="table__tr">
                     <td class="table__subtitle">釣り方</td>
                     <td>テキストテキストテキストテキストテキストテキスト</td>
                 </tr>
-                <tr>
+                <tr class="table__tr">
                     <td class="table__subtitle">周辺施設</td>
                     <td>テキストテキストテキストテキストテキストテキスト</td>
                 </tr>
-                <tr>
+                <tr class="table__tr">
                     <td class="table__subtitle">近くの病院</td>
                     <td>テキストテキストテキストテキストテキストテキスト</td>
                 </tr>
-                <tr>
+                <tr class="table__tr">
                     <td class="table__subtitle">避難場所</td>
                     <td>テキストテキストテキストテキストテキストテキスト</td>
                 </tr>
             </table>
         </section>
         <!-- googleマップ -->
-        <iframe class="spotinfo__iframe p__lr" src="" frameborder="0"></iframe>
+        <iframe class="spotinfo__iframe p__lr" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.6294241434143!2d134.62113751504018!3d34.18139108057099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355365e085d38f55%3A0xebeead4e33f1bb56!2z5bKh5bSO5rW35bK4!5e0!3m2!1sja!2sjp!4v1676509825371!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- 貝殻イラスト -->
     <div class="spotinfo__shell">
@@ -191,32 +193,36 @@
     </div>
     <!-- 近くのスポットcard表示3つ -->
     <section class="p__lr">
-        <h3>近くのスポット</h3>
-        <!-- <div class="spotinfo__card--aria">
-            <div class="card card__skin">
-                <a href="">
+        <h3 class="section__box--title">近くのスポット</h3>
+        <ul class="card__area">
+            <li class="card__p">
+                <a class="card card__skin" href="">
                     <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div>
+                    <div class="card__textbox">
                         <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__discription">texttexttexttexttext</p>
+                        <p class="card__description">説明説明説明説明説明説明</p>
                     </div>
                 </a>
-            </div>
-            <a href="" class="card">
-                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                <div>
-                    <h3 class="card__title">タイトルタイトル</h3>
-                    <p class="card__discription">texttexttexttexttext</p>
-                </div>
-            </a>
-            <a href="" class="card">
-                <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                <div>
-                    <h3 class="card__title">タイトルタイトル</h3>
-                    <p class="card__discription">texttexttexttexttext</p>
-                </div>
-            </a>
-        </div> -->
+            </li>
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
 
         <a class="btn" href="">スポット一覧</a>
     </section>

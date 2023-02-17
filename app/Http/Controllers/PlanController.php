@@ -64,8 +64,10 @@ class PlanController extends Controller
         //     ->get();
         $plans = "";
 
-        $plans = Plan::selectRaw('COUNT(plan_id) as count_plan')
-            ->get();
+        // $plans = Plan::selectRaw('COUNT(plan_id) as count_plan')
+        //     ->get();
+        // {{-- 検索のエラー修正のため一度コメントアウトさせてもらいました --}}
+
 
         $data = [
             // 'area' => $request->area,

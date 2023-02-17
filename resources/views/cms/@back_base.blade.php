@@ -1,36 +1,23 @@
 @extends('layouts.layout_back')
 
-@section('title', 'ページタイトル')
+@section('title', '釣徳コンテンツ管理システム')
+
+@section('subtitle', 'ダッシュボード')
+
+@section('login_name', 'QLIP')
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
 
 @endsection
 
-{{-- メイン --}}
+{{-- ワークスペース: 一覧画面、新規入力・編集画面など --}}
 @section('content')
+    <section>
+        <h2>コンテンツ情報</h2>
 
-    <section class="titlesection">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">ページタイトル</h1>
-        </div>
+        <p>text text text</p>
     </section>
-
-    <section class="section">
-
-        <h2 class="section__box--title ">第一セクション</h2>
-
-        <div>
-            <h3>サブタイトル</h3>
-            <div>
-                <p>テキストテキストテキストテキストテキストテキストテキスト</p>
-            </div>
-        </div>
-    </section>
-
-    <div id="page_top" class="flex">
-        <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-    </div>
 @endsection
 
 {{-- 該当ページ専用JS --}}

@@ -1,5 +1,25 @@
 @charset "utf-8";
 
+.section__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px auto;
+}
+
+/* .section__btn--margin {
+    margin: 0 40px;
+} */
+
+.section__content--photo {
+    max-width: 559px;
+    max-height: 419px;
+}
+
+.section__content--full {
+    margin-top: 60px;
+}
+
 .section__content {
     line-height: 2.5;
 }
@@ -27,8 +47,16 @@
 }
 
 /* @media screen and (min-width: 600px) {
-    .flex {
+    .section__content--displayflex {
         display: flex;
+    }
+
+    .section__content--full {
+        margin-left: 45px;
+    }
+
+    .section__content--displayblock {
+        display: block;
     }
 } */
 
@@ -94,37 +122,91 @@
 }
 
 .section__image--information::before {
-     background-image: url(../images/infomation.png);
+    background-image: url(../images/infomation.png);
 }
 
-.store__description {
-    padding: 0.5em 0;
+.shop__description--service {
+    padding: 0.6em 0;
     margin: 0.5em 0;
+    text-align: left;
     /* font-weight: bold; */
     background: #FFF;
     border: solid 3px #30ADD1;
     border-radius: 10px;
 }
 
-.store__description--margin {
+.shop__description--message {
+    padding: -0.5em 0;
+    margin: 0.5em 0;
+     text-align: left;
+    /* font-weight: bold; */
+    background: #FFF;
+    border: solid 3px #30ADD1;
+    border-radius: 10px;
+}
+
+.shop__description p {
+    margin: 0; 
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.shop__description--marginservice,
+.shop__description--marginmessage {
     margin: 0; 
     padding: 10px;
     
 }
 
-.store__description p {
-    line-height: 1.5;
+@media screen and (min-width: 1080px) {
+
+    .section__content {
+        margin-top: 20px;
+        line-height: 2.5;
+    }
+
+    .section__content--photo {
+        width: 559px;
+        height: 419px;
+    }
+
+    .section__content--displayflex {
+        display: flex;
+    }
+
+    .section__content--top {
+        margin-top: 60px;
+    }
+
+    .section__content--full {
+        margin-top: -15px;
+        margin-left: 200px;
+    }
+
+    .section__content--displayblock {
+        display: block;
+    }
+
+    .shop__description--marginservice,
+    .shop__description--marginmessage {
+        margin: 0; 
+        padding: 15.5px;
+    }
 }
 
-
 @media screen and (min-width: 600px) {
-    .store__description--breakpoint {
+
+    .shop__description br {
+        display: none;
+}
+
+    .shop__description--breakpoint {
         display: none;
     }
 }
 
 .section__wrap--infomation {
-    margin: 15px 0 30px;
+    margin: 10px 0 100px 0 ;
     position: relative;
     padding-top: 25%;
     width: 100%;

@@ -10,19 +10,17 @@ body {
 
 #wrap {
     width: 100%;
-    padding: 2px;
+    padding: 4px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    /* border: 1px gainsboro solid; */
+    width: 100%;
+    min-width: 1200px;
+    margin: 0;
 }
 
 .flex {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .none {
@@ -41,33 +39,41 @@ body {
     width: 100%;
     /* height: 100px; */
     background-color: #30ADD1;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
 }
 
 /* h1 ページタイトル*/
 .page_title {
-    width: 90%;
-    margin: 0 auto;
     text-align: center;
     color: #fff;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .subtitle {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between
-}
-
-.subtitle h2 {
-    font-size: 1.5em;
+    justify-content: space-between;
+    background-color: #30ADD1;
     color: lightcyan;
     font-weight: bold;
     border: 2px lightcyan solid;
-    border-radius: 10px;
-    /* background-color: lightpink; */
-    padding: 10px 40px;
-    box-shadow: 5px 8px 8px -5px rgba(0, 0, 0, 1.5)
+    border-radius: 5px;
+    padding: 20px;
+    /* box-shadow: 5px 8px 8px -5px rgba(0, 0, 0, 1.5) */
+}
+
+.subtitle h2 {
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .login {
@@ -83,77 +89,96 @@ body {
 
 .logout {
     border: 1px lightgray solid;
-    padding: 10px;
-    background-color: beige;
+    padding: 5px 10px;
+    background-color: burlywood;
+    color: #fff;
     text-align: center;
     border-radius: 10px;
+    box-shadow: 5px 8px 8px -5px rgba(0, 0, 0, 1.5)
 }
 
-/* h2 セクションタイトル */
-.h2 {
-    /* background-color: #30ADD1; */
-    border-radius: 30px;
-    color: #fff;
-    padding: 8px;
-    font-size: 24px;
-    margin: 100px 0 50px 0;
+.main {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+.content {
+    width: 100%;
+    /* border: 1px #30ADD1 solid; */
+    padding: 20px 0;
+}
+
+/* h3 セクションタイトル */
+h3 {
+    width: 99%;
+    color: blue;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 1px #30ADD1 solid;
+    border-left: 10px #30ADD1 solid;
+    border-radius: 10px 0 0 10px;
+    padding: 2px 10px;
+    margin-bottom: 20px;
 }
 
 .g-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(100vw);
-    /* transition: all .3s linear; */
-    padding-top: 150px;
-    overflow: scroll;
-}
-
-
-.logo__img,
-.header__logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 5;
     width: 250px;
-    height: 60px;
+    padding: 0 10px 10px 0;
 }
 
-.g-nav__box {
-    background-color: #fff;
-    margin-top: 60px;
+.menu-box li {
+    background-color: #30ADD1;
+    font-size: 1.2em;
+    color: lightcyan;
+    font-weight: bold;
+    border: 2px lightcyan solid;
+    border-radius: 5px;
+    padding: 20px;
 }
 
-.g-nav__box--section {
-    margin: 20px;
+table.info, table.tbl-count {
+    width: 95%;
+    border: 2px darkgrey solid;
 }
 
-.g-nav__box--group {
-    display: inline-block;
-    margin-left: 20px;
+table.tbl-count th {
+    width: 12.5%;
 }
 
-.g-nav__box--discription {
-    display: inline-block;
-    margin-top: 20px;
+table.tbl-count td {
+    width: 12.5%;
+    text-align: center;
 }
 
-.g-nav__box--img {
-    border-radius: 50%;
-    width: 136px;
-    height: 136px;
+table.info th {
+    background-color: lightcyan;
+    text-align: center;
+    height: 50px;
+}
+
+table.info th, table.info td {
+    border: 1px darkgrey solid;
+    padding: 10px 5px;
+    vertical-align: middle;
+}
+
+table.info tr:nth-child(even) {
+    background-color: lightyellow;
+}
+
+td.edit {
+    width: 100px;
+    text-align: center;
+}
+
+td.dt {
+    width: 200px;
+    text-align: center;
 }
 
 
 /* フッター */
-
 #footer {
     width: 100%;
     background-color: #30ADD1;

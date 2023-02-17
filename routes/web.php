@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,8 +45,6 @@ Route::get('/us', [App\Http\Controllers\MainController::class, 'usPage'])->name(
  * 管理画面TOPへのルート情報
  */
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
-
-Auth::routes();
 
 // 入門知識関連
 Route::get('knowledge/list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
@@ -162,6 +162,5 @@ Route::get(
     'test/logout',
     [App\Http\Controllers\TestController::class, 'logout']
 )->name('logout');
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
