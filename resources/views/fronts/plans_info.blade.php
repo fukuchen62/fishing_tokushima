@@ -25,13 +25,13 @@
     {{-- @if (hasCookie('plan_id')) --}}
 
         @if (Cookie::get('plan_id')!=$item->id)
-        <a href="{{ route('planinfo', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
+        <a href="{{ route('plansinfo', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
         @endif
 
         @if (Cookie::get('plan_id')==$item->id)
         <div>
         <p>お気に入り登録済</p>
-        <a href="{{ route('planinfo', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
+        <a href="{{ route('plansinfo', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
         </div>
         @endif
 
@@ -121,7 +121,7 @@
 
     <h2>関連プラン３</h2>
         @if (isset($connection3))
-        <a href="{{ route('planinfo', ['id' =>  $connection3->id ]) }}">リンク</a>
+        <a href="{{ route('plansinfo', ['id' =>  $connection3->id ]) }}">リンク</a>
             <table>
             <tr>
                 <th>eye_catch</th>
