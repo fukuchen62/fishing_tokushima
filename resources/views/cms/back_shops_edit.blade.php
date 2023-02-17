@@ -23,89 +23,88 @@
         </div>
     @endif
 
-    <!-- <form action="admin/newsedit" method="post"> -->
     <form method="post" action="{{ route('shopsedit') }}">
         <table>
             @csrf
-            <input type="hidden" name="id" value="{{ $form->id }}">
+            <input type="hidden" name="id" value="{{ $shop->id }}">
             <tr>
                 <th>店名: </th>
-                <td><input type="text" name="name" value="{{ $form->name }}"></td>
+                <td><input type="text" name="name" value="{{ $shop->name }}"></td>
             </tr>
             <tr>
                 <th>地域ID: </th>
-                <td><input type="text" name="city_id" value="{{ $form->city_id }}"></td>
+                <td><input type="text" name="city_id" value="{{ $shop->city_id }}"></td>
             </tr>
             <tr>
                 <th>郵便番号: </th>
-                <td><input type="text" name="postal_code" value="{{ $form->postal_code }}"></td>
+                <td><input type="text" name="postal_code" value="{{ $shop->postal_code }}"></td>
             </tr>
             <tr>
                 <th>住所:</th>
                 <td>
-                    <input type="text" name="address" value="{{ $form->address }}">
+                    <input type="text" name="address" value="{{ $shop->address }}">
                 </td>
             </tr>
             <tr>
                 <th>iframe:</th>
                 <td>
-                    <input type="text" name="iframe" value="{{ $form->iframe }}">
+                    <input type="text" name="iframe" value="{{ $shop->iframe }}">
                 </td>
             </tr>
             <tr>
                 <th>経度: </th>
-                <td><input type="text" name="longitude" value="{{ $form->longitude }}"></td>
+                <td><input type="text" name="longitude" value="{{ $shop->longitude }}"></td>
             </tr>
             <tr>
                 <th>緯度: </th>
-                <td><input type="text" name="latitude" value="{{ $form->latitude }}"></td>
+                <td><input type="text" name="latitude" value="{{ $shop->latitude }}"></td>
             </tr>
             <tr>
                 <th>電話番号: </th>
-                <td><input type="text" name="tel" value="{{ $form->tel }}"></td>
+                <td><input type="text" name="tel" value="{{ $shop->tel }}"></td>
             </tr>
             <tr>
                 <th>fax:</th>
                 <td>
-                    <input type="text" name="fax" value="{{ $form->fax }}">
+                    <input type="text" name="fax" value="{{ $shop->fax }}">
                 </td>
             </tr>
             <tr>
                 <th>email: </th>
-                <td><input type="text" name="email" value="{{ $form->email }}"></td>
+                <td><input type="text" name="email" value="{{ $shop->email }}"></td>
             </tr>
             <tr>
                 <th>url: </th>
-                <td><input type="text" name="url" value="{{ $form->url }}"></td>
+                <td><input type="text" name="url" value="{{ $shop->url }}"></td>
             </tr>
             <tr>
                 <th>営業日: </th>
-                <td><input type="text" name="service_day" value="{{ $form->service_day }}"></td>
+                <td><input type="text" name="service_day" value="{{ $shop->service_day }}"></td>
             </tr>
             <tr>
                 <th>営業内容:</th>
                 <td>
-                    <input type="text" name="service" value="{{ $form->service }}">
+                    <input type="text" name="service" value="{{ $shop->service }}">
                 </td>
             </tr>
             <tr>
                 <th>PR:</th>
                 <td>
-                    <input type="text" name="pr" value="{{ $form->pr }}">
+                    <input type="text" name="pr" value="{{ $shop->pr }}">
                 </td>
             </tr>
             <tr>
                 <th>画像: </th>
-                <td><input type="text" name="img" value="{{ $form->img }}"></td>
+                <td><input type="text" name="img" value="{{ $shop->img }}"></td>
             </tr>
             <tr>
                 <th>備考: </th>
-                <td><input type="text" name="memo" value="{{ $form->memo }}"></td>
+                <td><input type="text" name="memo" value="{{ $shop->memo }}"></td>
             </tr>
             <tr>
                 <th>表示フラグ:</th>
                 <td>
-                    <input type="boolean" name="is_show" value="{{ $form->is_show }}">
+                    <input type="boolean" name="is_show" value="{{ $shop->is_show }}">
                 </td>
             </tr>
             <tr>

@@ -55,7 +55,7 @@
             <th>表示フラグ&nbsp;</th>
             <th>修正&nbsp;</th>
         </tr>
-        @foreach ($items as $item)
+        @foreach ($spotslist as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>

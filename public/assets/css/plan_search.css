@@ -11,17 +11,6 @@
 
 /* モジュールパーツルール */
 
-/* 画像 */
-
-/* 貝（装飾） */
-
-.fishesinfo__img--shell {
-    display: flex;
-    justify-content: center;
-    padding: 70px;
-    background-color: #EAF2FA;
-}
-
 /* 検索画面 */
 
 /* 検索画面タイトル */
@@ -38,7 +27,6 @@
 /* 検索画面全体 */
 .form__box {
     background-color: #fff;
-    max-width: 1200px;
     margin: 0 auto;
     border-radius: 20px;
 }

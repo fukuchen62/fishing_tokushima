@@ -42,16 +42,28 @@
 /* 体験プランは、他ページと違い3枚より多いカードが表示されるためグリッドレイアウト */
 @media screen and (min-width:770px) {
     /* カードグリッドレイアウト */
-    .card__area {
+    /* .card__area {
         display: grid;
         gap: 40px;
         grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
-        max-width: 1200px;
         margin: 0 auto;
+    } */
+
+    .card__area {
+        display: flex;
+        justify-content: center;
     }
 
-    /* commonで指定されているpadding:50pxだとリサイズ時レイアウトが崩れる */
-    .card__p {
-    padding: 0px;
+    .card {
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: block;
+    margin: 0 auto 50px;
 }
+
+
+    /* commonで指定されているpadding:50pxだとリサイズ時レイアウトが崩れる */
+    /* .card__p {
+    padding: 0px;
+} */
 }
