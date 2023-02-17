@@ -100,6 +100,7 @@ tr {
 /* 月ボタンホバー */
 .secList:hover {
     background-color: #247F99;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #fff;
 }
 
@@ -181,6 +182,10 @@ h3 {
 }
 
 /*その他海産物 */
+
+.others__section {
+    padding: 100px;
+}
 
 .others__box--info li {
     margin: 25px;
