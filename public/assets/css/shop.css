@@ -7,12 +7,17 @@
     margin: 20px auto;
 }
 
-.section__btn--margin {
+/* .section__btn--margin {
     margin: 0 40px;
-}
+} */
 
 .section__content--photo {
-    aspect-ratio: 4 / 3;
+    max-width: 559px;
+    max-height: 419px;
+}
+
+.section__content--full {
+    margin-top: 60px;
 }
 
 .section__content {
@@ -121,7 +126,7 @@
 }
 
 .shop__description--service {
-    padding: 0.5em 0;
+    padding: 0.6em 0;
     margin: 0.5em 0;
     text-align: left;
     /* font-weight: bold; */
@@ -155,17 +160,26 @@
 
 @media screen and (min-width: 1080px) {
 
+    .section__content {
+        margin-top: 20px;
+        line-height: 2.5;
+    }
+
     .section__content--photo {
-        aspect-ratio: 4 / 3;
-        width: 50%;
-        height: 50%;
+        width: 559px;
+        height: 419px;
     }
 
     .section__content--displayflex {
         display: flex;
     }
 
+    .section__content--top {
+        margin-top: 60px;
+    }
+
     .section__content--full {
+        margin-top: -15px;
         margin-left: 200px;
     }
 
