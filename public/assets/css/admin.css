@@ -174,13 +174,10 @@ h3 {
     padding: 20px;
 }
 
-/* HOME,新規登録ボタン,検索ボタン */
-.menubar {
-    display: flex;
-    margin-bottom: 30px;
-}
+/* ボタン共通 */
 .menubar > li,
-.search input:last-child {
+.search_btn,
+.submit_btn {
     border: 1px lightgray solid;
     padding: 5px 10px;
     background-color: rgb(227, 157, 66);
@@ -189,11 +186,18 @@ h3 {
     border-radius: 10px;
     /* box-shadow: 5px 8px 8px -5px rgba(0, 0, 0, 1.5); */
 }
+
+/* HOME・新規登録ボタン */
+.menubar {
+    display: flex;
+    margin-bottom: 30px;
+}
+
 .menubar li:first-child {
     margin-right: 20px;
 }
 
-/* 検索条件 */
+/* 検索条件,検索ボタン */
 .search {
     display: flex;
     margin-bottom: 30px;
@@ -204,8 +208,18 @@ h3 {
     margin-right: 20px;
 }
 
-.search input:last-child {
+.search_btn {
     padding: 3px 10px;
+    transition: 0.1s;
+}
+
+.search_btn:hover {
+    color: blueviolet;
+}
+
+/* 送信ボタン */
+.submit_btn {
+    margin-top: 30px;
 }
 
 table.info,

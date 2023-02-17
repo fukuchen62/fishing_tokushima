@@ -1,19 +1,25 @@
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', '基本知識の編集画面')
+@section('title', '釣徳コンテンツ管理システム')
 
-@section('menubar')
+@section('subtitle', '')
 
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./knowledgeshow">HOME</a></li>
-        <li><a href="./knowledgeentry">新規登録</a></li>
+@section('login_name', 'QLIP')
 
-    </ul>
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
+
 @section('content')
+    <h3>基本知識の編集画面</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./knowledgeshow">HOME</a></li>
+        <li><a href="./knowledgeentry">新規登録</a></li>
+    </ul>
     @if (count($errors) > 0)
         <div>
             <ul>
@@ -25,11 +31,11 @@
     @endif
 
     <form method="post" action="{{ route('knowledgeedit') }}">
-        <table>
+        <table class="info">
             @csrf
             <input type="hidden" name="id" value="{{ $knowledge->id }}">
             <tr>
-                <th>カテゴリーID: </th>
+                <th width="15%">カテゴリーID: </th>
                 <td><input type="text" name="category_id" value="{{ $knowledge->category_id }}"required></td>
             </tr>
             <tr>
@@ -58,14 +64,9 @@
                     <input type="text" name="is_show" value="{{ $knowledge->is_show }}"required>
                 </td>
             </tr>
-
-            <tr>
-                <th></th>
-                <td><input type="submit"value="修正">
-                    <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}">削除</a>
-                </td>
-            </tr>
         </table>
+        <input type="submit"value="修正">
+        <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}">削除</a>
     </form>
 @endsection
 
