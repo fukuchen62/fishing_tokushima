@@ -2,7 +2,7 @@
 
 @section('title', '釣徳コンテンツ管理システム')
 
-@section('subtitle', '')
+@section('subtitle', '入門知識')
 
 @section('login_name', 'QLIP')
 
@@ -31,7 +31,7 @@
         <tr>
             <th width="5%">ID</th>
             <th width="8%">カテゴリーID</th>
-            <th width="8%">タイトル</th>
+            <th width="15%">タイトル</th>
             <th>概要</th>
             <th width="100px">修正</th>
         </tr>

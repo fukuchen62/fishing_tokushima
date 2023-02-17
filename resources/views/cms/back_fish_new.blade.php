@@ -2,7 +2,7 @@
 
 @section('title', '釣徳コンテンツ管理システム')
 
-@section('subtitle', '')
+@section('subtitle', '魚')
 
 @section('login_name', 'QLIP')
 

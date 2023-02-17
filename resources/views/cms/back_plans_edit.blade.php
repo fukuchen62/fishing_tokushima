@@ -1,19 +1,26 @@
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', 'プランの編集画面')
+@section('title', '釣徳コンテンツ管理システム')
 
-@section('menubar')
+@section('subtitle', '体験プラン')
 
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./plansshow">HOME</a></li>
-        <li><a href="./plansentry">新規登録</a></li>
-        <li>その他</li>
-    </ul>
+@section('login_name', 'QLIP')
+
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
+
 @section('content')
+    <h3>体験プランの編集画面</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./plansshow">HOME</a></li>
+        <li><a href="./plansentry">新規登録</a></li>
+    </ul>
+
     @if (count($errors) > 0)
         <div>
             <ul>
@@ -25,11 +32,11 @@
     @endif
 
     <form method="post" action="{{ route('plansedit') }}">
-        <table>
+        <table class="info">
             @csrf
             <input type="hidden" name="id" value="{{ $plan->id }}">
             <tr>
-                <th>タイトル: </th>
+                <th width="15%">タイトル: </th>
                 <td><input type="text" name="title" value="{{ $plan->title }}" required></td>
             </tr>
             <tr>
@@ -86,13 +93,11 @@
                     <input type="boolean" name="is_show" value="{{ $plan->is_show }}" required>
                 </td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit"value="修正">
-                    <a href="{{ route('plansremove', ['id' => $plan->id]) }}">削除</a>
-                </td>
-            </tr>
         </table>
+        <div class="change_btn">
+            <input type="submit"value="修正" class="submit_btn">
+            <a href="{{ route('plansremove', ['id' => $plan->id]) }}" class="delete_btn">削除</a>
+        </div>
     </form>
 @endsection
 

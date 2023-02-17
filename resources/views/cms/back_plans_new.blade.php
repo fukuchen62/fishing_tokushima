@@ -1,25 +1,31 @@
-{{-- レイアウトテンプレートクラスを継承する --}}
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', 'プラン新規登録')
+@section('title', '釣徳コンテンツ管理システム')
 
-@section('menubar')
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./plansshow">HOME</a></li>
-        <li><a href="./plansentry">新規登録</a></li>
-        <li>その他</li>
-    </ul>
+@section('subtitle', '体験プラン')
+
+@section('login_name', 'QLIP')
+
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
+
 @section('content')
+    <h3>体験プランの新規登録画面</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./plansshow">HOME</a></li>
+        <li><a href="./plansentry">新規登録</a></li>
+    </ul>
 
     <form method="post" action="{{ route('plansentry') }}">
-        <table>
+        <table class="info">
             @csrf
             <tr>
-                <th>タイトル: </th>
+                <th width="15%">タイトル: </th>
                 <td><input type="text" name="title" required></td>
             </tr>
             <tr>
@@ -62,11 +68,8 @@
                 <th>表示フラグ: </th>
                 <td><input type="boolean" name="is_show"></td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit" value="送信"></td>
-            </tr>
         </table>
+        <input type="submit" value="送信" class="submit_btn">
     </form>
 @endsection
 
