@@ -12,6 +12,7 @@
 
     <h1>ニュース詳細</h1>
 
+    <a href="{{ route('news') }}">すべて</a>
     <a href="{{ route('news', ['name' => '更新']) }}">更新</a>
     <a href="{{ route('news', ['name' => '体験']) }}">体験</a>
     <a href="{{ route('news', ['name' => 'イベント']) }}">イベント</a>

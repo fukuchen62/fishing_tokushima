@@ -51,6 +51,4 @@ class News extends Model
     {
         return $query->where('name',$name);
     }
-
-
 }
