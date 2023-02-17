@@ -23,25 +23,25 @@
                 <td><input type="text" name="title" required></td>
             </tr>
             <tr>
-                <th>難易度: </th>
-                <td><input type="number" name="level" required></td>
-            </tr>
-            <tr>
                 <th>概要：</th>
                 <td>
                     <textarea name="overview" id="overview" cols="50" rows="5" required></textarea>
                 </td>
             </tr>
             <tr>
-                <th>地域・市町村: </th>
+                <th>難易度: </th>
+                <td><input type="number" name="level" required></td>
+            </tr>
+            <tr>
+                <th>地域ID: </th>
                 <td><input type="number" name="city_id" required></td>
             </tr>
             <tr>
-                <th>釣りスポット: </th>
+                <th>釣りスポットID: </th>
                 <td><input type="number" name="spot_id" required></td>
             </tr>
             <tr>
-                <th>魚: </th>
+                <th>魚ID: </th>
                 <td><input type="number" name="fish_id" required></td>
             </tr>
             <tr>

@@ -26,7 +26,7 @@
                 <div class="form__box--title">
                     <h2>チェックしてみよう</h2>
                 </div>
-                <form action="{{ route('planlist') }}" method="post">
+                <form action="{{ route('planslist') }}" method="post">
                     @csrf
                     <div class="search__box">
                         <div class="choice__box">
@@ -130,7 +130,7 @@
                 @foreach ($plans as $item)
                     @component('components.front_plans_card')
                         @slot('plan_link')
-                            {{ route('planinfo', ['id' => $item->id]) }}
+                            {{ route('plansinfo', ['id' => $item->id]) }}
                         @endslot
 
                         @slot('plan_thumbnail')

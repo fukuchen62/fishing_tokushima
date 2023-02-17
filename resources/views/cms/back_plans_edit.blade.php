@@ -45,7 +45,7 @@
                 </td>
             </tr>
             <tr>
-                <th>地域・市町村:</th>
+                <th>地域ID:</th>
                 <td>
                     <input type="number" name="city_id" value="{{ $plan->city_id }}" required>
                 </td>
@@ -89,7 +89,9 @@
             <tr>
                 <th></th>
                 <td><input type="submit"value="修正">
-
+                    <a href="{{ route('plansremove', ['id' => $plan->id]) }}">削除</a>
+                </td>
+            </tr>
         </table>
     </form>
 @endsection

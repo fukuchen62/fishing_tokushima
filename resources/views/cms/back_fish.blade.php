@@ -1,4 +1,4 @@
-@extends('layouts.layout_back')
+@extends('layouts.news_ly')
 
 @section('title', '釣徳コンテンツ管理システム')
 
