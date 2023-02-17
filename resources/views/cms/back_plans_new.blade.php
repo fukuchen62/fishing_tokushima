@@ -14,12 +14,10 @@
 @endsection
 
 @section('content')
-    <!-- <form action="admin/newsentry" method="post"> -->
+
     <form method="post" action="{{ route('planentry') }}">
         <table>
             @csrf
-            <!-- <tr><th>プラン名: </th><td><input type="text"
-                                    name="name" required></td></tr> -->
             <tr>
                 <th>タイトル: </th>
                 <td><input type="text" name="title" required></td>
@@ -64,8 +62,6 @@
                 <th>表示フラグ: </th>
                 <td><input type="boolean" name="is_show"></td>
             </tr>
-
-
             <tr>
                 <th></th>
                 <td><input type="submit" value="送信"></td>

@@ -496,87 +496,96 @@ class AdminController extends Controller
 
     //plan分
 
-    public function planSearch(Request $request)
+    public function plansSearch(Request $request)
     {
-        // クライアントから検索条件(s)を取得する
+    }
+
+
+    public function plansShow(Request $request)
+    {
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
         }
 
-        if ($s !== '') {
+        if ($s != '') {
             // あいまい検索
-            $items = DB::table('people')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
+            $items = DB::table('plans')
+                ->where('title', 'like', '%' . $s . "%")
+                ->orWhere('overview', 'like', '%' . $s . "%")
+                ->orWhere('level', 'like', '%' . $s . "%")
+                ->orWhere('city_id', 'like', '%' . $s . "%")
+                ->orWhere('spot_id', 'like', '%' . $s . "%")
+                ->orWhere('fish_id', 'like', '%' . $s . "%")
+                ->orWhere('flow', 'like', '%' . $s . "%")
+                ->orWhere('eye_catch', 'like', '%' . $s . "%")
+                ->orWhere('thumbnail', 'like', '%' . $s . "%")
+                ->orWhere('is_show', 'like', '%' . $s . "%")
                 ->get();
         } else {
             // 無条件
-            $items = DB::table('people')->get();
+            $items = DB::table('plans')->get();
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+            'planslist' => $items,
         ];
-        // return view('hello.index', $data);
+        return view('cms.back_plans', $data);
 
-        // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_plan');
-    }
-
-
-    public function planShow(Request $request)
-    {
         $items = Plan::all();
-        return view('cms.back_plan', ['items' => $items]);
+        $data = [
+            'planslist' => $items,
+        ];
+        return view('cms.back_plans', $data);
     }
 
-    public function planEntry(Request $request)
+    public function plansEntry(Request $request)
     {
-        return view('cms.back_plan_new');
+        return view('cms.back_plans_new');
     }
 
-    public function planCreate(Request $request)
-    {
-        $this->validate($request, plan::$rules);
-        $plan = new plan();
-        $form = $request->all();
-        unset($form['_token']);
-        $plan->fill($form)->save();
-        return redirect()->route('planshow');
-    }
-
-    public function planEdit(Request $request)
-    {
-        $plan = Plan::find($request->id);
-        return view('cms.back_plan_edit', ['form' => $plan]);
-    }
-
-    public function planUpdate(Request $request)
+    public function plansCreate(Request $request)
     {
         $this->validate($request, Plan::$rules);
-        $plan = Plan::find($request->id);
+        $plans = new Plan();
         $form = $request->all();
         unset($form['_token']);
-        $plan->fill($form)->save();
-        return redirect()->route('planshow');
+        $plans->fill($form)->save();
+        return redirect()->route('plansshow');
     }
 
-    public function planDelete(Request $request)
+    public function plansEdit(Request $request)
     {
-        $plan = Plan::find($request->id);
-        return view('cms.back_plan_edit', ['form' => $plan]);
+        $item = Plan::find($request->id);
+        $data = [
+            'plan' => $item,
+        ];
+        return view('cms.back_plans_edit', $data);
     }
 
-    public function planRemove(Request $request)
+    public function plansUpdate(Request $request)
+    {
+        $this->validate($request, Plan::$rules);
+        $plans = Plan::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $plans->fill($form)->save();
+        return redirect()->route('plansshow');
+    }
+
+    public function plansDelete(Request $request)
+    {
+        $item = Plan::find($request->id);
+        $data = [
+            'plan' => $item,
+        ];
+        return view('cms.back_plans_edit', $data);
+    }
+
+    public function plansRemove(Request $request)
     {
         Plan::find($request->id)->delete();
-        // return redirect('plan_show');
-        return redirect()->route('planshow');
+        return redirect()->route('plansshow');
     }
 }
