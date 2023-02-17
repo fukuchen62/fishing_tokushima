@@ -20,6 +20,7 @@
         <li><a href="./knowledgeshow">HOME</a></li>
         <li><a href="./knowledgeentry">新規登録</a></li>
     </ul>
+
     @if (count($errors) > 0)
         <div>
             <ul>

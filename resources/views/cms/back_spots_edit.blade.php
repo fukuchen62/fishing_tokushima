@@ -1,18 +1,25 @@
-@extends('layouts.news_ly')
+@extends('layouts.layout_back')
 
-@section('title', 'スポットの編集画面')
+@section('title', '釣徳コンテンツ管理システム')
 
-@section('menubar')
+@section('subtitle', 'スポット')
 
-    @parent
-    {{-- 以下はshowのところにはめ込む --}}
-    <ul>
-        <li><a href="./spotsshow">HOME</a></li>
-        <li>その他</li>
-    </ul>
+@section('login_name', 'QLIP')
+
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+
 @endsection
 
+
 @section('content')
+    <h3>スポットの編集画面</h3>
+
+    {{-- 以下はshowのところにはめ込む --}}
+    <ul class="menubar">
+        <li><a href="./spotsshow">HOME</a></li>
+    </ul>
+
     @if (count($errors) > 0)
         <div>
             <ul>
@@ -24,11 +31,11 @@
     @endif
 
     <form method="post" action="{{ route('spotsedit') }}">
-        <table>
+        <table class="info">
             @csrf
             <input type="hidden" name="id" value="{{ $spot->id }}">
             <tr>
-                <th>概要: </th>
+                <th width="15%">概要: </th>
                 <td><input type="text" name="overview" value="{{ $spot->overview }}"></td>
             </tr>
             <tr>
@@ -107,12 +114,8 @@
                     <input type="boolean" name="is_show" value="{{ $spot->is_show }}">
                 </td>
             </tr>
-            <tr>
-                <th></th>
-                <td><input type="submit"value="修正">
-                </td>
-            </tr>
         </table>
+        <input type="submit" value="修正" class="submit_btn">
     </form>
 @endsection
 
