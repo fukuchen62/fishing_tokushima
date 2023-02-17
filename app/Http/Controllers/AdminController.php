@@ -103,14 +103,12 @@ class AdminController extends Controller
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
-        $data = [
 
+        $data = [
             'newslist' => $items,
         ];
         return view('cms.back_news', $data);
 
-        // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_news');
         $items = News::all();
         $data = [
             'newslist' => $items,
@@ -125,8 +123,8 @@ class AdminController extends Controller
 
     public function newsCreate(Request $request)
     {
-        $this->validate($request, news::$rules);
-        $news = new news();
+        $this->validate($request, News::$rules);
+        $news = new News();
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
@@ -165,7 +163,6 @@ class AdminController extends Controller
     public function newsRemove(Request $request)
     {
         News::find($request->id)->delete();
-        // return redirect('news_show');
         return redirect()->route('newsshow');
     }
 
@@ -199,18 +196,17 @@ class AdminController extends Controller
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
+
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'knowledgelist' => $items,
         ];
         return view('cms.back_knowledge', $data);
 
-        // リダイレクトでルート名を呼び出し
-        // return redirect()->route('knowledgeshow', $data);
-
-        // $items = knowledge::all();
-        // return view('cms.back_knowledge', ['items' => $items]);
+        $items = Knowledge::all();
+        $data = [
+            'knowledgelist' => $items,
+        ];
+        return view('cms.back_knowledge', $data);
     }
 
     public function knowledgeEntry(Request $request)
@@ -220,43 +216,45 @@ class AdminController extends Controller
 
     public function knowledgeCreate(Request $request)
     {
-        $this->validate($request, knowledge::$rules);
-        $knowledge = new knowledge();
+        $this->validate($request, Knowledge::$rules);
+        $knowledge = new Knowledge();
         $form = $request->all();
         unset($form['_token']);
-
         $knowledge->fill($form)->save();
-        // return redirect('knowledge_show');
         return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeEdit(Request $request)
     {
-        $knowledge = knowledge::find($request->id);
-        return view('cms.back_knowledge_edit', ['form' => $knowledge]);
+        $item = Knowledge::find($request->id);
+        $data = [
+            'knowledge' => $item,
+        ];
+        return view('cms.back_knowledge_edit', $data);
     }
 
     public function knowledgeUpdate(Request $request)
     {
-        $this->validate($request, knowledge::$rules);
-        $knowledge = knowledge::find($request->id);
+        $this->validate($request, Knowledge::$rules);
+        $knowledge = Knowledge::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
-        // return redirect('knowledge_show');
         return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeDelete(Request $request)
     {
-        $knowledge = knowledge::find($request->id);
-        return view('cms.back_knowledge_edit', ['form' => $knowledge]);
+        $item = Knowledge::find($request->id);
+        $data = [
+            'knowledge' => $item,
+        ];
+        return view('cms.back_knowledge_edit', $data);
     }
 
     public function knowledgeremove(Request $request)
     {
-        knowledge::find($request->id)->delete();
-        // return redirect('knowledge_show');
+        Knowledge::find($request->id)->delete();
         return redirect()->route('knowledgeshow');
     }
 
@@ -264,34 +262,6 @@ class AdminController extends Controller
 
     public function spotsSearch(Request $request)
     {
-        // // クライアントから検索条件(s)を取得する
-        // $s = "";
-        // if (isset($request->s)) {
-        //     $s = $request->s;
-        // }
-
-        // if ($s !== '') {
-        //     // あいまい検索
-        //     $items = DB::table('spots')
-        //         ->where('id', 'like', '%' . $s . "%")
-        //         ->orwhere('name', 'like', '%' . $s . "%")
-        //         ->orWhere('sex', 'like', '%' . $s . "%")
-        //         ->orWhere('mail', 'like', '%' . $s . "%")
-        //         ->get();
-        // } else {
-        //     // 無条件
-        //     $items = DB::table('spots')->get();
-        // }
-
-        // // テンプレートファイルに渡すデータ（連想配列）
-        // $data = [
-        //     'msg' => '登録されているショップ一覧です。',
-        //     // spotsから読み込んだレコードをmembersの連想配列の中身とする
-        //     'members' => $items,
-        // ];
-
-        // // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_spots');
     }
 
     public function spotsShow(Request $request)
@@ -320,19 +290,24 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'spotslist' => $items,
         ];
+        return view('cms.back_spots', $data);
 
         $items = Spot::all();
+        $data = [
+            'spotslist' => $items,
+        ];
         return view('cms.back_spots', $data);
     }
 
     public function spotsEdit(Request $request)
     {
-        $spots = Spot::find($request->id);
-        return view('cms.back_spots_edit', ['form' => $spots]);
+        $item = Spot::find($request->id);
+        $data = [
+            'spot' => $item,
+        ];
+        return view('cms.back_spots_edit', $data);
     }
 
     public function spotsUpdate(Request $request)
@@ -349,34 +324,6 @@ class AdminController extends Controller
 
     public function shopsSearch(Request $request)
     {
-        // // クライアントから検索条件(s)を取得する
-        // $s = "";
-        // if (isset($request->s)) {
-        //     $s = $request->s;
-        // }
-
-        // if ($s !== '') {
-        //     // あいまい検索
-        //     $items = DB::table('shops')
-        //         ->where('id', 'like', '%' . $s . "%")
-        //         ->orwhere('name', 'like', '%' . $s . "%")
-        //         ->orWhere('sex', 'like', '%' . $s . "%")
-        //         ->orWhere('mail', 'like', '%' . $s . "%")
-        //         ->get();
-        // } else {
-        //     // 無条件
-        //     $items = DB::table('shops')->get();
-        // }
-
-        // // テンプレートファイルに渡すデータ（連想配列）
-        // $data = [
-        //     'msg' => '登録されているショップ一覧です。',
-        //     // shopsから読み込んだレコードをmembersの連想配列の中身とする
-        //     'members' => $items,
-        // ];
-
-        // // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_shops');
     }
 
     public function shopsShow(Request $request)
@@ -404,19 +351,24 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'shopslist' => $items,
         ];
+        return view('cms.back_shops', $data);
 
         $items = Shop::all();
+        $data = [
+            'shopslist' => $items,
+        ];
         return view('cms.back_shops', $data);
     }
 
     public function shopsEdit(Request $request)
     {
-        $shops = Shop::find($request->id);
-        return view('cms.back_shops_edit', ['form' => $shops]);
+        $item = Shop::find($request->id);
+        $data = [
+            'shop' => $item,
+        ];
+        return view('cms.back_shops_edit', $data);
     }
 
     public function shopsUpdate(Request $request)
@@ -432,34 +384,6 @@ class AdminController extends Controller
     // fishテーブル関連
     public function fishSearch(Request $request)
     {
-        // // クライアントから検索条件(s)を取得する
-        // $s = "";
-        // if (isset($request->s)) {
-        //     $s = $request->s;
-        // }
-
-        // if ($s !== '') {
-        //     // あいまい検索
-        //     $items = DB::table('fish')
-        //         ->where('id', 'like', '%' . $s . "%")
-        //         ->orwhere('name', 'like', '%' . $s . "%")
-        //         ->orWhere('sex', 'like', '%' . $s . "%")
-        //         ->orWhere('mail', 'like', '%' . $s . "%")
-        //         ->get();
-        // } else {
-        //     // 無条件
-        //     $items = DB::table('fish')->get();
-        // }
-
-        // // テンプレートファイルに渡すデータ（連想配列）
-        // $data = [
-        //     'msg' => '登録されているショップ一覧です。',
-        //     // fishから読み込んだレコードをmembersの連想配列の中身とする
-        //     'members' => $items,
-        // ];
-
-        // // リダイレクトでルート名を呼び出し
-        // return redirect()->route('back_fish');
     }
 
     public function fishShow(Request $request)
@@ -487,25 +411,26 @@ class AdminController extends Controller
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'items' => $items,
+            'fishlist' => $items,
         ];
+        return view('cms.back_fish', $data);
 
         $items = Fish::all();
+        $data = [
+            'fishlist' => $items,
+        ];
         return view('cms.back_fish', $data);
     }
 
     public function fishEntry(Request $request)
     {
-
         return view('cms.back_fish_new');
     }
 
     public function fishcreate(Request $request)
     {
         $this->validate($request, Fish::$rules);
-        $fish = new fish;
+        $fish = new Fish;
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
@@ -515,8 +440,11 @@ class AdminController extends Controller
 
     public function fishEdit(Request $request)
     {
-        $fish = Fish::find($request->id);
-        return view('cms.back_fish_edit', ['form' => $fish]);
+        $item = Fish::find($request->id);
+        $data = [
+            'fish' => $item,
+        ];
+        return view('cms.back_fish_edit', $data);
     }
 
     public function fishUpdate(Request $request)
@@ -526,14 +454,16 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
-        // return redirect('fish_Show');
         return redirect()->route('fishshow');
     }
 
     public function fishDelete(Request $request)
     {
-        $fish = Fish::find($request->id);
-        return view('cms.back_fish_edit', ['form' => $fish]);
+        $item = Fish::find($request->id);
+        $data = [
+            'fish' => $item,
+        ];
+        return view('cms.back_fish_edit', $data);
     }
 
     public function fishRemove(Request $request)
@@ -544,87 +474,96 @@ class AdminController extends Controller
 
     //plan分
 
-    public function planSearch(Request $request)
+    public function plansSearch(Request $request)
     {
-        // クライアントから検索条件(s)を取得する
+    }
+
+
+    public function plansShow(Request $request)
+    {
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
         }
 
-        if ($s !== '') {
+        if ($s != '') {
             // あいまい検索
-            $items = DB::table('people')
-                ->where('id', 'like', '%' . $s . "%")
-                ->orwhere('name', 'like', '%' . $s . "%")
-                ->orWhere('sex', 'like', '%' . $s . "%")
-                ->orWhere('mail', 'like', '%' . $s . "%")
+            $items = DB::table('plans')
+                ->where('title', 'like', '%' . $s . "%")
+                ->orWhere('overview', 'like', '%' . $s . "%")
+                ->orWhere('level', 'like', '%' . $s . "%")
+                ->orWhere('city_id', 'like', '%' . $s . "%")
+                ->orWhere('spot_id', 'like', '%' . $s . "%")
+                ->orWhere('fish_id', 'like', '%' . $s . "%")
+                ->orWhere('flow', 'like', '%' . $s . "%")
+                ->orWhere('eye_catch', 'like', '%' . $s . "%")
+                ->orWhere('thumbnail', 'like', '%' . $s . "%")
+                ->orWhere('is_show', 'like', '%' . $s . "%")
                 ->get();
         } else {
             // 無条件
-            $items = DB::table('people')->get();
+            $items = DB::table('plans')->get();
         }
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
-            'msg' => '登録されている会員一覧です。',
-            // peopleから読み込んだレコードをmembersの連想配列の中身とする
-            'members' => $items,
+            'planslist' => $items,
         ];
-        // return view('hello.index', $data);
+        return view('cms.back_plans', $data);
 
-        // リダイレクトでルート名を呼び出し
-        return redirect()->route('back_plan');
-    }
-
-
-    public function planShow(Request $request)
-    {
         $items = Plan::all();
-        return view('cms.back_plan', ['items' => $items]);
+        $data = [
+            'planslist' => $items,
+        ];
+        return view('cms.back_plans', $data);
     }
 
-    public function planEntry(Request $request)
+    public function plansEntry(Request $request)
     {
-        return view('cms.back_plan_new');
+        return view('cms.back_plans_new');
     }
 
-    public function planCreate(Request $request)
-    {
-        $this->validate($request, plan::$rules);
-        $plan = new plan();
-        $form = $request->all();
-        unset($form['_token']);
-        $plan->fill($form)->save();
-        return redirect()->route('planshow');
-    }
-
-    public function planEdit(Request $request)
-    {
-        $plan = Plan::find($request->id);
-        return view('cms.back_plan_edit', ['form' => $plan]);
-    }
-
-    public function planUpdate(Request $request)
+    public function plansCreate(Request $request)
     {
         $this->validate($request, Plan::$rules);
-        $plan = Plan::find($request->id);
+        $plans = new Plan();
         $form = $request->all();
         unset($form['_token']);
-        $plan->fill($form)->save();
-        return redirect()->route('planshow');
+        $plans->fill($form)->save();
+        return redirect()->route('plansshow');
     }
 
-    public function planDelete(Request $request)
+    public function plansEdit(Request $request)
     {
-        $plan = Plan::find($request->id);
-        return view('cms.back_plan_edit', ['form' => $plan]);
+        $item = Plan::find($request->id);
+        $data = [
+            'plan' => $item,
+        ];
+        return view('cms.back_plans_edit', $data);
     }
 
-    public function planRemove(Request $request)
+    public function plansUpdate(Request $request)
+    {
+        $this->validate($request, Plan::$rules);
+        $plans = Plan::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $plans->fill($form)->save();
+        return redirect()->route('plansshow');
+    }
+
+    public function plansDelete(Request $request)
+    {
+        $item = Plan::find($request->id);
+        $data = [
+            'plan' => $item,
+        ];
+        return view('cms.back_plans_edit', $data);
+    }
+
+    public function plansRemove(Request $request)
     {
         Plan::find($request->id)->delete();
-        // return redirect('plan_show');
-        return redirect()->route('planshow');
+        return redirect()->route('plansshow');
     }
 }

@@ -57,24 +57,9 @@ class PlanController extends Controller
         }
 
         $items = DB::table('plans')->whereRaw($where)->get();
-        // if ($city_id != null) {
-        //     # code...
-        // }
-        // $items = Plan::scopeSearch($city_id, $level_id, $fish_id)
-        //     ->get();
-        $plans = "";
-
-        // $plans = Plan::selectRaw('COUNT(plan_id) as count_plan')
-        //     ->get();
-        // {{-- 検索のエラー修正のため一度コメントアウトさせてもらいました --}}
-
 
         $data = [
-            // 'area' => $request->area,
-            // 'level' => $request->level,
-            // 'fish' => $request->fish,
             'plans' => $items,
-            'count_plan' => $plans,
         ];
 
         return view('fronts.plans_list', $data);
@@ -89,9 +74,11 @@ class PlanController extends Controller
     {
         $id = '';
 
-        // inputが入力されていたら、、、
         if (isset($request->id)) {
             $id = $request->id;
+        }
+        if (isset($request->plan_id)) {
+            $id = $request->plan_id;
         }
 
         $item = Plan::find($id);
@@ -100,13 +87,58 @@ class PlanController extends Controller
         $connection2 = Plan::find(2);
         $connection3 = Plan::find(3);
 
+
+
+        // cookieお気に入り保存
+        if ($request->plan_id != "") {
+            $plan_id = "";
+
+
+            if ($request->hasCookie('plan_id')) {
+                $input = $request->plan_id;
+
+                $plan_id = $request->cookie('plan_id');
+
+                if (strpos($plan_id, $input) !== false) {
+                    $plan_id = str_replace($input, '0', $plan_id);
+                } else {
+                    $plan_id .= ',' . $input;
+                }
+
+                if (strpos($plan_id, 0) !== false) {
+                    $plan_id = str_replace('0,', '', $plan_id);
+                }
+            } else {
+                $plan_id .= $request->plan_id;
+            }
+        }
+
+
+        // $data = [
+        //     // 'spots' => null,
+        //     // 'plans' => null,
+
+        //     'id' => $id,
+        // ];
+
+
         $data = [
             'item' => $item,
             'connection1' => $connection1,
             'connection2' => $connection2,
             'connection3' => $connection3,
+            'id' => $id,
         ];
 
         return view('fronts.plans_info', $data);
+
+
+        if ($request->plan_id != "") {
+            $response = response()->view('fronts.plans_info', $data);
+            $response->cookie('plan_id', $plan_id, 100);
+            // return view('fronts.plans_info', $data);
+            return $response;
+            // return redirect()->route('planinfo', $data);
+        }
     }
 }

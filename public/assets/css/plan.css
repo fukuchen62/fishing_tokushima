@@ -46,9 +46,15 @@
         display: grid;
         gap: 40px;
         grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
-        max-width: 1200px;
         margin: 0 auto;
     }
+
+    /* フレックスレイアウト */
+    /* .card__area {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    } */
 
     /* commonで指定されているpadding:50pxだとリサイズ時レイアウトが崩れる */
     .card__p {

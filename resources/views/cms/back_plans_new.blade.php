@@ -7,19 +7,17 @@
     @parent
     {{-- 以下はshowのところにはめ込む --}}
     <ul>
-        <li><a href="./planshow">HOME</a></li>
-        <li><a href="./planentry">新規登録</a></li>
+        <li><a href="./plansshow">HOME</a></li>
+        <li><a href="./plansentry">新規登録</a></li>
         <li>その他</li>
     </ul>
 @endsection
 
 @section('content')
-    <!-- <form action="admin/newsentry" method="post"> -->
-    <form method="post" action="{{ route('planentry') }}">
+
+    <form method="post" action="{{ route('plansentry') }}">
         <table>
             @csrf
-            <!-- <tr><th>プラン名: </th><td><input type="text"
-                                    name="name" required></td></tr> -->
             <tr>
                 <th>タイトル: </th>
                 <td><input type="text" name="title" required></td>
@@ -64,8 +62,6 @@
                 <th>表示フラグ: </th>
                 <td><input type="boolean" name="is_show"></td>
             </tr>
-
-
             <tr>
                 <th></th>
                 <td><input type="submit" value="送信"></td>

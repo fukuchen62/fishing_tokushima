@@ -1,7 +1,10 @@
 @extends('layouts.news_ly')
 
-@section('title', '釣れる魚一覧')
+@section('title', '釣徳コンテンツ管理システム')
 
+@section('subtitle', '徳島で釣れる魚一覧')
+
+@section('login_name', 'QLIP')
 
 @section('menubar')
     @parent
@@ -31,12 +34,11 @@
             <th>魚の名前(正式名称)</th>
             <th>修正</th>
         </tr>
-        @foreach ($items as $item)
+        @foreach ($fishlist as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->formal_name }}</td>
-                {{-- <td><a href="cms/fish_Edit?id={{ $item->id }}">編集</a></td> --}}
                 <td><a href="{{ route('fishedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach

@@ -30,18 +30,18 @@
 </head>
 <body>
     <header id="header" class="header flex">
-        <div class="header__box--group">
+        <div class="header__box--group  expand">
         </div>
-        <div class="header__box--border"></div>
-        <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo">
+        <div class="header__box--border  expand"></div>
+        <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo  expand">
         <!-- ハンバーガーメニュー -->
-        <div class="hamburger flex">
+        <div class="hamburger flex  expand">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <div class="header__box">
-            <div class="g-nav flex">
+        <div class="header__box  expand">
+            <div class="g-nav flex  expand">
                 <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="logo__img">
                 <div class="g-nav__box">
                     <div class="g-nav__box--section flex">
@@ -97,137 +97,136 @@
 
     </header>
 
+
+
+    <div class="keyvisual expand">
+        キービジュアル
+    </div>
+    <section class="titlesection expand">
+        <div class="titlesection__box">
+            <h1 class="pagetitle">詳細</h1>
+            <div class="pagetitle__border"></div>
+        </div>
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
+    </section>
     <main>
+        <section id="fishinfo__section" class="fishinfo__section expand">
+            <ul class="fishinfo__box">
+                <li>
+                    <div class="fishinfo__box--img">
+                        <!-- slick用（仮） -->
+                        <div class="slider6-wrap">
+                            <ul class="slider-6" id="js-slider-6">
+                                <li><img src="../storage/images/aji-img.png" alt=""></li>
+                                <li><img src="../storage/images/aji-img.png" alt=""></li>
+                                <li><img src=" ../storage/images/aji-img.png" alt=""></li>
+                                <li><img src="../storage/images/aji-img.png" alt=""></li>
+                            </ul>
+                            <div class=" thumbs_dots">
+                            </div>
+                        </div>
+                    </div>
+                </li>
 
-        <div class="container">
-            <div class="keyvisual">
-                キービジュアル
+                <!-- 概要 -->
+                <li>
+                    <div class="fishinfo__box--description">
+                        <h3>概要</h3>
+                        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="fishinfo__box--feed">
+                            <p class=""><img style="vertical-align: middle" src="../storage/images/fish_ebi.png" alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
+                            <h3 class="card__title">難易度</h3>
+                            <div class="star__box">
+                                <div class="level1">
+                                    <img src="https://placehold.jp/50x50.png" alt="☆">
+                                </div>
+                                <div class="level1">
+                                    <img src="https://placehold.jp/50x50.png" alt="☆">
+                                    <img src="https://placehold.jp/50x50.png" alt="☆">
+                                </div>
+                                <div class="level1">
+                                    <img src="https://placehold.jp/50x50.png" alt="☆">
+                                    <img src="https://placehold.jp/50x50.png" alt="☆">
+                                    <img src="https://placehold.jp/50x50.png" alt="☆">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="fishes__table">
+                <h3 class="table__title">詳細情報</h3>
+                <table class="table radius-table">
+                    <tr class="table__tr">
+                        <td class="table__subtitle">季節・時間帯</td>
+                        <td>基本年中釣れる。旬は初夏～晩夏</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">釣れる場所</td>
+                        <td>スポット名　スポット名</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">釣り方</td>
+                        <td>サビキ釣り</td>
+                    </tr>
+                </table>
             </div>
-            <section class="titlesection">
-                <div class="titlesection__box">
-                    <h1 class="pagetitle">詳細</h1>
-                    <div class="pagetitle__border"></div>
-                </div>
-                <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-                <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-                <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
-            </section>
 
-            <section id="fishinfo__section" class="fishinfo__section">
-                <ul class="fishinfo__box">
+            <!-- おいしい食べ方 -->
+            <div class="fishes__box--description">
+                <ul class="fishinfo__box--food">
                     <li>
-                        <div class="fishinfo__box--img">
-                            <!-- slick用（仮） -->
-                            <div class="slider6-wrap">
-                                <ul class="slider-6" id="js-slider-6">
-                                    <li><img src="../storage/images/aji-img.png" alt=""></li>
-                                    <li><img src="../storage/images/aji-img.png" alt=""></li>
-                                    <li><img src=" ../storage/images/aji-img.png" alt=""></li>
-                                    <li><img src="../storage/images/aji-img.png" alt=""></li>
-                                </ul>
-                                <div class=" thumbs_dots">
+                        <!-- slick用（仮） -->
+                        <div class="container">
+                            <div class="slider">
+                                <div class="slick-img">
+                                    <img src="../storage/images/aji-img.png" alt="" />
+                                </div>
+                                <div class="slick-img">
+                                    <img src="../storage/images/aji-img.png" alt="" />
+                                </div>
+                                <div class="slick-img">
+                                    <img src="../storage/images/aji-img.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="thumbnail-img">
+                                    <img src="../storage/images/aji-img.png" alt="" />
+                                </div>
+                                <div class="thumbnail-img">
+                                    <img src="../storage/images/aji-img.png" alt="" />
+                                </div>
+                                <div class="thumbnail-img">
+                                    <img src="../storage/images/aji-img.png" alt="" />
                                 </div>
                             </div>
                         </div>
                     </li>
-
-                    <!-- 概要 -->
                     <li>
-                        <div class="fishinfo__box--description">
-                            <h3>概要</h3>
-                            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                            <div class="fishinfo__box--feed">
-                                <p class=""><img style="vertical-align: middle" src="../storage/images/fish_ebi.png" alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
-                                <h3 class="card__title">難易度</h3>
-                                <div class="star__box">
-                                    <div class="level1">
-                                        <img src="https://placehold.jp/50x50.png" alt="☆">
-                                    </div>
-                                    <div class="level1">
-                                        <img src="https://placehold.jp/50x50.png" alt="☆">
-                                        <img src="https://placehold.jp/50x50.png" alt="☆">
-                                    </div>
-                                    <div class="level1">
-                                        <img src="https://placehold.jp/50x50.png" alt="☆">
-                                        <img src="https://placehold.jp/50x50.png" alt="☆">
-                                        <img src="https://placehold.jp/50x50.png" alt="☆">
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="fishinfo__box--text">
+                            <h3>おいしい食べ方</h3>
+                            <p>唐揚げ、刺身、なめろう等<br>食べ方の詳細？</p>
                         </div>
                     </li>
                 </ul>
-                <div class="fishes__table">
-                    <h3 class="table__title">詳細情報</h3>
-                    <table class="table radius-table">
-                        <tr class="table__tr">
-                            <td class="table__subtitle">季節・時間帯</td>
-                            <td>基本年中釣れる。旬は初夏～晩夏</td>
-                        </tr>
-                        <tr class="table__tr">
-                            <td class="table__subtitle">釣れる場所</td>
-                            <td>スポット名　スポット名</td>
-                        </tr>
-                        <tr class="table__tr">
-                            <td class="table__subtitle">釣り方</td>
-                            <td>サビキ釣り</td>
-                        </tr>
-                    </table>
-                </div>
+            </div>
 
-                <!-- おいしい食べ方 -->
-                <div class="fishes__box--description">
-                    <ul class="fishinfo__box--food">
-                        <li>
-                            <!-- slick用（仮） -->
-                            <div class="container">
-                                <div class="slider">
-                                    <div class="slick-img">
-                                        <img src="../storage/images/aji-img.png" alt="" />
-                                    </div>
-                                    <div class="slick-img">
-                                        <img src="../storage/images/aji-img.png" alt="" />
-                                    </div>
-                                    <div class="slick-img">
-                                        <img src="../storage/images/aji-img.png" alt="" />
-                                    </div>
-                                </div>
-                                <div class="thumbnail">
-                                    <div class="thumbnail-img">
-                                        <img src="../storage/images/aji-img.png" alt="" />
-                                    </div>
-                                    <div class="thumbnail-img">
-                                        <img src="../storage/images/aji-img.png" alt="" />
-                                    </div>
-                                    <div class="thumbnail-img">
-                                        <img src="../storage/images/aji-img.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fishinfo__box--text">
-                                <h3>おいしい食べ方</h3>
-                                <p>唐揚げ、刺身、なめろう等<br>食べ方の詳細？</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- 装飾（貝）の画像 -->
-                <div>
-                    <ul class="fishesinfo__img--shell">
-                        <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-                        <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-                        <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-                        <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
-                        <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-                        <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-                        <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-                    </ul>
-                </div>
-            </section>
-            <div class="firstsection__bottom"></div>
+            <!-- 装飾（貝）の画像 -->
+            <div>
+                <ul class="fishesinfo__img--shell">
+                    <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
+                    <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
+                    <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+                    <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
+                    <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
+                    <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
+                    <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+                </ul>
+            </div>
+        </section>
+        <div class="firstsection__bottom expand"></div>
         </div>
 
         <!-- 保存方法・注意事項 -->

@@ -24,98 +24,96 @@
         </div>
     @endif
 
-    {{-- <form action="fish_Edit" method="post"> --}}
     <form method="post" action="{{ route('fishedit') }}">
         <table>
             @csrf
-            <input type="hidden" name="id" value="{{ $form->id }}">
+            <input type="hidden" name="id" value="{{ $fish->id }}">
             <tr>
                 <th>魚の名前(普通の呼び方): </th>
-                <td><input type="text" name="name" value="{{ $form->name }}"required></td>
+                <td><input type="text" name="name" value="{{ $fish->name }}"required></td>
             </tr>
             <tr>
                 <th>魚の名前(正式名称): </th>
-                <td><input type="text" name="formal_name" value="{{ $form->formal_name }}"></td>
+                <td><input type="text" name="formal_name" value="{{ $fish->formal_name }}"></td>
             </tr>
             <tr>
                 <th>詳細説明: </th>
-                <td><input type="text" name="detail" value="{{ $form->detail }}"required></td>
+                <td><input type="text" name="detail" value="{{ $fish->detail }}"required></td>
             </tr>
             <tr>
                 <th>注意事項: </th>
-                <td><input type="text" name="warning" value="{{ $form->detail }}"></td>
+                <td><input type="text" name="warning" value="{{ $fish->detail }}"></td>
             </tr>
             <tr>
                 <th>食べ方1: </th>
-                <td><input type="text" name="cooking1" value="{{ $form->cooking1 }}" required></td>
+                <td><input type="text" name="cooking1" value="{{ $fish->cooking1 }}" required></td>
             </tr>
             <tr>
                 <th>食べ方2: </th>
-                <td><input type="text" name="cooking2" value="{{ $form->cooking2 }}"></td>
+                <td><input type="text" name="cooking2" value="{{ $fish->cooking2 }}"></td>
             </tr>
             <tr>
                 <th>食べ方3: </th>
-                <td><input type="text" name="cooking3" value="{{ $form->cooking3 }}"></td>
+                <td><input type="text" name="cooking3" value="{{ $fish->cooking3 }}"></td>
             </tr>
             <tr>
                 <th>食べ方の写真1: </th>
-                <td><input type="text" name="cooking_img1" value="{{ $form->cooking_img1 }}"required></td>
+                <td><input type="text" name="cooking_img1" value="{{ $fish->cooking_img1 }}"required></td>
             </tr>
             <tr>
                 <th>食べ方の写真2: </th>
-                <td><input type="text" name="cooking_img2" value="{{ $form->cooking_img2 }}"></td>
+                <td><input type="text" name="cooking_img2" value="{{ $fish->cooking_img2 }}"></td>
             </tr>
             <tr>
                 <th>食べ方の写真3: </th>
-                <td><input type="text" name="cooking_img3" value="{{ $form->cooking3 }}"></td>
+                <td><input type="text" name="cooking_img3" value="{{ $fish->cooking3 }}"></td>
             </tr>
             <tr>
                 <th>釣り方: </th>
-                <td><input type="text" name="method" value="{{ $form->method }}" required></td>
+                <td><input type="text" name="method" value="{{ $fish->method }}" required></td>
             </tr>
             <tr>
                 <th>釣れる月: </th>
-                <td><input type="text" name="month" value="{{ $form->month }}"></td>
+                <td><input type="text" name="month" value="{{ $fish->month }}"></td>
             </tr>
             <tr>
                 <th>難易度: </th>
-                <td><input type="number" name="level" value="{{ $form->level }}"></td>
+                <td><input type="number" name="level" value="{{ $fish->level }}"></td>
             </tr>
             <tr>
                 <th>釣りスポット: </th>
-                <td><input type="text" name="spot_id" value="{{ $form->spot_id }}"></td>
+                <td><input type="text" name="spot_id" value="{{ $fish->spot_id }}"></td>
             </tr>
             <tr>
                 <th>魚の画像1: </th>
-                <td><input type="text" name="fish_img1" value="{{ $form->fish_img1 }}"required></td>
+                <td><input type="text" name="fish_img1" value="{{ $fish->fish_img1 }}"required></td>
             </tr>
             <tr>
                 <th>魚の画像2: </th>
-                <td><input type="text" name="fish_img2" value="{{ $form->fish_img2 }}"></td>
+                <td><input type="text" name="fish_img2" value="{{ $fish->fish_img2 }}"></td>
             </tr>
             <tr>
                 <th>魚の画像3: </th>
-                <td><input type="text" name="fish_img3" value="{{ $form->fish_img3 }}"></td>
+                <td><input type="text" name="fish_img3" value="{{ $fish->fish_img3 }}"></td>
             </tr>
             <tr>
                 <th>おすすめプラン: </th>
-                <td><input type="text" name="plan_id" value="{{ $form->plan_id }}" required></td>
+                <td><input type="text" name="plan_id" value="{{ $fish->plan_id }}" required></td>
             </tr>
             <tr>
                 <th>備考欄: </th>
-                <td><input type="text" name="memo" value="{{ $form->memo }}"></td>
+                <td><input type="text" name="memo" value="{{ $fish->memo }}"></td>
             </tr>
             <tr>
                 <th>表示フラグ：</th>
                 <td>
-                    <input type="boolean" name="is_show" value="{{ $form->is_show }}"required>
+                    <input type="boolean" name="is_show" value="{{ $fish->is_show }}"required>
                 </td>
             </tr>
             <tr>
                 <th></th>
                 <td><input type="submit"value="修正">
-                    {{-- <a href="fish_delete?id={{ $form->id }}">削除</a></td></tr> --}}
-                    <a href="{{ route('fishremove', ['id' => $form->id]) }}">削除</a>
+                    <a href="{{ route('fishremove', ['id' => $fish->id]) }}">削除</a>
                 </td>
             </tr>
         </table>

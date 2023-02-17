@@ -38,8 +38,8 @@
         </table>
     </form>
 
-    <p>{{ $msg2 }}</p>
-    <p>{{ $msg3 }}</p>
+    {{-- <p>{{ $msg2 }}</p>
+    <p>{{ $msg3 }}</p> --}}
 
 {{-- @php
     print_r($data);

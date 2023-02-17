@@ -43,24 +43,24 @@
 <body>
     <header id="header">
 
-        <div class="header flex">
-            <div class="header__box--group">
+        <div class="header expand flex">
+            <div class="header__box--group expand">
             </div>
-            <div class="header__box--border"></div>
-            <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo">
+            <div class="header__box--border expand"></div>
+            <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo expand">
             <!-- ハンバーガーメニュー -->
-            <div class="hamburger flex">
+            <div class="hamburger flex expand">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="header__box">
-                <div class="g-nav flex slide-out">
+            <div class="header__box expand">
+                <div class="g-nav flex expand">
                     <img src="../assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="logo__img">
-                    <div class="g-nav__box">
+                    <div class="g-nav__box ">
                         <div class="g-nav__box--section flex">
                             <div class="g-nav__box--group">
-                                <a href="" class="g-nav__box--discription">
+                                <a href="" class="g-nav__box--discription ">
                                     <img src="../assets/images/fishing_boat_man.png" alt="魚釣り男" class="g-nav__box--img">
                                     <div class="g-nav__box--text">入門知識</div>
                                 </a>
@@ -110,13 +110,14 @@
             </div>
         </div>
 
-        <div class="keyvisual">
+        <div class="keyvisual expand">
             キービジュアル
         </div>
 
-        <section class="titlesection">
+        <section class="titlesection expand">
             <div class="titlesection__box">
-                <h1 class="pagetitle">イワシをサビキ釣り</h1>
+                <h1 class="pagetitle">条件検索
+                    </h1>
                 <div class="pagetitle__border"></div>
             </div>
             <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
@@ -125,13 +126,16 @@
 
         </section>
     </header>
+
     <main class="main">
         <div class="container">
             <!-- 浅瀬背景 -->
-            <div class="shallow">
+            <div class="shallow expand">
+                <!-- プラン概要セクション -->
                 <section class="overview__section p__lr">
                     <div class="overview__box">
                         <img class="overview__box--img plan__img" src="https://placehold.jp/559x314.png" alt="イワシをサビキ釣りの写真">
+                        <!-- 概要のテキストボックス -->
                         <div class="overview__box--group">
                             <h3>概要</h3>
                             <p>こちらでは初心者におすすめなサビキ釣りでイワシを釣る方法を紹介します。
@@ -155,7 +159,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- 体験プラン詳細 -->
+                <!-- 体験プランテーブルセクション -->
                 <section class="fishes__table p__lr">
                     <h3 class="table__title">詳細情報</h3>
                     <table class="table radius-table">
@@ -173,6 +177,7 @@
                         </tr>
                     </table>
                 </section>
+                <!-- カードセクション -->
                 <section class="card__section p__lr">
                     <h2 class="section__box--title to-details">
                         ↓ 魚とスポットの詳細はこちら
@@ -212,11 +217,13 @@
                 </section>
             </div>
             <!-- 海背景 -->
-            <div class="sea">
+            <div class="sea expand">
+                <!-- 体験プランフローセクション -->
                 <section class="flow__section p__lr">
                     <h2 class="section__box--title">釣り方のフロー</h2>
                     <div class="flow__box">
                         <img class="flow__box--img plan__img" src="https://placehold.jp/559x314.png" alt="フローの写真">
+                        <!-- フローのテキストボックス -->
                         <div class="flow__box--text">
                             <h3>①準備物</h3>
                             <p>釣り竿は２～３ｍ程のサビキ用ロッドで小型のスピニングリールを使用します。
@@ -243,6 +250,7 @@
                     </div>
                 </section>
             </div>
+            <!-- カードセクション -->
             <section class="card__section p__lr">
                 <h2 class="section__box--title ">
                     <span class="btn_area_ttl">関連プラン</span>
@@ -298,7 +306,7 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer expand">
         <div class="footer__box  flex">
             <ul>
                 <li>入門知識</li>
