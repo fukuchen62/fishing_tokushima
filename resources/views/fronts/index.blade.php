@@ -176,7 +176,7 @@
         <a href=""> もっと見る</a>
     </section>
 
-    {{-- <section class="firstsection">
+    {{-- <section class="firstsection expand">
         <h2>入門知識</h2>
         <div>
             <a href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
