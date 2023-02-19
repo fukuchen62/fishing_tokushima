@@ -127,18 +127,20 @@
         </section>
     </header>
 
+    <div class="mainarea flex expand">
+        <main class="main-section expand">
+            <section class="firstsection expand p__lr">
 
-    <main>
-        <section class="firstsection expand p__lr">
-
-            <div class="knowledge__section expand">
+                <div class="knowledge__section expand">
 
                 <h2 class="pagetitle ">基礎知識詳細<br>タイトル</h2>
                 <div class="pagetitle__border"></div>
 
                 <h2 class="section__box--title ">第一セクション</h2>
-                <img class="knowledge__image " src="../assets/images/img_neko_700_3.jpg" alt="知識イメージ画像">
-                <p class="knowledge__discription ">
+                <div class="imgbox">
+                    <img class="knowledge__image" src="../assets/images/img_neko_700_3.jpg" alt="知識イメージ画像">
+                    </div>       
+                    <p class="knowledge__discription">        
                 テキストテキストテキストテキストテキストテキスト
                 テキストテキストテキストテキストテキストテキスト
                 テキストテキストテキストテキストテキストテキスト
@@ -154,7 +156,9 @@
 
 
                 <h2 class="section__box--title ">第一セクション</h2>
+                <div class="imgbox">
                 <img class="knowledge__image" src="../assets/images/img_neko_700_3.jpg" alt="知識イメージ画像">
+                </div>
                 <p class="knowledge__discription">
                 テキストテキストテキストテキストテキストテキスト
                 テキストテキストテキストテキストテキストテキスト
@@ -169,61 +173,60 @@
                 テキストテキストテキストテキストテキストテキスト</p>
             </div>
         </section>
-        <div class="firstsection__bottom expand"></div>
 
 
 
-
-        <section class="connection">
-            <h2 class="section__box--title">関連記事</h2>
-            <ul class="card__area flex">
-                <li class="card__p">
-                    <a class="card card__skin" href="">
-                        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                        <div class="card__textbox">
-                            <h3 class="card__title">タイトルタイトル</h3>
-                            <p class="card__description">説明説明説明説明説明説明</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="card__p">
-                    <a class="card card__skin" href="">
-                        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                        <div class="card__textbox">
-                            <h3 class="card__title">タイトルタイトル</h3>
-                            <p class="card__description">説明説明説明説明説明説明</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="card__p">
-                    <a class="card card__skin" href="">
-                        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                        <div class="card__textbox">
-                            <h3 class="card__title">タイトルタイトル</h3>
-                            <p class="card__description">説明説明説明説明説明説明</p>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </section>
-
-
-        <aside class="sidemenu ">
-
-        </aside>
-
-
-
-
-        <div id="page_top" class="flex">
-            <!-- 余裕があれば魚が釣られるアニメーションを追加 -->
-            <!-- <img src=".//assets/images/fish_yellow.png" alt="黄色魚" class="topbutton__fish"> -->
-            <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-        </div>
     </main>
+    <aside class="sidemenu ">
+        <div class="sidemenu__topimg"></div>
+        <h2 class="sidemenu__title">カテゴリ</h2>
+        <div class=" sidemenu__box flex">
+            <a class="sidemenu__discription" href="">入門知識</a>
+            <div class="sidemenu__border"></div>
+            <a class="sidemenu__discription" href="">道具・餌</a>
+            <div class="sidemenu__border"></div>
+            <a class="sidemenu__discription" href="">注意点</a>
+            <div class="sidemenu__border"></div>n
+            <a class="sidemenu__discription" href="">その他</a>
+            <div class="sidemenu__border"></div>
+        </div>
+        <div class="sidemenu__bottomimg"></div>
+    </aside>
+    </div>
 
 
-
+    <article class="connection">
+        <h2 class="section__box--title">関連記事</h2>
+        <ul class="card__area flex">
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+            <li class="card__p">
+                <a class="card card__skin" href="">
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <div class="card__textbox">
+                        <h3 class="card__title">タイトルタイトル</h3>
+                        <p class="card__description">説明説明説明説明説明説明</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
 
 
 
