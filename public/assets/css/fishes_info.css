@@ -5,9 +5,13 @@ body {
 }
 
 
-img {
-    max-width: 559px;
+/* img {
+    width: 100%;
     height: auto;
+} */
+
+.max-width-box {
+    max-width: 559px;
 }
 
 .fishinfo__section {
@@ -268,7 +272,7 @@ img {
 }
 
 /* slick */
-.slider6-wrap {
+/* .slider6-wrap {
     width: 559px;
     margin: 0 auto;
     position: relative;
@@ -301,7 +305,7 @@ img {
 
 .thumbs_list li.slick-active {
     opacity: 1;
-}
+} */
 
 /* スライド２ */
 
@@ -317,8 +321,8 @@ img {
 }
 
 .main-img img {
-    width: ;
-    height: 225px;
+    width: 400;
+    height: 300px;
     border-radius: 30px;
     border: 8px solid #fff;
 }
@@ -342,11 +346,11 @@ img {
     object-fit: cover;
 }
 
-@media screen and (min-width: 1080px) {
+/* @media screen and (min-width: 1080px) {
     .main-img img {
         width: 559px;
         height: 419px;
     }
 
 
-}
+} */
