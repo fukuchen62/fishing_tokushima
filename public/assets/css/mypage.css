@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+    margin-top: 50px;
+    /* padding: 50px; */
+    padding-top: 0;
+    padding-bottom: 40px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/*タブのスタイル*/
+.tab_item {
+    width: calc(100%/2);
+    height: 50px;
+    border-bottom: 3px solid #30ADD1;
+    border-right: 5px solid #EAF2FA ;
+    background-color: #d9d9d9;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #51656F;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+
+}
+
+.tab_item:hover {
+    opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+    display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 10px 10px;
+    display: none;
+    clear: both;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content,#other:checked~#other_content {
+    display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked+.tab_item {
+    background-color: #30ADD1;
+    color: #fff;
+}
+
+.card__area{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 960px){
+    .card__area {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.card__p{
+    margin: 20px;
+    padding: 0;
+}
+
+.firstsection__bottom{
+    margin-bottom: 120px;
+}
+
+.panel {
+    display: none;
+    text-align: center;
+}
+
+.panel.active {
+    display: block;
+}
+.tab-area {
+    padding: 0 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+
+.tab {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background: #fff;
+    border: solid 3px #30ADD1;
+    color: #30ADD1;
+    font-weight: bold;
+    transition: all 0.15s linear;
+    padding: ;
+}
+.tab:hover{
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #30ADD1;
+    color: #fff;
+}
