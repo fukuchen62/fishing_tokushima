@@ -4,16 +4,6 @@ body {
     overflow-x: auto;
 }
 
-.knowledge__image {
-    width: 100%;
-    height: 30%;
-}
-
-.imgbox {
-    max-width: 559px;
-    margin: 0 auto;
-}
-
 .mainarea {
     width: 100vw;
     background-color: #30ADD1;
@@ -25,7 +15,7 @@ body {
     margin: 0;
 }
 
-.knowledge__section {
+.newslist__section {
     width: 75%;
     padding: 0px 20px;
     height: auto;
@@ -37,12 +27,6 @@ section__box--title {
     margin: 30px;
 }
 
-.knowledge__discription {
-    display: inline-block;
-    text-align: start;
-    color: #51656F;
-    margin-top: 20px;
-}
 
 .firstsection {
     margin: 0 auto;
@@ -56,16 +40,15 @@ section__box--title {
     margin-bottom: 120px;
 }
 
-.card__area {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+/* カード */
+.card card__skin {
+    width: 42%;
+    height: auto;
+    padding: 20px 0 100px 0;
 }
 
-@media screen and (min-width: 960px) {
-    .card__area {
-        justify-content: space-between;
-    }
+.card__img {
+    width: 100%;
 }
 
 .sidemenu {
@@ -112,15 +95,16 @@ section__box--title {
     right: 200px;
 }
 
+/*
 .sidemenu__discription {
     width: 150px;
     display: inline-block;
     text-align: start;
     font-size: 1rem;
     position: relative;
-}
+} */
 
-.sidemenu__discription::after {
+/* .sidemenu__discription::after {
     content: "";
     position: absolute;
     left: 100%;
@@ -131,7 +115,7 @@ section__box--title {
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-}
+} */
 
 .sidemenu__border {
     text-align: center;
@@ -144,9 +128,6 @@ section__box--title {
     transform: translate(-60%, 0);
 }
 
-.card__p {
-    padding: 0;
-}
 
 .footer {
     margin-top: 100px;
