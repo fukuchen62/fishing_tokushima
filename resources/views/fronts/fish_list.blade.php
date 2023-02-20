@@ -20,16 +20,139 @@
         </div>
     </section>
 
-    <section class="section">
+    <section id="calendar__section" class="calendar__section expand p__lr">
+        <h2 class="calendar__title">徳島の魚 検索</h2>
+        <div class="calendar__box">
 
-        <h2 class="section__box--title ">第一セクション</h2>
-
-        <div>
-            <h3>サブタイトル</h3>
-            <div>
-                <p>テキストテキストテキストテキストテキストテキストテキスト</p>
+            <div class="calendar__box--search expand">
+                <ul class="calendar__box--text">
+                    <li>
+                        <iconify-icon class="icon-img" icon="game-icons:circling-fish" style="color: #699bf7;" width="130" height="130"></iconify-icon>
+                    </li>
+                    <li>
+                        <p>徳島県で釣れる魚だよ！<br>
+                                                    月ごとにクリックして
+                                                    生息する魚をチェック！</p>
+                    </li>
+                </ul>
             </div>
+            <table class="calendar-tb">
+                <tr>
+                    <td>
+                        <div class='button'>
+                            <button id="1" class='secList' onclick="">１月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="2" class='secList' onclick="">２月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="3" class='secList' onclick="">３月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="4" class='secList' onclick="">４月</button>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class='button'>
+                            <button id="5" class='secList' onclick="">５月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="6" class='secList' onclick="">６月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="7" class='secList' onclick="">７月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="8" class='secList' onclick="">８月</button>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class='button'>
+                            <button id="9" class='secList' onclick="">９月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="10" class='secList' onclick="">１０月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="11" class='secList' onclick="">１１月</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class='button'>
+                            <button id="12" class='secList' onclick="">１２月</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
         </div>
+
+    </section>
+
+
+
+    <!-- 検索結果 -->
+    <section id="results__section" class="results__section expand p__lr">
+        <div class="results__box">
+            <h2 class="results__box--title">初心者におすすめ！釣れる魚</h2>
+            <ul class="results__box--info">
+                <li><a href="">
+                        <div class="tokushimafish__box--group">
+                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
+                        </div>
+                    </a></li>
+                <li><a href="">
+                        <div class="tokushimafish__box--group">
+                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
+                        </div>
+                    </a></li>
+                <li><a href="">
+                        <div class="tokushimafish__box--group max-width-box">
+                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
+                        </div>
+                    </a></li>
+                <li><a href="">
+                        <div class="tokushimafish__box--group max-width-box">
+                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
+                        </div>
+                    </a></li>
+                <li><a href="">
+                        <div class="tokushimafish__box--group max-width-box">
+                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
+                        </div>
+                    </a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="firstsection__bottom expand"></div>
+
+    <!-- 玄人向けの魚 -->
+    <section class="others__section p__lr">
+        <div class="others__box">
+            <h2 class="others__box--title">徳島の海産物</h2>
+            <ul class="others__box--info">
+
+                </ul>
+            </div>
     </section>
 
     <div id="page_top" class="flex">

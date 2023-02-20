@@ -17,14 +17,15 @@ body {
 .fishinfo__section {
     padding-top: 100px;
     background-color: #EAF2FA;
+    /* margin: 0 auto; */
 }
 
 
 /* 魚の写真・概要・丸い囲い */
 
 .fishinfo__box--description {
-    max-width: 400px;
-    height: 400px;
+    width: 340px;
+    height: 340px;
     border: 10px dashed #30ADD1;
     background-color: #fff;
     border-radius: 50%;
@@ -33,7 +34,7 @@ body {
 }
 
 .fishinfo__box--title {
-    margin: 40px;
+    margin: 20px;
 }
 
 .fishinfo__box--description p {
@@ -42,13 +43,52 @@ body {
 }
 
 .card__title {
-    margin: 20px;
+    margin: 10px;
 }
 
 
 .fishinfo__box--feed p, img {
 
     text-align: center;
+}
+
+@media screen and (min-width: 440px) {
+    .fishinfo__box--description {
+        width: 400px;
+        height: 400px;
+    }
+
+    .fishinfo__box--title {
+        margin: 40px;
+    }
+
+    .fishinfo__box--feed p {
+        margin: 0px 30px;
+    }
+}
+
+/* 丸が細くなるのでブレイクポイント1200px */
+@media screen and (min-width:1200px) {
+
+    /* 画像と丸の並びをそろえる */
+    .max-width--box {
+        margin: 0;
+    }
+
+    /* 概要の画像とテキストボックスのレイアウト */
+    .fishinfo__box {
+        display: flex;
+        margin: 0px auto;
+        justify-content: center;
+        gap: 50px;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    /* 概要横並び時のテキストボックス外の余白 */
+    /* .overview__box--group {
+        margin: 0px;
+    } */
 }
 
 @media screen and (min-width: 1080px) {
@@ -77,13 +117,9 @@ body {
 /* おいしい食べ方 */
 
 .fishes__box--description {
-    margin: 100px;
+    margin: 100px 0 100px 0;
 }
 
-
-.fishinfo__box--img {
-    padding: 50px;
-}
 
 .traiangle {
     width: 0;
@@ -92,7 +128,7 @@ body {
     border-width: 0 27.5px 55px 27.5px;
     border-color: transparent transparent #fff transparent;
     margin: 0 auto;
-    padding: 0 30px 0 0;
+    padding: 50px 0 0 0;
 }
 
 .fishinfo__box--text {
@@ -126,7 +162,12 @@ body {
         align-items: center;
     }
 
+    .fishinfo__box--text {
+        width: 500px;
+    }
+
     .traiangle {
+        padding: 0 50px 0 0;
         border-width: 27.5px 0 27.5px 55px;
         border-color: transparent transparent transparent #fff;
     }
@@ -176,14 +217,16 @@ body {
 }
 
 /* 保存方法 */
-
+.preservation__section {
+    background-color: #30ADD1;
+}
 
 .preservation__box {
     max-width: 540px;
     height: auto;
     background-color: #fff;
     border-radius: 100px;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .preservation__box h3 {
@@ -203,7 +246,7 @@ body {
     height: auto;
     background-color: #FFEA20;
     border-radius: 60px;
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .note__box h3 {
@@ -224,7 +267,7 @@ body {
     .note__box {
         max-width: 900px;
         height: auto;
-        margin: 50px auto;
+        margin: 0px auto;
     }
 
     .preservation__box {
@@ -232,7 +275,7 @@ body {
         height: auto;
         background-color: #fff;
         border-radius: 100px;
-        margin: 50px auto;
+        margin: 0px auto;
     }
 
 
@@ -260,6 +303,18 @@ body {
 
 .card__img {
     border-radius: 20px 20px 0 0;
+}
+
+.card__area {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    margin: 0 auto;
+}
+
+/* pading:50pxだとレイアウトが崩れるのでpdding:0px */
+.card__p {
+    padding: 0px;
 }
 
 
@@ -332,11 +387,32 @@ body {
 
 /* スライド２ */
 .slider {
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
 }
 
 .slider img {
     padding: 10px;
     border-radius: 20px;
+
+}
+
+/* 背景 波 */
+.firstsection__bottom {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom__second.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+    transform: scaleY(-1);
+}
+
+.firstsection__bottom--under {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom__second.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
 }
