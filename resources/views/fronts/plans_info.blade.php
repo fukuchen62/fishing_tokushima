@@ -7,37 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    {{-- <form action="./single_plan" method="post">
-        @csrf
-        <input type="text" name="input" value="{{ $input }}">
-        <input type="submit" value="find">
-    </form> --}}
 
     <h2>内容</h2>
     @if (isset($item))
 
     {{-- お気に入り保存 --}}
-    {{-- <a href="{{ route('cookie', ['plan_id' =>  $item->id ]) }}"><p>リンク1</p></a> --}}
-
 
 {{ Cookie::get('plan_id') }}
-    @php
-        // Cookie::get('plan_id');
+
+{{-- @php
+    $msg="";
+@endphp
+
+
+{{ $msg }} --}}
+
+    {{-- @php
         $val="";
         if (isset($_COOKIE["plan_id"])) {
             $val = $_COOKIE["plan_id"];
-            // $val = "1";
         }
-
-
     @endphp
 
-    <p>cookie: {{ $val }}</p>
-
-    {{-- @if (hasCookie('plan_id')) --}}
-
-        {{-- @if (Cookie::get('plan_id')!=$item->id)
-        <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク1</p></a> --}}
+    <p>cookie: {{ $val }}</p> --}}
 
 
         @if (Cookie::get('plan_id')==$item->id)
@@ -45,25 +37,19 @@
         <p>お気に入り登録済</p>
         <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク2</p></a>
         </div>
-
         @else
             <a href="{{ route('cookie', ['plan_id' => $item->id]) }}"><p>リンク1</p></a>
         @endif
 
-    {{-- @else --}}
-    {{-- <a href="{{ route('cookie', ['plan_id' =>  $item->id ]) }}"><p>リンク1</p></a> --}}
-
-    {{-- @endif --}}
-
-    <form action="{{ route('mypage')}}" method="post">
+    {{-- お気に入りボタンは不採用 --}}
+    {{-- <form action="{{ route('mypage')}}" method="post">
         <table>
         @csrf
         <tr>
         <td><input type="submit" name="plan_id" value="{{ $item->id }}" id=""></td>
         </tr>
         </table>
-    </form>
-
+    </form> --}}
 
         <table>
             <tr>
@@ -91,70 +77,60 @@
         </table>
     @endif
 
-    <h2>関連プラン１</h2>
+    <h2>関連プラン</h2>
 
+    <h3>魚が一緒</h3>
     @if (isset($connection1))
-    <a href="{{ route('plansinfo', ['id' =>  $connection1->id ]) }}">リンク</a>
-            <table>
+    <table>
             <tr>
+                <th>id</th>
                 <th>eye_catch</th>
                 <th>title</th>
                 <th>地域</th>
                 <th>レベル</th>
                 <th>overview</th>
+                <td>リンク</td>
             </tr>
+        @foreach ($connection1 as $key => $value)
             <tr>
-                <td>{{ $connection1 -> eye_catch }}</td>
-                <td>{{ $connection1 -> title }}</td>
-                <td>{{ $connection1 -> city -> area }}</td>
-                <td><?php echo $connection1 -> getLevel() ?></td>
-                <td>{{ $connection1 -> overview }}</td>
+                <td>{{ $value -> id }}</td>
+                <td>{{ $value -> eye_catch }}</td>
+                <td>{{ $value -> title }}</td>
+                <td>{{ $value -> city -> area }}</td>
+                <td><?php echo $value -> getLevel() ?></td>
+                <td>{{ $value -> overview }}</td>
+                <td><a href="{{ route('plansinfo', ['id' =>  $value->id ]) }}">リンク</a></td>
             </tr>
+        @endforeach
         </table>
     @endif
 
-    <h2>関連プラン２</h2>
+
+    <h3>スポットが一緒</h3>
     @if (isset($connection2))
-    <a href="{{ route('plansinfo', ['id' =>  $connection2->id ]) }}">リンク</a>
-            <table>
+    <table>
             <tr>
+                <th>id</th>
                 <th>eye_catch</th>
                 <th>title</th>
                 <th>地域</th>
                 <th>レベル</th>
                 <th>overview</th>
+                <td>リンク</td>
             </tr>
+        @foreach ($connection2 as $key => $value)
             <tr>
-                <td>{{ $connection2 -> eye_catch }}</td>
-                <td>{{ $connection2 -> title }}</td>
-                <td>{{ $connection2 -> city -> area }}</td>
-                <td><?php echo $connection2 -> getLevel() ?></td>
-                <td>{{ $connection2 -> overview }}</td>
+                <td>{{ $value -> id }}</td>
+                <td>{{ $value -> eye_catch }}</td>
+                <td>{{ $value -> title }}</td>
+                <td>{{ $value -> city -> area }}</td>
+                <td><?php echo $value -> getLevel() ?></td>
+                <td>{{ $value -> overview }}</td>
+                <td><a href="{{ route('plansinfo', ['id' =>  $value->id ]) }}">リンク</a></td>
             </tr>
+        @endforeach
         </table>
     @endif
-
-    <h2>関連プラン３</h2>
-        @if (isset($connection3))
-        <a href="{{ route('plansinfo', ['id' =>  $connection3->id ]) }}">リンク</a>
-            <table>
-            <tr>
-                <th>eye_catch</th>
-                <th>title</th>
-                <th>地域</th>
-                <th>レベル</th>
-                <th>overview</th>
-            </tr>
-            <tr>
-                <td>{{ $connection3 -> eye_catch }}</td>
-                <td>{{ $connection3 -> title }}</td>
-                <td>{{ $connection3 -> city -> area }}</td>
-                <td><?php echo $connection3 -> getLevel() ?></td>
-                <td>{{ $connection3 -> overview }}</td>
-            </tr>
-        </table>
-    @endif
-
 
 </body>
 </html>

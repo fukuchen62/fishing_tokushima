@@ -84,62 +84,64 @@ class PlanController extends Controller
         $item = Plan::find($id);
 
 
+        // 関連プラン
         // whereで魚かスポットが一緒のやつを抜き出してくる
-        $connection1 = Plan::find(1);
-        $connection2 = Plan::find(2);
-        $connection3 = Plan::find(3);
+
+        $id1 = $item->fish_id;
+        $id2 = $item->spot_id;
+
+        $connection1 = Plan::where('fish_id', $id1)
+            ->where('id', '<>', $id)
+            // ->limit(3)
+            ->get();
+
+        $connection2 = Plan::where('spot_id', $id2)
+            ->where('id', '<>', $id)
+            // ->limit(3)
+            ->get();
 
 
         // cookieお気に入り保存
-        if ($request->plan_id != "") {
-            $plan_id = "";
+        // if ($request->plan_id != "") {
+        //     $plan_id = "";
 
 
-            if ($request->hasCookie('plan_id')) {
-                $input = $request->plan_id;
+        //     if ($request->hasCookie('plan_id')) {
+        //         $input = $request->plan_id;
 
-                $plan_id = $request->cookie('plan_id');
+        //         $plan_id = $request->cookie('plan_id');
 
-                if (strpos($plan_id, $input) !== false) {
-                    $plan_id = str_replace($input, '0', $plan_id);
-                } else {
-                    $plan_id .= ',' . $input;
-                }
+        //         if (strpos($plan_id, $input) !== false) {
+        //             $plan_id = str_replace($input, '0', $plan_id);
+        //         } else {
+        //             $plan_id .= ',' . $input;
+        //         }
 
-                if (strpos($plan_id, 0) !== false) {
-                    $plan_id = str_replace('0,', '', $plan_id);
-                }
-            } else {
-                $plan_id .= $request->plan_id;
-            }
-        }
-
-
-        // $data = [
-        //     // 'spots' => null,
-        //     // 'plans' => null,
-
-        //     'id' => $id,
-        // ];
+        //         if (strpos($plan_id, 0) !== false) {
+        //             $plan_id = str_replace('0,', '', $plan_id);
+        //         }
+        //     } else {
+        //         $plan_id .= $request->plan_id;
+        //     }
+        // }
 
 
         $data = [
             'item' => $item,
             'connection1' => $connection1,
             'connection2' => $connection2,
-            'connection3' => $connection3,
             'id' => $id,
         ];
 
         return view('fronts.plans_info', $data);
 
 
-        if ($request->plan_id != "") {
-            $response = response()->view('fronts.plans_info', $data);
-            $response->cookie('plan_id', $plan_id, 100);
-            // return view('fronts.plans_info', $data);
-            return $response;
-            // return redirect()->route('plansinfo', $data);
-        }
+        // if ($request->plan_id != "") {
+        //     $response = response()->view('fronts.plans_info', $data);
+        //     $response->cookie('plan_id', $plan_id, 100);
+        //     // return view('fronts.plans_info', $data);
+        //     return $response;
+        //     // return redirect()->route('plansinfo', $data);
+        // }
     }
 }
