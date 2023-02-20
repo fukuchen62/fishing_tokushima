@@ -25,17 +25,17 @@
         <table class="info">
             @csrf
             <tr>
-                <th width="15%">カテゴリーID: </th>
+                <th width="15%"> <span>*</span> カテゴリーID: </th>
                 <td><input type="number" name="category_id" required></td>
             </tr>
             <tr>
-                <th>タイトル: </th>
+                <th> <span>*</span> タイトル: </th>
                 <td><input type="text" name="title" required></td>
             </tr>
             <tr>
                 <th>概要: </th>
                 <td>
-                    <textarea name="overview" cols="50" rows="5" required></textarea>
+                    <textarea name="overview" cols="50" rows="5"></textarea>
                 </td>
             </tr>
             <tr>
@@ -45,13 +45,13 @@
                 </td>
             </tr>
             <tr>
-                <th>サムネ画像：</th>
+                <th> <span>*</span> サムネ画像：</th>
                 <td>
-                    <input type="text" name="thumbnail" value="">
+                    <input type="text" name="thumbnail" value="" required>
                 </td>
             </tr>
             <tr>
-                <th>表示フラグ：</th>
+                <th> <span>*</span> 表示フラグ：</th>
                 <td>
                     <input type="text" name="is_show" value="1"required>
                 </td>

@@ -36,35 +36,35 @@
             @csrf
             <input type="hidden" name="id" value="{{ $plan->id }}">
             <tr>
-                <th width="15%">タイトル: </th>
+                <th width="15%"> <span>*</span> タイトル: </th>
                 <td><input type="text" name="title" value="{{ $plan->title }}" required></td>
             </tr>
             <tr>
-                <th>概要:</th>
+                <th> <span>*</span> 概要:</th>
                 <td>
                     <textarea name="overview" cols="50" rows="5" required> {{ $plan->overview }} </textarea>
                 </td>
             </tr>
             <tr>
-                <th>難易度: </th>
+                <th> <span>*</span> 難易度: </th>
                 <td>
                     <input type="number" name="level" value="{{ $plan->level }}" required>
                 </td>
             </tr>
             <tr>
-                <th>地域ID:</th>
+                <th> <span>*</span> 地域ID:</th>
                 <td>
                     <input type="number" name="city_id" value="{{ $plan->city_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th>釣りスポットID:</th>
+                <th> <span>*</span> 釣りスポットID:</th>
                 <td>
                     <input type="number" name="spot_id" value="{{ $plan->spot_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th>魚ID:</th>
+                <th> <span>*</span> 魚ID:</th>
                 <td>
                     <input type="number" name="fish_id" value="{{ $plan->fish_id }}" required>
                 </td>
@@ -88,7 +88,7 @@
                 </td>
             </tr>
             <tr>
-                <th>表示フラグ:</th>
+                <th> <span>*</span> 表示フラグ:</th>
                 <td>
                     <input type="boolean" name="is_show" value="{{ $plan->is_show }}" required>
                 </td>

@@ -293,6 +293,10 @@ table.info textarea {
     width: 100%;
 }
 
+table th span {
+    color: rgb(220, 45, 109);
+}
+
 /* フッター */
 #footer {
     width: 100%;

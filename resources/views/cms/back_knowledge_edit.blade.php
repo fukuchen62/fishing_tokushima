@@ -36,11 +36,11 @@
             @csrf
             <input type="hidden" name="id" value="{{ $knowledge->id }}">
             <tr>
-                <th width="15%">カテゴリーID: </th>
+                <th width="15%"> <span>*</span> カテゴリーID: </th>
                 <td><input type="text" name="category_id" value="{{ $knowledge->category_id }}"required></td>
             </tr>
             <tr>
-                <th>タイトル: </th>
+                <th> <span>*</span> タイトル: </th>
                 <td><input type="text" name="title" value="{{ $knowledge->title }}"required></td>
             </tr>
             <tr>
@@ -56,13 +56,13 @@
                 </td>
             </tr>
             <tr>
-                <th>サムネ画像：</th>
+                <th> <span>*</span> サムネ画像：</th>
                 <td>
                     <input type="text" name="thumbnail" value="{{ $knowledge->thumbnail }}"required>
                 </td>
             </tr>
             <tr>
-                <th>表示フラグ：</th>
+                <th> <span>*</span> 表示フラグ：</th>
                 <td>
                     <input type="text" name="is_show" value="{{ $knowledge->is_show }}"required>
                 </td>

@@ -35,21 +35,21 @@
             @csrf
             <input type="hidden" name="id" value="{{ $shop->id }}">
             <tr>
-                <th width="15%">店名: </th>
-                <td><input type="text" name="name" value="{{ $shop->name }}"></td>
+                <th width="15%"> <span>*</span> 店名: </th>
+                <td><input type="text" name="name" value="{{ $shop->name }}" required></td>
             </tr>
             <tr>
-                <th>地域ID: </th>
-                <td><input type="text" name="city_id" value="{{ $shop->city_id }}"></td>
+                <th> <span>*</span> 地域ID: </th>
+                <td><input type="text" name="city_id" value="{{ $shop->city_id }}" required></td>
             </tr>
             <tr>
-                <th>郵便番号: </th>
-                <td><input type="text" name="postal_code" value="{{ $shop->postal_code }}"></td>
+                <th> <span>*</span> 郵便番号: </th>
+                <td><input type="text" name="postal_code" value="{{ $shop->postal_code }}" required></td>
             </tr>
             <tr>
-                <th>住所:</th>
+                <th> <span>*</span> 住所:</th>
                 <td>
-                    <input type="text" name="address" value="{{ $shop->address }}">
+                    <input type="text" name="address" value="{{ $shop->address }}" required>
                 </td>
             </tr>
             <tr>
@@ -67,8 +67,8 @@
                 <td><input type="text" name="latitude" value="{{ $shop->latitude }}"></td>
             </tr>
             <tr>
-                <th>電話番号: </th>
-                <td><input type="text" name="tel" value="{{ $shop->tel }}"></td>
+                <th> <span>*</span> 電話番号: </th>
+                <td><input type="text" name="tel" value="{{ $shop->tel }}" required></td>
             </tr>
             <tr>
                 <th>fax:</th>
@@ -85,13 +85,13 @@
                 <td><input type="text" name="url" value="{{ $shop->url }}"></td>
             </tr>
             <tr>
-                <th>営業日: </th>
-                <td><input type="text" name="service_day" value="{{ $shop->service_day }}"></td>
+                <th> <span>*</span> 営業日: </th>
+                <td><input type="text" name="service_day" value="{{ $shop->service_day }}" required></td>
             </tr>
             <tr>
-                <th>営業内容:</th>
+                <th> <span>*</span> 営業内容:</th>
                 <td>
-                    <textarea name="service" cols="50" rows="5"> {{ $shop->service }} </textarea>
+                    <textarea name="service" cols="50" rows="5" required> {{ $shop->service }} </textarea>
                 </td>
             </tr>
             <tr>
@@ -109,9 +109,9 @@
                 <td><input type="text" name="memo" value="{{ $shop->memo }}"></td>
             </tr>
             <tr>
-                <th>表示フラグ:</th>
+                <th> <span>*</span> 表示フラグ:</th>
                 <td>
-                    <input type="boolean" name="is_show" value="{{ $shop->is_show }}">
+                    <input type="boolean" name="is_show" value="{{ $shop->is_show }}" required>
                 </td>
             </tr>
         </table>
