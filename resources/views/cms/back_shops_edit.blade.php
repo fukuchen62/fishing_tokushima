@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <th> <span>*</span> 郵便番号: </th>
-                <td><input type="text" name="postal_code" value="{{ $shop->postal_code }}" required></td>
+                <td><input type="text" name="postal_code" value="{{ $shop->postal_code }}"></td>
             </tr>
             <tr>
                 <th> <span>*</span> 住所:</th>
