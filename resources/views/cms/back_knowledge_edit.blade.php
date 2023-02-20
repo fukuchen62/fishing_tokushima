@@ -46,7 +46,7 @@
             <tr>
                 <th>概要: </th>
                 <td>
-                    <textarea name="overview" cols="50" rows="5" required> {{ $knowledge->overview }} </textarea>
+                    <textarea name="overview" cols="50" rows="5" > {{ $knowledge->overview }} </textarea>
                 </td>
             </tr>
             <tr>
