@@ -34,7 +34,9 @@
             </tr>
             <tr>
                 <th>概要: </th>
-                <td><input type="text" name="overview" required></td>
+                <td>
+                    <textarea name="overview" cols="50" rows="5" required></textarea>
+                </td>
             </tr>
             <tr>
                 <th>記事の内容：</th>

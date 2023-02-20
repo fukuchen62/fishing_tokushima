@@ -36,7 +36,9 @@
             <input type="hidden" name="id" value="{{ $spot->id }}">
             <tr>
                 <th width="15%">概要: </th>
-                <td><input type="text" name="overview" value="{{ $spot->overview }}"></td>
+                <td>
+                    <textarea name="overview" cols="50" rows="5"> {{ $spot->overview }} </textarea>
+                </td>
             </tr>
             <tr>
                 <th>画像1: </th>

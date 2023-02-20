@@ -44,11 +44,14 @@
             </tr>
             <tr>
                 <th>詳細説明: </th>
-                <td><input type="text" name="detail" value="{{ $fish->detail }}"required></td>
+                <td>
+                    <textarea name="detail" cols="50" rows="5" required> {{ $fish->detail }} </textarea>
+                </td>
             </tr>
             <tr>
                 <th>注意事項: </th>
-                <td><input type="text" name="warning" value="{{ $fish->detail }}"></td>
+                <td>
+                    <textarea name="warning" cols="50" rows="5" required> {{ $fish->warning }} </textarea>
             </tr>
             <tr>
                 <th>食べ方1: </th>

@@ -142,7 +142,7 @@
     </section>
 
     <!-- 釣れるスポット -->
-    <section class="spot__section">
+    <section class="spot__section p__lr">
         <div class="spot__box">
             <h2 class="spot__box--title">釣れるスポット</h2>
             <ul class="spot__box--list">
@@ -170,7 +170,7 @@
     </section>
 
     <!-- そのほかの魚 -->
-    <section class="recommend__section">
+    <section class="recommend__section p__lr">
         <div class="recommend__box">
             <h2 class="recommend__box--title">その他の魚</h2>
             <ul class="recommend__box--list">
