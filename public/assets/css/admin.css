@@ -293,8 +293,30 @@ table.info textarea {
     width: 100%;
 }
 
-table th span {
-    color: rgb(220, 45, 109);
+/* アスタリスクの色変更 */
+table.info th span {
+    color: rgb(255, 19, 105);
+}
+
+/* 編集画面と新規登録画面のtdの仕切る線なくす */
+table.edit_info td,
+table.new_info td {
+    border: none;
+}
+
+/* 編集画面と新規登録画面の入力欄に枠線をつける */
+table.edit_info input,
+table.edit_info textarea,
+table.new_info input,
+table.new_info textarea {
+    border: 1px #b9adc3 solid;
+}
+/* 編集画面と新規登録画面の入力欄にホバーすると枠線の色が変わる */
+table.edit_info input:hover,
+table.edit_info textarea:hover,
+table.new_info input:hover,
+table.new_info textarea:hover {
+    border: 2px blueviolet solid;
 }
 
 /* フッター */

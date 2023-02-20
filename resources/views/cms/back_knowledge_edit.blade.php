@@ -32,7 +32,7 @@
     @endif
 
     <form method="post" action="{{ route('knowledgeedit') }}">
-        <table class="info">
+        <table class="info edit_info">
             @csrf
             <input type="hidden" name="id" value="{{ $knowledge->id }}">
             <tr>

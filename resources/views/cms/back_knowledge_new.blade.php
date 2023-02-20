@@ -22,7 +22,7 @@
     </ul>
 
     <form method="post" action="{{ route('knowledgeentry') }}">
-        <table class="info">
+        <table class="info new_info">
             @csrf
             <tr>
                 <th width="15%"> <span>*</span> カテゴリーID: </th>
