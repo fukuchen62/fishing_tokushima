@@ -29,3 +29,11 @@
 /* モジュールパーツルール */
 
 /* 地図 */
+.map {
+    padding-top: 100px;
+}
+
+iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}

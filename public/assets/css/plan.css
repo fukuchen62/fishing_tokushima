@@ -36,6 +36,13 @@
     height: 314px;
 }
 
+/* 画像共通 */
+.max-width-box {
+    max-width: 559px;
+    margin: 0 auto;
+    height: auto;
+}
+
 /* 難易度の☆ */
 .star__box img {
     width: 50px;
