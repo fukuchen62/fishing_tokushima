@@ -124,13 +124,3 @@
         padding: 10px 20px 10px 20px;
     }
 }
-
-
-/* プラン検索専用地域、難易度☆カード内レイアウト */
-.card__flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding-top: 40px;
-}
