@@ -280,8 +280,8 @@ height: auto;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+
     transform: translateX(100vw);
     padding-top: 150px;
     overflow: scroll;
@@ -375,6 +375,126 @@ height: auto;
     height: 136px;
 }
 
+.g-nav__icon{
+        width: 50px;
+        height: 50px;
+}
+/* g-navアイコンのレスポンシブ */
+@media screen and (min-width:600px) {
+    .g-nav__box--discription:hover{
+        transform: translate(0,-5px);
+    }
+    .g-nav__box--discription:hover .draw{
+        fill: #fff;
+    }
+    /* 入門知識 */
+    .circle__knowledge{
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.3s;
+        transform-origin: 50% 50%;
+    }
+    .draw__knowledge{
+        fill:#1CB20F;
+    }
+    .g-nav__box--discription:hover .circle__knowledge{
+        fill:#1CB20F;
+        opacity: 1;
+        transform: scale(1)
+    }
+    /* 徳島の魚 */
+    .circle__fish{
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.3s;
+        transform-origin: 50% 50%;
+    }
+    .draw__fish{
+        fill:#1A6CE8;
+    }
+    .g-nav__box--discription:hover .circle__fish{
+        fill:#1A6CE8;
+        opacity: 1;
+        transform: scale(1)
+    }
+    /* 釣りスポット */
+    .circle__spot{
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.3s;
+        transform-origin: 50% 50%;
+    }
+    .draw__spot{
+        fill:#FF0000;
+    }
+    .g-nav__box--discription:hover .circle__spot{
+        fill:#FF0000;
+        opacity: 1;
+        transform: scale(1)
+    }
+    /* 体験プラン */
+    .circle__plan{
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.3s;
+        transform-origin: 50% 50%;
+    }
+    .draw__plan{
+        stroke:#E89026;
+    }
+    .g-nav__box--discription:hover .circle__plan{
+        fill:#E89026;
+        opacity: 1;
+        transform: scale(1)
+    }
+    .g-nav__box--discription:hover .draw__plan{
+        stroke:#fff ;
+        fill:none
+    }
+    /* 釣具店 */
+    .circle__shop{
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.3s;
+        transform-origin: 50% 50%;
+    }
+    .draw__shop{
+         fill:#BAAA14;
+    }
+    .g-nav__box--discription:hover .circle__shop{
+        fill:#BAAA14;
+        opacity: 1;
+        transform: scale(1)
+    }
+    /* マイページ */
+    .circle__mypage{
+        opacity: 0;
+        transform: scale(0);
+        transition: 0.3s;
+        transform-origin: 50% 50%;
+    }
+        .draw__mypage{
+        fill:#EF5DE9;
+    }
+        .g-nav__box--discription:hover .circle__mypage{
+        fill:#EF5DE9;
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+/* g-navレスポンシブ */
+@media screen and (min-width:600px) {
+.g-nav{
+        align-items: center;
+        justify-content: center;
+}
+
+.g-nav__box--section{
+    margin: 0 auto;
+}
+}
+
 @media screen and (min-width: 1080px) {
     .g-nav {
         transform: translateX(0);
@@ -399,7 +519,7 @@ height: auto;
         margin-top: 0;
         margin-right: 30px;
         display: flex;
-        text-align: end;
+        text-align: center;
         background-color: rgba(0, 0, 0, 0);
     }
 
@@ -423,118 +543,11 @@ height: auto;
         transition:0.5s;
     }
 
-    .g-nav__icon{
-        width: 50px;
-        height: 50px;
-    }
-
-    @media screen and (min-width:600px) {
-        .g-nav__box--discription:hover{
-            transform: translate(0,-5px);
-        }
-        .g-nav__box--discription:hover .draw{
-            fill: #fff;
-        }
-        /* 入門知識 */
-        .circle__knowledge{
-            opacity: 0;
-            transform: scale(0);
-            transition: 0.3s;
-            transform-origin: 50% 50%;
-        }
-        .draw__knowledge{
-            fill:#1CB20F;
-        }
-        .g-nav__box--discription:hover .circle__knowledge{
-            fill:#1CB20F;
-            opacity: 1;
-            transform: scale(1)
-        }
-        /* 徳島の魚 */
-        .circle__fish{
-            opacity: 0;
-            transform: scale(0);
-            transition: 0.3s;
-            transform-origin: 50% 50%;
-        }
-        .draw__fish{
-            fill:#1A6CE8;
-        }
-        .g-nav__box--discription:hover .circle__fish{
-            fill:#1A6CE8;
-            opacity: 1;
-            transform: scale(1)
-        }
-        /* 釣りスポット */
-        .circle__spot{
-            opacity: 0;
-            transform: scale(0);
-            transition: 0.3s;
-            transform-origin: 50% 50%;
-        }
-        .draw__spot{
-            fill:#FF0000;
-        }
-        .g-nav__box--discription:hover .circle__spot{
-            fill:#FF0000;
-            opacity: 1;
-            transform: scale(1)
-        }
-        /* 体験プラン */
-        .circle__plan{
-            opacity: 0;
-            transform: scale(0);
-            transition: 0.3s;
-            transform-origin: 50% 50%;
-        }
-        .draw__plan{
-            stroke:#E89026;
-        }
-        .g-nav__box--discription:hover .circle__plan{
-            fill:#E89026;
-            opacity: 1;
-            transform: scale(1)
-        }
-        .g-nav__box--discription:hover .draw__plan{
-            stroke:#fff ;
-            fill:none
-        }
-        /* 釣具店 */
-            .circle__shop{
-            opacity: 0;
-            transform: scale(0);
-            transition: 0.3s;
-            transform-origin: 50% 50%;
-        }
-        .draw__shop{
-            fill:#BAAA14;
-        }
-        .g-nav__box--discription:hover .circle__shop{
-            fill:#BAAA14;
-            opacity: 1;
-            transform: scale(1)
-        }
-        /* マイページ */
-        .circle__mypage{
-            opacity: 0;
-            transform: scale(0);
-            transition: 0.3s;
-            transform-origin: 50% 50%;
-        }
-        .draw__mypage{
-            fill:#EF5DE9;
-        }
-        .g-nav__box--discription:hover .circle__mypage{
-            fill:#EF5DE9;
-            opacity: 1;
-            transform: scale(1)
-        }
-    }
-
     .g-nav__box--text {
         font: size 1px;
     }
 }
+
 @media screen and (min-width: 1200px) {
     .g-nav__box{
         margin-right: calc(50vw - 600px);
