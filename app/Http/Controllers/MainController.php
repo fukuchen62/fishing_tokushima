@@ -54,7 +54,8 @@ class MainController extends Controller
      */
     public function escapeList()
     {
-        $items = Evacuation::all();
+        // $items = Evacuation::all();
+        $items = Evacuation::where('id', 1)->get();
 
         $data = [
             'evacuations' => $items,
