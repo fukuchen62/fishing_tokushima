@@ -100,14 +100,10 @@ class MypageController extends Controller
         $spot_id = "";
         $plan_id = "";
 
-        $item = "";
-
 
         // スポット------------------------------
 
         if ($request->spot_id != "") {
-
-            $item = Spot::find($request->spot_id);
 
             if ($request->hasCookie('spot_id')) {
                 $input = $request->spot_id;
@@ -127,80 +123,21 @@ class MypageController extends Controller
                 $spot_id .= $request->spot_id;
             }
 
-
-            // 関連フィッシュIDを取得
-            $fish_id = $item->fish_id;
-            if ($fish_id != '') {
-                $fishid_list = explode(",", $fish_id);
-            }
-            // 関連フィッシュ情報を取得
-            foreach ($fishid_list as $id) {
-                // fish情報を読み込む
-                $fishinfo = Fish::find($id);
-                // fish情報を配列に加える
-                $fish_list[] = $fishinfo;
-            }
-
-            // 関連ショップIDを取得
-            $shop_id = $item->shop_id;
-            if ($shop_id != '') {
-                $shopid_list = explode(",", $shop_id);
-            }
-            // 関連ショップ情報を取得
-            foreach ($shopid_list as $id) {
-                // shop情報を読み込む
-                $shopinfo = Shop::find($id);
-                // shop情報を配列に加える
-                $shop_list[] = $shopinfo;
-            }
-
             $data = [
-                'msg' => 'spot_id:「' . $request->spot_id . '」をcookieに保存しました。' . $spot_id,
-
-                'spots' => $item,
-                'fishlist' => $fish_list,
-                'shoplist' => $shop_list,
-                // 'spots' => null,
-                // 'plans' => null,
-
-                // 'id' => $id,
-                // 'response' => $response,
+                'id' => $request->spot_id,
+                'url' => 'spotsinfo',
             ];
 
-            $response = response()->view('fronts.spots_info', $data);
+            $response = response()->view('fronts.cookie_save', $data);
             $response->cookie('spot_id', $spot_id, 100);
-            // return view('fronts.spots_info', $data);
             return $response;
-            // return redirect()->route('spotsinfo', $data);
         }
 
 
         // プラン------------------------------
 
-        $connection1 = "";
-        $connection2 = "";
-
 
         if ($request->plan_id != "") {
-
-            $item = Plan::find($request->plan_id);
-
-            // 関連プラン
-            // whereで魚かスポットが一緒のやつを抜き出してくる
-
-            $id1 = $item->fish_id;
-            $id2 = $item->spot_id;
-
-            $connection1 = Plan::where('fish_id', $id1)
-                ->where('id', '<>', $request->plan_id)
-                // ->limit(3)
-                ->get();
-
-            $connection2 = Plan::where('spot_id', $id2)
-                ->where('id', '<>', $request->plan_id)
-                // ->limit(3)
-                ->get();
-
 
             if ($request->hasCookie('plan_id')) {
                 $input = $request->plan_id;
@@ -221,39 +158,13 @@ class MypageController extends Controller
             }
 
             $data = [
-                'msg' => 'plan_id:「' . $request->plan_id . '」をcookieに保存しました。' . $plan_id,
-
-                // 'spots' => null,
-                // 'plans' => null,
-
-                'item' => $item,
-                'connection1' => $connection1,
-                'connection2' => $connection2,
-
-                // 'id' => $id,
-                // 'response' => $response,
+                'id' => $request->plan_id,
+                'url' => 'plansinfo',
             ];
 
-            // $response = response()->view('fronts.mypage', $data);
-            $response = response()->view('fronts.plans_info', $data);
+            $response = response()->view('fronts.cookie_save', $data);
             $response->cookie('plan_id', $plan_id, 100);
-            // return view('fronts.plans_info', $data);
             return $response;
-            // return redirect()->route('plansinfo', $data);
         }
-
-
-        // setcookie("fish_id", $fish_id);
-        // setcookie("spot_id", $spot_id);
-        // setcookie("plan_id", $plan_id);
-
-
-        // $values = [
-        //     'spots' => $spot_id,
-        //     'plans' => $plan_id,
-        // ];
-
-        // $response->withCookie('fishing', $values, 60);
-
     }
 }
