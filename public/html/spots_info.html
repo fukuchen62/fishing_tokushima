@@ -17,6 +17,8 @@
     <title></title>
     <!-- stylesheets -->
     <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/slick/slick.css">
+    <link rel="stylesheet" href="../assets/slick/slick-theme.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/spots.css">
     <link rel="stylesheet" href="../assets/css/spots_info.css">
@@ -98,7 +100,9 @@
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill="#30ADD1" fill-opacity="1" d="M0,64L30,85.3C60,107,120,149,180,144C240,139,300,85,360,80C420,75,480,117,540,149.3C600,181,660,203,720,213.3C780,224,840,224,900,202.7C960,181,1020,139,1080,106.7C1140,75,1200,53,1260,69.3C1320,85,1380,139,1410,165.3L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                        <path fill="#30ADD1" fill-opacity="1"
+                            d="M0,64L30,85.3C60,107,120,149,180,144C240,139,300,85,360,80C420,75,480,117,540,149.3C600,181,660,203,720,213.3C780,224,840,224,900,202.7C960,181,1020,139,1080,106.7C1140,75,1200,53,1260,69.3C1320,85,1380,139,1410,165.3L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
+                        </path>
                     </svg>
                 </div>
                 <div class="g-nav__link flex">
@@ -115,98 +119,131 @@
 
     <section class="titlesection expand">
         <div class="titlesection__box">
-            <h1 class="pagetitle">ページタイトル</h1>
+            <h1 class="pagetitle">（スポット名）</h1>
             <div class="pagetitle__border"></div>
         </div>
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
 
     </section>
 </header>
 <main>
-    <!-- スポット写真 -->
-    <div class="p__lr expand spotinfo__img">
-        <!-- 親に表示サイズを指定 -->
-        <!-- 画像は表示サイズより大きく -->
-        <img class="" src="https://placehold.jp/559x419.png" alt="">
-    </div>
+    <!-- 浅瀬背景 -->
+    <div class="container shallow expand">
+        <div class="column">
+            <div class="spotinfo__images p__lr">
+                <!-- メイン画像 -->
+                <div class="spotinfo__img main-img js-main-img">
+                    <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
+                        alt="スポット写真1">
+                </div>
+                <!-- サムネイル画像 -->
+                <ul class="sub-img js-sub-img">
+                    <!-- 選択されている画像の枠線を変更 -->
+                    <li class="spotinfo__img">
+                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91" alt="スポット写真1">
+                    </li>
+                    <li class="spotinfo__img">
+                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%92" alt="スポット写真2">
+                    </li>
+                    <li class="spotinfo__img">
+                        <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%93"
+                            alt="スポット写真3">
+                    </li>
+                    <li class="spotinfo__img">
+                        <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%94"
+                            alt="スポット写真4">
+                    </li>
+                    <li class="spotinfo__img">
+                        <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%95"
+                            alt="スポット写真5">
+                    </li>
+                </ul>
+            </div>
+            <!-- お気に入りボタン -->
+            <div>
+                <a href="" id="" class="favorite">
+                    <span>お気に入りに登録する</span>
+                    <img src="../assets/images/svg/favorite.svg" alt="">
+                </a>
+            </div>
 
-    <!-- お気に入りボタン -->
-    <div>
-        <a href="" id="" class="favorite">
-            <span>お気に入りに登録する</span>
-            <img src="../assets/images/svg/favorite.svg" alt="">
-        </a>
-    </div>
-
-    <div>
-        <a href="" id="" class="favorite favorite__in">
-            <span>お気に入りに登録済み</span>
-            <img src="../assets/images/svg/favorite__in.svg" alt="">
-        </a>
-    </div>
-
-    <!-- スポット概要 -->
-    <div class="spotinfo__discription p__lr p__b expand">
-        <div class="spotinfo__dis--textbox">
-            <p class="spotinfo__dis--text">紀伊水道と小鳴門海峡の交わる位置で、潮流も激しく、いろいろな魚が年間を通して狙える知る人ぞ知る人気の釣り場です。</p>
-            <!-- 貝殻イラスト -->
-            <img class="shell">
-            <img class="spotinfo__dis--icon" src="" alt="">
-            <img class="spotinfo__dis--icon" src="" alt="">
+            <div>
+                <a href="" id="" class="favorite favorite__in">
+                    <span>お気に入りに登録済み</span>
+                    <img src="../assets/images/svg/favorite__in.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="column">
+            <!-- スポット概要 -->
+            <div class="spotinfo__discription p__lr p__b">
+                <div class="spotinfo__dis--textbox">
+                    <p class="spotinfo__dis--text">紀伊水道と小鳴門海峡の交わる位置で、潮流も激しく、いろいろな魚が年間を通して狙える知る人ぞ知る人気の釣り場です。</p>
+                </div>
+            </div>
+            <!-- 詳細情報table -->
+            <section class="spotinfo__table p__lr">
+                <h3 class="table__title spotinfo__table--title">詳細情報</h3>
+                <table class="table m__b">
+                    <tr class="table__tr">
+                        <td class="table__subtitle">住所</td>
+                        <td>テキストテキストテキストテキストテキストテキスト</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">駐車場</td>
+                        <td>駐車場ID</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">釣り方</td>
+                        <td>サビキ釣り、ちょい投げ</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">トイレ</td>
+                        <td>有</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">バーベキュー</td>
+                        <td>無</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__subtitle">避難場所</td>
+                        <td>テキストテキストテキストテキストテキストテキスト</td>
+                    </tr>
+                </table>
+            </section>
         </div>
     </div>
     <!-- 狙える魚 -->
-    <section class=" p__lr expand">
-        <h3 class="section__box--title spotinfo__sectiontitle">狙える魚</h3>
-        <div class="m__b">
-            <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
-            <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
-            <a href=""><img class="spotinfo__fish--img" src="" alt=""></a>
-        </div>
-    </section>
-    <!-- 詳細情報table -->
-    <section class="p__lr expand">
-        <h3 class="table__title spotinfo__table--title">詳細情報</h3>
-        <table class="table radius-table m__b">
-            <tr class="table__tr">
-                <td class="table__subtitle">住所</td>
-                <td>テキストテキストテキストテキストテキストテキスト</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">駐車場</td>
-                <td>テキストテキストテキストテキストテキストテキスト</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">釣り方</td>
-                <td>テキストテキストテキストテキストテキストテキスト</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">周辺施設</td>
-                <td>テキストテキストテキストテキストテキストテキスト</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">近くの病院</td>
-                <td>テキストテキストテキストテキストテキストテキスト</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">避難場所</td>
-                <td>テキストテキストテキストテキストテキストテキスト</td>
-            </tr>
-        </table>
-    </section>
-    <!-- googleマップ -->
-    <iframe class="spotinfo__iframe sea p__lr" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.6294241434143!2d134.62113751504018!3d34.18139108057099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355365e085d38f55%3A0xebeead4e33f1bb56!2z5bKh5bSO5rW35bK4!5e0!3m2!1sja!2sjp!4v1676509825371!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="sea">
+        <section class="spotinfo__fish p__lr">
+            <h3 class="section__box--title spotinfo__sectiontitle--fish">狙える魚</h3>
+            <div class="spotinfo__fishes">
+                <a class="spotinfo__fish--img" href=""><img src="https://placehold.jp/500x500.png" alt="アジ"></a>
+                <a class="spotinfo__fish--img" href=""><img src="https://placehold.jp/500x500.png" alt="イワシ"></a>
+                <a class="spotinfo__fish--img" href=""><img src="https://placehold.jp/500x500.png" alt="メバル"></a>
+                <a class="spotinfo__fish--img" href=""><img src="https://placehold.jp/500x500.png" alt="チヌ"></a>
+                <a class="spotinfo__fish--img" href=""><img src="https://placehold.jp/500x500.png" alt="シーバス"></a>
+            </div>
+        </section>
+
+        <!-- googleマップ -->
+        <section class="spotinfo__iframe p__lr">
+            <iframe class="googlemap"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3300.6294241434143!2d134.62113751504018!3d34.18139108057099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355365e085d38f55%3A0xebeead4e33f1bb56!2z5bKh5bSO5rW35bK4!5e0!3m2!1sja!2sjp!4v1676509825371!5m2!1sja!2sjp"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
     <!-- 貝殻イラスト -->
     <div class="spotinfo__shell">
-        <img class="shell" src="" alt="">
-        <img class="shell" src="" alt="">
-        <img class="shell" src="" alt="">
+        <img class="shell" src="../assets/images/shell-1.png" alt="">
+        <img class="shell" src="../assets/images/shell-2.png" alt="">
+        <img class="shell" src="../assets/images/shell-3.png" alt="">
     </div>
     <!-- 近くのスポットcard表示3つ -->
-    <section class="p__lr expand">
-        <h3 class="section__box--title">近くのスポット</h3>
+    <section class="p__lr">
+        <h3 class="section__box--title spotinfo__sectiontitle">近くのスポット</h3>
         <ul class="card__area">
             <li class="card__p">
                 <a class="card card__skin" href="">
@@ -239,11 +276,6 @@
 
         <a class="btn" href="">スポット一覧</a>
     </section>
-    <!-- 貝殻イラスト -->
-    <div>
-        <img class="shell" src="" alt="">
-        <img class="shell" src="" alt="">
-    </div>
 </main>
 
 <footer class="footer expand">
@@ -272,4 +304,7 @@
 
 </body>
 <script src="../assets/js/main.js"></script>
+<script src="../assets/slick/slick.min.js"></script>
+<script src="../assets/slick/slick-common.js"></script>
+
 </html>
