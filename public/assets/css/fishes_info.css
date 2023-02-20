@@ -1,14 +1,5 @@
 @charset "utf-8";
 
-body {
-    color: #51656F;
-}
-
-
-/* img {
-    width: 100%;
-    height: auto;
-} */
 
 .max-width-box {
     max-width: 559px;
@@ -17,7 +8,6 @@ body {
 .fishinfo__section {
     padding-top: 100px;
     background-color: #EAF2FA;
-    /* margin: 0 auto; */
 }
 
 
@@ -106,7 +96,7 @@ body {
 
 .table__title,
 .table {
-    width: 100%;
+    width: 80%;
 }
 
 .table td {

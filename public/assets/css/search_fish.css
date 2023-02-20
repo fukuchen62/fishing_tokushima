@@ -3,7 +3,6 @@
 
 
 .calendar__section {
-    /* width: 100%; */
     padding: 50px 0 0 0;
     background-color: #EAF2FA;
 }
@@ -139,6 +138,11 @@ tr {
 
 .results__section {
     background-color: #30ADD1;
+}
+
+.results__box--title {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .results__box--info {
