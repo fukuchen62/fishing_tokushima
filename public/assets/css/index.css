@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+.imgbox {
+    max-width: 559px;
+    margin: 0 auto;
+}
+
+.shellfish1{
+    left: 10%;
+}
+
+.tuttokufont{
+    text-align: center;
+    font-size: 2.5rem;
+    width: 300px;
+    font-weight: 900;
+    color: #30ADD1;
+    -webkit-text-stroke: 1px #fff;
+    /* padding-top: 45px; */
+    overflow: visible;
+}
+
+.page__discription {
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    overflow-x: visible;
+    overflow-y: visible;
+    padding-bottom: 50px;
+}
+
+.keyvisual {
+    background-image: url(../images/img_neko_700_3.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+.bottom__margin {
+    margin-bottom: 50px;
+}
+
+.titlesection {
+    padding: 170px;
+    background-image: none;
+    background-color: #FFEA20;
+    height: 200px;
+    margin-top: -160px;
+}
+
+.titlesection__box {
+    top: -80px;
+}
+
+.catchcopy {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+}
+
+.titlesection__top {
+    background-image: url(../images/svg/wave-indexpage.svg);
+    width: 100vw;
+    height: 160px;
+    background-repeat: repeat-x;
+    transform: scale(1, -1);
+    position: relative;
+    top: -158px;
+    z-index: 1;
+}
+
+.titlesection__border {
+    background-color: #EAF2FA;
+    background-image: url(../images/svg/wave-indexpage.svg);
+    width: 100vw;
+    height: 160px;
+    background-repeat: repeat-x;
+    transform: scale(-1, 1);
+}
+
+
+
+
+.knowledge_img{
+    width: 400px;
+    height: 4;
+    border-radius: 50%;
+}
+
+.knowledge__text--block{
+    background-color: #30ADD1;
+    color: #FFF;
+    border-radius:40px;
+    margin: 30px auto;
+    padding: 30px;
+}
+.knowledge__text--box{
+    color: #fff;
+}
+.knowledge_even{
+    flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 800px){
+    .knowledge__section--flexbox{
+        display: flex;
+        justify-content: space-around;
+    }
+    .imgbox{
+        margin: 0 50px;
+    }
+}
+
+
+.spotsection {
+    background-image: url(../images/tokushima.svg);
+
+}
+
+.plansection{
+    position: relative;
+    height: 1000px;
+}
+
+.plansection__block {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+}
+.plan1{
+    left: 50%;
+    top: 50px;
+}
+.plan2 {
+    left: 20%;
+    top: 100px;
+}
+.plan3{
+    right: 10%;
+    top: 140px;
+}
+
+
+.circle {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(../images/img_neko_700_3.jpg);
+}
+
+.item {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #4169e1;
+    transform: translateX(-100px);
+    animation: circle-move-anim 4s linear infinite;
+    /* for text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #FFF;
+}
+
+@keyframes circle-move-anim {
+    0% {
+        transform: rotate(0deg) translateX(-100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(-100px) rotate(-360deg);
+    }
+}
+@keyframes arc-move-anim-1 {
+    0% {
+        transform: rotate(0deg) translateX(-100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(-100px) rotate(-360deg);
+    }
+}
+@keyframes arc-move-anim-2 {
+    0% {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg) translateX(100px) rotate(360deg);
+    }
+}
+
+
+
+
+
+.infomation__block{
+    margin-top: 50px;
+    border: solid 5px #30ADD1;
+    border-radius: 50px;
+    padding: 20px;
+}
+.infomation__border{
+    border: #30ADD1 dashed 2px ;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

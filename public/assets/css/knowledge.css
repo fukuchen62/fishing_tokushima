@@ -139,7 +139,7 @@ input[name="tab_item"] {
     color: #30ADD1;
     font-weight: bold;
     transition: all 0.15s linear;
-    padding: ;
+
 }
 .tab:hover{
     cursor: pointer;

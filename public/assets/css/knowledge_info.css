@@ -13,6 +13,11 @@ body{
     max-width: 559px;
     margin: 0 auto;
 }
+.i-catchimg{
+    margin-top: 50px;
+    max-width: 708px;
+    height: auto;
+}
 
 .mainarea{
     width: 100vw;
@@ -27,7 +32,7 @@ body{
 }
 
 .knowledge__section{
-    width: 75%;
+    width: 100%;
     padding-bottom: 20px ;
     height: auto;
     margin: 0 auto;

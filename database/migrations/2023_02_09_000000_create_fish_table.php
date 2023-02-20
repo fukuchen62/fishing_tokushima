@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('method', 100)->nullable(false);
             $table->string('month', 50)->nullable();
             $table->integer('level')->nullable(false)->default(1);
-            $table->string('spot_id', 100)->nullable()->default(0);
+            $table->string('spot_id', 100)->nullable();
             $table->string('fish_img1', 200)->nullable(false);
             $table->string('fish_img2', 200)->nullable();
             $table->string('fish_img3', 200)->nullable();

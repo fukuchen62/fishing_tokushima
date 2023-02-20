@@ -17,6 +17,29 @@
     background-color: #30ADD1;
 }
 
+/* 海のセクション区切り */
+
+/* セクション上側 */
+.secondsection__top {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom__second.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1, -1);
+}
+
+/* セクション下側 */
+.secondsection__bottom {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom__second.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+}
+
 /* レイアウトルール */
 
 /* フッターまでの余白 */
@@ -30,18 +53,12 @@
 
 /* 画像 */
 
-/* プラン画像統一サイズ */
-.plan__img {
-    width: 559px;
-    height: 314px;
-}
-
 /* 画像共通 */
-.max-width--box {
+.max-width-box {
     max-width: 559px;
     margin: 0 auto;
-    height: auto;
 }
+
 
 /* 難易度の☆ */
 .star {
