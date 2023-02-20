@@ -21,15 +21,6 @@ body{
     margin: 0 10px;
 }
 
-/* .spot__btn{
-    width: 160px;
-    height: 80px;
-    background-color: #FFEA20;
-    border-radius: 10px;
-    font-size: 24px;
-    margin: 0 30px;
-} */
-
 /* タブのスタイル */
 .tab__item{
     padding: 30px;
@@ -82,8 +73,12 @@ input[name="tab__item"] {
     border-radius: 10px;
     margin: 0 auto;
     background-color: #aaefff;
-    display: none;
+    /* display: none; */
     clear: both;
+}
+
+.hide{
+    display:none;
 }
 
 .spot__map--east{
@@ -114,8 +109,8 @@ input[name="tab__item"] {
         fill: #ffea20;
     }
     .spot__map--point:hover:after{
-        width: 100px;
-        padding: 10px;
+        width: 120px;
+        padding: 5px;
         background-color: #fff;
         border-radius: 20px;
         display: block;
@@ -209,6 +204,45 @@ input[name="tab__item"] {
     right: 29%;
 }
 
+@media screen and (min-width:600px) {
+   .point__east:nth-child(1):hover:after{
+    content: "岡崎海岸";
+   }
+   .point__east:nth-child(2):hover:after{
+    content: "亀浦観光港";
+   }
+    .point__east:nth-child(3):hover:after{
+    content: "竜宮の磯";
+   }
+   .point__east:nth-child(4):hover:after{
+    content: "大浦漁港";
+   }
+   .point__east:nth-child(5):hover:after{
+    content: "八木の鼻";
+   }
+   .point__east:nth-child(6):hover:after{
+    content: "北泊　新波止場";
+   }
+    .point__east:nth-child(7):hover:after{
+    content: "月見ヶ丘海浜公園";
+   }
+   .point__east:nth-child(8):hover:after{
+    content: "長原漁港";
+   }
+   .point__east:nth-child(9):hover:after{
+    content: "小松海岸";
+   }
+   .point__east:nth-child(10):hover:after{
+    content: "マリンピア北緑地外堤防";
+   }
+    .point__east:nth-child(11):hover:after{
+    content: "大神子海岸";
+   }
+   .point__east:nth-child(12):hover:after{
+    content: "津田の堤防";
+   }
+}
+
 /* 南部 */
 /* 赤石ふ頭 */
 .point__south:nth-child(1){
@@ -280,6 +314,45 @@ input[name="tab__item"] {
 .point__south:nth-child(12){
     top: 85%;
     right: 43%;
+}
+
+@media screen and (min-width:600px) {
+   .point__east:nth-child(1):hover:after{
+    content: "岡崎海岸";
+   }
+   .point__east:nth-child(2):hover:after{
+    content: "亀浦観光港";
+   }
+    .point__east:nth-child(3):hover:after{
+    content: "竜宮の磯";
+   }
+   .point__east:nth-child(4):hover:after{
+    content: "大浦漁港";
+   }
+   .point__east:nth-child(5):hover:after{
+    content: "八木の鼻";
+   }
+   .point__east:nth-child(6):hover:after{
+    content: "北泊　新波止場";
+   }
+    .point__east:nth-child(7):hover:after{
+    content: "月見ヶ丘海浜公園";
+   }
+   .point__east:nth-child(8):hover:after{
+    content: "長原漁港";
+   }
+   .point__east:nth-child(9):hover:after{
+    content: "小松海岸";
+   }
+   .point__east:nth-child(10):hover:after{
+    content: "マリンピア北緑地外堤防";
+   }
+    .point__east:nth-child(11):hover:after{
+    content: "大神子海岸";
+   }
+   .point__east:nth-child(12):hover:after{
+    content: "津田の堤防";
+   }
 }
 
 /* cardレイアウト */
