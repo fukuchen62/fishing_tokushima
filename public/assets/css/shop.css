@@ -198,7 +198,7 @@
 }
 
 .section__wrap--infomation {
-    margin: 10px 0 150px 0 ;
+    margin: 10px 0 20px 0 ;
     position: relative;
     padding-top: 25%;
     width: 100%;
@@ -215,7 +215,7 @@
 /* 貝や浮き輪の写真 */
 
 .section__image--adjust {
-    width: 60%;
+    width: 40%;
     height: auto;
     margin: 0 auto;
 }
