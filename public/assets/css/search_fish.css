@@ -6,15 +6,10 @@ body {
 }
 
 
-
-
-
-
 .calendar__section {
-    width: 100%;
-    background-color: #EAF2FA;
+    /* width: 100%; */
     padding: 50px;
-    margin: 0 auto;
+    background-color: #EAF2FA;
 }
 
 .calendar__title {
