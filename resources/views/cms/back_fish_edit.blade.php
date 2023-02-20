@@ -35,7 +35,7 @@
             @csrf
             <input type="hidden" name="id" value="{{ $fish->id }}">
             <tr>
-                <th width="20%">魚の名前(普通の呼び方): </th>
+                <th width="20%"> <span>*</span> 魚の名前(普通の呼び方): </th>
                 <td><input type="text" name="name" value="{{ $fish->name }}"required></td>
             </tr>
             <tr>
@@ -43,15 +43,18 @@
                 <td><input type="text" name="formal_name" value="{{ $fish->formal_name }}"></td>
             </tr>
             <tr>
-                <th>詳細説明: </th>
-                <td><input type="text" name="detail" value="{{ $fish->detail }}"required></td>
+                <th> <span>*</span> 詳細説明: </th>
+                <td>
+                    <textarea name="detail" cols="50" rows="5" required> {{ $fish->detail }} </textarea>
+                </td>
             </tr>
             <tr>
                 <th>注意事項: </th>
-                <td><input type="text" name="warning" value="{{ $fish->detail }}"></td>
+                <td>
+                    <textarea name="warning" cols="50" rows="5"> {{ $fish->warning }} </textarea>
             </tr>
             <tr>
-                <th>食べ方1: </th>
+                <th> <span>*</span> 食べ方1: </th>
                 <td><input type="text" name="cooking1" value="{{ $fish->cooking1 }}" required></td>
             </tr>
             <tr>
@@ -63,7 +66,7 @@
                 <td><input type="text" name="cooking3" value="{{ $fish->cooking3 }}"></td>
             </tr>
             <tr>
-                <th>食べ方の写真1: </th>
+                <th> <span>*</span> 食べ方の写真1: </th>
                 <td><input type="text" name="cooking_img1" value="{{ $fish->cooking_img1 }}"required></td>
             </tr>
             <tr>
@@ -75,7 +78,7 @@
                 <td><input type="text" name="cooking_img3" value="{{ $fish->cooking3 }}"></td>
             </tr>
             <tr>
-                <th>釣り方: </th>
+                <th> <span>*</span> 釣り方: </th>
                 <td><input type="text" name="method" value="{{ $fish->method }}" required></td>
             </tr>
             <tr>
@@ -91,7 +94,7 @@
                 <td><input type="text" name="spot_id" value="{{ $fish->spot_id }}"></td>
             </tr>
             <tr>
-                <th>魚の画像1: </th>
+                <th> <span>*</span> 魚の画像1: </th>
                 <td><input type="text" name="fish_img1" value="{{ $fish->fish_img1 }}"required></td>
             </tr>
             <tr>
@@ -104,14 +107,14 @@
             </tr>
             <tr>
                 <th>おすすめプラン: </th>
-                <td><input type="text" name="plan_id" value="{{ $fish->plan_id }}" required></td>
+                <td><input type="text" name="plan_id" value="{{ $fish->plan_id }}"></td>
             </tr>
             <tr>
                 <th>備考欄: </th>
                 <td><input type="text" name="memo" value="{{ $fish->memo }}"></td>
             </tr>
             <tr>
-                <th>表示フラグ：</th>
+                <th> <span>*</span> 表示フラグ：</th>
                 <td>
                     <input type="boolean" name="is_show" value="{{ $fish->is_show }}"required>
                 </td>

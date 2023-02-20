@@ -5,119 +5,299 @@ body{
     color: #51656F;
 }
 
-.spot__btn{
+.spot__discription{
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.spot__shell{
+    padding: 50px 0;
+    margin-bottom: 70px;
+}
+
+.shell{
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+}
+
+/* .spot__btn{
     width: 160px;
     height: 80px;
     background-color: #FFEA20;
     border-radius: 10px;
     font-size: 24px;
     margin: 0 30px;
+} */
+
+/* タブのスタイル */
+.tab__item{
+    padding: 30px;
+    background-color: #ffea20;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 20px;
 }
 
-.spot__discription{
-    margin: 10px 0;
+.tab__item:hover{
+    background-color: #30ADD1;
+    color: #ffea20;
 }
 
-.spot__shell{
-    padding: 20px 0;
-    margin-bottom: 50px;
+/*ラジオボタンを全て消す*/
+input[name="tab__item"] {
+    display: none;
 }
 
-.shell{
-    width: 100px;
-    height: 100px;
-    background-color: #dedede;
+/*選択されているタブのコンテンツのみを表示*/
+#east:checked~#east__content,
+#south:checked~#south__content {
+    display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked+.tab__item {
+    background-color: #30ADD1;
+    color: #ffea20;
+    box-shadow: none;
+}
+
+.area {
+    display: none;
+    text-align: center;
+}
+
+.area.active {
+    display: block;
 }
 
 /* マップ */
 .spot__map{
-    max-width: 559px;
-    height: 0;
-    background-size: contain;
-    margin: 0 auto;
-    border: solid 3px #30ADD1;
-    padding-top: calc(330 / 559 * 100%); /* calc(画像高さ ÷ 画像横幅 × 100%) */
-    border-radius: 10px;
     position: relative;
+    width: 100%;
+    border: 3px solid #30ADD1;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: #aaefff;
+    display: none;
+    clear: both;
 }
 
 .spot__map--east{
-    background: url(../images/tokushima_east.svg) center center / cover no-repeat;
-    background-color: #fff;
-}
-
-.spot__map--south{
-    background-color: #fff;
-    border: solid 3px #30ADD1;
-    border-radius: 10px;
+    /* height: 469.44px; */
+    /* object-fit: cover; */
+    /* object-position: 80% 50%; */
 }
 
 .spot__map--point{
-    width: 50px;
-    height: 50px;
-    background-color: #FFEA20;
-    border-radius: 50%;
-    display: block;
     position: absolute;
-    top: 80%;
-    right: 60%;
+    width: 7%;
+    transition: all 0.3s;
 }
 
-@media screen and(max-width:600px) {
+@media screen and (min-width:600px) {
     .spot__map{
-        width: 559px;
-        height: 330px;
-        background-size: contain;
-        padding: 0
+        max-width: 800px;
+    }
+    .spot__map--point:hover{
+    scale: 1.5;
+    -webkit-transition: all 0.3s;
+    z-index: 10;
+    }
+    .spot__map--point:hover .point__circle{
+        fill: #E21F1F;
+    }
+    .spot__map--point:hover .point__fish{
+        fill: #ffea20;
+    }
+    .spot__map--point:hover:after{
+        width: 100px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 20px;
+        display: block;
+        content: "スポット名";
+        margin-bottom: 5px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
 }
 
-/* card */
-.card__p {
-    padding: 50px;
-  }
+.point__circle{
+    fill: #ffea20;
+}
 
-.card{
-    width: 320px;
-    height: 426px;
-    background-color: #EAF2FA;
+
+.point__fish {
+    fill: #30add1;
+    clip-path: url(#clippath);
+}
+
+/* ポイントの位置 */
+/* 東部 */
+/* 岡崎海岸 */
+.point__east:nth-child(1){
+    top: 25%;
+    right: 22%;
+}
+
+/* 亀浦観光港 */
+.point__east:nth-child(2){
+    top: 4%;
+    right: 20%;
+}
+
+/* 竜宮の磯 */
+.point__east:nth-child(3){
+    top: 20%;
+    right: 20%;
+}
+
+/* 大浦漁港 */
+.point__east:nth-child(4){
+    top: 8%;
+    right: 40%;
+}
+
+/* 八木の鼻 */
+.point__east:nth-child(5){
+    top: 12%;
+    right: 18%;
+}
+
+/* 北泊　新波止場 */
+.point__east:nth-child(6){
+    top: 3%;
+    right: 28%;
+}
+
+/* 月見ヶ丘海浜公園 */
+.point__east:nth-child(7){
+    top: 45%;
+    right: 21%;
+}
+
+/* 長原漁港 */
+.point__east:nth-child(8){
+    top: 53%;
+    right: 25%;
+}
+
+/* 小松海岸 */
+.point__east:nth-child(9){
+    top: 64%;
+    right: 25%;
+}
+
+/* マリンピア北緑地外堤防 */
+.point__east:nth-child(10){
+    top: 73%;
+    right: 25%;
+}
+
+/* 大神子海岸 */
+.point__east:nth-child(11){
+    top: 83%;
+    right: 27%;
+}
+
+/* 津田の堤防 */
+.point__east:nth-child(12){
+    top: 79%;
+    right: 29%;
+}
+
+/* 南部 */
+/* 赤石ふ頭 */
+.point__south:nth-child(1){
+    top: 100%;
+    right: 100%;
+}
+
+/* しおかぜ公園 */
+.point__south:nth-child(2){
+    top: 3%;
+    right: 20%;
+}
+
+/* 今津漁港 */
+.point__south:nth-child(3){
+    top: 10%;
+    right: 13%;
+}
+
+/* 亀崎漁港 */
+.point__south:nth-child(4){
+    top: 14%;
+    right: 10%;
+}
+
+/* 中浦緑地公園 */
+.point__south:nth-child(5){
+    top: 28%;
+    right: 15%;
+}
+
+/* 大潟岸壁 */
+.point__south:nth-child(6){
+    top: 25%;
+    right: 12%;
+}
+
+/* 木岐漁港 */
+.point__south:nth-child(7){
+    top: 53%;
+    right: 20%;
+}
+
+/* 恵比須浜 */
+.point__south:nth-child(8){
+    top: 56%;
+    right: 23%;
+}
+
+/* モラスコむぎ */
+.point__south:nth-child(9){
+    top: 70%;
+    right: 35%;
+}
+
+/* 大砂突堤 */
+.point__south:nth-child(10){
+    top: 75%;
+    right: 40%;
+}
+
+/* 手倉海水浴場 */
+.point__south:nth-child(11){
+    top: 84%;
+    right: 40%;
+}
+
+/* 海陽町港 */
+.point__south:nth-child(12){
+    top: 85%;
+    right: 43%;
+}
+
+/* cardレイアウト */
+@media screen and (min-width:600px) {
+.card__area{
+    max-width: 1200px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit,minmax(320px, 1fr));
     margin: 0 auto;
-    transition: 0.5s;
-    display: block;
 }
-
-.card:hover{
-    box-shadow: none;
-    transform: translate(1px, 1px);
+/* pading:50pxだとレイアウトが崩れるのでpdding:0px */
+.card__p {
+    padding: 0px;
 }
-
-.card__skin{
-    border-radius: 30px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
-
-.card__img{
-    border-radius: 30px 30px 0 0;
-}
-
-.card__textbox {
-    width: 100%;
-    padding: 20px 30px;
-    box-sizing: border-box;
-    text-align: start;
-}
-
 
 
 .shallow{
     background-color:#EAF2FA;
-}
-
-
-
-/* ページ全体共通のpadding left,rightです。
-各ページのセクションやブロックごとにクラスの指定をしてください。 */
-.p__lr{
-    padding-left: 20px;
-    padding-right: 20px;
 }

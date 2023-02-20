@@ -37,19 +37,21 @@
             @csrf
             <input type="hidden" name="id" value="{{ $news->id }}">
             <tr>
-                <th width="15%">カテゴリー名: </th>
+                <th width="15%"> <span>*</span> カテゴリー名: </th>
                 <td><input type="text" name="name" value="{{ $news->name }}" required></td>
             </tr>
             <tr>
-                <th>タイトル: </th>
+                <th> <span>*</span> タイトル: </th>
                 <td><input type="text" name="title" value="{{ $news->title }}" required></td>
             </tr>
             <tr>
-                <th>概要: </th>
-                <td><input type="text" name="overview" value="{{ $news->overview }}" required></td>
+                <th> <span>*</span> 概要: </th>
+                <td>
+                    <textarea name="overview" cols="50" rows="5" required> {{ $news->overview }} </textarea>
+                </td>
             </tr>
             <tr>
-                <th>詳細内容:</th>
+                <th> <span>*</span> 詳細内容:</th>
                 <td>
                     <textarea name="content" id="content" cols="50" rows="5" required> {{ $news->content }} </textarea>
                 </td>
@@ -61,9 +63,9 @@
                 </td>
             </tr>
             <tr>
-                <th>表示フラグ:</th>
+                <th> <span>*</span> 表示フラグ:</th>
                 <td>
-                    <input type="boolean" name="is_show" value="{{ $news->is_show }}">
+                    <input type="boolean" name="is_show" value="{{ $news->is_show }}" required>
                 </td>
             </tr>
         </table>

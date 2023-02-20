@@ -25,29 +25,29 @@
         <table class="info">
             @csrf
             <tr>
-                <th width="15%">タイトル: </th>
+                <th width="15%"> <span>*</span> タイトル: </th>
                 <td><input type="text" name="title" required></td>
             </tr>
             <tr>
-                <th>概要：</th>
+                <th> <span>*</span> 概要：</th>
                 <td>
-                    <textarea name="overview" id="overview" cols="50" rows="5" required></textarea>
+                    <textarea name="overview" cols="50" rows="5" required></textarea>
                 </td>
             </tr>
             <tr>
-                <th>難易度: </th>
+                <th> <span>*</span> 難易度: </th>
                 <td><input type="number" name="level" required></td>
             </tr>
             <tr>
-                <th>地域ID: </th>
+                <th> <span>*</span> 地域ID: </th>
                 <td><input type="number" name="city_id" required></td>
             </tr>
             <tr>
-                <th>釣りスポットID: </th>
+                <th> <span>*</span> 釣りスポットID: </th>
                 <td><input type="number" name="spot_id" required></td>
             </tr>
             <tr>
-                <th>魚ID: </th>
+                <th> <span>*</span> 魚ID: </th>
                 <td><input type="number" name="fish_id" required></td>
             </tr>
             <tr>
@@ -65,7 +65,7 @@
                 <td><input type="text" name="thumbnail"></td>
             </tr>
             <tr>
-                <th>表示フラグ: </th>
+                <th> <span>*</span> 表示フラグ: </th>
                 <td><input type="boolean" name="is_show"></td>
             </tr>
         </table>

@@ -15,7 +15,7 @@
 
 /*タブのスタイル*/
 .tab_item {
-    width: calc(100%/2);
+    width: calc(90%/2);
     height: 50px;
     border-bottom: 3px solid #30ADD1;
     border-right: 5px solid #EAF2FA ;
@@ -29,11 +29,38 @@
     text-align: center;
     font-weight: bold;
     transition: all 0.2s ease;
-
+    border-radius: 20px 20px 0 0;
+}
+.tab__spot{
+    margin-right: 10%;
 }
 
 .tab_item:hover {
     opacity: 0.75;
+}
+
+.title__icon {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.title__icon::before {
+    display: none;
+}
+
+@media screen and (min-width: 700px) {
+    .title__icon::before {
+        display: block;
+        content: url(../images/jelfish.png);
+        transform: scale(0.5);
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 25%;
+        top: 6px;
+    }
 }
 
 /*ラジオボタンを全て消す*/
@@ -51,6 +78,7 @@ input[name="tab_item"] {
     clear: both;
     overflow: hidden;
     margin: 0 auto;
+    padding: 50px 20px;
 }
 
 

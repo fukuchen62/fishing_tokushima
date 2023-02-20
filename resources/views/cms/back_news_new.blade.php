@@ -25,19 +25,21 @@
         <table class="info">
             @csrf
             <tr>
-                <th width="15%">カテゴリー名: </th>
+                <th width="15%"> <span>*</span> カテゴリー名: </th>
                 <td><input type="text" name="name" required></td>
             </tr>
             <tr>
-                <th>タイトル: </th>
+                <th> <span>*</span> タイトル: </th>
                 <td><input type="text" name="title" required></td>
             </tr>
             <tr>
-                <th>概要: </th>
-                <td><input type="text" name="overview" required></td>
+                <th> <span>*</span> 概要: </th>
+                <td>
+                    <textarea name="overview" cols="50" rows="5" required></textarea>
+                </td>
             </tr>
             <tr>
-                <th>詳細内容：</th>
+                <th> <span>*</span> 詳細内容：</th>
                 <td>
                     <textarea name="content" id="content" cols="50" rows="5" required></textarea>
                 </td>
@@ -47,8 +49,8 @@
                 <td><input type="text" name="eyecatch"></td>
             </tr>
             <tr>
-                <th>表示フラグ: </th>
-                <td><input type="boolean" name="is_show" value="1"></td>
+                <th> <span>*</span> 表示フラグ: </th>
+                <td><input type="boolean" name="is_show" value="1" required></td>
             </tr>
         </table>
         <input type="submit" value="送信" class="submit_btn">
