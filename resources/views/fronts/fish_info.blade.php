@@ -14,104 +14,108 @@
 {{-- メイン --}}
 @section('content')
 
-    <div class="wrap">
-        <div class="container">
-            <section class="titlesection">
-                <div class="titlesection__box">
-                    <h1 class="pagetitle">{{ $item->name }}{{ '（' . $item->formal_name . '）' }}</h1>
-                </div>
-            </section>
+    {{-- キービジュアル --}}
 
-            <section id="fishinfo__section" class="fishinfo__section">
-
-                <ul class="fishinfo__box">
-                    <li>
-                        <div class="fishinfo__box--img">
-                            <!-- slick用（仮） -->
-                            <div class="your-class">
-                                <div>{{ $item->fish_img1 }}</div>
-                                <div>{{ $item->fish_img2 }}</div>
-                                <div>{{ $item->fish_img3 }}</div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- ボタン部分？ -->
-                    <!-- <div class=""></div> -->
-
-                    <!-- 概要 -->
-                    <li>
-                        <div class="fishinfo__box--description">
-                            <h3>概要</h3>
-                            <p>{{ $item->detail }}</p>
-                            <div class="fishinfo__box--feed">
-                                <p class=""><img style="vertical-align: middle" src="../storage/images/fish_ebi.png"
-                                        alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
-                                <h3 class="card__title">難易度</h3>
-                                <div><?php echo $item->getLevel(); ?></div>
-                            </div>
-                    </li>
-                </ul>
+    <section class="titlesection expand">
+        <div class="titlesection__box">
+            <h1 class="pagetitle">{{ $item->name }}{{ '（' . $item->formal_name . '）' }}</h1>
+            <div class="pagetitle__border"></div>
         </div>
-    </div>
-    <div class="fishes__table">
-        <h3 class="table__title">詳細情報</h3>
-        <table class="table radius-table">
-            <tr class="table__tr">
-                <td class="table__subtitle">季節・時間帯</td>
-                <td>{{ $item->getMonth() }}</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">釣れる場所</td>
-                <td>
-                    @foreach ($spots as $spot)
-                        {{ $spot->name }},
-                    @endforeach
-                </td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__subtitle">釣り方</td>
-                <td>{{ $item->method }}</td>
-            </tr>
-        </table>
-    </div>
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
+        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
+    </section>
 
-    <!-- おいしい食べ方 -->
-    <div class="fishes__box--description">
-        <ul class="fishinfo__box--food">
+    <section id="fishinfo__section" class="fishinfo__section p__lr expand">
+
+        <ul class="fishinfo__box">
             <li>
-                <div>{{ $item->cooking_img1 }}</div>
-                <div>{{ $item->cooking_img2 }}</div>
-                <div>{{ $item->cooking_img3 }}</div>
+                <div class="fishinfo__box--img">
+                    <!-- slick用（仮） -->
+                    <div class="container">
+                        <div class="your-class">
+                            <div>{{ $item->fish_img1 }}</div>
+                            <div>{{ $item->fish_img2 }}</div>
+                            <div>{{ $item->fish_img3 }}</div>
+                        </div>
+                    </div>
             </li>
+
+            <!-- ボタン部分？ -->
+            <!-- <div class=""></div> -->
+
+            <!-- 概要 -->
             <li>
-                <div class="traiangle"></div>
-            </li>
-            <li>
-                <div class="fishinfo__box--text">
-                    <h3>おいしい食べ方</h3>
-                    <p>{{ $item->cooking1 }}</p>
-                    <p>{{ $item->cooking2 }}</p>
-                    <p>{{ $item->cooking3 }}</p>
-                    <p>食べ方の詳細？</p>
+                <div class="fishinfo__box--description">
+                    <h3>概要</h3>
+                    <p>{{ $item->detail }}</p>
+                    <div class="fishinfo__box--feed">
+                        <p class=""><img style="vertical-align: middle" src="../storage/images/fish_ebi.png"
+                                alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
+                        <h3 class="card__title">難易度</h3>
+                        <div><?php echo $item->getLevel(); ?></div>
+                    </div>
             </li>
         </ul>
-    </div>
 
-    </div>
+        <div class="fishes__table">
+            <h3 class="table__title">詳細情報</h3>
+            <table class="table radius-table">
+                <tr class="table__tr">
+                    <td class="table__subtitle">季節・時間帯</td>
+                    <td>{{ $item->getMonth() }}</td>
+                </tr>
+                <tr class="table__tr">
+                    <td class="table__subtitle">釣れる場所</td>
+                    <td>
+                        @foreach ($spots as $spot)
+                            {{ $spot->name }},
+                        @endforeach
+                    </td>
+                </tr>
+                <tr class="table__tr">
+                    <td class="table__subtitle">釣り方</td>
+                    <td>{{ $item->method }}</td>
+                </tr>
+            </table>
+        </div>
 
-    <!-- 装飾（貝）の画像 -->
-    <div>
-        <ul class="fishesinfo__img--shell">
-            <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-        </ul>
-    </div>
+        <!-- おいしい食べ方 -->
+        <div class="fishes__box--description">
+            <ul class="fishinfo__box--food">
+                <li>
+                    <div>{{ $item->cooking_img1 }}</div>
+                    <div>{{ $item->cooking_img2 }}</div>
+                    <div>{{ $item->cooking_img3 }}</div>
+                </li>
+                <li>
+                    <div class="traiangle"></div>
+                </li>
+                <li>
+                    <div class="fishinfo__box--text">
+                        <h3>おいしい食べ方</h3>
+                        <p>{{ $item->cooking1 }}</p>
+                        <p>{{ $item->cooking2 }}</p>
+                        <p>{{ $item->cooking3 }}</p>
+                        <p>食べ方の詳細？</p>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+
+        <!-- 装飾（貝）の画像 -->
+        <div>
+            <ul class="fishesinfo__img--shell">
+                <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
+                <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
+                <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+                <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
+                <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
+                <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
+                <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+            </ul>
+        </div>
     </section>
 
     <!-- 保存方法・注意事項 -->

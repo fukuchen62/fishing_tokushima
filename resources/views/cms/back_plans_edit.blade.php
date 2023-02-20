@@ -32,39 +32,39 @@
     @endif
 
     <form method="post" action="{{ route('plansedit') }}">
-        <table class="info edit_info">
+        <table class="info">
             @csrf
             <input type="hidden" name="id" value="{{ $plan->id }}">
             <tr>
-                <th width="15%"> <span>*</span> タイトル: </th>
+                <th width="15%">タイトル: </th>
                 <td><input type="text" name="title" value="{{ $plan->title }}" required></td>
             </tr>
             <tr>
-                <th> <span>*</span> 概要:</th>
+                <th>概要:</th>
                 <td>
-                    <textarea name="overview" cols="50" rows="5" required> {{ $plan->overview }} </textarea>
+                    <input type="text" name="overview" value="{{ $plan->overview }}" required>
                 </td>
             </tr>
             <tr>
-                <th> <span>*</span> 難易度: </th>
+                <th>難易度: </th>
                 <td>
                     <input type="number" name="level" value="{{ $plan->level }}" required>
                 </td>
             </tr>
             <tr>
-                <th> <span>*</span> 地域ID:</th>
+                <th>地域ID:</th>
                 <td>
                     <input type="number" name="city_id" value="{{ $plan->city_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th> <span>*</span> 釣りスポットID:</th>
+                <th>釣りスポットID:</th>
                 <td>
                     <input type="number" name="spot_id" value="{{ $plan->spot_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th> <span>*</span> 魚ID:</th>
+                <th>魚ID:</th>
                 <td>
                     <input type="number" name="fish_id" value="{{ $plan->fish_id }}" required>
                 </td>
@@ -88,15 +88,23 @@
                 </td>
             </tr>
             <tr>
-                <th> <span>*</span> 表示フラグ:</th>
+                <th>表示フラグ:</th>
                 <td>
                     <input type="boolean" name="is_show" value="{{ $plan->is_show }}" required>
                 </td>
             </tr>
         </table>
         <div class="change_btn">
-            <input type="submit"value="修正" class="submit_btn">
-            <a href="{{ route('plansremove', ['id' => $plan->id]) }}" class="delete_btn">削除</a>
+            @php
+                $title = $plan->title;
+                $url = route('plansremove', ['id' => $plan->id]);
+            @endphp
+            <input type="submit"value="修正" class="submit_btn" onclick="return saveComfirm('{{ $title }}')">
+
+            <input type="button"value="削除" class="delete_btn"
+                onclick="return deleteComfirm('{{ $title }}','{{ $url }}')">
+
+            {{-- <a href="{{ route('plansremove', ['id' => $plan->id]) }}" class="delete_btn">削除</a> --}}
         </div>
     </form>
 @endsection
