@@ -17,7 +17,7 @@ class Fish extends Model
         'cooking1' => 'required|string|max:50',
         'cooking2' => 'max:50',
         'cooking3' => 'max:50',
-        'cooking_img1' => 'required|string|max:200',
+        'cooking_img1' => 'max:200',
         'cooking_img2' => 'max:200',
         'cooking_img3' => 'max:200',
         'method' => 'required|string|max:100',
