@@ -703,7 +703,7 @@ height: auto;
 }
 
 /* 詳細情報table */
-.table,
+/* .table,
 .table__tr,
 th,
 td {
@@ -735,7 +735,6 @@ td {
     border-right: solid 2px #30ADD1;
 }
 
-/* 仮 */
 .table__tr:nth-child(odd) {
     background-color: #fff;
 }
@@ -759,6 +758,62 @@ td {
 
     .table__title {
         width: 559px;
+    }
+} */
+
+/* tableの外枠線あり、trのborder-bottomがなぜか消える */
+/* 詳細情報table */
+.table__tr,
+th,
+td {
+    padding: 10px;
+}
+
+.spotinfo__table{
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.table {
+    width: 100%;
+    background-color: #EAF2FA;
+    margin: 0 auto;
+    border: solid 2px #30ADD1;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0 0 20px 20px;
+}
+
+.table__title {
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    background-color: #30ADD1;
+    column-span: all;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 0;
+}
+
+.table__tr:not(:last-child) {
+    border-bottom: solid 2px #30ADD1;
+}
+
+.table__subtitle {
+    border-right: solid 2px #30ADD1;
+}
+
+.table__tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+@media screen and (min-width: 600px) {
+    .table {
+        max-width: 559px;
+    }
+
+    .table__title {
+        max-width: 559px;
     }
 }
 
