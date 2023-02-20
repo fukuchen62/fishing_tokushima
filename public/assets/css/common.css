@@ -25,6 +25,23 @@ body {
     padding-right: calc(50vw - 50%);
 }
 
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 32px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+p{
+    font-size: 16px;
+    color: #51656F;
+}
+
 img{
 bottom: 0;
 max-width: 100%;
@@ -335,7 +352,7 @@ height: auto;
 
 .g-nav__box {
     background-color: #fff;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .g-nav__box--section {
@@ -415,9 +432,15 @@ height: auto;
         .g-nav__box--discription:hover{
             transform: translate(0,-5px);
         }
+        .g-nav__box--discription:hover .draw{
+            fill: #fff;
+        }
+        /* 入門知識 */
         .circle__knowledge{
             opacity: 0;
-            transform: scale(0.1);
+            transform: scale(0);
+            transition: 0.3s;
+            transform-origin: 50% 50%;
         }
         .draw__knowledge{
             fill:#1CB20F;
@@ -425,12 +448,87 @@ height: auto;
         .g-nav__box--discription:hover .circle__knowledge{
             fill:#1CB20F;
             opacity: 1;
-            transform: translateY(-50%) scale(1.1)
+            transform: scale(1)
         }
-
-        /* .g-nav__icon:hover .circle__knowledge{
-            fill: #fff;
-        } */
+        /* 徳島の魚 */
+        .circle__fish{
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.3s;
+            transform-origin: 50% 50%;
+        }
+        .draw__fish{
+            fill:#1A6CE8;
+        }
+        .g-nav__box--discription:hover .circle__fish{
+            fill:#1A6CE8;
+            opacity: 1;
+            transform: scale(1)
+        }
+        /* 釣りスポット */
+        .circle__spot{
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.3s;
+            transform-origin: 50% 50%;
+        }
+        .draw__spot{
+            fill:#FF0000;
+        }
+        .g-nav__box--discription:hover .circle__spot{
+            fill:#FF0000;
+            opacity: 1;
+            transform: scale(1)
+        }
+        /* 体験プラン */
+        .circle__plan{
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.3s;
+            transform-origin: 50% 50%;
+        }
+        .draw__plan{
+            stroke:#E89026;
+        }
+        .g-nav__box--discription:hover .circle__plan{
+            fill:#E89026;
+            opacity: 1;
+            transform: scale(1)
+        }
+        .g-nav__box--discription:hover .draw__plan{
+            stroke:#fff ;
+            fill:none
+        }
+        /* 釣具店 */
+            .circle__shop{
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.3s;
+            transform-origin: 50% 50%;
+        }
+        .draw__shop{
+            fill:#BAAA14;
+        }
+        .g-nav__box--discription:hover .circle__shop{
+            fill:#BAAA14;
+            opacity: 1;
+            transform: scale(1)
+        }
+        /* マイページ */
+        .circle__mypage{
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.3s;
+            transform-origin: 50% 50%;
+        }
+        .draw__mypage{
+            fill:#EF5DE9;
+        }
+        .g-nav__box--discription:hover .circle__mypage{
+            fill:#EF5DE9;
+            opacity: 1;
+            transform: scale(1)
+        }
     }
 
     .g-nav__box--text {
