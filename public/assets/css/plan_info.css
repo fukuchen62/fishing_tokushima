@@ -24,8 +24,8 @@
 
 /* 概要のテキストボックス */
 .overview__box--group {
-    width: 400px;
-    height: 400px;
+    width: 340px;
+    height: 340px;
     border: 10px dashed #30ADD1;
     border-radius: 50%;
     margin: 50px auto;
@@ -34,7 +34,7 @@
 
 /* 概要のテキストボックス内レイアウト */
 .overview__box--group h3 {
-    margin: 40px;
+    margin: 30px;
 }
 
 .overview__box--group p {
@@ -42,8 +42,27 @@
     text-align: left;
 }
 
+@media screen and (min-width: 440px) {
+    .overview__box--group {
+        width: 400px;
+        height: 400px;
+    }
+
+    .overview__box--group h3 {
+        margin: 40px;
+    }
+
+    .overview__box--group p {
+        margin: 0px 30px;
+    }
+}
+
 /* 丸が細くなるのでブレイクポイント1200px */
 @media screen and (min-width:1200px) {
+    /* 画像と丸の並びをそろえる */
+    .max-width--box {
+        margin: 0;
+    }
     /* 概要の画像とテキストボックスのレイアウト */
     .overview__box {
     display: flex;
@@ -55,10 +74,24 @@
     }
 
     /* 概要横並び時のテキストボックス外の余白 */
-    .overview__box--group {
+    /* .overview__box--group {
         margin: 0px;
-    }
+    } */
+}
 
+/* お気に入りボタン */
+.favorite{
+    display: inline-block;;
+    background-color: #fff;
+    padding: 10px;
+    border:solid 1px #EF5DE9;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+
+.favorite__in{
+    background-color: #EF5DE9;
+    color: #fff;
 }
 
 /* テーブルの大きさ */
@@ -94,7 +127,7 @@
     margin: 50px auto;
     background-color: #eaf2fa;
     border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* 横並びになると横幅固定 */
@@ -131,7 +164,7 @@
     border-top: 43px solid #eaf2fa;
     border-bottom: 0;
     margin: 40px auto;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.4));
 }
 
 /* PC時 */
