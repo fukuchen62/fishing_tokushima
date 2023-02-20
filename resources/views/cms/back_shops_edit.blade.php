@@ -91,13 +91,13 @@
             <tr>
                 <th>営業内容:</th>
                 <td>
-                    <input type="text" name="service" value="{{ $shop->service }}">
+                    <textarea name="service" cols="50" rows="5"> {{ $shop->service }} </textarea>
                 </td>
             </tr>
             <tr>
                 <th>PR:</th>
                 <td>
-                    <input type="text" name="pr" value="{{ $shop->pr }}">
+                    <textarea name="pr" cols="50" rows="5"> {{ $shop->pr }} </textarea>
                 </td>
             </tr>
             <tr>

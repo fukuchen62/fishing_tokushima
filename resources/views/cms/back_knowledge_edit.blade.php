@@ -45,7 +45,9 @@
             </tr>
             <tr>
                 <th>概要: </th>
-                <td><input type="text" name="overview" value="{{ $knowledge->overview }}"required></td>
+                <td>
+                    <textarea name="overview" cols="50" rows="5" required> {{ $knowledge->overview }} </textarea>
+                </td>
             </tr>
             <tr>
                 <th>記事の内容：</th>

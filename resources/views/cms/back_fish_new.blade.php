@@ -34,11 +34,15 @@
             </tr>
             <tr>
                 <th>詳細説明: </th>
-                <td><input type="text" name="detail" required></td>
+                <td>
+                    <textarea name="detail" cols="50" rows="5" required></textarea>
+                </td>
             </tr>
             <tr>
                 <th>注意事項: </th>
-                <td><input type="text" name="warning" required></td>
+                <td>
+                    <textarea name="warning" cols="50" rows="5" required></textarea>
+                </td>
             </tr>
             <tr>
                 <th>食べ方1: </th>

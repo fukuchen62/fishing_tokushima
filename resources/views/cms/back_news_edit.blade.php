@@ -46,7 +46,9 @@
             </tr>
             <tr>
                 <th>概要: </th>
-                <td><input type="text" name="overview" value="{{ $news->overview }}" required></td>
+                <td>
+                    <textarea name="overview" cols="50" rows="5" required> {{ $news->overview }} </textarea>
+                </td>
             </tr>
             <tr>
                 <th>詳細内容:</th>

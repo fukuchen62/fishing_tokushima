@@ -42,7 +42,7 @@
             <tr>
                 <th>概要:</th>
                 <td>
-                    <input type="text" name="overview" value="{{ $plan->overview }}" required>
+                    <textarea name="overview" cols="50" rows="5" required> {{ $plan->overview }} </textarea>
                 </td>
             </tr>
             <tr>

@@ -29,10 +29,9 @@
     <table class="info">
         <tr>
             <th width="5%">ID</th>
-            <th width="15%">店名</th>
+            <th width="20%">店名</th>
             <th>住所</th>
             <th width="15%">電話番号</th>
-            <th width="10%">営業内容</th>
             <th width="100px">修正</th>
         </tr>
         @foreach ($shopslist as $item)
@@ -41,7 +40,6 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->address }}</td>
                 <td>{{ $item->tel }}</td>
-                <td>{{ $item->service }}</td>
                 <td class="edit"><a href="{{ route('shopsedit', ['id' => $item->id]) }}">編集</a></td>
             </tr>
         @endforeach

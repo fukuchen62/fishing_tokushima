@@ -31,7 +31,7 @@
             <tr>
                 <th>概要：</th>
                 <td>
-                    <textarea name="overview" id="overview" cols="50" rows="5" required></textarea>
+                    <textarea name="overview" cols="50" rows="5" required></textarea>
                 </td>
             </tr>
             <tr>
