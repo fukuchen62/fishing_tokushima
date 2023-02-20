@@ -22,7 +22,7 @@
     </ul>
 
     <form method="post" action="{{ route('fishentry') }}">
-        <table class="info">
+        <table class="info new_info">
             @csrf
             <tr>
                 <th width="20%"> <span>*</span> 魚の名前(普通の呼び方): </th>

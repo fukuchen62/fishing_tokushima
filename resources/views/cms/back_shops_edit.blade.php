@@ -31,7 +31,7 @@
     @endif
 
     <form method="post" action="{{ route('shopsedit') }}">
-        <table class="info">
+        <table class="info edit_info">
             @csrf
             <input type="hidden" name="id" value="{{ $shop->id }}">
             <tr>
