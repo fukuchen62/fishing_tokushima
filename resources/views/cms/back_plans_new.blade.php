@@ -66,10 +66,28 @@
             </tr>
             <tr>
                 <th> <span>*</span> 表示フラグ: </th>
-                <td><input type="boolean" name="is_show"></td>
+                <td><input type="boolean" name="is_show" required></td>
             </tr>
         </table>
-        <input type="submit" value="送信" class="submit_btn">
+        <div>
+            @php
+                $url = route('plansshow');
+            @endphp
+            <input type="submit"value="登録" class="submit_btn" onclick="return saveComfirm('新規体験プラン')">
+        </div>
+
+        <div class="change_btn">
+            @php
+                $title = $plan->title;
+                $url = route('plansremove', ['id' => $plan->id]);
+            @endphp
+            <input type="submit"value="修正" class="submit_btn" onclick="return saveComfirm('{{ $title }}')">
+
+            <input type="button"value="削除" class="delete_btn"
+                onclick="return deleteComfirm('{{ $title }}','{{ $url }}')">
+
+            {{-- <a href="{{ route('plansremove', ['id' => $plan->id]) }}" class="delete_btn">削除</a> --}}
+        </div>
     </form>
 @endsection
 

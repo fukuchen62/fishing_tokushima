@@ -162,6 +162,12 @@
     margin-bottom: 0;
 }
 
+@media screen and (min-width: 1025px) {
+    .last__flow {
+        margin: 50px auto;
+    }
+}
+
 /* フローの三角 */
 .triangle {
     width: 0;
