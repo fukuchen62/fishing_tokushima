@@ -427,14 +427,15 @@ class AdminController extends Controller
         return view('cms.back_fish_new');
     }
 
-    public function fishcreate(Request $request)
+    public function fishCreate(Request $request)
     {
-        $this->validate($request, Fish::$rules);
+        // $this->validate($request, Fish::$rules);
         $fish = new Fish;
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
         return redirect()->route('fishshow');
+        // return view('cms.back_fish');
     }
 
 

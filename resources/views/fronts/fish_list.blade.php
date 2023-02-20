@@ -152,7 +152,7 @@
             <ul class="others__box--info">
 
 @foreach ($fishes2 as $item)
-                @component('components.fronts_fish_list')
+                @component('components.front_fish_list_card')
 
                     @slot('fish_link')
                         {{ $item->fish_img1 }}
@@ -195,7 +195,7 @@
 @endsection
 
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -273,4 +273,4 @@
 
 </body>
 
-</html>
+</html> --}}
