@@ -64,7 +64,7 @@ height: auto;
 }
 
 .pagetitle::before {
-    content: url(../images/fish__icon.png);
+    content: url(../images/svg/icon_fish.svg);
     width: 50px;
     height: 50px;
     position: absolute;
@@ -550,7 +550,7 @@ height: auto;
     margin: 10px 0;
 }
 
-.copylight {
+.copyright {
     padding-bottom: 20px;
 }
 
