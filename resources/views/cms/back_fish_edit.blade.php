@@ -66,8 +66,8 @@
                 <td><input type="text" name="cooking3" value="{{ $fish->cooking3 }}"></td>
             </tr>
             <tr>
-                <th> <span>*</span> 食べ方の写真1: </th>
-                <td><input type="text" name="cooking_img1" value="{{ $fish->cooking_img1 }}"required></td>
+                <th>食べ方の写真1: </th>
+                <td><input type="text" name="cooking_img1" value="{{ $fish->cooking_img1 }}"></td>
             </tr>
             <tr>
                 <th>食べ方の写真2: </th>
@@ -86,8 +86,8 @@
                 <td><input type="text" name="month" value="{{ $fish->month }}"></td>
             </tr>
             <tr>
-                <th>難易度: </th>
-                <td><input type="number" name="level" value="{{ $fish->level }}"></td>
+                <th> <span>*</span> 難易度: </th>
+                <td><input type="number" name="level" value="{{ $fish->level }}" required></td>
             </tr>
             <tr>
                 <th>釣りスポット: </th>

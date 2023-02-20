@@ -34,7 +34,7 @@
 
 /* 概要のテキストボックス内レイアウト */
 .overview__box--group h3 {
-    margin: 30px;
+    margin: 20px;
 }
 
 .overview__box--group p {
@@ -104,11 +104,21 @@
     padding-left: 30px;
 }
 
+/* 詳細誘導テキスト */
+.to-details {
+    color: #000;
+    background-color: #EAF2FA;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
 /* フロー */
 
 /* フローのタイトル枠 */
 .flow__section h2 {
+    margin: 0px;
     border: 1px solid #fff;
+    margin-bottom: 50px;
 }
 
 /* フローの画像とテキストボックス間レイアウト */
@@ -117,7 +127,7 @@
 @media screen and (min-width:1025px) {
     .flow__box {
         display: flex;
-        margin-bottom: 50px;
+        padding-bottom: 50px;
         gap: 40px;
     }
 }
@@ -129,6 +139,7 @@
     border-radius: 20px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
+
 
 /* 横並びになると横幅固定 */
 @media screen and (min-width: 1025px) {
@@ -146,12 +157,9 @@
     padding: 20px;
 }
 
-/* 詳細誘導テキスト */
-.to-details {
-    color: #000;
-    background-color: #EAF2FA;
-    margin-top: 70px;
-    margin-bottom: 30px;
+/* 背景が途切れないために最後のフローだけマージンを無くす */
+.last__flow {
+    margin-bottom: 0;
 }
 
 /* フローの三角 */
@@ -173,4 +181,23 @@
     .triangle {
         display: none;
     }
+}
+
+/* スポット一覧ボタン */
+.btn {
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 40%);
+    margin: 50px auto 0px;
+    transition: 0.5s;
+}
+
+.btn {
+    font-size: 16px;
+    height: 50px;
+}
+
+.btn:hover {
+    background-color: #30ADD1;
+    color: #ffea20;
+    box-shadow: none;
+    transform: translate(1px, 1px);
 }

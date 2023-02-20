@@ -65,3 +65,20 @@
 .card__p {
     padding: 0px;
 }
+
+/* プラン専用、難易度☆カード内レイアウト */
+.card__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.card__title {
+    padding-bottom: 20px;
+}
+
+/* 地域のテキストの大きさ */
+.card__flex p {
+    font-size: 24px;
+}

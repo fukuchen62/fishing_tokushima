@@ -4,7 +4,7 @@
 
         <div>{{ $shop_name }}</div>
 
-        <div><img src="../assets/images/img_neko_700_3.jpg" alt="お店の外観"></div>
+        <div><img src="{{ $shop_link }}" alt="お店の外観"></div>
 
         <!-- 疑似要素でアイコンを追加する -->
         <div class="section__image--location">{{ $shop_address }}</div>

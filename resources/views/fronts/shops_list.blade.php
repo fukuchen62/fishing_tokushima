@@ -49,6 +49,10 @@
                         {{ $item->name }}
                     @endslot
 
+                    @slot('shop_link')
+                    {{ route('shoplist', ['id' => $item->id]) }}
+                    @endslot
+
                     @slot('shop_address')
                         {{ $item->address }}
                     @endslot

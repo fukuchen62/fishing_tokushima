@@ -77,8 +77,8 @@
                 <td><input type="text" name="month"></td>
             </tr>
             <tr>
-                <th>難易度: </th>
-                <td><input type="number" name="level"></td>
+                <th> <span>*</span> 難易度: </th>
+                <td><input type="number" name="level" required></td>
             </tr>
             <tr>
                 <th>釣りスポット: </th>

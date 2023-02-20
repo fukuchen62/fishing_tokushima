@@ -2,10 +2,11 @@
  * 新規登録・編集時の確認
  * @returns
  */
-function saveComfirm(title) {
+function saveComfirm(title, url) {
     let res = confirm("「" + title + "」を登録します、よろしいでしょうか。");
     if (res == true) {
         return true;
+        window.location.href = url;
     } else {
         return false;
     }
@@ -17,7 +18,6 @@ function saveComfirm(title) {
  * @param {*} id
  */
 function deleteComfirm(title, url) {
-
     let res = confirm("「" + title + "」を削除します、よろしいでしょうか。");
     if (res == true) {
         // OKなら移動

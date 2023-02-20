@@ -19,8 +19,8 @@ class Plan extends Model
         'spot_id' => 'required|integer',
         'fish_id' => 'required|integer',
         'flow' => 'required|string',
-        'eye_catch' => 'string|max:200',
-        'thumbnail' => 'string|max:200',
+        'eye_catch' => 'max:200',
+        'thumbnail' => 'max:200',
         'is_show' => 'required|string|max:20',
     );
     // スコープ

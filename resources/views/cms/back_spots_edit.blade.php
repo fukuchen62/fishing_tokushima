@@ -119,42 +119,42 @@
                 <td><input type="text" name="bbq" value="{{ $spot->bbq }}"></td>
             </tr>
             <tr>
-                <th>ショップID:</th>
+                <th> <span>*</span> ショップID:</th>
                 <td>
-                    <input type="boolean" name="shop_id" value="{{ $spot->shop_id }}">
+                    <input type="boolean" name="shop_id" value="{{ $spot->shop_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th>体験プランID: </th>
-                <td><input type="text" name="plan_id" value="{{ $spot->plan_id }}"></td>
+                <th> <span>*</span> 体験プランID: </th>
+                <td><input type="text" name="plan_id" value="{{ $spot->plan_id }}" required></td>
             </tr>
             <tr>
-                <th>避難場所ID: </th>
-                <td><input type="text" name="evacuation_id" value="{{ $spot->evacuation_id }}"></td>
+                <th> <span>*</span> 避難場所ID: </th>
+                <td><input type="text" name="evacuation_id" value="{{ $spot->evacuation_id }}" required></td>
             </tr>
             <tr>
-                <th>駐車場ID: </th>
-                <td><input type="text" name="parking_id" value="{{ $spot->parking_id }}"></td>
+                <th> <span>*</span> 駐車場ID: </th>
+                <td><input type="text" name="parking_id" value="{{ $spot->parking_id }}" required></td>
             </tr>
             <tr>
-                <th>病院ID:</th>
+                <th> <span>*</span> 病院ID:</th>
                 <td>
-                    <input type="text" name="hospital_id" value="{{ $spot->hospital_id }}">
+                    <input type="text" name="hospital_id" value="{{ $spot->hospital_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th>スーパーマーケットID:</th>
+                <th> <span>*</span> スーパーマーケットID:</th>
                 <td>
-                    <input type="boolean" name="supermarket_id" value="{{ $spot->supermarket_id }}">
+                    <input type="boolean" name="supermarket_id" value="{{ $spot->supermarket_id }}" required>
                 </td>
             </tr>
             <tr>
-                <th>飲食店ID: </th>
-                <td><input type="text" name="restaurant_id" value="{{ $spot->restaurant_id }}"></td>
+                <th> <span>*</span> 飲食店ID: </th>
+                <td><input type="text" name="restaurant_id" value="{{ $spot->restaurant_id }}" required></td>
             </tr>
             <tr>
-                <th>その他ID: </th>
-                <td><input type="text" name="other_id" value="{{ $spot->other_id }}"></td>
+                <th> <span>*</span> その他ID: </th>
+                <td><input type="text" name="other_id" value="{{ $spot->other_id }}" required></td>
             </tr>
             <tr>
                 <th> <span>*</span> 表示フラグ:</th>
