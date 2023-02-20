@@ -5,19 +5,6 @@ body {
     /* background-color: #EAF2FA; */
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* main {
-    max-width: 1200px;
-    margin: 0 auto;
-} */
-
-/* .wrap {
-    margin: 0 20px;
-} */
 
 
 
@@ -25,15 +12,17 @@ img {
 
 .calendar__section {
     width: 100%;
-    /* background-size: 20px 20px; */
     background-color: #EAF2FA;
-    /* position: relative; */
-    padding: 100px;
+    padding: 50px;
     margin: 0 auto;
 }
 
+.calendar__title {
+    font-size: 1.5rem;
+}
+
 .calendar__box {
-    padding-top: 100px;
+    padding: 50px 0 50px 0;
 }
 
 /* calendar__box--search横並び */
@@ -42,30 +31,34 @@ img {
     text-align: center;
     background-color: #fff;
     line-height: 35px;
-    border-radius: 31% 69% 57% 43% / 49% 52% 48% 51%;
-    width: 35vw;
+    border-radius: 48% 52% 59% 41% / 49% 63% 37% 51%;
+    width: 100%;
     height: fit-content;
     margin: 0 auto;
-    padding: 40px 10px;
+    flex-direction: column;
 }
+
 
 /* PC */
 @media screen and (min-width: 1080px) {
+
+
     .calendar__box {
         display: flex;
         justify-content: center;
     }
 
     .calendar__box--text {
-        max-width: 40vw;
+        max-width: 35vw;
     }
 
     .calendar__box--text {
         max-width: 500px;
+        border-radius: 31% 69% 57% 43% / 49% 52% 48% 51%;
         /* display: grid;
         gap: 3%;
         grid-template-columns: 1fr 1.5fr; */
-        justify-content: center;
+        /* justify-content: center; */
         padding: 20px 20px;
         position: static;
         margin: 0 auto;
@@ -81,6 +74,7 @@ img {
 
 /* 月ボタンgrid */
 tr {
+    max-width: 100%;
     display: grid;
     gap: 1%;
     grid-template-columns: repeat(4, minmax(71px, 1fr));
@@ -93,7 +87,6 @@ tr {
     background-color: #FFEA20;
     border-style: outset;
     border-radius: 20px;
-    margin: 10px 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -132,7 +125,7 @@ tr {
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    /* margin: 100px 0 50px 0; */
+    margin: 0 0 50px 0;
 }
 
 
@@ -191,7 +184,7 @@ h3 {
 /*その他海産物 */
 
 .others__section {
-    padding: 100px;
+    padding: 100px 0 100px 0;
 }
 
 .others__box--info li {
