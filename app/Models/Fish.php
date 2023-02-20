@@ -9,7 +9,28 @@ class Fish extends Model
 {
     use HasFactory;
     protected $guarded = array('id');
-    public static $rules = array();
+    public static $rules = array(
+        'name' => 'required|string|max:20',
+        'formal_name' => 'max:50',
+        'detail' => 'required|string|max:500',
+        'warning' => 'max:200',
+        'cooking1' => 'required|string|max:50',
+        'cooking2' => 'max:50',
+        'cooking3' => 'max:50',
+        'cooking_img1' => 'required|string|max:200',
+        'cooking_img2' => 'max:200',
+        'cooking_img3' => 'max:200',
+        'method' => 'required|string|max:100',
+        'month' => 'max:50',
+        'level' => 'required|integer',
+        'spot_id' => 'max:100',
+        'fish_img1' => 'required|string|max:200',
+        'fish_img2' => 'max:200',
+        'fish_img3' => 'max:200',
+        'plan_id' => 'max:20',
+        'memo' => 'max:200',
+        'is_show' => 'required|boolean',
+    );
     // スコープ
     // 季節、難易度
 
