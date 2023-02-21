@@ -20,7 +20,7 @@
         </div>
     </section>
 
-    <section class="section">
+    {{-- <section class="section">
         <h1>避難場所一覧</h1>
         <table>
             <tr>
@@ -55,7 +55,7 @@
                     </tr>
                 @endforeach
             </table>
-    </section>
+    </section> --}}
 
     <!-- 下記よりマップ -->
     <!-- グーグルマップAPI使用 -->
@@ -69,18 +69,24 @@
 
     </main>
 
+
+
     @php
         // マップ表示するための情報保存用
         // latitude:緯度, longitude:経度, name:避難場所名
         // $evas = [];
         // カウント
-        $eva_count = count($evacuations);
-        // print_r($eva_count);
+        // $eva_count = count($evacuations);
+        // // print_r($eva_count);
         
-        foreach ($evacuations as $item) {
-            $evas[] = [$item->latitude, $item->longitude, $item->name];
-        }
-        print_r($evas);
+        // foreach ($evacuations as $item) {
+        //     $evas[] = [$item->latitude, $item->longitude, $item->name];
+        // }
+        // print_r($evas);
+        
+        // print_r($items);
+        
+        // var_dump($items);
     @endphp
 
     <script type="text/javascript">
@@ -101,21 +107,19 @@
 
             // マーカー生成
             // フォント変えられる
-            let evas = [];
+            let items = [];
 
-            // @foreach ($evacuations as $value)
-
-            // @endforeach
 
             @php
-                for ($i = 0; $i < $eva_count; $i++) {
-            
-                    {{   "evas[${i}]={lat:" . $evas[$i][0] . ','; }}
-                    {{   'lng:' . $evas[$i][1] . ',';}}
-                    {{   'text:' . $evas[$i][2];}}
-                    {{   " color: #AD7000, fontFamilt: 'Kosugi Maru', fontSize: 14px, fontWeight: bold,};";}}
-                    {{   "\n";}}
-            
+                for ($i = 0; $i < count($items); $i++) {
+                    echo "items[${i}]={lat:";
+                    echo $items[$i]['lat'];
+                    echo ', lng:';
+                    echo $items[$i]['lng'];
+                    echo ', text:"';
+                    echo $items[$i]['text'];
+                    echo "\", color: \"#AD7000\", fontFamilt: 'Kosugi Maru', fontSize: \"14px\", fontWeight: \"bold\",};";
+                    echo "\n";
                 }
             @endphp
 
@@ -131,10 +135,10 @@
             // };
 
             var marker = new google.maps.Marker();
-            for (let i = 0; i < evas.length; i++) {
+            for (let i = 0; i < items.length; i++) {
                 marker = new google.maps.Marker({
-                    position: evas[i],
-                    label: evas[i],
+                    position: items[i],
+                    label: items[i],
                     map: map
                 });
             }
