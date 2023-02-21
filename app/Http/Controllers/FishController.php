@@ -96,7 +96,7 @@ class FishController extends Controller
 
 
         // 類似魚を取得する、ランダムに3つ取得
-        $fish_list = Fish::where('id', '<>', '$fish_id')
+        $fish_list = Fish::where('id', '<>', $fish_id)
             ->where('level', '<>', 4)
             ->inRandomOrder()
             ->limit(3)
