@@ -114,31 +114,19 @@
         <div class="results__box">
             <h2 class="results__box--title">初心者におすすめ！釣れる魚</h2>
             <ul class="results__box--info">
-                <li><a href="">
-                        <div class="tokushimafish__box--group">
-                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
-                        </div>
-                    </a></li>
-                <li><a href="">
-                        <div class="tokushimafish__box--group">
-                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
-                        </div>
-                    </a></li>
-                <li><a href="">
-                        <div class="tokushimafish__box--group max-width-box">
-                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
-                        </div>
-                    </a></li>
-                <li><a href="">
-                        <div class="tokushimafish__box--group max-width-box">
-                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
-                        </div>
-                    </a></li>
-                <li><a href="">
-                        <div class="tokushimafish__box--group max-width-box">
-                            <img class="fish__img" src="../assets/images/aji-img.png" width="150" height="150" alt="アジの画像">
-                        </div>
-                    </a></li>
+                @foreach ($fishes2 as $item)
+                @component('components.front_fish_list1_card')
+
+                    @slot('fish_link')
+                        {{ $item->fish_img1 }}
+                    @endslot
+
+                    @slot('fish_name')
+                        {{ $item->name }}
+                    @endslot
+
+                @endcomponent
+            @endforeach
             </ul>
         </div>
     </section>
