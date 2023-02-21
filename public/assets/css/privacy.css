@@ -1,0 +1,98 @@
+@charset 'UTF-8';
+
+body {
+    line-height: 2.0;
+}
+
+.under {
+    font-size: 20px;
+}
+
+/* 見出しがSPで2行になる点修正 2022.10.15 akamatsu */
+/* レスポンシブ対応(PC版) */
+@media screen and (min-width:770px) {
+
+    .under {
+        font-size: 32px;
+    }
+}
+
+h3.privacy-title {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #d3daf0;
+    border-radius: 30px;
+}
+
+@media screen and (min-width:770px){
+    h3.privacy-title {
+    font-size: 24px;
+    }
+}
+
+
+p.privacy-text {
+    padding-bottom: 30px;
+    font-size:14px;
+}
+
+@media screen and (min-width:770px){
+    p.privacy-text {
+    font-size: 16px;
+    }
+}
+
+
+.privacy-sub-text {
+    margin-bottom: 50px;
+}
+
+.privacy-sub-title {
+    margin-bottom: 20px;
+}
+
+.privacy-sp {
+    padding-left: 0;
+    margin: 0 30px 20px;
+}
+
+.detail {
+    padding-left: 10px;
+}
+
+.sub-detail {
+    margin-bottom: 50px;
+}
+
+.privacy-sub-title-box {
+    padding-bottom: 30px;
+}
+
+.privacy-sub-title::before {
+    content: "";
+    border-left: 8px solid #77C4D1;
+    padding-right: .3rem;
+}
+
+@media screen and (min-width:770px) {
+
+    body {
+        font: 14px;
+    }
+
+    .privacy-sp {
+        margin: 0;
+    }
+
+
+    .detail {
+        padding-left: 30px;
+    }
+
+    .privacy-sub-title-box {
+        padding-bottom: 50px;
+    }
+
+}
