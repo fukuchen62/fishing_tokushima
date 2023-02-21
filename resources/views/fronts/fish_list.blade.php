@@ -130,6 +130,10 @@
                 @foreach ($fishes as $item)
                     @component('components.front_fish_list1_card')
                         @slot('fish_link')
+                            {{ route('fishinfo', ['id' => $item->id]) }}
+                        @endslot
+
+                        @slot('fish_img')
                             {{ $item->fish_img1 }}
                         @endslot
 

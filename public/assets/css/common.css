@@ -85,8 +85,8 @@ height: auto;
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 45px;
-    right: 320px;
+    top: 47.25px;
+    right: 280px;
 }
 
 
@@ -100,6 +100,18 @@ height: auto;
     transform: translate(-50%, 0);
 }
 
+@media screen and (max-width: 480px) {
+    .pagetitle::before {
+        right: 265px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .pagetitle::before {
+        transform: scale(0.8);
+        right: 255px;
+    }
+}
 
 /* h2 セクションタイトル */
 
@@ -115,7 +127,7 @@ height: auto;
 
 
 .card__p {
-    padding: 50px;
+    padding: 50px 0;
   }
 
 .card{
@@ -649,6 +661,42 @@ height: auto;
     right: 30px;
 
 }
+
+@media screen and (max-width: 319px) {
+    .titlesection__img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+    .titlesection__img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 599px) {
+    .titlesection__img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 719px) {
+    .titlesection__img {
+        width: 37px;
+        height: 37px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .titlesection__img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 
 /* 第一セクション背景 */
 

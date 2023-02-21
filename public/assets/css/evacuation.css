@@ -1,5 +1,14 @@
 @charset "utf-8";
 /* ベースルール */
+.evacuation__section p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* 注意点赤文字 */
+.evacuation__box--warning {
+    color: #cf2e2e;
+}
 
 /* 背景色の指定 */
 
@@ -13,7 +22,7 @@
 
 /* 背景を付けるために、h1からh2までのmarginをなくし、セクションにpaddingをつける */
 .section__box--title {
-    margin: 0px
+    margin: 0 auto 50px;
 }
 
 .evacuation__section {
@@ -30,7 +39,7 @@
 
 /* 地図 */
 .map {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 iframe {
