@@ -46,7 +46,7 @@
             <tr>
                 <th>概要: </th>
                 <td>
-                    <textarea name="overview" cols="50" rows="5" > {{ $knowledge->overview }} </textarea>
+                    <textarea name="overview" cols="50" rows="5"> {{ $knowledge->overview }} </textarea>
                 </td>
             </tr>
             <tr>
@@ -68,9 +68,16 @@
                 </td>
             </tr>
         </table>
+
         <div class="change_btn">
-            <input type="submit" value="修正" class="submit_btn">
-            <a href="{{ route('knowledgeremove', ['id' => $knowledge->id]) }}" class="delete_btn">削除</a>
+            @php
+                $title = $knowledge->title;
+                $url = route('knowledgeremove', ['id' => $knowledge->id]);
+            @endphp
+            <input type="submit"value="修正" class="submit_btn" onclick="return saveComfirm('{{ $title }}')">
+
+            <input type="button"value="削除" class="delete_btn"
+                onclick="return deleteComfirm('{{ $title }}','{{ $url }}')">
         </div>
     </form>
 @endsection

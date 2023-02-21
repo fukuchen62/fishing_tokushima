@@ -109,7 +109,11 @@
                 <td><input type="boolean" name="is_show" required></td>
             </tr>
         </table>
-        <input type="submit" value="送信" class="submit_btn">
+
+        <div class="submit">
+            <input type="submit"value="登録" class="submit_btn" onclick="return saveComfirm('徳島で釣れる魚')">
+        </div>
+
     </form>
 @endsection
 

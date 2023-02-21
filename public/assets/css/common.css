@@ -688,6 +688,25 @@ height: auto;
     padding-bottom: 20px;
 }
 
+/* フッターで使用する貝や浮き輪の写真 */
+
+.footer__image--adjust {
+    width: 40%;
+    height: auto;
+    margin: 15px auto;
+}
+
+@media screen and (max-width: 480px) {
+    .footer__box {
+        font-size: 12px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+
 
 /* ボタンレイアウト基礎 */
 .btn {
@@ -839,4 +858,23 @@ td {
 
 #page_top a:hover {
     background-color: #666;
+}
+
+@media screen and (max-width: 480px) {
+
+    #page_top {
+        display: none;
+    }
+
+    /* .topbutton__hook {
+        display: none;
+    }
+
+    #page_top a {
+        display: none;
+    }
+
+    #page_top a:hover {
+        display: none;
+    } */
 }

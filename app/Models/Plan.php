@@ -18,10 +18,9 @@ class Plan extends Model
         'city_id' => 'required|integer',
         'spot_id' => 'required|integer',
         'fish_id' => 'required|integer',
-        'flow' => 'required|string',
         'eye_catch' => 'max:200',
         'thumbnail' => 'max:200',
-        'is_show' => 'required|string|max:20',
+        'is_show' => 'required|boolean',
     );
     // スコープ
     public function scopeSearch($query, $area, $level, $fish)

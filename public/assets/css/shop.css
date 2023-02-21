@@ -285,7 +285,7 @@ input:checked+.tab__item {
 }
 
 .section__wrap--infomation {
-    margin: 10px 0 20px 0 ;
+    margin: 10px 0 0 0 ;
     position: relative;
     padding-top: 25%;
     width: 100%;
@@ -338,6 +338,19 @@ input:checked+.tab__item {
         margin-left: 20px;
     }
 }
+
+/* @media screen and (min-width: 560px) and (max-width: 599px) {
+    .section__content--photo {
+        margin-left: 20px;
+    }
+} */
+
+/* @media screen and (min-width: 560px) and (max-width: 899px) {
+    .section__content--photomaxwidth {
+        max-width: 100%;
+        height: auto;
+    }
+} */
 
 @media screen and (max-width: 900px) {
     .btn {
