@@ -320,27 +320,3 @@ body {
 .news__area img {
     margin: 20px 0;
 }
-
-
-.news__page p {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.news__page--text {
-    display: inline-block;
-    justify-content: space-between;
-
-}
-
-.page__return {
-    width: 50%;
-    text-align: left;
-}
-
-.page__next {
-    width: 50%;
-    text-align: right;
-}
