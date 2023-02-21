@@ -92,12 +92,12 @@ class PlanController extends Controller
 
         $connection1 = Plan::where('fish_id', $id1)
             ->where('id', '<>', $id)
-            // ->limit(3)
+            ->limit(3)
             ->get();
 
         $connection2 = Plan::where('spot_id', $id2)
             ->where('id', '<>', $id)
-            // ->limit(3)
+            ->limit(3)
             ->get();
 
 

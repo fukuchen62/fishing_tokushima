@@ -57,7 +57,10 @@
                 </td>
             </tr>
         </table>
-        <input type="submit" value="送信" class="submit_btn">
+
+        <div class="submit">
+            <input type="submit" value="登録" class="submit_btn" onclick="return saveComfirm('入門知識')">
+        </div>
     </form>
 @endsection
 
