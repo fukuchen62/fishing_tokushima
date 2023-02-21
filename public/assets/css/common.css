@@ -894,19 +894,20 @@ td {
 }
 
 /* TOPに戻るボタン */
-#page_top {
+/* #page_top {
     width: 50px;
     height: 100px;
     position: fixed;
     bottom: 10vw;
     right: 50vw;
-}
+} */
+
 .topbuck{
-        width: 50px;
-            height: 100px;
-            position: fixed;
-            bottom: 5vw;
-            right: 5vw;
+    width: 50px;
+    height: 100px;
+    position: fixed;
+    bottom: 5vw;
+    right: 5vw;
 }
 
 .topbutton__hook {
