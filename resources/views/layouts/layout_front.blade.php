@@ -67,6 +67,8 @@
         @include('includes.front_footer')
     </div>
 
+    <!-- 共通のjsファイル -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     {{-- 独自のJSファイルを読み込む --}}
     @yield('pageJs')
 </body>
