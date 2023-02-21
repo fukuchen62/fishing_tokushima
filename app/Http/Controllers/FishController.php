@@ -22,7 +22,31 @@ class FishController extends Controller
     {
         // $items = Fish::all();
 
-        $month = $request->month;
+        // 当月を取得
+        $month = date('m');
+
+        // date('m')が10〜12月の場合、$month=10,11,12をa,b,cに変更
+        if (strpos($month, 10)) {
+            $month = str_replace('10', 'a', $month);
+        }
+        if (strpos($month, 11)) {
+            $month = str_replace('11', 'b', $month);
+        }
+        if (strpos($month, 12)) {
+            $month = str_replace('12', 'c', $month);
+        }
+        // 10月じゃないかつ$monthに0が入っている場合、(首尾の)0をなくす
+        if ($month != 10) {
+            if (strpos($month, 0) !== false) {
+                $month = str_replace('0', '', $month);
+            }
+        }
+        // 月選択のボタンが押されることによって値がある場合、その値を$monthに代入
+        if (isset($request->month)) {
+            $month = $request->month;
+        }
+
+        // levelのデータを取得
         $level = $request->level;
 
         // fishモデルクラスのスコープを使って、検索データを取得
@@ -34,6 +58,7 @@ class FishController extends Controller
         $data = [
             'fishes' => $items,
             'fishes2' => $items2,
+            'month' => $month,
         ];
         return view('fronts.fish_list', $data);
     }
@@ -66,9 +91,13 @@ class FishController extends Controller
             $spot_list[] = $spotinfo;
         }
 
+        // 魚IDを取得
+        $fish_id = $item->id;
+
 
         // 類似魚を取得する、ランダムに3つ取得
-        $fish_list = Fish::where('level', '<>', 4)
+        $fish_list = Fish::where('id', '<>', '$fish_id')
+            ->where('level', '<>', 4)
             ->inRandomOrder()
             ->limit(3)
             ->get();
