@@ -13,7 +13,7 @@ class Fish extends Model
         'name' => 'required|string|max:20',
         'formal_name' => 'max:50',
         'detail' => 'required|string|max:500',
-        'warning' => 'max:200',
+        'keep' => 'max:200',
         'cooking1' => 'required|string|max:50',
         'cooking2' => 'max:50',
         'cooking3' => 'max:50',

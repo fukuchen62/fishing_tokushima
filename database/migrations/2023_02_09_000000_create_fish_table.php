@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 20)->nullable(false);
             $table->string('formal_name', 50)->nullable();
             $table->string('detail', 500)->nullable(false);
-            $table->string('warning', 200)->nullable();
+            $table->string('keep', 200)->nullable();
             $table->string('cooking1', 50)->nullable(false);
             $table->string('cooking2', 50)->nullable();
             $table->string('cooking3', 50)->nullable();
