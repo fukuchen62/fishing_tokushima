@@ -4,8 +4,27 @@ body {
     overflow-x: auto;
 }
 
+/* ページタイトル */
+.pagetitle {
+    color: #30ADD1;
+    -webkit-text-stroke: 1px #fff;
+    padding-top: 15px;
+}
 
+.pagetitle::before {
+    content: url(../images/svg/icon_fish__second.svg);
+    top: 15px;
+}
 
+.pagetitle__border {
+    border: dashed 3px #fff;
+}
+
+.titlesection {
+    background-image: url(../images/svg/wave-indexpage.svg);
+    transform: rotate(180);
+    background-color: #30ADD1;
+}
 
 .mainarea {
     width: 100vw;
@@ -209,12 +228,22 @@ body {
     transform: translate(-60%, 0);
 }
 
+/* .firstsection__bottom {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+} */
+
 .news__bottom {
     background-color: #fff;
     width: 100vw;
     height: 158px;
     background-repeat: repeat-x;
     background-image: url(../images/svg/wave__sectionbottom_knowledge.svg);
+    margin-bottom: 100px;
     /* position: relative; */
     /* left: 50%;
     transform: translate(-50%, 0); */
