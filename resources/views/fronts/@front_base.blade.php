@@ -1,6 +1,6 @@
 @extends('layouts.layout_front')
 
-@section('description', 'ページのデスクリプション')
+@section('description', 'プライバシーポリシーページ表示')
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
