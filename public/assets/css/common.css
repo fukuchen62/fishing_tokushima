@@ -854,7 +854,19 @@ td {
 
 @media screen and (max-width: 480px) {
 
-    .topbutton__hook {
+    #page_top {
         display: none;
     }
+
+    /* .topbutton__hook {
+        display: none;
+    }
+
+    #page_top a {
+        display: none;
+    }
+
+    #page_top a:hover {
+        display: none;
+    } */
 }
