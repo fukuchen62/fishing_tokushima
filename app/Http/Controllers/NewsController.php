@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 // モデルを引用する
 use App\Models\News;
+use Carbon\Carbon;
 
 
 // スーパークラスControllerを継承して独自のクラスを作成する
@@ -31,9 +32,12 @@ class NewsController extends Controller
                 News::all();
         }
 
+        // $created_at = Carbon::createFromFormat('Y-m-d H:i:s',$items -> created_at)-> format('Y-m-d');
+
         $data = [
             // 'news' => $item,
             'news' => $items,
+            // 'created_at'=>$created_at,
         ];
 
         return view('fronts/news_list', $data);

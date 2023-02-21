@@ -1,7 +1,40 @@
 @charset "utf-8";
 
+/* レイアウトルール */
+
+/* タイトル砂浜を避けるレイアウト */
+.overview__section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
 
 /* モジュールパーツルール */
+
+/* ページタイトル */
+
+/* プラン名は長いので、タイトルが2行以上になってしまう。 */
+/* タイトル範囲を伸ばす */
+/* .pagetitle {
+    width: 80%;
+} */
+
+/* 魚の位置指定が大変なので、魚をけしてしまってもよい？ */
+/* .pagetitle::before {
+    display: none;
+} */
+
+.pagetitle:before {
+    content: '';
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    background-image: url(../images/svg/icon_fish.svg);
+    background-size: contain;
+    vertical-align: middle;
+}
+
+
 
 /* 画像 */
 
@@ -14,12 +47,6 @@
 }
 
 /* 概要 */
-
-/* タイトル砂浜を避けるレイアウト */
-.overview__section {
-    padding-top: 100px;
-    padding-bottom: 50px;
-}
 
 /* 概要のテキストボックス */
 .overview__box--group {
@@ -126,6 +153,7 @@
     .flow__box {
         display: flex;
         padding-bottom: 50px;
+        /* 真ん中に線付けるならgapいらない */
         gap: 40px;
     }
 }
@@ -138,13 +166,76 @@
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
+/* モバイル時は出さない */
+.anchor--text {
+        display: none;
+    }
+
 
 /* 横並びになると横幅固定 */
 @media screen and (min-width: 1025px) {
     .flow__box--text {
         width: 559px;
     }
+
+    /* .grid {
+    display: flex;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    }
+    .grid span {
+    border-right: 1px solid #333;
+    height: 100%;
+    width: 20%;
+    } */
+
+    /* 縦線 */
+    /* .flow__box .max-width-box {
+        position: relative;
+        flex-grow: 1;
+        margin-right: 2em;
+    } */
+
+    /* 縦線 */
+    /* .flow__box .max-width-box::after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin: 0 1rem;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #333;
+    } */
+
+    /* 縦線 */
+    /* .flow__box .flow__box--text {
+        flex-grow: 1;
+    } */
+
+    .flow__box {
+        background-image: url(../images/line.png);
+        background-repeat: repeat-y;
+        background-position: center;
+    }
+
+    .flow__bg {
+        background-image: url(../images/anchor.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 60px 60px;
+    }
+
+    .anchor--text {
+        display: block;
+        color: #fff;
+        padding: 20px;
+        font-size: 20px;
+        display: none;
+    }
 }
+
 
 /* フローのテキストボックス内レイアウト */
 .flow__box--text h3 {
