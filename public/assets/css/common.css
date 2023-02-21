@@ -73,13 +73,12 @@ height: auto;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
     padding-top: 45px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 3;
+    /* left: 50%;
+    transform: translate(-50%, 0); */
+        white-space: nowrap;
     overflow: visible;
 }
-
+/*
 .pagetitle::before {
     content: url(../images/svg/icon_fish.svg);
     width: 50px;
@@ -87,7 +86,7 @@ height: auto;
     position: absolute;
     top: 47.25px;
     right: 280px;
-}
+} */
 
 
 .pagetitle__border {
@@ -621,6 +620,12 @@ height: auto;
     background-color: #888;
 }
 
+.fishicon{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
 .titlesection {
     width: 100vw;
     height: 140px;
@@ -632,7 +637,11 @@ height: auto;
 }
 
 .titlesection__box {
-    position: relative;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: end;
+
 }
 
 
@@ -889,8 +898,15 @@ td {
     width: 50px;
     height: 100px;
     position: fixed;
-    bottom: 30px;
-    right: 50px;
+    bottom: 10vw;
+    right: 50vw;
+}
+.topbuck{
+        width: 50px;
+            height: 100px;
+            position: fixed;
+            bottom: 5vw;
+            right: 5vw;
 }
 
 .topbutton__hook {
@@ -914,15 +930,5 @@ td {
         display: none;
     }
 
-    /* .topbutton__hook {
-        display: none;
-    }
 
-    #page_top a {
-        display: none;
-    }
-
-    #page_top a:hover {
-        display: none;
-    } */
 }
