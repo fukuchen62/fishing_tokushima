@@ -160,7 +160,7 @@
     <section class="p__lr">
         <h3 class="section__box--title spotinfo__sectiontitle">近くのスポット</h3>
         <ul class="card__area">
-            @foreach ($spots as $item)
+            @foreach ($connection1 as $item)
             @component('components.front_spots_info2')
 
                 @slot('spot_img')
