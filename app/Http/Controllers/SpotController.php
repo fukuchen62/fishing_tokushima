@@ -77,10 +77,18 @@ class SpotController extends Controller
             $shop_list[] = $shopinfo;
         }
 
+        $city_id = $items->city_id;
+
+        $connection1 = Spot::where('city_id', '=', $city_id)
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+
         $data = [
             'spots' => $items,
             'fishlist' => $fish_list,
             'shoplist' => $shop_list,
+            'connection1' => $connection1,
         ];
 
         return view('fronts.spots_info', $data);

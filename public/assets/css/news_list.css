@@ -6,18 +6,15 @@ body {
 
 /* ページタイトル */
 .pagetitle {
-    color: #30ADD1;
-    -webkit-text-stroke: 1px #fff;
     padding-top: 15px;
 }
 
 .pagetitle::before {
-    content: url(../images/svg/icon_fish__second.svg);
     top: 15px;
 }
 
 .pagetitle__border {
-    border: dashed 3px #fff;
+    border: dashed 3px #30ADD1;
 }
 
 .titlesection {
@@ -25,6 +22,8 @@ body {
     transform: rotate(180);
     background-color: #30ADD1;
 }
+
+/* main */
 
 .mainarea {
     width: 100vw;
@@ -36,6 +35,15 @@ body {
     padding: 0;
     margin: 0;
     position: relative;
+}
+
+.section__box--title {
+    background-color: #30ADD1;
+    border-radius: 30px;
+    color: #fff;
+    padding: 8px;
+    font-size: 24px;
+    margin: 50px 0 50px 0;
 }
 
 .news__section {
@@ -296,4 +304,43 @@ body {
     background-color: #fff;
     background-image: url(../images/svg/wave__sectionbottom.svg);
     transform: scale(1, -1);
+}
+
+/* information記事詳細 */
+
+.news__area {
+    padding: 20px;
+}
+
+.news__area p {
+    text-align: left;
+}
+
+.news__area--description,
+.news__area img {
+    margin: 20px 0;
+}
+
+
+.news__page p {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news__page--text {
+    display: inline-block;
+    justify-content: space-between;
+
+}
+
+.page__return {
+    width: 50%;
+    text-align: left;
+}
+
+.page__next {
+    width: 50%;
+    text-align: right;
 }
