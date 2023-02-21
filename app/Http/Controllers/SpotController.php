@@ -80,6 +80,7 @@ class SpotController extends Controller
         $city_id = $items->city_id;
 
         $connection1 = Spot::where('city_id', '=', $city_id)
+            ->where('id', '<>', $id)
             ->inRandomOrder()
             ->limit(3)
             ->get();

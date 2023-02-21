@@ -163,6 +163,10 @@
             @foreach ($connection1 as $item)
             @component('components.front_spots_info2')
 
+                @slot('spot_link')
+                    {{ route('spotsinfo', ['id' => $item->id]) }}
+                @endslot
+
                 @slot('spot_img')
                     {{ $item->img1 }}
                 @endslot
