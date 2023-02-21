@@ -3,7 +3,19 @@
 body{
     overflow-x: auto;
 }
+.pagetitle{
 
+    padding-top: 15px;
+}
+.pagetitle::before{
+    top: 15px;
+}
+
+.titlesection{
+    background-image: url(../images/svg/wave-indexpage.svg);
+    transform: rotate(180);
+    background-color: #30ADD1;
+}
 
 .knowledge__image{
     width: 100%;
