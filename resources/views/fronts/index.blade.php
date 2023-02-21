@@ -8,7 +8,7 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
 @endsection
 
 @section('key_visual')
