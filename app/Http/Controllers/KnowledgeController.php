@@ -26,7 +26,12 @@ class KnowledgeController extends Controller
      */
     public function knowledgeList(Request $request)
     {
-        $category_id = $request->category_id;
+
+        $category_id = 1;
+
+        if (isset($request->category_id)) {
+            $category_id = $request->category_id;
+        }
 
         if ($category_id != null) {
             $items = KnowledgeController::getCategory($category_id);
