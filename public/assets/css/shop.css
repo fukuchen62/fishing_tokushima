@@ -299,14 +299,6 @@ input:checked+.tab__item {
     height: 100%;
 }
 
-/* 貝や浮き輪の写真 */
-
-.section__image--adjust {
-    width: 40%;
-    height: auto;
-    margin: 0 auto;
-}
-
 @media screen and (max-width: 606px) {
 
     .tab__item {
