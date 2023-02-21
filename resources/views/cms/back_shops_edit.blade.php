@@ -115,7 +115,14 @@
                 </td>
             </tr>
         </table>
-        <input type="submit" value="修正" class="submit_btn">
+
+        <div class="submit">
+            @php
+                $title = $shop->name;
+            @endphp
+            <input type="submit"value="修正" class="submit_btn" onclick="return saveComfirm('{{ $title }}')">
+        </div>
+
     </form>
 @endsection
 

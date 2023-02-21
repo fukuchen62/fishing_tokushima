@@ -94,6 +94,7 @@
                 </td>
             </tr>
         </table>
+
         <div class="change_btn">
             @php
                 $title = $plan->title;
@@ -103,9 +104,8 @@
 
             <input type="button"value="削除" class="delete_btn"
                 onclick="return deleteComfirm('{{ $title }}','{{ $url }}')">
-
-            {{-- <a href="{{ route('plansremove', ['id' => $plan->id]) }}" class="delete_btn">削除</a> --}}
         </div>
+
     </form>
 @endsection
 

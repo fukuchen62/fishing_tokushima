@@ -120,10 +120,18 @@
                 </td>
             </tr>
         </table>
+
         <div class="change_btn">
-            <input type="submit" value="修正" class="submit_btn">
-            <a href="{{ route('fishremove', ['id' => $fish->id]) }}" class="delete_btn">削除</a>
+            @php
+                $title = $fish->name;
+                $url = route('fishremove', ['id' => $fish->id]);
+            @endphp
+            <input type="submit"value="修正" class="submit_btn" onclick="return saveComfirm('{{ $title }}')">
+
+            <input type="button"value="削除" class="delete_btn"
+                onclick="return deleteComfirm('{{ $title }}','{{ $url }}')">
         </div>
+
     </form>
 @endsection
 
