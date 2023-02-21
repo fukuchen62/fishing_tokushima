@@ -692,11 +692,13 @@ height: auto;
     .footer__box {
         font-size: 12px;
     }
+
+    .copyright {
+        font-size: 12px;
+    }
 }
 
-.copyright {
-    font-size: 12px;
-}
+
 
 /* ボタンレイアウト基礎 */
 .btn {
