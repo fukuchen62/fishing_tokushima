@@ -160,33 +160,23 @@
     <section class="p__lr">
         <h3 class="section__box--title spotinfo__sectiontitle">近くのスポット</h3>
         <ul class="card__area">
-            <li class="card__p">
-                <a class="card card__skin" href="">
-                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div class="card__textbox">
-                        <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__description">説明説明説明説明説明説明</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card__p">
-                <a class="card card__skin" href="">
-                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div class="card__textbox">
-                        <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__description">説明説明説明説明説明説明</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card__p">
-                <a class="card card__skin" href="">
-                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div class="card__textbox">
-                        <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__description">説明説明説明説明説明説明</p>
-                    </div>
-                </a>
-            </li>
+            @foreach ($spots as $item)
+            @component('components.front_spots_info2')
+
+                @slot('spot_img')
+                    {{ $item->img1 }}
+                @endslot
+
+                @slot('spot_name')
+                    {{ $item->name }}
+                @endslot
+
+                @slot('spot_overview')
+                    {{ $item->overview }}
+                @endslot
+
+            @endcomponent
+        @endforeach
         </ul>
 
         <a class="btn" href="{{ route('spotslist') }}">スポット一覧</a>
