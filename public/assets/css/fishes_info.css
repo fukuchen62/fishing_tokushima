@@ -10,6 +10,16 @@
     background-color: #EAF2FA;
 }
 
+.pagetitle {
+    width: 100%;
+}
+
+.pagetitle::before {
+    content: url(../images/svg/icon_fish.svg);
+    position: absolute;
+    top: 45px;
+    left: 300px;
+}
 
 /* 魚の写真・概要・丸い囲い */
 
@@ -183,7 +193,8 @@
 .fishesinfo__img--turtle {
     display: flex;
     justify-content: center;
-    margin: 70px;
+    padding-top: 30px;
+    /* margin: 70px; */
 }
 
 /* 泡 */
@@ -229,36 +240,8 @@
     padding: 0 50px 40px 50px;
 }
 
-/* 注意事項 */
-
-.note__box {
-    max-width: 540px;
-    height: auto;
-    background-color: #FFEA20;
-    border-radius: 60px;
-    margin: 0 auto;
-}
-
-.note__box h3 {
-    font-size: 24px;
-    padding: 20px;
-    color: red;
-}
-
-.note__box p {
-    margin: 0 auto;
-    padding: 0 50px 40px 50px;
-}
-
 @media screen and (min-width: 1080px) {
 
-    /* 注意事項 */
-
-    .note__box {
-        max-width: 900px;
-        height: auto;
-        margin: 0px auto;
-    }
 
     .preservation__box {
         max-width: 900px;
