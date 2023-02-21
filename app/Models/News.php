@@ -15,7 +15,8 @@ class News extends Model
         'title'    => 'required|string|max:50',
         'overview' => 'required|string|max:150',
         'content'  => 'required|string',
-        'eyecatch' => 'string|max:200'
+        'eyecatch' => 'max:200',
+        'is_show' => 'required|boolean',
     );
 
     // 日本語エラーメッセージ
@@ -49,6 +50,6 @@ class News extends Model
     // カテゴリ
     public function scopeCategory($query, $name)
     {
-        return $query->where('name',$name);
+        return $query->where('name', $name);
     }
 }
