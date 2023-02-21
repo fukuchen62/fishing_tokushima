@@ -39,9 +39,9 @@
                 </td>
             </tr>
             <tr>
-                <th>注意事項: </th>
+                <th>保存方法: </th>
                 <td>
-                    <textarea name="warning" cols="50" rows="5"></textarea>
+                    <textarea name="keep" cols="50" rows="5"></textarea>
                 </td>
             </tr>
             <tr>
