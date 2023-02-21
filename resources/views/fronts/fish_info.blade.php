@@ -33,28 +33,45 @@
                 <div class="fishinfo__box--img">
                     <!-- slick用（仮） -->
                     <div class="container">
-                        <div class="your-class">
-                            <div>{{ $item->fish_img1 }}</div>
-                            <div>{{ $item->fish_img2 }}</div>
-                            <div>{{ $item->fish_img3 }}</div>
+                        <!-- メイン画像 -->
+                        <div class="main-img js-main-img max-width-box">
+                            <img src="{{ $item->fish_img1 }}" alt="魚の画像" />
                         </div>
+                        <!-- サムネイル画像 -->
+                        <ul class="sub-img js-sub-img">
+                            <!-- 選択されている画像の枠線を変更 -->
+                            <li class="current">
+                                <div class="max-width-box">
+                                    <img src="{{ $item->fish_img1 }}" alt="魚の画像1" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="max-width-box">
+                                    <img src="{{ $item->fish_img2 }}" alt="魚の画像2" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="max-width-box">
+                                    <img src="{{ $item->fish_img3 }}" alt="魚の画像3" />
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
             </li>
-
-            <!-- ボタン部分？ -->
-            <!-- <div class=""></div> -->
 
             <!-- 概要 -->
             <li>
                 <div class="fishinfo__box--description">
-                    <h3>概要</h3>
+                    <h3 class="fishinfo__box--title">概要</h3>
                     <p>{{ $item->detail }}</p>
                     <div class="fishinfo__box--feed">
                         <p class=""><img style="vertical-align: middle" src="../storage/images/fish_ebi.png"
                                 alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
                         <h3 class="card__title">難易度</h3>
-                        <div><?php echo $item->getLevel(); ?></div>
+                        <div class="star__box"><?php echo $item->getLevel(); ?></div>
                     </div>
+                </div>
             </li>
         </ul>
 
@@ -84,9 +101,18 @@
         <div class="fishes__box--description">
             <ul class="fishinfo__box--food">
                 <li>
-                    <div>{{ $item->cooking_img1 }}</div>
-                    <div>{{ $item->cooking_img2 }}</div>
-                    <div>{{ $item->cooking_img3 }}</div>
+                    <!-- slick用（仮） -->
+                    <div class="slider center">
+                        <div>
+                            <img src="{{ $item->cooking_img1 }}" alt="食べ方の画像1" />
+                        </div>
+                        <div>
+                            <img src="{{ $item->cooking_img2 }}" alt="食べ方の画像2" />
+                        </div>
+                        <div>
+                            <img src="{{ $item->cooking_img3 }}" alt="食べ方の画像3" />
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <div class="traiangle"></div>
@@ -94,32 +120,29 @@
                 <li>
                     <div class="fishinfo__box--text">
                         <h3>おいしい食べ方</h3>
-                        <p>{{ $item->cooking1 }}</p>
-                        <p>{{ $item->cooking2 }}</p>
-                        <p>{{ $item->cooking3 }}</p>
-                        <p>食べ方の詳細？</p>
+                        <p>{{ $item->cooking1 }}、{{ $item->cooking2 }}、{{ $item->cooking3 }}
+                            <br>食べ方の詳細？
+                        </p>
+                    </div>
                 </li>
             </ul>
         </div>
 
-        </div>
-
         <!-- 装飾（貝）の画像 -->
-        <div>
-            <ul class="fishesinfo__img--shell">
-                <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-                <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-                <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-                <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
-                <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-                <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-                <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-            </ul>
-        </div>
+        <ul class="fishesinfo__img--shell">
+            <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
+            <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
+            <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+            <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
+            <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
+            <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
+            <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+        </ul>
+        <div class="firstsection__bottom expand"></div>
     </section>
 
     <!-- 保存方法・注意事項 -->
-    <section class="preservation__section">
+    <section class="preservation__section p__lr expand">
         <div class="preservation__box">
             <h3>保存方法</h3>
             <p>{{ $item->keep }}</p>
@@ -134,14 +157,8 @@
                 <li><img src="../storage/images/umigame-2.png" width="100" height="100" alt="ウミガメ"></li>
             </ul>
         </div>
-
-
-        {{-- 注意事項HTML見て削除必要 --}}
-        <div class="note__box">
-            <h3>注意事項</h3>
-            <p>{{ $item->warning }}</p>
-        </div>
     </section>
+    <div class="firstsection__bottom--under expand"></div>
 
     <!-- 釣れるスポット -->
     <section class="spot__section p__lr">
@@ -175,7 +192,7 @@
     <section class="recommend__section p__lr">
         <div class="recommend__box">
             <h2 class="recommend__box--title">その他の魚</h2>
-            <ul class="recommend__box--list">
+            <ul class="recommend__box--list card__area">
                 @foreach ($fishlist as $key => $fish)
                     @component('components.front_fish_info_card')
                         @slot('card_link')
@@ -198,8 +215,6 @@
             </ul>
         </div>
     </section>
-
-    </div>
 
 
     <div id="page_top" class="flex">

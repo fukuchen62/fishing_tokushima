@@ -75,13 +75,34 @@ class Fish extends Model
     {
         $ret = $this->level;
         if (strstr($ret, '1')) {
-            $ret = str_replace('1', '<div><p>img1</p></div>', $ret);
+            $ret = str_replace(
+                '1',
+                '<div class="level1">
+                    <img src="../assets/images/star.png" width="40" height="40" alt="☆">
+                </div>',
+                $ret
+            );
         }
         if (strstr($ret, '2')) {
-            $ret = str_replace('2', '<div><p>img2</p></div>', $ret);
+            $ret = str_replace(
+                '2',
+                '<div class="level2">
+                    <img src="../assets/images/star.png" width="40" height="40" alt="☆">
+                    <img src="../assets/images/star.png" width="40" height="40" alt="☆">
+                </div>',
+                $ret
+            );
         }
         if (strstr($ret, '3')) {
-            $ret = str_replace('3', '<div><p>img3</p></div>', $ret);
+            $ret = str_replace(
+                '3',
+                '<div class="level3">
+                    <img src="../assets/images/star.png" width="40" height="40" alt="☆">
+                    <img src="../assets/images/star.png" width="40" height="40" alt="☆">
+                    <img src="../assets/images/star.png" width="40" height="40" alt="☆">
+                </div>',
+                $ret
+            );
         }
         return $ret;
     }
