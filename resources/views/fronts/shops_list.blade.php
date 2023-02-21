@@ -50,7 +50,7 @@
                     @endslot
 
                     @slot('shop_link')
-                    {{ route('shoplist', ['id' => $item->id]) }}
+                        {{ route('shopslist', ['id' => $item->id]) }}
                     @endslot
 
                     @slot('shop_address')

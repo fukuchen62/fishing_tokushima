@@ -17,7 +17,7 @@
                 <div class="g-nav__box ">
                     <div class="g-nav__box--section flex">
                         <div class="g-nav__box--group">
-                            <a href="" class="g-nav__box--discription">
+                            <a href="{{ route('knowledgelist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="circle__knowledge"
@@ -34,7 +34,7 @@
                             </a>
                         </div>
                         <div class="g-nav__box--group">
-                            <a href="" class="g-nav__box--discription">
+                            <a href="{{ route('fishlist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="circle__fish"
@@ -51,7 +51,7 @@
                             </a>
                         </div>
                         <div class="g-nav__box--group">
-                            <a href="" class="g-nav__box--discription">
+                            <a href="{{ route('spotslist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="circle__spot"
@@ -68,7 +68,7 @@
                     </div>
                     <div class="g-nav__box--section flex">
                         <div class="g-nav__box--group">
-                            <a href="" class="g-nav__box--discription">
+                            <a href="{{ route('planslist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="circle__plan"
@@ -94,7 +94,7 @@
                             </a>
                         </div>
                         <div class="g-nav__box--group">
-                            <a href="" class="g-nav__box--discription">
+                            <a href="{{ route('shopslist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="circle__shop"
@@ -108,7 +108,7 @@
                             </a>
                         </div>
                         <div class="g-nav__box--group">
-                            <a href="" class="g-nav__box--discription">
+                            <a href="{{ route('mypage') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path class="circle__mypage"
@@ -130,8 +130,8 @@
                     </svg>
                 </div>
                 <div class="g-nav__link flex">
-                    <a href="" class="g-nav__link--text">避難場所</a>
-                    <a href="" class="g-nav__link--text">プライバシーポリシー</a>
+                    <a href="{{ route('escapelist') }}" class="g-nav__link--text">避難場所</a>
+                    <a href="{{ route('praivacypage') }}" class="g-nav__link--text">プライバシーポリシー</a>
                 </div>
             </div>
         </div>

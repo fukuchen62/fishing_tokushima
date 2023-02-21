@@ -49,9 +49,9 @@
                 </td>
             </tr>
             <tr>
-                <th>注意事項: </th>
+                <th>保存方法: </th>
                 <td>
-                    <textarea name="warning" cols="50" rows="5"> {{ $fish->warning }} </textarea>
+                    <textarea name="keep" cols="50" rows="5"> {{ $fish->keep }} </textarea>
             </tr>
             <tr>
                 <th> <span>*</span> 食べ方1: </th>
@@ -90,7 +90,7 @@
                 <td><input type="number" name="level" value="{{ $fish->level }}" required></td>
             </tr>
             <tr>
-                <th>釣りスポット: </th>
+                <th>釣りスポットID: </th>
                 <td><input type="text" name="spot_id" value="{{ $fish->spot_id }}"></td>
             </tr>
             <tr>

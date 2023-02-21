@@ -13,10 +13,10 @@ class Knowledge extends Model
 
     public static $rules = array(
         'category_id' => 'required|integer',
-        'title'       => 'string|max:50',
-        'overview'    => 'required|string|max:200',
+        'title'       => 'required|string|max:50',
+        'overview'    => 'max:200',
         'thumbnail'   => 'required|string|max:200',
-        'is_show'     => 'required'
+        'is_show'     => 'required|boolean'
     );
 
     // 日本語エラーメッセージ
