@@ -3,7 +3,6 @@
 /* レイアウトルール */
 
 /* 砂浜避けるレイアウト */
-
 .form__section {
     padding-top: 100px;
 }
@@ -14,7 +13,6 @@
 /* 検索画面 */
 
 /* 検索画面タイトル */
-
 .form__box--title {
     background-color: #30add1;
     border-radius: 20px 20px 0px 0px;
