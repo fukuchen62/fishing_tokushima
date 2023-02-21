@@ -21,14 +21,26 @@
 }
 
 .page__discription {
+    font-weight: 700;
+    font-size: 24px;
+    color: #000;
     display: inline-block;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
     overflow-x: visible;
     overflow-y: visible;
     padding-bottom: 50px;
 }
+
+.discription__p{
+        font-size: 24px;
+        color: #000;
+        white-space: nowrap;
+}
+
+/* メディアクエリ */
+
 
 .keyvisual {
     background-image: url(../images/img_neko_700_3.jpg);
@@ -97,8 +109,12 @@
     padding: 30px;
 }
 .knowledge__text--box{
-    color: #fff;
+    color: #ffffff;
 }
+.last__box{
+    margin-bottom: 0px;
+}
+
 .knowledge_even{
     flex-direction: row-reverse;
 }
@@ -113,91 +129,283 @@
     }
 }
 
-
-.spotsection {
-    background-image: url(../images/tokushima.svg);
-
+.tokushima__imgbox{
+    max-width: 1000px;
+    margin: 0 auto;
 }
-
-.plansection{
+.spotsection__box {
+    width: 100%;
+    height: auto;
     position: relative;
-    height: 1000px;
+}
+.spotlink{
+
+    width: 33vmin;
+    height: 33vmin;
+    border-radius: 50%;
+    background-color: rgba(255, 234, 32, 0.5);
+    display: grid;
+    place-items: center;
+    position: absolute;
+}
+.eastlink{
+    top: 0;
+    right: 0;
+}
+.southlink{
+    top: 40vmin;
+    right: 20vmin;
+}
+@media screen {
+    .eastlink {
+            top: 0;
+            right: 0;
+        }
+
+        .southlink {
+            top: 40vmin;
+            right: 20vmin;
+        }
 }
 
+.spot__bottom{
+    background-color: #30ADD1;
+}
+
+.plantitle , .fishtitle{
+    color: #fff;
+    -webkit-text-stroke: 0px;
+}
+
+.plansection , .fishsection{
+    background-color: #30ADD1;
+    /* position: relative; */
+    height: auto;
+    margin: 0 a;
+    padding: 0 20px 50px 20px;
+}
+.planbottom{
+    border-color: #fff;
+}
 .plansection__block {
-    position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 100%px;
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
 }
-.plan1{
+
+
+
+
+
+.planimg{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: absolute;
+}
+.plan1 > img{
+    top: 100px;
     left: 50%;
+    transform: translateX(-50%);
+}
+
+.plan1 > p {
+    color: #FFEA20;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
     top: 50px;
+    left: 50%;
+
 }
-.plan2 {
-    left: 20%;
+.plan2>img {
     top: 100px;
-}
-.plan3{
-    right: 10%;
-    top: 140px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-
-.circle {
+.plan2>p {
+    color: #FFEA20;
     position: absolute;
-    top: 25px;
-    left: 25px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-image: url(../images/img_neko_700_3.jpg);
-}
+    width: 500px;
+    height: 500px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    top: 50px;
+    left: 50%;
 
-.item {
-    position: absolute;
+}
+.plan3>img {
     top: 100px;
-    left: 100px;
-    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.plan3>p {
+    color: #FFEA20;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    top: 50px;
+    left: 50%;
+
+}
+
+.fontrotate{
+        animation:fontrotate;
+        animation-fill-mode: none;
+        /* アニメーションの通常状態 */
+        animation-duration: 10s;
+        /* 1 回のアニメーションサイクルに要する時間の長さ */
+        animation-iteration-count: infinite;
+        /* アニメーションの再生回数 */
+        animation-timing-function: linear;
+        /* アニメーションの種類 */
+        animation-delay: 0s;
+        /* アニメーションの遅延 */
+        animation-direction: normal;
+        /* アニメーション再生の向き */
+    }
+@keyframes fontrotate {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+
+.circle-text > span {
+    position: absolute;
+    left: calc(50% - 1.5rem);
+    display: inline-block;
+    width: 2rem;
+    height: 300px;
+    transform-origin: center 80%;
+}
+
+@media screen and (min-width: 600px){
+
+}
+
+.circle-text span:nth-child(1) {
+    transform: rotate(-80deg);
+}
+.circle-text span:nth-child(2) {
+    transform: rotate(-70deg);
+}
+.circle-text span:nth-child(3) {
+    transform: rotate(-60deg);
+}
+.circle-text span:nth-child(4) {
+    transform: rotate(-50deg);
+}
+.circle-text span:nth-child(5) {
+    transform: rotate(-40deg);
+}
+.circle-text span:nth-child(6) {
+    transform: rotate(-30deg);
+}
+.circle-text span:nth-child(7) {
+    transform: rotate(-20deg);
+}
+.circle-text span:nth-child(8) {
+    transform: rotate(-10deg);
+}
+.circle-text span:nth-child(9) {
+    transform: rotate(0deg);
+}
+.circle-text span:nth-child(10) {
+    transform: rotate(10deg);
+}
+.circle-text span:nth-child(11) {
+    transform: rotate(20deg);
+}
+.circle-text span:nth-child(12) {
+    transform: rotate(30deg);
+}
+.circle-text span:nth-child(13) {
+    transform: rotate(40deg);
+}
+.circle-text span:nth-child(14) {
+    transform: rotate(50deg);
+}
+.circle-text span:nth-child(15) {
+    transform: rotate(60deg);
+}
+.circle-text span:nth-child(16) {
+    transform: rotate(70deg);
+}
+.circle-text span:nth-child(17) {
+    transform: rotate(80deg);
+}
+
+
+.morelook{
     height: 50px;
+    width: 160px;
+    margin: 100px auto;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.morelook:hover {
+    background-color: #30ADD1;
+    color: #ffea20;
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+.fishsection{
+    padding: 0;
+}
+.fishsection__box{
+            white-space: nowrap;
+    overflow-x: visible;
+}
+
+.fishimgblock{
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.arrow_box {
+    position: relative;
+    width: 10vmin;
+    height: 10vmin;
+    background: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    color: #000000;
+    font-size: 0.5rem;
+    font-weight: bold;
     border-radius: 50%;
-    background: #4169e1;
-    transform: translateX(-100px);
-    animation: circle-move-anim 4s linear infinite;
-    /* for text */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: #FFF;
+    overflow: visible;
 }
 
-@keyframes circle-move-anim {
-    0% {
-        transform: rotate(0deg) translateX(-100px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(-100px) rotate(-360deg);
-    }
+.arrow_box:after {
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 0);
+    border-top-width: 110px;
+    border-bottom-width: 10px;
+    border-left-width: 10px;
+    border-right-width: 30px;
+    border-bottom-color: #FFFFFF;
+    bottom: 10%;
+    left: 30%;
 }
-@keyframes arc-move-anim-1 {
-    0% {
-        transform: rotate(0deg) translateX(-100px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(-100px) rotate(-360deg);
-    }
-}
-@keyframes arc-move-anim-2 {
-    0% {
-        transform: rotate(0deg) translateX(100px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg) translateX(100px) rotate(360deg);
-    }
-}
-
-
-
 
 
 .infomation__block{
@@ -205,9 +413,14 @@
     border: solid 5px #30ADD1;
     border-radius: 50px;
     padding: 20px;
+
 }
 .infomation__border{
     border: #30ADD1 dashed 2px ;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.infobtn{
+    margin: 30px auto;
 }
