@@ -11,8 +11,7 @@
 @endsection
 
 @section('key_visual')
-    <div class="keyvisual expand">
-    </div>
+    キービジュアル
 @endsection
 
 @section('content')
