@@ -132,12 +132,16 @@
                             {{ $item->thumbnail }}
                         @endslot
 
-                        @slot('plan_alt')
+                        @slot('plan_title')
                             {{ $item->title }}
                         @endslot
 
-                        @slot('plan_title')
-                            {{ $item->title }}
+                        @slot('plan_city_id')
+                            {{ $item->city_id }}
+                        @endslot
+
+                        @slot('plan_level')
+                            {{ $item->level }}
                         @endslot
                     @endcomponent
                 @endforeach
