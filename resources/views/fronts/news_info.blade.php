@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{{-- テストデータ --}}
+
+{{-- <!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -37,5 +39,7 @@
     </table>
 
 </body>
+</html> --}}
 
-</html>
+
+{{-- テストデータ --}}
