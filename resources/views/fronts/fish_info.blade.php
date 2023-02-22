@@ -4,30 +4,23 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', '徳島の魚詳細')
+@section('key_visual', 'キービジュアル')
+
+@section('title')
+    {{ $item->name }}{{ '（' . $item->formal_name . '）' }}
+@endsection
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+    <link rel="stylesheet" href="{{ asset('assets/css/fishes_info.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/slick/slick-theme.css') }}">
 @endsection
 
 {{-- メイン --}}
 @section('content')
 
-    {{-- キービジュアル --}}
-
-    <section class="titlesection expand">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">{{ $item->name }}{{ '（' . $item->formal_name . '）' }}</h1>
-            <div class="pagetitle__border"></div>
-        </div>
-        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
-    </section>
-
     <section id="fishinfo__section" class="fishinfo__section p__lr expand">
-
         <ul class="fishinfo__box">
             <li>
                 <div class="fishinfo__box--img">
@@ -157,6 +150,7 @@
                 <li><img src="../storage/images/umigame-2.png" width="100" height="100" alt="ウミガメ"></li>
             </ul>
         </div>
+
     </section>
     <div class="firstsection__bottom--under expand"></div>
 
@@ -216,10 +210,6 @@
         </div>
     </section>
 
-
-    <div id="page_top" class="flex">
-        <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-    </div>
 @endsection
 
 {{-- 該当ページ専用JS --}}
