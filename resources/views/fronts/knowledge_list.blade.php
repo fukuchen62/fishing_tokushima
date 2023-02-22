@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/knowledge.css') }}">
 @endsection
 
+@section('key_visual')
+    キービジュアル
+@endsection
+
 {{-- メイン --}}
 @section('content')
 
