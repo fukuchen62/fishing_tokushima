@@ -26,7 +26,7 @@
             <label class="tab__item" for="north"><a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></label>
             <button>
 
-            <h3 class="section__content--titlereserch">検索結果</h3>
+            <h3 class="section__box--title">検索結果</h3>
 
             @foreach ($shops as $item)
                 @component('components.front_shops_card')
