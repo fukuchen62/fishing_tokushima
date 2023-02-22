@@ -74,13 +74,34 @@ class Plan extends Model
     {
         $ret = $this->level;
         if (strstr($ret, '1')) {
-            $ret = str_replace('1', '<div><p>img1</p></div>', $ret);
+            $ret = str_replace(
+                '1',
+                '<div class="level1">
+                    <img class="star" src="../assets/images/star.png" alt="☆">
+                </div>',
+                $ret
+            );
         }
         if (strstr($ret, '2')) {
-            $ret = str_replace('2', '<div><p>img2</p></div>', $ret);
+            $ret = str_replace(
+                '2',
+                '<div class="level2">
+                    <img class="star" src="../assets/images/star.png" alt="☆">
+                    <img class="star" src="../assets/images/star.png" alt="☆">
+                </div>',
+                $ret
+            );
         }
         if (strstr($ret, '3')) {
-            $ret = str_replace('3', '<div><p>img3</p></div>', $ret);
+            $ret = str_replace(
+                '3',
+                '<div class="level3">
+                    <img class="star" src="../assets/images/star.png" alt="☆">
+                    <img class="star" src="../assets/images/star.png" alt="☆">
+                    <img class="star" src="../assets/images/star.png" alt="☆">
+                </div>',
+                $ret
+            );
         }
         return $ret;
     }
