@@ -627,7 +627,6 @@ height: auto;
 /* キービジュアル */
 .keyvisual {
     max-width: 100vw;
-    /* width: 100vw; */
     max-height:300px ;
     height: 300px;
     object-fit: cover;
@@ -647,8 +646,6 @@ height: auto;
 .titlesection {
     width: 100vw;
     height: 140px;
-    background-image: url(../images/svg/wave-section1\ .svg);
-    background-repeat: repeat-x;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -659,7 +656,6 @@ height: auto;
     text-align: center;
     justify-content: center;
     align-items: end;
-
 }
 
 
