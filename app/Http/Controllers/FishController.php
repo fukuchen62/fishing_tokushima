@@ -66,15 +66,15 @@ class FishController extends Controller
 
     public function fishInfo(Request $request)
     {
-        $id = '';
+        $table_id = '';
 
         // idがあれば$idに代入
         if (isset($request->id)) {
-            $id = $request->id;
+            $table_id = $request->id;
         }
 
         // idで該当魚の情報を取得
-        $item = Fish::find($id);
+        $item = Fish::find($table_id);
 
 
         // 釣れるスポットIDを取得

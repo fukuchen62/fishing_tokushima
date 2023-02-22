@@ -21,6 +21,29 @@ body{
     margin: 0 10px;
 }
 
+/* 海のセクション区切り */
+
+/* セクション上側 */
+.secondsection__top {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom__second.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1, -1);
+}
+
+/* セクション下側 */
+.secondsection__bottom {
+    width: 100vw;
+    height: 160px;
+    background-image: url(../images/svg/wave__sectionbottom__second.svg);
+    background-repeat: repeat-x;
+    justify-content: center;
+    align-items: center;
+}
+
 /* .spot__btn{
     width: 160px;
     height: 80px;

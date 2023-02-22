@@ -5,6 +5,7 @@
 @section('keywords', 'キーワード1,キーワード2・・・')
 
 @section('key_visual', 'キービジュアル')
+
 @section('title', '徳島の魚一覧')
 
 {{-- 該当ページのCSS --}}
