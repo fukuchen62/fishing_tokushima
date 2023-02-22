@@ -58,8 +58,8 @@ class MainController extends Controller
 
         foreach ($evacuations as $value) {
             $evas[] = [
-                'lat' => $value->longitude,
-                'lng' => $value->latitude,
+                'lat' => $value->latitude,
+                'lng' => $value->longitude,
                 'text' => $value->name,
             ];
         }

@@ -28,37 +28,45 @@
             <div class="spotinfo__images p__lr">
                 <!-- メイン画像 -->
                 <div class="spotinfo__img main-img js-main-img">
-                    <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
+                    {{-- @if ($spots->img1 !="") --}}
+                        <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
                     {{-- {{ $spots->img1 }} --}}
                         alt="スポット写真1">
+                    {{-- @endif --}}
                 </div>
                 <!-- サムネイル画像 -->
                 <ul class="sub-img js-sub-img">
                     <!-- 選択されている画像の枠線を変更 -->
                     <li class="spotinfo__img">
-                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
-                        {{-- {{ $spots->img1 }} --}}
-                            alt="スポット写真1">
+                        {{-- @if ($spots->img1 !="") --}}
+                            <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
+                    {{-- {{ $spots->img1 }} --}}
+                        alt="スポット写真1">
+                        {{-- @endif --}}
                     </li>
                     <li class="spotinfo__img">
+                        {{-- @if ($spots->img2 !="") --}}
                         <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%92"
                         {{-- {{ $spots->img2 }} --}}
                             alt="スポット写真2">
+                        {{-- @endif --}}
                     </li>
                     <li class="spotinfo__img">
+                        {{-- @if ($spots->img3 !="") --}}
                         <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%93"
                         {{-- {{ $spots->img3 }} --}}
                             alt="スポット写真3">
+                        {{-- @endif --}}
                     </li>
                     <li class="spotinfo__img">
-                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%94"
-                        {{-- {{ $spots->img4 }} --}}
-                            alt="スポット写真4">
+                        @if ($spots->img4 !="")
+                        <img src="{{ $spots->img4 }}" alt="スポット写真4">
+                        @endif
                     </li>
                     <li class="spotinfo__img">
-                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%95"
-                        {{-- {{ $spots->img5 }} --}}
-                            alt="スポット写真5">
+                        @if ($spots->img5 !="")
+                        <img src="{{ $spots->img5 }}" alt="スポット写真4">
+                        @endif
                     </li>
                 </ul>
             </div>
@@ -100,9 +108,8 @@
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">駐車場</td>
-                        <td>{{ $spots->parking_id }}</td>
-                        {{-- 南さんに何を表示するか確認中 --}}
-                        {{-- $parking->name --}}
+                        <td>{{ $parking->name }}</td>
+                        {{-- 本来なら「有」or「-」になる予定 --}}
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">釣り方</td>
@@ -132,23 +139,24 @@
     </div>
     <div class="firstsection__bottom expand"></div>
     <!-- 狙える魚 -->
-    <div class="sea">
+    <div class="sea expand">
         <section class="spotinfo__fish p__lr">
             <h3 class="section__box--title spotinfo__sectiontitle--fish">狙える魚</h3>
             <div class="spotinfo__fishes">
                 @foreach ($fishlist as $item)
-            @component('components.front_spots_info')
+                @component('components.front_spots_info')
 
                 @slot('fish_img')
-                    {{ $item->fish_img1 }}
+                    {{-- {{ $item->fish_img1 }} --}}
+                    https://placehold.jp/500x500.png
                 @endslot
 
                 @slot('fish_name')
                     {{ $item->name }}
                 @endslot
 
-            @endcomponent
-        @endforeach
+                @endcomponent
+                @endforeach
             </div>
         </section>
 
@@ -179,7 +187,8 @@
                 @endslot
 
                 @slot('spot_img')
-                    {{ $item->img1 }}
+                    {{-- {{ $item->img1 }} --}}
+                    https://placehold.jp/320x240.png
                 @endslot
 
                 @slot('spot_name')
@@ -197,12 +206,10 @@
         <a class="btn" href="{{ route('spotslist') }}">スポット一覧</a>
     </section>
 
-    <div id="page_top" class="flex">
-        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針" class="topbutton__hook"></a>
-    </div>
 @endsection
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+<script src="{{ asset('assets/slick/slick.min.js') }}"></script>
+<script src="{{ asset('assets/slick/slick-common.js') }}"></script>
 @endsection
