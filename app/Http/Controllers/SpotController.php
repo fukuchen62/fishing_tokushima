@@ -42,14 +42,14 @@ class SpotController extends Controller
 
     public function spotInfo(Request $request)
     {
-        $id = '';
+        $spot_id = '';
 
         // idがあれば$idに代入
         if (isset($request->id)) {
-            $id = $request->id;
+            $spot_id = $request->id;
         }
         // idで該当のスポット情報を取得
-        $items = Spot::find($id);
+        $items = Spot::find($spot_id);
 
         // 関連フィッシュIDを取得
         $fish_id = $items->fish_id;
@@ -80,8 +80,7 @@ class SpotController extends Controller
         $city_id = $items->city_id;
 
         $connection1 = Spot::where('city_id', '=', $city_id)
-            ->where('id', '<>', $id)
-            ->inRandomOrder()
+            ->where('id', '<>', $spot_id)
             ->limit(3)
             ->get();
 
