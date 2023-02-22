@@ -153,6 +153,7 @@
                     {{ route('spotsinfo', ['id' => $item->id]) }}
                 @endslot
                 @slot('spot_src')
+                {{ asset('storage/images') }}/{{ $item->img1 }}
                 @endslot
 
                 @slot('spot_alt')
