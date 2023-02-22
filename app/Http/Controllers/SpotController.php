@@ -17,6 +17,7 @@ use App\Models\Fish;
 use App\Models\Shop;
 use App\Models\Facility;
 use App\Models\City;
+use App\Models\Evacuation;
 
 // スーパークラスControllerを継承して独自のクラスを作成する
 class SpotController extends Controller
@@ -54,28 +55,48 @@ class SpotController extends Controller
         // 関連フィッシュIDを取得
         $fish_id = $items->fish_id;
         if ($fish_id != '') {
-            $fishid_list = explode(",", $fish_id);
+            $fish_id_list = explode("|", $fish_id);
         }
         // 関連フィッシュ情報を取得
-        foreach ($fishid_list as $id) {
+        foreach ($fish_id_list as $id) {
             // fish情報を読み込む
             $fishinfo = Fish::find($id);
             // fish情報を配列に加える
-            $fish_list[] = $fishinfo;
+            $fish_info_list[] = $fishinfo;
         }
 
         // 関連ショップIDを取得
         $shop_id = $items->shop_id;
         if ($shop_id != '') {
-            $shopid_list = explode(",", $shop_id);
+            $shop_id_list = explode("|", $shop_id);
         }
         // 関連ショップ情報を取得
-        foreach ($shopid_list as $id) {
+        foreach ($shop_id_list as $id) {
             // shop情報を読み込む
             $shopinfo = Shop::find($id);
             // shop情報を配列に加える
-            $shop_list[] = $shopinfo;
+            $shop_info_list[] = $shopinfo;
         }
+
+        // 駐車場情報を取得
+        $parking_id = $items->parking_id;
+        $parking = Facility::where('id', $parking_id)->first();
+
+
+        // 避難場所IDを取得
+        $evacuation_id = $items->evacuation_id;
+        if ($evacuation_id != '') {
+            $evacuation_id_list = explode("|", $evacuation_id);
+        }
+
+        // 避難場所情報を取得
+        foreach ($evacuation_id_list as $id) {
+            // 避難場所を読み込む
+            $evacuationinfo = Evacuation::find($id);
+            // shop情報を配列に加える
+            $evacuation_info_list[] = $evacuationinfo;
+        }
+
 
         $city_id = $items->city_id;
 
@@ -86,9 +107,12 @@ class SpotController extends Controller
 
         $data = [
             'spots' => $items,
-            'fishlist' => $fish_list,
-            'shoplist' => $shop_list,
+            'fishlist' => $fish_info_list,
+            'shoplist' => $shop_info_list,
             'connection1' => $connection1,
+            'parking' => $parking,
+            'evacuationlist' => $evacuation_info_list,
+
         ];
 
         return view('fronts.spots_info', $data);

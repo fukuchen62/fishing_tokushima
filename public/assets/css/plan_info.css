@@ -6,32 +6,6 @@
     padding-bottom: 50px;
 }
 
-/* ページタイトル */
-
-/* プラン名は長いので、タイトルが2行以上になってしまう。 */
-/* タイトル範囲を伸ばす */
-/* .pagetitle {
-    width: 80%;
-} */
-
-/* 魚の位置指定が大変なので、魚をけしてしまってもよい？ */
-/* .pagetitle::before {
-    display: none;
-} */
-
-/* .pagetitle:before {
-    content: '';
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    top: 50px;
-    background-image: url(../images/svg/icon_fish.svg);
-    background-size: contain;
-    vertical-align: middle;
-} */
-
-
-
 /* 画像 */
 
 /* 貝（装飾） */

@@ -5,6 +5,7 @@
 @section('keywords', 'キーワード1,キーワード2・・・')
 
 @section('key_visual', 'キービジュアル')
+
 @section('title', '徳島の魚一覧')
 
 {{-- 該当ページのCSS --}}
@@ -130,11 +131,11 @@
                         @endslot
 
                         @slot('fish_src')
-                            {{ $item->fish_img1 }}
+                            {{ asset('storage/images') }}/{{ $item->fish_img1 }}
                         @endslot
 
                         @slot('fish_alt')
-                            {{ $item->name }}
+                            {{ $item->fish_img1 }}
                         @endslot
                     @endcomponent
                 @endforeach
@@ -153,6 +154,10 @@
                 @foreach ($fishes2 as $item)
                     @component('components.front_fish_list_card')
                         @slot('fish_src')
+                            {{ asset('storage/images') }}/{{ $item->fish_img1 }}
+                        @endslot
+
+                        @slot('fish_alt')
                             {{ $item->fish_img1 }}
                         @endslot
 

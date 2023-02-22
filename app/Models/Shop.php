@@ -23,9 +23,9 @@ class Shop extends Model
         'fax' => 'max:20',
         'email' => 'max:100',
         'url' => 'max:200',
-        'service_day' => 'required|string|max:100',
-        'service' => 'required|string|max:200',
-        'pr' => 'max:200',
+        'service_day' => 'required|string|max:500',
+        'service' => 'required|string|max:500',
+        'pr' => 'max:500',
         'img' => 'max:200',
         'memo' => 'max:200',
     );

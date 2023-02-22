@@ -116,12 +116,6 @@
 {{-- メイン --}}
 @section('content')
 
-    <section class="titlesection">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">釣りスポット一覧</h1>
-        </div>
-    </section>
-
     <!-- 浅瀬背景 -->
     <div class="shallow">
         <!-- 東部・南部ボタン -->
@@ -159,6 +153,7 @@
                     {{ route('spotsinfo', ['id' => $item->id]) }}
                 @endslot
                 @slot('spot_src')
+                {{ asset('storage/images') }}/{{ $item->img1 }}
                 @endslot
 
                 @slot('spot_alt')

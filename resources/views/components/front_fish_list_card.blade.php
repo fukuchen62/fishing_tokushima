@@ -1,5 +1,5 @@
 {{-- カードの構造 --}}
-<li><img src="{{ $fish_src }}" width="300" height="200" alt="魚の画像">
+<li><img src="{{ $fish_src }}" width="300" height="200" alt="{{ $fish_alt }}">
     <div class="description__box">
         <h3>{{ $fish_name }}</h3>
         <p class="description__text">{{ $fish_detail }}</p>

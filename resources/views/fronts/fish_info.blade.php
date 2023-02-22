@@ -4,30 +4,23 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', '徳島の魚詳細')
+@section('key_visual', 'キービジュアル')
+
+@section('title')
+    {{ $item->name }}{{ '（' . $item->formal_name . '）' }}
+@endsection
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+    <link rel="stylesheet" href="{{ asset('assets/css/fishes_info.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/slick/slick-theme.css') }}">
 @endsection
 
 {{-- メイン --}}
 @section('content')
 
-    {{-- キービジュアル --}}
-
-    <section class="titlesection expand">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">{{ $item->name }}{{ '（' . $item->formal_name . '）' }}</h1>
-            <div class="pagetitle__border"></div>
-        </div>
-        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-        <img src="../assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
-    </section>
-
     <section id="fishinfo__section" class="fishinfo__section p__lr expand">
-
         <ul class="fishinfo__box">
             <li>
                 <div class="fishinfo__box--img">
@@ -35,24 +28,27 @@
                     <div class="container">
                         <!-- メイン画像 -->
                         <div class="main-img js-main-img max-width-box">
-                            <img src="{{ $item->fish_img1 }}" alt="魚の画像" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->fish_img1 }}" alt="{{ $item->fish_img1 }}" />
                         </div>
                         <!-- サムネイル画像 -->
                         <ul class="sub-img js-sub-img">
                             <!-- 選択されている画像の枠線を変更 -->
                             <li class="current">
                                 <div class="max-width-box">
-                                    <img src="{{ $item->fish_img1 }}" alt="魚の画像1" />
+                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img1 }}"
+                                        alt="{{ $item->fish_img1 }}" />
                                 </div>
                             </li>
                             <li>
                                 <div class="max-width-box">
-                                    <img src="{{ $item->fish_img2 }}" alt="魚の画像2" />
+                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img2 }}"
+                                        alt="{{ $item->fish_img2 }}" />
                                 </div>
                             </li>
                             <li>
                                 <div class="max-width-box">
-                                    <img src="{{ $item->fish_img3 }}" alt="魚の画像3" />
+                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img3 }}"
+                                        alt="{{ $item->fish_img3 }}" />
                                 </div>
                             </li>
                         </ul>
@@ -104,13 +100,16 @@
                     <!-- slick用（仮） -->
                     <div class="slider center">
                         <div>
-                            <img src="{{ $item->cooking_img1 }}" alt="食べ方の画像1" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
+                                alt="{{ $item->cooking_img1 }}" />
                         </div>
                         <div>
-                            <img src="{{ $item->cooking_img2 }}" alt="食べ方の画像2" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
+                                alt="{{ $item->cooking_img2 }}" />
                         </div>
                         <div>
-                            <img src="{{ $item->cooking_img3 }}" alt="食べ方の画像3" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
+                                alt="{{ $item->cooking_img3 }}" />
                         </div>
                     </div>
                 </li>
@@ -157,6 +156,7 @@
                 <li><img src="../storage/images/umigame-2.png" width="100" height="100" alt="ウミガメ"></li>
             </ul>
         </div>
+
     </section>
     <div class="firstsection__bottom--under expand"></div>
 
@@ -171,7 +171,7 @@
                             {{ route('spotsinfo', ['id' => $spots[$key]]) }}
                         @endslot
                         @slot('card_alt')
-                            {{ $spot->name }}
+                            {{ $spot->img1 }}
                         @endslot
                         @slot('card_src')
                             {{ $spot->img1 }}
@@ -199,7 +199,7 @@
                             {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
                         @slot('card_alt')
-                            {{ $fish->name }}
+                            {{ $fish->fish_img1 }}
                         @endslot
                         @slot('card_src')
                             {{ $fish->fish_img1 }}
@@ -216,13 +216,10 @@
         </div>
     </section>
 
-
-    <div id="page_top" class="flex">
-        <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-    </div>
 @endsection
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+    <script src="{{ asset('assets/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/slick/slick-common.js') }}"></script>
 @endsection
