@@ -4,21 +4,16 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', 'プラン一覧')
+@section('title', '条件検索')
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+    <link rel="stylesheet" href="{{ asset('assets/css/plan.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plan_search.css') }}">
 @endsection
 
 {{-- メイン --}}
 @section('content')
-
-    <section class="titlesection">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">条件検索</h1>
-        </div>
-    </section>
 
     <div class="container">
         <section class="form__section">
