@@ -5,6 +5,10 @@
     padding: 50px 0;
 }
 
+.firstsection__bottom{
+    background-color: #30ADD1;
+}
+
 /* スポット写真　slick */
 .spotinfo__images{
     max-width: 559px;
