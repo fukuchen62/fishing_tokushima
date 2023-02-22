@@ -3,50 +3,22 @@ padding-top:100px;
 を追加で当ててください（波線部分が100pxなので）
 margin-top だと背景色が崩れます。
 */
-@charset "utf-8";
 body {
     text-align: center;
     height: auto;
-    max-width:1200px;
+    width: 1200px;
     margin: 0 auto;
-    /* padding: 0 20px; */
     font-family: "fot-tsukuardgothic-std", sans-serif;
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
     color: #000000;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
-.expand{
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding-left: calc(50vw - 50%);
-    padding-right: calc(50vw - 50%);
-}
 
-h1{
-    font-size: 40px;
-}
 
-h2{
-    font-size: 32px;
-}
 
-h3{
-    font-size: 24px;
-}
-
-p{
-    font-size: 16px;
-    color: #51656F;
-}
-
-img{
-bottom: 0;
-max-width: 100%;
-height: auto;
-}
 
 .flex {
     display: flex;
@@ -58,9 +30,9 @@ height: auto;
 
 /* ページ全体共通のpadding left rightです */
 /* 各ページのセクションやブロックごとにクラスの指定をしてください */
-.p__lr {
-    padding-left: 20px;
-    padding-right: 20px;
+.p__lr{
+    padding-left:20px;
+    padding-right:20px;
 }
 
 
@@ -73,23 +45,23 @@ height: auto;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
     padding-top: 45px;
-    /* left: 50%;
-    transform: translate(-50%, 0); */
-        white-space: nowrap;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
     overflow: visible;
 }
-/*
 .pagetitle::before {
-    content: url(../images/svg/icon_fish.svg);
+    content: url(../images/fish__icon.png);
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 47.25px;
-    right: 280px;
-} */
+    top: 45px;
+    right: 320px;
+}
 
 
-.pagetitle__border {
+.pagetitle__border{
     text-align: center;
     width: 80%;
     margin-top: 10px;
@@ -99,64 +71,38 @@ height: auto;
     transform: translate(-50%, 0);
 }
 
-@media screen and (max-width: 480px) {
-    .pagetitle::before {
-        right: 265px;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .pagetitle::before {
-        transform: scale(0.8);
-        right: 255px;
-    }
-}
 
 /* h2 セクションタイトル */
 
-.section__box--title {
-    max-width: 1200px;
-    background-color: #30ADD1;
-    border-radius: 30px;
-    color: #fff;
-    padding: 8px;
-    font-size: 24px;
-    margin: 100px auto 50px;
-}
+    .section__box--title {
+        background-color: #30ADD1;
+        border-radius: 30px;
+        color: #fff;
+        padding: 8px;
+        font-size: 24px;
+        margin: 100px 0 50px 0;
+    }
 
 
-.card__p {
-    padding: 50px 0;
-  }
-
-.card{
+/* カード */
+.card {
     width: 320px;
     height: 426px;
     background-color: #EAF2FA;
-    margin: 0 auto;
-    transition: 0.5s;
-    display: block;
 }
 
-.card:hover{
-    box-shadow: none;
-    transform: translate(1px, 1px);
+.card__img {
+    width: 320px;
+    height: 240px;
 }
 
-.card__skin{
-    border-radius: 30px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+.card__title {
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
-.card__img{
-    border-radius: 30px 30px 0 0;
-}
-
-.card__textbox {
-    width: 100%;
-    padding: 20px 30px;
-    box-sizing: border-box;
-    text-align: start;
+.card__discription {
+    color: #51656F;
 }
 
 /* ヘッダー */
@@ -167,6 +113,7 @@ height: auto;
     height: 100px;
     position: fixed;
     z-index: 20;
+    left: 0px;
 }
 
 .header__box--group {
@@ -178,13 +125,11 @@ height: auto;
     position: fixed;
     z-index: 5;
 }
-
 @media screen and (min-width: 1080px) {
     .header__box--group {
         display: none;
     }
 }
-
 .header__box--border {
     height: 30px;
     width: 100%;
@@ -193,8 +138,6 @@ height: auto;
     position: fixed;
     top: 100px;
     z-index: 10;
-    left: 50%;
-    transform: translate(-50%, 0);
 }
 
 /* ハンバーガーメニュー */
@@ -275,9 +218,7 @@ height: auto;
 }
 
 @media screen and (min-width: 1080px) {
-
-    .hamburger,
-    .hamburger span {
+    .hamburger, .hamburger span {
         display: none;
         z-index: -1;
     }
@@ -292,29 +233,30 @@ height: auto;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-
-
+    align-items: center;
+    justify-content: center;
     transform: translateX(100vw);
+    /* transition: all .3s linear; */
     padding-top: 150px;
     overflow: scroll;
 }
 
-.slide-in {
+.slide-in{
     background: #30ADD1;
     animation-name: slide-in;
     animation-fill-mode: forwards;
-    /* アニメーションの通常状態 */
-    animation-duration: 0.3s;
-    /* 1 回のアニメーションサイクルに要する時間の長さ */
-    animation-iteration-count: 1;
-    /* アニメーションの再生回数 */
-    animation-timing-function: ease;
-    /* アニメーションの種類 */
-    animation-delay: 0s;
-    /* アニメーションの遅延 */
-    animation-direction: normal;
-    /* アニメーション再生の向き */
-}
+        /* アニメーションの通常状態 */
+        animation-duration: 0.3s;
+        /* 1 回のアニメーションサイクルに要する時間の長さ */
+        animation-iteration-count: 1;
+        /* アニメーションの再生回数 */
+        animation-timing-function: ease;
+        /* アニメーションの種類 */
+        animation-delay: 0s;
+        /* アニメーションの遅延 */
+        animation-direction: normal;
+        /* アニメーション再生の向き */
+    }
 
 @keyframes slide-in {
     0% {
@@ -322,11 +264,11 @@ height: auto;
     }
 
     100% {
-        transform: translateX(0);
+    transform: translateX(0);
     }
 }
 
-.slide-out {
+.slide-out{
     animation-name: slide-out;
     animation-fill-mode: forwards;
     /* アニメーションの通常状態 */
@@ -339,21 +281,19 @@ height: auto;
     animation-delay: 0s;
     /* アニメーションの遅延 */
     animation-direction: normal;
-    /* アニメーション再生の向き */
-}
+    /* アニメーション再生の向き */}
 
-@keyframes slide-out {
-    0% {
-        transform: translateX(0);
+    @keyframes slide-out {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(100vw);
+        }
     }
 
-    100% {
-        transform: translateX(100vw);
-    }
-}
-
-.logo__img,
-.header__logo {
+.logo__img, .header__logo {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -364,7 +304,7 @@ height: auto;
 
 .g-nav__box {
     background-color: #fff;
-    /* margin-top: 60px; */
+    margin-top: 60px;
 }
 
 .g-nav__box--section {
@@ -387,151 +327,28 @@ height: auto;
     height: 136px;
 }
 
-.g-nav__icon{
-        width: 50px;
-        height: 50px;
-}
-/* g-navアイコンのレスポンシブ */
-@media screen and (min-width:600px) {
-    .g-nav__box--discription:hover{
-        transform: translate(0,-5px);
-    }
-    .g-nav__box--discription:hover .draw{
-        fill: #fff;
-    }
-    /* 入門知識 */
-    .circle__knowledge{
-        opacity: 0;
-        transform: scale(0);
-        transition: 0.3s;
-        transform-origin: 50% 50%;
-    }
-    .draw__knowledge{
-        fill:#1CB20F;
-    }
-    .g-nav__box--discription:hover .circle__knowledge{
-        fill:#1CB20F;
-        opacity: 1;
-        transform: scale(1)
-    }
-    /* 徳島の魚 */
-    .circle__fish{
-        opacity: 0;
-        transform: scale(0);
-        transition: 0.3s;
-        transform-origin: 50% 50%;
-    }
-    .draw__fish{
-        fill:#1A6CE8;
-    }
-    .g-nav__box--discription:hover .circle__fish{
-        fill:#1A6CE8;
-        opacity: 1;
-        transform: scale(1)
-    }
-    /* 釣りスポット */
-    .circle__spot{
-        opacity: 0;
-        transform: scale(0);
-        transition: 0.3s;
-        transform-origin: 50% 50%;
-    }
-    .draw__spot{
-        fill:#FF0000;
-    }
-    .g-nav__box--discription:hover .circle__spot{
-        fill:#FF0000;
-        opacity: 1;
-        transform: scale(1)
-    }
-    /* 体験プラン */
-    .circle__plan{
-        opacity: 0;
-        transform: scale(0);
-        transition: 0.3s;
-        transform-origin: 50% 50%;
-    }
-    .draw__plan{
-        stroke:#E89026;
-    }
-    .g-nav__box--discription:hover .circle__plan{
-        fill:#E89026;
-        opacity: 1;
-        transform: scale(1)
-    }
-    .g-nav__box--discription:hover .draw__plan{
-        stroke:#fff ;
-        fill:none
-    }
-    /* 釣具店 */
-    .circle__shop{
-        opacity: 0;
-        transform: scale(0);
-        transition: 0.3s;
-        transform-origin: 50% 50%;
-    }
-    .draw__shop{
-         fill:#BAAA14;
-    }
-    .g-nav__box--discription:hover .circle__shop{
-        fill:#BAAA14;
-        opacity: 1;
-        transform: scale(1)
-    }
-    /* マイページ */
-    .circle__mypage{
-        opacity: 0;
-        transform: scale(0);
-        transition: 0.3s;
-        transform-origin: 50% 50%;
-    }
-        .draw__mypage{
-        fill:#EF5DE9;
-    }
-        .g-nav__box--discription:hover .circle__mypage{
-        fill:#EF5DE9;
-        opacity: 1;
-        transform: scale(1)
-    }
-}
-
-/* g-navレスポンシブ */
-@media screen and (min-width:600px) {
-.g-nav{
-        align-items: center;
-        justify-content: center;
-}
-
-.g-nav__box--section{
-    margin: 0 auto;
-}
-}
-
 @media screen and (min-width: 1080px) {
     .g-nav {
+        width: 90vw;
         transform: translateX(0);
-        width: 100vw;
         height: 100px;
+        top: 30px;
         padding: 0;
         margin: 0;
         overflow: visible;
-        position: fixed;
-        right: 0vw;
-        top: 0px;
+        position: static;
         flex-direction: row;
         justify-content: flex-end;
-        background-color: #FFF;
     }
 
     .header__box {
-        max-width: 100%;
+        width: 100vw;
     }
 
     .g-nav__box {
         margin-top: 0;
-        margin-right: 30px;
         display: flex;
-        text-align: center;
+        text-align: end;
         background-color: rgba(0, 0, 0, 0);
     }
 
@@ -546,29 +363,26 @@ height: auto;
         margin-left: 20px;
         width: 100px;
         height: 100px;
-
     }
 
     .g-nav__box--discription {
         display: inline-block;
         margin-top: 20px;
-        transition:0.5s;
+    }
+
+    .g-nav__box--img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
     }
 
     .g-nav__box--text {
         font: size 1px;
+        ;
     }
-}
 
-@media screen and (min-width: 1200px) {
-    .g-nav__box{
-        margin-right: calc(50vw - 600px);
-    }
-    .logo__img{
-        margin-left:calc(50vw - 600px) ;
-    }
-}
 
+}
 
 .g-nav__link {
     flex-flow: column;
@@ -620,12 +434,6 @@ height: auto;
     background-color: #888;
 }
 
-.fishicon{
-    width: 50px;
-    height: 50px;
-    margin: 0;
-}
-
 .titlesection {
     width: 100vw;
     height: 140px;
@@ -635,13 +443,8 @@ height: auto;
     align-items: center;
     position: relative;
 }
-
-.titlesection__box {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: end;
-
+.titlesection__box{
+    position: relative;
 }
 
 
@@ -658,54 +461,16 @@ height: auto;
     left: 20%;
 
 }
-
 .shellfish2 {
     /* display: none; */
     bottom: 0%;
     left: 0%;
 }
-
 .shellfish3 {
     top: 20px;
     right: 30px;
 
 }
-
-@media screen and (max-width: 319px) {
-    .titlesection__img {
-        width: 25px;
-        height: 25px;
-    }
-}
-
-@media screen and (min-width: 320px) and (max-width: 479px) {
-    .titlesection__img {
-        width: 30px;
-        height: 30px;
-    }
-}
-
-@media screen and (min-width: 480px) and (max-width: 599px) {
-    .titlesection__img {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 719px) {
-    .titlesection__img {
-        width: 37px;
-        height: 37px;
-    }
-}
-
-@media screen and (min-width: 720px) {
-    .titlesection__img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
 
 /* 第一セクション背景 */
 
@@ -715,8 +480,8 @@ height: auto;
 }
 
 
-.firstsection__bottom {
-    width: 100vw;
+.firstsection__bottom{
+    width: 100%;
     height: 160px;
     background-image: url(../images/svg/wave__sectionbottom.svg);
     background-repeat: repeat-x;
@@ -728,7 +493,6 @@ height: auto;
 /* フッター */
 .footer {
     background-color: #30ADD1;
-    color: #fff;
 }
 
 .footer__box {
@@ -741,28 +505,9 @@ height: auto;
     margin: 10px 0;
 }
 
-.copyright {
+.copylight {
     padding-bottom: 20px;
 }
-
-/* フッターで使用する貝や浮き輪の写真 */
-
-.footer__image--adjust {
-    width: 40%;
-    height: auto;
-    margin: 15px auto;
-}
-
-@media screen and (max-width: 480px) {
-    .footer__box {
-        font-size: 12px;
-    }
-
-    .copyright {
-        font-size: 12px;
-    }
-}
-
 
 
 /* ボタンレイアウト基礎 */
@@ -779,20 +524,17 @@ height: auto;
 }
 
 /* 詳細情報table */
-/* .table,
-.table__tr,
-th,
-td {
+.spotinfo__table, tr, th, td {
     padding: 10px;
 }
 
-.table {
+.spotinfo__table {
     width: 100%;
     background-color: #EAF2FA;
     margin: 0 auto;
 }
 
-.table__title {
+.spotinfo__table--title {
     width: 100%;
     font-size: 24px;
     color: #fff;
@@ -803,15 +545,16 @@ td {
     padding: 10px 0;
 }
 
-.table__tr:not(:last-child) {
+tr:not(:last-child) {
     border-bottom: solid 2px #30ADD1;
 }
 
-.table__subtitle {
+.spotinfo__table--subtitle {
     border-right: solid 2px #30ADD1;
 }
 
-.table__tr:nth-child(odd) {
+/* 仮 */
+.spotinfo__table--tr:nth-child(odd) {
     background-color: #fff;
 }
 
@@ -828,68 +571,12 @@ td {
 }
 
 @media screen and (min-width: 600px) {
-    .table {
+    .spotinfo__table {
         width: 559px;
     }
 
-    .table__title {
+    .spotinfo__table--title {
         width: 559px;
-    }
-} */
-
-/* tableの外枠線あり、trのborder-bottomがなぜか消える */
-/* 詳細情報table */
-.table__tr,
-th,
-td {
-    padding: 10px;
-}
-
-.spotinfo__table{
-    border-bottom-left-radius:20px;
-    border-bottom-right-radius:20px;
-}
-
-.table {
-    width: 100%;
-    background-color: #EAF2FA;
-    margin: 0 auto;
-    border: solid 2px #30ADD1;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 0 0 20px 20px;
-}
-
-.table__title {
-    width: 100%;
-    font-size: 24px;
-    color: #fff;
-    background-color: #30ADD1;
-    column-span: all;
-    margin: 0 auto;
-    border-radius: 20px 20px 0 0;
-    padding: 10px 0;
-}
-
-.table__tr:not(:last-child) {
-    border-bottom: solid 2px #30ADD1;
-}
-
-.table__subtitle {
-    border-right: solid 2px #30ADD1;
-}
-
-.table__tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-@media screen and (min-width: 600px) {
-    .table {
-        max-width: 559px;
-    }
-
-    .table__title {
-        max-width: 559px;
     }
 }
 
@@ -898,22 +585,13 @@ td {
     width: 50px;
     height: 100px;
     position: fixed;
-    bottom: 10vw;
-    right: 50vw;
+    bottom: 30px;
+    right: 50px;
 }
-.topbuck{
-        width: 50px;
-            height: 100px;
-            position: fixed;
-            bottom: 5vw;
-            right: 5vw;
-}
-
 .topbutton__hook {
     width: 30px;
     height: 50px;
 }
-
 #page_top a {
     color: #000000;
     text-align: center;
@@ -922,13 +600,4 @@ td {
 
 #page_top a:hover {
     background-color: #666;
-}
-
-@media screen and (max-width: 480px) {
-
-    #page_top {
-        display: none;
-    }
-
-
 }
