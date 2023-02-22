@@ -55,12 +55,11 @@
                                     @endslot
 
                                     @slot('card_src')
-                                    https://placehold.jp/320x240.png
-                                    {{-- {{ $item->thumbnail }} --}}
+                                    {{ asset('storage/images') }}/{{ $item->thumbnail }}
                                     @endslot
 
                                     @slot('card_alt')
-                                    {{ $item->title }}
+                                    {{ $item->thumbnail }}
                                     @endslot
 
                                     @slot('card_title')
