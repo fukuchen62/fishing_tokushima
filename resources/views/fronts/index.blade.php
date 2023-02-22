@@ -8,7 +8,7 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
 @endsection
 
 @section('key_visual')
@@ -19,7 +19,7 @@
 
 {{-- メイン --}}
 @section('content')
-
+    {{--
     <section class="firstsection expand">
 
         <h2 class="section__box--title ">第一セクション</h2>
@@ -174,37 +174,96 @@
             </div>
         </div>
         <a href=""> もっと見る</a>
+    </section> --}}
+
+    {{-- キービジュアル --}}
+    {{-- ページタイトル --}}
+    {{-- ここまでheader --}}
+
+    <section class="firstsection knowledge__section expand">
+
+        <h2 class="pagetitle">入門知識</h2>
+        <div class="pagetitle__border bottom__margin"></div>
+        <div class="knowledge__section--box">
+            <div class="knowledge__section--flexbox knowledge_odd">
+                {{-- ここからコンポーネント --}}
+                <div class="imgbox">
+                    <a href="{{ route('knowledgelist', ['category_id' => 1]) }}">
+                        <img class="knowledge_img" src="./assets/images/img_neko_700_3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="knowledge__text--block">
+                    <h3>基礎知識</h3>
+                    <p class="knowledge__text--box"> texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                    </p>
+                </div>
+                {{-- ここまで --}}
+            </div>
+            <div class="knowledge__section--flexbox knowledge_even">
+                {{-- コンポーネント --}}
+            </div>
+            <div class="knowledge__section--flexbox knowledge_odd">
+                {{-- コンポーネント --}}
+            </div>
+            <div class="knowledge__section--flexbox knowledge_even">
+                {{-- コンポーネント --}}
+            </div>
     </section>
 
-    {{-- <section class="firstsection expand">
-        <h2>入門知識</h2>
-        <div>
-            <a href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
-        </div>
-        <div>
-            <a href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
-        </div>
-        <div>
-            <a href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
-        </div>
-        <div>
-            <a href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
-        </div>
-
-        <h2>釣りスポット</h2>
-        <div>
+    {{-- <div>
+    <a href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+    </div>
+    <div>
+        <a href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+    </div>
+    <div>
+        <a href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+    </div>
+    <div>
+        <a href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+    </div> --}}
+    <section class="firstsection expand">
+        <h2 class="pagetitle">釣りスポット</h2>
+        <div class="pagetitle__border"></div>
+        <div class="spotsection__box">
             <a href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
-        </div>
-        <div>
             <a href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
         </div>
     </section>
+    <div class="firstsection__bottom expand"></div>
 
-    <div class="firstsection__bottom"></div>
+    <section class="plansection">
+        <h2 class="pagetitle">体験プラン</h2>
+        <div class="pagetitle__border"></div>
 
-    <section>
-        <h2>体験プラン</h2>
-        <div>
+        <div class="plansection__block plan1">
+            <a href="{{ route('plansinfo', ['id' => 1]) }}">
+                <div class="circle"></div>
+                <div class="item">
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        <div class="plansection__block plan2">
+            <a href="{{ route('plansinfo', ['id' => 2]) }}">
+                <div class="circle"></div>
+                <div class="item">
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        <div class="plansection__block plan3">
+            <a href="{{ route('plansinfo', ['id' => 3]) }}">
+                <div class="circle"></div>
+                <div class="item">
+                    <p></p>
+                </div>
+            </a>
+        </div>
+        {{-- <div>
             <a href="{{ route('plansinfo', ['id' => 1]) }}">アジをサビキ釣り</a>
         </div>
         <div>
@@ -212,66 +271,141 @@
         </div>
         <div>
             <a href="{{ route('plansinfo', ['id' => 1]) }}">アジをサビキ釣り</a>
-        </div>
+        </div> --}}
         <div>
-            <a href="{{ route('planslist') }}">もっとみる</a>
-        </div>
-    </section>
-
-    <section>
-        <h2>徳島で釣れる魚</h2>
-        <div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 1]) }}">アジ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 2]) }}">イワシ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 3]) }}">アジ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 1]) }}">アジ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 2]) }}">イワシ</a>
-            </div>
-        </div>
-        <div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 3]) }}">アジ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 1]) }}">アジ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 2]) }}">イワシ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 3]) }}">アジ</a>
-            </div>
-            <div>
-                <a href="{{ route('fishinfo', ['id' => 1]) }}">アジ</a>
-            </div>
+            <a href="{{ route('planslist') }}" class="btn">もっとみる</a>
         </div>
     </section>
 
-    <section>
-        <h2>Infomation</h2>
-        <div>
-            @foreach ($items as $key => $item)
-                <a href="{{ route('newsinfo', ['id' => $items[$key]]) }}">
-                    <ul>
-                        <li>{{ $item->created_at }}</li>
-                        <li>{{ $item->title }}</li>
-                    </ul>
+    <section class="fishsection">
+        <h2 class="pagetitle">徳島で釣れる魚</h2>
+        <div class="pagetitle__border"></div>
+        <div class="fishsection__box fishbox1 flex">
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
                 </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+        </div>
+        <div class="fishsection__box fishbox2 flex">
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('fishinfo', ['id' => 1]) }}">
+                    <div>吹き出し（魚の名前）</div>
+                    <div>画像</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="infomationsection">
+        <h2 class="pagetitle">Infomation</h2>
+        <div class="pagetitle__border"></div>
+        <div class="infomation__block">
+            @foreach ($items as $key => $item)
+                <div class="infomationsection__block--box flex">
+                    <div>
+                        {{ $item->created_at }}
+                    </div>
+                    <div>
+                        <a href="{{ route('newsinfo', ['id' => $items[$key]]) }}">{{ $item->title }}</a>
+                    </div>
+                </div>
+                <div class="infomation__border"></div>
             @endforeach
+            <a href="{{ route('news') }}" class="btn">もっと見る</a>
         </div>
-        <div>
-            <a href="{{ route('news') }}">もっとみる</a>
-        </div>
-    </section> --}}
+    </section>
+
+    <div id="page_top" class="flex">
+        <!-- 余裕があれば魚が釣られるアニメーションを追加 -->
+        <!-- <img src=".//assets/images/fish_yellow.png" alt="黄色魚" class="topbutton__fish"> -->
+        <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
+    </div>
 
 
 @endsection

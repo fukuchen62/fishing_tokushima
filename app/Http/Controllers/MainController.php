@@ -54,15 +54,23 @@ class MainController extends Controller
      */
     public function escapeList()
     {
-        // $items = Evacuation::all();
-        $items = Evacuation::where('id', 1)->get();
+        $evacuations = Evacuation::select('latitude', 'longitude', 'name')->get();
+
+        foreach ($evacuations as $value) {
+            $evas[] = [
+                'lat' => $value->longitude,
+                'lng' => $value->latitude,
+                'text' => $value->name,
+            ];
+        }
 
         $data = [
-            'evacuations' => $items,
+            'items' => $evas,
         ];
 
         return view('fronts/escape_list', $data);
     }
+
     /**
      * praivacyPage
      * プライバシーポリシーページ

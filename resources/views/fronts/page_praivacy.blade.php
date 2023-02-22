@@ -6,11 +6,12 @@
 
 {{-- @section('title', 'プライバシーポリシー @ 釣徳！') --}}
 <body>
-    <h1>プライバシーポリシー @ 釣っトク！</h1>
+    {{-- <h1>プライバシーポリシー @ 釣っトク！</h1> --}}
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+<!-- 共通のCSSファイル -->
+<link rel="stylesheet" href="{{ asset('assets/css/privacy.css') }}">
 @endsection
 
 {{-- メイン --}}

@@ -2,9 +2,6 @@
 
 /* search,info共通ルール */
 
-
-/* ベースルール */
-
 /* 背景色の指定 */
 
 /* 浅瀬背景色 */
@@ -40,16 +37,11 @@
     align-items: center;
 }
 
-/* レイアウトルール */
-
 /* フッターまでの余白 */
 
 .result__section, .card__section {
     padding-bottom: 120px;
 }
-
-
-/* モジュールパーツルール */
 
 /* 画像 */
 
@@ -62,8 +54,8 @@
 
 /* 難易度の☆ */
 .star {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
 }
 
 
