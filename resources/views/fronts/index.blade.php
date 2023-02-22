@@ -326,5 +326,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 @endsection
