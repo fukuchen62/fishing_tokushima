@@ -143,43 +143,14 @@ input:checked+.tab__item {
 } */
 
 
-/* マップ */
-.spot__map{
+/* 店舗の一覧 */
+.shop__content{
     position: relative;
     width: 100%;
     margin: 0 auto;
-    display: none;
+    /* display: none; */
     clear: both;
 }
-
-/* 
-@media screen and (min-width:600px) {
-    .spot__map{
-        max-width: 800px;
-    }
-    .spot__map--point:hover{
-    scale: 1.5;
-    -webkit-transition: all 0.3s;
-    z-index: 10;
-    }
-    .spot__map--point:hover .point__circle{
-        fill: #E21F1F;
-    }
-    .spot__map--point:hover .point__fish{
-        fill: #ffea20;
-    }
-    .spot__map--point:hover:after{
-        width: 100px;
-        padding: 10px;
-        background-color: #fff;
-        border-radius: 20px;
-        display: block;
-        content: "スポット名";
-        margin-bottom: 5px;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    }
-} */
-
 
 .section__image--number {
      margin-top: 30px;
@@ -235,7 +206,7 @@ input:checked+.tab__item {
 
 .section__image--service::before {
     background-image: url(../images/service.png);
-    
+
 }
 
 .section__image--message::before {
@@ -267,16 +238,16 @@ input:checked+.tab__item {
 }
 
 .shop__description p {
-    margin: 0; 
+    margin: 0;
     padding: 10px;
     line-height: 1.5;
 }
 
 .shop__description--marginservice,
 .shop__description--marginmessage {
-    margin: 0; 
+    margin: 0;
     padding: 10px;
-    
+
 }
 
 .section__content--information {
@@ -410,15 +381,15 @@ input:checked+.tab__item {
         display: block;
     }
 
-    .shop__description--marginservice { 
+    .shop__description--marginservice {
         padding: 15.5px;
     }
 
-    .shop__description--marginmessage { 
+    .shop__description--marginmessage {
         padding: 21.5px;
     }
 
-    .shop__description--marginmessage:nth-last-of-type(1) { 
+    .shop__description--marginmessage:nth-last-of-type(1) {
         padding-top: 22.625px;
     }
 
@@ -426,32 +397,29 @@ input:checked+.tab__item {
 
 
 @media screen and (min-width: 1147px) and (max-width: 1197px) {
-    .shop__description--marginmessage { 
+    .shop__description--marginmessage {
         padding: 18.5px;
     }
 }
 
 @media screen and (min-width: 1197px) and (max-width: 1198px) {
-    .shop__description--marginmessage:nth-last-of-type(1) { 
+    .shop__description--marginmessage:nth-last-of-type(1) {
         padding-top: 4.975px;
     }
 }
 
 @media screen and (min-width: 1198px) and (max-width: 1200px) {
-    .shop__description--marginmessage { 
+    .shop__description--marginmessage {
         padding: 18.675px;
     }
 }
 
 @media screen and (min-width: 1200px)  {
-    .shop__description--marginmessage { 
+    .shop__description--marginmessage {
         padding: 18.905px;
     }
 
-    .shop__description--marginmessage:nth-last-of-type(1) { 
+    .shop__description--marginmessage:nth-last-of-type(1) {
         padding-top: 17.275px;
     }
 }
-
-
-

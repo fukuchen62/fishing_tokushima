@@ -131,10 +131,10 @@ body{
 .spot__map{
     position: relative;
     width: 100%;
+
     border: 3px solid #30ADD1;
     border-radius: 10px;
     margin: 0 auto;
-    background-color: #aaefff;
     /* display: none;
     clear: both; */
 }
@@ -145,6 +145,10 @@ body{
     /* height: 469.44px; */
     /* object-fit: cover; */
     /* object-position: 80% 50%; */
+}
+
+.spot__map--south{
+    width: 100%;
 }
 
 .spot__map--point{
