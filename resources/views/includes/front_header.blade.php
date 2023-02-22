@@ -129,7 +129,7 @@
                         </path>
                     </svg>
                 </div>
-                <div class="g-nav__link flex">
+                <div class="g-nav__link p__lr">
                     <a href="{{ route('escapelist') }}" class="g-nav__link--text">避難場所</a>
                     <a href="{{ route('praivacypage') }}" class="g-nav__link--text">プライバシーポリシー</a>
                 </div>
