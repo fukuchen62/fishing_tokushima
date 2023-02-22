@@ -309,7 +309,7 @@ body {
 /* information記事詳細 */
 
 .news__area {
-    /* padding: 20px; */
+    padding: 20px;
 }
 
 .news__area p {
