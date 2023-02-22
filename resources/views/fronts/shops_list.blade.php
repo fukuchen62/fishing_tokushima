@@ -8,17 +8,11 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+<link rel="stylesheet" href="{{ asset('assets/css/shop.css') }}">
 @endsection
 
 {{-- メイン --}}
 @section('content')
-
-    <section class="titlesection">
-        <div class="titlesection__box">
-            <h1 class="pagetitle">釣具店一覧</h1>
-        </div>
-    </section>
 
     <section>
         <!-- <h2 class="section__title">釣具店</h2> -->
