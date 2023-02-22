@@ -68,7 +68,7 @@ height: auto;
 .pagetitle {
     text-align: center;
     font-size: 2.5rem;
-    width: 240px;
+    width: 300px;
     font-weight: 900;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
@@ -623,7 +623,7 @@ height: auto;
 .fishicon{
     width: 50px;
     height: 50px;
-    margin-bottom: -7.5px;
+    margin: 0;
 }
 
 .titlesection {
@@ -894,20 +894,19 @@ td {
 }
 
 /* TOPに戻るボタン */
-/* #page_top {
+#page_top {
     width: 50px;
     height: 100px;
     position: fixed;
     bottom: 10vw;
     right: 50vw;
-} */
-
+}
 .topbuck{
-    width: 50px;
-    height: 100px;
-    position: fixed;
-    bottom: 5vw;
-    right: 5vw;
+        width: 50px;
+            height: 100px;
+            position: fixed;
+            bottom: 5vw;
+            right: 5vw;
 }
 
 .topbutton__hook {
