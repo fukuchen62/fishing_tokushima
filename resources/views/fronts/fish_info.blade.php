@@ -28,24 +28,27 @@
                     <div class="container">
                         <!-- メイン画像 -->
                         <div class="main-img js-main-img max-width-box">
-                            <img src="{{ $item->fish_img1 }}" alt="魚の画像" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->fish_img1 }}" alt="{{ $item->fish_img1 }}" />
                         </div>
                         <!-- サムネイル画像 -->
                         <ul class="sub-img js-sub-img">
                             <!-- 選択されている画像の枠線を変更 -->
                             <li class="current">
                                 <div class="max-width-box">
-                                    <img src="{{ $item->fish_img1 }}" alt="魚の画像1" />
+                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img1 }}"
+                                        alt="{{ $item->fish_img1 }}" />
                                 </div>
                             </li>
                             <li>
                                 <div class="max-width-box">
-                                    <img src="{{ $item->fish_img2 }}" alt="魚の画像2" />
+                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img2 }}"
+                                        alt="{{ $item->fish_img2 }}" />
                                 </div>
                             </li>
                             <li>
                                 <div class="max-width-box">
-                                    <img src="{{ $item->fish_img3 }}" alt="魚の画像3" />
+                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img3 }}"
+                                        alt="{{ $item->fish_img3 }}" />
                                 </div>
                             </li>
                         </ul>
@@ -97,13 +100,16 @@
                     <!-- slick用（仮） -->
                     <div class="slider center">
                         <div>
-                            <img src="{{ $item->cooking_img1 }}" alt="食べ方の画像1" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
+                                alt="{{ $item->cooking_img1 }}" />
                         </div>
                         <div>
-                            <img src="{{ $item->cooking_img2 }}" alt="食べ方の画像2" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
+                                alt="{{ $item->cooking_img2 }}" />
                         </div>
                         <div>
-                            <img src="{{ $item->cooking_img3 }}" alt="食べ方の画像3" />
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
+                                alt="{{ $item->cooking_img3 }}" />
                         </div>
                     </div>
                 </li>
@@ -165,7 +171,7 @@
                             {{ route('spotsinfo', ['id' => $spots[$key]]) }}
                         @endslot
                         @slot('card_alt')
-                            {{ $spot->name }}
+                            {{ $spot->img1 }}
                         @endslot
                         @slot('card_src')
                             {{ $spot->img1 }}
@@ -193,7 +199,7 @@
                             {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
                         @slot('card_alt')
-                            {{ $fish->name }}
+                            {{ $fish->fish_img1 }}
                         @endslot
                         @slot('card_src')
                             {{ $fish->fish_img1 }}
@@ -214,5 +220,6 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+    <script src="{{ asset('assets/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/slick/slick-common.js') }}"></script>
 @endsection
