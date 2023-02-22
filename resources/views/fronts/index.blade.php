@@ -19,162 +19,6 @@
 
 {{-- メイン --}}
 @section('content')
-    {{--
-    <section class="firstsection expand">
-
-        <h2 class="section__box--title ">第一セクション</h2>
-
-        <div>
-            <div class="btn">基礎ボタン</div>
-            <div>text</div>
-        </div>
-        <div>
-            <div>syasin</div>
-            <div>text</div>
-        </div>
-        <div>
-            <div>syasin</div>
-            <div>text</div>
-        </div>
-        <div>
-            <div>syasin</div>
-            <div>text</div>
-        </div>
-
-    </section>
-    <!-- <div class="background__wrap"> -->
-    <div class="firstsection__bottom expand"></div>
-    <!-- </div> -->
-    <section>
-        <h2>釣りスポット</h2>
-        <div>東部</div>
-        <!--botan -->
-        <div>南部</div>
-        <!--botan -->
-    </section>
-
-    <section>
-        <h2>体験プラン</h2>
-        <div>
-            <div>プラン名</div>
-            <div>概要</div>
-            <div>画像</div>
-        </div>
-
-        <div>
-            <div>プラン名</div>
-            <div>概要</div>
-            <div>画像</div>
-        </div>
-
-        <div>
-            <div>プラン名</div>
-            <div>概要</div>
-            <div>画像</div>
-        </div>
-        <a href=""> もっと見る</a>
-    </section>
-
-    <section>
-        <h2>徳島で釣れる魚</h2>
-        <div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-            <div>
-                <div>吹き出し（魚の名前）</div>
-                <div>画像</div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>infomation</h2>
-        <div>
-            <div>
-                <div>
-                    日付
-                </div>
-                <div><a href="">タイトル</a></div>
-            </div>
-            <div>
-                <div>
-                    日付
-                </div>
-                <div><a href="">タイトル</a></div>
-            </div>
-            <div>
-                <div>
-                    日付
-                </div>
-                <div><a href="">タイトル</a></div>
-            </div>
-            <div>
-                <div>
-                    日付
-                </div>
-                <div><a href="">タイトル</a></div>
-            </div>
-        </div>
-        <a href=""> もっと見る</a>
-    </section> --}}
 
     {{-- キービジュアル --}}
     {{-- ページタイトル --}}
@@ -187,29 +31,99 @@
         <div class="knowledge__section--box">
             <div class="knowledge__section--flexbox knowledge_odd">
                 {{-- ここからコンポーネント --}}
-                <div class="imgbox">
-                    <a href="{{ route('knowledgelist', ['category_id' => 1]) }}">
-                        <img class="knowledge_img" src="./assets/images/img_neko_700_3.jpg" alt="">
-                    </a>
-                </div>
-                <div class="knowledge__text--block">
-                    <h3>基礎知識</h3>
-                    <p class="knowledge__text--box"> texttexttexttexttexttexttexttexttexttext
+                @component('components.front_index_card')
+                    @slot('card_link')
+                        {{ route('knowledgelist', ['category_id' => 1]) }}
+                    @endslot
+                    @slot('card_src')
+                        ./assets/images/img_neko_700_3.jpg
+                    @endslot
+                    @slot('card_alt')
+                        基礎知識の画像
+                    @endslot
+                    @slot('card_title')
+                        基礎知識
+                    @endslot
+                    @slot('card_text')
                         texttexttexttexttexttexttexttexttexttext
                         texttexttexttexttexttexttexttexttexttext
                         texttexttexttexttexttexttexttexttexttext
-                    </p>
-                </div>
+                        texttexttexttexttexttexttexttexttexttext
+                    @endslot
+                @endcomponent
                 {{-- ここまで --}}
             </div>
             <div class="knowledge__section--flexbox knowledge_even">
-                {{-- コンポーネント --}}
+                {{-- ここからコンポーネント --}}
+                @component('components.front_index_card')
+                    @slot('card_link')
+                        {{ route('knowledgelist', ['category_id' => 2]) }}
+                    @endslot
+                    @slot('card_src')
+                        ./assets/images/img_neko_700_3.jpg
+                    @endslot
+                    @slot('card_alt')
+                        釣具・餌の画像
+                    @endslot
+                    @slot('card_title')
+                        釣り具・餌
+                    @endslot
+                    @slot('card_text')
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                    @endslot
+                @endcomponent
+                {{-- ここまで --}}
             </div>
             <div class="knowledge__section--flexbox knowledge_odd">
-                {{-- コンポーネント --}}
+                {{-- ここからコンポーネント --}}
+                @component('components.front_index_card')
+                    @slot('card_link')
+                        {{ route('knowledgelist', ['category_id' => 3]) }}
+                    @endslot
+                    @slot('card_src')
+                        ./assets/images/img_neko_700_3.jpg
+                    @endslot
+                    @slot('card_alt')
+                        注意点の画像
+                    @endslot
+                    @slot('card_title')
+                        注意点
+                    @endslot
+                    @slot('card_text')
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                    @endslot
+                @endcomponent
+                {{-- ここまで --}}
             </div>
             <div class="knowledge__section--flexbox knowledge_even">
-                {{-- コンポーネント --}}
+                {{-- ここからコンポーネント --}}
+                @component('components.front_index_card')
+                    @slot('card_link')
+                        {{ route('knowledgelist', ['category_id' => 4]) }}
+                    @endslot
+                    @slot('card_src')
+                        ./assets/images/img_neko_700_3.jpg
+                    @endslot
+                    @slot('card_alt')
+                        その他の画像
+                    @endslot
+                    @slot('card_title')
+                        その他
+                    @endslot
+                    @slot('card_text')
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                        texttexttexttexttexttexttexttexttexttext
+                    @endslot
+                @endcomponent
+                {{-- ここまで --}}
             </div>
     </section>
 
