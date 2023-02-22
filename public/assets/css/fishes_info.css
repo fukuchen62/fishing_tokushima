@@ -14,12 +14,12 @@
     width: 100%;
 }
 
-/* .pagetitle::before {
+.pagetitle::before {
     content: url(../images/svg/icon_fish.svg);
     position: absolute;
     top: 45px;
     left: 300px;
-} */
+}
 
 /* 魚の写真・概要・丸い囲い */
 
