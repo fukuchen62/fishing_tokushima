@@ -28,9 +28,9 @@ return new class extends Migration
             $table->string('fax', 20)->nullable();
             $table->string('email', 100)->nullable();
             $table->string('url', 200)->nullable();
-            $table->string('service_day', 100)->nullable(false);
-            $table->string('service', 200)->nullable(false);
-            $table->string('pr', 200)->nullable();
+            $table->string('service_day', 500)->nullable(false);
+            $table->string('service', 500)->nullable(false);
+            $table->string('pr', 500)->nullable();
             $table->boolean('is_show')->nullable(false)->default(true);
             $table->string('img', 200)->nullable();
             $table->string('memo', 200)->nullable();
