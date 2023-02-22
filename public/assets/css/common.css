@@ -68,7 +68,6 @@ height: auto;
 .pagetitle {
     text-align: center;
     font-size: 2.5rem;
-    width: 240px;
     font-weight: 900;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
@@ -292,10 +291,8 @@ height: auto;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-
-
     transform: translateX(100vw);
-    padding-top: 150px;
+    padding-top: 100px;
     overflow: scroll;
 }
 
@@ -369,11 +366,13 @@ height: auto;
 
 .g-nav__box--section {
     margin: 20px;
+    justify-content: space-around;
+    max-width: 800px;
 }
 
 .g-nav__box--group {
     display: inline-block;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 
 .g-nav__box--discription {
@@ -388,11 +387,11 @@ height: auto;
 }
 
 .g-nav__icon{
-        width: 50px;
-        height: 50px;
+    width: 50%;
+    padding-bottom: 10px;
 }
 /* g-navアイコンのレスポンシブ */
-@media screen and (min-width:600px) {
+@media screen and (min-width:1080px) {
     .g-nav__box--discription:hover{
         transform: translate(0,-5px);
     }
@@ -498,8 +497,7 @@ height: auto;
 /* g-navレスポンシブ */
 @media screen and (min-width:600px) {
 .g-nav{
-        align-items: center;
-        justify-content: center;
+
 }
 
 .g-nav__box--section{
@@ -509,6 +507,8 @@ height: auto;
 
 @media screen and (min-width: 1080px) {
     .g-nav {
+        align-items: center;
+        justify-content: center;
         transform: translateX(0);
         width: 100vw;
         height: 100px;
@@ -525,6 +525,12 @@ height: auto;
 
     .header__box {
         max-width: 100%;
+    }
+
+    .g-nav__icon{
+        width: 50px;
+        height: 50px;
+        padding-bottom: 0;
     }
 
     .g-nav__box {
@@ -571,30 +577,36 @@ height: auto;
 
 
 .g-nav__link {
-    flex-flow: column;
-    justify-content: start;
+    /* width: 100%; */
 }
 
 .g-nav__link--text {
-    display: inline-block;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
     text-align: start;
     color: #fff;
-    margin-bottom: 16px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #fff;
     position: relative;
 }
 
-.g-nav__link--text::before {
-    content: "";
-    display: block;
-    width: 200px;
-    height: 0;
-    border-bottom: 1px solid #fff;
+.g-nav__link--text::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: 0;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
     position: absolute;
-    bottom: -5px;
-    left: 0px;
+    top: 50%;
+    right: 3%;
+    margin-top: -4px;
+    transform: rotate(45deg);
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1080px) {
 
     .g-nav__link {
         display: none;
@@ -623,7 +635,7 @@ height: auto;
 .fishicon{
     width: 50px;
     height: 50px;
-    margin-bottom: -7.5px;
+    margin: 0;
 }
 
 .titlesection {
@@ -894,20 +906,19 @@ td {
 }
 
 /* TOPに戻るボタン */
-/* #page_top {
+#page_top {
     width: 50px;
     height: 100px;
     position: fixed;
     bottom: 10vw;
     right: 50vw;
-} */
-
+}
 .topbuck{
-    width: 50px;
-    height: 100px;
-    position: fixed;
-    bottom: 5vw;
-    right: 5vw;
+        width: 50px;
+            height: 100px;
+            position: fixed;
+            bottom: 5vw;
+            right: 5vw;
 }
 
 .topbutton__hook {

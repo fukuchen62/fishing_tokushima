@@ -138,7 +138,9 @@
     </div>
 
     {{-- キービジュアル --}}
-    @yield('key_visual')
+    <div class="keyvisual expand">
+        @yield('key_visual')
+    </div>
 
     <section class="titlesection expand">
         <div class="titlesection__box">

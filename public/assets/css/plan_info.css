@@ -1,14 +1,10 @@
 @charset "utf-8";
 
-/* レイアウトルール */
-
 /* タイトル砂浜を避けるレイアウト */
 .overview__section {
     padding-top: 100px;
     padding-bottom: 50px;
 }
-
-/* モジュールパーツルール */
 
 /* ページタイトル */
 
@@ -23,7 +19,7 @@
     display: none;
 } */
 
-.pagetitle:before {
+/* .pagetitle:before {
     content: '';
     display: inline-block;
     width: 50px;
@@ -32,7 +28,7 @@
     background-image: url(../images/svg/icon_fish.svg);
     background-size: contain;
     vertical-align: middle;
-}
+} */
 
 
 
@@ -52,7 +48,7 @@
 .overview__box--group {
     width: 340px;
     height: 340px;
-    border: 10px dashed #30ADD1;
+    border: 8px dashed #30ADD1;
     border-radius: 50%;
     margin: 50px auto;
     background-color: #fff;
@@ -85,23 +81,21 @@
 
 /* 丸が細くなるのでブレイクポイント1200px */
 @media screen and (min-width:1100px) {
-    /* 画像と丸の並びをそろえる */
-    .max-width--box {
+    /* 画像と丸の並びフレックスが聞くようにマージンをなくす */
+    .max-width-box {
         margin: 0;
     }
     /* 概要の画像とテキストボックスのレイアウト */
     .overview__box {
     display: flex;
-    margin: 0px auto;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-around;
     align-items: center;
     }
 
     /* 概要横並び時のテキストボックス外の余白 */
-    /* .overview__box--group {
-        margin: 0px;
-    } */
+    .overview__box--group {
+        margin: 50px 0 50px 0;
+    }
 }
 
 /* お気に入りボタン */
@@ -178,44 +172,8 @@
         width: 559px;
     }
 
-    /* .grid {
-    display: flex;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    }
-    .grid span {
-    border-right: 1px solid #333;
-    height: 100%;
-    width: 20%;
-    } */
-
-    /* 縦線 */
-    /* .flow__box .max-width-box {
-        position: relative;
-        flex-grow: 1;
-        margin-right: 2em;
-    } */
-
-    /* 縦線 */
-    /* .flow__box .max-width-box::after {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    margin: 0 1rem;
-    content: "";
-    width: 1px;
-    height: 100%;
-    background-color: #333;
-    } */
-
-    /* 縦線 */
-    /* .flow__box .flow__box--text {
-        flex-grow: 1;
-    } */
-
     .flow__box {
-        background-image: url(../images/line.png);
+        background-image: url(../images/bgline.png);
         background-repeat: repeat-y;
         background-position: center;
     }
@@ -224,7 +182,7 @@
         background-image: url(../images/anchor.png);
         background-repeat: no-repeat;
         background-position: center bottom;
-        background-size: 60px 60px;
+        background-size: 40px 40px;
     }
 
     .anchor--text {
@@ -232,7 +190,7 @@
         color: #fff;
         padding: 20px;
         font-size: 20px;
-        display: none;
+        display: block;
     }
 }
 
