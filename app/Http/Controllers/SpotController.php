@@ -25,17 +25,20 @@ class SpotController extends Controller
 
     public function spotList(Request $request)
     {
-        // $spots = Spot::all();
+        $city_id = "";
 
-        $city_id = $request->city_id;
+        if (isset($request->city_id)) {
+            $city_id = $request->city_id;
+        }
 
-        // Spotモデルのcityスコープを使って絞り込む
-        $items = Spot::city($city_id)->get();
+        if ($city_id != null) {
+            $items = SpotController::getCity($city_id);
+        } else {
+            $items = Spot::all();
+        }
 
-        // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'spots' => $items,
-            // 'spots2' => $spots,
         ];
 
         return view('fronts.spots_list', $data);
@@ -138,5 +141,18 @@ class SpotController extends Controller
         ];
 
         return view('fronts.cities_list', $data);
+    }
+
+    /**
+     * getCity
+     *地域IDごとに絞り込む関数
+     
+     * @param [type] $cityId
+     * @return void
+     */
+    public function getCity($cityId)
+    {
+        $cities = Spot::city($cityId)->get();
+        return $cities;
     }
 }
