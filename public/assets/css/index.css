@@ -1,22 +1,15 @@
 @charset "utf-8";
 
-.imgbox {
-    max-width: 559px;
-    margin: 0 auto;
-}
+
 
 .shellfish1{
     left: 10%;
 }
 
-.tuttokufont{
-    text-align: center;
-    font-size: 2.5rem;
-    width: 300px;
-    font-weight: 900;
-    color: #30ADD1;
-    -webkit-text-stroke: 1px #fff;
-    overflow: visible;
+.catchcopy {
+    position: absolute;
+    top: 50%;
+    width: 50%;
 }
 
 .page__discription {
@@ -32,10 +25,35 @@
     padding-bottom: 50px;
 }
 
+.titlesection__box {
+    width: 100%;
+    transform: translateX() translateY(-40%);
+}
+
+.discription__title{
+    display: inline-block;
+    font-size: 1rem;
+    width: 200px;
+}
+
+.tuttokufont{
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #30ADD1;
+    -webkit-text-stroke: 1px #fff;
+    overflow: visible;
+}
+
+
 .discription__p{
-        font-size: 24px;
+    display: inline-block;
+    
+    width: 100%;
+        font-size: 1rem;
         color: #000;
-        white-space: nowrap;
+        /* white-space: nowrap; */
 }
 
 /* メディアクエリ */
@@ -54,24 +72,15 @@
 }
 
 .titlesection {
-    padding: 170px;
+    font-size: 2rem;
     background-image: none;
     background-color: #FFEA20;
     height: 200px;
     margin-top: -160px;
 }
 
-.titlesection__box {
-transform: translateX(-50px) translateY(-50px);
-}
 
 
-
-.catchcopy {
-    position: absolute;
-    top: 50%;
-    width: 50%;
-}
 
 .titlesection__top {
     background-image: url(../images/svg/wave-indexpage.svg);
@@ -101,8 +110,8 @@ transform: translateX(-50px) translateY(-50px);
 }
 
 .knowledge_img{
-    width: 400px;
-    height: 4;
+    width: 50vmin;
+    height:50vmin ;
     border-radius: 50%;
 }
 
@@ -122,6 +131,45 @@ transform: translateX(-50px) translateY(-50px);
 
 .knowledge_even{
     flex-direction: row-reverse;
+}
+
+.knowledge__section{
+    padding-top: 0;
+}
+
+.knowledge__imgbox {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hover-mask {
+    align-items: center; /* テキストの中央揃え */
+    background: rgba(0, 0, 0, 0.5); /* マスクの色(黒の50%) */
+    bottom: 0;
+    display: flex; /* テキストの中央揃え */
+    height: auto;
+    justify-content: center; /* テキストの中央揃え */
+    opacity: 0; /* 最初は透明(非表示) */
+    left: 0;
+    position: absolute;
+    right: 0;
+    /* top: 0; */
+    transition: opacity .6s ease; /* ゆっくりopacityのみへ変化させる */
+    width: 100%;
+    height: 50vmin;
+    outline: 5px dashed rgb(255, 255, 255);
+	outline-offset: -10px;
+    border-radius: 50%;
+}
+.hover-mask:hover {
+    opacity: 1; /* hoverしたら透過しない(表示させる) */
+}
+.hover-mask p {
+    width: 80%; /* テキストを横幅いっぱいにならないようにする */
+    color: #fff; /* テキストの色 */
+    font-size: 2rem;
 }
 
 @media screen and (min-width: 800px){
@@ -148,15 +196,14 @@ transform: translateX(-50px) translateY(-50px);
     max-width: 50vmin;
     max-height: 50vmin;
     position: relative;
-    top: -550px;
-    right: -15%;
-    margin: -50px;
+    top: -250px;
 }
+
 .southsection{
+    max-width: 50vmin;
+    max-height: 50vmin;
     position: relative;
-    top: -350px;
-    right: 0px;
-    margin: 0;
+    top: -200px;
 }
 .spotlink {
     width: 33vmin;
@@ -166,6 +213,52 @@ transform: translateX(-50px) translateY(-50px);
     place-items: center;
     position: absolute;
 }
+
+.eastland{
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    position: absolute;
+    left: -100px;
+}
+.southland{
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    position: absolute;
+    left: -160px;
+    top: 90px;
+}
+
+.spotborder{
+    width: 75px;
+    border: #FFEA20 solid 2px;
+    transform: rotate(30deg);
+    position: absolute;
+}
+
+.eastborder{
+    right: -50px;
+    top: 30px;
+}
+
+.southborder {
+    right: 0px;
+    top: 130px;
+}
+
+
+.eastcircle{
+    top: 0px;
+    right: -150px;
+}
+
+.southcircle {
+    top: 95px;
+    right: -100px ;
+}
+
+
 @media screen and (min-width: 900px) {
     .spotlink {
         width: 300px;
@@ -173,7 +266,6 @@ transform: translateX(-50px) translateY(-50px);
     }
 
     .eastsection {
-        position: relative;
         top: -600px;
         right: -15%;
     }
@@ -196,51 +288,6 @@ transform: translateX(-50px) translateY(-50px);
         top: -400px;
         right: 0px;
     }
-}
-
-
-.eastland{
-    width: 200px;
-    height: 50px;
-    font-size: 1.5rem;
-    position: absolute;
-    left: -200px;
-}
-.southland{
-    width: 200px;
-    height: 50px;
-    font-size: 1.5rem;
-    position: absolute;
-    left: -200px;
-    top: 50px;
-}
-
-.spotborder{
-    width: 150px;
-    border: #FFEA20 solid 2px;
-    transform: rotate(30deg);
-    position: absolute;
-}
-
-.eastborder{
-    right: -120px;
-        top: 50px;
-}
-
-.southborder {
-    right: -130px;
-    top: 120px;
-}
-
-
-.eastlink{
-    top: 0;
-    right: -300px;
-}
-
-.southlink {
-    top: 95px;
-    right: -299px ;
 }
 
 
@@ -273,7 +320,11 @@ transform: translateX(-50px) translateY(-50px);
     height: 500px;
     position: relative;
     margin: 0 auto;
+    /* left: 50%; */
+    transform: scale(0.6) translateX(-25%);
 }
+
+
 
 .bubble{
     border-radius: 50%;
@@ -350,7 +401,7 @@ transform: translateX(-50px) translateY(-50px);
 }
 .rightbabble{
     right: 10%;
-    top: 190px;
+    top: 400px;
 }
 
 .left2{
@@ -679,7 +730,7 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .d-demo__item {
-    width: calc(100vw / 4);
+    width: calc(100vw / 2);
 }
 
 .fishsection{
@@ -690,20 +741,20 @@ overflow: hidden;
 }
 
 .fishimgblock{
-    max-width: calc(width / 10);
+    max-width: calc(width / 2);
     max-height: 250px;
 }
 
 .arrow_box {
     position: relative;
-    width: calc(100vw / 7);
+    width: calc(100vw / 2);
     height: 10vmin;
     background: #FFFFFF;
-    padding: 10px;
-    padding-top: 25px;
+    padding:10px 10px;
+    /* padding-top: 25px; */
     text-align: center;
     color: #000000;
-    font-size: 0.5rem;
+    font-size: 4px;
     border-radius: 50%;
     overflow: visible;
 }
