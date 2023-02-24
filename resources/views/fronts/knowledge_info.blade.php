@@ -1,102 +1,12 @@
-{{-- <!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-</head>
-
-<body>
-
-    <div class="mainarea flex expand">
-        <main class="main-section expand">
-            <section class="firstsection expand p__lr">
-
-                <div class="knowledge__section expand p__lr">
-
-                    <h2 class="pagetitle ">基礎知識詳細<br>タイトル</h2>
-                    <div class="pagetitle__border"></div>
-
-                    <h2 class="section__box--title ">第一セクション</h2>
-                    <div class="imgbox">
-                        <img class="knowledge__image" src="../assets/images/img_neko_700_3.jpg" alt="知識イメージ画像">
-                    </div>
-                    <p class="knowledge__discription p__lr">
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト</p>
-                    <p class="knowledge__discription p__lr">
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト</p>
-
-
-
-                    <h2 class="section__box--title ">第一セクション</h2>
-                    <div class="imgbox">
-                        <img class="knowledge__image" src="../assets/images/img_neko_700_3.jpg" alt="知識イメージ画像">
-                    </div>
-                    <p class="knowledge__discription p__lr">
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト</p>
-                    <p class="knowledge__discription p__lr">
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト
-                        テキストテキストテキストテキストテキストテキスト</p>
-                </div>
-            </section>
-
-        </main> --}}
-{{-- ----------フロント班からのもの-- ---------- --}}
-
-{{-- <ul>
-            <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
-            <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
-            <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
-        </ul>
-        <h1>記事詳細</h1>
-        <table border="1">
-            <tr>
-                <th>タイトル&nbsp;</th>
-                <th>内容&nbsp;</th>
-            </tr>
-            <tr>
-                <td>{{ $knowledges->title }}</td>
-                <td>{{ $knowledges->content }}</td>
-            </tr>
-        </table>
-</body>
-
-</html> --}}
-
-
-
-
-
-{{-- ここから編集↓↓ --}}
-
-
-
-
 @extends('layouts.layout_front')
 
-@section('description', 'プライバシーポリシーページ表示')
+@section('description', 'ページのデスクリプション')
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', '入門知識')
-
+@section('title')
+    {{ $category->name }}
+@endsection
 
 @section('pageCss')
     <link rel="stylesheet" href="../assets/css/knowledge_info.css">
@@ -113,11 +23,42 @@
                     <h2 class="pagetitle ">{{ $knowledges->title }}</h2>
                     <div class="pagetitle__border"></div>
                     <div class="i-catchimg">
-                        <img src="{{ asset('storage/images') }}/{{ $knowledges->thumbnail }}"
-                            alt="{{ $knowledges->thumbnail }}">
+                        @if ($knowledges->thumbnail != "")
+                            <img src="{{ asset('storage/images') }}/{{ $knowledges->thumbnail }}" alt="{{ $knowledges->thumbnail }}">
+                        @else
+                            <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="">
+                        @endif
                     </div>
+
+                    {{ $knowledges->content }}
+
+
+                    {{-- 以下、コンテンツ班に渡すもの --}}
+
+                    {{-- コンテンツ班にタイトル入力してもらう --}}
+                    <h3 class="section__box--title ">第一セクション</h3>
+                    <div class="imgbox">
+                        <img class="knowledge__image" src="{{ asset('storage/images/画像名') }}" alt="画像名">
+                    </div>
+                    {{-- 文章それぞれコンテンツ班に入力してもらう --}}
                     <p class="knowledge__discription p__lr">
-                        {{ $knowledges->content }}</p>
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                    </p>
+                    <p class="knowledge__discription p__lr">
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキスト
+                    </p>
+                {{-- 以上、コンテンツ班に渡すもの --}}
+
+
+                </div>
                 </div>
             </section>
 
@@ -148,7 +89,7 @@
     <article class="connection">
         <h2 class="section__box--title">関連記事</h2>
         <ul class="card__area flex">
-            @foreach ($knowledges as $item)
+            @foreach ($connection_list as $item)
                 @component('components.front_card')
                     @slot('card_link')
                         {{ route('knowledgeinfo', ['id' => $item->id]) }}
@@ -176,21 +117,6 @@
     </article>
 
 @endsection
-
-<aside class="sidemenu__pagebottom  p__lr">
-
-    <h2 class="sidemenu__title">カテゴリ</h2>
-
-    <a class="sidemenu__discription" href="">入門知識</a>
-    <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="">道具・餌</a>
-    <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="">注意点</a>
-    <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="">その他</a>
-    <div class="sidemenu__border"></div>
-
-</aside>
 
 <script src="../assets/js/main.js"></script>
 

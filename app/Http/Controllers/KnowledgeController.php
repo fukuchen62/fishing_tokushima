@@ -13,6 +13,7 @@ use Illuminate\Http\Reponse;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Knowledge;
+use App\Models\KnowledgeType;
 
 // スーパークラスControllerを継承して独自のクラスを作成する
 class KnowledgeController extends Controller
@@ -56,8 +57,21 @@ class KnowledgeController extends Controller
     {
         $items = Knowledge::find($request->id);
 
+        // 関連記事を取得する、ランダムに3つ取得
+        $connection_list = Knowledge::where('category_id', $items->category_id)
+            ->where('id', '<>', $items->id)
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+
+        // カテゴリー名を取得する
+        $category = KnowledgeType::where('id', $items->category_id)
+            ->first();
+
         $data = [
             'knowledges' => $items,
+            'connection_list' => $connection_list,
+            'category' => $category,
         ];
 
         return view('fronts.knowledge_info', $data);
