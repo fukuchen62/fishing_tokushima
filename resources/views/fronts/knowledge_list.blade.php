@@ -12,7 +12,7 @@
 @endsection
 
 @section('key_visual')
-    <img class="sub-keyvisual" src="assets/images/sub-keyvisual.jpg" alt="サブキービジュアル">
+    <img class="sub-keyvisual" src="assets/images/knowledge_keyvisual.jpg" alt="knowledge_keyvisual.jpg">
 @endsection
 
 {{-- メイン --}}
@@ -20,8 +20,14 @@
 
     <section class="firstsection expand">
 
-        <div class="tabs p__lr">
-            <input id="all" type="radio" name="tab_item" checked>
+        <ul class="tabs p__lr">
+                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a></li>
+                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a></li>
+                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a></li>
+                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a></li>
+        </ul>
+
+            {{-- <input id="all" type="radio" name="tab_item" checked>
             <label class="tab_item" for="all"><span class="title__icon"><a
                         href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a></span></label>
 
@@ -35,7 +41,7 @@
 
             <input id="other" type="radio" name="tab_item">
             <label class="tab_item" for="other"><span class="title__icon"><a
-                        href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a></span></label>
+                        href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a></span></label> --}}
 
             <div class="tab_content" id="all_content">
 
@@ -58,7 +64,11 @@
                                         @endslot
 
                                         @slot('card_src')
+                                        @if ($item->thumbnail !="")
                                             {{ asset('storage/images') }}/{{ $item->thumbnail }}
+                                        @else
+                                            https://placehold.jp/320x240.png
+                                        @endif
                                         @endslot
 
                                         @slot('card_alt')
