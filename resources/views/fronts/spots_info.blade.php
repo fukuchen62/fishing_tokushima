@@ -58,6 +58,8 @@
                             alt="スポット写真3">
                         {{-- @endif --}}
                     </li>
+                    {{-- 表示確認のため上記のようにしているが、
+                        本番は下記のようにする --}}
                     <li class="spotinfo__img">
                         @if ($spots->img4 !="")
                         <img src="{{ $spots->img4 }}" alt="スポット写真4">
@@ -129,7 +131,7 @@
                         <td class="table__subtitle">避難場所</td>
                         <td>
                             @foreach ($evacuationlist as $item)
-                                    {{ $item->name }}、
+                                    {{ $item->name }}<br>
                             @endforeach</td>
                         {{-- 避難場所の名称を表示 --}}
                     </tr>
