@@ -68,7 +68,7 @@ input[name="tab_item"] {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 10px 10px;
-    display: none;
+    /* display: none; */
     clear: both;
     overflow: hidden;
     margin: 0 auto;
@@ -78,8 +78,12 @@ input[name="tab_item"] {
 
 /*選択されているタブのコンテンツのみを表示*/
 #all:checked~#all_content,
-#programming:checked~#programming_content,
+/* #programming:checked~#programming_content,
 #design:checked~#design_content,#other:checked~#other_content {
+    display: block;
+} */
+
+#all_content{
     display: block;
 }
 
@@ -111,17 +115,16 @@ input[name="tab_item"] {
 }
 
 .panel {
-    display: none;
+    /* display: none; */
     text-align: center;
 }
 
 .panel.active {
-    display: block;
+    /* display: block; */
 }
 .tab-area {
     padding: 0 50px;
     margin-top: 50px;
-
     justify-content: space-between;
 }
 

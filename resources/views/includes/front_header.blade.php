@@ -4,16 +4,17 @@
         <div class="header__box--group expand">
         </div>
         <div class="header__box--border expand"></div>
-        <img src="./assets/images/img_neko_700_3.jpg" alt="ネコの画像" class="header__logo expand">
+        <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="ネコの画像" class="header__logo expand">
         <!-- ハンバーガーメニュー -->
         <div class="hamburger flex expand">
             <span></span>
             <span></span>
             <span></span>
         </div>
+
         <div class="header__box expand">
             <div class="g-nav flex  expand">
-                <img src="./assets/images/img_neko_700_3.jpg" alt="サイトロゴ" class="logo__img">
+                <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="サイトロゴ" class="logo__img">
                 <div class="g-nav__box ">
                     <div class="g-nav__box--section flex">
                         <div class="g-nav__box--group">
@@ -33,6 +34,7 @@
                                 <div class="g-nav__box--text">入門知識</div>
                             </a>
                         </div>
+
                         <div class="g-nav__box--group">
                             <a href="{{ route('fishlist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
@@ -50,6 +52,7 @@
                                 <div>徳島の魚</div>
                             </a>
                         </div>
+
                         <div class="g-nav__box--group">
                             <a href="{{ route('spotslist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
@@ -66,6 +69,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="g-nav__box--section flex">
                         <div class="g-nav__box--group">
                             <a href="{{ route('planslist') }}" class="g-nav__box--discription">
@@ -93,6 +97,7 @@
                                 <div>体験プラン</div>
                             </a>
                         </div>
+
                         <div class="g-nav__box--group">
                             <a href="{{ route('shopslist') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
@@ -107,6 +112,7 @@
                                 <div>釣具店</div>
                             </a>
                         </div>
+
                         <div class="g-nav__box--group">
                             <a href="{{ route('mypage') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
@@ -122,6 +128,7 @@
                             </a>
                         </div>
                     </div>
+
                     <!-- 波 -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="#30ADD1" fill-opacity="1"
@@ -147,9 +154,9 @@
             <h1 class="pagetitle">@yield('title')</h1>
             <div class="pagetitle__border"></div>
         </div>
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
+        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish1">
+        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish2">
+        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish3">
 
     </section>
 </header>
