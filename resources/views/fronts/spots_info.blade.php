@@ -53,8 +53,6 @@
                             <img src="{{ asset('storage/images') }}/{{ $spots->img3 }}" alt="{{ $spots->img3 }}">
                         @endif
                     </li>
-                    {{-- 表示確認のため上記のようにしているが、
-                        本番は下記のようにする --}}
                     <li class="spotinfo__img">
                         @if ($spots->img4 != '')
                             <img src="{{ asset('storage/images') }}/{{ $spots->img4 }}" alt="{{ $spots->img4 }}">
@@ -67,9 +65,6 @@
                     </li>
                 </ul>
             </div>
-
-            <!-- お気に入りボタン -->
-            {{-- {{ Cookie::get('spot_id') }} --}}
 
             @if (Cookie::get('spot_id') == $spots->id)
                 <div>
