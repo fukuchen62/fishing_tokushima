@@ -5,7 +5,7 @@
 @section('keywords', 'キーワード1,キーワード2・・・')
 
 @section('key_visual')
-    {{-- <img class="sub-keyvisual" src="assets/images/sub-keyvisual.jpg" alt="サブキービジュアル"> --}}
+    <img class="sub-keyvisual" src="{{ asset('assets/images/plan_keyvisual.jpg') }}" alt="plan_keyvisual.jpg">
 @endsection
 
 @section('title')
@@ -80,10 +80,6 @@
                         <td class="table__subtitle">釣れる月</td>
                         <td>{{ $item->fish->getMonth() }}</td>
                     </tr>
-                    <tr class="table__tr">
-                        <td class="table__subtitle">釣り方</td>
-                        <td>{{ $item->fish->method }}</td>
-                    </tr>
                 </table>
             </section>
             <!-- カードセクション -->
@@ -141,14 +137,17 @@
                     {{-- 下記内容からコンテンツ班に登録してもらう？ --}}
                     <div class="flow__box">
                         <div class="max-width-box">
+                            {{-- 画像名コンテンツ班に登録してもらう --}}
                             <img class="flow__box--img plan__img"
-                                src="" alt="フローの写真">
-                                {{-- {{ asset() }} --}}
-                                {{-- 画像のファイル名コンテンツ班に登録してもらう --}}
+                            src="https://placehold.jp/559x314.png" alt="画像名">
+                            {{-- 下記本番の画像 --}}
+                            {{-- {{ asset('storage/images/画像名') }} --}}
                         </div>
                         <!-- フローのテキストボックス -->
                         <div class="flow__box--text">
+                            {{-- コンテンツ班タイトル入れてもらう --}}
                             <h3>①準備物</h3>
+                            {{-- コンテンツ班に説明入れてもらう --}}
                             <p>　釣り竿は２～３ｍ程のサビキ用ロッドで小型のスピニングリールを使用します。
                                 サビキ釣りに必要な撒き餌入れる編みかご、２～４号のナス型オモリを仕掛けに使用します。
                                 餌はオキアミなどの撒き餌に使われる物を使用します。</p>
@@ -156,25 +155,42 @@
                         <div class="triangle"></div>
                     </div>
                     <div class="flow__box">
-                        <div class="max-width-box"><img class="flow__box--img plan__img"
-                                src="https://placehold.jp/559x314.png" alt="フローの写真"></div>
+                        <div class="max-width-box">
+                            {{-- 画像名コンテンツ班に登録してもらう --}}
+                            <img class="flow__box--img plan__img"
+                            src="https://placehold.jp/559x314.png" alt="画像名">
+                            {{-- 下記本番の画像 --}}
+                            {{-- {{ asset('storage/images/画像名') }} --}}
+                        </div>
                         <div class="flow__box--text">
+                            {{-- コンテンツ班タイトル入れてもらう --}}
                             <h3>②</h3>
+                            {{-- コンテンツ班に説明入れてもらう --}}
                             <p>テキストテキストテキスト</p>
                         </div>
                         <div class="triangle"></div>
                     </div>
                     <div class="flow__box">
-                        <div class="max-width-box"><img class="flow__box--img plan__img"
-                                src="https://placehold.jp/559x314.png" alt="フローの写真"></div>
+                        <div class="max-width-box">
+                            {{-- 画像名コンテンツ班に登録してもらう --}}
+                            <img class="flow__box--img plan__img"
+                            src="https://placehold.jp/559x314.png" alt="画像名">
+                            {{-- 下記本番の画像 --}}
+                            {{-- {{ asset('storage/images/画像名') }} --}}
+                        </div>
                         <div class="flow__box--text last__flow">
+                            {{-- コンテンツ班タイトル入れてもらう --}}
                             <h3>③</h3>
+                            {{-- コンテンツ班に説明入れてもらう --}}
                             <p>テキストテキストテキスト</p>
                         </div>
                     </div>
+                    {{-- ここまでコンテンツ班に登録してもらう？ --}}
+
                 </div>
                 <p class="anchor--text">GOAL</p>
             </section>
+
         </div>
         <!-- セクションを区切る波 -->
         <div class="secondsection__bottom expand"></div>
@@ -184,233 +200,62 @@
             <h2 class="section__box--title ">
                 <span class="btn_area_ttl">関連プラン</span>
             </h2>
+
             <ul class="card__area">
+                {{-- 魚が一緒の関連プラン --}}
+                @if (isset($connection1))
+                @foreach ($connection1 as $key => $value)
                 <li class="card__p">
-                    <a class="card card__skin" href="">
-                        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <a class="card card__skin"
+                    href="{{ route('plansinfo')}}?id= {{ $value->id }}";>
+                    @if ($value->eye_catch != "")
+                    <img class="card__img" src="{{ asset('storage/images') }}/{{ $value->eye_catch }}" alt="{{ $value->eye_catch }}">
+                    @else
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    @endif
                         <div class="card__textbox">
-                            <h3 class="card__title">タイトルタイトル</h3>
+                            <h3 class="card__title">{{ $value->title }}</h3>
                             <div class="card__flex">
-                                <p class="card__description">東部</p>
+                                <p class="card__description">{{ $value->city->area }}</p>
                                 <!-- どれかが選んで出される -->
                                 <div class="star__box">
-                                    <div class="level1">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                    <div class="level2">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                    <div class="level3">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
+                                    <?php echo $value->getLevel(); ?>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </li>
+                @endforeach
+                @endif
+
+                {{-- スポットが一緒の関連プラン --}}
+                @if (isset($connection2))
+                @foreach ($connection2 as $key => $value)
                 <li class="card__p">
-                    <a class="card card__skin" href="">
-                        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    <a class="card card__skin"
+                    href="{{ route('plansinfo')}}?id= {{ $value->id }}";>
+                    @if ($value->eye_catch != "")
+                    <img class="card__img" src="{{ asset('storage/images') }}/{{ $value->eye_catch }}" alt="{{ $value->eye_catch }}">
+                    @else
+                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+                    @endif
                         <div class="card__textbox">
-                            <h3 class="card__title">タイトルタイトル</h3>
+                            <h3 class="card__title">{{ $value->title }}</h3>
                             <div class="card__flex">
-                                <p class="card__description">東部</p>
+                                <p class="card__description">{{ $value->city->area }}</p>
                                 <!-- どれかが選んで出される -->
                                 <div class="star__box">
-                                    <div class="level1">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                    <div class="level2">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                    <div class="level3">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
+                                    <?php echo $value->getLevel(); ?>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </li>
-                <li class="card__p">
-                    <a class="card card__skin" href="">
-                        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                        <div class="card__textbox">
-                            <h3 class="card__title">タイトルタイトル</h3>
-                            <div class="card__flex">
-                                <p class="card__description">東部</p>
-                                <!-- どれかが選んで出される -->
-                                <div class="star__box">
-                                    <div class="level1">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                    <div class="level2">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                    <div class="level3">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                        <img class="star" src="../assets/images/star.png" alt="☆">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                @endforeach
+                @endif
             </ul>
-            <a class="btn" href="">プラン一覧</a>
+
+            <a class="btn" href="{{ route('planslist') }}">プラン一覧</a>
         </section>
     </div>
 @endsection
-
-
-
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <h2>内容</h2>
-    @if (isset($item))
-
-        {{-- お気に入り保存 --}}
-
-        {{ Cookie::get('plan_id') }}
-
-        {{-- @php
-    $msg="";
-@endphp
-
-
-{{ $msg }} --}}
-
-        {{-- @php
-        $val="";
-        if (isset($_COOKIE["plan_id"])) {
-            $val = $_COOKIE["plan_id"];
-        }
-    @endphp
-
-    <p>cookie: {{ $val }}</p> --}}
-
-
-        @if (Cookie::get('plan_id') == $item->id)
-            <div>
-                <p>お気に入り登録済</p>
-                <a href="{{ route('cookie', ['plan_id' => $item->id]) }}">
-                    <p>リンク2</p>
-                </a>
-            </div>
-        @else
-            <a href="{{ route('cookie', ['plan_id' => $item->id]) }}">
-                <p>リンク1</p>
-            </a>
-        @endif
-
-        {{-- お気に入りボタンは不採用 --}}
-        {{-- <form action="{{ route('mypage')}}" method="post">
-        <table>
-        @csrf
-        <tr>
-        <td><input type="submit" name="plan_id" value="{{ $item->id }}" id=""></td>
-        </tr>
-        </table>
-    </form> --}}
-
-        <table>
-            <tr>
-                <th>title</th>
-                <th>thumbnail</th>
-                <th>overview</th>
-                <th>level</th>
-                {{-- <th>level2</th> --}}
-                <th>スポット名</th>
-                <th>釣り方</th>
-                <th>釣れる月</th>
-                <th>flow</th>
-            </tr>
-            <tr>
-                <td>{{ $item->title }}</td>
-                <td>{{ $item->thumbnail }}</td>
-                <td>{{ $item->overview }}</td>
-                <td><?php echo $item->getLevel(); ?></td>
-                {{-- <td>{{ $item -> getLevel() }}</td> --}}
-                <td>{{ $item->spot->name }}</td>
-                <td>{{ $item->fish->method }}</td>
-                <td>{{ $item->fish->getMonth() }}</td>
-                <td>{{ $item->flow }}</td>
-            </tr>
-        </table>
-    @endif
-
-    <h2>関連プラン</h2>
-
-    <h3>魚が一緒</h3>
-    @if (isset($connection1))
-        <table>
-            <tr>
-                <th>id</th>
-                <th>eye_catch</th>
-                <th>title</th>
-                <th>地域</th>
-                <th>レベル</th>
-                <th>overview</th>
-                <td>リンク</td>
-            </tr>
-            @foreach ($connection1 as $key => $value)
-                <tr>
-                    <td>{{ $value->id }}</td>
-                    <td>{{ $value->eye_catch }}</td>
-                    <td>{{ $value->title }}</td>
-                    <td>{{ $value->city->area }}</td>
-                    <td><?php echo $value->getLevel(); ?></td>
-                    <td>{{ $value->overview }}</td>
-                    <td><a href="{{ route('plansinfo', ['id' => $value->id]) }}">リンク</a></td>
-                </tr>
-            @endforeach
-        </table>
-    @endif
-
-
-    <h3>スポットが一緒</h3>
-    @if (isset($connection2))
-        <table>
-            <tr>
-                <th>id</th>
-                <th>eye_catch</th>
-                <th>title</th>
-                <th>地域</th>
-                <th>レベル</th>
-                <th>overview</th>
-                <td>リンク</td>
-            </tr>
-            @foreach ($connection2 as $key => $value)
-                <tr>
-                    <td>{{ $value->id }}</td>
-                    <td>{{ $value->eye_catch }}</td>
-                    <td>{{ $value->title }}</td>
-                    <td>{{ $value->city->area }}</td>
-                    <td><?php echo $value->getLevel(); ?></td>
-                    <td>{{ $value->overview }}</td>
-                    <td><a href="{{ route('plansinfo', ['id' => $value->id]) }}">リンク</a></td>
-                </tr>
-            @endforeach
-        </table>
-    @endif
-
-</body>
-
-</html>
