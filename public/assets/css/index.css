@@ -94,12 +94,17 @@
 
 .keyvisual {
     display: inline-block;
-    background-image: url(../images/sub-keyvisual.jpg);
+    background-image: url(../images/top_keyvisual.jpg);
     width: 100vw;
     height: 900px;
     background-size: cover;
     position: relative;
+<<<<<<< Updated upstream
     max-height: 900px;
+=======
+    max-height :900px ;
+    object-position: bottom;
+>>>>>>> Stashed changes
 }
 
 .bottom__margin {
@@ -231,7 +236,7 @@
     }
     .knowledge__imgbox {
         max-width: 400px;
-        margin: 50px;
+        margin: 0 50px;
     }
     .knowledge__text--block {
         max-width: 500px;
