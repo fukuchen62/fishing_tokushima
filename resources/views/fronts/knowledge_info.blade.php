@@ -113,7 +113,8 @@
                     <h2 class="pagetitle ">{{ $knowledges->title }}</h2>
                     <div class="pagetitle__border"></div>
                     <div class="i-catchimg">
-                        <img src="../assets/images/img_neko_700_3.jpg" alt="">
+                        <img src="{{ asset('storage/images') }}/{{ $knowledges->thumbnail }}"
+                            alt="{{ $knowledges->thumbnail }}">
                     </div>
                     <p class="knowledge__discription p__lr">
                         {{ $knowledges->content }}</p>
@@ -147,33 +148,25 @@
     <article class="connection">
         <h2 class="section__box--title">関連記事</h2>
         <ul class="card__area flex">
-            <li class="card__p">
-                <a class="card card__skin" href="">
-                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div class="card__textbox">
-                        <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__description">説明説明説明説明説明説明</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card__p">
-                <a class="card card__skin" href="">
-                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div class="card__textbox">
-                        <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__description">説明説明説明説明説明説明</p>
-                    </div>
-                </a>
-            </li>
-            <li class="card__p">
-                <a class="card card__skin" href="">
-                    <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
-                    <div class="card__textbox">
-                        <h3 class="card__title">タイトルタイトル</h3>
-                        <p class="card__description">説明説明説明説明説明説明</p>
-                    </div>
-                </a>
-            </li>
+            @foreach ($knowledges as $item)
+                @component('components.front_knowledge_info_card')
+                    @slot('knowledge_link')
+                        {{ route('knowledgeinfo', ['id' => $item->id]) }}
+                    @endslot
+
+                    @slot('knowledge_thumbnail')
+                        {{ $item->thumbnail }}
+                    @endslot
+
+                    @slot('knowledge_title')
+                        {{ $item->title }}
+                    @endslot
+
+                    @slot('knowledge_overview')
+                        {{ $item->overview }}
+                    @endslot
+                @endcomponent
+            @endforeach
         </ul>
         <div class="sidemenu__pagebottom--top expand"></div>
     </article>

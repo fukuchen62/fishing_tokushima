@@ -145,19 +145,27 @@
         @yield('key_visual')
     </div>
 
-    <section class="titlesection expand">
-        <div class="titlesection__box">
+    <div class="titlesection__top expand"></div>
+    <div class="titlesection p__lr expand">
+        <div class="titlesection__box ">
 
             {{-- ページタイトル --}}
-            <h1 class="pagetitle">@yield('title')</h1>
-
-            <div class="pagetitle__border"></div>
+            <h1 class="discription__title"><span class="tuttokufont"> 釣っとく!</span>とは</h1>
+            <div class="page__discription">
+                <p class="discription__p">休日や週末に徳島で魚を釣ってみたいけど…<br>
+                    そんなあなたに「<span class="tuttokufont">釣っとく！</span>」<br>
+                    徳島県内の釣れる魚やおすすめスポットを<br>
+                    初心者向けにわかりやすく発信中！</p>
+            </div>
         </div>
         <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish1">
         <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish2">
         <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish3">
+    </div>
 
     </section>
+
+    <div class="titlesection__border expand"></div>
 </header>
 
 <!-- topに戻るボタン -->

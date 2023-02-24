@@ -145,7 +145,7 @@
         </div>
     </section>
 
-    <div class="firstsection__bottom expand"></div>
+    <div class="firstsection__bottom--under expand"></div>
 
     <!-- 玄人向けの魚 -->
     <section class="others__section p__lr">
