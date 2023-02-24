@@ -4,7 +4,9 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('key_visual', 'キービジュアル')
+@section('key_visual')
+    {{ asset('assets/images/fish_keyvisual.jpg') }}
+@endsection
 
 @section('title')
     {{ $item->name }}{{ '（' . $item->formal_name . '）' }}
@@ -40,16 +42,20 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="max-width-box">
-                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img2 }}"
-                                        alt="{{ $item->fish_img2 }}" />
-                                </div>
+                                @if ($item->fish_img2 != '')
+                                    <div class="max-width-box">
+                                        <img src="{{ asset('storage/images') }}/{{ $item->fish_img2 }}"
+                                            alt="{{ $item->fish_img2 }}" />
+                                    </div>
+                                @endif
                             </li>
                             <li>
-                                <div class="max-width-box">
-                                    <img src="{{ asset('storage/images') }}/{{ $item->fish_img3 }}"
-                                        alt="{{ $item->fish_img3 }}" />
-                                </div>
+                                @if ($item->fish_img3 != '')
+                                    <div class="max-width-box">
+                                        <img src="{{ asset('storage/images') }}/{{ $item->fish_img3 }}"
+                                            alt="{{ $item->fish_img3 }}" />
+                                    </div>
+                                @endif
                             </li>
                         </ul>
                     </div>
@@ -62,8 +68,9 @@
                     <h3 class="fishinfo__box--title">概要</h3>
                     <p>{{ $item->detail }}</p>
                     <div class="fishinfo__box--feed">
-                        <p class=""><img style="vertical-align: middle" src="../storage/images/fish_ebi.png"
-                                alt="エビの画像" width="35" height="40">餌の種類：アカアミ</p>
+                        <p class=""><img style="vertical-align: middle"
+                                src="{{ asset('assets/images/fish_ebi.png') }}" {{-- ../storage/images/fish_ebi.png" --}} alt="fish_ebi.png"
+                                width="35" height="40">餌の種類：アカアミ</p>
                         <h3 class="card__title">難易度</h3>
                         <div class="star__box"><?php echo $item->getLevel(); ?></div>
                     </div>
@@ -100,16 +107,22 @@
                     <!-- slick用（仮） -->
                     <div class="slider center">
                         <div>
-                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
-                                alt="{{ $item->cooking_img1 }}" />
+                            @if ($item->cooking_img1 != '')
+                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
+                                    alt="{{ $item->cooking_img1 }}" />
+                            @endif
                         </div>
                         <div>
-                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
-                                alt="{{ $item->cooking_img2 }}" />
+                            @if ($item->cooking_img2 != '')
+                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
+                                    alt="{{ $item->cooking_img2 }}" />
+                            @endif
                         </div>
                         <div>
-                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
-                                alt="{{ $item->cooking_img3 }}" />
+                            @if ($item->cooking_img3 != '')
+                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
+                                    alt="{{ $item->cooking_img3 }}" />
+                            @endif
                         </div>
                     </div>
                 </li>
@@ -129,13 +142,14 @@
 
         <!-- 装飾（貝）の画像 -->
         <ul class="fishesinfo__img--shell">
-            <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/ukiwa.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-1.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-2.png" width="40" height="40" alt=""></li>
-            <li><img src="../storage/images/shell-3.png" width="40" height="40" alt=""></li>
+            <li><img src="{{ asset('assets/images/shell-1.png') }}" {{-- ../storage/images/shell-1.png --}} width="40" height="40"
+                    alt="shell-1.png"></li>
+            <li><img src="{{ asset('assets/images/shell-2.png') }}" width="40" height="40" alt="shell-2.png"></li>
+            <li><img src="{{ asset('assets/images/shell-3.png') }}" width="40" height="40" alt="shell-3.png"></li>
+            <li><img src="{{ asset('assets/images/ukiwa.png') }}" width="40" height="40" alt="ukiwa.png"></li>
+            <li><img src="{{ asset('assets/images/shell-1.png') }}" width="40" height="40" alt="shell-1.png"></li>
+            <li><img src="{{ asset('assets/images/shell-2.png') }}" width="40" height="40" alt=""></li>
+            <li><img src="{{ asset('assets/images/shell-3.png') }}" width="40" height="40" alt="shell-3.png"></li>
         </ul>
         <div class="firstsection__bottom expand"></div>
     </section>
@@ -152,8 +166,10 @@
             <ul class="fishesinfo__img--turtle">
                 <li class="fishesinfo__foam1"></li>
                 <li class="fishesinfo__foam2"></li>
-                <li><img src="../storage/images/umigame-1.png" width="100" height="100" alt="ウミガメ"></li>
-                <li><img src="../storage/images/umigame-2.png" width="100" height="100" alt="ウミガメ"></li>
+                <li><img src="{{ asset('assets/images/umigame-1.png') }}" width="100" height="100"
+                        alt="umigame-1.png"></li>
+                <li><img src="{{ asset('assets/images/umigame-2.png') }}" width="100" height="100"
+                        alt="umigame-2.png"></li>
             </ul>
         </div>
 
@@ -174,7 +190,11 @@
                             {{ $spot->img1 }}
                         @endslot
                         @slot('card_src')
-                            {{ $spot->img1 }}
+                            @if ($spot->img1 != '')
+                                {{ asset('storage/images') }}/{{ $spot->img1 }}
+                            @else
+                                https://placehold.jp/320x240.png
+                            @endif
                         @endslot
                         @slot('card_name')
                             {{ $spot->name }}
@@ -202,7 +222,7 @@
                             {{ $fish->fish_img1 }}
                         @endslot
                         @slot('card_src')
-                            {{ $fish->fish_img1 }}
+                            {{ asset('storage/images') }}/{{ $fish->fish_img1 }}
                         @endslot
                         @slot('card_name')
                             {{ $fish->name }}
