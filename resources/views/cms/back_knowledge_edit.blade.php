@@ -13,7 +13,7 @@
 
 
 @section('content')
-    <h3>基本知識の編集画面</h3>
+    <h3>入門知識の編集画面</h3>
 
     {{-- 以下はshowのところにはめ込む --}}
     <ul class="menubar">
@@ -52,7 +52,7 @@
             <tr>
                 <th>記事の内容：</th>
                 <td>
-                    <textarea name="content" id="content" cols="50" rows="5"> {{ $knowledge->content }} </textarea>
+                    <textarea name="content" id="content" cols="50" rows="10"> {{ $knowledge->content }} </textarea>
                 </td>
             </tr>
             <tr>

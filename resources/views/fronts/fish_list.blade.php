@@ -4,7 +4,9 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('key_visual', 'キービジュアル')
+@section('key_visual')
+    {{ asset('assets/images/fish_keyvisual.jpg') }}
+@endsection
 
 @section('title', '徳島の魚一覧')
 
