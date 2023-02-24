@@ -149,20 +149,24 @@
         <h2 class="section__box--title">関連記事</h2>
         <ul class="card__area flex">
             @foreach ($knowledges as $item)
-                @component('components.front_knowledge_info_card')
-                    @slot('knowledge_link')
+                @component('components.front_card')
+                    @slot('card_link')
                         {{ route('knowledgeinfo', ['id' => $item->id]) }}
                     @endslot
 
-                    @slot('knowledge_thumbnail')
+                    @slot('card_src')
+                        {{ asset('storage/images') }}/{{ $item->thumbnail }}
+                    @endslot
+
+                    @slot('card_alt')
                         {{ $item->thumbnail }}
                     @endslot
 
-                    @slot('knowledge_title')
+                    @slot('card_title')
                         {{ $item->title }}
                     @endslot
 
-                    @slot('knowledge_overview')
+                    @slot('card_text')
                         {{ $item->overview }}
                     @endslot
                 @endcomponent

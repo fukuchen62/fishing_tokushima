@@ -4,7 +4,7 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', 'information一覧')
+@section('title', 'information')
 
 @section('pageCss')
     <link rel="stylesheet" href="../assets/css/news_list.css">
@@ -25,7 +25,7 @@
 
                 <div class="news__section expand p__lr">
 
-                    <h2 class="pagetitle ">全て</h2>
+                    <h2 class="pagetitle ">一覧</h2>
                     <div class="pagetitle__border"></div>
                     <div class="card__area">
                         <ul class="card__area">
