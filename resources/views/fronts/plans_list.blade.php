@@ -148,10 +148,7 @@
             </ul>
         </section>
     </div>
-    <div id="page_top" class="flex">
-        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針"
-                class="topbutton__hook"></a>
-    </div>
+
 @endsection
 
 {{-- 該当ページ専用JS --}}
