@@ -1,15 +1,24 @@
 @charset "utf-8";
+.shallow{
+    background-color:#EAF2FA;
+}
 
-/* .btn:hover {
+.btn{
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover {
     background-color: #30ADD1;
-}*/
+    color: #ffea20;
+}
 
-/* .section__btn {
+.section__btn {
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin: 50px auto;
-} */
+}
 
 .section__content--titlereserch {
     background-color: #30ADD1;
@@ -19,54 +28,6 @@
     font-size: 24px;
     margin: 0px 20px 50px 20px;
 }
-
-
-/* タブのスタイル */
-.tab__item{
-    padding: 30px;
-    background-color: #ffea20;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    border-radius: 30px;
-    font-size: 24px;
-    font-weight: bold;
-    display: inline-block;
-    margin: 50px 20px;
-}
-
-.tab__item:hover{
-    background-color: #30ADD1;
-    color: #ffea20;
-}
-
-/*ラジオボタンを全て消す*/
-input[name="tab__item"] {
-    display: none;
-}
-
-/*選択されているタブのコンテンツのみを表示*/
-#east:checked~#east__content,
-#south:checked~#south__content,
-#west:checked~#west__content,
-#north:checked~#north__content {
-    display: block;
-}
-
-/*選択されているタブのスタイルを変える*/
-input:checked+.tab__item {
-    background-color: #30ADD1;
-    color: #ffea20;
-    box-shadow: none;
-}
-
-.area {
-    display: none;
-    text-align: center;
-}
-
-.area.active {
-    display: block;
-}
-
 
 .section__content {
     line-height: 2.5;
@@ -218,7 +179,7 @@ input:checked+.tab__item {
 }
 
 .shop__description--service {
-    padding: 0.6em 0;
+    padding: 0.5em 0;
     margin: 0.5em 0;
     text-align: left;
     /* font-weight: bold; */
@@ -228,7 +189,7 @@ input:checked+.tab__item {
 }
 
 .shop__description--message {
-    padding: -0.5em 0;
+    padding: 0.5em 0;
     margin: 0.5em 0;
      text-align: left;
     /* font-weight: bold; */
