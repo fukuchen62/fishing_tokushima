@@ -142,7 +142,8 @@
                     <div class="flow__box">
                         <div class="max-width-box">
                             <img class="flow__box--img plan__img"
-                                src="{{ asset() }}" alt="フローの写真">
+                                src="" alt="フローの写真">
+                                {{-- {{ asset() }} --}}
                                 {{-- 画像のファイル名コンテンツ班に登録してもらう --}}
                         </div>
                         <!-- フローのテキストボックス -->
