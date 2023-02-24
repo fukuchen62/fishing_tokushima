@@ -15,10 +15,10 @@
 
 /*タブのスタイル*/
 .tab_item {
-    width: calc(90%/2);
+    width: calc(100%/2);
     height: 50px;
     border-bottom: 3px solid #30ADD1;
-    border-right: 5px solid #EAF2FA ;
+    border-right: 5px solid #EAF2FA;
     background-color: #d9d9d9;
     line-height: 50px;
     font-size: 16px;
@@ -31,7 +31,7 @@
     transition: all 0.2s ease;
     border-radius: 20px 20px 0 0;
 }
-.tab__spot{
+.tabs:first-child{
     margin-right: 10%;
 }
 
@@ -58,7 +58,7 @@
         width: 30px;
         height: 30px;
         position: absolute;
-        left: 25%;
+        left: 10%;
         top: 6px;
     }
 }
@@ -74,60 +74,44 @@ input[name="tab_item"] {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 10px 10px;
-    display: none;
+    /* display: none; */
     clear: both;
     overflow: hidden;
     margin: 0 auto;
     padding: 50px 20px;
 }
 
-#all_content{
-    display: block;
-}
 
-/*選択されているタブのコンテンツのみを表示*/
-
-
-
-/*選択されているタブのスタイルを変える*/
-.tabs input:checked+.tab_item {
-    background-color: #30ADD1;
-    color: #fff;
-}
-
-.card__area{
+.card__area {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-@media screen and (min-width: 960px){
+
+@media screen and (min-width: 960px) {
     .card__area {
         flex-direction: row;
         justify-content: space-between;
     }
 }
-.card__p{
+
+.card__p {
     margin: 20px;
     padding: 0;
 }
 
-.firstsection__bottom{
+.firstsection__bottom {
     margin-bottom: 120px;
 }
 
 .panel {
-    display: none;
     text-align: center;
 }
 
-.panel.active {
-    display: block;
-}
 .tab-area {
     padding: 0 50px;
     margin-top: 50px;
-    margin-bottom: 50px;
     justify-content: space-between;
 }
 
@@ -145,9 +129,10 @@ input[name="tab_item"] {
     color: #30ADD1;
     font-weight: bold;
     transition: all 0.15s linear;
-    padding: ;
+
 }
-.tab:hover{
+
+.tab:hover {
     cursor: pointer;
 }
 
@@ -156,24 +141,9 @@ input[name="tab_item"] {
     color: #fff;
 }
 
-.nonedisplay{
-    margin-top: 50px;
-}
-.btn {
-    margin: 30px auto;
-    font-size: 1rem;
-        background-color: #ffea20;
-        border-radius: 20px;
-        padding: 5px;
-        width: 160px;
-        height: 50px;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-        transition: 0.5s;
-}
+/*liにactiveクラスがついた時の形状*/
+.tabs li.active {
+    background-color: #30ADD1;
+    color: #fff;
 
-
-/* ホバーしたらへこむ */
-.btn:hover{
-    box-shadow: none;
-    transform: translate(1px, 1px);
 }
