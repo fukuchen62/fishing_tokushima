@@ -120,7 +120,9 @@
     position: relative;
 }
 
-
+.firstsection{
+    padding: 20px;
+}
 
 
 .titlesection__top {
@@ -166,6 +168,9 @@
     padding: 30px;
     width: 100%;
 }
+
+
+
 .knowledge__text--box{
     color: #ffffff;
 }
@@ -182,6 +187,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    padding-bottom: 30px;
 }
 
 .knowledge__section{
@@ -536,19 +542,17 @@
     }
 }
 
-
-
-
 .spot__bottom{
     background-color: #30ADD1;
 }
 
-
-
-
 .plantitle , .fishtitle{
     color: #fff;
     -webkit-text-stroke: 0px;
+}
+
+.fishtitle + img{
+    background-color: #fff;
 }
 
 .plansection , .fishsection{
@@ -572,8 +576,6 @@
     margin: 0 auto;
     transform: scale(0.6) translateX(-25%);
 }
-
-
 
 .bubble{
     border-radius: 50%;
@@ -897,6 +899,7 @@
 
 
 .morelook{
+    background-color: #FFEA20;
     height: 50px;
     width: 160px;
     margin: 100px auto;
