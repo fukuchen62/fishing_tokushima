@@ -71,17 +71,12 @@
 <body>
 
     {{-- ヘッダー --}}
-    @include('includes.front_header')
+    @include('includes.front_top_header')
 
     {{-- メインコンテンツ --}}
     <main id="main">
         @yield('content')
     </main>
-
-    <!-- サイドバー -->
-    <div class="sidebar">
-        @yield('sidebar')
-    </div>
 
     {{-- フッター --}}
     @include('includes.front_footer')

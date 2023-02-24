@@ -115,7 +115,6 @@
                             <a href="{{ route('mypage') }}" class="g-nav__box--discription">
                                 <svg class="g-nav__icon" viewBox="0 0 46 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    {{ route('mypage') }}
                                     <path class="circle__mypage"
                                         d="M46 23C46 35.7025 35.7025 46 23 46C10.2975 46 0 35.7025 0 23C0 10.2975 10.2975 0 23 0C35.7025 0 46 10.2975 46 23Z"
                                         fill="#EF5DE9" />
@@ -142,24 +141,19 @@
         </div>
     </div>
 
-    {{-- キービジュアル --}}
-    <div class="keyvisual expand">
-        @yield('key_visual')
-    </div>
+    @yield('key_visual')
 
     <section class="titlesection expand">
-        <div class="titlesection__box flex">
-            <img class="fishicon" src="{{ asset('assets/images/svg/icon_fish.svg') }}" alt="">
+        <div class="titlesection__box">
             <h1 class="pagetitle">@yield('title')</h1>
+            <div class="pagetitle__border"></div>
         </div>
-        <div class="pagetitle__border"></div>
-        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish1">
-        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish2">
-        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish3">
+        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
+        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
+        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
 
     </section>
 </header>
-
 
 <!-- topに戻るボタン -->
 <div class="topreturn__position">
