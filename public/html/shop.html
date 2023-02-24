@@ -183,15 +183,16 @@
                 <li class=""><a class="tab_item btn section__btn--margin" href="#">北部</a></li>
             </ul>
 
+            <!-- googlemap -->
             <div class="section__wrap--infomation">
-                <iframe class="section__map--information" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105749.94989893542!2d134.50598449901784!3d34.07756439038653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e59cfa2e1a5%3A0xfc218cb261e84ce7!2z44GE44Gv44KJ6Yej5YW3!5e0!3m2!1sja!2sjp!4v1676339393022!5m2!1sja!2sjp" width="600" height="450" style="border:0;">
+                <iframe class="section__map--information p__lr" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105749.94989893542!2d134.50598449901784!3d34.07756439038653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35536e59cfa2e1a5%3A0xfc218cb261e84ce7!2z44GE44Gv44KJ6Yej5YW3!5e0!3m2!1sja!2sjp!4v1676339393022!5m2!1sja!2sjp" width="600" height="450" style="border:0;">
                 </iframe>
             </div>
 
             <h3 class="section__content--titlereserch">検索結果</h3>
 
-            <!-- 大きいカード型 -->
-            <div>
+            <!-- 大きいカード型 component -->
+            <div class="p__lr">
                 <div class="shop__content">
                     <div class="section__content section__content--displayflex">
                         <div class="section__content--photomaxwidth">
@@ -200,26 +201,31 @@
                         <div class="section__content--left">
                             <div class="section__content--full">
                                 <!-- tableにする -->
-                                <div class="section__content--title">いはら釣具 本店</div>
-                                <div class="section__content--displayblock">
-                                    <!-- 疑似要素でアイコンを追加する -->
-                                    <div class="section__image--location">徳島県板野郡松茂町笹木野灘25-16</div>
-                                    <div class="section__image--open">営業時間</div>
-                                    <div class="section__content--day">
-                                        <p class="section__content--dayleft">月曜日 4時00分～22時00分</p>
-                                        <p class="section__content--dayleft">火曜日 4時00分～22時00分</p>
-                                        <p class="section__content--dayleft">水曜日 4時00分～22時00分</p>
-                                        <p class="section__content--dayleft">木曜日 4時00分～22時00分</p>
-                                        <p class="section__content--dayleft">金曜日 4時00分～22時00分</p>
-                                        <p class="section__content--dayleft">土曜日 4時00分～22時00分</p>
-                                        <p class="section__content--dayleft">日曜日 4時00分～22時00分</p>
-                                    </div>
-                                    <div class="section__image--number">電話番号 080-0000-0000</div>
-                                    <div class="section__image--address">メールアドレス abc@gmail.com</div>
-                                    <div class="section__image--homepage">
-                                        ホームページ <a href="http://www.iharatsurigu.co.jp/wp/"><span>こちらから</span></a>
-                                    </div>
-                                </div>
+                                <table class="section__content--displayblock">
+                                    <tr>
+                                        <th colspan="2">いはら釣具 本店</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="section__image--location">住所</td>
+                                        <td>徳島県板野郡松茂町笹木野灘25-16</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="section__image--open">営業時間</td>
+                                        <td>月曜日 4時00分～22時00分</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="section__image--number">電話番号</td>
+                                        <td>月曜日 4時00分～22時00分</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="section__image--address">メールアドレス</td>
+                                        <td>abc@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="section__image--homepage">ホームページ</td>
+                                        <td><a href="">http://www.iharatsurigu.co.jp/wp/</a></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -242,7 +248,6 @@
                                     <p class="shop__description--marginservice">魚拓（有料）クレジット払い・分割払い
                                         商品発送（代金引換）商品お取り寄せ<br /></p>
                                 </div>
-
                             </div>
                         </div>
 
@@ -266,12 +271,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 疑似要素でアイコンを追加する -->
-                <div class="section__image--information section__content--information">お店の周辺情報</div>
-
-                <!-- Googleマップで周辺情報を表す -->
-
             </div>
         </div>
 
