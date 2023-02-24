@@ -68,7 +68,7 @@ body{
 /* マップ */
 .spot__iframe{
     max-width: 1200px;
-    
+
     border-radius: 10px;
     margin: 0 auto;
 }
@@ -213,4 +213,8 @@ body{
 .card__p {
     padding: 0px;
 }
+}
+
+.active{
+    background-color: #fff;
 }
