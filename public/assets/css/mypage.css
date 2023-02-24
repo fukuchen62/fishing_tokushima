@@ -81,13 +81,13 @@ input[name="tab_item"] {
     padding: 50px 20px;
 }
 
-
-/*選択されているタブのコンテンツのみを表示*/
-#all:checked~#all_content,
-#programming:checked~#programming_content,
-#design:checked~#design_content,#other:checked~#other_content {
+#all_content{
     display: block;
 }
+
+/*選択されているタブのコンテンツのみを表示*/
+
+
 
 /*選択されているタブのスタイルを変える*/
 .tabs input:checked+.tab_item {
