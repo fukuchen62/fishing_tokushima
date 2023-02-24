@@ -236,14 +236,6 @@ body {
     transform: translate(-60%, 0);
 }
 
-/* .firstsection__bottom {
-    width: 100vw;
-    height: 160px;
-    background-image: url(../images/svg/wave__sectionbottom.svg);
-    background-repeat: repeat-x;
-    justify-content: center;
-    align-items: center;
-} */
 
 .news__bottom {
     background-color: #fff;
@@ -252,9 +244,6 @@ body {
     background-repeat: repeat-x;
     background-image: url(../images/svg/wave__sectionbottom_knowledge.svg);
     margin-bottom: 100px;
-    /* position: relative; */
-    /* left: 50%;
-    transform: translate(-50%, 0); */
 }
 
 .sidemenu__pagebottom {
