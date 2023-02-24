@@ -5,8 +5,7 @@
 @section('keywords', 'キーワード1,キーワード2・・・')
 
 @section('title', "$spots->name")
-
-{{-- 南さん確認済み --}}
+{{-- 上記南さん確認済み --}}
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
@@ -17,7 +16,7 @@
 @endsection
 
 @section('key_visual')
-    {{ asset('assets/images/spot_keyvisual.jpg') }}
+<img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
 @endsection
 
 {{-- メイン --}}
@@ -53,8 +52,6 @@
                             <img src="{{ asset('storage/images') }}/{{ $spots->img3 }}" alt="{{ $spots->img3 }}">
                         @endif
                     </li>
-                    {{-- 表示確認のため上記のようにしているが、
-                        本番は下記のようにする --}}
                     <li class="spotinfo__img">
                         @if ($spots->img4 != '')
                             <img src="{{ asset('storage/images') }}/{{ $spots->img4 }}" alt="{{ $spots->img4 }}">
@@ -67,9 +64,6 @@
                     </li>
                 </ul>
             </div>
-
-            <!-- お気に入りボタン -->
-            {{-- {{ Cookie::get('spot_id') }} --}}
 
             @if (Cookie::get('spot_id') == $spots->id)
                 <div>
