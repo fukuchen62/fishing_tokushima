@@ -21,8 +21,11 @@ body{
     margin: 0 10px;
 }
 
-/* 海のセクション区切り */
+.shallow{
+    background-color:#EAF2FA;
+}
 
+/* 海のセクション区切り */
 /* セクション上側 */
 .secondsection__top {
     width: 100vw;
@@ -44,18 +47,10 @@ body{
     align-items: center;
 }
 
-/* .spot__btn{
-    width: 160px;
-    height: 80px;
-    background-color: #FFEA20;
-    border-radius: 10px;
-    font-size: 24px;
-    margin: 0 30px;
-} */
-
 /* タブのスタイル */
 .tab__item{
     padding: 30px;
+    color: #000;
     background-color: #ffea20;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     border-radius: 30px;
@@ -70,97 +65,24 @@ body{
     color: #ffea20;
 }
 
-/* cssのみでのタブの動作 */
-/*ラジオボタンを全て消す*/
-/* input[name="tab__item"] {
-    display: none;
-} */
-
-/*選択されているタブのコンテンツのみを表示*/
-/* #east:checked~#east__content,
-#south:checked~#south__content {
-    display: block;
-} */
-
-/*選択されているタブのスタイルを変える*/
-/* .tabs input:checked+.tab__item {
-    background-color: #30ADD1;
-    color: #ffea20;
-    box-shadow: none;
-} */
-
-/* .area {
-    display: none;
-    text-align: center;
-} */
-
-/* .area.active {
-    display: block;
-} */
-
-/* jsでのタブの操作 */
-/*liにactiveクラスがついた時の形状*/
-.tab li.active {
-    color: #ffea20;
-    background-color: #30ADD1;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4) inset;
-  }
-
-.area{
-    display: none;
-}
-
-/*areaにis-activeというクラスがついた時の形状*/
-.area.is-active {
-    display: block;/*表示*/
-    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes displayAnime{
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
 /* マップ */
-.spot__map{
-    position: relative;
-    width: 100%;
-
-    border: 3px solid #30ADD1;
+.spot__iframe{
+    max-width: 1200px;
+    
     border-radius: 10px;
     margin: 0 auto;
-    /* display: none;
-    clear: both; */
 }
-
-.spot__map--east{
+.googlemap{
     width: 100%;
-    /* スマホで地図が小さくなりすぎるのを防止するための記述 */
-    /* height: 469.44px; */
-    /* object-fit: cover; */
-    /* object-position: 80% 50%; */
+    height: 500px;
+    border-top: 5px solid #ffea20;
+    border-right: 5px solid #ffea20;
+    border-bottom: 5px solid #30ADD1;
+    border-left: 5px solid #30ADD1;
 }
 
-.spot__map--south{
-    width: 100%;
-}
-
-.spot__map--point{
-    position: absolute;
-    width: 7%;
-    transition: all 0.3s;
-}
-
-@media screen and (min-width:600px) {
-    .spot__map{
-        max-width: 900px;
-    }
+/* svg画像ポイントホバー時 */
+/* @media screen and (min-width:600px) {
     .spot__map--point:hover{
     scale: 1.5;
     -webkit-transition: all 0.3s;
@@ -182,93 +104,20 @@ body{
         margin-bottom: 5px;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     }
-}
+} */
 
-.point__circle{
+/* .point__circle{
     fill: #ffea20;
 }
 
 .point__fish {
     fill: #30add1;
     clip-path: url(#clippath);
-}
-
-/* ポイントの位置 */
-/* 東部 */
-/* 岡崎海岸 */
-.point__east:nth-child(1){
-    top: 25%;
-    right: 22%;
-}
-
-/* 亀浦観光港 */
-.point__east:nth-child(2){
-    top: 4%;
-    right: 20%;
-}
-
-/* 竜宮の磯 */
-.point__east:nth-child(3){
-    top: 20%;
-    right: 20%;
-}
-
-/* 大浦漁港 */
-.point__east:nth-child(4){
-    top: 8%;
-    right: 40%;
-}
-
-/* 八木の鼻 */
-.point__east:nth-child(5){
-    top: 12%;
-    right: 18%;
-}
-
-/* 北泊　新波止場 */
-.point__east:nth-child(6){
-    top: 3%;
-    right: 28%;
-}
-
-/* 月見ヶ丘海浜公園 */
-.point__east:nth-child(7){
-    top: 45%;
-    right: 21%;
-}
-
-/* 長原漁港 */
-.point__east:nth-child(8){
-    top: 53%;
-    right: 25%;
-}
-
-/* 小松海岸 */
-.point__east:nth-child(9){
-    top: 64%;
-    right: 25%;
-}
-
-/* マリンピア北緑地外堤防 */
-.point__east:nth-child(10){
-    top: 73%;
-    right: 25%;
-}
-
-/* 大神子海岸 */
-.point__east:nth-child(11){
-    top: 83%;
-    right: 27%;
-}
-
-/* 津田の堤防 */
-.point__east:nth-child(12){
-    top: 79%;
-    right: 29%;
-}
+} */
 
 /* ポイントhover時スポット名表示 */
-@media screen and (min-width:600px) {
+/* 東部 */
+/* @media screen and (min-width:600px) {
     .point__east:nth-child(1):hover:after{
         content:"岡崎海岸"
         }
@@ -305,83 +154,10 @@ body{
     .point__east:nth-child(12):hover:after{
         content:"津田の堤防"
         }
-}
+} */
 
 /* 南部 */
-/* 赤石ふ頭 */
-.point__south:nth-child(1){
-    top: 100%;
-    right: 100%;
-}
-
-/* しおかぜ公園 */
-.point__south:nth-child(2){
-    top: 3%;
-    right: 20%;
-}
-
-/* 今津漁港 */
-.point__south:nth-child(3){
-    top: 10%;
-    right: 13%;
-}
-
-/* 亀崎漁港 */
-.point__south:nth-child(4){
-    top: 14%;
-    right: 10%;
-}
-
-/* 中浦緑地公園 */
-.point__south:nth-child(5){
-    top: 28%;
-    right: 15%;
-}
-
-/* 大潟岸壁 */
-.point__south:nth-child(6){
-    top: 25%;
-    right: 12%;
-}
-
-/* 木岐漁港 */
-.point__south:nth-child(7){
-    top: 53%;
-    right: 20%;
-}
-
-/* 恵比須浜 */
-.point__south:nth-child(8){
-    top: 56%;
-    right: 23%;
-}
-
-/* モラスコむぎ */
-.point__south:nth-child(9){
-    top: 70%;
-    right: 35%;
-}
-
-/* 大砂突堤 */
-.point__south:nth-child(10){
-    top: 75%;
-    right: 40%;
-}
-
-/* 手倉海水浴場 */
-.point__south:nth-child(11){
-    top: 84%;
-    right: 40%;
-}
-
-/* 海陽町港 */
-.point__south:nth-child(12){
-    top: 85%;
-    right: 43%;
-}
-
-/* ポイントhover時スポット名表示 */
-@media screen and (min-width:600px) {
+/* @media screen and (min-width:600px) {
     .point__south:nth-child(1):hover:after{
         content:"赤石ふ頭"
         }
@@ -418,6 +194,10 @@ body{
     .point__south:nth-child(12):hover:after{
         content:"海陽町港"
         }
+} */
+
+.section__box--title{
+    margin-top: 30px;
 }
 
 /* cardレイアウト */
@@ -433,9 +213,4 @@ body{
 .card__p {
     padding: 0px;
 }
-}
-
-
-.shallow{
-    background-color:#EAF2FA;
 }
