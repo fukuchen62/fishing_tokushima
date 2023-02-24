@@ -5,8 +5,7 @@
 @section('keywords', 'キーワード1,キーワード2・・・')
 
 @section('title', "$spots->name")
-
-{{-- 南さん確認済み --}}
+{{-- 上記南さん確認済み --}}
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
@@ -17,7 +16,7 @@
 @endsection
 
 @section('key_visual')
-    {{ asset('assets/images/spot_keyvisual.jpg') }}
+<img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
 @endsection
 
 {{-- メイン --}}
