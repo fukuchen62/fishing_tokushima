@@ -5,7 +5,7 @@
         </div>
         <div class="header__box--border expand"></div>
         <a href="{{ route('top') }}">
-            <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="ネコの画像" class="header__logo expand">
+            <img src="{{ asset('assets/images/fishing_tokushima_logo.svg') }}" alt="ネコの画像" class="header__logo expand">
         </a>
         <!-- ハンバーガーメニュー -->
         <div class="hamburger flex expand">
@@ -16,7 +16,7 @@
         <div class="header__box expand">
             <div class="g-nav flex  expand">
                 <a href="{{ route('top') }}">
-                    <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="サイトロゴ" class="logo__img">
+                    <img src="{{ asset('assets/images/fishing_tokushima_logo.svg') }}" alt="サイトロゴ" class="logo__img">
                 </a>
                 <div class="g-nav__box ">
                     <div class="g-nav__box--section flex">
@@ -149,7 +149,9 @@
 
     <section class="titlesection expand">
         <div class="titlesection__box flex">
-            <img class="fishicon" src="{{ asset('assets/images/svg/icon_fish.svg') }}" alt="">
+            <img class="fishicon" src="{{ asset('assets/images/svg/icon_fish.svg') }}" alt="fishicon">
+
+            {{-- ページタイトル --}}
             <h1 class="pagetitle">@yield('title')</h1>
         </div>
         <div class="pagetitle__border"></div>

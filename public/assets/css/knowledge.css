@@ -88,10 +88,10 @@ input[name="tab_item"] {
 }
 
 /*選択されているタブのスタイルを変える*/
-.tabs input:checked+.tab_item {
+/* .tab_item .active{
     background-color: #30ADD1;
     color: #fff;
-}
+} */
 
 .card__area{
     flex-wrap: wrap;
@@ -152,3 +152,10 @@ input[name="tab_item"] {
     background-color: #30ADD1;
     color: #fff;
 }
+
+/*liにactiveクラスがついた時の形状*/
+.tabs li.active {
+    background-color: #30ADD1;
+    color: #fff;
+
+  }
