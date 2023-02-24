@@ -26,10 +26,9 @@ class NewsController extends Controller
         // $items = News::category($name)->get();
 
         if ($name != null) {
-            $items = NewsController::getNews($name);
+            $items = News::NewsName($name)->get();
         } else {
-            $items =
-                News::all();
+            $items = News::all();
         }
 
         // $created_at = Carbon::createFromFormat('Y-m-d H:i:s',$items -> created_at)-> format('Y-m-d');
@@ -38,6 +37,7 @@ class NewsController extends Controller
             // 'news' => $item,
             'news' => $items,
             // 'created_at'=>$created_at,
+            'name' => $name,
         ];
 
         return view('fronts/news_list', $data);
