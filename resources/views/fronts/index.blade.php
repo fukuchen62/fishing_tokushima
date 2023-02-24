@@ -12,9 +12,8 @@
 @endsection
 
 @section('key_visual')
-    <div class="keyvisual expand">
-        <p class="catchcopy">これさえ見れば徳島で魚が釣れるんじょ</p>
-    </div>
+    <p class="catchcopy koresae">これさえ見れば徳島で</p>
+    <p class="catchcopy sakanaga">魚が釣れるんじょ</p>
 @endsection
 
 {{-- メイン --}}

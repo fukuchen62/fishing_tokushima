@@ -140,8 +140,10 @@
             </div>
         </div>
     </div>
-
-    @yield('key_visual')
+    {{-- キービジュアル --}}
+    <div class="keyvisual expand">
+        @yield('key_visual')
+    </div>
 
     <section class="titlesection expand">
         <div class="titlesection__box">
