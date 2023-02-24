@@ -26,10 +26,18 @@
                 <div class="news__section expand p__lr">
                     <div class="news__area">
                         <h3 class="section__box--title">{{ $news->title }}</h3>
-                        <p class="news__area--data">{{ $news->created_at }}</p>
+
+                        @php
+                            $ts = strtotime($news->created_at);
+                        @endphp
+                        <p class="news__area--data">
+                            {{ date('Y.m.d', $ts) }}
+                        </p>
+
                         <img src="{{ asset('storage/images') }}/{{ $news->eyecatch }}" alt="{{ $news->eyecatch }}">
                         <p class="news__area--description">
                             {{ $news->content }}</p>
+
                     </div>
                 </div>
 

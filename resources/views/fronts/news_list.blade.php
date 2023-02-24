@@ -25,7 +25,14 @@
 
                 <div class="news__section expand p__lr">
 
-                    <h2 class="pagetitle ">一覧</h2>
+
+                    <h2 class="pagetitle ">
+                        @if ($name != null)
+                            {{ $name }}
+                        @else
+                            全て
+                        @endif
+                    </h2>
                     <div class="pagetitle__border"></div>
                     <div class="card__area">
                         <ul class="card__area">
