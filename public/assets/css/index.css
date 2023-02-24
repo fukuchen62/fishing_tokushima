@@ -99,7 +99,7 @@
 
 .keyvisual {
     display: inline-block;
-    background-image: url(../images/img_neko_700_3.jpg);
+    background-image: url(../images/sub-keyvisual.jpg);
     width: 100vw;
     height: 900px;
     background-size: cover;
@@ -120,7 +120,12 @@
     position: relative;
 }
 
-
+.firstsection{
+    padding: 20px;
+}
+.firstsection > div:nth-child(2){
+    margin-bottom: 30px;
+}
 
 
 .titlesection__top {
@@ -166,6 +171,9 @@
     padding: 30px;
     width: 100%;
 }
+
+
+
 .knowledge__text--box{
     color: #ffffff;
 }
@@ -182,6 +190,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    padding-bottom: 30px;
 }
 
 .knowledge__section{
@@ -468,22 +477,22 @@
         right: -15%;
     }
     .eastland{
-        top: -50px;
+        top: -10px;
         left: -200px;
     }
     .southland{
         width: 100px;
         height: 30px;
         font-size: 1rem;
-        left: -250px;
-        top: 100px;
+        left: -300px;
+        top: 90px;
     }
     .eastborder{
         right: 30px;
         top: 30px;
     }
     .southborder {
-        right: 90px;
+        right: 130px;
         top: 130px;
     }
     .eastcircle{
@@ -536,19 +545,17 @@
     }
 }
 
-
-
-
 .spot__bottom{
     background-color: #30ADD1;
 }
 
-
-
-
 .plantitle , .fishtitle{
     color: #fff;
     -webkit-text-stroke: 0px;
+}
+
+.fishtitle + img{
+    background-color: #fff;
 }
 
 .plansection , .fishsection{
@@ -572,8 +579,6 @@
     margin: 0 auto;
     transform: scale(0.6) translateX(-25%);
 }
-
-
 
 .bubble{
     border-radius: 50%;
@@ -897,6 +902,7 @@
 
 
 .morelook{
+    background-color: #FFEA20;
     height: 50px;
     width: 160px;
     margin: 100px auto;
