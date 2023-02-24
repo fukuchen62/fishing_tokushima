@@ -12,7 +12,7 @@
 @endsection
 
 @section('key_visual')
-    <img class="sub-keyvisual" src="assets/images/sub-keyvisual.jpg" alt="サブキービジュアル">
+    <img class="sub-keyvisual" src="{{ asset('assets/images/sub-keyvisual.jpg') }}" alt="サブキービジュアル">
 @endsection
 
 {{-- メイン --}}
