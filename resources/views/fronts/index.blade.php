@@ -1,4 +1,4 @@
-@extends('layouts.layout_front')
+@extends('layouts.layout_front_top')
 
 @section('description', 'トップページのデスクリプション')
 
@@ -13,7 +13,7 @@
 
 @section('key_visual')
     <div class="keyvisual expand">
-        キービジュアル
+        <p class="catchcopy">これさえ見れば徳島で魚が釣れるんじょ</p>
     </div>
 @endsection
 
@@ -314,13 +314,6 @@
             <a href="{{ route('news') }}" class="btn">もっと見る</a>
         </div>
     </section>
-
-    <div id="page_top" class="flex">
-        <!-- 余裕があれば魚が釣られるアニメーションを追加 -->
-        <!-- <img src=".//assets/images/fish_yellow.png" alt="黄色魚" class="topbutton__fish"> -->
-        <a href="#"><img src="./assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-    </div>
-
 
 @endsection
 
