@@ -35,6 +35,10 @@
                         {{ route('shopslist', ['id' => $item->id]) }}
                     @endslot
 
+                    @slot('shop_img')
+                    {{ $item->img }}
+                    @endslot
+
                     @slot('shop_name')
                         {{ $item->name }}
                     @endslot
@@ -84,11 +88,11 @@
         <!-- セクションを区切る波 -->
         <div class="firstsection__bottom expand"></div>
 
-        <div id="page_top" class="flex">
+        {{-- <div id="page_top" class="flex">
             <!-- 余裕があれば魚が釣られるアニメーションを追加 -->
             <!-- <img src=".//assets/images/fish_yellow.png" alt="黄色魚" class="topbutton__fish"> -->
             <a href="#"><img src="../assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-        </div>
+        </div> --}}
 
 
         <div class="footer__top--img expand" style="background-color: #fff;">

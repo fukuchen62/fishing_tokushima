@@ -4,7 +4,9 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('key_visual', 'キービジュアル')
+@section('key_visual')
+    {{-- <img class="sub-keyvisual" src="assets/images/sub-keyvisual.jpg" alt="サブキービジュアル"> --}}
+@endsection
 
 @section('title')
     {{ $item->title }}
@@ -25,33 +27,45 @@
             <!-- プラン概要セクション -->
             <section class="overview__section p__lr">
                 <div class="overview__box">
-                    <div class="max-width-box"><img class="overview__box--img plan__img"
-                            src="{{ asset('storage/images') }}/{{ $item->thumbnail }}" alt="{{ $item->thumbnail }}"></div>
+                    <div class="max-width-box">
+                        @if ($item->thumbnail != "")
+                            <img class="overview__box--img plan__img"
+                            src="{{ asset('storage/images') }}/{{ $item->thumbnail }}" alt="{{ $item->thumbnail }}">
+                        @else
+                            <img class="overview__box--img plan__img"
+                            src="https://placehold.jp/559x314.png">
+                        @endif
+                    </div>
+
                     <!-- 概要のテキストボックス -->
                     <div class="overview__box--group">
                         <h3>概要</h3>
                         <p>{{ $item->overview }}</p>
                         <h3>難易度</h3>
                         <!-- バックで選ばれてどれかが出される -->
+                        {{-- モデルでレベルごとに表示を変更 --}}
                         <div class="star__box"><?php echo $item->getLevel(); ?></div>
                     </div>
                 </div>
 
                 <!-- お気に入りボタン -->
                 <!-- バックエンドで出される -->
-                <div class="btn__flex">
-                    <a href="" id="" class="favorite">
-                        <span>お気に入りに登録する</span>
-                        <img src="../assets/images/svg/favorite.svg" alt="">
-                    </a>
-                </div>
-
-                <div>
-                    <a href="" id="" class="favorite favorite__in">
+            @if (Cookie::get('plan_id')==$item->id)
+            <div>
+                    <a href="{{ route('cookie', ['plan_id' => $item->id]) }}" id="" class="favorite favorite__in">
                         <span>お気に入りに登録済み</span>
-                        <img src="../assets/images/svg/favorite__in.svg" alt="">
+                        <img src="{{ asset('assets/images/svg/favorite__in.svg') }}" alt="favorite__in.svg">
                     </a>
-                </div>
+            </div>
+
+            @else
+            <div class="btn__flex">
+                    <a href="{{ route('cookie', ['plan_id' => $item->id]) }}" id="" class="favorite">
+                        <span>お気に入りに登録する</span>
+                        <img src="{{ asset('assets/images/svg/favorite.svg') }}" alt="favorite.svg">
+                    </a>
+            </div>
+            @endif
             </section>
 
             <!-- 体験プランテーブルセクション -->
@@ -60,20 +74,22 @@
                 <table class="table radius-table">
                     <tr class="table__tr">
                         <td class="table__subtitle">釣れるスポット</td>
-                        <td>テキストテキストテキスト</td>
+                        <td>{{ $item->spot->name }}</td>
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">釣れる月</td>
-                        <td>テキストテキストテキスト</td>
+                        <td>{{ $item->fish->getMonth() }}</td>
                     </tr>
                     <tr class="table__tr">
-                        <td class="table__subtitle">時間帯</td>
-                        <td>テキストテキストテキスト</td>
+                        <td class="table__subtitle">釣り方</td>
+                        <td>{{ $item->fish->method }}</td>
                     </tr>
                 </table>
             </section>
             <!-- カードセクション -->
-            <section class="detail__section p__lr">
+            {{-- コントローラーも修正の必要があるので、時間があれば対応 --}}
+
+            {{-- <section class="detail__section p__lr">
                 <h3 class="detail__box--title to-details">
                     ↓ 魚とスポットの詳細はこちら
                 </h3>
@@ -96,17 +112,17 @@
                             </div>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
                 <!-- 装飾（貝）の画像 -->
                 <div>
                     <ul class="detail__img--shell">
-                        <li><img src="../assets/images/shell-1.png" width="40" height="40" alt=""></li>
-                        <li><img src="../assets/images/shell-2.png" width="40" height="40" alt=""></li>
-                        <li><img src="../assets/images/shell-3.png" width="40" height="40" alt=""></li>
-                        <li><img src="../assets/images/ukiwa.png" width="40" height="40" alt=""></li>
-                        <li><img src="../assets/images/shell-1.png" width="40" height="40" alt=""></li>
-                        <li><img src="../assets/images/shell-2.png" width="40" height="40" alt=""></li>
-                        <li><img src="../assets/images/shell-3.png" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/shell-1.png') }}" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/shell-2.png') }}" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/shell-3.png') }}" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/ukiwa.png') }}" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/shell-1.png') }}" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/shell-2.png') }}" width="40" height="40" alt=""></li>
+                        <li><img src="{{ asset('assets/images/shell-3.png') }}" width="40" height="40" alt=""></li>
                     </ul>
                 </div>
             </section>
@@ -121,9 +137,14 @@
                 <p class="anchor--text">START</p>
                 <!-- 背景の錨のためのdiv -->
                 <div class="flow__bg">
+
+                    {{-- 下記内容からコンテンツ班に登録してもらう？ --}}
                     <div class="flow__box">
-                        <div class="max-width-box"><img class="flow__box--img plan__img"
-                                src="https://placehold.jp/559x314.png" alt="フローの写真"></div>
+                        <div class="max-width-box">
+                            <img class="flow__box--img plan__img"
+                                src="{{ asset() }}" alt="フローの写真">
+                                {{-- 画像のファイル名コンテンツ班に登録してもらう --}}
+                        </div>
                         <!-- フローのテキストボックス -->
                         <div class="flow__box--text">
                             <h3>①準備物</h3>

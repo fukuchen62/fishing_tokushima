@@ -10,7 +10,7 @@
 <!-- /カードの構造 -->
 <li class="card__p">
     <a class="card card__skin" href="{{ $plan_link }}">
-        <img class="card__img" src="{{ $plan_thumbnail }}" alt="画像">
+        <img class="card__img" src="{{ asset('storage/images') }}/{{ $plan_thumbnail }}" alt="{{ $plan_thumbnail }}">
         <div class="card__textbox">
             <h3 class="card__title">{{ $plan_title }}</h3>
         <!-- エリアの判定 -->
