@@ -7,7 +7,7 @@
 
 
                 <div class="section__content--photomaxwidth">
-                    <img class="section__content--photo" src="{{ $shop_link }}" alt="お店の外観">
+                    <img class="section__content--photo" src="{{ asset('storage/images') }}/{{ $shop_img}}" alt="{{ $shop_img}}">
                 </div>
 
                 <div class="section__content--left">
