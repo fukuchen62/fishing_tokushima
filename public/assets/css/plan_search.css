@@ -5,6 +5,22 @@
     padding-top: 100px;
 }
 
+/* サブビジュアル */
+.sub-keyvisual {
+    background-image: url(../images/plan_keyvisual_test.jpg);
+    max-height: 400px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    .sub-keyvisual {
+        background-image: url(../images/plan_keyvisual.jpg);
+    }
+
+}
+
 
 /* 検索画面 */
 
@@ -103,14 +119,17 @@
     .choice__box {
         display: flex;
     }
+
     /* チェックボックス横並び */
     .radio_box {
         display: flex;
     }
+
     /* チェックボックス全体レイアウト */
     .choice__box ul {
         padding-bottom: 0px
     }
+
     /* チェックボックス内レイアウト */
     .choice__box ul li {
         margin-top: 20px;
