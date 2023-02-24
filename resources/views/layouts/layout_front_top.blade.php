@@ -82,7 +82,7 @@
     @include('includes.front_footer')
 
     <!-- 共通のjsファイル -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/main.js') }}"></script> --}}
     {{-- 独自のJSファイルを読み込む --}}
     @yield('pageJs')
 </body>

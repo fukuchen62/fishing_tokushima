@@ -76,14 +76,14 @@
                     <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id=""
                         class="favorite favorite__in">
                         <span>お気に入りに登録済み</span>
-                        <img src="{{ asset('assets/images/svg/favorite__in.svg') }}" alt="">
+                        <img src="{{ asset('assets/images/svg/favorite__in.svg') }}" alt="favorite__in.svg">
                     </a>
                 </div>
             @else
                 <div>
                     <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id="" class="favorite">
                         <span>お気に入りに登録する</span>
-                        <img src="{{ asset('assets/images/svg/favorite.svg') }}" alt="">
+                        <img src="{{ asset('assets/images/svg/favorite.svg') }}" alt="favorite.svg">
                     </a>
                 </div>
             @endif
@@ -150,8 +150,8 @@
                             {{ asset('storage/images') }}/{{ $item->fish_img1 }}
                         @endslot
 
-                        @slot('fish_name')
-                            {{ $item->name }}
+                        @slot('fish_alt')
+                            {{ $item->fish_img1 }}
                         @endslot
                     @endcomponent
                 @endforeach
@@ -168,9 +168,9 @@
     <div class="secondsection__bottom expand"></div>
     <!-- 貝殻イラスト -->
     <div class="spotinfo__shell">
-        <img class="shell" src="../assets/images/shell-1.png" alt="">
-        <img class="shell" src="../assets/images/shell-2.png" alt="">
-        <img class="shell" src="../assets/images/shell-3.png" alt="">
+        <img class="shell" src="{{ asset('assets/images/shell-1.png') }}" alt="shell-1.png">
+        <img class="shell" src="{{ asset('assets/images/shell-2.png') }}" alt="shell-2.png">
+        <img class="shell" src="{{ asset('assets/images/shell-3.png') }}" alt="shell-3.png">
     </div>
     <!-- 近くのスポットcard表示3つ -->
     <section class="p__lr">
@@ -188,6 +188,10 @@
                         @else
                             https://placehold.jp/320x240.png
                         @endif
+                    @endslot
+
+                    @slot('spot_alt')
+                        {{ $item->img1 }}
                     @endslot
 
                     @slot('spot_name')
