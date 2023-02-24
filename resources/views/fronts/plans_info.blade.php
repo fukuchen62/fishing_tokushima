@@ -139,9 +139,9 @@
                         <div class="max-width-box">
                             {{-- 画像名コンテンツ班に登録してもらう --}}
                             <img class="flow__box--img plan__img"
-                            src="https://placehold.jp/559x314.png" alt="画像名">
-                            {{-- 下記本番の画像 --}}
-                            {{-- {{ asset('storage/images/画像名') }} --}}
+                            src="{{ asset('storage/images/画像名') }}" alt="画像名">
+                            {{-- 下記ダミー画像 --}}
+                            {{-- https://placehold.jp/559x314.png --}}
                         </div>
                         <!-- フローのテキストボックス -->
                         <div class="flow__box--text">
@@ -158,9 +158,7 @@
                         <div class="max-width-box">
                             {{-- 画像名コンテンツ班に登録してもらう --}}
                             <img class="flow__box--img plan__img"
-                            src="https://placehold.jp/559x314.png" alt="画像名">
-                            {{-- 下記本番の画像 --}}
-                            {{-- {{ asset('storage/images/画像名') }} --}}
+                            src="{{ asset('storage/images/画像名') }}" alt="画像名">
                         </div>
                         <div class="flow__box--text">
                             {{-- コンテンツ班タイトル入れてもらう --}}
@@ -174,9 +172,7 @@
                         <div class="max-width-box">
                             {{-- 画像名コンテンツ班に登録してもらう --}}
                             <img class="flow__box--img plan__img"
-                            src="https://placehold.jp/559x314.png" alt="画像名">
-                            {{-- 下記本番の画像 --}}
-                            {{-- {{ asset('storage/images/画像名') }} --}}
+                            src="{{ asset('storage/images/画像名') }}" alt="画像名">
                         </div>
                         <div class="flow__box--text last__flow">
                             {{-- コンテンツ班タイトル入れてもらう --}}
