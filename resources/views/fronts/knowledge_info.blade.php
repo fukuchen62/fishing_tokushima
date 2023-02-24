@@ -110,7 +110,7 @@
 
                 <div class="knowledge__section expand p__lr">
 
-                    <h2 class="pagetitle ">基礎知識詳細<br>{{ $knowledges->title }}</h2>
+                    <h2 class="pagetitle ">{{ $knowledges->title }}</h2>
                     <div class="pagetitle__border"></div>
                     <div class="i-catchimg">
                         <img src="../assets/images/img_neko_700_3.jpg" alt="">

@@ -5,7 +5,7 @@
         </div>
         <div class="header__box--border expand"></div>
         <a href="{{ route('top') }}">
-            <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="ネコの画像" class="header__logo expand">
+            <img src="{{ asset('assets/images/fishing_tokushima_logo.svg') }}" alt="ネコの画像" class="header__logo expand">
         </a>
         <!-- ハンバーガーメニュー -->
         <div class="hamburger flex expand">
@@ -16,7 +16,7 @@
         <div class="header__box expand">
             <div class="g-nav flex  expand">
                 <a href="{{ route('top') }}">
-                    <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="サイトロゴ" class="logo__img">
+                    <img src="{{ asset('assets/images/fishing_tokushima_logo.svg') }}" alt="サイトロゴ" class="logo__img">
                 </a>
                 <div class="g-nav__box ">
                     <div class="g-nav__box--section flex">
@@ -140,17 +140,22 @@
             </div>
         </div>
     </div>
-
-    @yield('key_visual')
+    {{-- キービジュアル --}}
+    <div class="keyvisual expand">
+        @yield('key_visual')
+    </div>
 
     <section class="titlesection expand">
         <div class="titlesection__box">
+
+            {{-- ページタイトル --}}
             <h1 class="pagetitle">@yield('title')</h1>
+
             <div class="pagetitle__border"></div>
         </div>
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish1">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish2">
-        <img src="assets/images/kai_baigai.png" alt="貝" class="titlesection__img shellfish3">
+        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish1">
+        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish2">
+        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish3">
 
     </section>
 </header>
