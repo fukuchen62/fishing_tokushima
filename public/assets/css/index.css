@@ -123,6 +123,9 @@
 .firstsection{
     padding: 20px;
 }
+.firstsection > div:nth-child(2){
+    margin-bottom: 30px;
+}
 
 
 .titlesection__top {
@@ -474,22 +477,22 @@
         right: -15%;
     }
     .eastland{
-        top: -50px;
+        top: -10px;
         left: -200px;
     }
     .southland{
         width: 100px;
         height: 30px;
         font-size: 1rem;
-        left: -250px;
-        top: 100px;
+        left: -300px;
+        top: 90px;
     }
     .eastborder{
         right: 30px;
         top: 30px;
     }
     .southborder {
-        right: 90px;
+        right: 130px;
         top: 130px;
     }
     .eastcircle{

@@ -668,57 +668,29 @@ height: auto;
 
 /* 貝の画像 */
 .shellfish1 {
+    display: none;
     top: 10%;
     left: 20%;
 
 }
 
 .shellfish2 {
-    /* display: none; */
     bottom: 0%;
     left: 0%;
 }
 
 .shellfish3 {
     top: 20px;
-    right: 30px;
-
+    right: 10px;
 }
 
-@media screen and (max-width: 319px) {
-    .titlesection__img {
-        width: 25px;
-        height: 25px;
+@media screen and (min-width: 600px) {
+    .shellfish1{
+        display: block;
     }
 }
 
-@media screen and (min-width: 320px) and (max-width: 479px) {
-    .titlesection__img {
-        width: 30px;
-        height: 30px;
-    }
-}
 
-@media screen and (min-width: 480px) and (max-width: 599px) {
-    .titlesection__img {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 719px) {
-    .titlesection__img {
-        width: 37px;
-        height: 37px;
-    }
-}
-
-@media screen and (min-width: 720px) {
-    .titlesection__img {
-        width: 40px;
-        height: 40px;
-    }
-}
 
 
 /* 第一セクション背景 */
