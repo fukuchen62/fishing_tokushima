@@ -4,7 +4,8 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section("title", "$spots->name")
+@section('title', "$spots->name")
+
 {{-- 南さん確認済み --}}
 
 {{-- 該当ページのCSS --}}
@@ -16,7 +17,7 @@
 @endsection
 
 @section('key_visual')
-    キービジュアル
+    {{ asset('assets/images/spot_keyvisual.jpg') }}
 @endsection
 
 {{-- メイン --}}
@@ -28,46 +29,40 @@
             <div class="spotinfo__images p__lr">
                 <!-- メイン画像 -->
                 <div class="spotinfo__img main-img js-main-img">
-                    {{-- @if ($spots->img1 !="") --}}
-                        <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
-                    {{-- {{ $spots->img1 }} --}}
-                        alt="スポット写真1">
-                    {{-- @endif --}}
+                    @if ($spots->img1 != '')
+                        <img class="spotinfo__img" src="{{ asset('storage/images') }}/{{ $spots->img1 }}"
+                            alt="{{ $spots->img1 }}">
+                    @endif
                 </div>
                 <!-- サムネイル画像 -->
                 <ul class="sub-img js-sub-img">
                     <!-- 選択されている画像の枠線を変更 -->
                     <li class="spotinfo__img">
-                        {{-- @if ($spots->img1 !="") --}}
-                            <img class="spotinfo__img" src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%91"
-                    {{-- {{ $spots->img1 }} --}}
-                        alt="スポット写真1">
-                        {{-- @endif --}}
+                        @if ($spots->img1 != '')
+                            <img class="spotinfo__img" src="{{ asset('storage/images') }}/{{ $spots->img1 }}"
+                                alt="{{ $spots->img1 }}">
+                        @endif
                     </li>
                     <li class="spotinfo__img">
-                        {{-- @if ($spots->img2 !="") --}}
-                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%92"
-                        {{-- {{ $spots->img2 }} --}}
-                            alt="スポット写真2">
-                        {{-- @endif --}}
+                        @if ($spots->img2 != '')
+                            <img src="{{ asset('storage/images') }}/{{ $spots->img2 }}" alt="{{ $spots->img2 }}">
+                        @endif
                     </li>
                     <li class="spotinfo__img">
-                        {{-- @if ($spots->img3 !="") --}}
-                        <img src="https://placehold.jp/3d4070/ffffff/559x419.png?text=%EF%BC%93"
-                        {{-- {{ $spots->img3 }} --}}
-                            alt="スポット写真3">
-                        {{-- @endif --}}
+                        @if ($spots->img3 != '')
+                            <img src="{{ asset('storage/images') }}/{{ $spots->img3 }}" alt="{{ $spots->img3 }}">
+                        @endif
                     </li>
                     {{-- 表示確認のため上記のようにしているが、
                         本番は下記のようにする --}}
                     <li class="spotinfo__img">
-                        @if ($spots->img4 !="")
-                        <img src="{{ $spots->img4 }}" alt="スポット写真4">
+                        @if ($spots->img4 != '')
+                            <img src="{{ asset('storage/images') }}/{{ $spots->img4 }}" alt="{{ $spots->img4 }}">
                         @endif
                     </li>
                     <li class="spotinfo__img">
-                        @if ($spots->img5 !="")
-                        <img src="{{ $spots->img5 }}" alt="スポット写真4">
+                        @if ($spots->img5 != '')
+                            <img src="{{ asset('storage/images') }}/{{ $spots->img5 }}" alt="{{ $spots->img5 }}">
                         @endif
                     </li>
                 </ul>
@@ -76,20 +71,21 @@
             <!-- お気に入りボタン -->
             {{-- {{ Cookie::get('spot_id') }} --}}
 
-            @if (Cookie::get('spot_id')==$spots->id)
-            <div>
-                <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id="" class="favorite favorite__in">
-                    <span>お気に入りに登録済み</span>
-                    <img src="{{ asset('assets/images/svg/favorite__in.svg') }}" alt="">
-                </a>
-            </div>
+            @if (Cookie::get('spot_id') == $spots->id)
+                <div>
+                    <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id=""
+                        class="favorite favorite__in">
+                        <span>お気に入りに登録済み</span>
+                        <img src="{{ asset('assets/images/svg/favorite__in.svg') }}" alt="">
+                    </a>
+                </div>
             @else
-            <div>
-                <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id="" class="favorite">
-                    <span>お気に入りに登録する</span>
-                    <img src="{{ asset('assets/images/svg/favorite.svg') }}" alt="">
-                </a>
-            </div>
+                <div>
+                    <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id="" class="favorite">
+                        <span>お気に入りに登録する</span>
+                        <img src="{{ asset('assets/images/svg/favorite.svg') }}" alt="">
+                    </a>
+                </div>
             @endif
 
         </div>
@@ -115,9 +111,11 @@
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">釣り方</td>
-                        <td>@foreach ($fishlist as $item)
-                                    {{ $item->method }}、
-                            @endforeach</td>
+                        <td>
+                            @foreach ($fishlist as $item)
+                                {{ $item->method }}、
+                            @endforeach
+                        </td>
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">トイレ</td>
@@ -131,8 +129,9 @@
                         <td class="table__subtitle">避難場所</td>
                         <td>
                             @foreach ($evacuationlist as $item)
-                                    {{ $item->name }}<br>
-                            @endforeach</td>
+                                {{ $item->name }}<br>
+                            @endforeach
+                        </td>
                         {{-- 避難場所の名称を表示 --}}
                     </tr>
                 </table>
@@ -146,27 +145,23 @@
             <h3 class="section__box--title spotinfo__sectiontitle--fish">狙える魚</h3>
             <div class="spotinfo__fishes">
                 @foreach ($fishlist as $item)
-                @component('components.front_spots_info')
+                    @component('components.front_spots_info')
+                        @slot('fish_img')
+                            {{ asset('storage/images') }}/{{ $item->fish_img1 }}
+                        @endslot
 
-                @slot('fish_img')
-                    {{-- {{ $item->fish_img1 }} --}}
-                    https://placehold.jp/500x500.png
-                @endslot
-
-                @slot('fish_name')
-                    {{ $item->name }}
-                @endslot
-
-                @endcomponent
+                        @slot('fish_name')
+                            {{ $item->name }}
+                        @endslot
+                    @endcomponent
                 @endforeach
             </div>
         </section>
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-            <iframe class="googlemap"
-                src="{{ $spots->iframe_url }}"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="googlemap" src="{{ $spots->iframe_url }}" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </div>
     <!-- セクションを区切る波 -->
@@ -182,27 +177,28 @@
         <h3 class="section__box--title spotinfo__sectiontitle">近くのスポット</h3>
         <ul class="card__area">
             @foreach ($connection1 as $item)
-            @component('components.front_spots_info2')
+                @component('components.front_spots_info2')
+                    @slot('spot_link')
+                        {{ route('spotsinfo', ['id' => $item->id]) }}
+                    @endslot
 
-                @slot('spot_link')
-                    {{ route('spotsinfo', ['id' => $item->id]) }}
-                @endslot
+                    @slot('spot_img')
+                        @if ($item->img1 != '')
+                            {{ asset('storage/images') }}/{{ $item->img1 }}
+                        @else
+                            https://placehold.jp/320x240.png
+                        @endif
+                    @endslot
 
-                @slot('spot_img')
-                    {{-- {{ $item->img1 }} --}}
-                    https://placehold.jp/320x240.png
-                @endslot
+                    @slot('spot_name')
+                        {{ $item->name }}
+                    @endslot
 
-                @slot('spot_name')
-                    {{ $item->name }}
-                @endslot
-
-                @slot('spot_overview')
-                    {{ $item->overview }}
-                @endslot
-
-            @endcomponent
-        @endforeach
+                    @slot('spot_overview')
+                        {{ $item->overview }}
+                    @endslot
+                @endcomponent
+            @endforeach
         </ul>
 
         <a class="btn" href="{{ route('spotslist') }}">スポット一覧</a>
@@ -212,6 +208,6 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-<script src="{{ asset('assets/slick/slick.min.js') }}"></script>
-<script src="{{ asset('assets/slick/slick-common.js') }}"></script>
+    <script src="{{ asset('assets/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/slick/slick-common.js') }}"></script>
 @endsection
