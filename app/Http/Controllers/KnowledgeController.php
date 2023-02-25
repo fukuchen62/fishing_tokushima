@@ -34,14 +34,12 @@ class KnowledgeController extends Controller
             $category_id = $request->category_id;
         }
 
-        if ($category_id != null) {
-            $items = KnowledgeController::getCategory($category_id);
-        } else {
-            $items = Knowledge::all();
-        }
+        $items = Knowledge::Category($category_id)
+            ->simplePaginate(6);
 
         $data = [
             'knowledges' => $items,
+            'category_id' => $category_id,
         ];
 
         return view('fronts.knowledge_list', $data);
@@ -76,16 +74,16 @@ class KnowledgeController extends Controller
 
         return view('fronts.knowledge_info', $data);
     }
-    /**
-     * getCategory
-     * カテゴリーIDごとに絞り込む関数
-     *
-     * @param [type] $cateId
-     * @return void
-     */
-    public function getCategory($cateId)
-    {
-        $knowledges = knowledge::category($cateId)->get();
-        return $knowledges;
-    }
+    // /**
+    //  * getCategory
+    //  * カテゴリーIDごとに絞り込む関数
+    //  *
+    //  * @param [type] $cateId
+    //  * @return void
+    //  */
+    // public function getCategory($cateId)
+    // {
+    //     $knowledges = knowledge::category($cateId)->get();
+    //     return $knowledges;
+    // }
 }
