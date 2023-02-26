@@ -12,6 +12,7 @@
 }
 
 .calendar__box {
+
     padding: 50px 0 50px 0;
 }
 
@@ -24,6 +25,7 @@
     border-radius: 48% 52% 59% 41% / 49% 63% 37% 51%;
     width: 100%;
     height: fit-content;
+    padding: 20px 20px 70px 20px;
     margin: 0 auto;
     flex-direction: column;
 }
@@ -36,6 +38,7 @@
     .calendar__box {
         display: flex;
         justify-content: center;
+
     }
 
     .calendar__box--text {
@@ -45,11 +48,6 @@
     .calendar__box--text {
         max-width: 500px;
         border-radius: 31% 69% 57% 43% / 49% 52% 48% 51%;
-        /* display: grid;
-        gap: 3%;
-        grid-template-columns: 1fr 1.5fr; */
-        /* justify-content: center; */
-        padding: 20px 20px;
         position: static;
         margin: 0 auto;
     }
