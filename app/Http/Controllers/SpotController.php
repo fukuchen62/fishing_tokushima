@@ -32,13 +32,24 @@ class SpotController extends Controller
         }
 
         if ($city_id != null) {
-            $items = SpotController::getCity($city_id);
+            $spots = SpotController::getCity($city_id);
         } else {
-            $items = Spot::all();
+            $spots = Spot::all();
+        }
+
+        // グーグルマップに使用する緯度・経度・名前を
+        // foreachで連想配列に格納する
+        foreach ($spots as $value) {
+            $spotList[] = [
+                'lat' => $value->spot_latitude,
+                'lng' => $value->spot_longitude,
+                'text' => $value->name,
+            ];
         }
 
         $data = [
-            'spots' => $items,
+            'spots' => $spots,
+            'items' => $spotList,
         ];
 
         return view('fronts.spots_list', $data);

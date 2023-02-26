@@ -16,7 +16,7 @@
 @endsection
 
 @section('key_visual')
-<img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
+    <img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
 @endsection
 
 {{-- メイン --}}
@@ -26,6 +26,7 @@
     <div class="container shallow expand">
         <div class="column">
             <div class="spotinfo__images p__lr">
+
                 <!-- メイン画像 -->
                 <div class="spotinfo__img main-img js-main-img">
                     @if ($spots->img1 != '')
@@ -33,6 +34,7 @@
                             alt="{{ $spots->img1 }}">
                     @endif
                 </div>
+
                 <!-- サムネイル画像 -->
                 <ul class="sub-img js-sub-img">
                     <!-- 選択されている画像の枠線を変更 -->
@@ -81,15 +83,17 @@
                     </a>
                 </div>
             @endif
-
         </div>
+
         <div class="column">
+
             <!-- スポット概要 -->
             <div class="spotinfo__discription p__lr p__b">
                 <div class="spotinfo__dis--textbox">
                     <p class="spotinfo__dis--text">{{ $spots->overview }}</p>
                 </div>
             </div>
+
             <!-- 詳細情報table -->
             <section class="spotinfo__table p__lr">
                 <h3 class="table__title spotinfo__table--title">詳細情報</h3>
@@ -132,7 +136,9 @@
             </section>
         </div>
     </div>
+
     <div class="firstsection__bottom expand"></div>
+
     <!-- 狙える魚 -->
     <div class="sea expand">
         <section class="spotinfo__fish p__lr">
@@ -154,18 +160,26 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-            <iframe class="googlemap" src="{{ $spots->iframe_url }}" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            @php
+                // strtr関数を使用して'|'を','に置換する
+                $str = $spots->iframe_url;
+                $replace = strtr($str, '|', ',');
+            @endphp
+            <iframe class="googlemap" src="{{ $replace }}"></iframe>
         </section>
     </div>
+
+
     <!-- セクションを区切る波 -->
     <div class="secondsection__bottom expand"></div>
+
     <!-- 貝殻イラスト -->
     <div class="spotinfo__shell">
         <img class="shell" src="{{ asset('assets/images/shell-1.png') }}" alt="shell-1.png">
         <img class="shell" src="{{ asset('assets/images/shell-2.png') }}" alt="shell-2.png">
         <img class="shell" src="{{ asset('assets/images/shell-3.png') }}" alt="shell-3.png">
     </div>
+
     <!-- 近くのスポットcard表示3つ -->
     <section class="p__lr">
         <h3 class="section__box--title spotinfo__sectiontitle">近くのスポット</h3>
@@ -202,6 +216,8 @@
         <a class="btn" href="{{ route('spotslist') }}">スポット一覧</a>
     </section>
 
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJpkrA0wadpGsq26hNJcnFOoZiKpeOTfM&callback=initMap"></script>
 @endsection
 
 {{-- 該当ページ専用JS --}}

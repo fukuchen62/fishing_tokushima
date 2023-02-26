@@ -1,105 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-</head>
-
-<body>
-
-    <ul>
-        <li><a href="{{ route('knowledgelist') }}">入門知識一覧</a></li>
-        <li><a href="{{ route('spotslist') }}">釣り場一覧</a></li>
-        <li><a href="{{ route('shopslist') }}">釣具屋一覧</a></li>
-    </ul>
-
-    <h1>釣り場一覧</h1>
-
-    <a href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
-    <a href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
-
-
-    @if ($spots != null)
-        <table border="1">
-            <tr>
-                <th>ID&nbsp;</th>
-                <th>釣りスポット名&nbsp;</th>
-                <th>概要&nbsp;</th>
-                <th>地域ID&nbsp;</th>
-                <th>郵便番号&nbsp;</th>
-                <th>住所&nbsp;</th>
-                <th>iframe&nbsp;</th>
-                <th>経度&nbsp;</th>
-                <th>緯度&nbsp;</th>
-                <th>トイレ&nbsp;</th>
-                <th>トイレ経度&nbsp;</th>
-                <th>トイレ緯度&nbsp;</th>
-                <th>画像1&nbsp;</th>
-                <th>画像2&nbsp;</th>
-                <th>画像3&nbsp;</th>
-                <th>画像4&nbsp;</th>
-                <th>画像5&nbsp;</th>
-                <th>魚ID&nbsp;</th>
-                <th>金額&nbsp;</th>
-                <th>BBQ&nbsp;</th>
-                <th>ショップID&nbsp;</th>
-                <th>体験プランID&nbsp;</th>
-                <th>避難場所ID&nbsp;</th>
-                <th>駐車場ID&nbsp;</th>
-                <th>病院ID&nbsp;</th>
-                <th>スーパーマーケットID&nbsp;</th>
-                <th>飲食店ID&nbsp;</th>
-                <th>その他ID&nbsp;</th>
-                <th>表示フラグ&nbsp;</th>
-                <th>投稿日時&nbsp;</th>
-                <th>編集日時&nbsp;</th>
-            </tr>
-            @foreach ($spots as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->overview }}</td>
-                    <td>{{ $item->city_id }}</td>
-                    <td>{{ $item->postal_code }}</td>
-                    <td>{{ $item->spot_address }}</td>
-                    <td>{{ $item->iframe_url }}</td>
-                    <td>{{ $item->spot_longitude }}</td>
-                    <td>{{ $item->spot_latitude }}</td>
-                    <td>{{ $item->toilet }}</td>
-                    <td>{{ $item->toilet_longitude }}</td>
-                    <td>{{ $item->toilet_latitude }}</td>
-                    <td>{{ $item->img1 }}</td>
-                    <td>{{ $item->img2 }}</td>
-                    <td>{{ $item->img3 }}</td>
-                    <td>{{ $item->img4 }}</td>
-                    <td>{{ $item->img5 }}</td>
-                    <td>{{ $item->fish_id }}</td>
-                    <td>{{ $item->mony }}</td>
-                    <td>{{ $item->bbq }}</td>
-                    <td>{{ $item->shop_id }}</td>
-                    <td>{{ $item->plan_id }}</td>
-                    <td>{{ $item->evacuation_id }}</td>
-                    <td>{{ $item->parking_id }}</td>
-                    <td>{{ $item->hospital_id }}</td>
-                    <td>{{ $item->supermarket_id }}</td>
-                    <td>{{ $item->restaurant_id }}</td>
-                    <td>{{ $item->other_id }}</td>
-                    <td>{{ $item->is_show }}</td>
-                    <td>{{ $item->created_at }}</td>
-                    <td>{{ $item->updated_at }}</td>
-                    <td><a href="{{ route('spotsinfo', ['id' => $item->id]) }}">詳細</a></td>
-                </tr>
-            @endforeach
-        </table>
-    @endif
-
-</body>
-
-</html> --}}
-
 @extends('layouts.layout_front')
 
 @section('description', 'ページのデスクリプション')
@@ -117,71 +15,183 @@
 @section('content')
 
     <!-- 浅瀬背景 -->
-    <div class="shallow">
+    <div class="shallow expand ">
         <!-- 東部・南部ボタン -->
-        <div>
+        <ul class="tabs">
+            <li class="">
+                <a class="tab_item" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
+            </li>
+            <li class="">
+                <a class="tab_item" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
+            </li>
+        </ul>
+        <p class="spot__discription">アイコンをクリックするとスポットに遷移します。</p>
+    </div>
 
+    @php
+        // 確認用
+        // var_dump($items);
+        // var_dump($shops);
+    @endphp
 
-            <button class="spot__btn"><a href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a></button>
-            <button class="spot__btn"><a href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a></button>
-            <p class="spot__discription">ポイントをタップするとエリアへ遷移されます。</p>
-        </div>
-        <!-- スポットマップ -->
-        <div class="spot__map p__lr">
-            <img class="spot__map--east" src="../assets/images/tokushima_east.svg" alt="">
-            <a class="spot__map--point" href=""></a>
-            <a class="spot__map--point" href=""></a>
-            <a class="spot__map--point" href=""></a>
-            <div class="spot__map--south">
-                <a class="spot__map--point" href=""></a>
-                <a class="spot__map--point" href=""></a>
-                <a class="spot__map--point" href=""></a>
+    <!-- Googleマップ -->
+    <div class="shallow expand ">
+        <div class="spot__iframe">
+            <div class="section__wrap--infomation">
+                <div class="map">
+                    <script type="text/javascript">
+                        // ホバー時のメッセージ
+                        var hoverinfos = [];
+
+                        function initMap() {
+
+                            const color = 'black'; // ラベルの色
+                            const font_family = 'Kosugi Maru' //ラベルのフォント
+                            const font_size = '14px' //ラベルのサイズ
+                            // 徳島全域が入るように
+                            var latlng = new google.maps.LatLng(33.9220334, 134.2203203);
+                            var opts = {
+                                zoom: 9.8,
+                                center: latlng,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+                            // マップ生成
+                            var map = new google.maps.Map(document.getElementById("map"), opts);
+
+                            // マーカ配列
+                            // フォント変えられる
+                            let markers = [];
+
+                            // PHPの配列をJavaScriptの配列に変換
+                            @php
+                                for ($i = 0; $i < count($items); $i++) {
+                                    echo "markers[$i]={lat:";
+                                    echo $items[$i]['lat'];
+                                    echo ', lng:';
+                                    echo $items[$i]['lng'];
+                                    echo ', url:';
+                                    echo "\"#mk" . ($i + 1) . "\"";
+                                    echo ', text:"';
+                                    echo $items[$i]['text'];
+                                    echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
+                                    echo "\n";
+                                }
+                                
+                            @endphp
+
+                            // マーカー生成
+                            for (var i = 0; i < markers.length; i++) {
+                                createMarker(
+                                    markers[i].text,
+                                    markers[i].lat,
+                                    markers[i].lng,
+                                    markers[i].url,
+                                    map,
+                                );
+                            }
+
+                            // マーカー表示
+                            marker.setMap(map);
+                        }
+
+                        // マーカーを設定
+                        function createMarker(name, lat, lng, url, map) {
+
+                            var latlng = new google.maps.LatLng(lat, lng);
+                            var pixelOffset = new google.maps.Size(0, -40);
+
+                            var marker = new google.maps.Marker({
+                                position: latlng,
+                                // icon: {
+                                //     url: 'fish.png',
+                                //     scaledSize: new google.maps.Size(42, 55),
+                                // },
+                                map: map
+                            });
+
+                            //クリックしたら指定したurlに遷移するイベント
+                            marker.addListener('click', (function(url) {
+                                return function() {
+                                    location.href = url;
+                                };
+                            })(url));
+
+                            // マーカーにマウスを乗せたときのイベント
+                            marker.addListener('mouseover', function() {
+                                // infoの位置
+                                hoverinfo = new google.maps.InfoWindow({
+                                    map: map,
+                                    content: name,
+                                    noSuppress: true,
+                                    pixelOffset: pixelOffset
+                                });
+
+                                hoverinfo.setPosition(
+                                    latlng
+                                );
+
+                                // マーカーからマウスを降ろしたときのイベント
+                                marker.addListener('mouseout', function() {
+                                    if (hoverinfo) {
+                                        hoverinfo.close();
+                                    }
+                                });
+                            });
+
+                        }
+                    </script>
+                    <!-- 下記よりマップ -->
+                    <!-- グーグルマップAPI使用 -->
+                    <section class="map-box content">
+                        <div id="map" class="googlemap" style="width:100%; height:600px"></div>
+                    </section>
+
+                </div>
             </div>
         </div>
-        <!-- 貝殻イラスト -->
-        <div class="spot__shell">
-            <img class="shell" src="" alt="貝殻イラスト">
-            <img class="shell" src="" alt="貝殻イラスト">
-            <img class="shell" src="" alt="貝殻イラスト">
-        </div>
     </div>
-    <!-- スポットcard -->
-    <ul class="card__area">
-        @foreach ($spots as $item)
-            @component('components.front_spots_card')
-                @slot('spot_link')
-                    {{ route('spotsinfo', ['id' => $item->id]) }}
-                @endslot
-                @slot('spot_src')
-                {{ asset('storage/images') }}/{{ $item->img1 }}
-                @endslot
 
-                @slot('spot_alt')
-                    {{ $item->title }}
-                @endslot
+    <!-- セクションを区切る波 -->
+    <div class="firstsection__bottom expand"></div>
 
-                @slot('spot_title')
-                    {{ $item->title }}
-                @endslot
+    <!-- スポット一覧 -->
+    <section class="expand">
+        <h3 class="section__box--title">検索結果</h3>
+        <ul class="card__area">
+            @foreach ($spots as $item)
+                @component('components.front_spots_card')
+                    @slot('spot_link')
+                        {{ route('spotsinfo', ['id' => $item->id]) }}
+                    @endslot
+                    @slot('spot_src')
+                        {{ asset('storage/images') }}/{{ $item->img1 }}
+                    @endslot
 
-                @slot('spot_text')
-                    {{ $item->overview }}
-                @endslot
-            @endcomponent
-        @endforeach
-    </ul>
+                    @slot('spot_alt')
+                        {{ $item->title }}
+                    @endslot
+
+                    @slot('spot_title')
+                        {{ $item->title }}
+                    @endslot
+
+                    @slot('spot_text')
+                        {{ $item->overview }}
+                    @endslot
+                @endcomponent
+            @endforeach
+        </ul>
+    </section>
 
     <!-- 貝殻イラスト -->
-    <div class="spot__shell">
-        <img class="shell" src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝殻イラスト">
-        <img class="shell" src="" alt="貝殻イラスト">
-        <img class="shell" src="" alt="貝殻イラスト">
+    <div class="spot__shell p__lr">
+        <img class="shell" src="{{ asset('assets/images/shell-1.png') }}" alt="貝殻イラスト">
+        <img class="shell" src="{{ asset('assets/images/shell-2.png') }}" alt="貝殻イラスト">
+        <img class="shell" src="{{ asset('assets/images/shell-3.png') }}" alt="貝殻イラスト">
     </div>
-    <div class="firstsection__bottom"></div>
 
-    <div id="page_top" class="flex">
-        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針" class="topbutton__hook"></a>
-    </div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJpkrA0wadpGsq26hNJcnFOoZiKpeOTfM&callback=initMap"></script>
 @endsection
 
 {{-- 該当ページ専用JS --}}

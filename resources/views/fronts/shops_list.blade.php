@@ -8,97 +8,213 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-<link rel="stylesheet" href="{{ asset('assets/css/shop.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/shop.css') }}">
 @endsection
 
 {{-- メイン --}}
 @section('content')
 
-    <section>
+    <div class="shallow expand">
+        <!-- 地域切替タブ -->
+        <ul class="tabs p__lr section__btn flex">
+            <li class=""><a class="tab_item btn section__btn--margin"
+                    href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></li>
+            <li class=""><a class="tab_item btn section__btn--margin"
+                    href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></li>
+            <li class=""><a class="tab_item btn section__btn--margin"
+                    href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></li>
+            <li class=""><a class="tab_item btn section__btn--margin"
+                    href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></li>
+        </ul>
 
-            <input id="east" type="radio" name="tab__item" checked>
-            <label class="tab__item" for="east"><a href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></label>
-            <input id="south" type="radio" name="tab__item">
-            <label class="tab__item" for="south"><a href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></label>
-            <input id="west" type="radio" name="tab__item">
-            <label class="tab__item" for="west"><a href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></label>
-            <input id="north" type="radio" name="tab__item">
-            <label class="tab__item" for="north"><a href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></label>
-            <button>
+        @php
+            // 確認用
+            // var_dump($items);
+            // var_dump($shops);
+        @endphp
 
-            <h3 class="section__box--title">検索結果</h3>
+        <!-- googlemap -->
+        <div class="section__wrap--infomation">
+            <div class="map">
+                <script type="text/javascript">
+                    // ホバー時のメッセージ
+                    var hoverinfos = [];
 
-            @foreach ($shops as $item)
-                @component('components.front_shops_card')
+                    function initMap() {
 
-                    @slot('shop_link')
-                        {{ route('shopslist', ['id' => $item->id]) }}
-                    @endslot
+                        const color = 'black'; // ラベルの色
+                        const font_family = 'Kosugi Maru' //ラベルのフォント
+                        const font_size = '14px' //ラベルのサイズ
+                        // 徳島全域が入るように
+                        var latlng = new google.maps.LatLng(33.9220334, 134.2203203);
+                        var opts = {
+                            zoom: 10,
+                            center: latlng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        // マップ生成
+                        var map = new google.maps.Map(document.getElementById("map"), opts);
 
-                    @slot('shop_img')
-                    {{ $item->img }}
-                    @endslot
+                        // マーカ配列
+                        // フォント変えられる
+                        let markers = [];
 
-                    @slot('shop_name')
-                        {{ $item->name }}
-                    @endslot
+                        // PHPの配列をJavaScriptの配列に変換
+                        @php
+                            for ($i = 0; $i < count($items); $i++) {
+                                echo "markers[$i]={lat:";
+                                echo $items[$i]['lat'];
+                                echo ', lng:';
+                                echo $items[$i]['lng'];
+                                echo ', url:';
+                                echo "\"#mk" . ($i + 1) . "\"";
+                                echo ', text:"';
+                                echo $items[$i]['text'];
+                                echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
+                                echo "\n";
+                            }
+                            
+                        @endphp
 
-                    @slot('shop_address')
-                        {{ $item->address }}
-                    @endslot
+                        // var marker = new google.maps.Marker();
+                        // for (let i = 0; i < items.length; i++) {
+                        //     marker = new google.maps.Marker({
+                        //         position: items[i],
+                        //         label: items[i],
+                        //         map: map
+                        //     });
 
-                    @slot('shop_service_day')
-                        {{ $item->service_day }}
-                    @endslot
+                        // マーカー生成
+                        for (var i = 0; i < markers.length; i++) {
+                            createMarker(
+                                markers[i].text,
+                                markers[i].lat,
+                                markers[i].lng,
+                                markers[i].url,
+                                map,
+                            );
+                        }
 
-                    @slot('shop_tel')
-                        {{ $item->tel }}
-                    @endslot
+                        // マーカー表示
+                        marker.setMap(map);
+                    }
 
-                    @slot('shop_email')
-                        {{ $item->email }}
-                    @endslot
+                    // マーカーを設定
+                    function createMarker(name, lat, lng, url, map) {
 
-                    @slot('shop_service')
-                        {{ $item->service }}
-                    @endslot
+                        var latlng = new google.maps.LatLng(lat, lng);
+                        var pixelOffset = new google.maps.Size(0, -40);
 
-                    @slot('shop_pr')
-                        {{ $item->pr }}
-                    @endslot
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            // icon: {
+                            //     url: 'fish.png',
+                            //     scaledSize: new google.maps.Size(42, 55),
+                            // },
+                            map: map
+                        });
 
-                @endcomponent
-            @endforeach
-    </section>
+                        //クリックしたら指定したurlに遷移するイベント
+                        marker.addListener('click', (function(url) {
+                            return function() {
+                                location.href = url;
+                            };
+                        })(url));
 
-    <div class="section__image--information section__content--information">お店の周辺情報</div>
+                        // マーカーにマウスを乗せたときのイベント
+                        marker.addListener('mouseover', function() {
+                            // infoの位置
+                            hoverinfo = new google.maps.InfoWindow({
+                                map: map,
+                                content: name,
+                                noSuppress: true,
+                                pixelOffset: pixelOffset
+                            });
 
-            <!-- Googleマップで周辺情報を表す -->
-            <div class="section__wrap--infomation">
-                <iframe class="section__map--information"
-                    src="@foreach ($shops as $item)
-                    {{ $item->iframe }}
-                    @endforeach"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+                            hoverinfo.setPosition(
+                                latlng
+                            );
+
+                            // マーカーからマウスを降ろしたときのイベント
+                            marker.addListener('mouseout', function() {
+                                if (hoverinfo) {
+                                    hoverinfo.close();
+                                }
+                            });
+                        });
+
+                    }
+                </script>
+                <!-- 下記よりマップ -->
+                <!-- グーグルマップAPI使用 -->
+                <section class="map-box content">
+                    {{-- <h2 class="ta-a h2 mb30 map-sub">ＭＡＰ表示</h2> --}}
+                    <div id="map" style="width:100%; height:600px"></div>
+                </section>
+
             </div>
-        </section>
-
-        <!-- セクションを区切る波 -->
-        <div class="firstsection__bottom expand"></div>
-
-        {{-- <div id="page_top" class="flex">
-            <!-- 余裕があれば魚が釣られるアニメーションを追加 -->
-            <!-- <img src=".//assets/images/fish_yellow.png" alt="黄色魚" class="topbutton__fish"> -->
-            <a href="#"><img src="../assets/images/fish hook.png" alt="釣り針" class="topbutton__hook"></a>
-        </div> --}}
-
-
-        <div class="footer__top--img expand" style="background-color: #fff;">
-            <img src="../assets/images/footer_top_img.png" alt="貝と浮き輪" class="footer__image--adjust">
         </div>
 
+        <h3 class="section__content--titlereserch">検索結果</h3>
+        <!-- ショップ一覧 -->
+        @foreach ($shops as $item)
+            @component('components.front_shops_card')
+                @slot('shop_img')
+                    {{ $item->img }}
+                @endslot
+
+                @slot('shop_name')
+                    {{ $item->name }}
+                @endslot
+
+                @slot('shop_address')
+                    {{ $item->address }}
+                @endslot
+
+                @slot('shop_service_day')
+                    @php
+                        echo $item->service_day;
+                    @endphp
+                @endslot
+
+                @slot('shop_tel')
+                    {{ $item->tel }}
+                @endslot
+
+                @slot('shop_email')
+                    {{ $item->email }}
+                @endslot
+
+                @slot('shop_url')
+                    {{ $item->url }}
+                @endslot
+
+                @slot('shop_service')
+                    @php
+                        echo $item->service;
+                    @endphp
+                @endslot
+
+                @slot('shop_pr')
+                    @php
+                        echo $item->pr;
+                    @endphp
+                @endslot
+            @endcomponent
+        @endforeach
+    </div>
+
+    <!-- セクションを区切る波 -->
+    <div class="firstsection__bottom expand"></div>
+
+    <!-- 貝殻と浮き輪のイラスト -->
+    <div class="footer__top--img expand" style="background-color: #fff;">
+        <img src="{{ asset('assets/images/footer_top_img.png') }}" alt="貝と浮き輪" class="footer__image--adjust">
+    </div>
+
+    <!-- Google Map Api -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJpkrA0wadpGsq26hNJcnFOoZiKpeOTfM&callback=initMap"></script>
 @endsection
 
 {{-- 該当ページ専用JS --}}

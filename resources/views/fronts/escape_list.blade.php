@@ -49,6 +49,9 @@
 
                 <div class="map">
                     <script type="text/javascript">
+                        // ホバー時のメッセージ
+                        var hoverinfos = [];
+
                         function initMap() {
 
                             const color = 'black'; // ラベルの色
@@ -57,54 +60,92 @@
                             // 徳島全域が入るように
                             var latlng = new google.maps.LatLng(33.9220334, 134.2203203);
                             var opts = {
-                                zoom: 9.2,
-                                width: '100%',
+                                zoom: 9.8,
                                 center: latlng,
                                 mapTypeId: google.maps.MapTypeId.ROADMAP
                             };
                             // マップ生成
                             var map = new google.maps.Map(document.getElementById("map"), opts);
 
-                            // マーカー生成
+                            // マーカ配列
                             // フォント変えられる
-                            let items = [];
+                            let markers = [];
 
-
+                            // PHPの配列をJavaScriptの配列に変換
                             @php
                                 for ($i = 0; $i < count($items); $i++) {
-                                    echo "items[${i}]={lat:";
+                                    echo "markers[$i]={lat:";
                                     echo $items[$i]['lat'];
                                     echo ', lng:';
                                     echo $items[$i]['lng'];
+                                    echo ', url:';
+                                    echo "\"#mk" . ($i + 1) . "\"";
                                     echo ', text:"';
                                     echo $items[$i]['text'];
-                                    echo "\", color: \"#AD7000\", fontFamilt: 'Kosugi Maru', fontSize: \"14px\", fontWeight: \"bold\",};";
+                                    echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                     echo "\n";
                                 }
                             @endphp
 
-                            // 例
-                            // spots[0] = {
-                            //     lat: 34.06505,
-                            //     lng: 134.56786,
-                            //     text: "みなと公園",
-                            //     color: "black",
-                            //     fontFamilt: 'Kosugi Maru',
-                            //     fontSize: "14px",
-                            //     fontWeight: "bold",
-                            // };
-
-                            var marker = new google.maps.Marker();
-                            for (let i = 0; i < items.length; i++) {
-                                marker = new google.maps.Marker({
-                                    position: items[i],
-                                    label: items[i],
-                                    map: map
-                                });
+                            // マーカー生成
+                            for (var i = 0; i < markers.length; i++) {
+                                createMarker(
+                                    markers[i].text,
+                                    markers[i].lat,
+                                    markers[i].lng,
+                                    markers[i].url,
+                                    map,
+                                );
                             }
 
                             // マーカー表示
                             marker.setMap(map);
+                        }
+
+                        // マーカーを設定
+                        function createMarker(name, lat, lng, url, map) {
+
+                            var latlng = new google.maps.LatLng(lat, lng);
+                            var pixelOffset = new google.maps.Size(0, -40);
+
+                            var marker = new google.maps.Marker({
+                                position: latlng,
+                                // icon: {
+                                //     url: 'fish.png',
+                                //     scaledSize: new google.maps.Size(42, 55),
+                                // },
+                                map: map
+                            });
+
+                            //クリックしたら指定したurlに遷移するイベント
+                            marker.addListener('click', (function(url) {
+                                return function() {
+                                    location.href = url;
+                                };
+                            })(url));
+
+                            // マーカーにマウスを乗せたときのイベント
+                            marker.addListener('mouseover', function() {
+                                // infoの位置
+                                hoverinfo = new google.maps.InfoWindow({
+                                    map: map,
+                                    content: name,
+                                    noSuppress: true,
+                                    pixelOffset: pixelOffset
+                                });
+
+                                hoverinfo.setPosition(
+                                    latlng
+                                );
+
+                                // マーカーからマウスを降ろしたときのイベント
+                                marker.addListener('mouseout', function() {
+                                    if (hoverinfo) {
+                                        hoverinfo.close();
+                                    }
+                                });
+                            });
+
                         }
                     </script>
                     <!-- 下記よりマップ -->
@@ -120,62 +161,6 @@
         <!-- セクションを区切る波 -->
         <div class="firstsection__bottom expand"></div>
     </div>
-
-
-    {{-- <section class="section">
-        <h1>避難場所一覧</h1>
-        <table>
-            <tr>
-                <th>避難場所一覧</th>
-            </tr>
-
-            <table border="1">
-                <tr>
-
-                    <th>市町村ID</th>
-                    <th>地域</th>
-                    <th>避難場所名</th>
-                    <th>住所</th>
-                    <th>経度</th>
-                    <th>緯度</th>
-
-                </tr>
-                @foreach ($evacuations as $item)
-                    <tr>
-
-                        <td>{{ $item->city_id }}</td>
-                        <td>
-                            @if ($item->city != null)
-                                {{ $item->city->getData() }}
-                            @endif
-                        </td>
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->address }}</td>
-                        <td>{{ $item->longitude }}</td>
-                        <td>{{ $item->latitude }}</td>
-
-                    </tr>
-                @endforeach
-            </table>
-    </section> --}}
-
-    @php
-        // マップ表示するための情報保存用
-        // latitude:緯度, longitude:経度, name:避難場所名
-        // $evas = [];
-        // カウント
-        // $eva_count = count($evacuations);
-        // // print_r($eva_count);
-        
-        // foreach ($evacuations as $item) {
-        //     $evas[] = [$item->latitude, $item->longitude, $item->name];
-        // }
-        // print_r($evas);
-        
-        // print_r($items);
-        
-        // var_dump($items);
-    @endphp
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJpkrA0wadpGsq26hNJcnFOoZiKpeOTfM&callback=initMap"></script>

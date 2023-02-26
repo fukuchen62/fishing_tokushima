@@ -23,13 +23,24 @@ class ShopController extends Controller
         $city_id = $request->city_id;
 
         if ($city_id != null) {
-            $items = ShopController::getRecentCity($city_id);
+            $shops = ShopController::getRecentCity($city_id);
         } else {
-            $items = Shop::all();
+            $shops = Shop::all();
+        }
+
+        // グーグルマップに使用する緯度・経度・名前を
+        // foreachで連想配列に格納する
+        foreach ($shops as $value) {
+            $shopList[] = [
+                'lat' => $value->latitude,
+                'lng' => $value->longitude,
+                'text' => $value->name,
+            ];
         }
 
         $data = [
-            'shops' => $items,
+            'shops' => $shops,
+            'items' => $shopList,
         ];
 
 
