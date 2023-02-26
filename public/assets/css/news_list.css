@@ -5,17 +5,18 @@ body {
 }
 
 /* サブビジュアル */
-.sub-keyvisual {
-    background-image: url(../images/other_keyvisual.jpg);
-    max-height: 400px;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    height: 400px;
+.keyvisual {
+    background-image: url(../images/other_keyvisual_sp.jpg);
+    max-width: 100vw;
+    max-height: 900px;
+    /* height: 300px; */
+    background-color: #888;
 }
 
 @media screen and (min-width: 600px) {
-    .sub-keyvisual {
+    .keyvisual {
         background-image: url(../images/other_keyvisual.jpg);
+        height: 900px;
     }
 
 }
