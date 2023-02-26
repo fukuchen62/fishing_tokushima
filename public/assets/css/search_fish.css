@@ -148,7 +148,8 @@ tr {
 .results__box--info {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-direction: column;
     gap: 5%;
 }
 
@@ -161,9 +162,19 @@ tr {
     .results__box--info {
         width: 850px;
         margin: 0 auto;
+        flex-direction: row;
         gap: 14%;
     }
 
+    .results__box--info li:nth-child(4) {
+        width: auto;
+        flex-grow: 1;
+    }
+
+    .results__box--info li:nth-child(5) {
+        width: auto;
+        flex-grow: 1;
+    }
 
     .tokushimafish__box--group img {
         width: 200px;

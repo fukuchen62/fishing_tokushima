@@ -1,12 +1,30 @@
 @charset "utf-8";
 
 
+
 .max-width-box {
     max-width: 559px;
 }
 
+/* サブビジュアル */
+.sub-keyvisual {
+    background-image: url(../images/fish_keyvisual.jpg);
+    max-height: 400px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    .sub-keyvisual {
+        background-image: url(../images/fish_keyvisual.jpg);
+    }
+
+}
+
+
 .fishinfo__section {
-    padding-top: 100px;
+    padding-top: 50px;
     background-color: #EAF2FA;
 }
 
@@ -14,12 +32,6 @@
     width: 100%;
 }
 
-.pagetitle::before {
-    content: url(../images/svg/icon_fish.svg);
-    position: absolute;
-    top: 45px;
-    left: 300px;
-}
 
 /* 魚の写真・概要・丸い囲い */
 
@@ -29,7 +41,7 @@
     border: 10px dashed #30ADD1;
     background-color: #fff;
     border-radius: 50%;
-    margin: 50px auto;
+    /* margin: 50px auto; */
     align-items: flex-start;
 }
 
@@ -56,6 +68,7 @@
     .fishinfo__box--description {
         width: 400px;
         height: 400px;
+        margin: 0 auto;
     }
 
     .fishinfo__box--title {
@@ -292,7 +305,7 @@
     display: grid;
     gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    margin: 0 auto;
+    justify-content: center;
 }
 
 /* pading:50pxだとレイアウトが崩れるのでpdding:0px */
