@@ -1,4 +1,3 @@
-<!-- カードの構造 -->
 <li class="card__p">
     <a class="card card__skin" href="{{ $spot_link }}">
         <img class="card__img" src="{{ $spot_src }}" alt="{{ $spot_alt }}">
@@ -8,4 +7,3 @@
         </div>
     </a>
 </li>
-<!-- /カードの構造 -->
