@@ -12,7 +12,8 @@
 @endsection
 
 @section('key_visual')
-    <img class="sub-keyvisual" src="assets/images/knowledge_keyvisual.jpg" alt="knowledge_keyvisual.jpg">
+    <img class="sub-keyvisual" src="{{ asset('assets/images/knowledge_keyvisual.jpg') }}"
+    alt="knowledge_keyvisual.jpg">
 @endsection
 
 {{-- メイン --}}
