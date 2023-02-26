@@ -36,23 +36,28 @@ class MypageController extends Controller
      */
     public function myPageShow(Request $request)
     {
-        $msg2 = 'cookieはありません';
-        $msg3 = 'cookieはありません';
+        // デフォルト
+        $category = "spot";
 
+        if (isset($request->category)) {
+            $category = $request->category;
+        }
 
         $spot_list = null;
 
-        if ($request->hasCookie('spot_id')) {
-            $msg2 = 'cookie:' . $request->cookie('spot_id');
+        if ($category == "spot") {
+            if ($request->hasCookie('spot_id')) {
+                // $msg2 = 'cookie:' . $request->cookie('spot_id');
 
-            $spot_id = explode(',', $request->cookie('spot_id'));
+                $spot_id = explode(',', $request->cookie('spot_id'));
 
-            foreach ($spot_id as $id) {
-                if ($id != 0) {
-                    // spot情報を読み込む
-                    $spotinfo = Spot::find($id);
-                    // spot情報を配列に加える
-                    $spot_list[] = $spotinfo;
+                foreach ($spot_id as $id) {
+                    if ($id != 0) {
+                        // spot情報を読み込む
+                        $spotinfo = Spot::find($id);
+                        // spot情報を配列に加える
+                        $spot_list[] = $spotinfo;
+                    }
                 }
             }
         }
@@ -60,29 +65,29 @@ class MypageController extends Controller
 
         $plan_list = null;
 
-        if ($request->hasCookie('plan_id')) {
-            $msg3 = 'cookie:' . $request->cookie('plan_id');
+        if ($category == "plan") {
+            if ($request->hasCookie('plan_id')) {
+                // $msg3 = 'cookie:' . $request->cookie('plan_id');
 
-            $plan_id = explode(',', $request->cookie('plan_id'));
+                $plan_id = explode(',', $request->cookie('plan_id'));
 
-            foreach ($plan_id as $id) {
-                if ($id != 0) {
-                    // spot情報を読み込む
-                    $planinfo = Plan::find($id);
-                    // spot情報を配列に加える
-                    $plan_list[] = $planinfo;
+                foreach ($plan_id as $id) {
+                    if ($id != 0) {
+                        // spot情報を読み込む
+                        $planinfo = Plan::find($id);
+                        // spot情報を配列に加える
+                        $plan_list[] = $planinfo;
+                    }
                 }
             }
         }
 
 
         $data = [
-            'msg2' => $msg2,
-            'msg3' => $msg3,
-
             'spots' => $spot_list,
             'plans' => $plan_list,
 
+            'category' => $category,
         ];
 
         return view('fronts.mypage', $data);

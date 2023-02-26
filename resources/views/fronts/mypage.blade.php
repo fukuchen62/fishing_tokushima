@@ -1,83 +1,143 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>マイページ</h1>
+@extends('layouts.layout_front')
 
-    {{-- <form action="{{ route('mypage')}}" method="post">
-        <table>
-            @csrf
+@section('description', 'ページのデスクリプション')
 
-            <tr>
-                <th>釣りスポット</th>
-                <td><input type="submit" name="spot_id" value="1" id=""></td>
-                <td><input type="submit" name="spot_id" value="2" id=""></td>
-            </tr>
+@section('keywords', 'キーワード1,キーワード2・・・')
 
-            <tr>
-                <th>おすすめプラン</th>
-                <td><input type="submit" name="plan_id" value="2" id=""></td>
-                <td><input type="submit" name="plan_id" value="3" id=""></td>
-            </tr>
+@section('title', 'マイページ')
 
-        </table>
-    </form> --}}
+{{-- 該当ページのCSS --}}
+@section('pageCss')
+    <link rel="stylesheet" href="{{ asset('assets/css/mypage.css') }}">
+@endsection
 
-    <p>{{ $msg2 }}</p>
-    <p>{{ $msg3 }}</p>
+@section('key_visual')
+    <img class="sub-keyvisual" src="{{ asset('assets/images/mypage_keyvisual.jpg') }}"
+    alt="mypage_keyvisual.jpg">
+@endsection
 
-{{-- @php
-    print_r($data);
-@endphp --}}
+{{-- メイン --}}
+@section('content')
 
-{{-- @php
-    $spots ="";
-@endphp --}}
+        <section class="firstsection expand">
 
-<h2>釣りスポット</h2>
+            <ul class="tabs p__lr">
+                <li class=""><a class="tab_item " href="{{ route('mypage', ['category' => "spot"]) }}">スポット</a></li>
+                <li class=""><a class="tab_item" href="{{ route('mypage', ['category' => "plan"]) }}">プラン</a></li>
+            </ul>
 
-@if ($spots != null)
-    {{-- {{ count($spots) }}; --}}
-    @foreach ($spots as $key => $spot)
-        <h3>{{ $key }}</h3>
-                <p>{{ $spot->id }}</p>
-                <p>{{ $spot->img1 }}</p>
-                <p>{{ $spot->name }}</p>
-                <p>{{ $spot->overview }}</p>
-            <a href="{{ route('spotsinfo', ['id' => $spots[$key]]) }}">リンク</a>
-    @endforeach
 
-@else
-<p>お気に入りがありません。</p>
-@endif
+            <div class="tab_content" id="all_content">
 
-{{-- @php
-    $plans ="";
-@endphp --}}
+                {{-- spotが選択された場合・デフォルト --}}
+                @if ($category == "spot")
+                @if ($spots != null)
+                <ul class="card__area flex">
+                    @foreach ($spots as $key => $spot)
 
-<h2>おすすめプラン</h2>
+                    @component('components.front_card')
+                    @slot('card_link')
+                        {{ route('spotsinfo', ['id' => $spot->id]) }}
+                    @endslot
 
-@if ($plans !=null)
-{{-- @if (Cookie::get('plan_id')!="") --}}
-    @foreach ($plans as $key => $plan)
-        <h3>{{ $key }}</h3>
-                <p>{{ $plan->id }}</p>
-                <p>{{ $plan->eye_catch }}</p>
-                <p>{{ $plan->title }}</p>
-                <p>{{ $plan->overview }}</p>
-            <a href="{{ route('plansinfo', ['id' => $plans[$key]]) }}">リンク</a>
-    @endforeach
+                    @slot('card_src')
+                    @if ($spot->img1 !="")
+                        {{ asset('storage/images') }}/{{ $spot->img1 }}
+                    @else
+                        https://placehold.jp/320x240.png
+                    @endif
+                    @endslot
 
-{{-- @endif --}}
-@else
-<p>お気に入りがありません。</p>
+                    @slot('card_alt')
+                        {{ $spot->img1 }}
+                    @endslot
 
-@endif
+                    @slot('card_title')
+                        {{ $spot->name }}
+                    @endslot
 
-</body>
-</html>
+                    @slot('card_text')
+                        @php
+                            $overview = mb_strimwidth( $spot->overview , 0, 150, "・・・");
+                        @endphp
+                            {{ $overview }}
+                    @endslot
+                    @endcomponent
+
+                    @endforeach
+                    </ul>
+
+                @else
+                <!-- 以下表示する物がない状態 -->
+                <div class="nonedisplay">
+                    <img src="{{ asset('assets/images/svg/mypage_fish.svg') }}" alt="sakana">
+                    <img src="{{ asset('assets/images/svg/mypage_heart.svg') }}" alt="heart">
+                </div>
+                    <p>まだお気に入りがありません</p>
+                    <p>お気に入りを探しに行きましょう！</p>
+                    <a class="btn" href="{{ route('spotslist') }}">釣りスポット</a>
+                @endif
+
+                {{-- planが選択された場合 --}}
+                @elseif ($category == "plan")
+
+                @if ($plans != null)
+                <ul class="card__area flex">
+                    @foreach ($plans as $key => $plan)
+
+                    @component('components.front_card')
+                    @slot('card_link')
+                        {{ route('plansinfo', ['id' => $plan->id]) }}
+                    @endslot
+
+                    @slot('card_src')
+                    @if ($plan->eye_catch !="")
+                        {{ asset('storage/images') }}/{{ $plan->eye_catch }}
+                    @else
+                        https://placehold.jp/320x240.png
+                    @endif
+                    @endslot
+
+                    @slot('card_alt')
+                        {{ $plan->eye_catch }}
+                    @endslot
+
+                    @slot('card_title')
+                        {{ $plan->title }}
+                    @endslot
+
+                    @slot('card_text')
+                        @php
+                            $overview = mb_strimwidth( $plan->overview , 0, 150, "・・・");
+                        @endphp
+                            {{ $overview }}
+                    @endslot
+                    @endcomponent
+
+                    @endforeach
+                    </ul>
+
+                @else
+                <!-- 以下表示する物がない状態 -->
+                <div class="nonedisplay">
+                    <img src="{{ asset('assets/images/svg/mypage_fish.svg') }}" alt="sakana">
+                    <img src="{{ asset('assets/images/svg/mypage_heart.svg') }}" alt="heart">
+                </div>
+                    <p>まだお気に入りがありません</p>
+                    <p>お気に入りを探しに行きましょう！</p>
+                    <a class="btn" href="{{ route('planslist') }}">体験プラン</a>
+                @endif
+
+                @endif
+            </div>
+        </section>
+        <div class="firstsection__bottom expand"></div>
+
+@endsection
+
+
+{{-- 該当ページ専用JS --}}
+@section('pageJs')
+    {{-- knowledge.jsでOK？ --}}
+    <script src="{{ asset('assets/js/knowledge.js') }}"></script>
+@endsection
