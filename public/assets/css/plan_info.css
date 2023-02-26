@@ -6,14 +6,33 @@
     padding-bottom: 50px;
 }
 
+/* サブビジュアル */
+.sub-keyvisual {
+    background-image: url(../images/plan_keyvisual_sp.jpg);
+    max-height: 400px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    .sub-keyvisual {
+        background-image: url(../images/plan_keyvisual.jpg);
+    }
+
+}
+
 /* 画像 */
 
 /* 貝（装飾） */
 .detail__img--shell {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     padding: 70px;
-    background-color: #EAF2FA;
+    background-color: #EAF2FA; */
+
+    /* 除ける */
+    display: none;
 }
 
 /* 概要 */

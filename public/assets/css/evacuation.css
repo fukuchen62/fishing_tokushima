@@ -1,8 +1,25 @@
 @charset "utf-8";
-/* ベースルール */
+
+/* 文字左寄せ */
 .evacuation__section p {
     text-align: left;
     margin-bottom: 20px;
+}
+
+/* サブビジュアル */
+.sub-keyvisual {
+    background-image: url(../images/other_keyvisual_sp.jpg);
+    max-height: 400px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    .sub-keyvisual {
+        background-image: url(../images/other_keyvisual.jpg);
+    }
+
 }
 
 /* 注意点赤文字 */
@@ -16,9 +33,6 @@
 .shallow {
     background-color: #EAF2FA;
 }
-
-
-/* レイアウトルール */
 
 /* 背景を付けるために、h1からh2までのmarginをなくし、セクションにpaddingをつける */
 .section__box--title {
