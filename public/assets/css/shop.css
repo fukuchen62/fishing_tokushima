@@ -3,11 +3,24 @@
     background-color:#EAF2FA;
 }
 
-.btn{
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+.hamburger{
+    box-shadow: none;
 }
 
-.btn:hover {
+/* 東西南北ボタン */
+.tab_item{
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    width: 130px;
+    height: 80px;
+    background-color: #FFEA20;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_item:hover {
     background-color: #30ADD1;
     color: #ffea20;
 }
@@ -15,18 +28,34 @@
 .section__btn {
     font-weight: bold;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     align-items: center;
     justify-content: space-around;
     margin: 50px auto;
 }
 
-.section__content--titlereserch {
+@media screen and (min-width:470px) {
+    .tab_item{
+        width: 160px;
+    }
+}
+
+@media screen and (min-width:560px) and (max-width:739px) {
+    .tab_item{
+        width: 110px;
+    }
+} 
+
+/* タブメニューがクリックされた後のスタイル */
+.active{
+    color: #ffea20;
     background-color: #30ADD1;
-    border-radius: 30px;
-    color: #fff;
-    padding: 8px;
-    font-size: 24px;
-    margin: 0px 20px 50px 20px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4) inset;
+}
+
+.section__box--title{
+    margin-top: 0;
 }
 
 .section__content {
@@ -34,7 +63,6 @@
 }
 
 .section__content--full {
-    margin-top: 60px;
 }
 
 .section__content--title {
@@ -42,33 +70,18 @@
     font-weight: bold;
 }
 
-.section__content--top {
-    margin-top: 20px;
-}
-
-/* .section__content--topmessage {
-    margin-top: 20px;
-} */
-
 .section__content--left {
     text-align: justify;
-    /* margin-left: 20px; */
 }
-
-/* .section__btn--margin {
-    margin: 0 40px;
-} */
 
 .section__content--photomaxwidth {
     max-width:559px;
-}
-
-.section__content--photo {
     margin: 0 auto;
 }
 
-.section__content--day {
-    line-height: 1.5;
+.section__content--photo {
+    width: 100%;
+    border-radius: 30px;
 }
 
 .section__content--dayleft:nth-of-type(1) {
@@ -80,41 +93,11 @@
     margin-left: 25.5px;
 }
 
-.section__content--margin {
-    margin: 0 20px;
-}
-
-.section__content--displayflex{
-    align-items: start;
-
-}
-
-/* @media screen and (min-width: 600px) {
-    .section__content--displayflex {
-        display: flex;
-    }
-
-    .section__content--full {
-        margin-left: 45px;
-    }
-
-    .section__content--displayblock {
-        display: block;
-    }
-} */
-
-
 /* 店舗の一覧 */
 .shop__content{
     position: relative;
     width: 100%;
     margin: 0 auto;
-    /* display: none; */
-    clear: both;
-}
-
-.section__image--number {
-     margin-top: 30px;
 }
 
 .section__image--location::before,
@@ -157,42 +140,30 @@
     background-image: url(../images/homepage.png);
     width: 20px;
     height: 20px;
-    margin-right: 1.75px;
+    margin-right: 7.25px;
 }
 
-.section__image--homepage span {
-    font-weight: bold;
-    color: #30ADD1;
+
+.section__content--top {
+    margin-top: 30px;
 }
 
-.section__image--service::before {
-    background-image: url(../images/service.png);
-
-}
-
-.section__image--message::before {
-    background-image: url(../images/message.png);
-}
-
-.section__image--information::before {
-    background-image: url(../images/infomation.png);
+.shop__content--title{
+    padding-bottom: 10px;
+    font-size: 20px;
 }
 
 .shop__description--service {
-    padding: 0.5em 0;
-    /* margin: 0.5em 0; */
+    padding: 10px;
     text-align: left;
-    /* font-weight: bold; */
     background: #FFF;
     border: solid 3px #30ADD1;
     border-radius: 10px;
 }
 
 .shop__description--message {
-    padding: 0.5em 0;
-    /* margin: 0.5em 0; */
-     text-align: left;
-    /* font-weight: bold; */
+    padding: 10px;
+    text-align: left;
     background: #FFF;
     border: solid 3px #30ADD1;
     border-radius: 10px;
@@ -206,9 +177,8 @@
 
 .shop__description--marginservice,
 .shop__description--marginmessage {
-    margin: 0;
-    padding: 10px;
-
+    /* margin: 0;
+    padding: 10px; */
 }
 
 .section__content--information {
@@ -217,22 +187,46 @@
 }
 
 .section__wrap--infomation {
-    margin: 10px 0 0 0 ;
-    position: relative;
-    padding-top: 25%;
     width: 100%;
+
+    padding-bottom: 30px;
 }
 
 .section__map--information {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
+    height: 300px;
+    border-top: 5px solid #ffea20;
+    border-right: 5px solid #ffea20;
+    border-bottom: 5px solid #30ADD1;
+    border-left: 5px solid #30ADD1;
+    padding: 0;
+}
+
+.shop__table tr,th {
+    padding:5px 10px;
+    border-bottom: solid 1px #51656F;
+}
+
+.shop__table td{
+    display: block;
+    padding: 0 10px;
+}
+@media screen and (min-width:500px) {
+    .shop__table td{
+        display: table-cell;
+    }
+}
+
+.shop__table {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.shop__table th{
+    font-size: 20px;
 }
 
 @media screen and (max-width: 606px) {
-
     .tab__item {
         display: flex;
         justify-content: center;
@@ -243,7 +237,6 @@
     .tab__item:nth-of-type(4) {
         margin-top: -25px;
     }
-
 }
 
 @media screen and (min-width: 600px) {
@@ -257,43 +250,20 @@
     }
 }
 
-@media screen and (min-width: 560px) and (max-width: 899px) {
-    .section__content--photo {
-        margin-left: 20px;
-    }
-}
-
-/* @media screen and (min-width: 560px) and (max-width: 599px) {
-    .section__content--photo {
-        margin-left: 20px;
-    }
-} */
-
-/* @media screen and (min-width: 560px) and (max-width: 899px) {
-    .section__content--photomaxwidth {
-        max-width: 100%;
-        height: auto;
-    }
-} */
-
 @media screen and (max-width: 900px) {
     .btn {
         width: calc(100vw / 5);
     }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1080px) {
+@media screen and (min-width: 1080px) {
     .section__content--displayflex {
         display: flex;
         justify-content: space-around;
-
+        gap: 20px;
     }
-    /* .section__content--photo {
-        margin-top: 40px;
-    } */
-
-    .section__content--full {
-        margin-top: -26px;
+    .section__content--photomaxwidth{
+        margin: 0;
     }
 }
 
@@ -308,91 +278,51 @@
 }
 
 @media screen and (min-width: 1080px) {
-
     .section__content {
-        margin-top: 20px;
         line-height: 2.5;
-    }
-
-    .section__content--photo {
-        /* width: 559px;
-        max-width: 559px;
-        height: auto; */
-        margin-left: 20px;
-    }
-
-    .section__content--displayflex {
-        display: flex;
-    }
-
-    .section__content--top {
-        margin-top: 60px;
     }
 
     .section__content--topmessage {
         margin-top: 0;
     }
 
-    .section__content--full {
-        margin-top: -25px;
-        margin-left: 195px;
-    }
-
-    .section__content--displayblock {
-        /* display: block; */
-        /* border-spacing: 0; */
-    }
-
-tr,
-th,
-td {
-    padding: 0;
-}
-
-
     .shop__description--marginservice {
-        padding: 15.5px;
+        /* padding: 15.5px; */
     }
 
     .shop__description--marginmessage {
-        padding: 21.5px;
+        /* padding: 21.5px; */
     }
 
     .shop__description--marginmessage:nth-last-of-type(1) {
-        padding-top: 22.625px;
+        /* padding-top: 22.625px; */
     }
-
 }
-
 
 @media screen and (min-width: 1147px) and (max-width: 1197px) {
     .shop__description--marginmessage {
-        padding: 18.5px;
+        /* padding: 18.5px; */
     }
 }
 
 @media screen and (min-width: 1197px) and (max-width: 1198px) {
     .shop__description--marginmessage:nth-last-of-type(1) {
-        padding-top: 4.975px;
+        /* padding-top: 4.975px; */
     }
 }
 
 @media screen and (min-width: 1198px) and (max-width: 1200px) {
     .shop__description--marginmessage {
-        padding: 18.675px;
+        /* padding: 18.675px; */
     }
 }
 
 @media screen and (min-width: 1200px)  {
     .shop__description--marginmessage {
-        padding: 18.905px;
+        /* padding: 18.905px; */
     }
 
     .shop__description--marginmessage:nth-last-of-type(1) {
-        padding-top: 17.275px;
+        /* padding-top: 17.275px; */
     }
-}
-
-.active{
-    color: #fff;
 }

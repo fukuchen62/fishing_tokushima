@@ -48,7 +48,12 @@ body{
 }
 
 /* タブのスタイル */
-.tab__item{
+.tabs{
+    display: flex;
+   justify-content: center;
+}
+
+.tab_item{
     padding: 30px;
     color: #000;
     background-color: #ffea20;
@@ -60,10 +65,18 @@ body{
     margin: 20px;
 }
 
-.tab__item:hover{
+.tab_item:hover{
     background-color: #30ADD1;
     color: #ffea20;
 }
+
+/* タブクリック後のスタイル */
+.active{
+    background-color: #30ADD1;
+    color: #ffea20;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)inset;
+}
+
 
 /* マップ */
 .spot__iframe{
@@ -213,8 +226,4 @@ body{
 .card__p {
     padding: 0px;
 }
-}
-
-.active{
-    background-color: #fff;
 }

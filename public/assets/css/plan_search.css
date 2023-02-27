@@ -6,17 +6,23 @@
 }
 
 /* サブビジュアル */
-.sub-keyvisual {
+.keyvisual {
     background-image: url(../images/plan_keyvisual_sp.jpg);
-    max-height: 400px;
-    object-fit: cover;
+    max-width: 100vw;
+    max-height: 600px;
+    /* height: 300px; */
+    background-position: center bottom;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 400px;
 }
 
 @media screen and (min-width: 600px) {
-    .sub-keyvisual {
+    .keyvisual {
         background-image: url(../images/plan_keyvisual.jpg);
+        height: 400px;
+        background-position: center top;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
 }
@@ -128,7 +134,7 @@
 
     /* 検索項目レイアウト */
     .search__box--title {
-    padding-top: 0px;
+    padding-top: 5px;
     padding-bottom: 0px;
     width: 80px;
     }
