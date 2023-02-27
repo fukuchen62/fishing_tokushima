@@ -128,7 +128,7 @@
 
     /* 検索項目レイアウト */
     .search__box--title {
-    padding-top: 0px;
+    padding-top: 5px;
     padding-bottom: 0px;
     width: 80px;
     }
