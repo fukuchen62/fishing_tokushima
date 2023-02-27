@@ -1,28 +1,22 @@
-<!-- <li class="card__p">
-    <a class="card card__skin" href="">
-        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+
+{{-- <li class="card__p">
+    <a class="card card__skin" href="./news_info.html">
+        <img class="card__img" src="https://placehold.jp/320x240.png" alt="画像">
         <div class="card__textbox">
             <h3 class="card__title">記事タイトル</h3>
-            <p>2023.2.15</p>
-            <p class="card__description">説明説明説明説明説明説明</p>
+            <p class="card__data">2023.2.15</p>
+            <p class="card__discription">記事概要テキストテキスト…</p>
         </div>
     </a>
-</li> -->
-
+</li> --}}
 
 <li class="card__p">
-    <a class="card card__skin" href="{{ $news_link }}">
-        <img class="card__img" src="https://placehold.jp/320x240.png" alt="">
+    <a class="card card__skin" href="{{ $card_link }}">
+        <img class="card__img" src="{{ $card_src }}" alt="{{ $card_alt }}">
         <div class="card__textbox">
-            <p>{{ $news_name }}</p>
-            @php
-                $ts = strtotime($news_created_at);
-            @endphp
-            <p>
-                {{ date('Y.m.d', $ts) }}
-            </p>
-            <h3 class="card__title">{{ $news_title }}</h3>
-            <p class="card__description">{{ $news_overview }}</p>
+            <h3 class="card__title">{{ $card_title }}</h3>
+            <p class="card__data">{{ $card_created }}</p>
+            <p class="card__description">{{ $card_text }}</p>
         </div>
     </a>
 </li>
