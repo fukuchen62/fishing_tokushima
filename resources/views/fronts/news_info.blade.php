@@ -1,4 +1,4 @@
-@extends('layouts.layout_front')
+@extends('layouts.layout_front_with_aside')
 
 @section('description', 'ページのデスクリプション')
 
@@ -15,81 +15,44 @@
 @endsection
 
 @section('content')
-    <div class="mainarea flex expand">
-
-        <main class="main-section expand">
-            <div>
-                <div class="news__bottom--up expand"></div>
-            </div>
-            <section class="firstsection expand p__lr">
-
-                <div class="news__section expand p__lr">
-                    <div class="news__area">
-                        <h3 class="section__box--title">{{ $news->title }}</h3>
-
-                        @php
-                            $ts = strtotime($news->created_at);
-                        @endphp
-                        <p class="news__area--data">
-                            {{ date('Y.m.d', $ts) }}
-                        </p>
-
-                        <img src="{{ asset('storage/images') }}/{{ $news->eyecatch }}" alt="{{ $news->eyecatch }}">
-                        <p class="news__area--description">
-                            {{ $news->content }}</p>
-
-                    </div>
-                </div>
-
-            </section>
-        </main>
-
-        <aside class="sidemenu ">
-            <div class="sidemenu__topimg"></div>
-            <div class="sidemenu__box">
-                <h2 class="sidemenu__title">カテゴリ</h2>
-                <div class=" sidemenu__box--block ">
-                    <a class="sidemenu__discription" href="{{ route('news') }}">全て</a>
-                    <div class="sidemenu__border"></div>
-                    <a class="sidemenu__discription" href="{{ route('news', ['name' => '更新']) }}">更新</a>
-                    <div class="sidemenu__border"></div>
-                    <a class="sidemenu__discription" href="{{ route('news', ['name' => '体験']) }}">体験</a>
-                    <div class="sidemenu__border"></div>
-                    <a class="sidemenu__discription" href="{{ route('news', ['name' => 'イベント']) }}">イベント</a>
-                    <div class="sidemenu__border"></div>
-                </div>
-            </div>
-            <div class="sidemenu__bottomimg"></div>
-        </aside>
-    </div>
     <div>
         <div class="news__bottom--up expand"></div>
     </div>
+    <section class="firstsection expand p__lr">
+
+        <div class="news__section expand p__lr">
+            <div class="news__area">
+                <h3 class="section__box--title">{{ $news->title }}</h3>
+
+                @php
+                    $ts = strtotime($news->created_at);
+                @endphp
+                <p class="news__area--data">
+                    {{ date('Y.m.d', $ts) }}
+                </p>
+
+                <img src="{{ asset('storage/images') }}/{{ $news->eyecatch }}" alt="{{ $news->eyecatch }}">
+                @php
+                    echo $news->content;
+                @endphp
+
+
+            </div>
+        </div>
+
+    </section>
 @endsection
 
-
-{{-- <aside class="sidemenu__pagebottom  p__lr">
-
-    <h2 class="sidemenu__title">カテゴリ</h2>
-
-    <a class="sidemenu__discription" href="./news_list.html">全て</a>
+@section('sidemenu')
+    <a class="sidemenu__discription" href="{{ route('news') }}">全て</a>
     <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="./news_list.html">更新</a>
+    <a class="sidemenu__discription" href="{{ route('news', ['name' => '更新']) }}">更新</a>
     <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="./news_list.html">体験</a>
+    <a class="sidemenu__discription" href="{{ route('news', ['name' => '体験']) }}">体験</a>
     <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="./news_list.html">イベント</a>
+    <a class="sidemenu__discription" href="{{ route('news', ['name' => 'イベント']) }}">イベント</a>
     <div class="sidemenu__border"></div>
-
-</aside> --}}
-
-</body>
-
-</html>
-
-
-
-
+@endsection
 
 
 {{-- テストデータ --}}
