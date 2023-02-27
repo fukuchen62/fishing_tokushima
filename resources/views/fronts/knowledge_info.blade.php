@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="{{ asset('assets/css/knowledge_info.css') }}">
 @endsection
 
+@section('key_visual')
+    <img class="sub-keyvisual" src="{{ asset('assets/images/knowledge-keyvisual.jpg') }}" alt="knowledge-keyvisual.jpg">
+@endsection
+
 @section('content')
             <section class="firstsection expand p__lr">
 
