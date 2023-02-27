@@ -149,7 +149,7 @@ Route::post('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'f
 Route::get(
     'test/newslist',
     [App\Http\Controllers\TestController::class, 'newsList']
-)->name('newslist');
+)->name('test');
 
 /**
  * ログアウト
