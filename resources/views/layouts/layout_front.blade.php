@@ -78,11 +78,6 @@
         @yield('content')
     </main>
 
-    <!-- サイドバー -->
-    <div class="sidebar">
-        @yield('sidebar')
-    </div>
-
     {{-- フッター --}}
     @include('includes.front_footer')
 
