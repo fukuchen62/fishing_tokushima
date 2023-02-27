@@ -116,7 +116,10 @@
                     @endslot
 
                     @slot('card_text')
-                        {{ $item->overview }}
+                    @php
+                        $overview = mb_strimwidth($item->overview, 0, 150, "・・・");
+                    @endphp
+                        {{ $overview }}
                     @endslot
                 @endcomponent
             @endforeach
