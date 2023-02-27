@@ -66,6 +66,13 @@ class SpotController extends Controller
         // idで該当のスポット情報を取得
         $items = Spot::find($spot_id);
 
+        // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
+        $spotInfo[] = [
+            'lat' => $items->spot_latitude,
+            'lng' => $items->spot_longitude,
+            'text' => $items->name,
+        ];
+
         // 関連フィッシュIDを取得
         $fish_id = $items->fish_id;
         if ($fish_id != '') {
@@ -88,6 +95,14 @@ class SpotController extends Controller
         foreach ($shop_id_list as $id) {
             // shop情報を読み込む
             $shopinfo = Shop::find($id);
+
+            // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
+            $spotInfo[] = [
+                'lat' => $shopinfo->latitude,
+                'lng' => $shopinfo->longitude,
+                'text' => $shopinfo->name,
+            ];
+
             // shop情報を配列に加える
             $shop_info_list[] = $shopinfo;
         }
@@ -107,10 +122,23 @@ class SpotController extends Controller
         foreach ($evacuation_id_list as $id) {
             // 避難場所を読み込む
             $evacuationinfo = Evacuation::find($id);
-            // shop情報を配列に加える
+
+            // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
+            $spotInfo[] = [
+                'lat' => $evacuationinfo->latitude,
+                'lng' => $evacuationinfo->longitude,
+                'text' => $evacuationinfo->name,
+            ];
+
+            // 避難場所情報を配列に加える
             $evacuation_info_list[] = $evacuationinfo;
         }
 
+        // $evacuation_info_list[] = [
+        //     'lat' => 34.181875,
+        //     'lng' => 134.593061,
+        //     'text' => '市道中山黒崎線(鳴門病院南)',
+        // ];
 
         $city_id = $items->city_id;
 
@@ -121,6 +149,7 @@ class SpotController extends Controller
 
         $data = [
             'spots' => $items,
+            'spotInfo' => $spotInfo,
             'fishlist' => $fish_info_list,
             'shoplist' => $shop_info_list,
             'connection1' => $connection1,
