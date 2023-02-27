@@ -43,6 +43,13 @@
     </section>
 @endsection
 
+@section('bottom')
+    <div>
+        <div class="news__bottom--up expand"></div>
+    </div>
+@endsection
+
+
 @section('sidemenu')
     <a class="sidemenu__discription" href="{{ route('news') }}">全て</a>
     <div class="sidemenu__border"></div>
