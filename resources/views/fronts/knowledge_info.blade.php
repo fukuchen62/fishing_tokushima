@@ -1,4 +1,4 @@
-@extends('layouts.layout_front_with_aside')
+@extends('layouts.layout_front')
 
 @section('description', 'ページのデスクリプション')
 
@@ -17,6 +17,8 @@
 @endsection
 
 @section('content')
+    <div class="mainarea flex expand">
+        <div class="main-section expand">
             <section class="firstsection expand p__lr">
 
                 <div class="knowledge__section expand p__lr">
@@ -59,30 +61,33 @@
                 テキストテキストテキストテキストテキストテキスト
                     </p> --}}
                 {{-- 以上、コンテンツ班に渡すもの --}}
-
-                </div>
                 </div>
             </section>
-@endsection
 
-@section('sidemenu')
-    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
-    <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
-    <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
-    <div class="sidemenu__border"></div>
-    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
-    <div class="sidemenu__border"></div>
-@endsection
-
-@section('bottom')
-<div>
+        </div>
+        <aside class="sidemenu ">
+            <div class="sidemenu__topimg"></div>
+            <div class="sidemenu__box">
+                <h2 class="sidemenu__title">カテゴリ</h2>
+                <div class=" sidemenu__box--block ">
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+                    <div class="sidemenu__border"></div>
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+                    <div class="sidemenu__border"></div>
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+                    <div class="sidemenu__border"></div>
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+                    <div class="sidemenu__border"></div>
+                </div>
+            </div>
+            <div class="sidemenu__bottomimg"></div>
+        </aside>
+    </div>
+    <div>
         <div class="knowledge__bottom expand"></div>
-</div>
-@endsection
+    </div>
 
-@section('article')
+
     <article class="connection">
         <h2 class="section__box--title">関連記事</h2>
         <ul class="card__area flex">
@@ -118,8 +123,25 @@
         </ul>
         <div class="sidemenu__pagebottom--top expand"></div>
     </article>
+    <aside class="sidemenu__pagebottom  p__lr">
+
+        <h2 class="sidemenu__title">カテゴリ</h2>
+
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+                    <div class="sidemenu__border"></div>
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+                    <div class="sidemenu__border"></div>
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+                    <div class="sidemenu__border"></div>
+                    <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+                    <div class="sidemenu__border"></div>
+
+    </aside>
+
 
 @endsection
 
+{{-- 該当ページ専用JS --}}
+@section('pageJs')
 
-</html>
+@endsection
