@@ -92,9 +92,8 @@
         </aside>
 
     </div>
-    <div>
-        <div class="news__bottom--up expand"></div>
-    </div>
+
+    @yield('bottom')
 
     @yield('article')
 

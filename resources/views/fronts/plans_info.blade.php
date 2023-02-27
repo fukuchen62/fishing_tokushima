@@ -134,54 +134,32 @@
                 <!-- 背景の錨のためのdiv -->
                 <div class="flow__bg">
 
+                    @php
+                        echo $item->flow
+                    @endphp
+
+
                     {{-- 下記内容からコンテンツ班に登録してもらう？ --}}
-                    <div class="flow__box">
-                        <div class="max-width-box">
+                    {{-- <div class="flow__box"> --}}
+                        {{-- <div class="max-width-box"> --}}
                             {{-- 画像名コンテンツ班に登録してもらう --}}
-                            <img class="flow__box--img plan__img"
-                            src="{{ asset('storage/images/画像名') }}" alt="画像名">
+                            {{-- <img class="flow__box--img plan__img"
+                            src="{{ asset('storage/images/画像名') }}" alt="画像名"> --}}
                             {{-- 下記ダミー画像 --}}
                             {{-- https://placehold.jp/559x314.png --}}
-                        </div>
+                        {{-- </div> --}}
                         <!-- フローのテキストボックス -->
-                        <div class="flow__box--text">
+                        {{-- <div class="flow__box--text"> --}}
                             {{-- コンテンツ班タイトル入れてもらう --}}
-                            <h3>①準備物</h3>
+                            {{-- <h3>①準備物</h3> --}}
                             {{-- コンテンツ班に説明入れてもらう --}}
-                            <p>　釣り竿は２～３ｍ程のサビキ用ロッドで小型のスピニングリールを使用します。
+                            {{-- <p>　釣り竿は２～３ｍ程のサビキ用ロッドで小型のスピニングリールを使用します。
                                 サビキ釣りに必要な撒き餌入れる編みかご、２～４号のナス型オモリを仕掛けに使用します。
-                                餌はオキアミなどの撒き餌に使われる物を使用します。</p>
-                        </div>
-                        <div class="triangle"></div>
-                    </div>
-                    <div class="flow__box">
-                        <div class="max-width-box">
-                            {{-- 画像名コンテンツ班に登録してもらう --}}
-                            <img class="flow__box--img plan__img"
-                            src="{{ asset('storage/images/画像名') }}" alt="画像名">
-                        </div>
-                        <div class="flow__box--text">
-                            {{-- コンテンツ班タイトル入れてもらう --}}
-                            <h3>②</h3>
-                            {{-- コンテンツ班に説明入れてもらう --}}
-                            <p>テキストテキストテキスト</p>
-                        </div>
-                        <div class="triangle"></div>
-                    </div>
-                    <div class="flow__box">
-                        <div class="max-width-box">
-                            {{-- 画像名コンテンツ班に登録してもらう --}}
-                            <img class="flow__box--img plan__img"
-                            src="{{ asset('storage/images/画像名') }}" alt="画像名">
-                        </div>
-                        <div class="flow__box--text last__flow">
-                            {{-- コンテンツ班タイトル入れてもらう --}}
-                            <h3>③</h3>
-                            {{-- コンテンツ班に説明入れてもらう --}}
-                            <p>テキストテキストテキスト</p>
-                        </div>
-                    </div>
-                    {{-- ここまでコンテンツ班に登録してもらう？ --}}
+                                餌はオキアミなどの撒き餌に使われる物を使用します。</p> --}}
+                        {{-- </div> --}}
+                        {{-- <div class="triangle"></div> --}}
+                    {{-- </div> --}}
+                    {{-- ここまでコンテンツ班に登録してもらう --}}
 
                 </div>
                 <p class="anchor--text">GOAL</p>

@@ -8,7 +8,7 @@
             <div class="section__content--left">
                 <div class="section__content--full">
                     <!-- tableにする -->
-                    <table class="section__content--displayblock">
+                    <table class="shop__table">
                         <tr>
                             <th colspan="2">{{ $shop_name }}</th>
                         </tr>
@@ -40,7 +40,7 @@
         <div class="section__content--displayflex section__content--top flex__content">
 
             <div class="section__content--displayblock">
-                <div class="section__image--service section__content--left">サービス内容</div>
+                <div class="shop__content--title section__content--left">サービス内容</div>
 
                 <div class="section__content--margin">
                     <div class="shop__description--service">
@@ -50,7 +50,7 @@
             </div>
 
             <div class="section__content--displayblock section__content--topmessage">
-                <div class="section__image--message section__content--left">お店からのメッセージ</div>
+                <div class="shop__content--title section__content--left">お店からのメッセージ</div>
 
                 <div class="section__content--margin">
                     <div class="shop__description--message">

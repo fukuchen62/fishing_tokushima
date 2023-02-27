@@ -49,7 +49,9 @@
                                         @endslot
 
                                         @slot('card_alt')
+                                        @if ($item->thumbnail !="")
                                             {{ $item->thumbnail }}
+                                        @endif
                                         @endslot
 
                                         @slot('card_title')
