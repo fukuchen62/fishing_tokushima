@@ -27,5 +27,5 @@
             <li><a href="{{ route('admintop') }}" target="_blank">ログイン</a></li>
         </ul>
     </div>
-    <p class="copylight">Copyright@turitoku.com</p>
+    <p class="copyright">Copyright@turitoku.com</p>
 </footer>
