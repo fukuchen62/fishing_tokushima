@@ -76,6 +76,11 @@
     <div class="sidemenu__border"></div>
 @endsection
 
+@section('bottom')
+<div>
+        <div class="knowledge__bottom expand"></div>
+</div>
+@endsection
 
 @section('article')
     <article class="connection">
