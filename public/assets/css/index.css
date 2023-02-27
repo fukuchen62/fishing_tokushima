@@ -869,8 +869,6 @@
 }
 
 .morelook:hover {
-    background-color: #30add1;
-    color: #ffea20;
     box-shadow: none;
     transform: translate(1px, 1px);
 }

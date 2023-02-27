@@ -9,8 +9,8 @@
 .keyvisual {
     background-image: url(../images/plan_keyvisual_sp.jpg);
     max-width: 100vw;
-    max-height: 600px;
-    /* height: 300px; */
+    max-height: 400px;
+    height: 300px;
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
