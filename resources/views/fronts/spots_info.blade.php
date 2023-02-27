@@ -22,6 +22,12 @@
 {{-- メイン --}}
 @section('content')
 
+    @php
+        // var_dump($spots);
+        // var_dump($spotInfo);
+        // var_dump($evacuationlist[0]['lat']);
+    @endphp
+
     <!-- 浅瀬背景 -->
     <div class="container shallow expand">
         <div class="column">
@@ -160,12 +166,121 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-            @php
+            {{-- @php
                 // strtr関数を使用して'|'を','に置換する
                 $str = $spots->iframe_url;
                 $replace = strtr($str, '|', ',');
-            @endphp
-            <iframe class="googlemap" src="{{ $replace }}"></iframe>
+            @endphp --}}
+            {{-- <iframe class="googlemap" src="{{ $replace }}"></iframe> --}}
+
+            <div class="map">
+                <script type="text/javascript">
+                    // ホバー時のメッセージ
+                    var hoverinfos = [];
+
+                    function initMap() {
+
+                        const color = 'black'; // ラベルの色
+                        const font_family = 'Kosugi Maru' //ラベルのフォント
+                        const font_size = '14px' //ラベルのサイズ
+                        // 徳島全域が入るように
+                        var latlng = new google.maps.LatLng({{ $spots->spot_latitude }}, {{ $spots->spot_longitude }});
+                        var opts = {
+                            zoom: 14,
+                            center: latlng,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        // マップ生成
+                        var map = new google.maps.Map(document.getElementById("map"), opts);
+
+                        // マーカ配列
+                        // フォント変えられる
+                        let markers = [];
+
+                        // PHPの配列をJavaScriptの配列に変換
+                        @php
+                            for ($i = 0; $i < count($spotInfo); $i++) {
+                                echo "markers[$i]={lat:";
+                                echo $spotInfo[$i]['lat'];
+                                echo ', lng:';
+                                echo $spotInfo[$i]['lng'];
+                                echo ', url:';
+                                echo "\"#mk" . ($i + 1) . "\"";
+                                echo ', text:"';
+                                echo $spotInfo[$i]['text'];
+                                echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
+                                echo "\n";
+                            }
+                        @endphp
+
+                        // マーカー生成
+                        for (var i = 0; i < markers.length; i++) {
+                            createMarker(
+                                markers[i].text,
+                                markers[i].lat,
+                                markers[i].lng,
+                                markers[i].url,
+                                map,
+                            );
+                        }
+
+                        // マーカー表示
+                        marker.setMap(map);
+                    }
+
+                    // マーカーを設定
+                    function createMarker(name, lat, lng, url, map) {
+
+                        var latlng = new google.maps.LatLng(lat, lng);
+                        var pixelOffset = new google.maps.Size(0, -40);
+
+                        var marker = new google.maps.Marker({
+                            position: latlng,
+                            // icon: {
+                            //     url: 'fish__icon.png',
+                            //     scaledSize: new google.maps.Size(42, 55),
+                            // },
+                            map: map
+                        });
+
+                        //クリックしたら指定したurlに遷移するイベント
+                        marker.addListener('click', (function(url) {
+                            return function() {
+                                location.href = url;
+                            };
+                        })(url));
+
+                        // マーカーにマウスを乗せたときのイベント
+                        marker.addListener('mouseover', function() {
+                            // infoの位置
+                            hoverinfo = new google.maps.InfoWindow({
+                                map: map,
+                                content: name,
+                                noSuppress: true,
+                                pixelOffset: pixelOffset
+                            });
+
+                            hoverinfo.setPosition(
+                                latlng
+                            );
+
+                            // マーカーからマウスを降ろしたときのイベント
+                            marker.addListener('mouseout', function() {
+                                if (hoverinfo) {
+                                    hoverinfo.close();
+                                }
+                            });
+                        });
+
+                    }
+                </script>
+                <!-- 下記よりマップ -->
+                <!-- グーグルマップAPI使用 -->
+                <section class="map-box content">
+                    <div id="map" class="googlemap" style="width:100%; height:600px"></div>
+                </section>
+
+            </div>
         </section>
     </div>
 
