@@ -134,7 +134,9 @@
                     </svg>
                 </div>
                 <div class="g-nav__link p__lr">
+                    <a href="{{ route('news') }}" class="g-nav__link--text">お知らせ</a>
                     <a href="{{ route('escapelist') }}" class="g-nav__link--text">避難場所</a>
+                    <a href="{{ route('uspage') }}" class="g-nav__link--text">このサイトについて</a>
                     <a href="{{ route('praivacypage') }}" class="g-nav__link--text">プライバシーポリシー</a>
                 </div>
             </div>
