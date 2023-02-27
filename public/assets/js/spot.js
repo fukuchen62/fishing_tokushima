@@ -36,9 +36,9 @@
 // クリックしたらタブのスタイルが変わる
 $(function () {
   $('.tab_item').on('click', function () {
-    $('.tab_item').removeClass('active');
+    $('.tab_item').removeClass('active2');
     $(this).removeClass('tab_item');
-    $(this).parent().addClass('active');
+    $(this).parent().addClass('active2');
 $(this).parent().addClass('tab_item');
   });
 });
