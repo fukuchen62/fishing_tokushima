@@ -71,7 +71,7 @@ body{
 }
 
 /* タブクリック後のスタイル */
-.active{
+.active2{
     background-color: #30ADD1;
     color: #ffea20;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)inset;
