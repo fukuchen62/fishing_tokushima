@@ -18,7 +18,7 @@
 //     }
 // }
 
-// //タブをクリックしたら
+// //タブをクリックした
 // $('.tab a').on('click', function () {
 //     var idName = $(this).attr('href'); //タブ内のリンク名を取得
 //     GethashID(idName);//設定したタブの読み込みと
