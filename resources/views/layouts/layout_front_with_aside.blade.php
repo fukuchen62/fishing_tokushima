@@ -74,9 +74,34 @@
     @include('includes.front_header')
 
     {{-- メインコンテンツ --}}
-    <main id="main">
+    <div class="mainarea flex expand">
+        <main class="main-section expand">
         @yield('content')
-    </main>
+        </main>
+
+        {{-- サイドメニュー --}}
+        <aside class="sidemenu ">
+            <div class="sidemenu__topimg"></div>
+            <div class="sidemenu__box">
+                <h2 class="sidemenu__title">カテゴリ</h2>
+                <div class=" sidemenu__box--block ">
+                    @yield('sidemenu')
+                </div>
+            </div>
+            <div class="sidemenu__bottomimg"></div>
+        </aside>
+
+    </div>
+    <div>
+        <div class="news__bottom--up expand"></div>
+    </div>
+
+    @yield('article')
+
+    <aside class="sidemenu__pagebottom  p__lr">
+        <h2 class="sidemenu__title">カテゴリ</h2>
+        @yield('sidemenu')
+    </aside>
 
     {{-- フッター --}}
     @include('includes.front_footer')

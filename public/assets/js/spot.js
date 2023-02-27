@@ -18,7 +18,7 @@
 //     }
 // }
 
-// //タブをクリックしたら
+// //タブをクリックした
 // $('.tab a').on('click', function () {
 //     var idName = $(this).attr('href'); //タブ内のリンク名を取得
 //     GethashID(idName);//設定したタブの読み込みと
@@ -36,9 +36,9 @@
 // クリックしたらタブのスタイルが変わる
 $(function () {
   $('.tab_item').on('click', function () {
-    $('.tab_item').removeClass('active');
+    $('.tab_item').removeClass('active2');
     $(this).removeClass('tab_item');
-    $(this).parent().addClass('active');
+    $(this).parent().addClass('active2');
 $(this).parent().addClass('tab_item');
   });
 });
