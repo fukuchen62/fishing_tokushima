@@ -17,13 +17,13 @@
     <div class="shallow expand">
         <!-- 地域切替タブ -->
         <ul class="tabs p__lr section__btn flex">
-            <li class=""><a class="tab_item btn section__btn--margin"
+            <li class=""><a class="tab_item section__btn--margin"
                     href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></li>
-            <li class=""><a class="tab_item btn section__btn--margin"
+            <li class=""><a class="tab_item section__btn--margin"
                     href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></li>
-            <li class=""><a class="tab_item btn section__btn--margin"
+            <li class=""><a class="tab_item section__btn--margin"
                     href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></li>
-            <li class=""><a class="tab_item btn section__btn--margin"
+            <li class=""><a class="tab_item section__btn--margin"
                     href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></li>
         </ul>
 
@@ -34,7 +34,7 @@
         @endphp
 
         <!-- googlemap -->
-        <div class="section__wrap--infomation">
+        <div class="section__wrap--infomation p__lr">
             <div class="map">
                 <script type="text/javascript">
                     // ホバー時のメッセージ
@@ -73,7 +73,7 @@
                                 echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                 echo "\n";
                             }
-                            
+
                         @endphp
 
                         // var marker = new google.maps.Marker();
@@ -149,13 +149,13 @@
                 <!-- グーグルマップAPI使用 -->
                 <section class="map-box content">
                     {{-- <h2 class="ta-a h2 mb30 map-sub">ＭＡＰ表示</h2> --}}
-                    <div id="map" style="width:100%; height:600px"></div>
+                    <div id="map"></div>
                 </section>
 
             </div>
         </div>
 
-        <h3 class="section__content--titlereserch">検索結果</h3>
+        <h3 class="section__box--title">検索結果</h3>
         <!-- ショップ一覧 -->
         @foreach ($shops as $item)
             @component('components.front_shops_card')

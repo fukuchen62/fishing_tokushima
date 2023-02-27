@@ -95,16 +95,14 @@
 .keyvisual {
     display: inline-block;
     background-image: url(../images/top_keyvisual.jpg);
+    max-height: 900px;
     width: 100vw;
     height: 900px;
     background-size: cover;
     position: relative;
-<<<<<<< Updated upstream
-    max-height: 900px;
-=======
     max-height :900px ;
-    object-position: bottom;
->>>>>>> Stashed changes
+    object-position: bottom center;
+
 }
 
 .bottom__margin {
@@ -254,7 +252,7 @@
 }
 
 .tokushima__imgbox {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
 }
 .spotsection__box {
@@ -460,83 +458,22 @@
     }
 }
 
-@media screen and (min-width: 900px) {
-    .spotlink {
-        width: 300px;
-        height: 300px;
-    }
+@media screen and (min-width: 960px){
+        .eastland {
+                width: 150px;
+                height: 40px;
+                font-size: 1.2rem;
+                left: -250px;
+                top: -20px;
+            }
 
-    .eastsection {
-        top: -600px;
-        right: -15%;
-    }
-    .eastland {
-        top: -10px;
-        left: -200px;
-    }
-    .southland {
-        width: 100px;
-        height: 30px;
-        font-size: 1rem;
-        left: -300px;
-        top: 90px;
-    }
-    .eastborder {
-        right: 30px;
-        top: 30px;
-    }
-    .southborder {
-        right: 130px;
-        top: 130px;
-    }
-    .eastcircle {
-        top: 0px;
-        right: -200px;
-    }
-
-    .southcircle {
-        top: 95px;
-        right: -100px;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .spotlink {
-        width: 330px;
-        height: 330px;
-    }
-
-    .eastsection {
-        position: relative;
-        top: -700px;
-        right: -300px;
-    }
-
-    .southsection {
-        position: relative;
-        top: -400px;
-        right: -200px;
-    }
-    .eastland {
-        top: -15px;
-        left: -250px;
-    }
-    .southland {
-        width: 100px;
-        height: 30px;
-        left: -350px;
-        top: 100px;
-    }
-    .eastborder {
-        width: 150px;
-        right: 30px;
-        top: 30px;
-    }
-    .southborder {
-        width: 150px;
-        right: 120px;
-        top: 150px;
-    }
+            .southland {
+                width: 150px;
+                    height: 40px;
+                    font-size: 1.2rem;
+                    left: -300px;
+                    top: 80px;
+            }
 }
 
 .spot__bottom {
@@ -556,7 +493,6 @@
 .plansection,
 .fishsection {
     background-color: #30add1;
-    /* position: relative; */
     height: auto;
     margin: 0 a;
     padding: 0 20px 50px 20px;
@@ -610,11 +546,11 @@
 }
 
 .left2 {
-    top: 900px;
+    top: 700px;
 }
 .right2 {
     right: 10%;
-    top: 1000px;
+    top: 800px;
 }
 
 .l-large {
@@ -679,11 +615,24 @@
     top: 50px;
     left: 50%;
 }
-@media screen and (min-width: 450px) {
-    .plansection__block {
-        transform: scale(0.62) translateX(-15%);
-    }
+
+.plansection{
+    height: 1200px;
 }
+.plan1 {
+        transform: scale(0.5) translateX(-30%) translateY(-180px);
+    }
+.plan2{
+    transform: scale(0.5) translateX(-30%) translateY(-600px);
+}
+.plan3 {
+    transform: scale(0.5) translateX(-30%) translateY(-1000px);
+}
+.morelook {
+    position: relative;
+    top: -600px;
+}
+
 @media screen and (min-width: 500px) {
     .plansection__block {
         transform: scale(0.65) translateX(-10%);
@@ -695,9 +644,23 @@
     }
 }
 @media screen and (min-width: 600px) {
-    .plansection__block {
-        transform: scale(0.8) translateX(0);
-    }
+    .plansection {
+            height: 1500px;
+        }
+                .morelook {
+                    top: -300px;
+                }
+.plan1 {
+    transform: scale(0.75) translateX(0) translateY(-85px);
+}
+
+.plan2 {
+    transform: scale(0.75) translateX(0) translateY(-220px);
+}
+
+.plan3 {
+    transform: scale(0.75) translateX(0) translateY(-350px);
+}
 }
 @media screen and (min-width: 700px) {
     .plansection__block {
@@ -705,22 +668,29 @@
     }
 }
 @media screen and (min-width: 800px) {
+    .plansection {
+            height: auto;
+        }
     .plansection__block {
         transform: scale(1) translateX(0);
     }
 }
+    .morelook {
+        top: 0px;
+    }
 
 @media screen and (min-width: 1080px) {
     .plan1 {
-        left: 150px;
+        top: -20px;
+        left: 100px;
     }
     .plan2 {
         top: -100px;
-        left: -250px;
+        left: -280px;
     }
     .plan3 {
-        top: -350px;
-        right: -60%;
+        top: -400px;
+        right: -57%;
         margin: -100px;
     }
     .plansection {
