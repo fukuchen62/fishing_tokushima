@@ -66,6 +66,9 @@ class Fish extends Model
         if (strstr($ret, 'c')) {
             $ret = str_replace('c', '12', $ret);
         }
+
+        $ret = str_replace('|', ',', $ret);
+
         return $ret;
     }
 
