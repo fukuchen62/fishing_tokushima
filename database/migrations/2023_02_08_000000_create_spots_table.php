@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('img3', 200)->nullable();
             $table->string('img4', 200)->nullable();
             $table->string('img5', 200)->nullable();
-            $table->string('fish_id', 20)->nullable(false)->default(0);
+            $table->string('fish_id', 50)->nullable(false)->default(0);
             $table->string('mony', 20)->nullable();
             $table->string('bbq', 10)->nullable();
             $table->string('shop_id', 20)->nullable(false)->default(0);
