@@ -21,12 +21,12 @@
 
     <section class="firstsection expand">
 
-        <ul class="tabs p__lr">
-                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a></li>
-                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a></li>
-                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a></li>
-                <li class=""><a class="tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a></li>
-        </ul>
+        <div class="tabs p__lr">
+                <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+                <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+                <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+                <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+        </div>
 
 
             <div class="tab_content" id="all_content">

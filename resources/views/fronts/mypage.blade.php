@@ -21,10 +21,10 @@
 
         <section class="firstsection expand">
 
-            <ul class="tabs p__lr">
-                <li class=""><a class="tab_item " href="{{ route('mypage', ['category' => "spot"]) }}">スポット</a></li>
-                <li class=""><a class="tab_item" href="{{ route('mypage', ['category' => "plan"]) }}">プラン</a></li>
-            </ul>
+            <div class="tabs">
+                <a class="spot tab_item" href="{{ route('mypage', ['category' => "spot"]) }}">スポット</a>
+                <a class="plan tab_item" href="{{ route('mypage', ['category' => "plan"]) }}">プラン</a>
+            </div>
 
 
             <div class="tab_content" id="all_content">
@@ -138,6 +138,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-    {{-- knowledge.jsでOK？ --}}
-    <script src="{{ asset('assets/js/knowledge.js') }}"></script>
+    <script src="{{ asset('assets/js/mypage.js') }}"></script>
 @endsection
