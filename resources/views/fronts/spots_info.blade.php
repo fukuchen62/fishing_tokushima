@@ -166,12 +166,6 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-            {{-- @php
-                // strtr関数を使用して'|'を','に置換する
-                $str = $spots->iframe_url;
-                $replace = strtr($str, '|', ',');
-            @endphp --}}
-            {{-- <iframe class="googlemap" src="{{ $replace }}"></iframe> --}}
 
             <div class="map">
                 <script type="text/javascript">
@@ -322,7 +316,10 @@
                     @endslot
 
                     @slot('spot_overview')
-                        {{ $item->overview }}
+                        @php
+                            $overview = mb_strimwidth($item->overview, 0, 180, '・・・');
+                        @endphp
+                        {{ $overview }}
                     @endslot
                 @endcomponent
             @endforeach

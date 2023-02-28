@@ -70,7 +70,7 @@
                                     echo ', lng:';
                                     echo $items[$i]['lng'];
                                     echo ', url:';
-                                    echo "\"#mk" . ($i + 1) . "\"";
+                                    echo "\"" . route('spotsinfo') . '?id=' . $items[$i]['id'] . "\"";
                                     echo ', text:"';
                                     echo $items[$i]['text'];
                                     echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";

@@ -44,6 +44,7 @@ class SpotController extends Controller
                 'lat' => $value->spot_latitude,
                 'lng' => $value->spot_longitude,
                 'text' => $value->name,
+                'id' => $value->id,
             ];
         }
 
@@ -110,6 +111,12 @@ class SpotController extends Controller
         // 駐車場情報を取得
         $parking_id = $items->parking_id;
         $parking = Facility::where('id', $parking_id)->first();
+
+        $spotInfo[] = [
+            'lat' => $parking->latitude,
+            'lng' => $parking->longitude,
+            'text' => $parking->name,
+        ];
 
 
         // 避難場所IDを取得
