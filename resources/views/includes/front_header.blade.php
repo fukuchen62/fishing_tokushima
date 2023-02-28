@@ -102,7 +102,7 @@
 
     {{-- キービジュアル --}}
     <div class="keyvisual expand">
-        @yield('key_visual')
+        {{-- @yield('key_visual') --}}
     </div>
 
     <section class="titlesection expand">

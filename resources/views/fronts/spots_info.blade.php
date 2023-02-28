@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/spots_info.css') }}">
 @endsection
 
-{{-- @section('key_visual')
-    <img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
-@endsection --}}
-
 {{-- メイン --}}
 @section('content')
 
@@ -170,7 +166,7 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-
+<h3 class="section__box--title spotinfo__sectiontitle--fish">周辺マップ</h3>
             <div class="map">
                 <script type="text/javascript">
                     // ホバー時のメッセージ
