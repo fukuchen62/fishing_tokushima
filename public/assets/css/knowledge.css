@@ -76,22 +76,12 @@ input[name="tab_item"] {
 }
 
 
-/*選択されているタブのコンテンツのみを表示*/
-#all:checked~#all_content,
-/* #programming:checked~#programming_content,
-#design:checked~#design_content,#other:checked~#other_content {
-    display: block;
-} */
 
 #all_content{
     display: block;
 }
 
-/*選択されているタブのスタイルを変える*/
-/* .tab_item .active{
-    background-color: #30ADD1;
-    color: #fff;
-} */
+
 
 .card__area{
     flex-wrap: wrap;
@@ -99,7 +89,7 @@ input[name="tab_item"] {
     justify-content: center;
     align-items: center;
 }
-@media screen and (min-width: 960px){
+@media screen and (min-width: 900px){
     .card__area {
         flex-direction: row;
         justify-content: space-around;
@@ -125,9 +115,7 @@ input[name="tab_item"] {
     text-align: center;
 }
 
-.panel.active {
-    /* display: block; */
-}
+
 .tab-area {
     padding: 0 50px;
     margin-top: 50px;
