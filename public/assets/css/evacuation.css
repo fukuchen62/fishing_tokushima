@@ -7,19 +7,18 @@
 }
 
 /* サブビジュアル */
-.sub-keyvisual {
+.keyvisual {
     background-image: url(../images/other_keyvisual_sp.jpg);
-    max-height: 400px;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    height: 400px;
+    max-width: 100vw;
+    background-position: bottom;
 }
 
 @media screen and (min-width: 600px) {
-    .sub-keyvisual {
+    .keyvisual {
         background-image: url(../images/other_keyvisual.jpg);
+        background-size: cover;
+        background-position: center;
     }
-
 }
 
 /* 注意点赤文字 */
