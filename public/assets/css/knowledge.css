@@ -142,7 +142,7 @@ input[name="tab_item"] {
     cursor: pointer;
 }
 
-.tab.active {
+.active1 {
     background-color: #30ADD1;
     color: #fff;
 }

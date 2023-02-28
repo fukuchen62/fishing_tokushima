@@ -81,12 +81,24 @@
                     {{-- <p>{{ $count }}</p> --}}
                     {{-- <p>{{ $number }}</p> --}}
 
+            {{-- <div class="tabs p__lr">
+            <input type="hidden" value="{{ $category_id }}" name="category">
+            <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+            <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+            <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+            <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+        </div> --}}
+
+                {{-- ページネーションのjavascriptのためのinput --}}
+                <input type="hidden" value="{{ $page }}" name="page">
+
                 <ul class="tab-area flex">
                     @for ($i = 0; $i < $number; $i++)
+                    <li class="tab">
                     <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
-                        <li class="tab">{{ $i + 1 }}</li>
-                        {{-- , ['category_id' => $category_id] --}}
+                        {{ $i + 1 }}
                     </a>
+                    </li>
                     @endfor
                 </ul>
 
