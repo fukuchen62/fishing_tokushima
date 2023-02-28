@@ -116,6 +116,10 @@
                     <tr class="table__tr">
                         <td class="table__subtitle">釣り方</td>
                         <td>
+                            {{-- 重複した配列を削除 --}}
+                            {{-- @php
+                                $fishlist = array_unique($fishlist);
+                            @endphp --}}
                             @foreach ($fishlist as $item)
                                 {{ $item->method }}、
                             @endforeach
