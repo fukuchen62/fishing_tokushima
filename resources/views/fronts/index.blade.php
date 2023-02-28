@@ -44,6 +44,7 @@
             @endslot
             @slot('card_text')
             釣りに興味があるけど、何から始めればいいかわからない人はここ！準備物や釣り方について初心者向けにわかりやすくお伝えします。
+
             @endslot
             @endcomponent
             {{-- ここまで --}}
@@ -181,7 +182,7 @@
 
         <div class="plansection__block plan1">
             <a href="{{ route('plansinfo', ['id' => 1]) }}">
-                <img class="planimg" src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="img_neko_700_3.jpg">
+                <img class="planimg" src="{{ asset('storage/images') }}/plans_1_1_640x480.jpg" alt="img_neko_700_3.jpg">
             </a>
             <p class="circle-text fontrotate">
                     <span>い</span><span>わ</span><span>し</span><span>を</span><span>サ</span><span>ビ</span><span>キ</span><span>釣</span><span>り</span><span></span><span></span><span></span>
@@ -189,7 +190,7 @@
         </div>
         <div class="plansection__block plan2">
             <a class="block" href="{{ route('plansinfo', ['id' => 2]) }}">
-                <img class="planimg" src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="img_neko_700_3.jpg">
+                <img class="planimg" src="{{ asset('storage/images') }}/knowledge_8_1_960x540.jpg" alt="knowledge_8_1_960x540.jpg">
                 <p class="circle-text fontrotate">
                         <span>浮</span><span>き</span><span>釣</span><span>り</span><span>で</span><span>あ</span><span>じ</span><span>を</span><span>つ</span><span>る</span><span></span><span></span>
                     </p>
@@ -197,7 +198,7 @@
         </div>
         <div class="plansection__block plan3">
             <a href="{{ route('plansinfo', ['id' => 3]) }}">
-                <img class="planimg" src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="img_neko_700_3.jpg">
+                <img class="planimg" src="{{ asset('storage/images') }}/plans_3_1_640x480.jpg" alt="plans_3_1_640x480.jpg">
                 <p class="circle-text fontrotate">
                         <span>ル</span><span>ア</span><span>ー</span><span>で</span><span>あ</span><span>じ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span>
                     </p>
@@ -229,31 +230,31 @@
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
                         <div class='arrow_box'>アジ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_azi.png') }}" alt="fish_azi.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
                         <div class='arrow_box'>イワシ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_iwashi.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_iwashi.png') }}" alt="fish_iwashi.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
                         <div class='arrow_box'>メバル</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_mebaru.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_mebaru.png') }}" alt="fish_mebaru.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
                         <div class='arrow_box'>チヌ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_tinu.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_tinu.png') }}" alt="fish_tinu.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
                         <div class='arrow_box'>シーバス</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_sibasu.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_sibasu.png') }}" alt="fish_sibasu.png"></div>
                     </a>
                 </li>
             </ul>
@@ -261,31 +262,31 @@
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
                         <div class='arrow_box'>アジ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_azi.png') }}" alt="fish_azi.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
                         <div class='arrow_box'>イワシ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_iwashi.png') }}" alt="fish_iwashi.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
                         <div class='arrow_box'>メバル</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_mebaru.png') }}" alt="fish_mebaru.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
                         <div class='arrow_box'>チヌ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_tinu.png') }}" alt="fish_tinu.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
                         <div class='arrow_box'>シーバス</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_sibasu.png') }}" alt="fish_sibasu.png"></div>
                     </a>
                 </li>
             </ul>
@@ -298,31 +299,31 @@
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
                         <div class='arrow_box'>メバル</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_mebaru.png') }}" alt="fish_mebaru.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
                         <div class='arrow_box'>チヌ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_tinu.png') }}" alt="fish_tinu.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
                         <div class='arrow_box'>シーバス</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_sibasu.png') }}" alt="fish_sibasu.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
                         <div class='arrow_box'>アジ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_azi.png') }}" alt="fish_azi.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
                         <div class='arrow_box'>イワシ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_iwashi.png') }}" alt="fish_iwashi.png"></div>
                     </a>
                 </li>
             </ul>
@@ -330,31 +331,31 @@
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
                         <div class='arrow_box'>メバル</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_mebaru.png') }}" alt="fish_mebaru.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
                         <div class='arrow_box'>チヌ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_tinu.png') }}" alt="fish_tinu.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
                         <div class='arrow_box'>シーバス</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_sibasu.png') }}" alt="fish_sibasu.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
                         <div class='arrow_box'>アジ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_azi.png') }}" alt="fish_azi.png"></div>
                     </a>
                 </li>
                 <li class="d-demo__item">
                     <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
                         <div class='arrow_box'>イワシ</div>
-                        <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}" alt="aji-img.png"></div>
+                        <div class="fishimgblock"><img src="{{ asset('assets/images/fish_iwashi.png') }}" alt="fish_iwashi.png"></div>
                     </a>
                 </li>
             </ul>
@@ -364,196 +365,17 @@
 </section>
 
 
-<<<<<<< Updated upstream
-    <section class="fishsection  expand">
-        <div class="flex sectiontitle__box">
-            <img class="fishicon" src="{{ asset('assets/images/svg/icon_fish__second.svg') }}" alt="icon_fish__second.svg">
-            <h2 class="pagetitle fishtitle">徳島で釣れる魚</h2>
-        </div>
-        <div class="pagetitle__border fishbottom"></div>
-
-        <div class="d-demo">
-            <div class="d-demo__wrap">
-                <ul class="d-demo__list d-demo__list--left">
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
-                            <div class='arrow_box'>アジ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
-                            <div class='arrow_box'>イワシ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
-                            <div class='arrow_box'>メバル</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
-                            <div class='arrow_box'>チヌ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
-                            <div class='arrow_box'>シーバス</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="d-demo__list d-demo__list--left">
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
-                            <div class='arrow_box'>アジ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
-                            <div class='arrow_box'>イワシ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
-                            <div class='arrow_box'>メバル</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
-                            <div class='arrow_box'>チヌ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
-                            <div class='arrow_box'>シーバス</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="d-demo">
-            <div class="d-demo__wrap">
-                <ul class="d-demo__list d-demo__list--left2">
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
-                            <div class='arrow_box'>メバル</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
-                            <div class='arrow_box'>チヌ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
-                            <div class='arrow_box'>シーバス</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
-                            <div class='arrow_box'>アジ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
-                            <div class='arrow_box'>イワシ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="d-demo__list d-demo__list--left2">
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 3]) }}">
-                            <div class='arrow_box'>メバル</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 4]) }}">
-                            <div class='arrow_box'>チヌ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 5]) }}">
-                            <div class='arrow_box'>シーバス</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 1]) }}">
-                            <div class='arrow_box'>アジ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                    <li class="d-demo__item">
-                        <a class="flex" href="{{ route('fishinfo', ['id' => 2]) }}">
-                            <div class='arrow_box'>イワシ</div>
-                            <div class="fishimgblock"><img src="{{ asset('assets/images/aji-img.png') }}"
-                                    alt="aji-img.png"></div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="infomationsection">
-        <h2 class="pagetitle">infomation</h2>
-        <div class="pagetitle__border"></div>
-        <div class="infomation__block">
-            @foreach ($items as $key => $item)
-                <a href="{{ route('newsinfo', ['id' => $items[$key]]) }}" class="flex">
-                    @php
-                        $ts = strtotime($item->created_at);
-                    @endphp
-                    <p class="info__day">
-                        {{ date('Y.m.d', $ts) }}
-=======
 <section class="infomationsection">
     <h2 class="pagetitle">infomation</h2>
     <div class="pagetitle__border"></div>
     <div class="infomation__block">
         @foreach ($items as $key => $item)
         <a href="{{ route('newsinfo', ['id' => $items[$key]]) }}" class="flex">
+            @php
+            $ts = strtotime($item->created_at);
+            @endphp
             <p class="info__day">
-                        {{ $item->created_at }}
->>>>>>> Stashed changes
+                        {{ date('Y.m.d', $ts) }}
                     </p>
             <p>
                         {{ $item->title }}
