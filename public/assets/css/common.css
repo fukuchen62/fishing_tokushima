@@ -98,6 +98,7 @@ height: auto;
     transform: translate(-50%, 0);
 }
 
+
 @media screen and (max-width: 480px) {
     .pagetitle::before {
         right: 265px;
@@ -647,12 +648,23 @@ height: auto;
     margin: 0;
 }
 
+.titlesection__border{
+    background-color: #eaf2fa;
+    background-image: url(../images/svg/wave-indexpage.svg);
+    width: 100vw;
+    height: 60px;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    transform: scale(-1, 1)
+}
+
 .titlesection {
     width: 100vw;
     height: 140px;
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: #FFEA20;
 }
 
 .titlesection__box {

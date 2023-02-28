@@ -118,7 +118,7 @@
         <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish3">
 
     </section>
-    <div class="titlesection__border expand"></div>
+<div class="titlesection__border expand"></div>
 </header>
 
 
