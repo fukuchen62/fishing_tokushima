@@ -402,8 +402,11 @@
         <div class="infomation__block">
             @foreach ($items as $key => $item)
                 <a href="{{ route('newsinfo', ['id' => $items[$key]]) }}" class="flex">
+                    @php
+                        $ts = strtotime($item->created_at);
+                    @endphp
                     <p class="info__day">
-                        {{ $item->created_at }}
+                        {{ date('Y.m.d', $ts) }}
                     </p>
                     <p>
                         {{ $item->title }}
