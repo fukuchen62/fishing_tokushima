@@ -1,4 +1,4 @@
-<div id="mk{{ $shop_id }}" class="p__lr">
+<div id="mk{{ $shop_id }}" class="shop__content--p p__lr">
     <div class="shop__content">
         <div class="section__content section__content--displayflex">
             <div class="section__content--photomaxwidth">
