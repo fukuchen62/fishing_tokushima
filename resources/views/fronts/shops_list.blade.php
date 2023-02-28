@@ -73,7 +73,7 @@
                                 echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                 echo "\n";
                             }
-
+                            
                         @endphp
 
                         // var marker = new google.maps.Marker();
@@ -149,7 +149,7 @@
                 <!-- グーグルマップAPI使用 -->
                 <section class="map-box content">
                     {{-- <h2 class="ta-a h2 mb30 map-sub">ＭＡＰ表示</h2> --}}
-                    <div id="map"></div>
+                    <div id="map" class="googlemap" style="width:100%; height:600px"></div>
                 </section>
 
             </div>
@@ -157,8 +157,12 @@
 
         <h3 class="section__box--title">検索結果</h3>
         <!-- ショップ一覧 -->
-        @foreach ($shops as $item)
+        @foreach ($shops as $key => $item)
             @component('components.front_shops_card')
+                @slot('shop_id')
+                    {{ $key + 1 }}
+                @endslot
+
                 @slot('shop_img')
                     {{ $item->img }}
                 @endslot
