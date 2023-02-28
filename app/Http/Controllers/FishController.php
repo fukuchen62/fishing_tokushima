@@ -90,7 +90,7 @@ class FishController extends Controller
                 $spot_list[] = $spotinfo;
             }
         } else {
-            $spot_list = null;
+            $spot_list[] = null;
         }
 
 
