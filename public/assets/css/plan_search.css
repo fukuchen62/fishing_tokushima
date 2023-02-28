@@ -24,14 +24,17 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
-
 }
 
 .section__box--title {
     margin:20px auto 50px;
 }
 
+
 /* 検索画面 */
+.search__box{
+    padding: 0 20px;
+}
 
 /* 検索画面タイトル */
 .form__box--title {
@@ -40,7 +43,7 @@
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    margin: 0px 0 20px 0;
+    margin: 0 0 20px;
 }
 
 /* 検索画面全体 */
@@ -51,33 +54,47 @@
 }
 
 /* 検索項目 */
+/* 検索項目横並び */
+.choice__box {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-bottom: dotted 2px #30add1;
+}
 
 /* 検索項目レイアウト */
 .search__box--title {
-    padding-top: 30px;
-    padding-bottom: 20px;
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
 }
 
 /* チェックボックス */
-
-/* チェックボックスレイアウト */
+/* チェックボックス全体レイアウト */
 .choice__box ul {
     margin: 0 auto;
-    padding-bottom: 20px;
+    width: 80%;
+    padding-bottom: 0px;
+}
+
+/* チェックボックス横並び */
+.radio_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 /* チェックボックス間レイアウト */
 .choice__box ul li {
     margin: 0 auto;
-    width: 120px;
-    margin-bottom: 24px;
+    width: 100px;
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #eaf2fa;
     border-radius: 20px;
 }
 
 /* ボタン */
-
 /* ボタン、ボタン間レイアウト */
 .result_btn__box {
     display: flex;
@@ -112,45 +129,4 @@
 #reset_btn:hover, #search_btn:hover {
     box-shadow: none;
     transform: translate(1px, 1px);
-}
-
-
-/* PC時 */
-@media screen and (min-width:1025px) {
-    /* 検索画面 */
-
-    /* 検索項目横並び */
-    .choice__box {
-        display: flex;
-        margin: 0 auto;
-        width: 80%;
-        padding-top: 20px;
-    }
-
-    /* チェックボックス横並び */
-    .radio_box {
-        display: flex;
-    }
-
-    /* 検索項目レイアウト */
-    .search__box--title {
-    padding-top: 5px;
-    padding-bottom: 0px;
-    width: 80px;
-    }
-
-    /* チェックボックス全体レイアウト */
-    .choice__box ul {
-        width: 80%;
-        padding-bottom: 0px;
-    }
-
-    /* チェックボックス間レイアウト */
-    .choice__box ul li {
-    margin-bottom: 24px;
-    padding: 10px;
-    background-color: #eaf2fa;
-    border-radius: 20px;
-    margin-left: 30px;
-    }
 }
