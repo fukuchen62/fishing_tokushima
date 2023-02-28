@@ -98,11 +98,20 @@ class SpotController extends Controller
             $shopinfo = Shop::find($id);
 
             // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
-            $spotInfo[] = [
-                'lat' => $shopinfo->latitude,
-                'lng' => $shopinfo->longitude,
-                'text' => $shopinfo->name,
-            ];
+            if ($shopinfo != null) {
+                $spotInfo[] = [
+                    'lat' => $shopinfo->latitude,
+                    'lng' => $shopinfo->longitude,
+                    'text' => $shopinfo->name,
+                ];
+            } else {
+                $spotInfo[] = [
+                    'lat' => "",
+                    'lng' => "",
+                    'text' => "",
+                ];
+            }
+
 
             // shop情報を配列に加える
             $shop_info_list[] = $shopinfo;
@@ -112,11 +121,20 @@ class SpotController extends Controller
         $parking_id = $items->parking_id;
         $parking = Facility::where('id', $parking_id)->first();
 
-        $spotInfo[] = [
-            'lat' => $parking->latitude,
-            'lng' => $parking->longitude,
-            'text' => $parking->name,
-        ];
+        if ($shopinfo != null) {
+            $spotInfo[] = [
+                'lat' => $parking->latitude,
+                'lng' => $parking->longitude,
+                'text' => $parking->name,
+            ];
+        } else {
+            $spotInfo[] = [
+                'lat' => "",
+                'lng' => "",
+                'text' => "",
+            ];
+        }
+
 
 
         // 避難場所IDを取得
@@ -131,11 +149,19 @@ class SpotController extends Controller
             $evacuationinfo = Evacuation::find($id);
 
             // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
-            $spotInfo[] = [
-                'lat' => $evacuationinfo->latitude,
-                'lng' => $evacuationinfo->longitude,
-                'text' => $evacuationinfo->name,
-            ];
+            if ($shopinfo != null) {
+                $spotInfo[] = [
+                    'lat' => $evacuationinfo->latitude,
+                    'lng' => $evacuationinfo->longitude,
+                    'text' => $evacuationinfo->name,
+                ];
+            } else {
+                $spotInfo[] = [
+                    'lat' => "",
+                    'lng' => "",
+                    'text' => "",
+                ];
+            }
 
             // 避難場所情報を配列に加える
             $evacuation_info_list[] = $evacuationinfo;
@@ -193,7 +219,7 @@ class SpotController extends Controller
     /**
      * getCity
      *地域IDごとに絞り込む関数
-     
+
      * @param [type] $cityId
      * @return void
      */
