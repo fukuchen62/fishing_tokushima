@@ -88,13 +88,11 @@
                 <tr class="table__tr">
                     <td class="table__subtitle">釣れる場所</td>
                     <td>
-                        @if ($spots != null)
-                            @foreach ($spots as $spot)
+                        @foreach ($spots as $spot)
+                            @if ($spot != null)
                                 {{ $spot->name }},
-                            @endforeach
-                        @else
-                        @endif
-
+                            @endif
+                        @endforeach
                     </td>
                 </tr>
                 <tr class="table__tr">
@@ -186,8 +184,8 @@
             <h2 class="spot__box--title">釣れるスポット</h2>
             <ul class="spot__box--list">
 
-                @if ($spots != null)
-                    @foreach ($spots as $key => $spot)
+                @foreach ($spots as $key => $spot)
+                    @if ($spot != null)
                         @component('components.front_fish_info_card')
                             @slot('card_link')
                                 {{ route('spotsinfo', ['id' => $spots[$key]]) }}
@@ -209,9 +207,10 @@
                                 {{ $spot->overview }}
                             @endslot
                         @endcomponent
-                    @endforeach
+                    @endif
+                @endforeach
 
-                @endif
+
             </ul>
         </div>
     </section>
