@@ -8,22 +8,15 @@ body {
 .keyvisual {
     background-image: url(../images/other_keyvisual_sp.jpg);
     max-width: 100vw;
-    max-height: 600px;
-    /* height: 300px; */
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 @media screen and (min-width: 600px) {
     .keyvisual {
         background-image: url(../images/other_keyvisual.jpg);
-        height: 400px;
-        background-position: center top;
         background-size: cover;
-        background-repeat: no-repeat;
+        background-position: center;
     }
-
 }
 
 /* ページタイトル */
@@ -43,6 +36,9 @@ body {
     background-image: url(../images/svg/wave-indexpage.svg);
     transform: rotate(180);
     background-color: #30ADD1;
+}
+.titlesection__border{
+    display: none;
 }
 
 /* main */

@@ -1,4 +1,18 @@
 @charset "utf-8";
+.keyvisual{
+    height: 300px;
+    background-image: url(../images/shop_keyvisual_sp.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width:600px) {
+    .keyvisual{
+        background-image: url(../images/shop_keyvisual.jpg);
+        background-position: 50% 100%;
+    }
+}
+
 .shallow{
     background-color:#EAF2FA;
 }
