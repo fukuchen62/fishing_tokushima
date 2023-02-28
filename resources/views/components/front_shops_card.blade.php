@@ -13,7 +13,7 @@
                             <th colspan="2">{{ $shop_name }}</th>
                         </tr>
                         <tr>
-                            <td class="section__image--location">住所</td>
+                            <td class="section__image--location" width="160">住所</td>
                             <td>{{ $shop_address }}</td>
                         </tr>
                         <tr>

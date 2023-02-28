@@ -7,6 +7,10 @@
     box-shadow: none;
 }
 
+.shallow{
+    padding-top: 50px;
+}
+
 /* 東西南北ボタン */
 .tab_item{
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
@@ -32,7 +36,7 @@
     gap: 20px;
     align-items: center;
     justify-content: space-around;
-    margin: 50px auto;
+    margin: 0 auto 50px;
 }
 
 @media screen and (min-width:470px) {
@@ -60,9 +64,6 @@
 
 .section__content {
     line-height: 2.5;
-}
-
-.section__content--full {
 }
 
 .section__content--title {
@@ -103,6 +104,8 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: dotted 3px #30ADD1;
 }
 
 .section__image--location::before,
@@ -148,13 +151,8 @@
     margin-right: 7.25px;
 }
 
-
-.section__content--top {
-    margin-top: 30px;
-}
-
 .shop__content--title{
-    padding-bottom: 10px;
+    padding: 20px 0 5px;
     font-size: 20px;
 }
 
@@ -180,12 +178,6 @@
     line-height: 1.5;
 }
 
-.shop__description--marginservice,
-.shop__description--marginmessage {
-    /* margin: 0;
-    padding: 10px; */
-}
-
 .section__content--information {
     text-align: justify;
     margin: 20px 0 0 20px;
@@ -193,22 +185,18 @@
 
 .section__wrap--infomation {
     width: 100%;
-
     padding-bottom: 30px;
 }
 
-.section__map--information {
-    width: 100%;
-    height: 300px;
+.map{
     border-top: 5px solid #ffea20;
     border-right: 5px solid #ffea20;
     border-bottom: 5px solid #30ADD1;
     border-left: 5px solid #30ADD1;
-    padding: 0;
 }
 
 .shop__table tr,th {
-    padding:5px 10px;
+    /* padding:5px 10px; */
     border-bottom: solid 1px #51656F;
 }
 
@@ -216,6 +204,7 @@
     display: block;
     padding: 0 10px;
 }
+
 @media screen and (min-width:500px) {
     .shop__table td{
         display: table-cell;
@@ -227,8 +216,14 @@
     border-radius: 10px;
 }
 
+@media screen and (min-width: 1080px) {
+    .shop__table {
+        width: 500px;
+    }
+
 .shop__table th{
     font-size: 20px;
+}
 }
 
 @media screen and (max-width: 606px) {
@@ -272,16 +267,6 @@
     }
 }
 
-@media screen and (max-width: 1080px) {
-    .flex__content {
-        display: block;
-    }
-
-    .section__content--topmessage {
-        margin-top: 20px;
-    }
-}
-
 @media screen and (min-width: 1080px) {
     .section__content {
         line-height: 2.5;
@@ -291,43 +276,7 @@
         margin-top: 0;
     }
 
-    .shop__description--marginservice {
-        /* padding: 15.5px; */
-    }
-
-    .shop__description--marginmessage {
-        /* padding: 21.5px; */
-    }
-
-    .shop__description--marginmessage:nth-last-of-type(1) {
-        /* padding-top: 22.625px; */
-    }
-}
-
-@media screen and (min-width: 1147px) and (max-width: 1197px) {
-    .shop__description--marginmessage {
-        /* padding: 18.5px; */
-    }
-}
-
-@media screen and (min-width: 1197px) and (max-width: 1198px) {
-    .shop__description--marginmessage:nth-last-of-type(1) {
-        /* padding-top: 4.975px; */
-    }
-}
-
-@media screen and (min-width: 1198px) and (max-width: 1200px) {
-    .shop__description--marginmessage {
-        /* padding: 18.675px; */
-    }
-}
-
-@media screen and (min-width: 1200px)  {
-    .shop__description--marginmessage {
-        /* padding: 18.905px; */
-    }
-
-    .shop__description--marginmessage:nth-last-of-type(1) {
-        /* padding-top: 17.275px; */
+    .shop__description--service, .shop__description--message{
+        width: 500px
     }
 }
