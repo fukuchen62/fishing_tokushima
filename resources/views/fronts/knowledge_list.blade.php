@@ -70,82 +70,29 @@
             </div>
         </div>
 
-        {{-- ページネーション --}}
-        @php
-        $count = count($knowledges)+1;
-        // カウントがうまくいかないため、＋１して対応
-        $number = $count / 6;
-        @endphp
-        {{--下記試しのため使用 --}}
-        {{-- <p>{{ $count }}</p> --}}
-        {{-- <p>{{ $number }}</p> --}}
-
-        <ul class="tab-area flex">
-            @for ($i = 0; $i
-
-            < $number; $i++) <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
-                <li class="tab">{{ $i + 1 }}</li>
-                {{-- , ['category_id' => $category_id] --}}
-                </a>
-                @endfor
-        </ul>
-
-    </div>
-
-                                        @slot('card_alt')
-                                        @if ($item->thumbnail !="")
-                                            {{ $item->thumbnail }}
-                                        @endif
-                                        @endslot
-
-                                        @slot('card_title')
-                                            {{ $item->title }}
-                                        @endslot
-
-                                        @slot('card_text')
-                                        @php
-                                        $overview = mb_strimwidth($item->overview, 0, 150, "・・・");
-                                        @endphp
-                                        {{ $overview }}
-                                        @endslot
-                                    @endcomponent
-                                @endforeach
-                            </ul>
-                        </div>
-                </div>
-
-                {{-- ページネーション --}}
-                    @php
-                        $count = count($knowledges)+1;
-                        // カウントがうまくいかないため、＋１して対応
-                        $number = $count / 6;
-                    @endphp
+            {{-- ページネーション --}}
+            @php
+                $count = count($knowledges)+1;
+                // カウントがうまくいかないため、＋１して対応
+                $number = $count / 6;
+            @endphp
                     {{--下記試しのため使用 --}}
                     {{-- <p>{{ $count }}</p> --}}
                     {{-- <p>{{ $number }}</p> --}}
 
-            {{-- <div class="tabs p__lr">
-            <input type="hidden" value="{{ $category_id }}" name="category">
-            <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
-            <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
-            <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
-            <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
-        </div> --}}
+            {{-- ページネーションのjavascriptのためのinput --}}
+            <input type="hidden" value="{{ $page }}" name="page">
 
-                {{-- ページネーションのjavascriptのためのinput --}}
-                <input type="hidden" value="{{ $page }}" name="page">
-
-                <ul class="tab-area flex">
-                    @for ($i = 0; $i < $number; $i++)
-                    <li class="tab">
-                    <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
-                        {{ $i + 1 }}
-                    </a>
-                    </li>
-                    @endfor
-                </ul>
-
-            </div>
+            <ul class="tab-area flex">
+                @for ($i = 0; $i < $number; $i++)
+                <li class="tab">
+                <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
+                    {{ $i + 1 }}
+                </a>
+                </li>
+                @endfor
+            </ul>
+    </div>
 
     </section>
     <div class="firstsection__bottom expand"></div>
