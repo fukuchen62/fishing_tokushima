@@ -233,6 +233,9 @@
         align-items: center;
         margin-top: -50px;
     }
+        .knowledge__section--flexbox:first-child{
+            margin-top: 0;
+        }
     .knowledge__imgbox {
         max-width: 400px;
         margin: 0 50px;
