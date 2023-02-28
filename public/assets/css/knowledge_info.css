@@ -16,6 +16,10 @@ body{
     transform: rotate(180);
     background-color: #30ADD1;
 }
+.titlesection__border {
+    display: none;
+
+}
 
 .knowledge__image{
     width: 100%;
@@ -243,8 +247,4 @@ body{
     .card__area {
         justify-content: space-between;
     }
-}
-
-.footer{
-    margin-top: 50px;
 }
