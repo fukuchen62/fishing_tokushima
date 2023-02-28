@@ -94,10 +94,15 @@
 }
 
 /* 店舗の一覧 */
+.shop__content--p{
+    padding-bottom: 50px;
+}
+
 .shop__content{
     position: relative;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 .section__image--location::before,
