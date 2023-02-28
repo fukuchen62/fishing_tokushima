@@ -905,37 +905,43 @@ td {
 
 /* TOPに戻るボタン */
 .text {
+    display: none;
     font-size: 12px;
 }
 
 .fish {
+    display: none;
     fill: #35a4c4;
 }
 
 .bubble {
+    display: none;
     fill: #fff;
     opacity: .7;
 }
 
 .hook {
+    display: none;
     fill: #51656f;
 }
 
 .topreturn__position{
+    display: none;
     position: sticky;
     top:0;
     z-index: 10;
 }
 
 .topreturn{
+    display: none;
     height: 120vh;
     position: absolute;
     top:-240px;
     right: 10px;
-    display: inline-block;
 }
 
 .topreturn__man{
+    display: none;
     width: 100px;
     height: 100px;
     position: absolute;
@@ -944,12 +950,33 @@ td {
 }
 
 @media screen and (min-width:1200px) {
-.topreturn{
-    right: -20px;
-}
-.topreturn__man{
-    right: -40px;
-}
+    .text {
+        display: inline-block;
+        }
+    .fish {
+        display: block;
+        }
+    .bubble {
+        display: block;
+        }
+    .hook {
+        display: block;
+    }
+    .topreturn__position {
+        display: block;
+    }
+        .topreturn {
+            display: block;
+        }
+    .topreturn {
+        right: -20px;
+        display: inline-block;
+    }
+
+    .topreturn__man{
+        display: inline-block;
+        right: -40px;
+    }
 }
 
 .topreturn__thread{
