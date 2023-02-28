@@ -88,9 +88,13 @@
                 <tr class="table__tr">
                     <td class="table__subtitle">釣れる場所</td>
                     <td>
-                        @foreach ($spots as $spot)
-                            {{ $spot->name }},
-                        @endforeach
+                        @if ($spots != null)
+                            @foreach ($spots as $spot)
+                                {{ $spot->name }},
+                            @endforeach
+                        @else
+                        @endif
+
                     </td>
                 </tr>
                 <tr class="table__tr">
@@ -181,29 +185,33 @@
         <div class="spot__box">
             <h2 class="spot__box--title">釣れるスポット</h2>
             <ul class="spot__box--list">
-                @foreach ($spots as $key => $spot)
-                    @component('components.front_fish_info_card')
-                        @slot('card_link')
-                            {{ route('spotsinfo', ['id' => $spots[$key]]) }}
-                        @endslot
-                        @slot('card_alt')
-                            {{ $spot->img1 }}
-                        @endslot
-                        @slot('card_src')
-                            @if ($spot->img1 != '')
-                                {{ asset('storage/images') }}/{{ $spot->img1 }}
-                            @else
-                                https://placehold.jp/320x240.png
-                            @endif
-                        @endslot
-                        @slot('card_name')
-                            {{ $spot->name }}
-                        @endslot
-                        @slot('card_overview')
-                            {{ $spot->overview }}
-                        @endslot
-                    @endcomponent
-                @endforeach
+
+                @if ($spots != null)
+                    @foreach ($spots as $key => $spot)
+                        @component('components.front_fish_info_card')
+                            @slot('card_link')
+                                {{ route('spotsinfo', ['id' => $spots[$key]]) }}
+                            @endslot
+                            @slot('card_alt')
+                                {{ $spot->img1 }}
+                            @endslot
+                            @slot('card_src')
+                                @if ($spot->img1 != '')
+                                    {{ asset('storage/images') }}/{{ $spot->img1 }}
+                                @else
+                                    https://placehold.jp/320x240.png
+                                @endif
+                            @endslot
+                            @slot('card_name')
+                                {{ $spot->name }}
+                            @endslot
+                            @slot('card_overview')
+                                {{ $spot->overview }}
+                            @endslot
+                        @endcomponent
+                    @endforeach
+
+                @endif
             </ul>
         </div>
     </section>

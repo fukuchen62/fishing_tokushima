@@ -68,12 +68,12 @@ class FishController extends Controller
     {
         $table_id = '';
 
-        // idがあれば$idに代入
+        // idがあれば$table_idに代入
         if (isset($request->id)) {
             $table_id = $request->id;
         }
 
-        // idで該当魚の情報を取得
+        // $table_idで該当魚の情報を取得
         $item = Fish::find($table_id);
 
 
@@ -81,15 +81,19 @@ class FishController extends Controller
         $spot_id = $item->spot_id;
         if ($spot_id != '') {
             $spotid_list = explode(",", $spot_id);
+
+            // 釣れるスポットの情報を取得
+            foreach ($spotid_list as $id) {
+                // spot情報を読み込む
+                $spotinfo = Spot::find($id);
+                // spot情報を配列に加える
+                $spot_list[] = $spotinfo;
+            }
+        } else {
+            $spot_list = null;
         }
 
-        // 釣れるスポットの情報を取得
-        foreach ($spotid_list as $id) {
-            // spot情報を読み込む
-            $spotinfo = Spot::find($id);
-            // spot情報を配列に加える
-            $spot_list[] = $spotinfo;
-        }
+
 
         // 魚IDを取得
         $fish_id = $item->id;

@@ -110,7 +110,7 @@
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">駐車場</td>
-                        <td>{{ $parking->name }}</td>
+                        <td>{{ $parking['text'] }}</td>
                         {{-- 本来なら「有」or「-」になる予定 --}}
                     </tr>
                     <tr class="table__tr">
@@ -133,7 +133,7 @@
                         <td class="table__subtitle">避難場所</td>
                         <td>
                             @foreach ($evacuationlist as $item)
-                                {{ $item->name }}<br>
+                                {{ $item['text'] }}<br>
                             @endforeach
                         </td>
                         {{-- 避難場所の名称を表示 --}}
