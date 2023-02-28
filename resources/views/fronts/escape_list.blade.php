@@ -12,9 +12,7 @@
 @endsection
 
 @section('key_visual')
-    <div class="keyvisual expand">
-        キービジュアル
-    </div>
+        {{-- {{ asset('assets/images/spot_keyvisual.jpg') }} --}}
 @endsection
 
 {{-- メイン --}}
