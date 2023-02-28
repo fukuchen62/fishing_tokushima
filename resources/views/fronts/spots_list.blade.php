@@ -168,15 +168,18 @@
                     @endslot
 
                     @slot('spot_alt')
-                        {{ $item->title }}
+                        {{ $item->name }}
                     @endslot
 
                     @slot('spot_title')
-                        {{ $item->title }}
+                        {{ $item->name }}
                     @endslot
 
                     @slot('spot_text')
-                        {{ $item->overview }}
+                        @php
+                            $overview = mb_strimwidth($item->overview, 0, 180, '・・・');
+                        @endphp
+                        {{ $overview }}
                     @endslot
                 @endcomponent
             @endforeach
