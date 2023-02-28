@@ -22,7 +22,9 @@
         <section class="firstsection expand">
 
             <div class="tabs">
+                <input type="hidden" value="{{ $category }}" name="category">
                 <a class="spot tab_item" href="{{ route('mypage', ['category' => "spot"]) }}">スポット</a>
+                <input type="hidden" value="spot" id="spot">
                 <a class="plan tab_item" href="{{ route('mypage', ['category' => "plan"]) }}">プラン</a>
             </div>
 
