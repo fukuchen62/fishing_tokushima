@@ -160,8 +160,7 @@ input[name="tab_item"] {
 }
 
 /*liにactiveクラスがついた時の形状*/
-.tabs li.active {
+.active {
     background-color: #30ADD1;
     color: #fff;
-
-  }
+}
