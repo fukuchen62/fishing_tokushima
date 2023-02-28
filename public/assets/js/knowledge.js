@@ -1,14 +1,28 @@
 "use strict";
 
-$(function () {
-  $('.tab').on('click', function() {
-    $('.tab, .panel').removeClass('active');
-    $(this).addClass('active');
-    var index = $('.tab').index(this);
-    $('.panel').eq(index).addClass('active');
-  });
+// ページネーションの色が変わる
+$(window).on('load', function () {
+  $('.tab:first-child').addClass('active1');
+
+  const $page = $('input:hidden[name="page"]').val();
+
+  if ($page != "") {
+    $('.active1').removeClass('active1');
+    $('.tab:nth-child(' + $page + ')').addClass('active1');
+  }
 });
 
+
+// $(function () {
+//   $('.tab').on('click', function() {
+//     $('.tab').removeClass('active');
+//     $(this).addClass('active');
+//     var index = $('.tab').index(this);
+//     $('.panel').eq(index).addClass('active');
+//   });
+// });
+
+// クリックしたらタブのスタイルが変わる
 $(window).on('load', function () {
   $('.tab_item:first-child').addClass('active');
 

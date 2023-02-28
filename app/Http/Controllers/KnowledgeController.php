@@ -37,9 +37,17 @@ class KnowledgeController extends Controller
         $items = Knowledge::Category($category_id)
             ->simplePaginate(6);
 
+
+        $page = "";
+
+        if (isset($request->page)) {
+            $page = $request->page;
+        }
+
         $data = [
             'knowledges' => $items,
             'category_id' => $category_id,
+            'page' => $page,
         ];
 
         return view('fronts.knowledge_list', $data);

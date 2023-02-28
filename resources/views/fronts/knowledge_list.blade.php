@@ -70,28 +70,32 @@
             </div>
         </div>
 
-        {{-- ページネーション --}}
-        @php
-        $count = count($knowledges)+1;
-        // カウントがうまくいかないため、＋１して対応
-        $number = $count / 6;
-        @endphp
-        {{--下記試しのため使用 --}}
-        {{-- <p>{{ $count }}</p> --}}
-        {{-- <p>{{ $number }}</p> --}}
+            {{-- ページネーション --}}
+            @php
+                $count = count($knowledges)+1;
+                // カウントがうまくいかないため、＋１して対応
+                $number = $count / 6;
+            @endphp
+                    {{--下記試しのため使用 --}}
+                    {{-- <p>{{ $count }}</p> --}}
+                    {{-- <p>{{ $number }}</p> --}}
 
-        <ul class="tab-area flex">
-            @for ($i = 0; $i
+            {{-- ページネーションのjavascriptのためのinput --}}
+            <input type="hidden" value="{{ $page }}" name="page">
 
-            < $number; $i++) <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
-                <li class="tab">{{ $i + 1 }}</li>
-                {{-- , ['category_id' => $category_id] --}}
+            <ul class="tab-area flex">
+                @for ($i = 0; $i < $number; $i++)
+                <li class="tab">
+                <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
+                    {{ $i + 1 }}
                 </a>
+                </li>
                 @endfor
-        </ul>
-
+            </ul>
     </div>
 
+    </section>
+    <div class="firstsection__bottom expand"></div>
 </section>
 <div class="firstsection__bottom expand"></div>
 

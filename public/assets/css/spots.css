@@ -1,4 +1,18 @@
 @charset "utf-8";
+.keyvisual{
+    height: 300px;
+    background-image: url(../images/spot_keyvisual_sp.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-color: #dedede;
+}
+
+@media screen and (min-width:600px) {
+    .keyvisual{
+        background-image: url(../images/spot_keyvisual.jpg);
+        background-position: 30% 60%;
+    }
+}
 
 body{
     /* padding: 0 20px; */

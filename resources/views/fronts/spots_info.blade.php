@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/spots_info.css') }}">
 @endsection
 
-@section('key_visual')
-    <img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
-@endsection
-
 {{-- メイン --}}
 @section('content')
 
@@ -116,6 +112,10 @@
                     <tr class="table__tr">
                         <td class="table__subtitle">釣り方</td>
                         <td>
+                            {{-- 重複した配列を削除 --}}
+                            {{-- @php
+                                $fishlist = array_unique($fishlist);
+                            @endphp --}}
                             @foreach ($fishlist as $item)
                                 {{ $item->method }}、
                             @endforeach
@@ -166,7 +166,7 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-
+<h3 class="section__box--title spotinfo__sectiontitle--fish">周辺マップ</h3>
             <div class="map">
                 <script type="text/javascript">
                     // ホバー時のメッセージ
