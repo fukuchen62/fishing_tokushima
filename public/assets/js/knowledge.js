@@ -12,21 +12,33 @@ $(function () {
 $(window).on('load', function () {
   $('.tab_item:first-child').addClass('active');
 
-  // カテゴリ１を選択
-  // $('.active').removeClass('active');
-  // $('category1').addClass('active');
+  const $category = $('input:hidden[name="category"]').val();
 
-  // カテゴリ２を選択
-  // $('.active').removeClass('active');
-  // $('category2').addClass('active');
+  switch ($category) {
+    case "1":
+      // カテゴリ１を選択
+      $('.active').removeClass('active');
+      $('.category1').addClass('active');
+      break;
 
-    // カテゴリ３を選択
-  // $('.active').removeClass('active');
-  // $('category3').addClass('active');
+    case "2":
+        // カテゴリ２を選択
+        $('.active').removeClass('active');
+        $('.category2').addClass('active');
+      break;
 
-    // カテゴリ４を選択
-  // $('.active').removeClass('active');
-  // $('category4').addClass('active');
+    case "3":
+        // カテゴリ３を選択
+        $('.active').removeClass('active');
+        $('.category3').addClass('active');
+      break;
+
+    case "4":
+        // カテゴリ４を選択
+        $('.active').removeClass('active');
+        $('.category4').addClass('active');
+      break;
+  }
 })
 
 

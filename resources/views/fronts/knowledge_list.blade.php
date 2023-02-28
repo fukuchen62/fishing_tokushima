@@ -22,17 +22,18 @@
     <section class="firstsection expand">
 
         <div class="tabs p__lr">
-                <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
-                <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
-                <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
-                <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+            <input type="hidden" value="{{ $category_id }}" name="category">
+            <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+            <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+            <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+            <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
         </div>
 
 
             <div class="tab_content" id="all_content">
                 <div class="panel-area">
 
-                        <div class="panel active">
+                        <div class="panel">
                             <ul class="card__area flex">
                                 @foreach ($knowledges as $item)
                                     @component('components.front_card')
