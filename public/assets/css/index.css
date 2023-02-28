@@ -75,6 +75,7 @@
     /* white-space: nowrap; */
 }
 
+
 @media screen and (max-width: 430px) {
     .tuttokufont {
         font-size: 1.5rem;
@@ -96,14 +97,22 @@
 .keyvisual {
     display: inline-block;
     background-image: url(../images/top_keyvisual.jpg);
-    max-height: 900px;
+    height: 650px;
     width: 100vw;
-    height: 900px;
     background-size: cover;
     position: relative;
     max-height :900px ;
-    object-position: bottom center;
+    background-position: center
 
+}
+
+
+@media screen and (min-width: 600px) {
+    .keyvisual {
+        background-image: url(../images/top_keyvisual.jpg);
+        max-height: 900px;
+        height: 900px;
+    }
 }
 
 .bottom__margin {
@@ -141,7 +150,7 @@
     background-color: #eaf2fa;
     background-image: url(../images/svg/wave-indexpage.svg);
     width: 100vw;
-    height: 160px;
+    height: 120px;
     background-repeat: repeat-x;
     transform: scale(-1, 1);
 }
@@ -232,7 +241,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: -50px;
+        margin-top: -30px;
     }
         .knowledge__section--flexbox:first-child{
             margin-top: 0;
@@ -543,6 +552,7 @@
 }
 .plansection__flexblock {
     position: relative;
+    height: auto;
 }
 .leftbabble,
 .rightbabble {
@@ -630,7 +640,7 @@
 }
 
 .plansection{
-    height: 1200px;
+    height:1200px;
 }
 .plan1 {
         transform: scale(0.5) translateX(-30%) translateY(-180px);
@@ -642,8 +652,20 @@
     transform: scale(0.5) translateX(-30%) translateY(-1000px);
 }
 .morelook {
-    position: relative;
-    top: -600px;
+    background-color: #ffea20;
+    height: 50px;
+    width: 160px;
+    margin: 100px auto;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+    position: absolute;
+    bottom: 380px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.morelook:hover {
+    box-shadow: none;
+    transform: translate(calc(-50% + 1px) , 1px)
 }
 
 @media screen and (min-width: 500px) {
@@ -661,8 +683,11 @@
             height: 1500px;
         }
                 .morelook {
-                    top: -300px;
+                    bottom: 75px;
+
                 }
+
+
 .plan1 {
     transform: scale(0.75) translateX(0) translateY(-85px);
 }
@@ -676,21 +701,28 @@
 }
 }
 @media screen and (min-width: 700px) {
+    .plansection {
+            height: 1800px;
+        }
     .plansection__block {
         transform: scale(0.9) translateX(0);
     }
+    .morelook {
+        bottom: -210px;
+
+    }
 }
 @media screen and (min-width: 800px) {
-    .plansection {
-            height: auto;
-        }
+
     .plansection__block {
         transform: scale(1) translateX(0);
     }
-}
     .morelook {
-        top: 0px;
+        bottom: -270px;
+
     }
+}
+
 
 @media screen and (min-width: 1080px) {
     .plan1 {
@@ -711,8 +743,8 @@
     }
 
     .morelook {
-        position: relative;
-        top: -300px;
+        bottom: 150px;
+
     }
     .leftbabble {
         left: 20%;
@@ -738,10 +770,7 @@
     .plansection {
         height: 1300px;
     }
-    .morelook {
-        position: relative;
-        top: -300px;
-    }
+
     .leftbabble {
         left: 20%;
         top: 150px;
@@ -872,19 +901,8 @@
     transform: rotate(80deg);
 }
 
-.morelook {
-    background-color: #ffea20;
-    height: 50px;
-    width: 160px;
-    margin: 100px auto;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    transition: 0.5s;
-}
 
-.morelook:hover {
-    box-shadow: none;
-    transform: translate(1px, 1px);
-}
+
 
 @keyframes infinity-scroll-left {
     from {

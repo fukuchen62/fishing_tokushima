@@ -8,46 +8,89 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-    <link rel="stylesheet" href="{{ asset('assets/css/knowledge.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/knowledge.css') }}">
 @endsection
 
 @section('key_visual')
-    <img class="sub-keyvisual" src="{{ asset('assets/images/knowledge_keyvisual.jpg') }}"
-    alt="knowledge_keyvisual.jpg">
+
 @endsection
 
 {{-- メイン --}}
 @section('content')
 
-    <section class="firstsection expand">
+<section class="firstsection expand">
 
-        <div class="tabs p__lr">
-            <input type="hidden" value="{{ $category_id }}" name="category">
-            <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
-            <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
-            <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
-            <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+    <div class="tabs p__lr">
+        <input type="hidden" value="{{ $category_id }}" name="category">
+        <a class="category1 tab_item" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
+        <a class="category2 tab_item" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
+        <a class="category3 tab_item" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
+        <a class="category4 tab_item" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
+    </div>
+
+
+    <div class="tab_content" id="all_content">
+        <div class="panel-area">
+
+            <div class="panel">
+                <ul class="card__area flex">
+                    @foreach ($knowledges as $item)
+                    @component('components.front_card')
+                    @slot('card_link')
+                    {{ route('knowledgeinfo', ['id' => $item->id]) }}
+                    @endslot
+
+                    @slot('card_src')
+                    @if ($item->thumbnail !="")
+                    {{ asset('storage/images') }}/{{ $item->thumbnail }}
+                    @else
+                    https://placehold.jp/320x240.png
+                    @endif
+                    @endslot
+
+                    @slot('card_alt')
+                    @if ($item->thumbnail !="")
+                    {{ $item->thumbnail }}
+                    @endif
+                    @endslot
+
+                    @slot('card_title')
+                    {{ $item->title }}
+                    @endslot
+
+                    @slot('card_text')
+                    @php
+                    $overview = mb_strimwidth($item->overview, 0, 150, "・・・");
+                    @endphp
+                    {{ $overview }}
+                    @endslot
+                    @endcomponent
+                    @endforeach
+                </ul>
+            </div>
         </div>
 
+        {{-- ページネーション --}}
+        @php
+        $count = count($knowledges)+1;
+        // カウントがうまくいかないため、＋１して対応
+        $number = $count / 6;
+        @endphp
+        {{--下記試しのため使用 --}}
+        {{-- <p>{{ $count }}</p> --}}
+        {{-- <p>{{ $number }}</p> --}}
 
-            <div class="tab_content" id="all_content">
-                <div class="panel-area">
+        <ul class="tab-area flex">
+            @for ($i = 0; $i
 
-                        <div class="panel">
-                            <ul class="card__area flex">
-                                @foreach ($knowledges as $item)
-                                    @component('components.front_card')
-                                        @slot('card_link')
-                                            {{ route('knowledgeinfo', ['id' => $item->id]) }}
-                                        @endslot
+            < $number; $i++) <a href="{{ route('knowledgelist') }}?page= {{ $i + 1 }}">
+                <li class="tab">{{ $i + 1 }}</li>
+                {{-- , ['category_id' => $category_id] --}}
+                </a>
+                @endfor
+        </ul>
 
-                                        @slot('card_src')
-                                        @if ($item->thumbnail !="")
-                                            {{ asset('storage/images') }}/{{ $item->thumbnail }}
-                                        @else
-                                            https://placehold.jp/320x240.png
-                                        @endif
-                                        @endslot
+    </div>
 
                                         @slot('card_alt')
                                         @if ($item->thumbnail !="")
@@ -106,10 +149,12 @@
 
     </section>
     <div class="firstsection__bottom expand"></div>
+</section>
+<div class="firstsection__bottom expand"></div>
 
 @endsection
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-    <script src="{{ asset('assets/js/knowledge.js') }}"></script>
+<script src="{{ asset('assets/js/knowledge.js') }}"></script>
 @endsection

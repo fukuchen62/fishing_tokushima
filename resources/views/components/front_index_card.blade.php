@@ -3,7 +3,7 @@
 <a href="{{ $card_link }}" class="knowledge__imgbox">
     <img class="knowledge_img" src="{{ $card_src }}" alt="{{ $card_alt }}">
     <div class="hover-mask">
-        <p>基礎知識</p>
+        <p>{{ $card_hover }}</p>
     </div>
 </a>
 
