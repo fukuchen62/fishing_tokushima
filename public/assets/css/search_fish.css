@@ -11,9 +11,7 @@
 @media screen and (min-width: 600px) {
     .keyvisual {
         background-image: url(../images/fish_keyvisual.jpg);
-        height: 900px;
     }
-
 }
 
 .calendar__section {
