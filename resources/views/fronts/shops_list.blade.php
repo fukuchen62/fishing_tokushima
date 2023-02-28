@@ -46,9 +46,9 @@
                         const font_family = 'Kosugi Maru' //ラベルのフォント
                         const font_size = '14px' //ラベルのサイズ
                         // 徳島全域が入るように
-                        var latlng = new google.maps.LatLng(33.9220334, 134.2203203);
+                        var latlng = new google.maps.LatLng(34.029379685943745, 134.5838476931424);
                         var opts = {
-                            zoom: 10,
+                            zoom: 10.5,
                             center: latlng,
                             mapTypeId: google.maps.MapTypeId.ROADMAP
                         };
