@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/spots_info.css') }}">
 @endsection
 
-@section('key_visual')
+{{-- @section('key_visual')
     <img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
-@endsection
+@endsection --}}
 
 {{-- メイン --}}
 @section('content')
