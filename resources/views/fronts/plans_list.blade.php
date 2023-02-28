@@ -27,6 +27,10 @@
                         <div class="choice__box">
                             <h3 class="search__box--title">地域</h3>
                             <ul id="area" class="radio_box">
+                                @if ($city_id != null)
+                                    <input type="hidden" value="{{ $city_id }}" name="city_id">
+                                @endif
+
                                 <li class="choice__box--item">
                                     <input type="checkbox" name="area[]" id="east" value="1" class="checkbox_list"
                                         >
@@ -47,6 +51,7 @@
                         <div class="choice__box">
                             <h3 class="search__box--title">難易度</h3>
                             <ul id="level" class="radio_box">
+                                <input type="hidden" value="{{ $level_id }}" name="level_id">
                                 <li class="choice__box--item">
                                     <input type="checkbox" name="level[]" id="one" value="1" class=""
                                         checkbox_list>
@@ -67,6 +72,10 @@
                         <div class="choice__box">
                             <h3 class="search__box--title">魚</h3>
                             <ul id="fish" class="radio_box">
+                                @php
+                                    printr($fish_id)
+                                @endphp
+                                <input type="hidden" value="{{ $fish_id }}" name="fish_id">
                                 <li class="choice__box--item">
                                     <input type="checkbox" name="fish[]" id="aji" value="1" class=""
                                         checkbox_list>
@@ -109,7 +118,7 @@
                 </form>
             </div>
         </section>
-        <div class="firstsection__bottom"></div>
+        <div class="firstsection__bottom expand"></div>
 
         <section class="result__section">
             <h2 class="section__box--title">
