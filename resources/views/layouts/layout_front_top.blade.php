@@ -14,8 +14,8 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- faviconを読み込む -->
-    {{-- <link rel="icon" href="{{ asset('assets/images/icon/favicon.ico') }}" id="favicon">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/icon/apple_touch_icon_180x180.png') }}"> --}}
+    <link rel="icon" href="{{ asset('assets/images/icon/favicon.ico') }}" id="favicon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/icon/apple_touch_icon_180x180.png') }}">
 
     {{-- <link rel="apple-touch-icon" sizes="180x180" href="../../../public/assets/images/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../../public/assets/images/icon/favicon-32x32.png">

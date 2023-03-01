@@ -8,7 +8,7 @@
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-
+    <link rel="stylesheet" href="{{ asset('assets/css/page_us.css') }}">
 @endsection
 
 {{-- メイン --}}
