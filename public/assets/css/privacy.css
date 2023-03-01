@@ -1,14 +1,35 @@
 @charset 'UTF-8';
 
-body {
-    line-height: 2.0;
+.pagetitle {
+    font-size: 1.5rem;
+    color: #30ADD1;
+    -webkit-text-stroke: 0px;
+    width: 250px;
+    white-space: normal;
+    word-wrap: break-word;
+    /* height: 150px; */
 }
 
-.under {
-    font-size: 20px;
+
+.section{
+    width: 100vw;
+    background-color: #EAF2FA;
+
+}
+.privacy__section{
+    max-width: 1200px;
+    width: 95%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.privacy-wrap p{
+    padding: 0 50px;
+    text-align: start;
 }
 
-/* 見出しがSPで2行になる点修正 2022.10.15 akamatsu */
+.section-ttl{
+    padding-top: 50px;
+}
 /* レスポンシブ対応(PC版) */
 @media screen and (min-width:770px) {
 
@@ -96,4 +117,8 @@ p.privacy-text {
         padding-bottom: 50px;
     }
 
+}
+
+.privacy-text:last-child{
+    padding-bottom: 100px;
 }
