@@ -16,7 +16,7 @@ class Shop extends Model
         'city_id' => 'required|integer',
         'postal_code' => 'max:8',
         'address' => 'required|string|max:200',
-        'iframe' => 'max:200',
+        'iframe' => 'max:500',
         'longitude' => 'max:20',
         'latitude' => 'max:20',
         'tel' => 'required|string|max:20',
