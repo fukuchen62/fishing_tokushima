@@ -41,6 +41,10 @@ class PlanController extends Controller
         // $items = Plan::levelEqual($request->level)->get;
         // $items = Plan::fishEqual($request->fish)->get;
 
+        $city_id = null;
+        $level_id = null;
+        $fish_id = null;
+
         if (isset($request->area)) {
             $city_id = $request->area;
         }
