@@ -72,9 +72,7 @@ li:has(.fishinfo__box--description){
     background-color: #30ADD1;
     border-radius: 10px;
 }
-.card__title {
-    margin: 10px;
-}
+
 
 
 .fishinfo__box--feed p, img {
