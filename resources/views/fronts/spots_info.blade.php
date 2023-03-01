@@ -107,7 +107,7 @@
                     <tr class="table__tr">
                         <td class="table__subtitle">駐車場</td>
                         <td>
-                            @if ($parking['text'] != null)
+                            @if ($parking['text'] == '駐車場')
                                 有
                             @else
                                 -
