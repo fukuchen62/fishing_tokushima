@@ -943,11 +943,11 @@ td {
 
 .topreturn__man{
     display: none;
-    width: 100px;
+    width: 80px;
     height: 100px;
     position: absolute;
     top: -240px;
-    right: -10px;
+
 }
 
 @media screen and (min-width:1200px) {
@@ -976,7 +976,7 @@ td {
 
     .topreturn__man{
         display: inline-block;
-        right: -40px;
+        right: -30px;
     }
 }
 
