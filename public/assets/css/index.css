@@ -768,7 +768,7 @@
         left: 100px;
     }
     .plan2 {
-        top: -100px;
+        top: -150px;
         left: -280px;
     }
     .plan3 {
@@ -801,7 +801,7 @@
     }
 
     .plan2 {
-        top: -100px;
+        top: -150px;
         left: -250px;
     }
 
@@ -1039,7 +1039,7 @@ _:-ms-lang(x)::-ms-backdrop,
     /* padding-top: 25px; */
     text-align: center;
     color: #000000;
-    font-size: 4px;
+    font-size: 0.8rem;
     border-radius: 50%;
     overflow: visible;
 }
@@ -1052,7 +1052,7 @@ _:-ms-lang(x)::-ms-backdrop,
 @media screen and (min-width: 600px) {
     .arrow_box {
         padding-top: 20px;
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
 }
 @media screen and (min-width: 700px) {
@@ -1076,7 +1076,7 @@ _:-ms-lang(x)::-ms-backdrop,
 
 @media screen and (min-width: 1080px) {
     .arrow_box {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 @media screen and (min-width: 1080px) {

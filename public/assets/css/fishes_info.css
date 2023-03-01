@@ -336,6 +336,11 @@ li:has(.fishinfo__box--description){
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-content: center;
 }
+@media screen and (min-width: 1080px){
+    .card__area{
+        gap: 0;
+    }
+}
 
 /* pading:50pxだとレイアウトが崩れるのでpdding:0px */
 .card__p {
