@@ -162,13 +162,12 @@ body {
 
 .sidemenu {
     background-color: #30ADD1;
-    /* width: 300px; */
+    width: 300px;
     height: 500px;
     display: none;
     position: sticky;
     top: 130px;
     right: 30px;
-    /* bottom: 160px; */
 }
 
 @media screen and (min-width: 900px) {
@@ -186,7 +185,6 @@ body {
 
 .sidemenu__box {
     background-color: #fff;
-    width: 200px;
     height: 300px;
     padding: 20px;
 }
@@ -207,13 +205,8 @@ body {
     /* background-repeat: none; */
 }
 
-.sidemenu__box--block {
-    /* padding-left: 20px; */
-}
-
 .sidemenu__title {
     font-size: 2rem;
-    /* width: 200px; */
     text-align: center;
     font-weight: 700;
     color: #30ADD1;
@@ -235,7 +228,6 @@ body {
 }
 
 .sidemenu__discription {
-    /* width: 150px; */
     display: block;
     text-align: start;
     font-size: 1rem;
@@ -247,7 +239,6 @@ body {
 .sidemenu__discription::after {
     content: "";
     position: absolute;
-    /* left: 100%; */
     right: 3%;
     top: 40%;
     width: 10px;
@@ -256,17 +247,6 @@ body {
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-}
-
-.sidemenu__border {
-    /* text-align: center;
-    width: 80%;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    border: solid 1px #30ADD1;
-    position: relative;
-    left: 50%;
-    transform: translate(-60%, 0); */
 }
 
 
@@ -303,7 +283,6 @@ body {
 .sidemenu__pagebottom>div::after {
     content: "";
     position: absolute;
-    /* left: 95%; */
     right: -48%;
     top: -30px;
     width: 12px;

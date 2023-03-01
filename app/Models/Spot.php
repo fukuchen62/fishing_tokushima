@@ -28,7 +28,7 @@ class Spot extends Model
         'img3' => 'max:200',
         'img4' => 'max:200',
         'img5' => 'max:200',
-        'fish_id' => 'required|string|max:20',
+        'fish_id' => 'required|string|max:50',
         'mony' => 'max:20',
         'bbq' => 'max:10',
         'shop_id' => 'required|string|max:20',
