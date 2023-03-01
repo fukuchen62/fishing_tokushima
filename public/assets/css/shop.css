@@ -9,7 +9,7 @@
 @media screen and (min-width:600px) {
     .keyvisual{
         background-image: url(../images/shop_keyvisual.jpg);
-        background-position: 50% 100%;
+        background-position: 50% 95%;
     }
 }
 
@@ -120,6 +120,9 @@
     margin-bottom: 50px;
     padding-bottom: 50px;
     border-bottom: dotted 3px #30ADD1;
+}
+.shop__content:last-child{
+    margin-bottom: 0;
 }
 
 .section__image--location::before,
@@ -293,4 +296,12 @@
     .shop__description--service, .shop__description--message{
         width: 500px
     }
+}
+
+
+/* 選択保持のためのクラス */
+.active2 {
+    background-color: #247F99;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
 }

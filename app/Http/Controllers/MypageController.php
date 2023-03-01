@@ -111,17 +111,23 @@ class MypageController extends Controller
         if ($request->spot_id != "") {
 
             if ($request->hasCookie('spot_id')) {
-                $input = $request->spot_id;
+                $input1 = $request->spot_id;
 
                 $spot_id = $request->cookie('spot_id');
 
-                if (strpos($spot_id, $input) !== false) {
-                    $spot_id = str_replace($input, '0', $spot_id);
+                // 一回ばらしてから比較する
+                // $cookie = Cookie::get('spot_id');
+                // $cookielist = explode (',',$cookie);
+                // var_dump($cookielist);
+                // @if (in_array($spots->id, $cookielist))
+
+                if (strpos($spot_id, $input1) != false) {
+                    $spot_id = str_replace($input1, '0', $spot_id);
                 } else {
-                    $spot_id .= ',' . $input;
+                    $spot_id .= ',' . $input1;
                 }
 
-                if (strpos($spot_id, 0) !== false) {
+                if (strpos($spot_id, 0) != false) {
                     $spot_id = str_replace('0,', '', $spot_id);
                 }
             } else {
@@ -131,6 +137,7 @@ class MypageController extends Controller
             $data = [
                 'id' => $request->spot_id,
                 'url' => 'spotsinfo',
+                // 'spot_id' => $spot_id,
             ];
 
             $response = response()->view('fronts.cookie_save', $data);
@@ -145,14 +152,14 @@ class MypageController extends Controller
         if ($request->plan_id != "") {
 
             if ($request->hasCookie('plan_id')) {
-                $input = $request->plan_id;
+                $input2 = $request->plan_id;
 
                 $plan_id = $request->cookie('plan_id');
 
-                if (strpos($plan_id, $input) !== false) {
-                    $plan_id = str_replace($input, '0', $plan_id);
+                if (strpos($plan_id, $input2) !== false) {
+                    $plan_id = str_replace($input2, '0', $plan_id);
                 } else {
-                    $plan_id .= ',' . $input;
+                    $plan_id .= ',' . $input2;
                 }
 
                 if (strpos($plan_id, 0) !== false) {

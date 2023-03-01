@@ -20,7 +20,11 @@ class ShopController extends Controller
 
     public function shopList(Request $request)
     {
-        $city_id = $request->city_id;
+        $city_id = null;
+
+        if (isset($request->city_id)) {
+            $city_id = $request->city_id;
+        }
 
         if ($city_id != null) {
             $shops = ShopController::getRecentCity($city_id);
@@ -41,6 +45,7 @@ class ShopController extends Controller
         $data = [
             'shops' => $shops,
             'items' => $shopList,
+            'city_id' => $city_id,
         ];
 
 

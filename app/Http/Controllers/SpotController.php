@@ -50,6 +50,7 @@ class SpotController extends Controller
 
         $data = [
             'spots' => $spots,
+            'city_id' => $city_id,
             'items' => $spotList,
         ];
 
@@ -85,6 +86,9 @@ class SpotController extends Controller
             $fishinfo = Fish::find($id);
             // fish情報を配列に加える
             $fish_info_list[] = $fishinfo;
+
+            // 釣り方を配列に加える
+            $fish_method_list[] = $fishinfo->method;
         }
 
         // 関連ショップIDを取得
@@ -95,46 +99,38 @@ class SpotController extends Controller
         // 関連ショップ情報を取得
         foreach ($shop_id_list as $id) {
             // shop情報を読み込む
-            $shopinfo = Shop::find($id);
+            $info = Shop::find($id);
 
             // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
-            if ($shopinfo != null) {
-                $spotInfo[] = [
-                    'lat' => $shopinfo->latitude,
-                    'lng' => $shopinfo->longitude,
-                    'text' => $shopinfo->name,
+            if ($info != null) {
+                $shopInfo = [
+                    'lat' => $info->latitude,
+                    'lng' => $info->longitude,
+                    'text' => $info->name,
                 ];
-            } else {
-                $spotInfo[] = [
-                    'lat' => "",
-                    'lng' => "",
-                    'text' => "",
-                ];
+                // shop情報を$spotInfo配列に加える
+                $spotInfo[] = $shopInfo;
             }
-
-
-            // shop情報を配列に加える
-            $shop_info_list[] = $shopinfo;
         }
 
         // 駐車場情報を取得
         $parking_id = $items->parking_id;
-        $parking = Facility::where('id', $parking_id)->first();
+        $info = Facility::where('id', $parking_id)->first();
 
-        if ($shopinfo != null) {
-            $spotInfo[] = [
-                'lat' => $parking->latitude,
-                'lng' => $parking->longitude,
-                'text' => $parking->name,
+        if ($info != null) {
+            $parking = [
+                'lat' => $info->latitude,
+                'lng' => $info->longitude,
+                'text' => $info->name,
             ];
+            // パーキング情報を$spotInfo配列に加える
+            $spotInfo[] = $parking;
         } else {
-            $spotInfo[] = [
-                'lat' => "",
-                'lng' => "",
-                'text' => "",
+            // スポット表示のために、駐車場がない場合は空白を代入
+            $parking = [
+                'text' => '無',
             ];
         }
-
 
 
         // 避難場所IDを取得
@@ -146,25 +142,19 @@ class SpotController extends Controller
         // 避難場所情報を取得
         foreach ($evacuation_id_list as $id) {
             // 避難場所を読み込む
-            $evacuationinfo = Evacuation::find($id);
+            $info = Evacuation::find($id);
 
             // グーグルマップに使用する緯度・経度・名前を連想配列に格納する
-            if ($shopinfo != null) {
-                $spotInfo[] = [
-                    'lat' => $evacuationinfo->latitude,
-                    'lng' => $evacuationinfo->longitude,
-                    'text' => $evacuationinfo->name,
+            if ($info != null) {
+                $evacuationinfo = [
+                    'lat' => $info->latitude,
+                    'lng' => $info->longitude,
+                    'text' => $info->name,
                 ];
-            } else {
-                $spotInfo[] = [
-                    'lat' => "",
-                    'lng' => "",
-                    'text' => "",
-                ];
+                // 避難場所情報を配列に加える
+                $spotInfo[] = $evacuationinfo;
+                $evacuation_info_list[] = $evacuationinfo;
             }
-
-            // 避難場所情報を配列に加える
-            $evacuation_info_list[] = $evacuationinfo;
         }
 
         // $evacuation_info_list[] = [
@@ -177,6 +167,7 @@ class SpotController extends Controller
 
         $connection1 = Spot::where('city_id', '=', $city_id)
             ->where('id', '<>', $spot_id)
+            ->inRandomOrder()
             ->limit(3)
             ->get();
 
@@ -184,7 +175,8 @@ class SpotController extends Controller
             'spots' => $items,
             'spotInfo' => $spotInfo,
             'fishlist' => $fish_info_list,
-            'shoplist' => $shop_info_list,
+            'fishMethod' => $fish_method_list,
+            // 'shoplist' => $shop_info_list,
             'connection1' => $connection1,
             'parking' => $parking,
             'evacuationlist' => $evacuation_info_list,

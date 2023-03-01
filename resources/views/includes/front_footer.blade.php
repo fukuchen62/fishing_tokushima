@@ -23,7 +23,7 @@
 
         <ul>
             <li><a href="{{ route('uspage') }}">このサイトについて</a></li>
-            <li><a href="{{ route('top') }}">プライバシーポリシー</a></li>
+            <li><a href="{{ route('praivacypage') }}">プライバシーポリシー</a></li>
             <li><a href="{{ route('admintop') }}" target="_blank">ログイン</a></li>
         </ul>
     </div>

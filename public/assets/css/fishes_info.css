@@ -8,15 +8,12 @@
 .keyvisual {
     background-image: url(../images/fish_keyvisual_sp.jpg);
     max-width: 100vw;
-    max-height: 300px;
-    height: 300px;
     background-color: #888;
 }
 
 @media screen and (min-width: 600px) {
     .keyvisual {
         background-image: url(../images/fish_keyvisual.jpg);
-        height: 900px;
     }
 
 }
@@ -28,7 +25,13 @@
 }
 
 .pagetitle {
-    width: 100%;
+    font-size: 1.5rem;
+    color: #30ADD1;
+    -webkit-text-stroke: 0px;
+    width: 300px;
+    white-space:normal;
+    word-wrap: break-word;
+    /* height: 150px; */
 }
 
 li:has(.fishinfo__box--description){
@@ -51,14 +54,25 @@ li:has(.fishinfo__box--description){
     margin: 20px;
 }
 
-.fishinfo__box--description p {
+.fishinfo__box--description>p {
     margin: 0px 30px;
     text-align: left;
+    display: inline-block;
+    width: 240px;
+    height: 100px;
+    overflow-y: scroll;
+}
+/* .fishinfo__box--description p:first-child{
+    height: auto;
+} */
+.fishinfo__box--description > p::-webkit-scrollbar{
+    background-color: #cae4ff;
+}
+.fishinfo__box--description>p::-webkit-scrollbar-thumb{
+    background-color: #30ADD1;
+    border-radius: 10px;
 }
 
-.card__title {
-    margin: 10px;
-}
 
 
 .fishinfo__box--feed p, img {
@@ -75,6 +89,11 @@ li:has(.fishinfo__box--description){
 
     .fishinfo__box--title {
         margin: 40px;
+    }
+    .fishinfo__box--description > p{
+        width: 300px;
+        height: 100px;
+
     }
 
     .fishinfo__box--feed p {
@@ -316,6 +335,11 @@ li:has(.fishinfo__box--description){
     gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-content: center;
+}
+@media screen and (min-width: 1080px){
+    .card__area{
+        gap: 0;
+    }
 }
 
 /* pading:50pxだとレイアウトが崩れるのでpdding:0px */

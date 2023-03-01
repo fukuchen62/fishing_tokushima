@@ -31,11 +31,13 @@
 /* セクション下側 */
 .secondsection__bottom {
     width: 100vw;
-    height: 160px;
+    height: 100px;
     background-image: url(../images/svg/wave__sectionbottom__second.svg);
     background-repeat: repeat-x;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
+    background-position: bottom;
 }
 
 /* フッターまでの余白 */

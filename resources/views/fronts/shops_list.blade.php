@@ -16,16 +16,13 @@
 
     <div class="shallow expand">
         <!-- 地域切替タブ -->
-        <ul class="tabs p__lr section__btn flex">
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></li>
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></li>
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></li>
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></li>
-        </ul>
+        <input type="hidden" value="{{ $city_id }}" name="category">
+        <div class="tabs p__lr section__btn flex">
+            <a class="tab_item section__btn--margin city_id1" href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
+            <a class="tab_item section__btn--margin city_id2" href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
+            <a class="tab_item section__btn--margin city_id3" href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
+            <a class="tab_item section__btn--margin city_id4" href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
+        </div>
 
         @php
             // 確認用
@@ -46,9 +43,9 @@
                         const font_family = 'Kosugi Maru' //ラベルのフォント
                         const font_size = '14px' //ラベルのサイズ
                         // 徳島全域が入るように
-                        var latlng = new google.maps.LatLng(33.9220334, 134.2203203);
+                        var latlng = new google.maps.LatLng(34.029379685943745, 134.5838476931424);
                         var opts = {
-                            zoom: 10,
+                            zoom: 10.5,
                             center: latlng,
                             mapTypeId: google.maps.MapTypeId.ROADMAP
                         };
@@ -158,53 +155,55 @@
         <h3 class="section__box--title">検索結果</h3>
         <!-- ショップ一覧 -->
         @foreach ($shops as $key => $item)
-            @component('components.front_shops_card')
-                @slot('shop_id')
-                    {{ $key + 1 }}
-                @endslot
+            @if ($item->is_show != 0)
+                @component('components.front_shops_card')
+                    @slot('shop_id')
+                        {{ $key + 1 }}
+                    @endslot
 
-                @slot('shop_img')
-                    {{ $item->img }}
-                @endslot
+                    @slot('shop_img')
+                        {{ $item->img }}
+                    @endslot
 
-                @slot('shop_name')
-                    {{ $item->name }}
-                @endslot
+                    @slot('shop_name')
+                        {{ $item->name }}
+                    @endslot
 
-                @slot('shop_address')
-                    {{ $item->address }}
-                @endslot
+                    @slot('shop_address')
+                        {{ $item->address }}
+                    @endslot
 
-                @slot('shop_service_day')
-                    @php
-                        echo $item->service_day;
-                    @endphp
-                @endslot
+                    @slot('shop_service_day')
+                        @php
+                            echo $item->service_day;
+                        @endphp
+                    @endslot
 
-                @slot('shop_tel')
-                    {{ $item->tel }}
-                @endslot
+                    @slot('shop_tel')
+                        {{ $item->tel }}
+                    @endslot
 
-                @slot('shop_email')
-                    {{ $item->email }}
-                @endslot
+                    @slot('shop_email')
+                        {{ $item->email }}
+                    @endslot
 
-                @slot('shop_url')
-                    {{ $item->url }}
-                @endslot
+                    @slot('shop_url')
+                        {{ $item->url }}
+                    @endslot
 
-                @slot('shop_service')
-                    @php
-                        echo $item->service;
-                    @endphp
-                @endslot
+                    @slot('shop_service')
+                        @php
+                            echo $item->service;
+                        @endphp
+                    @endslot
 
-                @slot('shop_pr')
-                    @php
-                        echo $item->pr;
-                    @endphp
-                @endslot
-            @endcomponent
+                    @slot('shop_pr')
+                        @php
+                            echo $item->pr;
+                        @endphp
+                    @endslot
+                @endcomponent
+            @endif
         @endforeach
     </div>
 
@@ -223,5 +222,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+    <script src="{{ asset('assets/js/shop.js') }}"></script>
 @endsection

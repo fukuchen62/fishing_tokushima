@@ -25,6 +25,7 @@ class FishController extends Controller
         // 当月を取得
         $month = date('m');
 
+
         // date('m')が10〜12月の場合、$month=10,11,12をa,b,cに変更
         if (strpos($month, 10)) {
             $month = str_replace('10', 'a', $month);
@@ -54,6 +55,7 @@ class FishController extends Controller
         // levelが4のデータを検索して取得
         $items2 = Fish::where('level', 4)->get();
 
+
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'fishes' => $items,
@@ -68,12 +70,12 @@ class FishController extends Controller
     {
         $table_id = '';
 
-        // idがあれば$idに代入
+        // idがあれば$table_idに代入
         if (isset($request->id)) {
             $table_id = $request->id;
         }
 
-        // idで該当魚の情報を取得
+        // $table_idで該当魚の情報を取得
         $item = Fish::find($table_id);
 
 
@@ -81,15 +83,19 @@ class FishController extends Controller
         $spot_id = $item->spot_id;
         if ($spot_id != '') {
             $spotid_list = explode(",", $spot_id);
+
+            // 釣れるスポットの情報を取得
+            foreach ($spotid_list as $id) {
+                // spot情報を読み込む
+                $spotinfo = Spot::find($id);
+                // spot情報を配列に加える
+                $spot_list[] = $spotinfo;
+            }
+        } else {
+            $spot_list[] = null;
         }
 
-        // 釣れるスポットの情報を取得
-        foreach ($spotid_list as $id) {
-            // spot情報を読み込む
-            $spotinfo = Spot::find($id);
-            // spot情報を配列に加える
-            $spot_list[] = $spotinfo;
-        }
+
 
         // 魚IDを取得
         $fish_id = $item->id;

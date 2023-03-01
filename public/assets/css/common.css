@@ -40,6 +40,7 @@ h3{
 p{
     font-size: 16px;
     color: #51656F;
+    line-height: 1.5;
 }
 
 img{
@@ -67,16 +68,21 @@ height: auto;
 /* h1 ページタイトル*/
 .pagetitle {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 24px;
     font-weight: 900;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
     padding-top: 45px;
-    /* left: 50%;
-    transform: translate(-50%, 0); */
-        white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: visible;
 }
+
+@media screen and (min-width:600px){
+    .pagetitle {
+        font-size: 2.5rem;
+    }
+}
+
 /*
 .pagetitle::before {
     content: url(../images/svg/icon_fish.svg);
@@ -121,7 +127,7 @@ height: auto;
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    margin: 0 auto 50px;
+    margin: 0 20px 50px;
 }
 
 
@@ -136,6 +142,10 @@ height: auto;
     margin: 0 auto;
     transition: 0.5s;
     display: block;
+}
+
+.card__title{
+    margin: 10px 0;
 }
 
 .card:hover{
@@ -154,9 +164,13 @@ height: auto;
 
 .card__textbox {
     width: 100%;
-    padding: 20px 30px;
+    padding: 10px 30px;
     box-sizing: border-box;
     text-align: start;
+}
+
+.card__description{
+    line-height: 1.1;
 }
 
 /* ヘッダー */
@@ -329,7 +343,7 @@ height: auto;
     animation-name: slide-out;
     animation-fill-mode: forwards;
     /* アニメーションの通常状態 */
-    animation-duration: 0.3s;
+    animation-duration: 0s;
     /* 1 回のアニメーションサイクルに要する時間の長さ */
     animation-iteration-count: 1;
     /* アニメーションの再生回数 */
@@ -942,11 +956,11 @@ td {
 
 .topreturn__man{
     display: none;
-    width: 100px;
+    width: 80px;
     height: 100px;
     position: absolute;
     top: -240px;
-    right: -10px;
+
 }
 
 @media screen and (min-width:1200px) {
@@ -969,13 +983,13 @@ td {
             display: block;
         }
     .topreturn {
-        right: -20px;
+
         display: inline-block;
     }
 
     .topreturn__man{
         display: inline-block;
-        right: -40px;
+        right: 0px;
     }
 }
 
@@ -983,6 +997,7 @@ td {
     height: 100%;
     border-right: solid 2px #aab8c0;
     position: relative;
+    right: 0px;
 }
 
 .topreturn__btn {

@@ -19,10 +19,17 @@ class PlanController extends Controller
 {
     public function plansList()
     {
+        $city_id = null;
+        $level_id = null;
+        $fish_id = null;
+
         $items = Plan::all();
 
         $data = [
             'plans' => $items,
+            'city_id' => $city_id,
+            'level_id' => $level_id,
+            'fish_id' => $fish_id,
         ];
 
         return view('fronts.plans_list', $data);
@@ -34,9 +41,22 @@ class PlanController extends Controller
         // $items = Plan::levelEqual($request->level)->get;
         // $items = Plan::fishEqual($request->fish)->get;
 
-        $city_id = $request->area;
-        $level_id = $request->level;
-        $fish_id = $request->fish;
+        $city_id = null;
+        $level_id = null;
+        $fish_id = null;
+
+        if (isset($request->area)) {
+            $city_id = $request->area;
+        }
+
+        if (isset($request->level)) {
+            $level_id = $request->level;
+        }
+
+        if (isset($request->fish)) {
+            $fish_id = $request->fish;
+        }
+
 
         // $queryに自動的に中身が入る
         $where = '';
@@ -60,6 +80,9 @@ class PlanController extends Controller
 
         $data = [
             'plans' => $items,
+            'city_id' => $city_id,
+            'level_id' => $level_id,
+            'fish_id' => $fish_id,
         ];
 
         return view('fronts.plans_list', $data);

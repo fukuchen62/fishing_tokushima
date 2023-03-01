@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/spots_info.css') }}">
 @endsection
 
-{{-- @section('key_visual')
-    <img class="sub-keyvisual" src="{{ asset('assets/images/spot_keyvisual.jpg') }}" alt="spot_keyvisual.jpg">
-@endsection --}}
-
 {{-- メイン --}}
 @section('content')
 
@@ -26,6 +22,9 @@
         // var_dump($spots);
         // var_dump($spotInfo);
         // var_dump($evacuationlist[0]['lat']);
+        // var_dump($fishlist);
+        // var_dump($fishMethod);
+        // print_r($fishMethod);
     @endphp
 
     <!-- 浅瀬背景 -->
@@ -73,7 +72,12 @@
                 </ul>
             </div>
 
-            @if (Cookie::get('spot_id') == $spots->id)
+            @php
+                $cookie = Cookie::get('spot_id');
+                $cookielist = explode (',',$cookie);
+                // var_dump($cookielist);
+            @endphp
+            @if (in_array($spots->id, $cookielist))
                 <div>
                     <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id=""
                         class="favorite favorite__in">
@@ -110,15 +114,26 @@
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">駐車場</td>
-                        <td>{{ $parking->name }}</td>
+                        <td>
+                            @if ($parking['text'] == '駐車場')
+                                有
+                            @else
+                                -
+                            @endif
+                        </td>
                         {{-- 本来なら「有」or「-」になる予定 --}}
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">釣り方</td>
                         <td>
-                            @foreach ($fishlist as $item)
-                                {{ $item->method }}、
-                            @endforeach
+                            {{-- 重複した配列を削除 --}}
+                            @php
+                                $fishMethods = array_unique($fishMethod);
+                                // print_r($fishMethods);
+                                foreach ($fishMethods as $key => $value) {
+                                    echo $value . '&nbsp;';
+                                }
+                            @endphp
                         </td>
                     </tr>
                     <tr class="table__tr">
@@ -133,7 +148,7 @@
                         <td class="table__subtitle">避難場所</td>
                         <td>
                             @foreach ($evacuationlist as $item)
-                                {{ $item->name }}<br>
+                                {{ $item['text'] }}<br>
                             @endforeach
                         </td>
                         {{-- 避難場所の名称を表示 --}}
@@ -166,7 +181,7 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-
+            <h3 class="section__box--title spotinfo__sectiontitle--fish">周辺マップ</h3>
             <div class="map">
                 <script type="text/javascript">
                     // ホバー時のメッセージ
@@ -317,7 +332,7 @@
 
                     @slot('spot_overview')
                         @php
-                            $overview = mb_strimwidth($item->overview, 0, 180, '・・・');
+                            $overview = mb_strimwidth($item->overview, 0, 150, '・・・');
                         @endphp
                         {{ $overview }}
                     @endslot

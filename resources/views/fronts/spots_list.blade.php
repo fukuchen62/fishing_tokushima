@@ -17,14 +17,12 @@
     <!-- 浅瀬背景 -->
     <div class="shallow expand ">
         <!-- 東部・南部ボタン -->
-        <ul class="tabs">
-            <li class="">
-                <a class="tab_item" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
-            </li>
-            <li class="">
-                <a class="tab_item" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
-            </li>
-        </ul>
+        <div class="tabs">
+            <input type="hidden" value="{{ $city_id }}" name="category">
+            {{-- <p>{{ $city_id }}</p> --}}
+            <a class="tab_item category1" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
+            <a class="tab_item category2" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
+        </div>
         <p class="spot__discription">アイコンをクリックするとスポットに遷移します。</p>
     </div>
 
@@ -49,7 +47,7 @@
                             const font_family = 'Kosugi Maru' //ラベルのフォント
                             const font_size = '14px' //ラベルのサイズ
                             // 徳島全域が入るように
-                            var latlng = new google.maps.LatLng(33.9220334, 134.2203203);
+                            var latlng = new google.maps.LatLng(33.929702720226246, 134.51162659967483);
                             var opts = {
                                 zoom: 9.8,
                                 center: latlng,
@@ -76,7 +74,7 @@
                                     echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                     echo "\n";
                                 }
-                                
+
                             @endphp
 
                             // マーカー生成
@@ -199,5 +197,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+<script src="{{ asset('assets/js/spot.js') }}"></script>
 @endsection

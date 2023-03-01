@@ -4,14 +4,14 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', 'プライバシーポリシー @ 釣徳！')
+@section('title', 'プライバシーポリシー @ 釣っトク！')
 
 {{-- <h1>プライバシーポリシー @ 釣っトク！</h1> --}}
 
 {{-- 該当ページのCSS --}}
 @section('pageCss')
-    <!-- 共通のCSSファイル -->
-    <link rel="stylesheet" href="{{ asset('assets/css/privacy.css') }}">
+<!-- 共通のCSSファイル -->
+<link rel="stylesheet" href="{{ asset('assets/css/privacy.css') }}">
 @endsection
 
 {{-- メイン --}}
@@ -19,16 +19,15 @@
 
 
 
-    <section class="section">
+<section class="section expand ">
 
-        {{-- <h2 class="section__box--title ">第一セクション</h2> --}}
-
+    {{-- <h2 class="section__box--title ">第一セクション</h2> --}}
+    <div class="privacy__section p__lr">
         <div class="privacy-wrap">
 
             <div class="section-wrap">
                 <!-- margin-top: 50px設定 2022.10.15 akamatsu -->
-                <h2 class="section-ttl" style="margin-top:50px; white-space: nowrap"><span
-                        class="under">プライバシーポリシー・免責事項</span></h2>
+                <h2 class="section-ttl ">プライバシーポリシー・免責事項</h2>
             </div>
 
             <h3 class="privacy-title">個人情報の取扱いについて</h3>
@@ -70,9 +69,9 @@
         </div>
 
         <div class="section-wrap">
-            <h2><span class="under">免責項目</span></h2>
+            <h2 class="section-ttl ">免責項目</h2>
 
-            <p class="privacy-sub-text">釣徳！（以下、「本サイト」とします。）における免責事項は、下記の通りです。</p>
+            <p class="privacy-sub-text">釣っトク！（以下、「本サイト」とします。）における免責事項は、下記の通りです。</p>
         </div>
 
         <div class="privacy-wrap">
@@ -101,13 +100,12 @@
 
             <p class="privacy-text">2023年3月7日 制定</p>
         </div>
-
-
-    </section>
-
-    <div id="page_top" class="flex">
-        <a href="#"><img src="{{ asset('assets/images/fish hook.png') }}" alt="釣り針" class="topbutton__hook"></a>
     </div>
+
+
+</section>
+
+
 @endsection
 
 {{-- 該当ページ専用JS --}}

@@ -34,11 +34,32 @@
 // });
 
 // クリックしたらタブのスタイルが変わる
-$(function () {
-  $('.tab_item').on('click', function () {
-    $('.tab_item').removeClass('active2');
-    $(this).removeClass('tab_item');
-    $(this).parent().addClass('active2');
-$(this).parent().addClass('tab_item');
-  });
-});
+// $(function () {
+//     $('.tab_item').on('click', function () {
+//     $('.tab_item').removeClass('active2');
+//     $(this).removeClass('tab_item');
+//     $(this).parent().addClass('active2');
+//     $(this).parent().addClass('tab_item');
+//     });
+// });
+
+$(window).on('load', function () {
+    // $('.tab_item:first-child').addClass('active');
+    const $category = $('input:hidden[name="category"]').val();
+
+    // console.log($category);
+
+    switch ($category) {
+        case "1":
+            // カテゴリ１を選択
+            $('.active2').removeClass('active2');
+            $('.category1').addClass('active2');
+            break;
+
+        case "2":
+            // カテゴリ２を選択
+            $('.active2').removeClass('active2');
+            $('.category2').addClass('active2');
+            break;
+    }
+})
