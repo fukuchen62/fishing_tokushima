@@ -1,5 +1,37 @@
 @charset "utf-8";
 
+body{
+    background-color: #EAF2FA;
+}
+
 .section{
     text-align: start;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 30px;
+    margin: 30px 20px 100px;
+}
+
+.us__discription{
+    margin: 30px 0;
+    line-height: 1.5;
+}
+
+.us__discription dl{
+    padding: 10px 0;
+}
+
+.us__discription dt{
+    color: #30ADD1;
+    font-size: 20px;
+    border-left: solid 5px #30ADD1;
+    padding-left: 10px;
+}
+
+.us__discription dd{
+    padding: 5px 0 0 15px;
+}
+
+.warning p{
+    color: #ff0000;
 }

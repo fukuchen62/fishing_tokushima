@@ -73,9 +73,7 @@ height: auto;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
     padding-top: 45px;
-    /* left: 50%;
-    transform: translate(-50%, 0); */
-        white-space: nowrap;
+    white-space: nowrap;
     overflow: visible;
 }
 /*

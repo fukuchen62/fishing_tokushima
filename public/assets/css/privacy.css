@@ -1,21 +1,61 @@
 @charset 'UTF-8';
 
-body {
-    line-height: 2.0;
+.pagetitle {
+    font-size: 1.5rem;
+    color: #30ADD1;
+    -webkit-text-stroke: 0px;
+    width: 250px;
+    white-space: normal;
+    word-wrap: break-word;
+    /* height: 150px; */
 }
-
-.under {
-    font-size: 20px;
-}
-
-/* 見出しがSPで2行になる点修正 2022.10.15 akamatsu */
-/* レスポンシブ対応(PC版) */
-@media screen and (min-width:770px) {
-
-    .under {
-        font-size: 32px;
+@media screen and (min-width: 768px) {
+    .pagetitle {
+        width: auto;
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #fff;
+        -webkit-text-stroke: 2px #30ADD1;
+        padding-top: 45px;
+        white-space: normal;
+        word-wrap: break-word;
     }
 }
+
+/* サブビジュアル */
+.keyvisual {
+    background-image: url(../images/other_keyvisual_sp.jpg);
+    max-width: 100vw;
+    background-color: #888;
+}
+
+@media screen and (min-width: 600px) {
+    .keyvisual {
+        background-image: url(../images/other_keyvisual.jpg);
+    }
+}
+
+.section{
+    width: 100vw;
+    background-color: #EAF2FA;
+
+}
+.privacy__section{
+    max-width: 1200px;
+    width: 95%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.privacy-wrap p{
+    padding: 0 50px;
+    text-align: start;
+}
+
+.section-ttl{
+    padding-top: 50px;
+}
+
 
 h3.privacy-title {
     max-width: 1200px;
@@ -27,73 +67,10 @@ h3.privacy-title {
     margin: 100px auto 50px;
 }
 
-@media screen and (min-width:770px){
-    h3.privacy-title {
-    font-size: 24px;
-    }
-}
-
-
 p.privacy-text {
     padding-bottom: 30px;
-    font-size:14px;
 }
 
-@media screen and (min-width:770px){
-    p.privacy-text {
-    font-size: 16px;
-    }
-}
-
-
-.privacy-sub-text {
-    margin-bottom: 50px;
-}
-
-.privacy-sub-title {
-    margin-bottom: 20px;
-}
-
-.privacy-sp {
-    padding-left: 0;
-    margin: 0 30px 20px;
-}
-
-.detail {
-    padding-left: 10px;
-}
-
-.sub-detail {
-    margin-bottom: 50px;
-}
-
-.privacy-sub-title-box {
-    padding-bottom: 30px;
-}
-
-.privacy-sub-title::before {
-    content: "";
-    border-left: 8px solid #77C4D1;
-    padding-right: .3rem;
-}
-
-@media screen and (min-width:770px) {
-
-    body {
-        font: 14px;
-    }
-
-    .privacy-sp {
-        margin: 0;
-    }
-
-
-    .detail {
-        padding-left: 30px;
-    }
-
-    .privacy-sub-title-box {
-        padding-bottom: 50px;
-    }
-
+.privacy-text:last-child{
+    padding-bottom: 100px;
 }
