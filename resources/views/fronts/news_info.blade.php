@@ -4,7 +4,7 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', 'information')
+@section('title', 'お知らせ')
 
 @section('pageCss')
     <link rel="stylesheet" href="{{ asset('assets/css/news_list.css') }}">
@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <div class="mainarea flex expand">
+    <div class="mainarea news__flex expand">
         <div class="main-section expand">
             <div>
                 <div class="news__bottom--up expand"></div>
@@ -55,13 +55,9 @@
                 <h2 class="sidemenu__title">カテゴリ</h2>
                 <div class=" sidemenu__box--block ">
                     <a class="sidemenu__discription" href="{{ route('news') }}">全て</a>
-                    <div class="sidemenu__border"></div>
                     <a class="sidemenu__discription" href="{{ route('news', ['name' => '更新']) }}">更新</a>
-                    <div class="sidemenu__border"></div>
                     <a class="sidemenu__discription" href="{{ route('news', ['name' => '体験']) }}">体験</a>
-                    <div class="sidemenu__border"></div>
                     <a class="sidemenu__discription" href="{{ route('news', ['name' => 'イベント']) }}">イベント</a>
-                    <div class="sidemenu__border"></div>
                 </div>
             </div>
             <div class="sidemenu__bottomimg"></div>
