@@ -87,6 +87,13 @@
     padding-bottom: 50px;
 }
 
+.spotinfo__table td:nth-child(1){
+    width: 120px;
+}
+
+.spotinfo__table td:nth-child(2){
+    text-align: start;
+}
 
 .spotinfo__iframe{
     max-width: 1200px;
