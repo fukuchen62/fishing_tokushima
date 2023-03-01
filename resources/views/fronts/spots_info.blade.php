@@ -106,7 +106,13 @@
                     </tr>
                     <tr class="table__tr">
                         <td class="table__subtitle">駐車場</td>
-                        <td>{{ $parking['text'] }}</td>
+                        <td>
+                            @if ($parking['text'] != null)
+                                有
+                            @else
+                                -
+                            @endif
+                        </td>
                         {{-- 本来なら「有」or「-」になる予定 --}}
                     </tr>
                     <tr class="table__tr">
@@ -166,7 +172,7 @@
 
         <!-- googleマップ -->
         <section class="spotinfo__iframe p__lr">
-<h3 class="section__box--title spotinfo__sectiontitle--fish">周辺マップ</h3>
+            <h3 class="section__box--title spotinfo__sectiontitle--fish">周辺マップ</h3>
             <div class="map">
                 <script type="text/javascript">
                     // ホバー時のメッセージ
