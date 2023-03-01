@@ -18,9 +18,10 @@
     <div class="shallow expand ">
         <!-- 東部・南部ボタン -->
         <div class="tabs">
-                <input type="hidden" value="{{ $city_id }}" name="category">
-                <a class="tab_item category1" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
-                <a class="tab_item category2" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
+            <input type="hidden" value="{{ $city_id }}" name="category">
+            {{-- <p>{{ $city_id }}</p> --}}
+            <a class="tab_item category1" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
+            <a class="tab_item category2" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
         </div>
         <p class="spot__discription">アイコンをクリックするとスポットに遷移します。</p>
     </div>
@@ -196,5 +197,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+<script src="{{ asset('assets/js/spot.js') }}"></script>
 @endsection

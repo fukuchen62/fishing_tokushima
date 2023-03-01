@@ -4,7 +4,7 @@
 
 @section('keywords', 'キーワード1,キーワード2・・・')
 
-@section('title', 'information')
+@section('title', 'お知らせ')
 
 @section('pageCss')
     <link rel="stylesheet" href="{{ asset('assets/css/news_list.css') }}">

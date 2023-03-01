@@ -244,6 +244,7 @@ body{
 
 /*liにactiveクラスがついた時の形状*/
 .active {
-    background-color: #30ADD1;
-    color: #ffea20;
+    background-color: #247F99;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
 }
