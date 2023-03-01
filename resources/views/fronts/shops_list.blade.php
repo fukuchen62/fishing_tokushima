@@ -16,16 +16,17 @@
 
     <div class="shallow expand">
         <!-- 地域切替タブ -->
-        <ul class="tabs p__lr section__btn flex">
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a></li>
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a></li>
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a></li>
-            <li class=""><a class="tab_item section__btn--margin"
-                    href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a></li>
-        </ul>
+        <input type="hidden" value="{{ $city_id }}" name="category">
+        <div class="tabs p__lr section__btn flex">
+            <a class="tab_item section__btn--margin city_id1"
+                    href="{{ route('shopslist', ['city_id' => 1]) }}">東部</a>
+            <a class="tab_item section__btn--margin city_id2"
+                    href="{{ route('shopslist', ['city_id' => 2]) }}">南部</a>
+            <a class="tab_item section__btn--margin city_id3"
+                    href="{{ route('shopslist', ['city_id' => 3]) }}">西部</a>
+            <a class="tab_item section__btn--margin city_id4"
+                    href="{{ route('shopslist', ['city_id' => 4]) }}">北部</a>
+        </div>
 
         @php
             // 確認用
@@ -73,7 +74,7 @@
                                 echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                 echo "\n";
                             }
-                            
+
                         @endphp
 
                         // var marker = new google.maps.Marker();
@@ -223,5 +224,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+<script src="{{ asset('assets/js/shop.js') }}"></script>
 @endsection
