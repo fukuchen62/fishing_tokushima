@@ -95,7 +95,10 @@
         z-index: 1;
     }
 }
-
+.firstsection__bottom{
+        background-position: bottom;
+        height: 60px;
+    }
 .keyvisual {
     display: inline-block;
     background-image: url(../images/top_keyvisual.jpg);
@@ -197,7 +200,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    padding-bottom: 30px;
+
 }
 
 .knowledge__section {
