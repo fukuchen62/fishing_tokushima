@@ -86,6 +86,9 @@ class SpotController extends Controller
             $fishinfo = Fish::find($id);
             // fish情報を配列に加える
             $fish_info_list[] = $fishinfo;
+
+            // 釣り方を配列に加える
+            $fish_method_list[] = $fishinfo->method;
         }
 
         // 関連ショップIDを取得
@@ -172,6 +175,7 @@ class SpotController extends Controller
             'spots' => $items,
             'spotInfo' => $spotInfo,
             'fishlist' => $fish_info_list,
+            'fishMethod' => $fish_method_list,
             // 'shoplist' => $shop_info_list,
             'connection1' => $connection1,
             'parking' => $parking,

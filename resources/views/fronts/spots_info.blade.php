@@ -22,6 +22,9 @@
         // var_dump($spots);
         // var_dump($spotInfo);
         // var_dump($evacuationlist[0]['lat']);
+        // var_dump($fishlist);
+        // var_dump($fishMethod);
+        // print_r($fishMethod);
     @endphp
 
     <!-- 浅瀬背景 -->
@@ -119,12 +122,13 @@
                         <td class="table__subtitle">釣り方</td>
                         <td>
                             {{-- 重複した配列を削除 --}}
-                            {{-- @php
-                                $fishlist = array_unique($fishlist);
-                            @endphp --}}
-                            @foreach ($fishlist as $item)
-                                {{ $item->method }}、
-                            @endforeach
+                            @php
+                                $fishMethods = array_unique($fishMethod);
+                                // print_r($fishMethods);
+                                foreach ($fishMethods as $key => $value) {
+                                    echo $value . '&nbsp;';
+                                }
+                            @endphp
                         </td>
                     </tr>
                     <tr class="table__tr">
@@ -323,7 +327,7 @@
 
                     @slot('spot_overview')
                         @php
-                            $overview = mb_strimwidth($item->overview, 0, 180, '・・・');
+                            $overview = mb_strimwidth($item->overview, 0, 150, '・・・');
                         @endphp
                         {{ $overview }}
                     @endslot
