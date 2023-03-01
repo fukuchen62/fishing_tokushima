@@ -336,7 +336,7 @@ height: auto;
     animation-name: slide-out;
     animation-fill-mode: forwards;
     /* アニメーションの通常状態 */
-    animation-duration: 0.3s;
+    animation-duration: 0s;
     /* 1 回のアニメーションサイクルに要する時間の長さ */
     animation-iteration-count: 1;
     /* アニメーションの再生回数 */
