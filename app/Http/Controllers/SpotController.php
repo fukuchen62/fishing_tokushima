@@ -25,7 +25,7 @@ class SpotController extends Controller
 
     public function spotList(Request $request)
     {
-        $city_id = "";
+        $city_id = 1;
 
         if (isset($request->city_id)) {
             $city_id = $request->city_id;

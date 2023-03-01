@@ -42,10 +42,6 @@ Route::get('/praivacy', [App\Http\Controllers\MainController::class, 'praivacyPa
  * 私たちについてへのルート情報
  */
 Route::get('/us', [App\Http\Controllers\MainController::class, 'usPage'])->name('uspage');
-/**
- * 管理画面TOPへのルート情報
- */
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
 
 // 入門知識関連
 Route::get('knowledge/list', [App\Http\Controllers\KnowledgeController::class, 'knowledgeList'])->name('knowledgelist');
@@ -126,12 +122,13 @@ Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'ne
 Route::get('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsRemove'])->name('newsremove');
 Route::post('admin/newsdelete', [App\Http\Controllers\AdminController::class, 'newsRemove'])->name('newsremove');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Admin関連（fish分)
 
 Route::get('admin/fishshow', [App\Http\Controllers\AdminController::class, 'fishShow'])->name('fishshow');
+
 Route::get('admin/fishentry', [App\Http\Controllers\AdminController::class, 'fishEntry'])->name('fishentry');
+
 Route::post('admin/fishentry', [App\Http\Controllers\AdminController::class, 'fishCreate'])->name('fishcreate');
 
 Route::get('admin/fishedit', [App\Http\Controllers\AdminController::class, 'fishEdit'])->name('fishedit');
@@ -140,6 +137,21 @@ Route::post('admin/fishedit', [App\Http\Controllers\AdminController::class, 'fis
 Route::get('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishDelete'])->name('fishdelete');
 Route::get('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishRemove'])->name('fishremove');
 Route::post('admin/fishdelete', [App\Http\Controllers\AdminController::class, 'fishRemove'])->name('fishremove');
+
+
+/**
+ * 管理画面TOPへのルート情報
+ */
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'adminTop'])->name('admintop');
+
+/**
+ * 管理画面ログアウト
+ * 福島
+ */
+Route::get(
+    'admin/logout',
+    [App\Http\Controllers\AdminController::class, 'logout']
+)->name('logout');
 
 
 /**
@@ -158,6 +170,6 @@ Route::get(
 Route::get(
     'test/logout',
     [App\Http\Controllers\TestController::class, 'logout']
-)->name('logout');
+)->name('test_logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
