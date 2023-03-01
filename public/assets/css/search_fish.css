@@ -147,6 +147,10 @@ tr {
     margin: 0 auto;
 }
 
+.rerults__box--subtitle {
+    color: #fff;
+}
+
 .results__box--info {
     display: flex;
     flex-wrap: wrap;

@@ -29,12 +29,12 @@
     color: #30ADD1;
     -webkit-text-stroke: 0px;
     width: 300px;
-    white-space:normal;
+    white-space: normal;
     word-wrap: break-word;
     /* height: 150px; */
 }
 
-li:has(.fishinfo__box--description){
+li:has(.fishinfo__box--description) {
     margin-top: 50px;
 }
 
@@ -62,13 +62,15 @@ li:has(.fishinfo__box--description){
     height: 100px;
     overflow-y: scroll;
 }
+
 /* .fishinfo__box--description p:first-child{
     height: auto;
 } */
-.fishinfo__box--description > p::-webkit-scrollbar{
+.fishinfo__box--description>p::-webkit-scrollbar {
     background-color: #cae4ff;
 }
-.fishinfo__box--description>p::-webkit-scrollbar-thumb{
+
+.fishinfo__box--description>p::-webkit-scrollbar-thumb {
     background-color: #30ADD1;
     border-radius: 10px;
 }
@@ -90,7 +92,8 @@ li:has(.fishinfo__box--description){
     .fishinfo__box--title {
         margin: 40px;
     }
-    .fishinfo__box--description > p{
+
+    .fishinfo__box--description>p {
         width: 300px;
         height: 100px;
 
@@ -312,7 +315,7 @@ li:has(.fishinfo__box--description){
     margin: 50px 0 40px 0;
 }
 
-.spot__box--list{
+.spot__box--list {
     display: grid;
     gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -336,8 +339,9 @@ li:has(.fishinfo__box--description){
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     justify-content: center;
 }
-@media screen and (min-width: 1080px){
-    .card__area{
+
+@media screen and (min-width: 1080px) {
+    .card__area {
         gap: 0;
     }
 }
@@ -369,13 +373,13 @@ li:has(.fishinfo__box--description){
 
 /* レイアウトのためのスタイル */
 .container {
-    margin: 0 auto 0;
-    max-width: 500px;
+    margin: 0 auto;
+    max-width: 559px;
 }
 
 .main-img {
     max-width: 559px;
-    height: auto;
+    height: 419px;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -417,12 +421,14 @@ li:has(.fishinfo__box--description){
 
 /* スライド２ */
 .slider {
-    max-width: 500px;
+    max-width: 559px;
     height: auto;
     margin: 0 auto;
 }
 
 .slider img {
+    /* max-width: 559px;
+    height: 419px; */
     padding: 10px;
     border-radius: 20px;
 }
@@ -449,9 +455,10 @@ li:has(.fishinfo__box--description){
     align-items: center;
     background-position: bottom center;
 }
-@media screen and (min-width: 600px){
-    .firstsection__bottom,.firstsection__bottom--under{
+
+@media screen and (min-width: 600px) {
+    .firstsection__bottom, .firstsection__bottom--under {
         height: 160px;
-        background-position:center
+        background-position: center
     }
 }
