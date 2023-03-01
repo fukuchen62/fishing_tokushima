@@ -61,14 +61,14 @@ display: none;
 @media screen and (min-width: 700px) {
     .title__icon::before {
         display: block;
-            content: url(../images/jelfish.png);
-            transform: scale(0.5);
-            width: 30px;
-            height: 30px;
-            position: absolute;
-            left: 10%;
-            top: 6px;
-        }
+        content: url(../images/jelfish.png);
+        transform: scale(0.5);
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 10%;
+        top: 6px;
+    }
 }
 
 /*ラジオボタンを全て消す*/

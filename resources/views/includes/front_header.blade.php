@@ -113,12 +113,12 @@
             <h1 class="pagetitle">@yield('title')</h1>
         </div>
         <div class="pagetitle__border"></div>
-        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish1">
-        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish2">
-        <img src="{{ asset('assets/images/kai_baigai.png') }}" alt="貝" class="titlesection__img shellfish3">
+        <img src="{{ asset('assets/images/shell-1.png') }}" alt="貝" class="titlesection__img shellfish1">
+        <img src="{{ asset('assets/images/shell-2.png') }}" alt="貝" class="titlesection__img shellfish2">
+        <img src="{{ asset('assets/images/shell-3.png') }}" alt="貝" class="titlesection__img shellfish3">
 
     </section>
-<div class="titlesection__border expand"></div>
+    <div class="titlesection__border expand"></div>
 </header>
 
 

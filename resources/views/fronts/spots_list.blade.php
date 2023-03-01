@@ -17,14 +17,11 @@
     <!-- 浅瀬背景 -->
     <div class="shallow expand ">
         <!-- 東部・南部ボタン -->
-        <ul class="tabs">
-            <li class="">
-                <a class="tab_item" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
-            </li>
-            <li class="">
-                <a class="tab_item" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
-            </li>
-        </ul>
+        <div class="tabs">
+                <input type="hidden" value="{{ $city_id }}" name="category">
+                <a class="tab_item category1" href="{{ route('spotslist', ['city_id' => 1]) }}">東部</a>
+                <a class="tab_item category2" href="{{ route('spotslist', ['city_id' => 2]) }}">南部</a>
+        </div>
         <p class="spot__discription">アイコンをクリックするとスポットに遷移します。</p>
     </div>
 
@@ -76,7 +73,7 @@
                                     echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                     echo "\n";
                                 }
-                                
+
                             @endphp
 
                             // マーカー生成

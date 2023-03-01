@@ -241,3 +241,9 @@ body{
     padding: 0px;
 }
 }
+
+/*liにactiveクラスがついた時の形状*/
+.active {
+    background-color: #30ADD1;
+    color: #ffea20;
+}
