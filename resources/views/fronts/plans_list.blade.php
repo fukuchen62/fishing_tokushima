@@ -243,7 +243,6 @@
                 </form>
             </div>
         </section>
-        <div class="firstsection__bottom expand"></div>
 
         <section class="result__section">
             <h2 class="section__box--title">

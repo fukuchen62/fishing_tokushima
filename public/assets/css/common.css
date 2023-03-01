@@ -68,14 +68,21 @@ height: auto;
 /* h1 ページタイトル*/
 .pagetitle {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 24px;
     font-weight: 900;
     color: #fff;
     -webkit-text-stroke: 2px #30ADD1;
     padding-top: 45px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: visible;
 }
+
+@media screen and (min-width:600px){
+    .pagetitle {
+        font-size: 2.5rem;
+    }
+}
+
 /*
 .pagetitle::before {
     content: url(../images/svg/icon_fish.svg);
@@ -120,7 +127,7 @@ height: auto;
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    margin: 0 auto 50px;
+    margin: 0 20px 50px;
 }
 
 
