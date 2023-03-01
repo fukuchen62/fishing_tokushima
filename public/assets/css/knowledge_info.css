@@ -143,10 +143,10 @@
     /* background-repeat: none; */
 }
 .sidemenu__box--block{
-    padding-left: 20px;
+    /* padding-left: 20px; */
 }
 
-.sidemenu__title{
+/* .sidemenu__title{
     font-size: 2rem;
     width: 200px;
     font-weight: 700;
@@ -165,9 +165,31 @@
     position: absolute;
     top: 45px;
     right: 200px;
+} */
+
+.sidemenu__title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    color: #30ADD1;
+    padding-top: 0px;
+    margin-bottom: 15px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
+    overflow: visible;
 }
 
-.sidemenu__discription{
+.sidemenu__title::before {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 45px;
+    right: 200px;
+}
+
+/* .sidemenu__discription{
     width: 150px;
     display: inline-block;
     text-align: start;
@@ -185,17 +207,39 @@
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+} */
+
+.sidemenu__discription {
+    display: block;
+    text-align: start;
+    font-size: 1rem;
+    position: relative;
+    border-bottom:solid 2px #30ADD1 ;
+    padding: 10px 0;
+}
+
+.sidemenu__discription::after {
+    content: "";
+    position: absolute;
+    right: 3%;
+    top: 40%;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #51656F;
+    border-right: 2px solid #51656F;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .sidemenu__border{
-    text-align: center;
+    /* text-align: center;
     width: 80%;
     margin-top: 15px;
     margin-bottom: 10px;
     border: solid 1px #30ADD1;
     position: relative;
     left: 50%;
-    transform: translate(-60%, 0);
+    transform: translate(-60%, 0); */
 }
 .card__p{
     padding: 0;
@@ -230,16 +274,16 @@
     display: none;
 }
 .sidemenu__pagebottom > div::after{
-        content: "";
-            position: absolute;
-            left: 95%;
-            top: -30px;
-            width: 12px;
-            height: 12px;
-            border-top: 2px solid #51656F;
-            border-right: 2px solid #51656F;
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    content: "";
+    position: absolute;
+    right: -48%;
+    top: -30px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid #51656F;
+    border-right: 2px solid #51656F;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 @media screen and (min-width: 900px) {

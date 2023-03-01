@@ -52,14 +52,14 @@ $(window).on('load', function () {
     switch ($category) {
         case "1":
             // カテゴリ１を選択
-            $('.active').removeClass('active');
-            $('.category1').addClass('active');
+            $('.active2').removeClass('active2');
+            $('.category1').addClass('active2');
             break;
 
         case "2":
             // カテゴリ２を選択
-            $('.active').removeClass('active');
-            $('.category2').addClass('active');
+            $('.active2').removeClass('active2');
+            $('.category2').addClass('active2');
             break;
     }
 })

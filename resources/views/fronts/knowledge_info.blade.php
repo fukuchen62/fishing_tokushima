@@ -71,13 +71,9 @@
             <h2 class="sidemenu__title">カテゴリ</h2>
             <div class=" sidemenu__box--block ">
                 <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 1]) }}">基礎知識</a>
-                <div class="sidemenu__border"></div>
                 <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 2]) }}">道具・餌</a>
-                <div class="sidemenu__border"></div>
                 <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 3]) }}">注意点</a>
-                <div class="sidemenu__border"></div>
                 <a class="sidemenu__discription" href="{{ route('knowledgelist', ['category_id' => 4]) }}">その他</a>
-                <div class="sidemenu__border"></div>
             </div>
         </div>
         <div class="sidemenu__bottomimg"></div>
