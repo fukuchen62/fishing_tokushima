@@ -3,7 +3,7 @@
 // ハンバーガーメニュー開閉
 $(window).on('load resize', function () {
   var winW = $(window).width();
-  var devW = 1080;
+  var devW = 1079;
   if (winW <= devW) {
     $(".g-nav").addClass('slide-out');
     $(".hamburger").click(function () {
