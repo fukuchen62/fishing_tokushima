@@ -647,13 +647,13 @@
     height:1200px;
 }
 .plan1 {
-        transform: scale(0.5) translateX(-30%) translateY(-180px);
+        transform: scale(0.5) translateX(-25%)  translateY(-180px);
     }
 .plan2{
-    transform: scale(0.5) translateX(-30%) translateY(-600px);
+    transform: scale(0.5) translateX(-25%) translateY(-600px);
 }
 .plan3 {
-    transform: scale(0.5) translateX(-30%) translateY(-1000px);
+    transform: scale(0.5) translateX(-25%) translateY(-1000px);
 }
 .morelook {
     background-color: #ffea20;
@@ -672,44 +672,78 @@
     transform: translate(calc(-50% + 1px) , 1px)
 }
 
+@media screen and (min-width: 450px){
+    .plan1 {
+            transform: scale(0.5) translateX(-15%) translateY(-180px);
+        }
+
+        .plan2 {
+            transform: scale(0.5) translateX(-15%) translateY(-600px);
+        }
+
+        .plan3 {
+            transform: scale(0.5) translateX(-15%) translateY(-1000px);
+        }
+}
+
 @media screen and (min-width: 500px) {
-    .plansection__block {
-        transform: scale(0.65) translateX(-10%);
-    }
+
+        .plan1 {
+            transform: scale(0.65) translateX(0) translateY(-180px);
+        }
+
+        .plan2 {
+            transform: scale(0.65) translateX(0) translateY(-430px);
+        }
+
+        .plan3 {
+            transform: scale(0.65) translateX(0) translateY(-660px);
+        }
+        .morelook{
+            bottom: 300px;
+        }
 }
 @media screen and (min-width: 550px) {
-    .plansection__block {
-        transform: scale(0.7) translateX(0);
+    .plan1 {
+            transform: scale(0.7) translateY(-180px);
+        }
+
+        .plan2 {
+            transform: scale(0.7)  translateY(-400px);
+        }
+
+        .plan3 {
+            transform: scale(0.7)  translateY(-610px);
+        }
     }
-}
+
 @media screen and (min-width: 600px) {
     .plansection {
             height: 1500px;
         }
-                .morelook {
-                    bottom: 75px;
+    .morelook {
+        bottom: 75px;
+        }
 
-                }
 
+    .plan1 {
+        transform: scale(0.75)  translateY(-85px);
+    }
 
-.plan1 {
-    transform: scale(0.75) translateX(0) translateY(-85px);
-}
+    .plan2 {
+        transform: scale(0.75) translateY(-220px);
+    }
 
-.plan2 {
-    transform: scale(0.75) translateX(0) translateY(-220px);
-}
-
-.plan3 {
-    transform: scale(0.75) translateX(0) translateY(-350px);
-}
+    .plan3 {
+        transform: scale(0.75) translateY(-350px);
+    }
 }
 @media screen and (min-width: 700px) {
     .plansection {
             height: 1800px;
         }
     .plansection__block {
-        transform: scale(0.9) translateX(0);
+        transform: scale(0.9) ;
     }
     .morelook {
         bottom: -210px;
@@ -719,7 +753,7 @@
 @media screen and (min-width: 800px) {
 
     .plansection__block {
-        transform: scale(1) translateX(0);
+        transform: scale(1) ;
     }
     .morelook {
         bottom: -270px;
