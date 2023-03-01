@@ -481,6 +481,11 @@ table.new_info textarea:hover {
     text-align: left;
     font-size: 24px;
     padding: 4px;
+    border: 1px darkgray solid;
+}
+
+.input-box input:focus {
+    background: lightcyan;
 }
 
 .remember-box {
