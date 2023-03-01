@@ -141,6 +141,7 @@
     <section class="others__section p__lr">
         <div class="others__box">
             <h2 class="others__box--title">徳島の海産物</h2>
+            <p>その他、徳島で釣れる・食べれる海産物</p>
             <ul class="others__box--info">
 
                 @foreach ($fishes2 as $item)
