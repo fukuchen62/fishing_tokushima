@@ -69,7 +69,12 @@
                 </ul>
             </div>
 
-            @if (Cookie::get('spot_id') == $spots->id)
+            @php
+                $cookie = Cookie::get('spot_id');
+                $cookielist = explode (',',$cookie);
+                // var_dump($cookielist);
+            @endphp
+            @if (in_array($spots->id, $cookielist))
                 <div>
                     <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id=""
                         class="favorite favorite__in">
