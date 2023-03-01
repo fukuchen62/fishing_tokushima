@@ -137,6 +137,10 @@ height: auto;
     display: block;
 }
 
+.card__title{
+    margin: 10px 0;
+}
+
 .card:hover{
     box-shadow: none;
     transform: translate(1px, 1px);
@@ -153,9 +157,13 @@ height: auto;
 
 .card__textbox {
     width: 100%;
-    padding: 20px 30px;
+    padding: 10px 30px;
     box-sizing: border-box;
     text-align: start;
+}
+
+.card__description{
+    line-height: 1.1;
 }
 
 /* ヘッダー */

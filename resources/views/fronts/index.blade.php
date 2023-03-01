@@ -400,7 +400,10 @@
 
 
     <section class="infomationsection">
-        <h2 class="pagetitle">infomation</h2>
+    <div class="flex sectiontitle__box">
+        <img class="fishicon" src="{{ asset('assets/images/svg/icon_fish.svg') }}" alt="icon_fish.svg">
+        <h2 class="pagetitle">お知らせ</h2>
+    </div>
         <div class="pagetitle__border"></div>
         <div class="infomation__block">
             @foreach ($items as $key => $item)
