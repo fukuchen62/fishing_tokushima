@@ -25,6 +25,10 @@
     margin:20px auto 50px;
 }
 
+.firstsection__bottom{
+    background-position: bottom;
+    height: 80px;
+}
 
 /* 検索画面 */
 .search__box{
