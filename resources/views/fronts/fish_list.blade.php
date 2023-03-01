@@ -125,6 +125,7 @@
     <section id="results__section" class="results__section expand p__lr">
         <div class="results__box">
             <h2 class="results__box--title">初心者におすすめ！釣れる魚</h2>
+            <p>この月に狙える魚！クリックして詳しいページへ！</p>
             <ul class="results__box--info">
                 @foreach ($fishes as $item)
                     @component('components.front_fish_list1_card')
