@@ -50,6 +50,7 @@ class SpotController extends Controller
 
         $data = [
             'spots' => $spots,
+            'city_id' => $city_id,
             'items' => $spotList,
         ];
 
