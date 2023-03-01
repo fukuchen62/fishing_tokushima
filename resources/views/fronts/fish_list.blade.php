@@ -37,80 +37,69 @@
                 </ul>
             </div>
             <table class="calendar-tb">
+                <input type="hidden" value="{{ $month }}" name="month_choice">
                 <tr>
                     <td>
-                        <div class='button'>
-                            <button id="1" class='secList' onclick="make_page(1)"><a
-                                    href="{{ route('fishlist', ['month' => '1']) }}">１月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '1']) }}">
+                            <button class='secList secList1'>１月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="2" class='secList' onclick="make_page(2)"><a
-                                    href="{{ route('fishlist', ['month' => '2']) }}">２月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '2']) }}">
+                            <button class='secList secList2'>２月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="3" class='secList' onclick="make_page(3)"><a
-                                    href="{{ route('fishlist', ['month' => '3']) }}">３月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '3']) }}">
+                            <button class='secList secList3'>３月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="4" class='secList' onclick="make_page(4)"><a
-                                    href="{{ route('fishlist', ['month' => '4']) }}">４月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '4']) }}">
+                            <button class='secList secList4'>４月</button>
+                        </a>
                     </td>
 
                     <td>
-                        <div class='button'>
-                            <button id="5" class='secList' onclick="make_page(5)"><a
-                                    href="{{ route('fishlist', ['month' => '5']) }}">５月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '5']) }}">
+                            <button class='secList secList5'>５月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="6" class='secList' onclick="make_page(6)"><a
-                                    href="{{ route('fishlist', ['month' => '6']) }}">６月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '6']) }}">
+                            <button class='secList secList6'>６月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="7" class='secList' onclick="make_page(7)"><a
-                                    href="{{ route('fishlist', ['month' => '7']) }}">７月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '7']) }}">
+                            <button class='secList secList7'>７月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="8" class='secList' onclick="make_page(8)"><a
-                                    href="{{ route('fishlist', ['month' => '8']) }}">８月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '8']) }}">
+                            <button class='secList secList8'>８月</button>
+                        </a>
                     </td>
 
                     <td>
-                        <div class='button'>
-                            <button id="9" class='secList' onclick="make_page(9)"><a
-                                    href="{{ route('fishlist', ['month' => '9']) }}">９月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => '9']) }}">
+                            <button class='secList secList9'>９月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="10" class='secList' onclick="make_page(10)"><a
-                                    href="{{ route('fishlist', ['month' => 'a']) }}">１０月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => 'a']) }}">
+                            <button class='secList secList10'>１０月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="11" class='secList' onclick="make_page(11)"><a
-                                    href="{{ route('fishlist', ['month' => 'b']) }}">１１月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => 'b']) }}">
+                            <button class='secList secList11'>１１月</button>
+                        </a>
                     </td>
                     <td>
-                        <div class='button'>
-                            <button id="12" class='secList' onclick="make_page(12)"><a
-                                    href="{{ route('fishlist', ['month' => 'c']) }}">１２月</a></button>
-                        </div>
+                        <a href="{{ route('fishlist', ['month' => 'c']) }}">
+                            <button class='secList secList12'>１２月</button>
+                        </a>
                     </td>
                 </tr>
             </table>
@@ -188,42 +177,11 @@
         </div>
     </section>
 
-    <script>
-        /**
-         * 指定月のURLを生成してサーバーに送る
-         */
-        function make_page(id) {
-            var url = location.href;
-
-            var num = url.indexOf("?");
-            if (num > 0) {
-                url = url.substring(0, num);
-            }
-
-            location.href = url + "/?month=" + id;
-        }
-
-        // jQuery
-        $(function() {
-            // 指定月を変数に代入
-            var month = "2";
-            if (month == 'n') {
-                month = 11;
-            }
-            if (month == 'd') {
-                month = 12;
-            }
-
-            // 当月を選択している状態にしている
-            $("button#" + month).addClass("this-month");
-        });
-    </script>
-
 @endsection
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-
+    <script src="{{ asset('assets/js/fish.js') }}"></script>
 @endsection
 
 

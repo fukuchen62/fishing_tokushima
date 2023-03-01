@@ -25,6 +25,7 @@ class FishController extends Controller
         // 当月を取得
         $month = date('m');
 
+
         // date('m')が10〜12月の場合、$month=10,11,12をa,b,cに変更
         if (strpos($month, 10)) {
             $month = str_replace('10', 'a', $month);
@@ -53,6 +54,7 @@ class FishController extends Controller
         $items = Fish::fish($month)->fish2($level)->get();
         // levelが4のデータを検索して取得
         $items2 = Fish::where('level', 4)->get();
+
 
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [

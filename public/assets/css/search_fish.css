@@ -14,7 +14,7 @@
 
 .calendar__section {
     padding: 50px 0 0 0;
-    background-color: #EAF2FA;
+    background-color: #eaf2fa;
 }
 
 .calendar__title {
@@ -22,7 +22,6 @@
 }
 
 .calendar__box {
-
     padding: 50px 0 50px 0;
 }
 
@@ -40,15 +39,11 @@
     flex-direction: column;
 }
 
-
 /* PC */
 @media screen and (min-width: 1080px) {
-
-
     .calendar__box {
         display: flex;
         justify-content: center;
-
     }
 
     .calendar__box--text {
@@ -61,8 +56,6 @@
         position: static;
         margin: 0 auto;
     }
-
-
 }
 
 /* カレンダー検索 */
@@ -81,21 +74,27 @@ tr {
 .secList {
     width: 76px;
     height: 76px;
-    background-color: #FFEA20;
+    background-color: #ffea20;
     border-style: outset;
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
 }
 
 /* 月ボタンホバー */
 .secList:hover {
-    background-color: #247F99;
+    background-color: #247f99;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #fff;
 }
 
-@media(max-width:420px) {
+/* 月ボタン保持 */
+.active {
+    background-color: #247f99;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+@media (max-width: 420px) {
     tr {
         /* gap: 5%; */
         grid-template-columns: repeat(4, minmax(30px, 1fr));
@@ -106,10 +105,8 @@ tr {
     }
 }
 
-
-
 /* PC */
-@media(min-width:1080px) {
+@media (min-width: 1080px) {
     .calendar-tb {
         margin: auto 0;
     }
@@ -117,13 +114,11 @@ tr {
     tr {
         grid-template-columns: repeat(6, minmax(76px, 1fr));
     }
-
 }
-
 
 /* セクションタイトル (h2)*/
 .results__box--title {
-    background-color: #30ADD1;
+    background-color: #30add1;
     border: 3px solid #fff;
     border-radius: 30px;
     color: #fff;
@@ -133,7 +128,7 @@ tr {
 }
 
 .others__box--title {
-    background-color: #30ADD1;
+    background-color: #30add1;
     border-radius: 30px;
     color: #fff;
     padding: 8px;
@@ -141,11 +136,10 @@ tr {
     margin: 0 0 50px 0;
 }
 
-
 /* 検索結果 */
 
 .results__section {
-    background-color: #30ADD1;
+    background-color: #30add1;
 }
 
 .results__box--title {
@@ -166,7 +160,7 @@ tr {
 }
 
 /* PC */
-@media(min-width:1080px) {
+@media (min-width: 1080px) {
     .results__box--info {
         width: 850px;
         margin: 0 auto;
@@ -191,17 +185,12 @@ tr {
     }
 }
 
-
-
 /* h3 */
 
 h3 {
     font-size: 24px;
     padding: 20px;
 }
-
-
-
 
 /* 釣れる魚の画像 */
 .fish__img {
@@ -229,14 +218,13 @@ h3 {
     display: flex;
     padding: 0 50px;
     margin: 20px;
-    border: 2px dotted #30ADD1;
+    border: 2px dotted #30add1;
     border-radius: 30px;
     justify-content: center;
 }
 
 /* PC */
 @media screen and (min-width: 1080px) {
-
     .others__box--info li {
         display: flex;
         justify-content: center;
@@ -244,7 +232,7 @@ h3 {
 
     .feed {
         width: 500px;
-        border: 2px dotted #30ADD1;
+        border: 2px dotted #30add1;
         border-radius: 30px;
         justify-content: center;
     }
