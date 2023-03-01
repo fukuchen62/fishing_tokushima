@@ -104,17 +104,9 @@ class SpotController extends Controller
                     'lng' => $info->longitude,
                     'text' => $info->name,
                 ];
-            } else {
-                $shopInfo = [
-                    'lat' => "",
-                    'lng' => "",
-                    'text' => "",
-                ];
+                // shop情報を$spotInfo配列に加える
+                $spotInfo[] = $shopInfo;
             }
-
-
-            // shop情報を配列に加える
-            $shop_info_list[] = $shopInfo;
         }
 
         // 駐車場情報を取得
@@ -127,11 +119,12 @@ class SpotController extends Controller
                 'lng' => $info->longitude,
                 'text' => $info->name,
             ];
+            // パーキング情報を$spotInfo配列に加える
+            $spotInfo[] = $parking;
         } else {
+            // スポット表示のために、駐車場がない場合は空白を代入
             $parking = [
-                'lat' => "",
-                'lng' => "",
-                'text' => "",
+                'text' => '無',
             ];
         }
 
@@ -154,16 +147,10 @@ class SpotController extends Controller
                     'lng' => $info->longitude,
                     'text' => $info->name,
                 ];
-            } else {
-                $evacuationinfo = [
-                    'lat' => "",
-                    'lng' => "",
-                    'text' => "",
-                ];
+                // 避難場所情報を配列に加える
+                $spotInfo[] = $evacuationinfo;
+                $evacuation_info_list[] = $evacuationinfo;
             }
-
-            // 避難場所情報を配列に加える
-            $evacuation_info_list[] = $evacuationinfo;
         }
 
         // $evacuation_info_list[] = [
@@ -184,7 +171,7 @@ class SpotController extends Controller
             'spots' => $items,
             'spotInfo' => $spotInfo,
             'fishlist' => $fish_info_list,
-            'shoplist' => $shop_info_list,
+            // 'shoplist' => $shop_info_list,
             'connection1' => $connection1,
             'parking' => $parking,
             'evacuationlist' => $evacuation_info_list,
