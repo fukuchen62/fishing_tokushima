@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('city_id')->nullable(false)->default(0);
             $table->char('postal_code', 8);
             $table->string('address', 200)->nullable(false);
-            $table->string('iframe', 200)->nullable();
+            $table->string('iframe', 500)->nullable();
             $table->string('longitude', 20)->nullable();
             $table->string('latitude', 20)->nullable();
             $table->string('tel', 20)->nullable(false);
