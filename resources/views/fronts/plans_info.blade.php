@@ -47,8 +47,12 @@
             </div>
 
             <!-- お気に入りボタン -->
-            <!-- バックエンドで出される -->
-            @if (Cookie::get('plan_id')==$item->id)
+            @php
+                $cookie = Cookie::get('plan_id');
+                $cookielist = explode (',',$cookie);
+                // var_dump($cookielist);
+            @endphp
+            @if (in_array($item->id, $cookielist))
             <div>
                 <a href="{{ route('cookie', ['plan_id' => $item->id]) }}" id="" class="favorite favorite__in">
                     <span>お気に入りに登録済み</span>

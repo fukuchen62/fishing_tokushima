@@ -1,7 +1,5 @@
 @extends('layouts.layout_back')
 
-@section('title', '釣徳コンテンツ管理システム')
-
 @section('subtitle', 'ダッシュボード')
 
 @section('login_name', 'QLIP')
