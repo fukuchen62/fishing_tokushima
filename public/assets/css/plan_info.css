@@ -179,11 +179,11 @@
     }
 
     .anchor--text {
-        display: block;
+        display: inline-block;
         color: #fff;
         padding: 20px;
         font-size: 20px;
-        display: block;
+
     }
 }
 
