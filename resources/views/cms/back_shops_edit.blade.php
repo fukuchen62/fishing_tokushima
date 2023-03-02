@@ -18,6 +18,7 @@
     {{-- 以下はshowのところにはめ込む --}}
     <ul class="menubar">
         <li><a href="./shopsshow">HOME</a></li>
+        <li><a href="./shopsentry">新規登録</a></li>
     </ul>
 
     @if (count($errors) > 0)
