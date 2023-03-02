@@ -43,7 +43,7 @@
                         基礎知識
                     @endslot
                     @slot('card_title')
-                        基礎知識
+                        {{-- 基礎知識 --}}
                     @endslot
                     @slot('card_text')
                         釣りに興味があるけど、何から始めればいいかわからない人はここ！準備物や釣り方について初心者向けにわかりやすくお伝えします。
@@ -67,7 +67,7 @@
                         釣り具・餌
                     @endslot
                     @slot('card_title')
-                        釣り具・餌
+                        {{-- 釣り具・餌 --}}
                     @endslot
                     @slot('card_text')
                         おすすめの釣り具と餌をピックアップして紹介します。種類の違いから使い方までしっかり解説！
@@ -91,7 +91,7 @@
                         注意点
                     @endslot
                     @slot('card_title')
-                        注意点
+                        {{-- 注意点 --}}
                     @endslot
                     @slot('card_text')
                         釣り場でのマナーは？危険な魚って何？色んな注意点や疑問点をまとめました。
@@ -115,7 +115,7 @@
                         その他
                     @endslot
                     @slot('card_title')
-                        その他
+                        {{-- その他 --}}
                     @endslot
                     @slot('card_text')
                         釣り人がよく使う釣り用語などを紹介します。

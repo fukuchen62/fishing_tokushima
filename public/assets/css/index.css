@@ -233,6 +233,7 @@
     outline-offset: -10px;
     border-radius: 50%;
     box-shadow:8px 6px 6px rgb(0 0 0 / 25%);
+    z-index: 1;
 }
 
     .hover-mask:hover {

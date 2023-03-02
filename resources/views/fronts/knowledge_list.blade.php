@@ -72,12 +72,12 @@
 
             {{-- ページネーション --}}
             @php
-                $count = count($knowledges) + 1;
+                $count = count($knowledges)+1;
                 // カウントがうまくいかないため、＋１して対応
                 $number = $count / 6;
             @endphp
             {{-- 下記試しのため使用 --}}
-            {{-- <p>{{ $count }}</p> --}}
+            <p>{{ $count }}</p>
             {{-- <p>{{ $number }}</p> --}}
 
             {{-- ページネーションのjavascriptのためのinput --}}
