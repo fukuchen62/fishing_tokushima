@@ -110,6 +110,7 @@ class MypageController extends Controller
 
         if ($request->spot_id != "") {
 
+            // 変数変更する 配列＝spots_list,spots_string
             if ($request->hasCookie('spot_id')) {
                 $input1 = $request->spot_id;
 
@@ -119,17 +120,22 @@ class MypageController extends Controller
                 $spot_id = explode(',', $spot_id);
 
                 // foreachで完全一致かどうか見る
+                $flag_delete = 0;
                 foreach ($spot_id as $value) {
                     // if ($value === 0) {
                     //     $spot_id = str_replace('0,', '', $spot_id);
                     // }
 
                     if ($value == $input1) {
-                        $spot_id = array_diff($spot_id, array($input1,));
-                        $spot_id = array_values($spot_id);
-                    } else {
-                        $spot_id[] = $input1;
+                        $result = array_diff($spot_id, array($input1));
+                        $result = array_values($result);
+                        $flag_delete = 1;
                     }
+                }
+
+                // 新規追加の場合は
+                if ($flag_delete == 0) {
+                    $spot_id[] = $input1;
                 }
 
                 $spot_id = implode(',', $spot_id);
