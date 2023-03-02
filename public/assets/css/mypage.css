@@ -87,13 +87,11 @@ input[name="tab_item"] {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 10px 10px;
-    /* display: none; */
     clear: both;
     overflow: hidden;
     margin: 0 auto;
     padding: 50px 20px;
 }
-
 
 .card__area {
     flex-wrap: wrap;

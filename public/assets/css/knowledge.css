@@ -18,14 +18,11 @@
 /*タブ切り替え全体のスタイル*/
 .tabs {
     margin-top: 50px;
-    /* padding: 50px; */
     padding-top: 0;
     padding-bottom: 40px;
     width: 100%;
     margin: 0 auto;
 }
-
-
 
 /*タブのスタイル*/
 .tab_item {
@@ -82,7 +79,6 @@ input[name="tab_item"] {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 10px 10px;
-    /* display: none; */
     clear: both;
     overflow: hidden;
     margin: 0 auto;

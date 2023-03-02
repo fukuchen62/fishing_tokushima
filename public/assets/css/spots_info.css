@@ -36,8 +36,6 @@
 
 .sub-img img {
     cursor: pointer;
-    /* width: 100px;
-    height: 80px; */
     border-radius: 10px;
     object-fit: cover;
 }
@@ -62,7 +60,8 @@
 
 /* 狙える魚 */
 .spotinfo__fish{
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .spotinfo__fishes{
@@ -124,12 +123,6 @@
 .favorite__in{
     background-color: #EF5DE9;
     color: #fff;
-}
-
-@media screen and (min-width:600px) {
-    /* .container{
-        display: flex;
-    } */
 }
 
 @media screen and (min-width:1200px) {

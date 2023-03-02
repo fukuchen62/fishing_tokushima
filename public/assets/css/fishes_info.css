@@ -36,7 +36,6 @@ li:has(.fishinfo__box--description) {
     border: 10px dashed #30ADD1;
     background-color: #fff;
     border-radius: 50%;
-    /* margin: 50px auto; */
     align-items: flex-start;
 }
 
@@ -53,9 +52,6 @@ li:has(.fishinfo__box--description) {
     overflow-y: scroll;
 }
 
-/* .fishinfo__box--description p:first-child{
-    height: auto;
-} */
 .fishinfo__box--description>p::-webkit-scrollbar {
     background-color: #cae4ff;
 }
@@ -112,10 +108,6 @@ li:has(.fishinfo__box--description) {
         margin-bottom: 50px;
     }
 
-    /* 概要横並び時のテキストボックス外の余白 */
-    /* .overview__box--group {
-        margin: 0px;
-    } */
 }
 
 @media screen and (min-width: 1080px) {
@@ -136,11 +128,6 @@ li:has(.fishinfo__box--description) {
     text-align: left;
     padding-left: 30px;
 }
-
-/* .table__tr:nth-child(odd) {
-    border-radius: 0 0 20px 20px;
-    background-color: #fff;
-} */
 
 
 @media screen and (min-width: 1080px) {
@@ -232,7 +219,6 @@ li:has(.fishinfo__box--description) {
     display: flex;
     justify-content: center;
     padding-top: 30px;
-    /* margin: 70px; */
 }
 
 /* 泡 */
@@ -280,7 +266,6 @@ li:has(.fishinfo__box--description) {
 
 @media screen and (min-width: 1080px) {
 
-
     .preservation__box {
         max-width: 900px;
         height: auto;
@@ -288,11 +273,7 @@ li:has(.fishinfo__box--description) {
         border-radius: 100px;
         margin: 0px auto;
     }
-
-
 }
-
-
 
 /* セクションタイトル (h2)*/
 .spot__box--title,
@@ -400,14 +381,6 @@ li:has(.fishinfo__box--description) {
     object-fit: cover;
 }
 
-/* @media screen and (min-width: 1080px) {
-    .main-img img {
-        width: 559px;
-        height: 419px;
-    }
-
-
-} */
 
 /* スライド２ */
 .slider {
@@ -417,8 +390,6 @@ li:has(.fishinfo__box--description) {
 }
 
 .slider img {
-    /* max-width: 559px;
-    height: 419px; */
     padding: 10px;
     border-radius: 20px;
 }
