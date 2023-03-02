@@ -3,7 +3,6 @@
 /* 文字左寄せ */
 .evacuation__section p {
     text-align: left;
-    margin-bottom: 20px;
 }
 
 /* サブビジュアル */
@@ -22,8 +21,15 @@
 }
 
 /* 注意点赤文字 */
-.evacuation__box--warning {
+.evacuation__box--warning{
+padding-left: 40px;
+}
+
+.evacuation__box--warning li{
     color: #cf2e2e;
+    font-size: 20px;
+    list-style: square;
+    text-align: start;
 }
 
 /* 背景色の指定 */

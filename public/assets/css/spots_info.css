@@ -139,7 +139,7 @@ h3[class*="spotinfo__sectiontitle"]{
 .spotinfo__sectiontitle--fish{
     background-color: #fff;
     color: #30ADD1;
-    margin: 0 auto;
+    margin: 0 auto 20px;
 }
 
 .spotinfo__shell{
