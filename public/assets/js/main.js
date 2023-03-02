@@ -16,6 +16,12 @@ $(window).on('load resize', function () {
     $(".g-nav").removeClass('slide-out');
   }
 });
+$(window).resize(function(){
+  $(".g-nav").addClass('slide-out');
+  $(".g-nav").removeClass('slide-in');
+  $(".hamburger").removeClass('active');
+  $(".header__logo").removeClass('none');
+});
 
 // TOPに戻るボタン スクロールしながらページ上部へ
 $('#topreturn').click(function () {
@@ -30,13 +36,3 @@ $('#topreturn').click(function () {
   }
   return false;//リンク自体の無効化
 })
-
-// // クリックしたらタブのスタイルが変わる
-// $(function () {
-//   $('.tab_item').on('click', function () {
-//     $('.tab_item').removeClass('active');
-//     $(this).removeClass('tab_item');
-//     $(this).parent().addClass('active');
-// $(this).parent().addClass('tab_item');
-//   });
-// });

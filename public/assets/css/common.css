@@ -69,30 +69,19 @@ height: auto;
 .pagetitle {
     text-align: center;
     font-size: 24px;
-    font-weight: 900;
-    color: #fff;
-    -webkit-text-stroke: 2px #30ADD1;
-    padding-top: 45px;
-    /* white-space: nowrap; */
+    color:#30ADD1;
     overflow: visible;
 }
 
 @media screen and (min-width:600px){
     .pagetitle {
+        font-weight: 900;
+        color: #fff;
+        -webkit-text-stroke: 2px #30ADD1;
+        padding-top: 45px;
         font-size: 2.5rem;
     }
 }
-
-/*
-.pagetitle::before {
-    content: url(../images/svg/icon_fish.svg);
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 47.25px;
-    right: 280px;
-} */
-
 
 .pagetitle__border {
     text-align: center;
@@ -103,7 +92,6 @@ height: auto;
     left: 50%;
     transform: translate(-50%, 0);
 }
-
 
 @media screen and (max-width: 480px) {
     .pagetitle::before {
@@ -657,9 +645,16 @@ height: auto;
 }
 
 .fishicon{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     margin: 0;
+    margin-top: 30px;
+}
+@media screen and (min-width: 600px){
+    .fishicon{
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .titlesection__border{

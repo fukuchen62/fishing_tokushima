@@ -27,17 +27,18 @@
 
 /* calendar__box--search横並び */
 .calendar__box--text {
-    display: flex;
+    /* display: flex; */
     text-align: center;
     background-color: #fff;
     line-height: 35px;
     border-radius: 48% 52% 59% 41% / 49% 63% 37% 51%;
-    width: 100%;
+    max-width: 500px;
     height: fit-content;
-    padding: 20px 20px 70px 20px;
+    padding: 30px 50px;
     margin: 0 auto;
     flex-direction: column;
 }
+
 
 /* PC */
 @media screen and (min-width: 1080px) {
@@ -47,11 +48,7 @@
     }
 
     .calendar__box--text {
-        max-width: 35vw;
-    }
-
-    .calendar__box--text {
-        max-width: 500px;
+        width: 400px;
         border-radius: 31% 69% 57% 43% / 49% 52% 48% 51%;
         position: static;
         margin: 0 auto;
@@ -72,25 +69,34 @@ tr {
 
 /* 月ボタン */
 .secList {
-    width: 76px;
-    height: 76px;
-    background-color: #ffea20;
+    width: 60px;
+    height: 60px;
+    background-color: hsl(54, 62%, 95%);
     border-style: outset;
     border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 4px  rgba(255, 233, 31);
+}
+
+@media screen and (min-width:600px) {
+    .secList {
+        width: 76px;
+        height: 76px;
+    }
+
 }
 
 /* 月ボタンホバー */
 .secList:hover {
     background-color: #247f99;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
 }
 
 /* 月ボタン保持 */
 .active {
     background-color: #247f99;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
 }
 
@@ -133,7 +139,7 @@ tr {
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    margin: 0 0 50px 0;
+    margin: 0 20px 50px ;
 }
 
 /* 検索結果 */
@@ -154,8 +160,8 @@ tr {
 .results__box--info {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
-    flex-direction: column;
+    justify-content: center;
+    /* flex-direction: column; */
     gap: 5%;
 }
 
