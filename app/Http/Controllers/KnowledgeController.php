@@ -35,7 +35,9 @@ class KnowledgeController extends Controller
         }
 
         $items = Knowledge::category($category_id)
+            // ->get();
             ->simplePaginate(6);
+        // ->paginate(6);
 
 
         $page = "";
