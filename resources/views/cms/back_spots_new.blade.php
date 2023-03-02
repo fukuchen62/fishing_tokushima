@@ -21,7 +21,7 @@
         <li><a href="./spotsentry">新規登録</a></li>
     </ul>
 
-    <form method="post" action="{{ route('spotsenty') }}">
+    <form method="post" action="{{ route('spotsentry') }}">
         <table class="info new_info">
             @csrf
             <input type="hidden" name="id" value="{{ $spot->id }}">
