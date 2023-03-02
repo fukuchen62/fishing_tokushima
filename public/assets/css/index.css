@@ -135,6 +135,7 @@
 
 .firstsection {
     padding: 20px;
+    padding-bottom: 80px;
 }
 .firstsection > div:nth-child(2) {
     margin-bottom: 30px;
@@ -272,6 +273,7 @@
 .tokushima__imgbox {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
 }
 .spotsection__box {
     width: 100%;
@@ -881,7 +883,8 @@
 .circle-text > span {
     position: absolute;
     left: calc(50% - 1.5rem);
-    display: inline-block;
+    /* display: inline-block; */
+    display: block;
     width: 2rem;
     height: 300px;
     transform-origin: center 80%;

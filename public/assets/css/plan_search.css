@@ -1,8 +1,12 @@
 @charset "utf-8";
 
+.titlesection__border{
+    background-color: #fff;
+}
+
 /* 砂浜避けるレイアウト */
 .form__section {
-    padding-top: 100px;
+    padding: 30px 20px 50px;
 }
 
 /* サブビジュアル */
@@ -28,6 +32,10 @@
 .firstsection__bottom{
     background-position: bottom;
     height: 80px;
+}
+
+.result__section{
+    padding: 0 20px 100px;
 }
 
 /* 検索画面 */
