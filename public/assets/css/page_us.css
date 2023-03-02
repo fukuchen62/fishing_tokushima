@@ -6,7 +6,7 @@ body{
 
 .keyvisual{
     height: 300px;
-    background-image: url(../images/spot_keyvisual_sp.jpg);
+    background-image: url(../images/other_keyvisual_sp.jpg);
     object-fit: cover;
     background-repeat: no-repeat;
     background-color: #dedede;
@@ -14,7 +14,7 @@ body{
 
 @media screen and (min-width:600px) {
     .keyvisual{
-        background-image: url(../images/spot_keyvisual.jpg);
+        background-image: url(../images/other_keyvisual.jpg);
         background-position: 30% 60%;
     }
 }
