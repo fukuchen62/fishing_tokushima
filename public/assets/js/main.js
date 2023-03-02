@@ -5,8 +5,11 @@ $(window).on('load resize', function () {
   var winW = $(window).width();
   var devW = 1079;
   if (winW <= devW) {
-    $(".g-nav").addClass('slide-out');
-    $(".hamburger").click(function () {
+  $(".g-nav").addClass('slide-out');
+  $(".g-nav").removeClass('slide-in');
+  $(".hamburger").removeClass('active');
+  $(".header__logo").removeClass('none');
+      $(document).on('click','.hamburger',function () {
       $(this).toggleClass('active');
       $(".g-nav").toggleClass('slide-in');
       $(".g-nav").toggleClass('slide-out');
@@ -16,12 +19,7 @@ $(window).on('load resize', function () {
     $(".g-nav").removeClass('slide-out');
   }
 });
-$(window).resize(function(){
-  $(".g-nav").addClass('slide-out');
-  $(".g-nav").removeClass('slide-in');
-  $(".hamburger").removeClass('active');
-  $(".header__logo").removeClass('none');
-});
+
 
 // TOPに戻るボタン スクロールしながらページ上部へ
 $('#topreturn').click(function () {

@@ -24,16 +24,6 @@
     background-color: #EAF2FA;
 }
 
-.pagetitle {
-    font-size: 1.5rem;
-    color: #30ADD1;
-    -webkit-text-stroke: 0px;
-    width: 300px;
-    white-space: normal;
-    word-wrap: break-word;
-    /* height: 150px; */
-}
-
 li:has(.fishinfo__box--description) {
     margin-top: 50px;
 }
