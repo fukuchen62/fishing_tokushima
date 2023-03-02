@@ -24,6 +24,8 @@ use App\Models\Plan;
 
 use App\Models\Evacuation;
 
+// Auth
+use Illuminate\Support\Facades\Auth;
 
 // DBクラスをインポートする
 use Illuminate\Support\Facades\DB;
@@ -32,9 +34,20 @@ use Illuminate\Support\Facades\DB;
 // スーパークラスControllerを継承して独自のクラスを作成する
 class AdminController extends Controller
 {
+    /**
+     * コンストラクタ
+     */
+    public function __construct()
+    {
+        // ログインチェック
+        $this->middleware('auth');
+    }
 
     public function adminTop()
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         // 新着ニュースを読み込む
         $items = News::orderBy('id', 'desc')
             ->limit(4)
@@ -68,10 +81,13 @@ class AdminController extends Controller
             'knowledge_count' => $knowledge_count,
         ];
 
+
+
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'news_list' => $items,
             'counts' => $counts,
+            'login_user' => $login_user,
         ];
         return view('cms.back_main', $data);
     }
@@ -82,6 +98,9 @@ class AdminController extends Controller
     }
     public function newsShow(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         // クライアントから検索条件(s)を取得する
         $s = "";
         if (isset($request->s)) {
@@ -106,36 +125,56 @@ class AdminController extends Controller
 
         $data = [
             'newslist' => $items,
+            'login_user' => $login_user,
         ];
         return view('cms.back_news', $data);
 
-        $items = News::all();
-        $data = [
-            'newslist' => $items,
-        ];
-        return view('cms.back_news', $data);
+        // $items = News::all();
+        // $data = [
+        //     'newslist' => $items,
+        // ];
+        // return view('cms.back_news', $data);
     }
 
     public function newsEntry(Request $request)
     {
-        return view('cms.back_news_new');
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_news_new', $data);
     }
 
     public function newsCreate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, News::$rules);
         $news = new News();
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
-        return redirect()->route('newsshow');
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+
+        return view('cms.back_news_new', $data);
+        // return redirect()->route('newsshow');
     }
 
     public function newsEdit(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = News::find($request->id);
         $data = [
             'news' => $item,
+            'login_user' => $login_user,
         ];
 
         return view('cms.back_news_edit', $data);
@@ -143,27 +182,45 @@ class AdminController extends Controller
 
     public function newsUpdate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, News::$rules);
         $news = News::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_news', $data);
         return redirect()->route('newsshow');
     }
 
     public function newsDelete(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = News::find($request->id);
         $data = [
             'news' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_news_edit', $data);
     }
 
     public function newsRemove(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         News::find($request->id)->delete();
-        return redirect()->route('newsshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_news', $data);
+        // return redirect()->route('newsshow');
     }
 
 
@@ -175,6 +232,9 @@ class AdminController extends Controller
 
     public function knowledgeShow(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         // クライアントから検索条件(s)を取得する
         $s = "";
         if (isset($request->s)) {
@@ -199,35 +259,53 @@ class AdminController extends Controller
 
         $data = [
             'knowledgelist' => $items,
+            'login_user' => $login_user,
         ];
         return view('cms.back_knowledge', $data);
 
-        $items = Knowledge::all();
-        $data = [
-            'knowledgelist' => $items,
-        ];
-        return view('cms.back_knowledge', $data);
+        // $items = Knowledge::all();
+        // $data = [
+        //     'knowledgelist' => $items,
+        // ];
+        // return view('cms.back_knowledge', $data);
     }
 
     public function knowledgeEntry(Request $request)
     {
-        return view('cms.back_knowledge_new');
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_knowledge_new', $data);
     }
 
     public function knowledgeCreate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Knowledge::$rules);
         $knowledge = new Knowledge();
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
-        return redirect()->route('knowledgeshow');
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_knowledge', $data);
+        // return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeEdit(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Knowledge::find($request->id);
         $data = [
+            'login_user' => $login_user,
             'knowledge' => $item,
         ];
         return view('cms.back_knowledge_edit', $data);
@@ -235,28 +313,48 @@ class AdminController extends Controller
 
     public function knowledgeUpdate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Knowledge::$rules);
         $knowledge = Knowledge::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
-        return redirect()->route('knowledgeshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_knowledge', $data);
+
+        // return redirect()->route('knowledgeshow');
     }
 
     public function knowledgeDelete(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Knowledge::find($request->id);
         $data = [
             'knowledge' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_knowledge_edit', $data);
     }
 
     public function knowledgeremove(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         Knowledge::find($request->id)->delete();
-        return redirect()->route('knowledgeshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_knowledge', $data);
+        // return redirect()->route('knowledgeshow');
     }
+
 
     //spots分
 
@@ -266,6 +364,8 @@ class AdminController extends Controller
 
     public function spotsShow(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
 
         $s = "";
         if (isset($request->s)) {
@@ -291,33 +391,45 @@ class AdminController extends Controller
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'spotslist' => $items,
+            'login_user' => $login_user,
         ];
         return view('cms.back_spots', $data);
 
-        $items = Spot::all();
-        $data = [
-            'spotslist' => $items,
-        ];
-        return view('cms.back_spots', $data);
+        // $items = Spot::all();
+        // $data = [
+        //     'spotslist' => $items,
+        // ];
+        // return view('cms.back_spots', $data);
     }
 
     public function spotsEdit(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Spot::find($request->id);
         $data = [
             'spot' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_spots_edit', $data);
     }
 
     public function spotsUpdate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Spot::$rules);
         $spots = Spot::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $spots->fill($form)->save();
-        return redirect()->route('spotsshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_spots', $data);
+        // return redirect()->route('spotsshow');
     }
 
     // shops分
@@ -328,6 +440,9 @@ class AdminController extends Controller
 
     public function shopsShow(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
@@ -352,33 +467,46 @@ class AdminController extends Controller
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'shopslist' => $items,
+            'login_user' => $login_user,
         ];
         return view('cms.back_shops', $data);
 
-        $items = Shop::all();
-        $data = [
-            'shopslist' => $items,
-        ];
-        return view('cms.back_shops', $data);
+        // $items = Shop::all();
+        // $data = [
+        //     'shopslist' => $items,
+        // ];
+        // return view('cms.back_shops', $data);
     }
 
     public function shopsEdit(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Shop::find($request->id);
         $data = [
             'shop' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_shops_edit', $data);
     }
 
     public function shopsUpdate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Shop::$rules);
         $shops = Shop::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $shops->fill($form)->save();
-        return redirect()->route('shopsshow');
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_shops', $data);
+        // return redirect()->route('shopsshow');
     }
 
     // fishテーブル関連
@@ -388,6 +516,9 @@ class AdminController extends Controller
 
     public function fishShow(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
@@ -412,65 +543,100 @@ class AdminController extends Controller
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'fishlist' => $items,
+            'login_user' => $login_user,
         ];
         return view('cms.back_fish', $data);
 
-        $items = Fish::all();
-        $data = [
-            'fishlist' => $items,
-        ];
-        return view('cms.back_fish', $data);
+        // $items = Fish::all();
+        // $data = [
+        //     'fishlist' => $items,
+        // ];
+        // return view('cms.back_fish', $data);
     }
 
     public function fishEntry(Request $request)
     {
-        return view('cms.back_fish_new');
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_fish_new', $data);
     }
 
     public function fishCreate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         // $this->validate($request, Fish::$rules);
         $fish = new Fish;
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
-        return redirect()->route('fishshow');
-        // return view('cms.back_fish');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_fish', $data);
+        // return redirect()->route('fishshow');
     }
 
 
     public function fishEdit(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Fish::find($request->id);
         $data = [
             'fish' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_fish_edit', $data);
     }
 
     public function fishUpdate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Fish::$rules);
         $fish = Fish::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
-        return redirect()->route('fishshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_fish', $data);
+        // return redirect()->route('fishshow');
     }
 
     public function fishDelete(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Fish::find($request->id);
         $data = [
             'fish' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_fish_edit', $data);
     }
 
     public function fishRemove(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         Fish::find($request->id)->delete();
-        return redirect()->route('fishshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_fish', $data);
+        // return redirect()->route('fishshow');
     }
 
     //plan分
@@ -482,6 +648,9 @@ class AdminController extends Controller
 
     public function plansShow(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $s = "";
         if (isset($request->s)) {
             $s = $request->s;
@@ -509,62 +678,116 @@ class AdminController extends Controller
         // テンプレートファイルに渡すデータ（連想配列）
         $data = [
             'planslist' => $items,
+            'login_user' => $login_user,
         ];
         return view('cms.back_plans', $data);
 
-        $items = Plan::all();
-        $data = [
-            'planslist' => $items,
-        ];
-        return view('cms.back_plans', $data);
+        // $items = Plan::all();
+        // $data = [
+        //     'planslist' => $items,
+        // ];
+        // return view('cms.back_plans', $data);
     }
 
     public function plansEntry(Request $request)
     {
-        return view('cms.back_plans_new');
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_plans_new', $data);
     }
 
     public function plansCreate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Plan::$rules);
+
         $plans = new Plan();
         $form = $request->all();
         unset($form['_token']);
         $plans->fill($form)->save();
-        return redirect()->route('plansshow');
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_plans', $data);
+        // return redirect()->route('plansshow');
     }
 
     public function plansEdit(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Plan::find($request->id);
         $data = [
             'plan' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_plans_edit', $data);
     }
 
     public function plansUpdate(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $this->validate($request, Plan::$rules);
         $plans = Plan::find($request->id);
         $form = $request->all();
         unset($form['_token']);
         $plans->fill($form)->save();
-        return redirect()->route('plansshow');
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+
+        return view('cms.back_pans', $data);
+        // return redirect()->route('plansshow');
     }
 
     public function plansDelete(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         $item = Plan::find($request->id);
         $data = [
             'plan' => $item,
+            'login_user' => $login_user,
         ];
         return view('cms.back_plans_edit', $data);
     }
 
     public function plansRemove(Request $request)
     {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
         Plan::find($request->id)->delete();
-        return redirect()->route('plansshow');
+        $data = [
+            'login_user' => $login_user,
+        ];
+
+        return view('cms.back_plans', $data);
+        // return redirect()->route('plansshow');
+    }
+
+    /**
+     * ログアウト
+     *
+     * @return void
+     */
+    public function logout()
+    {
+        Auth::logout();
+
+        // リダイレクトの生成
+        return redirect()->route('admintop');
     }
 }

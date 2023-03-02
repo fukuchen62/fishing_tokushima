@@ -20,7 +20,7 @@ class ShopController extends Controller
 
     public function shopList(Request $request)
     {
-        $city_id = null;
+        $city_id = 1;
 
         if (isset($request->city_id)) {
             $city_id = $request->city_id;

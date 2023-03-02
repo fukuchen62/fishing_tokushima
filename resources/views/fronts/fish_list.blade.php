@@ -114,7 +114,7 @@
     <section id="results__section" class="results__section expand p__lr">
         <div class="results__box">
             <h2 class="results__box--title">初心者におすすめ！釣れる魚</h2>
-            <p>この月に狙える魚！クリックして詳しいページへ！</p>
+            <h3 class="rerults__box--subtitle">この月に狙える魚！クリックして詳しいページへ！</h3>
             <ul class="results__box--info">
                 @foreach ($fishes as $item)
                     @component('components.front_fish_list1_card')
@@ -141,7 +141,7 @@
     <section class="others__section p__lr">
         <div class="others__box">
             <h2 class="others__box--title">徳島の海産物</h2>
-            <p>その他、徳島で釣れる・食べれる海産物</p>
+            <h3 class="others__box--subtitle">その他、徳島で釣れる・食べれる海産物</h3>
             <ul class="others__box--info">
 
                 @foreach ($fishes2 as $item)
