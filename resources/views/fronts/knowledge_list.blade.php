@@ -72,18 +72,18 @@
 
             {{-- ページネーション --}}
             @php
-                $count = count($knowledges)+1;
+                $count = count($knowledges);
                 // カウントがうまくいかないため、＋１して対応
                 $number = $count / 6;
             @endphp
             {{-- 下記試しのため使用 --}}
-            <p>{{ $count }}</p>
+            {{-- <p>{{ $count }}</p> --}}
             {{-- <p>{{ $number }}</p> --}}
 
         {{-- ページネーションのjavascriptのためのinput --}}
         <input type="hidden" value="{{ $page }}" name="page">
 
-            <ul class="tab-area flex">
+            {{-- <ul class="tab-area flex">
                 @for ($i = 0; $i < $number; $i++)
                     <li class="tab">
                         <a href="{{ route('knowledgelist') }}?category_id={{ $category_id }}&page= {{ $i + 1 }}">
@@ -92,6 +92,7 @@
                     </li>
                 @endfor
             </ul> --}}
+
             @php
             $data = [
             // 'knowledges' => $items,
