@@ -52,8 +52,8 @@ class FishController extends Controller
 
         // fishモデルクラスのスコープを使って、検索データを取得
         $items = Fish::fish($month)->fish2($level)->get();
-        // levelが4のデータを検索して取得
-        $items2 = Fish::where('level', 4)->get();
+        // level4&その月のデータを検索して取得
+        $items2 = Fish::where('level', 4)->fish($month)->get();
 
 
         // テンプレートファイルに渡すデータ（連想配列）
