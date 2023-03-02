@@ -291,10 +291,14 @@ class AdminController extends Controller
         unset($form['_token']);
         $knowledge->fill($form)->save();
 
+        // 入門知識を読み直す
+        $items = Knowledge::all();
         $data = [
+            'knowledgelist' => $items,
             'login_user' => $login_user,
         ];
         return view('cms.back_knowledge', $data);
+
         // return redirect()->route('knowledgeshow');
     }
 
@@ -321,7 +325,11 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $knowledge->fill($form)->save();
+
+        // 入門知識を読み直す
+        $items = Knowledge::all();
         $data = [
+            'knowledgelist' => $items,
             'login_user' => $login_user,
         ];
         return view('cms.back_knowledge', $data);
@@ -348,16 +356,20 @@ class AdminController extends Controller
         $login_user = Auth::user();
 
         Knowledge::find($request->id)->delete();
+
+        // 入門知識を読み直す
+        $items = Knowledge::all();
         $data = [
+            'knowledgelist' => $items,
             'login_user' => $login_user,
         ];
         return view('cms.back_knowledge', $data);
+
         // return redirect()->route('knowledgeshow');
     }
 
 
     //spots分
-
     public function spotsSearch(Request $request)
     {
     }
@@ -425,8 +437,12 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $spots->fill($form)->save();
+
+        // スポットを読み直す
+        $items = Spot::all();
         $data = [
             'login_user' => $login_user,
+            'spotslist' => $items,
         ];
         return view('cms.back_spots', $data);
         // return redirect()->route('spotsshow');
@@ -502,9 +518,13 @@ class AdminController extends Controller
         unset($form['_token']);
         $shops->fill($form)->save();
 
+        // ショップデータを読みなす
+        $items = Shop::all();
         $data = [
+            'shopslist' => $items,
             'login_user' => $login_user,
         ];
+
         return view('cms.back_shops', $data);
         // return redirect()->route('shopsshow');
     }
@@ -575,8 +595,12 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
+
+        // 魚データを読み直す
+        $items = Fish::all();
         $data = [
             'login_user' => $login_user,
+            'fishlist' => $items,
         ];
         return view('cms.back_fish', $data);
         // return redirect()->route('fishshow');
@@ -606,9 +630,14 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $fish->fill($form)->save();
+
+        // 魚データを読み直す
+        $items = Fish::all();
         $data = [
             'login_user' => $login_user,
+            'fishlist' => $items,
         ];
+
         return view('cms.back_fish', $data);
         // return redirect()->route('fishshow');
     }
@@ -632,9 +661,14 @@ class AdminController extends Controller
         $login_user = Auth::user();
 
         Fish::find($request->id)->delete();
+
+        // 魚データを読み直す
+        $items = Fish::all();
         $data = [
             'login_user' => $login_user,
+            'fishlist' => $items,
         ];
+
         return view('cms.back_fish', $data);
         // return redirect()->route('fishshow');
     }
@@ -712,8 +746,11 @@ class AdminController extends Controller
         unset($form['_token']);
         $plans->fill($form)->save();
 
+        // プランを読みなす
+        $items = Plan::all();
         $data = [
             'login_user' => $login_user,
+            'planslist' => $items,
         ];
         return view('cms.back_plans', $data);
         // return redirect()->route('plansshow');
@@ -743,8 +780,11 @@ class AdminController extends Controller
         unset($form['_token']);
         $plans->fill($form)->save();
 
+        // プランを読みなす
+        $items = Plan::all();
         $data = [
             'login_user' => $login_user,
+            'planslist' => $items,
         ];
 
         return view('cms.back_pans', $data);
@@ -770,8 +810,12 @@ class AdminController extends Controller
         $login_user = Auth::user();
 
         Plan::find($request->id)->delete();
+
+        // プランを読みなす
+        $items = Plan::all();
         $data = [
             'login_user' => $login_user,
+            'planslist' => $items,
         ];
 
         return view('cms.back_plans', $data);
