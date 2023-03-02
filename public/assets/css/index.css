@@ -188,6 +188,7 @@
 
 .knowledge__text--box {
     color: #ffffff;
+    font-size: 20px;
 }
 .last__box {
     margin-bottom: 0px;
@@ -222,7 +223,7 @@
     display: flex;
     height: auto;
     justify-content: center;
-    opacity: 0;
+    opacity: 1;
     left: 0;
     position: absolute;
     right: 0;
@@ -232,10 +233,14 @@
     outline: 5px dashed rgb(255, 255, 255);
     outline-offset: -10px;
     border-radius: 50%;
+    box-shadow:8px 6px 6px rgb(0 0 0 / 25%);
 }
-.hover-mask:hover {
+@media screen and (min-width:1080px) {
+    .hover-mask:hover {
     opacity: 1;
 }
+}
+
 .hover-mask p {
     width: 80%;
     color: #fff;
