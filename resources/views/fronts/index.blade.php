@@ -43,7 +43,7 @@
                         基礎知識
                     @endslot
                     @slot('card_title')
-                        {{-- 基礎知識 --}}
+                        基礎知識
                     @endslot
                     @slot('card_text')
                         釣りに興味があるけど、何から始めればいいかわからない人はここ！準備物や釣り方について初心者向けにわかりやすくお伝えします。
@@ -67,7 +67,7 @@
                         釣り具・餌
                     @endslot
                     @slot('card_title')
-                        {{-- 釣り具・餌 --}}
+                        釣り具・餌
                     @endslot
                     @slot('card_text')
                         おすすめの釣り具と餌をピックアップして紹介します。種類の違いから使い方までしっかり解説！
@@ -91,7 +91,7 @@
                         注意点
                     @endslot
                     @slot('card_title')
-                        {{-- 注意点 --}}
+                        注意点
                     @endslot
                     @slot('card_text')
                         釣り場でのマナーは？危険な魚って何？色んな注意点や疑問点をまとめました。
@@ -115,7 +115,7 @@
                         その他
                     @endslot
                     @slot('card_title')
-                        {{-- その他 --}}
+                        その他
                     @endslot
                     @slot('card_text')
                         釣り人がよく使う釣り用語などを紹介します。
@@ -197,7 +197,7 @@
                         alt="img_neko_700_3.jpg">
                 </a>
                 <p class="circle-text fontrotate">
-                    <span>サ</span><span>ビ</span><span>キ</span><span>釣</span><span>り</span><span>で</span><span>イ</span><span>ワ</span><span>シ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span><span>！</span>
+                    <span>い</span><span>わ</span><span>し</span><span>を</span><span>サ</span><span>ビ</span><span>キ</span><span>釣</span><span>り</span><span></span><span></span><span></span>
                 </p>
             </div>
             <div class="plansection__block plan2">
@@ -205,7 +205,7 @@
                     <img class="planimg" src="{{ asset('storage/images') }}/knowledge_8_1_960x540.jpg"
                         alt="knowledge_8_1_960x540.jpg">
                     <p class="circle-text fontrotate">
-                        <span>ウ</span><span>キ</span><span>釣</span><span>り</span><span>で</span><span>ア</span><span>ジ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span><span>！</span>
+                        <span>浮</span><span>き</span><span>釣</span><span>り</span><span>で</span><span>あ</span><span>じ</span><span>を</span><span>つ</span><span>る</span><span></span><span></span>
                     </p>
                 </a>
             </div>
@@ -214,7 +214,7 @@
                     <img class="planimg" src="{{ asset('storage/images') }}/plans_3_1_640x480.jpg"
                         alt="plans_3_1_640x480.jpg">
                     <p class="circle-text fontrotate">
-                        <span>ル</span><span>ア</span><span>ー</span><span>釣</span><span>り</span><span>で</span><span>ア</span><span>ジ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span><span>！</span>
+                        <span>ル</span><span>ア</span><span>ー</span><span>で</span><span>あ</span><span>じ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span>
                     </p>
                 </a>
             </div>
