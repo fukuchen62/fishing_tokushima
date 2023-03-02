@@ -93,8 +93,6 @@
 
     </section>
     <div class="firstsection__bottom expand"></div>
-    </section>
-    <div class="firstsection__bottom expand"></div>
 
 @endsection
 
