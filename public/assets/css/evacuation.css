@@ -21,6 +21,10 @@
 }
 
 /* 注意点赤文字 */
+.warning__text{
+    font-size: 20px;
+}
+
 .evacuation__box--warning{
 padding-left: 40px;
 }
