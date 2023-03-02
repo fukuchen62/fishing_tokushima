@@ -26,12 +26,12 @@
                     <h2 class="pagetitle ">{{ $knowledges->title }}</h2>
                     <div class="pagetitle__border"></div>
                     <div class="i-catchimg">
-                        @if ($knowledges->thumbnail != '')
+                        {{-- @if ($knowledges->thumbnail != '')
                             <img src="{{ asset('storage/images') }}/{{ $knowledges->thumbnail }}"
                                 alt="{{ $knowledges->thumbnail }}">
                         @else
                             <img src="{{ asset('assets/images/img_neko_700_3.jpg') }}" alt="">
-                        @endif
+                        @endif --}}
                     </div>
 
 
