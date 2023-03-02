@@ -59,7 +59,10 @@
                                 @endslot
 
                                 @slot('card_text')
-                                    {{ $item->overview }}
+                                    @php
+                                        $overview = mb_strimwidth($item->overview, 0, 180, '・・・');
+                                    @endphp
+                                    {{ $overview }}
                                 @endslot
                             @endcomponent
                         @endforeach
@@ -82,11 +85,11 @@
 
             <ul class="tab-area flex">
                 @for ($i = 0; $i < $number; $i++)
-                <li class="tab">
-                <a href="{{ route('knowledgelist') }}?category_id={{ $category_id }}&page= {{ $i + 1 }}">
-                    {{ $i + 1 }}
-                </a>
-                </li>
+                    <li class="tab">
+                        <a href="{{ route('knowledgelist') }}?category_id={{ $category_id }}&page= {{ $i + 1 }}">
+                            {{ $i + 1 }}
+                        </a>
+                    </li>
                 @endfor
             </ul>
         </div>

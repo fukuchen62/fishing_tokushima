@@ -74,7 +74,7 @@
                                     echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
                                     echo "\n";
                                 }
-
+                                
                             @endphp
 
                             // マーカー生成
@@ -175,7 +175,7 @@
 
                     @slot('spot_text')
                         @php
-                            $overview = mb_strimwidth($item->overview, 0, 180, '・・・');
+                            $overview = mb_strimwidth($item->overview, 0, 150, '・・・');
                         @endphp
                         {{ $overview }}
                     @endslot
@@ -197,5 +197,5 @@
 
 {{-- 該当ページ専用JS --}}
 @section('pageJs')
-<script src="{{ asset('assets/js/spot.js') }}"></script>
+    <script src="{{ asset('assets/js/spot.js') }}"></script>
 @endsection

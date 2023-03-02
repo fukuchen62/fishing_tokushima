@@ -134,9 +134,7 @@
                 <li>
                     <div class="fishinfo__box--text">
                         <h3>おいしい食べ方</h3>
-                        <p>{{ $item->cooking1 }}、{{ $item->cooking2 }}、{{ $item->cooking3 }}
-                            <br>食べ方の詳細？
-                        </p>
+                        <p>{{ $item->cooking1 }}、{{ $item->cooking2 }}、{{ $item->cooking3 }}</p>
                     </div>
                 </li>
             </ul>
@@ -144,8 +142,7 @@
 
         <!-- 装飾（貝）の画像 -->
         <ul class="fishesinfo__img--shell">
-            <li><img src="{{ asset('assets/images/shell-1.png') }}" {{-- ../storage/images/shell-1.png --}} width="40" height="40"
-                    alt="shell-1.png"></li>
+            <li><img src="{{ asset('assets/images/shell-1.png') }}" width="40" height="40" alt="shell-1.png"></li>
             <li><img src="{{ asset('assets/images/shell-2.png') }}" width="40" height="40" alt="shell-2.png"></li>
             <li><img src="{{ asset('assets/images/shell-3.png') }}" width="40" height="40" alt="shell-3.png"></li>
             <li><img src="{{ asset('assets/images/ukiwa.png') }}" width="40" height="40" alt="ukiwa.png"></li>
@@ -181,6 +178,9 @@
     <!-- 釣れるスポット -->
     <section class="spot__section p__lr">
         <div class="spot__box">
+            @php
+                // print_r($spots);
+            @endphp
             <h2 class="spot__box--title">釣れるスポット</h2>
             <ul class="spot__box--list">
 
@@ -204,7 +204,10 @@
                                 {{ $spot->name }}
                             @endslot
                             @slot('card_overview')
-                                {{ $spot->overview }}
+                                @php
+                                    $overview = mb_strimwidth($spot->overview, 0, 150, '・・・');
+                                @endphp
+                                {{ $overview }}
                             @endslot
                         @endcomponent
                     @endif
@@ -225,17 +228,20 @@
                         @slot('card_link')
                             {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
+
                         @slot('card_alt')
                             {{ $fish->fish_img1 }}
                         @endslot
+
                         @slot('card_src')
                             {{ asset('storage/images') }}/{{ $fish->fish_img1 }}
                         @endslot
                         @slot('card_name')
                             {{ $fish->name }}
                         @endslot
+
                         @slot('card_overview')
-                            {{ $fish->detail }}
+                            {{-- {{ $fish->detail }} --}}
                         @endslot
                     @endcomponent
                 @endforeach

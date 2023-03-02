@@ -444,9 +444,14 @@ class AdminController extends Controller
         unset($form['_token']);
         $spots->fill($form)->save();
 
+        // スポットデータを読みなす
+        $items = Spot::all();
+
         $data = [
             'login_user' => $login_user,
+            'spotslist' => $items,
         ];
+
         return view('cms.back_spots', $data);
         // return redirect()->route('spotsshow');
     }
@@ -552,8 +557,12 @@ class AdminController extends Controller
         unset($form['_token']);
         $shops->fill($form)->save();
 
+        // ショップデータを読みなす
+        $items = Shop::all();
+
         $data = [
             'login_user' => $login_user,
+            'shopslist' => $items,
         ];
         return view('cms.back_shops', $data);
         // return redirect()->route('shopsshow');

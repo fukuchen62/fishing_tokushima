@@ -82,7 +82,7 @@ class FishController extends Controller
         // 釣れるスポットIDを取得
         $spot_id = $item->spot_id;
         if ($spot_id != '') {
-            $spotid_list = explode(",", $spot_id);
+            $spotid_list = explode("|", $spot_id);
 
             // 釣れるスポットの情報を取得
             foreach ($spotid_list as $id) {
