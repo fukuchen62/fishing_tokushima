@@ -34,7 +34,7 @@ class KnowledgeController extends Controller
             $category_id = $request->category_id;
         }
 
-        $items = Knowledge::Category($category_id)
+        $items = Knowledge::category($category_id)
             ->simplePaginate(6);
 
 
