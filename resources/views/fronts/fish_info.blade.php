@@ -134,9 +134,7 @@
                 <li>
                     <div class="fishinfo__box--text">
                         <h3>おいしい食べ方</h3>
-                        <p>{{ $item->cooking1 }}、{{ $item->cooking2 }}、{{ $item->cooking3 }}
-                            <br>食べ方の詳細？
-                        </p>
+                        <p>{{ $item->cooking1 }}、{{ $item->cooking2 }}、{{ $item->cooking3 }}</p>
                     </div>
                 </li>
             </ul>
@@ -144,8 +142,7 @@
 
         <!-- 装飾（貝）の画像 -->
         <ul class="fishesinfo__img--shell">
-            <li><img src="{{ asset('assets/images/shell-1.png') }}" {{-- ../storage/images/shell-1.png --}} width="40" height="40"
-                    alt="shell-1.png"></li>
+            <li><img src="{{ asset('assets/images/shell-1.png') }}" width="40" height="40" alt="shell-1.png"></li>
             <li><img src="{{ asset('assets/images/shell-2.png') }}" width="40" height="40" alt="shell-2.png"></li>
             <li><img src="{{ asset('assets/images/shell-3.png') }}" width="40" height="40" alt="shell-3.png"></li>
             <li><img src="{{ asset('assets/images/ukiwa.png') }}" width="40" height="40" alt="ukiwa.png"></li>
