@@ -49,18 +49,20 @@
                 </div>
 
                 <div class="input-item mb20">
-                    <div class="button-box">
+                    <div class="remember-box">
                         <button type="submit" class="btn btn-primary">
                             ログイン
                         </button>
-
-                        @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                パスワード忘れ
-                            </a>
-                        @endif
                     </div>
                 </div>
+                {{-- <div class="input-item mb20">
+                    <div class="pass-reset">
+                        @if (Route::has('password.request'))
+                            パスワード忘れた方は<a class="btn-link"
+                                href="{{ route('password.request') }}"><span>パスワード再設定</span></a>をクリックしてください。
+                        @endif
+                    </div>
+                </div> --}}
             </form>
         </div>
 
