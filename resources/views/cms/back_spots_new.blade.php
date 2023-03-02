@@ -24,7 +24,7 @@
     <form method="post" action="{{ route('spotsentry') }}">
         <table class="info new_info">
             @csrf
-            <input type="hidden" name="id" value="{{ $spot->id }}">
+            {{-- <input type="hidden" name="id" value="{{ $spot->id }}"> --}}
             <tr>
                 <th width="15%"> <span>*</span> 釣りスポット名: </th>
                 <td><input type="text" name="name" required></td>
