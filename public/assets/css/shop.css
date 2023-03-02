@@ -27,20 +27,25 @@
 
 /* 東西南北ボタン */
 .tab_item{
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 4px  rgba(255, 233, 31);
+    /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); */
     display: flex;
     width: 130px;
     height: 80px;
-    background-color: #FFEA20;
+    background-color: hsl(54, 62%, 95%);
+    /* background-color: #FFEA20; */
     font-size: 1.5rem;
-    border-radius: 10px;
+    border-radius: 30px;
     justify-content: center;
     align-items: center;
 }
 
 .tab_item:hover {
-    background-color: #30ADD1;
-    color: #ffea20;
+    /* background-color: #30ADD1;
+    color: #ffea20; */
+    background-color: #247f99;
+    box-shadow: inset 2px 4px rgba(46, 174, 209);
+    color: #fff;
 }
 
 .section__btn {
@@ -301,7 +306,7 @@
 
 /* 選択保持のためのクラス */
 .active2 {
-    background-color: #247F99;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #247f99;
+    box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
 }
