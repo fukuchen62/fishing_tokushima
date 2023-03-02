@@ -41,64 +41,64 @@
                 <tr>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '1']) }}">
-                            <button class='secList secList1'>１月</button>
+                            <button class='secList secList1'>1月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '2']) }}">
-                            <button class='secList secList2'>２月</button>
+                            <button class='secList secList2'>2月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '3']) }}">
-                            <button class='secList secList3'>３月</button>
+                            <button class='secList secList3'>3月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '4']) }}">
-                            <button class='secList secList4'>４月</button>
+                            <button class='secList secList4'>4月</button>
                         </a>
                     </td>
 
                     <td>
                         <a href="{{ route('fishlist', ['month' => '5']) }}">
-                            <button class='secList secList5'>５月</button>
+                            <button class='secList secList5'>5月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '6']) }}">
-                            <button class='secList secList6'>６月</button>
+                            <button class='secList secList6'>6月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '7']) }}">
-                            <button class='secList secList7'>７月</button>
+                            <button class='secList secList7'>7月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => '8']) }}">
-                            <button class='secList secList8'>８月</button>
+                            <button class='secList secList8'>8月</button>
                         </a>
                     </td>
 
                     <td>
                         <a href="{{ route('fishlist', ['month' => '9']) }}">
-                            <button class='secList secList9'>９月</button>
+                            <button class='secList secList9'>9月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => 'a']) }}">
-                            <button class='secList secList10'>１０月</button>
+                            <button class='secList secList10'>10月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => 'b']) }}">
-                            <button class='secList secList11'>１１月</button>
+                            <button class='secList secList11'>11月</button>
                         </a>
                     </td>
                     <td>
                         <a href="{{ route('fishlist', ['month' => 'c']) }}">
-                            <button class='secList secList12'>１２月</button>
+                            <button class='secList secList12'>12月</button>
                         </a>
                     </td>
                 </tr>
