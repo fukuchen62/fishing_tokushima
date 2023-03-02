@@ -77,6 +77,9 @@
                 $cookielist = explode (',',$cookie);
                 // var_dump($cookielist);
             @endphp
+
+            <p>{{ $cookie }}</p>
+
             @if (in_array($spots->id, $cookielist))
                 <div>
                     <a href="{{ route('cookie', ['spot_id' => $spots->id]) }}" id=""

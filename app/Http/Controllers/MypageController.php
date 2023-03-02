@@ -115,19 +115,13 @@ class MypageController extends Controller
 
                 $spot_id = $request->cookie('spot_id');
 
-                // 一回ばらしてから比較する
-                // $cookie = Cookie::get('spot_id');
-                // $cookielist = explode (',',$cookie);
-                // var_dump($cookielist);
-                // @if (in_array($spots->id, $cookielist))
-
-                if (strpos($spot_id, $input1) != false) {
+                if (strpos($spot_id, $input1) !== false) {
                     $spot_id = str_replace($input1, '0', $spot_id);
                 } else {
                     $spot_id .= ',' . $input1;
                 }
 
-                if (strpos($spot_id, 0) != false) {
+                if (strpos($spot_id, 0) !== false) {
                     $spot_id = str_replace('0,', '', $spot_id);
                 }
             } else {
@@ -142,6 +136,7 @@ class MypageController extends Controller
 
             $response = response()->view('fronts.cookie_save', $data);
             $response->cookie('spot_id', $spot_id, 100);
+            // １年保存or無期限
             return $response;
         }
 
