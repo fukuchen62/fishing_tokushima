@@ -158,11 +158,13 @@ class AdminController extends Controller
         unset($form['_token']);
         $news->fill($form)->save();
 
+        $items = News::all();
         $data = [
+            'newslist' => $items,
             'login_user' => $login_user,
         ];
+        return view('cms.back_news', $data);
 
-        return view('cms.back_news_new', $data);
         // return redirect()->route('newsshow');
     }
 
@@ -190,11 +192,14 @@ class AdminController extends Controller
         $form = $request->all();
         unset($form['_token']);
         $news->fill($form)->save();
+
+        $items = News::all();
         $data = [
+            'newslist' => $items,
             'login_user' => $login_user,
         ];
         return view('cms.back_news', $data);
-        return redirect()->route('newsshow');
+        // return redirect()->route('newsshow');
     }
 
     public function newsDelete(Request $request)
@@ -216,10 +221,14 @@ class AdminController extends Controller
         $login_user = Auth::user();
 
         News::find($request->id)->delete();
+
+        $items = News::all();
         $data = [
+            'newslist' => $items,
             'login_user' => $login_user,
         ];
         return view('cms.back_news', $data);
+
         // return redirect()->route('newsshow');
     }
 
@@ -787,7 +796,7 @@ class AdminController extends Controller
             'planslist' => $items,
         ];
 
-        return view('cms.back_pans', $data);
+        return view('cms.back_plans', $data);
         // return redirect()->route('plansshow');
     }
 
