@@ -28,12 +28,10 @@
 /* 東西南北ボタン */
 .tab_item{
     box-shadow: 2px 4px  rgba(255, 233, 31);
-    /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); */
     display: flex;
     width: 130px;
     height: 80px;
     background-color: hsl(54, 62%, 95%);
-    /* background-color: #FFEA20; */
     font-size: 1.5rem;
     border-radius: 30px;
     justify-content: center;
@@ -41,8 +39,6 @@
 }
 
 .tab_item:hover {
-    /* background-color: #30ADD1;
-    color: #ffea20; */
     background-color: #247f99;
     box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;

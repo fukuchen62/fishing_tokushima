@@ -15,7 +15,6 @@
 }
 
 body{
-    /* padding: 0 20px; */
     color: #51656F;
 }
 
@@ -71,9 +70,7 @@ body{
     padding: 30px;
     color: #000;
     background-color: hsl(54, 62%, 95%);
-    /* background-color: #ffea20; */
     box-shadow: 2px 4px  rgba(255, 233, 31);
-    /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); */
     border-radius: 30px;
     font-size: 24px;
     font-weight: bold;
@@ -82,8 +79,6 @@ body{
 }
 
 .tab_item:hover{
-    /* background-color: #30ADD1;
-    color: #ffea20; */
     background-color: #247f99;
     box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
@@ -91,9 +86,6 @@ body{
 
 /* タブクリック後のスタイル */
 .active2{
-    /* background-color: #30ADD1;
-    color: #ffea20;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)inset; */
     background-color: #247f99;
     box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
@@ -116,120 +108,6 @@ body{
     border-left: 5px solid #30ADD1;
 }
 
-/* svg画像ポイントホバー時 */
-/* @media screen and (min-width:600px) {
-    .spot__map--point:hover{
-    scale: 1.5;
-    -webkit-transition: all 0.3s;
-    z-index: 10;
-    }
-    .spot__map--point:hover .point__circle{
-        fill: #E21F1F;
-    }
-    .spot__map--point:hover .point__fish{
-        fill: #ffea20;
-    }
-    .spot__map--point:hover:after{
-        width: 150px;
-        padding: 5px;
-        background-color: #fff;
-        border-radius: 20px;
-        display: inline-block;
-        content: "スポット名";
-        margin-bottom: 5px;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    }
-} */
-
-/* .point__circle{
-    fill: #ffea20;
-}
-
-.point__fish {
-    fill: #30add1;
-    clip-path: url(#clippath);
-} */
-
-/* ポイントhover時スポット名表示 */
-/* 東部 */
-/* @media screen and (min-width:600px) {
-    .point__east:nth-child(1):hover:after{
-        content:"岡崎海岸"
-        }
-    .point__east:nth-child(2):hover:after{
-        content:"亀浦観光港"
-        }
-    .point__east:nth-child(3):hover:after{
-        content:"竜宮の磯"
-        }
-    .point__east:nth-child(4):hover:after{
-        content:"大浦漁港"
-        }
-    .point__east:nth-child(5):hover:after{
-        content:"八木の鼻"
-        }
-    .point__east:nth-child(6):hover:after{
-        content:"北泊　新波止場"
-        }
-    .point__east:nth-child(7):hover:after{
-        content:"月見ヶ丘海浜公園"
-        }
-    .point__east:nth-child(8):hover:after{
-        content:"長原漁港"
-        }
-    .point__east:nth-child(9):hover:after{
-        content:"小松海岸"
-        }
-    .point__east:nth-child(10):hover:after{
-        content:"マリンピア北緑地外堤防"
-        }
-    .point__east:nth-child(11):hover:after{
-        content:"大神子海岸"
-        }
-    .point__east:nth-child(12):hover:after{
-        content:"津田の堤防"
-        }
-} */
-
-/* 南部 */
-/* @media screen and (min-width:600px) {
-    .point__south:nth-child(1):hover:after{
-        content:"赤石ふ頭"
-        }
-    .point__south:nth-child(2):hover:after{
-        content:"しおかぜ公園"
-        }
-    .point__south:nth-child(3):hover:after{
-        content:"今津漁港"
-        }
-    .point__south:nth-child(4):hover:after{
-        content:"亀崎漁港"
-        }
-    .point__south:nth-child(5):hover:after{
-        content:"中浦緑地公園"
-        }
-    .point__south:nth-child(6):hover:after{
-        content:"大潟岸壁"
-        }
-    .point__south:nth-child(7):hover:after{
-        content:"木岐漁港"
-        }
-    .point__south:nth-child(8):hover:after{
-        content:"恵比須浜"
-        }
-    .point__south:nth-child(9):hover:after{
-        content:"モラスコむぎ"
-        }
-    .point__south:nth-child(10):hover:after{
-        content:"大砂突堤"
-        }
-    .point__south:nth-child(11):hover:after{
-        content:"手倉海水浴場"
-        }
-    .point__south:nth-child(12):hover:after{
-        content:"海陽町港"
-        }
-} */
 
 .section__box--title{
     margin-top: 30px;

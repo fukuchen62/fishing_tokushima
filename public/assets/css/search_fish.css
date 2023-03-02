@@ -27,7 +27,6 @@
 
 /* calendar__box--search横並び */
 .calendar__box--text {
-    /* display: flex; */
     text-align: center;
     background-color: #fff;
     line-height: 35px;
@@ -95,7 +94,6 @@ tr {
 /* 月ボタン保持 */
 .active {
     background-color: #247f99;
-    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
     box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
 }
@@ -161,7 +159,6 @@ tr {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* flex-direction: column; */
     gap: 5%;
 }
 

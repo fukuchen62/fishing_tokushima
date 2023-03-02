@@ -72,7 +72,6 @@
     width: 100%;
     font-size: 1.2rem;
     color: #000;
-    /* white-space: nowrap; */
 }
 
 
@@ -892,7 +891,6 @@
 .circle-text > span {
     position: absolute;
     left: calc(50% - 1.5rem);
-    /* display: inline-block; */
     display: block;
     width: 2rem;
     height: 300px;
@@ -1048,7 +1046,6 @@ _:-ms-lang(x)::-ms-backdrop,
     height: 10vmin;
     background: #ffffff;
     padding: 10px 10px;
-    /* padding-top: 25px; */
     text-align: center;
     color: #000000;
     font-size: 0.8rem;
@@ -1124,8 +1121,6 @@ _:-ms-lang(x)::-ms-backdrop,
     display: inline-block;
     animation: hurueru 1s infinite;
 }
-
-
 
 .infomation__block {
     margin-top: 50px;
