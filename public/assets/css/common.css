@@ -167,6 +167,7 @@ height: auto;
     justify-content: end;
     width: 100vw;
     height: 100px;
+    position: -webkit-fixed;
     position: fixed;
     z-index: 20;
 }
@@ -177,6 +178,7 @@ height: auto;
     width: 100vw;
     height: 100px;
     /* background-color: #ffffff; */
+    position: -webkit-fixed;
     position: fixed;
     z-index: 5;
 }
@@ -192,6 +194,7 @@ height: auto;
     width: 100%;
     background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 40, from(#ffffff), color-stop(0.5, #ffffff), color-stop(0.51, #ffffff), color-stop(0.52, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
     -webkit-background-size: 49px 100%;
+    position: -webkit-fixed;
     position: fixed;
     top: 100px;
     z-index: 10;
@@ -202,6 +205,7 @@ height: auto;
 
 /* ハンバーガーメニュー */
 .hamburger {
+    position: -webkit-fixed;
     position: fixed;
     cursor: pointer;
     width: 60px;
@@ -288,6 +292,7 @@ height: auto;
 
 
 .g-nav {
+    position: -webkit-fixed;
     position: fixed;
     top: 0;
     right: 0;
@@ -355,6 +360,7 @@ height: auto;
 
 .logo__img,
 .header__logo {
+    position: -webkit-fixed;
     position: fixed;
     top: 20px;
     left: 20px;
@@ -522,6 +528,7 @@ height: auto;
         padding: 0;
         margin: 0;
         overflow: visible;
+        position: -webkit-fixed;
         position: fixed;
         right: 0vw;
         top: 0px;
