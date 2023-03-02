@@ -423,6 +423,34 @@ class AdminController extends Controller
         // return view('cms.back_spots', $data);
     }
 
+    public function spotsEntry(Request $request)
+    {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_spots_new', $data);
+    }
+
+    public function spotsCreate(Request $request)
+    {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
+        $this->validate($request, Spot::$rules);
+        $spots = new Spot();
+        $form = $request->all();
+        unset($form['_token']);
+        $spots->fill($form)->save();
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_spots', $data);
+        // return redirect()->route('spotsshow');
+    }
+
     public function spotsEdit(Request $request)
     {
         // ログインユーザーの情報取得
@@ -501,6 +529,34 @@ class AdminController extends Controller
         //     'shopslist' => $items,
         // ];
         // return view('cms.back_shops', $data);
+    }
+
+    public function shopsEntry(Request $request)
+    {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_shops_new', $data);
+    }
+
+    public function shopsCreate(Request $request)
+    {
+        // ログインユーザーの情報取得
+        $login_user = Auth::user();
+
+        $this->validate($request, Shop::$rules);
+        $shops = new Shop();
+        $form = $request->all();
+        unset($form['_token']);
+        $shops->fill($form)->save();
+
+        $data = [
+            'login_user' => $login_user,
+        ];
+        return view('cms.back_shops', $data);
+        // return redirect()->route('shopsshow');
     }
 
     public function shopsEdit(Request $request)

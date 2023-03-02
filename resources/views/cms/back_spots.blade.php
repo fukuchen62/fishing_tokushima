@@ -18,6 +18,7 @@
     {{-- 以下はshowのところにはめ込む --}}
     <ul class="menubar">
         <li><a href="./spotsshow">HOME</a></li>
+        <li><a href="./spotsentry">新規登録</a></li>
     </ul>
 
     {{-- 検索条件入力フォーム --}}
