@@ -9,7 +9,7 @@ $(window).on('load resize', function () {
   $(".g-nav").removeClass('slide-in');
   $(".hamburger").removeClass('active');
   $(".header__logo").removeClass('none');
-    $(".hamburger").click(function () {
+      $(document).on('click','.hamburger',function () {
       $(this).toggleClass('active');
       $(".g-nav").toggleClass('slide-in');
       $(".g-nav").toggleClass('slide-out');
