@@ -178,6 +178,9 @@
     <!-- 釣れるスポット -->
     <section class="spot__section p__lr">
         <div class="spot__box">
+            @php
+                // print_r($spots);
+            @endphp
             <h2 class="spot__box--title">釣れるスポット</h2>
             <ul class="spot__box--list">
 
@@ -201,7 +204,10 @@
                                 {{ $spot->name }}
                             @endslot
                             @slot('card_overview')
-                                {{ $spot->overview }}
+                                @php
+                                    $overview = mb_strimwidth($spot->overview, 0, 150, '・・・');
+                                @endphp
+                                {{ $overview }}
                             @endslot
                         @endcomponent
                     @endif
@@ -222,17 +228,20 @@
                         @slot('card_link')
                             {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
+
                         @slot('card_alt')
                             {{ $fish->fish_img1 }}
                         @endslot
+
                         @slot('card_src')
                             {{ asset('storage/images') }}/{{ $fish->fish_img1 }}
                         @endslot
                         @slot('card_name')
                             {{ $fish->name }}
                         @endslot
+
                         @slot('card_overview')
-                            {{ $fish->detail }}
+                            {{-- {{ $fish->detail }} --}}
                         @endslot
                     @endcomponent
                 @endforeach
