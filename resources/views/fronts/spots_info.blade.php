@@ -74,7 +74,7 @@
 
             @php
                 $cookie = Cookie::get('spot_id');
-                $cookielist = explode (',',$cookie);
+                $cookielist = explode(',', $cookie);
                 // var_dump($cookielist);
             @endphp
 
@@ -168,8 +168,12 @@
         <section class="spotinfo__fish p__lr">
             <h3 class="section__box--title spotinfo__sectiontitle--fish">狙える魚</h3>
             <div class="spotinfo__fishes">
-                @foreach ($fishlist as $item)
+                @foreach ($fishlist as $key => $item)
                     @component('components.front_spots_info')
+                        @slot('fish_link')
+                            {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
+                        @endslot
+
                         @slot('fish_img')
                             {{ asset('storage/images') }}/{{ $item->fish_img1 }}
                         @endslot
