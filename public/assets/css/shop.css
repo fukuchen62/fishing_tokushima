@@ -79,6 +79,7 @@
 
 .section__box--title{
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .section__content {
@@ -123,6 +124,7 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 50px;
+    padding-top: 50px;
     padding-bottom: 50px;
     border-bottom: dotted 3px #30ADD1;
 }
