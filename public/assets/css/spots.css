@@ -70,8 +70,10 @@ body{
 .tab_item{
     padding: 30px;
     color: #000;
-    background-color: #ffea20;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    background-color: hsl(54, 62%, 95%);
+    /* background-color: #ffea20; */
+    box-shadow: 2px 4px  rgba(255, 233, 31);
+    /* box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); */
     border-radius: 30px;
     font-size: 24px;
     font-weight: bold;
@@ -80,15 +82,21 @@ body{
 }
 
 .tab_item:hover{
-    background-color: #30ADD1;
-    color: #ffea20;
+    /* background-color: #30ADD1;
+    color: #ffea20; */
+    background-color: #247f99;
+    box-shadow: inset 2px 4px rgba(46, 174, 209);
+    color: #fff;
 }
 
 /* タブクリック後のスタイル */
 .active2{
-    background-color: #30ADD1;
+    /* background-color: #30ADD1;
     color: #ffea20;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)inset;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4)inset; */
+    background-color: #247f99;
+    box-shadow: inset 2px 4px rgba(46, 174, 209);
+    color: #fff;
 }
 
 
