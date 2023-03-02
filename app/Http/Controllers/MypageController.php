@@ -115,15 +115,34 @@ class MypageController extends Controller
 
                 $spot_id = $request->cookie('spot_id');
 
-                if (strpos($spot_id, $input1) !== false) {
-                    $spot_id = str_replace($input1, '0', $spot_id);
-                } else {
-                    $spot_id .= ',' . $input1;
+                // 配列に変換
+                $spot_id = explode(',', $spot_id);
+
+                // foreachで完全一致かどうか見る
+                foreach ($spot_id as $value) {
+                    // if ($value === 0) {
+                    //     $spot_id = str_replace('0,', '', $spot_id);
+                    // }
+
+                    if ($value == $input1) {
+                        $spot_id = array_diff($spot_id, array($input1,));
+                        $spot_id = array_values($spot_id);
+                    } else {
+                        $spot_id[] = $input1;
+                    }
                 }
 
-                if (strpos($spot_id, 0) !== false) {
-                    $spot_id = str_replace('0,', '', $spot_id);
-                }
+                $spot_id = implode(',', $spot_id);
+
+                // if (strpos($spot_id, $input1) !== false) {
+                //     $spot_id = str_replace($input1, '0', $spot_id);
+                // } else {
+                //     $spot_id .= ',' . $input1;
+                // }
+
+                // if (strpos($spot_id, 0) !== false) {
+                //     $spot_id = str_replace('0,', '', $spot_id);
+                // }
             } else {
                 $spot_id .= $request->spot_id;
             }
@@ -135,8 +154,8 @@ class MypageController extends Controller
             ];
 
             $response = response()->view('fronts.cookie_save', $data);
-            $response->cookie('spot_id', $spot_id, 100);
-            // １年保存or無期限
+            // １年保存
+            $response->cookie('spot_id', $spot_id, 525600);
             return $response;
         }
 
@@ -170,7 +189,7 @@ class MypageController extends Controller
             ];
 
             $response = response()->view('fronts.cookie_save', $data);
-            $response->cookie('plan_id', $plan_id, 100);
+            $response->cookie('plan_id', $plan_id, 525600);
             return $response;
         }
     }
