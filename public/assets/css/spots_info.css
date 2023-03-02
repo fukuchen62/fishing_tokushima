@@ -60,7 +60,8 @@
 
 /* 狙える魚 */
 .spotinfo__fish{
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .spotinfo__fishes{
