@@ -11,12 +11,21 @@
     background-color: #888;
 }
 
+.title__formal_name {
+    font-size: 16px;
+}
+
 @media screen and (min-width: 600px) {
     .keyvisual {
         background-image: url(../images/fish_keyvisual.jpg);
     }
 
+    .title__formal_name {
+        font-size: 24px;
+    }
+
 }
+
 
 
 .fishinfo__section {

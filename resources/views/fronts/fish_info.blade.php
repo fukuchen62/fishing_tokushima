@@ -9,7 +9,7 @@
 @endsection
 
 @section('title')
-    {{ $item->name }}{{ '（' . $item->formal_name . '）' }}
+    {{ $item->name }}<span class="title__formal_name">{{ '（' . $item->formal_name . '）' }}</span>
 @endsection
 
 {{-- 該当ページのCSS --}}
