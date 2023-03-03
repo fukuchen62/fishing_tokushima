@@ -2,7 +2,7 @@
 
 /* タイトル砂浜を避けるレイアウト */
 .overview__section {
-    padding-top: 100px;
+    /* padding-top: 100px; */
     padding-bottom: 50px;
 }
 
@@ -157,6 +157,10 @@
 /* 横並びになると横幅固定 */
 @media screen and (min-width: 1025px) {
     .flow__box--text {
+        width: 559px;
+    }
+
+    .plan__img{
         width: 559px;
     }
 
