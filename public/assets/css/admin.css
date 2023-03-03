@@ -520,10 +520,18 @@ table.new_info textarea:hover {
 .btn-primary {
     background-color: lightgrey;
     margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .btn-link {
-    background-color: lightblue;
+    font-size: 1.2em;
+    color: orangered;
+    padding: 0 10px;
+}
+
+.pass-reset {
+    width: 100%;
+    text-align: left;
 }
 
 .login-form input[type=checkbox] {

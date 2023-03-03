@@ -26,11 +26,6 @@
 
 /* 貝（装飾） */
 .detail__img--shell {
-    /* display: flex;
-    justify-content: center;
-    padding: 70px;
-    background-color: #EAF2FA; */
-
     /* 除ける */
     display: none;
 }

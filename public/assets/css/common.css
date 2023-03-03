@@ -9,7 +9,6 @@ body {
     height: auto;
     max-width:1200px;
     margin: 0 auto;
-    /* padding: 0 20px; */
     font-family: "fot-tsukuardgothic-std", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -71,6 +70,7 @@ height: auto;
     font-size: 24px;
     color:#30ADD1;
     overflow: visible;
+    font-weight: bold;
 }
 
 @media screen and (min-width:600px){
@@ -135,6 +135,8 @@ height: auto;
 
 .card__title{
     margin: 10px 0;
+    color: #000;
+    font-weight: bold;
 }
 
 .card:hover{
@@ -178,7 +180,6 @@ height: auto;
     display: inline-block;
     width: 100vw;
     height: 100px;
-    /* background-color: #ffffff; */
     position: -webkit-fixed;
     position: fixed;
     z-index: 5;
@@ -375,7 +376,6 @@ height: auto;
 
 .g-nav__box {
     background-color: #fff;
-    /* margin-top: 60px; */
 }
 
 .g-nav__box--section {
@@ -386,7 +386,6 @@ height: auto;
 
 .g-nav__box--group {
     display: inline-block;
-    /* margin-left: 20px; */
 }
 
 .g-nav__box--discription {
@@ -484,7 +483,7 @@ height: auto;
         transform-origin: 50% 50%;
     }
     .draw__shop{
-         fill:#BAAA14;
+        fill:#BAAA14;
     }
     .g-nav__box--discription:hover .circle__shop{
         fill:#BAAA14;
@@ -510,9 +509,6 @@ height: auto;
 
 /* g-navレスポンシブ */
 @media screen and (min-width:600px) {
-.g-nav{
-
-}
 
 .g-nav__box--section{
     margin: 0 auto;
@@ -591,9 +587,6 @@ height: auto;
 }
 
 
-.g-nav__link {
-    /* width: 100%; */
-}
 
 .g-nav__link--text {
     max-width: 800px;
@@ -723,16 +716,12 @@ height: auto;
     }
 }
 
-
-
-
 /* 第一セクション背景 */
 
 .firstsection {
     background-color: #EAF2FA;
     padding-top: 100px;
 }
-
 
 .firstsection__bottom {
     width: 100vw;
@@ -742,7 +731,6 @@ height: auto;
     justify-content: center;
     align-items: center;
 }
-
 
 /* フッター */
 .footer {
@@ -790,8 +778,6 @@ height: auto;
     }
 }
 
-
-
 /* ボタンレイアウト基礎 */
 .btn {
     display: flex;
@@ -805,67 +791,6 @@ height: auto;
     box-shadow: #000000;
 }
 
-/* 詳細情報table */
-/* .table,
-.table__tr,
-th,
-td {
-    padding: 10px;
-}
-
-.table {
-    width: 100%;
-    background-color: #EAF2FA;
-    margin: 0 auto;
-}
-
-.table__title {
-    width: 100%;
-    font-size: 24px;
-    color: #fff;
-    background-color: #30ADD1;
-    column-span: all;
-    margin: 0 auto;
-    border-radius: 20px 20px 0 0;
-    padding: 10px 0;
-}
-
-.table__tr:not(:last-child) {
-    border-bottom: solid 2px #30ADD1;
-}
-
-.table__subtitle {
-    border-right: solid 2px #30ADD1;
-}
-
-.table__tr:nth-child(odd) {
-    background-color: #fff;
-}
-
-.radius-table {
-    border-radius: 20px;
-}
-
-.radius-table tr:last-child>*:first-child {
-    border-radius: 0 0 0 20px;
-}
-
-.radius-table tr:last-child>*:last-child {
-    border-radius: 0 0 20px 0;
-}
-
-@media screen and (min-width: 600px) {
-    .table {
-        width: 559px;
-    }
-
-    .table__title {
-        width: 559px;
-    }
-} */
-
-/* tableの外枠線あり、trのborder-bottomがなぜか消える */
-/* 詳細情報table */
 .table__tr,
 th,
 td {
@@ -882,8 +807,6 @@ td {
     background-color: #EAF2FA;
     margin: 0 auto;
     border: solid 2px #30ADD1;
-    /* border-collapse: separate;
-    border-spacing: 0; */
     border-radius: 0 0 20px 20px;
 }
 
@@ -1011,16 +934,16 @@ td {
     cursor: pointer;
 }
 
-  #topreturn.floatAnime {
-      /*アニメーションの指定*/
+#topreturn.floatAnime {
+    /*アニメーションの指定*/
     animation: floatAnime 2s;
-  }
+}
 
-  @keyframes floatAnime {
+@keyframes floatAnime {
     0% { transform: translateX(0); }
     20% { transform: translateX(20px); }
     40% { transform: translateX(0); }
     60% { transform: translateX(20px); }
     80% { transform: translateX(0); }
     100% { transform: translateX(20px); }
-  }
+}

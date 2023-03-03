@@ -108,24 +108,18 @@
                 <li>
                     <!-- slick用（仮） -->
                     <div class="slider center">
-                        <div>
-                            @if ($item->cooking_img1 != '')
-                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
-                                    alt="{{ $item->cooking_img1 }}" />
-                            @endif
-                        </div>
-                        <div>
-                            @if ($item->cooking_img2 != '')
-                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
-                                    alt="{{ $item->cooking_img2 }}" />
-                            @endif
-                        </div>
-                        <div>
-                            @if ($item->cooking_img3 != '')
-                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
-                                    alt="{{ $item->cooking_img3 }}" />
-                            @endif
-                        </div>
+                        @if ($item->cooking_img1 != '')
+                          <div><img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
+                                    alt="{{ $item->cooking_img1 }}" /></div>
+                        @endif
+                        @if ($item->cooking_img2 != '')<div>
+                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
+                                    alt="{{ $item->cooking_img2 }}" /></div>
+                        @endif
+                        @if ($item->cooking_img3 != '')
+                            <div><img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
+                                    alt="{{ $item->cooking_img3 }}" /></div>
+                         @endif
                     </div>
                 </li>
                 <li>

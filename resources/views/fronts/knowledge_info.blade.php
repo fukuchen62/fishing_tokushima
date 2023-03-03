@@ -37,8 +37,8 @@
 
                     @php
                         $text = $knowledges->content;
-                        $target = 'storage_path';
-                        $path = asset('storage/images');
+                        $target = ['storage_path', 'link_path'];
+                        $path = [asset('storage/images'), route('knowledgeinfo', ['id' => ''])];
                         
                         // 写真pathを絶対パスで置換
                         $text = str_replace($target, $path, $text);
