@@ -1175,4 +1175,12 @@ _:-ms-lang(x)::-ms-backdrop,
     margin: 20px auto 0px;
     width: 160px;
     height: 50px;
+    transition: 0.5s;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+.infobtn:hover {
+    box-shadow: none;
+    transform:1px, 1px
 }
