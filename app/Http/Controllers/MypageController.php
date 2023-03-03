@@ -102,43 +102,48 @@ class MypageController extends Controller
      */
     public function myPage(Request $request)
     {
-        $spot_id = "";
-        $plan_id = "";
+        $spot_id = "0,";
+        $plan_id = "0,";
 
 
         // スポット------------------------------
 
         if ($request->spot_id != "") {
 
-            // 変数変更する 配列＝spots_list,spots_string
+            // cookieがすでにあったら、
             if ($request->hasCookie('spot_id')) {
                 $input1 = $request->spot_id;
 
-                $spot_id = $request->cookie('spot_id');
+                $spotid_list = $request->cookie('spot_id');
 
                 // 配列に変換
-                $spot_id = explode(',', $spot_id);
+                $spotid_array = explode(',', $spotid_list);
 
                 // foreachで完全一致かどうか見る
                 $flag_delete = 0;
-                foreach ($spot_id as $value) {
+                foreach ($spotid_array as $key => $value) {
                     // if ($value === 0) {
                     //     $spot_id = str_replace('0,', '', $spot_id);
                     // }
 
+                    // お気に入りリストから該当IDを外す
                     if ($value == $input1) {
-                        $result = array_diff($spot_id, array($input1));
-                        $result = array_values($result);
+                        // $result = array_diff($spotid_array, array($input1,));
+                        // $result = array_values($result);
+
+                        array_splice($spotid_array, $key, 1);
                         $flag_delete = 1;
                     }
                 }
 
-                // 新規追加の場合は
+                // 新規追加の場合は、
                 if ($flag_delete == 0) {
-                    $spot_id[] = $input1;
+                    array_push($spotid_array, $input1);
                 }
 
-                $spot_id = implode(',', $spot_id);
+                // 配列から文字列に変換
+                $spot_id = implode(',', $spotid_array);
+
 
                 // if (strpos($spot_id, $input1) !== false) {
                 //     $spot_id = str_replace($input1, '0', $spot_id);
@@ -167,7 +172,7 @@ class MypageController extends Controller
 
 
         // プラン------------------------------
-
+        // プランも変更
 
         if ($request->plan_id != "") {
 
