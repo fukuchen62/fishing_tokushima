@@ -103,6 +103,7 @@
         </div>
 
         <!-- おいしい食べ方 -->
+        <h2 class="fishes__box--title">おいしい食べ方</h2>
         <div class="fishes__box--description">
             <ul class="fishinfo__box--food">
                 <li>
@@ -127,7 +128,7 @@
                 </li>
                 <li>
                     <div class="fishinfo__box--text">
-                        <h3>おいしい食べ方</h3>
+                        {{-- <h3>おいしい食べ方</h3> --}}
                         <p>{{ $item->cooking1 }}、{{ $item->cooking2 }}、{{ $item->cooking3 }}</p>
                     </div>
                 </li>
