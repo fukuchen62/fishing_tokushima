@@ -82,7 +82,6 @@ class MypageController extends Controller
             }
         }
 
-
         $data = [
             'spots' => $spot_list,
             'plans' => $plan_list,
@@ -172,24 +171,53 @@ class MypageController extends Controller
 
 
         // プラン------------------------------
-        // プランも変更
 
         if ($request->plan_id != "") {
 
+            // cookieがすでにあったら、
             if ($request->hasCookie('plan_id')) {
                 $input2 = $request->plan_id;
 
-                $plan_id = $request->cookie('plan_id');
+                $planid_list = $request->cookie('plan_id');
 
-                if (strpos($plan_id, $input2) !== false) {
-                    $plan_id = str_replace($input2, '0', $plan_id);
-                } else {
-                    $plan_id .= ',' . $input2;
+                // 配列に変換
+                $planid_array = explode(',', $planid_list);
+
+                // foreachで完全一致かどうか見る
+                $flag_delete = 0;
+                foreach ($planid_array as $key => $value) {
+                    // if ($value === 0) {
+                    //     $spot_id = str_replace('0,', '', $spot_id);
+                    // }
+
+                    // お気に入りリストから該当IDを外す
+                    if ($value == $input2) {
+                        // $result = array_diff($spotid_array, array($input1,));
+                        // $result = array_values($result);
+
+                        array_splice($planid_array, $key, 1);
+                        $flag_delete = 1;
+                    }
                 }
 
-                if (strpos($plan_id, 0) !== false) {
-                    $plan_id = str_replace('0,', '', $plan_id);
+                // 新規追加の場合は、
+                if ($flag_delete == 0) {
+                    array_push($planid_array, $input2);
                 }
+
+                // 配列から文字列に変換
+                $plan_id = implode(',', $planid_array);
+
+
+                // if (strpos($spot_id, $input1) !== false) {
+                //     $spot_id = str_replace($input1, '0', $spot_id);
+                // } else {
+                //     $spot_id .= ',' . $input1;
+                // }
+
+                // if (strpos($spot_id, 0) !== false) {
+                //     $spot_id = str_replace('0,', '', $spot_id);
+                // }
             } else {
                 $plan_id .= $request->plan_id;
             }
@@ -200,6 +228,7 @@ class MypageController extends Controller
             ];
 
             $response = response()->view('fronts.cookie_save', $data);
+            // １年保存
             $response->cookie('plan_id', $plan_id, 525600);
             return $response;
         }
