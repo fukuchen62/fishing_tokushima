@@ -1,4 +1,4 @@
-@extends('layouts.layout_front')
+@extends('layouts.layout_front_fishinfo')
 
 @section('description', 'ページのデスクリプション')
 
@@ -6,6 +6,10 @@
 
 @section('key_visual')
     {{ asset('assets/images/fish_keyvisual.jpg') }}
+@endsection
+
+@section('toptitle')
+    {{ $item->name }}
 @endsection
 
 @section('title')
@@ -109,17 +113,19 @@
                     <!-- slick用（仮） -->
                     <div class="slider center">
                         @if ($item->cooking_img1 != '')
-                          <div><img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
+                            <div><img src="{{ asset('storage/images') }}/{{ $item->cooking_img1 }}"
                                     alt="{{ $item->cooking_img1 }}" /></div>
                         @endif
-                        @if ($item->cooking_img2 != '')<div>
-                            <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
-                                    alt="{{ $item->cooking_img2 }}" /></div>
+                        @if ($item->cooking_img2 != '')
+                            <div>
+                                <img src="{{ asset('storage/images') }}/{{ $item->cooking_img2 }}"
+                                    alt="{{ $item->cooking_img2 }}" />
+                            </div>
                         @endif
                         @if ($item->cooking_img3 != '')
                             <div><img src="{{ asset('storage/images') }}/{{ $item->cooking_img3 }}"
                                     alt="{{ $item->cooking_img3 }}" /></div>
-                         @endif
+                        @endif
                     </div>
                 </li>
                 <li>
