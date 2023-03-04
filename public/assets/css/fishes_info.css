@@ -148,9 +148,14 @@ li:has(.fishinfo__box--description) {
 }
 
 /* おいしい食べ方 */
+.fishes__box--title {
+    width: 300px;
+    border-bottom: 5px dotted #FFEA20;
+    margin: 0 auto;
+}
 
 .fishes__box--description {
-    margin: 100px 0 100px 0;
+    margin: 50px 0 100px 0;
 }
 
 
@@ -172,18 +177,18 @@ li:has(.fishinfo__box--description) {
     margin: 0 auto;
 }
 
-.fishinfo__box--text h3 {
+/* .fishinfo__box--text h3 {
     font-size: 24px;
     color: #FFFFFF;
     padding: 30px;
     font-style: normal;
     font-weight: 600;
     -webkit-text-stroke: 1px #FF0000;
-}
+} */
 
 .fishinfo__box--text p {
     text-align: center;
-    padding-bottom: 50px;
+    padding: 50px 0;
 }
 
 @media screen and (min-width: 1080px) {

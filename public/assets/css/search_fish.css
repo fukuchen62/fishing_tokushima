@@ -73,7 +73,7 @@ tr {
     background-color: hsl(54, 62%, 95%);
     border-style: outset;
     border-radius: 20px;
-    box-shadow: 2px 4px  rgba(255, 233, 31);
+    box-shadow: 2px 4px rgba(255, 233, 31);
 }
 
 @media screen and (min-width:600px) {
@@ -137,7 +137,7 @@ tr {
     color: #fff;
     padding: 8px;
     font-size: 24px;
-    margin: 0 20px 50px ;
+    margin: 0 20px 50px;
 }
 
 /* 検索結果 */
@@ -202,7 +202,8 @@ h3 {
 /* 釣れる魚の画像 */
 .fish__img {
     border-radius: 50%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
     background-color: #fff;
 }
 
