@@ -16,6 +16,7 @@ dt,dd{
         color: #51656F;
         font-weight: 100;
         text-align: start;
+        line-height: 1.5;
 }
 
 .knowledge__section a{
@@ -38,13 +39,14 @@ dt,dd{
     top: 15px;
 }
 
-.titlesection{
+/* .titlesection{
     background-image: url(../images/svg/wave-indexpage.svg);
     transform: rotate(180);
     background-color: #30ADD1;
-}
+} */
 .titlesection__border {
-    display: none;
+    /* display: none; */
+    background-color: #30ADD1;
 
 }
 
@@ -109,6 +111,7 @@ dt,dd{
     margin: 0 auto;
     width: 100%;
     background-color: #30ADD1;
+    padding-top: 20px;
 }
 
 .firstsection__bottom{
