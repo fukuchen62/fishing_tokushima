@@ -1167,12 +1167,13 @@ _:-ms-lang(x)::-ms-backdrop,
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.infomation__block a{
+.infomation__block a:not(:last-child){
     display: block;
     font-size: 0.8rem;
 }
+
 @media screen and (min-width: 600px) {
-.infomation__block a {
+.infomation__block a:not(:last-child) {
         display: flex;
         font-size: 1rem;
     }
@@ -1183,11 +1184,14 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .infobtn {
-    margin: 20px auto 0px;
+    /* margin: 20px auto 0px; */
     width: 160px;
     height: 50px;
     transition: 0.5s;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 

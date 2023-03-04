@@ -103,6 +103,7 @@ input[name="tab_item"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 @media screen and (min-width: 900px){
     .card__area {
@@ -117,7 +118,7 @@ input[name="tab_item"] {
         }
 }
 .card__p{
-    margin: 20px;
+    /* margin: 20px; */
     padding: 0;
 }
 
