@@ -76,7 +76,11 @@ class PlanController extends Controller
             $where .= ' ( fish_id in( ' . implode(',', $fish_id) . '))';
         }
 
-        $items = DB::table('plans')->whereRaw($where)->get();
+        if ($city_id == null && $level_id == null && $fish_id == null) {
+            $items = DB::table('plans')->get();
+        } else {
+            $items = DB::table('plans')->whereRaw($where)->get();
+        }
 
         $data = [
             'plans' => $items,
