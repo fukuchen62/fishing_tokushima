@@ -680,13 +680,13 @@
     height:1200px;
 }
 .plan1 {
-        transform: scale(0.5) translateX(-25%)  translateY(-180px);
+        transform: scale(0.5) translateX(-30%)  translateY(-180px);
     }
 .plan2{
-    transform: scale(0.5) translateX(-25%) translateY(-600px);
+    transform: scale(0.5) translateX(-30%) translateY(-600px);
 }
 .plan3 {
-    transform: scale(0.5) translateX(-25%) translateY(-1000px);
+    transform: scale(0.5) translateX(-30%) translateY(-1000px);
 }
 .morelook {
     background-color: #ffea20;
@@ -784,7 +784,6 @@
     }
 }
 @media screen and (min-width: 800px) {
-
 
     .morelook {
         bottom: -270px;
@@ -980,8 +979,6 @@
 }
 
 
-
-
 @keyframes infinity-scroll-left {
     from {
         transform: translateX(0);
@@ -1023,14 +1020,14 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .d-demo__list--left {
-    animation: infinity-scroll-left 95s infinite linear 0.5s both;
+    animation: infinity-scroll-left 80s infinite linear 0.5s both;
 }
 .d-demo__list--left2 {
-    animation: infinity-scroll-left2 95s infinite linear 0.5s both;
+    animation: infinity-scroll-left2 80s infinite linear 0.5s both;
 }
 
 .d-demo__item {
-    width: calc(100vw / 3);
+    width: calc(100vw / 2.7);
 }
 
 .fishsection {
@@ -1041,7 +1038,7 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .fishimgblock {
-    max-width: calc(100vw / 5);
+    max-width: calc(100vw / 2);
     max-height: 250px;
 
 }

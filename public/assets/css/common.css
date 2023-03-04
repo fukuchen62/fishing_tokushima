@@ -306,6 +306,9 @@ height: auto;
     padding-top: 100px;
     overflow: scroll;
 }
+    .g-nav::-webkit-scrollbar {
+        display: none;
+    }
 
 .slide-in {
     background: #30ADD1;
@@ -544,9 +547,7 @@ height: auto;
         justify-content: flex-end;
         background-color: #FFF;
     }
-    .g-nav::-webkit-scrollbar{
-        display: none;
-    }
+
 
     .header__box {
         max-width: 100%;
