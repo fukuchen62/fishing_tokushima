@@ -1182,5 +1182,5 @@ _:-ms-lang(x)::-ms-backdrop,
 
 .infobtn:hover {
     box-shadow: none;
-    transform: translate(calc(-50% + 1px), 1px)
+    transform:1px, 1px
 }

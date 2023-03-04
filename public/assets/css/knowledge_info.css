@@ -12,6 +12,11 @@ dt,dd{
     font-weight: 100;
     text-align: start;
 }
+li{
+    color: #51656F;
+        font-weight: 100;
+        text-align: start;
+}
 
 @media screen and (min-width: 600px) {
     .keyvisual {
