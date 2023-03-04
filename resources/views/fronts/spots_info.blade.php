@@ -231,15 +231,10 @@
                                         break;
                             
                                     case 3:
-                                        $icon_url .= 'open.png';
-                                        break;
-                            
-                                    case 4:
                                         $icon_url .= 'exit.png';
                                         break;
                             
                                     default:
-                                        $icon_url .= 'location.png';
                                         break;
                                 }
                             
@@ -292,7 +287,7 @@
 
                                 url: '{{ asset('assets/images/') }}/' + icon_url,
                                 // url: "http://localhost/fishing_tokushima/public/assets/images/fish__icon.png",
-                                scaledSize: new google.maps.Size(42, 55),
+                                scaledSize: new google.maps.Size(40, 40),
                             },
                             map: map
                         });
@@ -336,6 +331,27 @@
 
             </div>
         </section>
+
+        <div>
+            <div class="icon_list_wrap">
+                <ul class="icon_list">
+                    <li class="icon">
+                        <img src="{{ asset('assets/images/svg/spot_point.svg') }}" alt="スポットアイコン" class="icon_pic" />釣りスポット
+                    </li>
+                    <li class="icon">
+                        <img src="{{ asset('assets/images/svg/gnav_shop.svg') }}" alt="釣具屋アイコン" class="icon_pic" />釣具屋
+                    </li>
+                    <li class="icon">
+                        <img src="{{ asset('assets/images/exit.png') }}" alt="避難場所アイコン" class="icon_pic" />避難場所
+                    </li>
+                    <li class="icon">
+                        <img src="https://www.naruto-cycle.com/wp-content/themes/naruto_cycle/assets/img/course_icon_others_img.png"
+                            alt="その他アイコン" class="icon_pic" />その他
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
 

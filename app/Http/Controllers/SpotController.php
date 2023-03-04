@@ -129,7 +129,7 @@ class SpotController extends Controller
                 'lat' => $info->latitude,
                 'lng' => $info->longitude,
                 'text' => $info->name,
-                'type' => 3,
+                'type' => "",
             ];
             // パーキング情報を$spotInfo配列に加える
             $spotInfo[] = $parking;
@@ -158,7 +158,7 @@ class SpotController extends Controller
                     'lat' => $info->latitude,
                     'lng' => $info->longitude,
                     'text' => $info->name,
-                    'type' => 4,
+                    'type' => 3,
                 ];
                 // 避難場所情報を配列に加える
                 $spotInfo[] = $evacuationinfo;
