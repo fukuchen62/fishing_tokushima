@@ -83,7 +83,7 @@
 
 /* 詳細情報table */
 .spotinfo__table{
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 .spotinfo__table td:nth-child(1){

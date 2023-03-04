@@ -12,10 +12,14 @@ dt,dd{
     font-weight: 100;
     text-align: start;
 }
-li{
-    /* color: #51656F; */
+.knowledge__section li{
+        color: #51656F;
         font-weight: 100;
         text-align: start;
+}
+
+.knowledge__section a{
+        color: red
 }
 
 @media screen and (min-width: 600px) {
