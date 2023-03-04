@@ -82,14 +82,19 @@ class SpotController extends Controller
         }
         // 関連フィッシュ情報を取得
         foreach ($fish_id_list as $id) {
+            // fish_idが5以下の魚の情報を取得
+            if ($id <= 5) {
+                $fishinfo5 = Fish::find($id);
+                // fish情報を配列に加える
+                $fish_info_list[] = $fishinfo5;
+            }
+
             // fish情報を読み込む
             $fishinfo = Fish::find($id);
-            // fish情報を配列に加える
-            $fish_info_list[] = $fishinfo;
-
             // 釣り方を配列に加える
             $fish_method_list[] = $fishinfo->method;
         }
+
 
         // 関連ショップIDを取得
         $shop_id = $items->shop_id;
@@ -174,6 +179,7 @@ class SpotController extends Controller
         $data = [
             'spots' => $items,
             'spotInfo' => $spotInfo,
+            'fishinfo5' => $fishinfo5,
             'fishlist' => $fish_info_list,
             'fishMethod' => $fish_method_list,
             // 'shoplist' => $shop_info_list,

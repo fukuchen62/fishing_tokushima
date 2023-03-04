@@ -168,21 +168,24 @@
         <section class="spotinfo__fish p__lr">
             <h3 class="section__box--title spotinfo__sectiontitle--fish">狙える魚</h3>
             <div class="spotinfo__fishes">
-                @for ($i = 0; $i < 4; $i++)
+                @foreach ($fishlist as $key => $item)
                     @component('components.front_spots_info')
                         @slot('fish_link')
-                            {{ route('fishinfo', ['id' => $fishlist[$i]]) }}
+                            {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
 
                         @slot('fish_img')
-                            {{ asset('storage/images') }}/{{ $fishlist[$i]['fish_img1'] }}
+                            {{ asset('storage/images') }}/{{ $item['fish_img1'] }}
                         @endslot
 
                         @slot('fish_alt')
-                            {{ $fishlist[$i]['fish_img1'] }}
+                            {{ $item->fish_img1 }}
                         @endslot
                     @endcomponent
-                @endfor
+                    {{-- @php
+                    print_r($fishlist);
+                @endphp --}}
+                @endforeach
             </div>
         </section>
 
