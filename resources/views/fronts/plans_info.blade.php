@@ -53,6 +53,9 @@
                     $cookielist = explode(',', $cookie);
                     // var_dump($cookielist);
                 @endphp
+
+                <p>{{ $cookie }}</p>
+
                 @if (in_array($item->id, $cookielist))
                     <div>
                         <a href="{{ route('cookie', ['plan_id' => $item->id]) }}" id=""
@@ -146,11 +149,11 @@
 
                     @php
                         // echo $item->flow
-                        
+
                         $text = $item->flow;
                         $target = 'storage_path';
                         $path = asset('storage/images');
-                        
+
                         // 写真pathを絶対パスで置換
                         $text = str_replace($target, $path, $text);
                         // 出力
