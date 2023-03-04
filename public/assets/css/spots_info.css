@@ -67,19 +67,24 @@
 .spotinfo__fishes{
     max-width: 1200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     gap: 10px;
     margin: 0 auto 50px;
 }
 
 .spotinfo__fish--img{
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 200px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+
 }
 
 .spotinfo__fish--img img{
-    border-radius: 50%;
+    object-fit: contain;
 }
+
 
 /* 詳細情報table */
 .spotinfo__table{
