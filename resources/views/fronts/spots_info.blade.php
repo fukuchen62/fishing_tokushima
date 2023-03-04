@@ -78,7 +78,7 @@
                 // var_dump($cookielist);
             @endphp
 
-            <p>{{ $cookie }}</p>
+            {{-- <p>{{ $cookie }}</p> --}}
 
             @if (in_array($spots->id, $cookielist))
                 <div>
