@@ -124,6 +124,9 @@
 }
 
 /* フロー */
+.flow__section{
+    padding-bottom: 30px;
+}
 
 /* フローのタイトル枠 */
 .flow__section h2 {
@@ -156,6 +159,7 @@
 .anchor--text {
         display: none;
     }
+
 
 
 /* 横並びになると横幅固定 */
