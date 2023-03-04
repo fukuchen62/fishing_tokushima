@@ -185,7 +185,7 @@ height: auto;
     z-index: 5;
 }
 
-@media screen and (min-width: 1079px) {
+@media screen and (min-width: 1080px) {
     .header__box--group {
         display: none;
     }
@@ -283,7 +283,7 @@ height: auto;
     letter-spacing: 0.5px;
 }
 
-@media screen and (min-width: 1079px) {
+@media screen and (min-width: 1080px) {
 
     .hamburger,
     .hamburger span {
@@ -379,7 +379,7 @@ height: auto;
         left: 0;
     }
 }
-@media screen and (min-width: 1079px) {
+@media screen and (min-width: 1080px) {
     .header__logo {
         left: 20px;
     }
@@ -415,7 +415,7 @@ height: auto;
     padding-bottom: 10px;
 }
 /* g-navアイコンのレスポンシブ */
-@media screen and (min-width:1079px) {
+@media screen and (min-width:1080px) {
     .g-nav__box--discription:hover{
         transform: translate(0,-5px);
     }
@@ -526,7 +526,7 @@ height: auto;
 }
 }
 
-@media screen and (min-width: 1079px) {
+@media screen and (min-width: 1080px) {
     .g-nav {
         align-items: center;
         justify-content: center;
@@ -628,7 +628,7 @@ height: auto;
     transform: rotate(45deg);
 }
 
-@media screen and (min-width: 1079px) {
+@media screen and (min-width: 1080px) {
 
     .g-nav__link {
         display: none;
