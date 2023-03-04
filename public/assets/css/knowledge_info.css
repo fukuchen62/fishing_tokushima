@@ -203,8 +203,8 @@ dt,dd{
     position: absolute;
     right: 3%;
     top: 40%;
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     border-top: 2px solid #51656F;
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);
@@ -244,9 +244,9 @@ dt,dd{
     content: "";
     position: absolute;
     right: -48%;
-    top: -30px;
-    width: 12px;
-    height: 12px;
+    top: -22px;
+    width: 7px;
+    height: 7px;
     border-top: 2px solid #51656F;
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);
