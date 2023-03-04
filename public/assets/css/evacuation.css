@@ -1,8 +1,16 @@
-@charset "utf-8";
+@charset "utf-8";er
+
+.evacuation__section{
+    padding-top: 20px;
+}
 
 /* 文字左寄せ */
 .evacuation__section p {
     text-align: left;
+}
+
+.evacuation__section p:nth-of-type(2) {
+    padding-bottom: 30px;
 }
 
 /* サブビジュアル */
@@ -23,16 +31,20 @@
 /* 注意点赤文字 */
 .warning__text{
     font-size: 20px;
+    line-height: normal;
+    padding-bottom: 20px;
+    color: #cf2e2e;
 }
 
 .evacuation__box--warning{
-padding-left: 40px;
+/* padding-left: 40px; */
+padding: 5px 0 30px;
+line-height: 1.5;
 }
 
 .evacuation__box--warning li{
     color: #cf2e2e;
     font-size: 20px;
-    list-style: square;
     text-align: start;
 }
 
@@ -49,7 +61,7 @@ padding-left: 40px;
 }
 
 .evacuation__section {
-    padding-top: 100px;
+    padding-top: 20px;
 }
 
 /* フッターまでの余白 */
