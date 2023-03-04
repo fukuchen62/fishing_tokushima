@@ -6,6 +6,10 @@
     padding-bottom: 50px;
 }
 
+.overview__box--img{
+    padding-top: 30px;
+}
+
 /* サブビジュアル */
 .keyvisual {
     background-image: url(../images/plan_keyvisual_sp.jpg);
