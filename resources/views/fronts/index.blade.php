@@ -194,10 +194,10 @@
             <div class="plansection__block plan1">
                 <a href="{{ route('plansinfo', ['id' => 1]) }}">
                     <img class="planimg" src="{{ asset('assets/images/plans_1_1_800x800.jpg') }}" alt="サビキでイワシ釣り">
+                    <p class="circle-text fontrotate">
+                        <span>サ</span><span>ビ</span><span>キ</span><span>釣</span><span>り</span><span>で</span><span>イ</span><span>ワ</span><span>シ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span><span>!</span>
+                    </p>
                 </a>
-                <p class="circle-text fontrotate">
-                    <span>サ</span><span>ビ</span><span>キ</span><span>釣</span><span>り</span><span>で</span><span>イ</span><span>ワ</span><span>シ</span><span>を</span><span>釣</span><span>っ</span><span>て</span><span>み</span><span>よ</span><span>う</span><span>!</span>
-                </p>
             </div>
             <div class="plansection__block plan2">
                 <a class="block" href="{{ route('plansinfo', ['id' => 2]) }}">

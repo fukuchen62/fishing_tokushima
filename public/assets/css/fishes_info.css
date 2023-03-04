@@ -359,7 +359,7 @@ li:has(.fishinfo__box--description) {
 
 .main-img {
     max-width: 559px;
-    height: 419px;
+    height: auto;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 20px;
