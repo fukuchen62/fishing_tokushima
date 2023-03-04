@@ -227,7 +227,7 @@
                                         break;
                             
                                     case 2:
-                                        $icon_url .= 'number.png';
+                                        $icon_url .= 'svg/gnav_shop.svg';
                                         break;
                             
                                     case 3:
@@ -235,7 +235,7 @@
                                         break;
                             
                                     case 4:
-                                        $icon_url .= 'service.png';
+                                        $icon_url .= 'exit.png';
                                         break;
                             
                                     default:
