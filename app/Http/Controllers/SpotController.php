@@ -73,6 +73,7 @@ class SpotController extends Controller
             'lat' => $items->spot_latitude,
             'lng' => $items->spot_longitude,
             'text' => $items->name,
+            'type' => 1,
         ];
 
         // 関連フィッシュIDを取得
@@ -112,6 +113,7 @@ class SpotController extends Controller
                     'lat' => $info->latitude,
                     'lng' => $info->longitude,
                     'text' => $info->name,
+                    'type' => 2,
                 ];
                 // shop情報を$spotInfo配列に加える
                 $spotInfo[] = $shopInfo;
@@ -127,6 +129,7 @@ class SpotController extends Controller
                 'lat' => $info->latitude,
                 'lng' => $info->longitude,
                 'text' => $info->name,
+                'type' => 3,
             ];
             // パーキング情報を$spotInfo配列に加える
             $spotInfo[] = $parking;
@@ -155,6 +158,7 @@ class SpotController extends Controller
                     'lat' => $info->latitude,
                     'lng' => $info->longitude,
                     'text' => $info->name,
+                    'type' => 4,
                 ];
                 // 避難場所情報を配列に加える
                 $spotInfo[] = $evacuationinfo;

@@ -219,12 +219,38 @@
                         // PHPの配列をJavaScriptの配列に変換
                         @php
                             for ($i = 0; $i < count($spotInfo); $i++) {
+                                // $icon_url = asset('assets/images/');
+                                $icon_url = '';
+                                switch ($spotInfo[$i]['type']) {
+                                    case 1:
+                                        $icon_url .= 'svg/spot_point.svg';
+                                        break;
+                            
+                                    case 2:
+                                        $icon_url .= 'number.png';
+                                        break;
+                            
+                                    case 3:
+                                        $icon_url .= 'open.png';
+                                        break;
+                            
+                                    case 4:
+                                        $icon_url .= 'service.png';
+                                        break;
+                            
+                                    default:
+                                        $icon_url .= 'location.png';
+                                        break;
+                                }
+                            
                                 echo "markers[$i]={lat:";
                                 echo $spotInfo[$i]['lat'];
                                 echo ', lng:';
                                 echo $spotInfo[$i]['lng'];
                                 echo ', url:';
                                 echo "\"#mk" . ($i + 1) . "\"";
+                                echo ', icon_url:"';
+                                echo $icon_url . '"';
                                 echo ', text:"';
                                 echo $spotInfo[$i]['text'];
                                 echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
@@ -239,6 +265,7 @@
                                 markers[i].lat,
                                 markers[i].lng,
                                 markers[i].url,
+                                markers[i].icon_url,
                                 map,
                             );
                         }
@@ -248,17 +275,25 @@
                     }
 
                     // マーカーを設定
-                    function createMarker(name, lat, lng, url, map) {
+                    function createMarker(name, lat, lng, url, icon_url, map) {
 
                         var latlng = new google.maps.LatLng(lat, lng);
                         var pixelOffset = new google.maps.Size(0, -40);
 
                         var marker = new google.maps.Marker({
                             position: latlng,
-                            // icon: {
-                            //     url: 'fish__icon.png',
-                            //     scaledSize: new google.maps.Size(42, 55),
-                            // },
+                            icon: {
+                                // icon_url: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                // url: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                // url: 'fish__icon.png',
+
+                                // url: 'https://maps.google.com/mapfiles/ms/micons/parkinglot.png',
+                                // url: 'https://maps.google.com/mapfiles/ms/micons/fishing.png',
+
+                                url: '{{ asset('assets/images/') }}/' + icon_url,
+                                // url: "http://localhost/fishing_tokushima/public/assets/images/fish__icon.png",
+                                scaledSize: new google.maps.Size(42, 55),
+                            },
                             map: map
                         });
 
