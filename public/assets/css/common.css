@@ -185,7 +185,7 @@ height: auto;
     z-index: 5;
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1079px) {
     .header__box--group {
         display: none;
     }
@@ -283,7 +283,7 @@ height: auto;
     letter-spacing: 0.5px;
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1079px) {
 
     .hamburger,
     .hamburger span {
@@ -365,13 +365,24 @@ height: auto;
     position: -webkit-fixed;
     position: fixed;
     top: 20px;
-    left: 20px;
+    left: -25px;
     z-index: 5;
     width: 250px;
     height: 60px;
     background-color: #fff;
     padding: 5px 0;
     border-radius: 30px;
+}
+
+@media screen and (min-width: 600px) {
+    .header__logo{
+        left: 0;
+    }
+}
+@media screen and (min-width: 1079px) {
+    .header__logo {
+        left: 20px;
+    }
 }
 
 .g-nav__box {
@@ -404,7 +415,7 @@ height: auto;
     padding-bottom: 10px;
 }
 /* g-navアイコンのレスポンシブ */
-@media screen and (min-width:1080px) {
+@media screen and (min-width:1079px) {
     .g-nav__box--discription:hover{
         transform: translate(0,-5px);
     }
@@ -515,7 +526,7 @@ height: auto;
 }
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1079px) {
     .g-nav {
         align-items: center;
         justify-content: center;
@@ -532,6 +543,9 @@ height: auto;
         flex-direction: row;
         justify-content: flex-end;
         background-color: #FFF;
+    }
+    .g-nav::-webkit-scrollbar{
+        display: none;
     }
 
     .header__box {
@@ -614,7 +628,7 @@ height: auto;
     transform: rotate(45deg);
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1079px) {
 
     .g-nav__link {
         display: none;
