@@ -1022,7 +1022,7 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .d-demo__item {
-    width: calc(100vw / 2);
+    width: calc(100vw / 3);
 }
 
 .fishsection {
@@ -1033,7 +1033,7 @@ _:-ms-lang(x)::-ms-backdrop,
 }
 
 .fishimgblock {
-    max-width: calc(width / 2);
+    max-width: calc(100vw / 5);
     max-height: 250px;
 
 }
@@ -1070,9 +1070,15 @@ _:-ms-lang(x)::-ms-backdrop,
     padding: 10px 10px;
     text-align: center;
     color: #000000;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     border-radius: 50%;
     overflow: visible;
+}
+@media screen and (min-width: 450px) {
+    .arrow_box {
+        padding-top: 18px;
+        font-size: 0.6rem;
+    }
 }
 
 @media screen and (min-width: 500px) {
