@@ -371,7 +371,7 @@ li:has(.fishinfo__box--description) {
 }
 
 .main-img img {
-    width: 100%;
+    /* width: 100%; */
     border-radius: 30px;
     border: 0px solid #fff;
 }
