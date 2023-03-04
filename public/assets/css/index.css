@@ -434,6 +434,7 @@
         top: -250px;
         right: -15vw;
     }
+}
 @media screen and (min-width: 700px) {
     .eastsection {
         top: -500px;
@@ -1154,6 +1155,16 @@ _:-ms-lang(x)::-ms-backdrop,
     border: #30add1 dashed 2px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.infomation__block a{
+    display: block;
+    font-size: 0.8rem;
+}
+@media screen and (min-width: 600px) {
+.infomation__block a {
+        display: flex;
+        font-size: 1rem;
+    }
 }
 
 .info__day {
