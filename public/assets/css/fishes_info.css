@@ -337,6 +337,8 @@ li:has(.fishinfo__box--description) {
 }
 
 
+
+
 /* PC */
 @media screen and (min-width: 1080px) {
 
@@ -436,4 +438,8 @@ li:has(.fishinfo__box--description) {
         height: 160px;
         background-position: center
     }
+}
+
+.card__discription{
+    line-height: 1.1;
 }
