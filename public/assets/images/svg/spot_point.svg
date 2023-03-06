@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 30 30">
   <defs>
     <style>
       .cls-1 {
-        fill: #30add1;
+        fill: #ffea20;
       }
 
       .cls-2 {
@@ -15,7 +15,7 @@
       }
 
       .cls-4 {
-        fill: #ffea20;
+        fill: #ff1111;
       }
     </style>
     <clipPath id="clippath">

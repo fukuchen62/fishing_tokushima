@@ -6,6 +6,10 @@
     padding-bottom: 50px;
 }
 
+.overview__box--img{
+    padding-top: 30px;
+}
+
 /* サブビジュアル */
 .keyvisual {
     background-image: url(../images/plan_keyvisual_sp.jpg);
@@ -120,6 +124,9 @@
 }
 
 /* フロー */
+.flow__section{
+    padding-bottom: 30px;
+}
 
 /* フローのタイトル枠 */
 .flow__section h2 {
@@ -154,6 +161,7 @@
     }
 
 
+
 /* 横並びになると横幅固定 */
 @media screen and (min-width: 1025px) {
     .flow__box--text {
@@ -180,9 +188,12 @@
     .anchor--text {
         display: inline-block;
         color: #fff;
+        background-color: #30ADD1;
         padding: 20px;
-        font-size: 20px;
-
+        font-size: 28px;
+        border: dotted 10px #ffea20;
+        border-radius: 50%;
+        margin: 10px;
     }
 }
 

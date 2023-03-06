@@ -171,7 +171,7 @@ li:has(.fishinfo__box--description) {
 
 .fishinfo__box--text {
     max-width: 400px;
-    height: 250px;
+    /* height: 250px; */
     border-radius: 30px;
     background-color: #fff;
     margin: 0 auto;

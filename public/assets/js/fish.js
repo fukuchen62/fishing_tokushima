@@ -36,74 +36,74 @@ $(window).on("load", function () {
     switch ($month_choice) {
         case "1":
             // 1月を選択
-            $(".active").removeClass("active");
-            $(".secList1").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList1").addClass("active2");
             break;
 
         case "2":
             // 2月を選択
-            $(".active").removeClass("active");
-            $(".secList2").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList2").addClass("active2");
             break;
 
         case "3":
             // 3月を選択
-            $(".active").removeClass("active");
-            $(".secList3").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList3").addClass("active2");
             break;
 
         case "4":
             // 4月を選択
-            $(".active").removeClass("active");
-            $(".secList4").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList4").addClass("active2");
             break;
 
         case "5":
             // 5月を選択
-            $(".active").removeClass("active");
-            $(".secList5").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList5").addClass("active2");
             break;
 
         case "6":
             // 6月を選択
-            $(".active").removeClass("active");
-            $(".secList6").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList6").addClass("active2");
             break;
 
         case "7":
             // 7月を選択
-            $(".active").removeClass("active");
-            $(".secList7").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList7").addClass("active2");
             break;
 
         case "8":
             // 8月を選択
-            $(".active").removeClass("active");
-            $(".secList8").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList8").addClass("active2");
             break;
 
         case "9":
             // 9月を選択
-            $(".active").removeClass("active");
-            $(".secList9").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList9").addClass("active2");
             break;
 
         case "a":
             // 10月を選択
-            $(".active").removeClass("active");
-            $(".secList10").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList10").addClass("active2");
             break;
 
         case "b":
             // 11月を選択
-            $(".active").removeClass("active");
-            $(".secList11").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList11").addClass("active2");
             break;
 
         case "c":
             // 12月を選択
-            $(".active").removeClass("active");
-            $(".secList12").addClass("active");
+            $(".active2").removeClass("active2");
+            $(".secList12").addClass("active2");
             break;
     }
 });

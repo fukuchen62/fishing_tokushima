@@ -22,7 +22,7 @@
 }
 
 .calendar__box {
-    padding: 50px 0 50px 0;
+    padding: 50px 0 30px 0;
 }
 
 /* calendar__box--search横並び */
@@ -34,7 +34,7 @@
     max-width: 500px;
     height: fit-content;
     padding: 30px 50px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     flex-direction: column;
 }
 
@@ -50,7 +50,7 @@
         width: 400px;
         border-radius: 31% 69% 57% 43% / 49% 52% 48% 51%;
         position: static;
-        margin: 0 auto;
+        margin: 30px auto 0;
     }
 }
 
@@ -92,7 +92,7 @@ tr {
 }
 
 /* 月ボタン保持 */
-.active {
+.active2 {
     background-color: #247f99;
     box-shadow: inset 2px 4px rgba(46, 174, 209);
     color: #fff;
@@ -201,6 +201,7 @@ h3 {
 
 /* 釣れる魚の画像 */
 .fish__img {
+    height: 150px;
     border-radius: 50%;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     object-fit: cover;
@@ -210,7 +211,7 @@ h3 {
 /*その他海産物 */
 
 .others__section {
-    padding: 100px 0 100px 0;
+    padding: 30px 0 100px 0;
 }
 
 .others__box--info li {
@@ -255,9 +256,11 @@ h3 {
 /* 背景 波 */
 .firstsection__bottom {
     width: 100vw;
-    height: 160px;
+    height: 50px;
     background-image: url(../images/svg/wave__sectionbottom__second.svg);
     background-repeat: repeat-x;
+    background-size: cover;
+    background-position: bottom;
     justify-content: center;
     align-items: center;
     transform: scaleY(-1);
@@ -265,9 +268,20 @@ h3 {
 
 .firstsection__bottom--under {
     width: 100vw;
-    height: 160px;
+    height: 50px;
     background-image: url(../images/svg/wave__sectionbottom__second.svg);
     background-repeat: repeat-x;
+    background-size: cover;
+    background-position: bottom;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width:1080px) {
+    .firstsection__bottom {
+    height: 80px;
+    }
+    .firstsection__bottom--under{
+    height: 100px;
+    }
 }

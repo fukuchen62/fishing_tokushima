@@ -15,6 +15,10 @@
     }
 }
 
+.firstsection{
+    padding-top: 20px;
+}
+
 /*タブ切り替え全体のスタイル*/
 .tabs {
     margin-top: 50px;
@@ -40,6 +44,7 @@
     text-align: center;
     font-weight: bold;
     transition: all 0.2s ease;
+    border-radius: 20px 20px 0 0;
 }
 
 .tab_item:hover {
@@ -82,7 +87,7 @@ input[name="tab_item"] {
     clear: both;
     overflow: hidden;
     margin: 0 auto;
-        padding: 50px 20px ;
+    padding: 30px 0 ;
 }
 
 
@@ -98,6 +103,7 @@ input[name="tab_item"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 @media screen and (min-width: 900px){
     .card__area {
@@ -112,7 +118,7 @@ input[name="tab_item"] {
         }
 }
 .card__p{
-    margin: 20px;
+    /* margin: 20px; */
     padding: 0;
 }
 

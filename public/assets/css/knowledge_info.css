@@ -12,10 +12,16 @@ dt,dd{
     font-weight: 100;
     text-align: start;
 }
-li{
-    color: #51656F;
+.knowledge__section li{
+        color: #51656F;
         font-weight: 100;
         text-align: start;
+        line-height: 1.5;
+}
+
+.knowledge__section a{
+        color: #30ADD1;
+        border-bottom:solid 1px #30ADD1;
 }
 
 @media screen and (min-width: 600px) {
@@ -33,13 +39,14 @@ li{
     top: 15px;
 }
 
-.titlesection{
+/* .titlesection{
     background-image: url(../images/svg/wave-indexpage.svg);
     transform: rotate(180);
     background-color: #30ADD1;
-}
+} */
 .titlesection__border {
-    display: none;
+    /* display: none; */
+    background-color: #30ADD1;
 
 }
 
@@ -58,7 +65,7 @@ li{
     margin: 0 auto;
 }
 .i-catchimg{
-    margin-top: 50px;
+    margin-top: 20px;
     max-width: 708px;
     height: auto;
 }
@@ -104,6 +111,7 @@ li{
     margin: 0 auto;
     width: 100%;
     background-color: #30ADD1;
+    padding-top: 20px;
 }
 
 .firstsection__bottom{
@@ -195,8 +203,8 @@ li{
     position: absolute;
     right: 3%;
     top: 40%;
-    width: 10px;
-    height: 10px;
+    width: 7px;
+    height: 7px;
     border-top: 2px solid #51656F;
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);
@@ -236,9 +244,9 @@ li{
     content: "";
     position: absolute;
     right: -48%;
-    top: -30px;
-    width: 12px;
-    height: 12px;
+    top: -22px;
+    width: 7px;
+    height: 7px;
     border-top: 2px solid #51656F;
     border-right: 2px solid #51656F;
     -webkit-transform: rotate(45deg);

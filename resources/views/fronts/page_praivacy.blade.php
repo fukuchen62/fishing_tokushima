@@ -25,10 +25,10 @@
     <div class="privacy__section p__lr">
         <div class="privacy-wrap">
 
-            <div class="section-wrap">
+            {{-- <div class="section-wrap">
                 <!-- margin-top: 50px設定 2022.10.15 akamatsu -->
                 <h2 class="section-ttl ">プライバシーポリシー・免責事項</h2>
-            </div>
+            </div> --}}
 
             <h3 class="privacy-title">個人情報の取扱いについて</h3>
 

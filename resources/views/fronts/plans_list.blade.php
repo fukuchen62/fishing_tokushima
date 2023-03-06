@@ -232,7 +232,7 @@
                         <div class="result_btn__box">
                             <!-- リセットボタン -->
                             <div class="result_btn__box--resetbtn">
-                                <input type="reset" value="リセット" id="reset_btn">
+                                <input type="reset" value="リセット" id="reset_btn" onclick="doReload('{{ route('planslist') }}')">
                             </div>
                             <!-- 検索ボタン -->
                             <div class="result_btn__box--searchbtn">

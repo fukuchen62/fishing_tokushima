@@ -168,21 +168,24 @@
         <section class="spotinfo__fish p__lr">
             <h3 class="section__box--title spotinfo__sectiontitle--fish">狙える魚</h3>
             <div class="spotinfo__fishes">
-                @for ($i = 0; $i < 4; $i++)
+                @foreach ($fishlist as $key => $item)
                     @component('components.front_spots_info')
                         @slot('fish_link')
-                            {{ route('fishinfo', ['id' => $fishlist[$i]]) }}
+                            {{ route('fishinfo', ['id' => $fishlist[$key]]) }}
                         @endslot
 
                         @slot('fish_img')
-                            {{ asset('storage/images') }}/{{ $fishlist[$i]['fish_img1'] }}
+                            {{ asset('storage/images') }}/{{ $item['fish_img1'] }}
                         @endslot
 
                         @slot('fish_alt')
-                            {{ $fishlist[$i]['fish_img1'] }}
+                            {{ $item->fish_img1 }}
                         @endslot
                     @endcomponent
-                @endfor
+                    {{-- @php
+                    print_r($fishlist);
+                @endphp --}}
+                @endforeach
             </div>
         </section>
 
@@ -216,12 +219,33 @@
                         // PHPの配列をJavaScriptの配列に変換
                         @php
                             for ($i = 0; $i < count($spotInfo); $i++) {
+                                // $icon_url = asset('assets/images/');
+                                $icon_url = '';
+                                switch ($spotInfo[$i]['type']) {
+                                    case 1:
+                                        $icon_url .= 'svg/spot_point.svg';
+                                        break;
+                            
+                                    case 2:
+                                        $icon_url .= 'svg/gnav_shop.svg';
+                                        break;
+                            
+                                    case 3:
+                                        $icon_url .= 'exit.png';
+                                        break;
+                            
+                                    default:
+                                        break;
+                                }
+                            
                                 echo "markers[$i]={lat:";
                                 echo $spotInfo[$i]['lat'];
                                 echo ', lng:';
                                 echo $spotInfo[$i]['lng'];
                                 echo ', url:';
                                 echo "\"#mk" . ($i + 1) . "\"";
+                                echo ', icon_url:"';
+                                echo $icon_url . '"';
                                 echo ', text:"';
                                 echo $spotInfo[$i]['text'];
                                 echo "\",color: \"#AD7000\",fontFamilt: 'Kosugi Maru',fontSize: \"14px\",fontWeight: \"bold\",};";
@@ -236,6 +260,7 @@
                                 markers[i].lat,
                                 markers[i].lng,
                                 markers[i].url,
+                                markers[i].icon_url,
                                 map,
                             );
                         }
@@ -245,17 +270,25 @@
                     }
 
                     // マーカーを設定
-                    function createMarker(name, lat, lng, url, map) {
+                    function createMarker(name, lat, lng, url, icon_url, map) {
 
                         var latlng = new google.maps.LatLng(lat, lng);
                         var pixelOffset = new google.maps.Size(0, -40);
 
                         var marker = new google.maps.Marker({
                             position: latlng,
-                            // icon: {
-                            //     url: 'fish__icon.png',
-                            //     scaledSize: new google.maps.Size(42, 55),
-                            // },
+                            icon: {
+                                // icon_url: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                // url: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                // url: 'fish__icon.png',
+
+                                // url: 'https://maps.google.com/mapfiles/ms/micons/parkinglot.png',
+                                // url: 'https://maps.google.com/mapfiles/ms/micons/fishing.png',
+
+                                url: '{{ asset('assets/images/') }}/' + icon_url,
+                                // url: "http://localhost/fishing_tokushima/public/assets/images/fish__icon.png",
+                                scaledSize: new google.maps.Size(40, 40),
+                            },
                             map: map
                         });
 
@@ -298,6 +331,27 @@
 
             </div>
         </section>
+
+        <div>
+            <div class="icon_list_wrap">
+                <ul class="icon_list">
+                    <li class="icon">
+                        <img src="{{ asset('assets/images/svg/spot_point.svg') }}" alt="スポットアイコン" class="icon_pic" />釣りスポット
+                    </li>
+                    <li class="icon">
+                        <img src="{{ asset('assets/images/svg/gnav_shop.svg') }}" alt="釣具屋アイコン" class="icon_pic" />釣具屋
+                    </li>
+                    <li class="icon">
+                        <img src="{{ asset('assets/images/exit.png') }}" alt="避難場所アイコン" class="icon_pic" />避難場所
+                    </li>
+                    <li class="icon">
+                        <img src="https://www.naruto-cycle.com/wp-content/themes/naruto_cycle/assets/img/course_icon_others_img.png"
+                            alt="その他アイコン" class="icon_pic" />その他
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
 
