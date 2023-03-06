@@ -33,12 +33,13 @@ body {
 }
 
 .titlesection {
-    background-image: url(../images/svg/wave-indexpage.svg);
+    /* background-image: url(../images/svg/wave-indexpage.svg);
     transform: rotate(180);
-    background-color: #30ADD1;
+    background-color: #30ADD1; */
 }
 .titlesection__border{
-    display: none;
+    /* display: none; */
+    background-color: #30ADD1;
 }
 
 /* main */
