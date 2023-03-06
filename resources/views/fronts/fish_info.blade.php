@@ -206,7 +206,7 @@
                             @endslot
                             @slot('card_overview')
                                 @php
-                                    $overview = mb_strimwidth($spot->overview, 0, 150, '・・・');
+                                    $overview = mb_strimwidth($spot->overview, 0, 120, '・・・');
                                 @endphp
                                 {{ $overview }}
                             @endslot
