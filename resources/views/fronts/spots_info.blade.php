@@ -225,19 +225,19 @@
                                     case 1:
                                         $icon_url .= 'svg/spot_point.svg';
                                         break;
-                            
+
                                     case 2:
                                         $icon_url .= 'svg/gnav_shop.svg';
                                         break;
-                            
+
                                     case 3:
                                         $icon_url .= 'exit.png';
                                         break;
-                            
+
                                     default:
                                         break;
                                 }
-                            
+
                                 echo "markers[$i]={lat:";
                                 echo $spotInfo[$i]['lat'];
                                 echo ', lng:';
@@ -334,19 +334,19 @@
 
         <div>
             <div class="icon_list_wrap">
-                <ul class="icon_list">
+                <ul class="icon_list flex">
                     <li class="icon">
-                        <img src="{{ asset('assets/images/svg/spot_point.svg') }}" alt="スポットアイコン" class="icon_pic" />釣りスポット
+                        <img src="{{ asset('assets/images/svg/spot_point.svg') }}" alt="スポットアイコン" class="icon_pic" />
+                        <p class="icon-p">釣りスポット</p>
+
                     </li>
                     <li class="icon">
-                        <img src="{{ asset('assets/images/svg/gnav_shop.svg') }}" alt="釣具屋アイコン" class="icon_pic" />釣具屋
+                        <img src="{{ asset('assets/images/svg/gnav_shop.svg') }}" alt="釣具屋アイコン" class="icon_pic" />
+                        <p class="icon-p">釣具屋</p>
                     </li>
                     <li class="icon">
-                        <img src="{{ asset('assets/images/exit.png') }}" alt="避難場所アイコン" class="icon_pic" />避難場所
-                    </li>
-                    <li class="icon">
-                        <img src="https://www.naruto-cycle.com/wp-content/themes/naruto_cycle/assets/img/course_icon_others_img.png"
-                            alt="その他アイコン" class="icon_pic" />その他
+                        <img src="{{ asset('assets/images/exit.png') }}" alt="避難場所アイコン" class="icon_pic" />
+                        <p class="icon-p">避難場所</p>
                     </li>
                 </ul>
             </div>
