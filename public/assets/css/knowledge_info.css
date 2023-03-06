@@ -13,6 +13,12 @@ dt,dd{
     text-align: start;
     line-height: 1.5;
 }
+
+dt{
+    font-weight: bold;
+    padding-top: 20px;
+}
+
 .knowledge__section li{
         color: #51656F;
         font-weight: 100;
