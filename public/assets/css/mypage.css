@@ -107,14 +107,14 @@ input[name="tab_item"] {
 @media screen and (min-width: 960px) {
     .card__area {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         }
         }
 
         @media screen and (min-width: 1120px) {
             .card__area {
-                padding-left: calc(100% - 1120px);
-                justify-content: start;
+                /* padding-left: calc(100% - 1120px); */
+                justify-content: center;
             }
         }
 
