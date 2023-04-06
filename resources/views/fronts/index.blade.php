@@ -421,6 +421,44 @@
         </div>
     </section>
 
+
+    {{-- 協賛の方のロゴとコメント --}}
+    <section class="sponsorsection">
+        <div class="sponsor__block">
+
+        <div class="sponsor__btn">
+        <a href="https://t-turi-r.com/">
+            <div>
+                <img src="{{ asset('storage/images/TTR1.jpg') }}" alt="徳島釣り連盟">
+            </div>
+        </a>
+        </div>
+
+        <div class="sponsorcomment__block">
+            <p class="hidariyose">
+                このサイト「釣っトク！」は、釣り初心者にスポットを当てた、<br>
+                釣り情報の掲載（テグスの結び方等の基本知識　等）、
+                釣りスポット、
+                提案型体験プラン、
+                徳島で釣れる魚、
+                県内釣具店　等が検索しやすく、親しみやすいサイトとなっていると感じます。
+            </p>
+            <p class="hidariyose">
+                このサイトを通して、釣りについて知って体験することで、<br>
+                釣りに対するハードルが下げられ、徳島での釣り人口が増えることに期待したいと思っています。
+            </p>
+
+            <p class="hidariyose">ホームページ　<a href="https://t-turi-r.com/" target="blank" class="sponsor_link">https://t-turi-r.com/</a></p>
+
+            <p class="migiyose">
+                徳島県釣連盟　委員長<br>
+                谷上　芳之
+            </p>
+        </div>
+
+        </div>
+    </section>
+
 @endsection
 
 {{-- 該当ページ専用JS --}}
