@@ -94,7 +94,7 @@
             <tr>
                 <th>画像3:</th>
                 <td>
-                    <input type="text" name="img3" value="{{ $spot->img4 }}">
+                    <input type="text" name="img3" value="{{ $spot->img3 }}">
                 </td>
             </tr>
             <tr>
